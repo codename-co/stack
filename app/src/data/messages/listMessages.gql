@@ -1,0 +1,15 @@
+query listMessages($recipientId: BigInt!) {
+  messages(
+    filter: { deletedAt: { isNull: true } }
+    condition: { recipientId: $recipientId }, orderBy: CREATED_AT_DESC
+  ) {
+    totalCount
+    nodes {
+      id
+      type
+      title
+      createdAt
+      isRead
+    }
+  }
+}

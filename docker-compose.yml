@@ -1,0 +1,184 @@
+version: "2.0"
+
+services:
+  proxy:
+    image: traefik:v2.3
+    command:
+      # - --log.level=DEBUG
+      - --accesslog
+      - --api.insecure=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.proxy.rule=Host(`${PROXY_HOST}`)
+      - traefik.http.routers.proxy.entrypoints=web,websecure
+    restart: always
+
+  cron:
+    image: mcuadros/ofelia
+    depends_on:
+      - worker
+    command: daemon --docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      ofelia.slack-webhook: ${CRON_SLACK_WEBHOOK}
+      ofelia.slack-only-on-error: "true"
+
+  app:
+    image: iamfreee/docker-nginx-static-spa
+    volumes:
+      - "/root/app/web-build:/var/www/html"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.app.rule=Host(`${APP_HOST}`)
+      - traefik.http.routers.app.entrypoints=web,websecure
+
+  api:
+    build:
+      context: ./api
+    depends_on:
+      - db
+      - proxy
+    environment:
+      - DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - API_AUTH_SECRET=${API_AUTH_SECRET}
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.api.rule=Host(`${API_HOST}`)
+      - traefik.http.routers.api.entrypoints=web,websecure
+    volumes:
+      - ./app/schema:/schema
+    restart: always
+
+  postgrest:
+    image: postgrest/postgrest
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    environment:
+      PGRST_DB_ANON_ROLE: default_role
+      PGRST_DB_URI: ${DB_CONNECTION_STRING}
+      PGRST_DB_SCHEMA: ${DB_SCHEMA}
+
+  apirest:
+    build:
+      context: ./apirest
+    depends_on:
+      - db
+      - proxy
+    environment:
+      - DATABASE_URL=${DB_CONNECTION_STRING}
+      - WEBAPP_URL=${WEBAPP_URL}
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.apirest.rule=Host(`${APIREST_HOST}`)
+      - traefik.http.routers.apirest.entrypoints=web,websecure
+    restart: always
+
+  db:
+    build:
+      context: ./database
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_DATABASE}
+      - JWT_SECRET=${DB_JWT_SECRET}
+
+  adminer:
+    image: adminer
+    environment:
+      ADMINER_DEFAULT_SYSTEM: postgresql
+      ADMINER_DEFAULT_SERVER: db
+      ADMINER_DEFAULT_USERNAME: ${DB_USERNAME}
+      ADMINER_DEFAULT_DATABASE: ${DB_DATABASE}
+      ADMINER_DESIGN: flat
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.adminer.rule=Host(`${ADMINER_HOST}`)
+      - traefik.http.routers.adminer.entrypoints=web,websecure
+    restart: always
+
+  pgweb:
+    image: sosedoff/pgweb
+    links:
+      - db:postgres  # my database container is called postgres, not db
+    environment:
+      - DATABASE_URL=${DB_CONNECTION_STRING}
+      - AUTH_USER=${ADMIN_AUTH_USER}
+      - AUTH_PASS=${ADMIN_AUTH_PASS}
+    depends_on:
+      - db
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.admin.rule=Host(`${ADMIN_HOST}`)
+      - traefik.http.routers.admin.entrypoints=web,websecure
+    restart: always
+
+  worker:
+    build:
+      context: ./worker
+    volumes:
+      - ./worker/helpers:/worker/helpers:ro
+      - ./worker/tasks:/worker/tasks:ro
+    environment:
+      GRAPHILE_WORKER_SCHEMA: worker
+      DATABASE_URL: ${DB_CONNECTION_STRING}
+      WEBAPP_URL: ${WEBAPP_URL}
+    depends_on:
+      - db
+    labels:
+      ofelia.enabled: ${WORKER_CRON}
+      ofelia.job-exec.echo-swag.schedule: ${WORKER_CRON_JOB_ECHO_SWAG_SCHEDULE}
+      ofelia.job-exec.echo-swag.command: "node tasks/echo_swag.js start"
+    restart: always
+
+  status:
+    image: cachethq/docker:2.3-latest
+    links:
+      - status-database:db
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.status.rule=Host(`${STATUS_HOST}`)
+      - traefik.http.routers.status.entrypoints=web,websecure
+    ports:
+      - 8000:8000
+    environment:
+      DB_DRIVER: pgsql
+      DB_HOST: db
+      DB_DATABASE: postgres
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      APP_KEY: base64:hQ5tR6F+iI4ZN0rg18PzrEHKlyE6gHO1d52g4+KppHo=
+      APP_DEBUG: 'false'
+      DEBUG: 'false'
+    depends_on:
+      - status-database
+    restart: on-failure
+
+  status-database:
+    image: postgres:12-alpine
+    # volumes:
+    #   - /var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    restart: always
+
+volumes:
+  schema-volume:
+    driver: local

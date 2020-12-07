@@ -1,0 +1,20 @@
+query getCurrentUser {
+  currentUser {
+    id
+    firstName
+    lastName
+    companyName
+    address
+    addressLine1
+    postcode
+    city
+    email
+    phone
+    usersRoles {
+      nodes {
+        role
+      }
+    }
+    birthDate
+  }
+}

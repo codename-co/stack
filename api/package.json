@@ -1,0 +1,11 @@
+{
+  "name": "swag-api",
+  "version": "1.0.0",
+  "dependencies": {
+    "@graphile/pg-pubsub": "^4.9.0",
+    "@graphile/postgis": "^0.1.0",
+    "@graphile-contrib/pg-many-to-many": "^1.0.0",
+    "@graphile-contrib/pg-simplify-inflector": "^6.0.0",
+    "postgraphile-plugin-connection-filter": "^2.0.0"
+  }
+}

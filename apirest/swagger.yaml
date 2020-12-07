@@ -1,0 +1,69 @@
+openapi: 3.0.0
+servers:
+  - url: 'http://apirest-192-168-1-58-swag.on.stack.lol'
+    description: Local
+info:
+  description: ''
+  version: 0.1.0
+  title: SWAG REST API
+  termsOfService: ''
+  contact:
+    email: ''
+tags:
+  - name: auth
+    description: Authentication
+  - name: payment
+    description: Payment
+paths:
+  /payment/create-charge:
+    post:
+      tags:
+        - payment
+      summary: Create a payment charge
+      description: >-
+        [Stripe docs](https://stripe.com/docs/connect/destination-charges#create-a-charge)
+      responses:
+        '405':
+          description: Invalid input
+      parameters:
+        - name: amount
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 10000
+        - name: fee
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 5000
+        - name: currency
+          in: query
+          required: false
+          schema:
+            type: string
+          example: eur
+        - name: destination
+          in: query
+          required: true
+          schema:
+            type: string
+          example: pk_test_51HalJJHQaAykIZ0jxGhjBjUZMh7ShjlKiCKA0gM9CtQrV12bW8N4eXIcnwqNQxf9sB8q8oleUZP9gitVQKuk20Ny00BzbLYi9c
+    summary: ''
+    description: ''
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+  links: {}
+  callbacks: {}
+security: []

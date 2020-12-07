@@ -1,0 +1,7 @@
+mutation signUp($email: String!, $password: String!, $roles: [RoleType!]!) {
+  userSignUpWithRoles(
+    input: { email: $email, password: $password, roles: $roles }
+  ) {
+    clientMutationId
+  }
+}

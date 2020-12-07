@@ -1,0 +1,10 @@
+query getMessage($messageId: BigInt!) {
+  message(id: $messageId) {
+    type
+    data
+    title
+    content
+    createdAt
+    isRead
+  }
+}

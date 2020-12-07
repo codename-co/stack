@@ -1,0 +1,5 @@
+mutation markMessageRead($messageId: BigInt!) {
+  updateMessage(input: { id: $messageId, patch: { isRead: true } }) {
+    clientMutationId
+  }
+}

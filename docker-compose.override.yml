@@ -1,0 +1,9 @@
+version: "2.0"
+
+# Let's disable the app service in local mode
+# We prefer running it directly using: (cd app && yarn web)
+services:
+  app:
+#     command: ["echo", "Service app disabled"]
+    volumes:
+      - ./app/web-build:/var/www/html:ro

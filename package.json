@@ -1,0 +1,17 @@
+{
+  "name": "lolstack",
+  "version": "0.0.0",
+  "description": "LOLstack, your ready-to-dev & ready-to-deploy software stack",
+  "license": "MIT",
+  "homepage": "https://stack.lol",
+  "author": {
+    "name": "CODENAME SAS",
+    "url": "https://codename.co"
+  },
+  "repository": {
+    "url": "https://github.com/codename-co/stack"
+  },
+  "bugs": {
+    "url": "https://github.com/codename-co/stack/issues"
+  }
+}
