@@ -35,17 +35,5 @@
     "web": {
       "favicon": "./assets/favicon.png"
     }
-  },
-  "hooks": {
-    "postPublish": [
-      {
-        "file": "sentry-expo/upload-sourcemaps",
-        "config": {
-          "organization": "swag-sas",
-          "project": "swag",
-          "authToken": "075b767de11d4a2ba6297c72fd3373a934e4fa0e26c24a8c80931105a2f3d7f9"
-        }
-      }
-    ]
   }
 }
