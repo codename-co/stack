@@ -23,10 +23,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "lol.swag.app",
-      "buildNumber": "0.1.0",
-      "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "The user must provide its geolocation for the map to promote items that are nearby him and/or his business coordinates. This is true to both sellers and buyers. Because shipping cost is also a factor, and the nearer the product is the better."
-      }
+      "buildNumber": "0.1.0"
     },
     "android": {
       "package": "lol.swag.app",
