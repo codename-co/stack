@@ -6,7 +6,7 @@
     "privacy": "unlisted",
     "version": "0.1.0",
     "orientation": "portrait",
-    "primaryColor": "#85B637",
+    "primaryColor": "#2B7E82",
     "icon": "./assets/icon.png",
     "scheme": "swag",
     "splash": {
