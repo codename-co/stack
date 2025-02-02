@@ -26,6 +26,10 @@ The software is divided into three parts:
 | One-click software installs on your computer.   | Our curated software catalog. | A central place for Stack information.  |
 | [Download the app](https://stack.lol/download/) | [Browse the hub](/hub/)       | [Access the website](https://stack.lol) |
 
+## Contributing
+
+See the [CONTRIBUTING.md](./CONTRIBUTING.md) file for more information.
+
 ## License
 
 This repository is licensed under the [MIT License](./LICENSE_MIT) ; excepted for the following subfolders:
