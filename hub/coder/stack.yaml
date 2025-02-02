@@ -2,8 +2,8 @@
 slug: coder
 name: Coder
 flavor: DockerCompose
-version: "4.96.2"
-updated_at: 2024-12-20
+version: "4.96.4"
+updated_at: 2025-02-01
 description: Visual Studio Code in the browser
 author: Coder Technologies, Inc
 license: MIT

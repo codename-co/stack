@@ -1,6 +1,6 @@
 services:
   coder:
-    image: linuxserver/code-server:${CODER_VERSION:-4.96.2}
+    image: linuxserver/code-server:${CODER_VERSION:-4.96.4}
     restart: unless-stopped
     # ports:
     #   - 8443:8443
