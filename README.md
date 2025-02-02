@@ -21,23 +21,10 @@ Stack makes accessible the best of the web, and the best of the web is made by t
 
 The software is divided into three parts:
 
-### 1. Desktop app
-
-Install stacks of software with a single click on your desktop.
-
-👉 [Download the app](https://stack.lol/download/) (macOS only at the moment)
-
-### 2. Hub
-
-The hub is the software catalog where you can find all the software available in Stack.
-
-👉 [Browse the hub](/hub/)
-
-### 3. Website
-
-The website is the place where you can find all the information about Stack.
-
-👉 <https://stack.lol>
+| Desktop app                                     | Hub                           | Website                                 |
+| ----------------------------------------------- | ----------------------------- | --------------------------------------- |
+| One-click software installs on your computer.   | Our curated software catalog. | A central place for Stack information.  |
+| [Download the app](https://stack.lol/download/) | [Browse the hub](/hub/)       | [Access the website](https://stack.lol) |
 
 ## License
 
