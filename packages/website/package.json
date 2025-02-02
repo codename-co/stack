@@ -32,5 +32,8 @@
     "@modyfi/vite-plugin-yaml": "^1.1.0",
     "@types/node": "^22.10.5",
     "vite-plugin-env-parse": "^1.0.15"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.34.0"
   }
 }
