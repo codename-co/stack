@@ -176,3 +176,5 @@ tags:
     name: Cron
   - slug: status-page
     name: Status page
+  - slug: pdf
+    name: PDF

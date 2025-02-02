@@ -11,7 +11,7 @@ license: MIT
 homepage: https://gotenberg.dev
 repository: https://github.com/gotenberg/gotenberg
 stars: 8200
-tags: []
+tags: [pdf]
 alternativeTo: []
 readme: |
   Gotenberg provides a developer-friendly API to interact with powerful tools like Chromium and LibreOffice for converting numerous document formats (HTML, Markdown, Word, Excel, etc.) into PDF files, and more!
