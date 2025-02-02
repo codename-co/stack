@@ -1,0 +1,50 @@
+# Original: <https://github.com/shlinkio/shlink/blob/ed09bf90ebadbc48c40117470d096e89ad6fceb9/docker-compose.yml>
+
+services:
+  shlink:
+    image: shlinkio/shlink:${SHLINK_VERSION:-4.4.2}
+    # ports:
+    #   - "8080:8080"
+    env_file: .env
+    depends_on:
+      shlink-postgres:
+        condition: service_healthy
+    restart: on-failure:3
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.shlink.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.shlink.loadbalancer.server.port: 80
+
+  shlink-postgres:
+    image: postgres:17-alpine
+    restart: on-failure:3
+    volumes:
+      - data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
+      interval: 2s
+      timeout: 5s
+      retries: 5
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+
+  shlink-web:
+    # docker run --name shlink-web-client -p 8000:8080 -v ${PWD}/servers.json:/usr/share/nginx/html/servers.json shlinkio/shlink-web-client
+    image: shlinkio/shlink-web-client:${SHLINK_WEB_VERSION:-stable}
+    # ports:
+    #   - "8000:8080"
+    environment:
+      SHLINK_SERVER_NAME: Shlink
+      SHLINK_SERVER_URL: https://$PROJECT.$DOMAIN
+      SHLINK_SERVER_API_KEY: $INITIAL_API_KEY
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN/admin
+      traefik.http.routers.shlink-web.rule: Host(`$PROJECT.$DOMAIN`) && (PathPrefix(`/admin`) || PathPrefix(`/server`))
+      traefik.http.services.shlink-web.loadbalancer.server.port: 8080
+      traefik.http.routers.shlink-web.middlewares: strip-admin-prefix@file
+      traefik.http.middlewares.strip-admin-prefix.stripprefix.prefixes: /admin
+
+volumes:
+  data:
+    driver: local

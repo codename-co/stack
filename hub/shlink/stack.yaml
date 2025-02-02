@@ -1,0 +1,32 @@
+slug: shlink
+name: Shlink
+icon: 🔗
+flavor: DockerCompose
+version: "4.4.2"
+updated_at: 2025-01-29
+description: The definitive self-hosted URL shortener
+author: Alejandro Celaya
+license: MIT
+homepage: https://shlink.io
+repository: https://github.com/shlinkio/shlink
+stars: 3500
+tags: [url-shortener]
+alternativeTo: [bitly, tinyurl]
+readme: |
+  A PHP-based self-hosted URL shortener that can be used to serve shortened URLs under your own domain.
+
+  <video controls width="100%">
+    <source src="https://shlink.io/videos/shlink-web-client.webm">
+    ⚠️ Your browser does not support the video tag.
+  </video>
+
+  <hr>
+
+  ## Features
+
+  - **Progressive web app:**
+    Manage multiple Shlink instances using this beautiful and intuitive progressive web application.
+  - **API-first:**
+    Access your shortened URLs from anywhere. Simple authentication and easy to integrate.
+  - **Command line:**
+    Generate and manage short URLs from the command line. List URLs, see visits, manage your domains, etc.

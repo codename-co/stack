@@ -178,3 +178,5 @@ tags:
     name: Status page
   - slug: pdf
     name: PDF
+  - slug: url-shortener
+    name: URL shortener

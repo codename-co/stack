@@ -31,10 +31,6 @@ alternatives:
     name: Apollo Server
     icon: apollographql
     description: GraphQL server
-  - slug: jfrog-artifactory
-    name: JFrog Artifactory
-    icon: jfrog
-    description: Universal artifact repository manager
   - slug: asana
     name: Asana
     description: Project management tool
@@ -44,6 +40,9 @@ alternatives:
   - slug: bitbucket
     name: Bitbucket
     description: Code hosting platform
+  - slug: bitly
+    name: Bitly
+    description: URL shortening service
   - slug: calendly
     name: Calendly
     description: Scheduling software
@@ -120,6 +119,10 @@ alternatives:
     name: IntelliJ IDEA
     icon: intellijidea
     description: Integrated development environment
+  - slug: jfrog-artifactory
+    name: JFrog Artifactory
+    icon: jfrog
+    description: Universal artifact repository manager
   - slug: jira
     name: Jira
     description: Project management tool
@@ -209,6 +212,10 @@ alternatives:
   - slug: teamviewer
     name: TeamViewer
     description: Remote desktop software
+  - slug: tinyurl
+    name: TinyURL
+    icon: 🔗
+    description: URL shortening service
   - slug: twitch
     name: Twitch
     description: Video streaming platform
