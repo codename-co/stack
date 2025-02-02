@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<div align="center">
 
 ![App icon](./packages/website/public/128x128.png)
 
