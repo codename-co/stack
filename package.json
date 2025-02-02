@@ -7,5 +7,9 @@
   "scripts": {
     "app": "npm run -w packages/app start",
     "website": "npm run -w packages/website dev"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=11.0.0"
   }
 }
