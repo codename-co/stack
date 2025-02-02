@@ -80,6 +80,18 @@ pub fn run() {
     // let system_tray = SystemTray::new().with_menu(tray_menu);
 
     tauri::Builder::default()
+        .plugin(tauri_plugin_notification::init())
+        .setup(|app| {
+            use tauri_plugin_notification::NotificationExt;
+            app.notification()
+                .builder()
+                .title("Stack")
+                .body("Stack is started.")
+                .show()
+                .unwrap();
+
+            Ok(())
+        })
         // .plugin(tauri_plugin_positioner::init())
         .plugin(tauri_plugin_cli::init())
         .setup(|app| {
