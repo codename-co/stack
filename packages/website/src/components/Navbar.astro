@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl } from "~/i18n";
+import { siGithub } from "simple-icons";
 import LanguagePicker from "./LanguagePicker.astro";
 
 const currentLang = getLangFromUrl(Astro.url);
@@ -17,6 +18,15 @@ const currentLang = getLangFromUrl(Astro.url);
     <span class="font-semibold text-xl tracking-tight text-black">Stack</span>
   </a>
   <div class="h-10 grid grid-flow-col text-base">
+    <a
+      href="https://github.com/codename-co/stack"
+      class="flex items-center hover:text-gray-600 px-4 py-3"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="GitHub"
+      set:html={siGithub.svg}
+    />
+
     <LanguagePicker />
   </div>
   <!-- <div class="block lg:hidden">
