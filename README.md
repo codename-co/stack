@@ -1,4 +1,4 @@
-<center>
+<div style="text-align:center">
 
 ![App icon](./packages/website/public/128x128.png)
 
@@ -6,7 +6,7 @@
 
 **The best free software made accessible.**
 
-</center>
+</div>
 
 ---
 
