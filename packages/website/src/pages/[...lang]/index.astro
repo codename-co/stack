@@ -208,7 +208,13 @@ const description = t(
                     {updated_at && (
                       <span class="text-sm absolute end-0 bottom-6 subtle">
                         Updated
-                        <time datetime={updated_at.toISOString()}>
+                        <time
+                          datetime={updated_at.toISOString()}
+                          title={new Intl.DateTimeFormat(lang, {
+                            dateStyle: "full",
+                            timeStyle: undefined,
+                          }).format(updated_at)}
+                        >
                           {timeago(updated_at)}
                         </time>
                       </span>
