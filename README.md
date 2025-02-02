@@ -15,16 +15,17 @@
 
 ## Motivation
 
-Stack makes accessible the best of the web, and the best of the web is made by the community.
+The best free software is often hard to find, hard to install, and hard to use.
+Stack aims to solve this problem by providing a one-click software installer for your computer.
 
 ## About
 
 The software is divided into three parts:
 
-| Desktop app                                     | Hub                           | Website                                 |
-| ----------------------------------------------- | ----------------------------- | --------------------------------------- |
-| One-click software installs on your computer.   | Our curated software catalog. | A central place for Stack information.  |
-| [Download the app](https://stack.lol/download/) | [Browse the hub](/hub/)       | [Access the website](https://stack.lol) |
+| Desktop app                                     | Hub                               | Website                                 |
+| ----------------------------------------------- | --------------------------------- | --------------------------------------- |
+| One-click software installs on your computer.   | Our curated 80+ software catalog. | A central place for Stack information.  |
+| [Download the app](https://stack.lol/download/) | [Browse the hub](/hub/)           | [Access the website](https://stack.lol) |
 
 ## Contributing
 
