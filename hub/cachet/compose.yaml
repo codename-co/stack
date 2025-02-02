@@ -4,7 +4,7 @@ services:
       context: .
     env_file: .env
     depends_on:
-      postgres:
+      cachet-postgres:
         condition: service_healthy
     restart: on-failure:3
     labels:
@@ -12,7 +12,7 @@ services:
       traefik.http.routers.cachet.rule: Host(`$PROJECT.$DOMAIN`)
       traefik.http.services.cachet.loadbalancer.server.port: 8000
 
-  postgres:
+  cachet-postgres:
     image: postgres:17-alpine
     restart: on-failure:3
     volumes:
