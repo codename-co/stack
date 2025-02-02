@@ -22,10 +22,10 @@ Stack aims to solve this problem by providing a one-click software installer for
 
 The software is divided into three parts:
 
-| Desktop app                                     | Hub                               | Website                                 |
-| ----------------------------------------------- | --------------------------------- | --------------------------------------- |
-| One-click software installs on your computer.   | Our curated 80+ software catalog. | A central place for Stack information.  |
-| [Download the app](https://stack.lol/download/) | [Browse the hub](/hub/)           | [Access the website](https://stack.lol) |
+| Desktop app                                       | Hub                               | Website                                   |
+| ------------------------------------------------- | --------------------------------- | ----------------------------------------- |
+| One-click software installs on your computer.     | Our curated 80+ software catalog. | A central place for Stack information.    |
+| [↓ Download the app](https://stack.lol/download/) | [👀 Browse the hub](/hub/)        | [→ Access the website](https://stack.lol) |
 
 ## Contributing
 
