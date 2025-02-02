@@ -1,0 +1,98 @@
+services:
+  webstudiodb:
+    image: ghcr.io/supabase/postgres:15.1.1.55
+    # Uncomment to log all queries
+    command: ["postgres", "-c", "log_statement=all", "-c", "listen_addresses=*"]
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: webstudio
+      POSTGRES_USER: postgres
+    ports:
+      - ${PGPORT:-5432}:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d webstudio"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 2s
+      start_interval: 2s
+    networks:
+      - webstudio
+
+  webstudio-rest:
+    container_name: supabase-rest
+    image: postgrest/postgrest:v12.2.0
+    depends_on:
+      webstudiodb:
+        # Disable this if you are using an external Postgres database
+        condition: service_healthy
+    restart: unless-stopped
+    environment:
+      PGRST_DB_URI: postgresql://postgres:pass@webstudiodb/webstudio
+      PGRST_DB_SCHEMAS: ${PGRST_DB_SCHEMAS:-public}
+      PGRST_DB_ANON_ROLE: anon
+      PGRST_JWT_SECRET: ${JWT_SECRET:-jwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecret}
+      PGRST_DB_USE_LEGACY_GUCS: "false"
+      PGRST_APP_SETTINGS_JWT_SECRET: ${JWT_SECRET:-jwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecretjwtsecret}
+      # PGRST_APP_SETTINGS_JWT_EXP: ${JWT_EXPIRY}
+    command: "postgrest"
+    labels:
+      dash.name: Webstudio REST API
+      dash.icon: postgrest
+      dash.url: http://api.$PROJECT.$DOMAIN
+      traefik.http.routers.webstudio-rest.rule: Host(`api.$PROJECT.$DOMAIN`)
+      traefik.http.routers.webstudio-rest.priority: 100
+      traefik.http.services.webstudio-rest.loadbalancer.server.port: 3000
+    networks:
+      - webstudio
+
+  bootstrap:
+    build:
+      dockerfile: Dockerfile.dev
+    env_file: ./.env
+    depends_on:
+      webstudiodb:
+        condition: service_healthy
+    command: pnpm migrations migrate --dev
+    networks:
+      - webstudio
+
+  webstudio:
+    build:
+      dockerfile: Dockerfile.dev
+    env_file: ./.env
+    # ports:
+    #   - :5173
+    labels:
+      dash.name: Webstudio
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.webstudio.rule: Host(`$PROJECT.$DOMAIN`) || HostRegexp(`\.$PROJECT\.$DOMAIN$`)
+      traefik.http.services.webstudio.loadbalancer.server.port: 5173
+    # configs:
+    #   - source: env-development
+    #     target: /app/apps/builder/.env.development
+    depends_on:
+      webstudiodb:
+        condition: service_healthy
+      bootstrap:
+        condition: service_completed_successfully
+      webstudio-rest:
+        condition: service_started
+    networks:
+      - webstudio
+
+configs:
+  env-development:
+    content: |
+      DEV_LOGIN=true
+      AUTH_SECRET=pass
+
+networks:
+  webstudio:
+    driver: bridge
+
+volumes:
+  postgres-data:

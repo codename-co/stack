@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: cal.com
+name: cal.com
+icon: caldotcom
+flavor: DockerCompose
+version: "4.7.8"
+updated_at: 2024-11-22
+description: Scheduling infrastructure
+author: Cal.com, Inc
+license: AGPL-3.0
+homepage: https://cal.com
+repository: https://github.com/calcom/cal.com
+stars: 32600
+tags: [calendar, scheduling]
+alternativeTo: [calendly]
+readme: |
+  Schedule appointments for business meetings, seminars, yoga classes, or calls with families.
+
+  ![booking-screen](https://github.com/calcom/cal.com/assets/8019099/407e727e-ff19-4ca4-bcae-049dca05cf02)

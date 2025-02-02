@@ -1,0 +1,329 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: langflow
+name: Langflow
+icon: Ⓛ
+flavor: DockerCompose
+version: 1.1.1
+updated_at: 2024-11-25
+description: Low-code app builder for RAG and multi-agent AI applications
+author: Langflow
+license: MIT
+homepage: https://www.langflow.org
+repository: https://github.com/langflow-ai/langflow
+stars: 43600
+tags:
+  - chatbot
+  - ai
+  - rag
+  - low-code
+alternativeTo:
+  - dialogflow-cx
+  - rasa
+readme: |
+  Langflow is a low-code app builder for RAG and multi-agent AI applications. It's Python-based and agnostic to any model, API, or database.
+
+  ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+  <hr>
+
+  ## Features
+
+  1. **Python-based** and agnostic to models, APIs, data sources, or databases.
+  2. **Visual IDE** for drag-and-drop building and testing of workflows.
+  3. **Playground** to immediately test and iterate workflows with step-by-step control.
+  4. **Multi-agent** orchestration and conversation management and retrieval.
+  5. **Free cloud service** to get started in minutes with no setup.
+  6. **Publish as an API** or export as a Python application.
+  7. **Observability** with LangSmith, LangFuse, or LangWatch integration.
+  8. **Enterprise-grade** security and scalability with free DataStax Langflow cloud service.
+  9. **Customize workflows** or create flows entirely just using Python.
+  10. **Ecosystem integrations** as reusable components for any model, API or database.
+
+  ## Integrations
+
+  ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+i18n:
+  de:
+    description: Low-Code-App-Builder für RAG- und Multi-Agenten-KI-Anwendungen
+    readme: |-
+      Langflow ist ein Low-Code-App-Builder für RAG- und Multi-Agent-KI-Anwendungen. Es ist Python-basiert und unabhängig von jeglichem Modell, API oder Datenbank.
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## Funktionen
+
+      1. **Python-basiert** und unabhängig von Modellen, APIs, Datenquellen oder Datenbanken.
+      2. **Visuelle IDE** zum Drag-and-Drop-Erstellen und Testen von Workflows.
+      3. **Playground** zum sofortigen Testen und Iterieren von Workflows mit schrittweiser Kontrolle.
+      4. **Multi-Agent** Orchestrierung und Verwaltung von Konversationen und Abrufen.
+      5. **Kostenloser Cloud-Service** zum schnellen Start ohne Einrichtung.
+      6. **Veröffentlichung als API** oder Export als Python-Anwendung.
+      7. **Beobachtbarkeit** durch Integration von LangSmith, LangFuse oder LangWatch.
+      8. **Enterprise-Grade** Sicherheit und Skalierbarkeit mit kostenlosem DataStax Langflow Cloud-Service.
+      9. **Workflows anpassen** oder Flows komplett mit Python erstellen.
+      10. **Ökosystem-Integrationen** als wiederverwendbare Komponenten für jedes Modell, API oder Datenbank.
+
+      ## Integrationen
+
+      ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  es:
+    description:
+      Constructor de aplicaciones low-code para aplicaciones de RAG e IA
+      multi-agente
+    readme: |-
+      Langflow es un creador de aplicaciones low-code para aplicaciones RAG y de IA multi-agente. Está basado en Python y es agnóstico a cualquier modelo, API o base de datos.
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## Características
+
+      1. **Basado en Python** y agnóstico a modelos, APIs, fuentes de datos o bases de datos.
+      2. **IDE Visual** para construir y probar flujos de trabajo con arrastrar y soltar.
+      3. **Área de pruebas** para probar e iterar flujos de trabajo inmediatamente con control paso a paso.
+      4. **Orquestación multi-agente** y gestión de conversaciones y recuperación.
+      5. **Servicio en la nube gratuito** para comenzar en minutos sin configuración.
+      6. **Publicar como API** o exportar como aplicación Python.
+      7. **Observabilidad** con integración de LangSmith, LangFuse o LangWatch.
+      8. **Seguridad y escalabilidad de nivel empresarial** con el servicio gratuito en la nube DataStax Langflow.
+      9. **Personalizar flujos de trabajo** o crear flujos completamente usando solo Python.
+      10. **Integraciones del ecosistema** como componentes reutilizables para cualquier modelo, API o base de datos.
+
+      ## Integraciones
+
+      ![Integraciones](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  fr:
+    description:
+      Constructeur d'applications low-code pour les applications de RAG
+      et d'IA multi-agents
+    readme: |-
+      Langflow est un constructeur d'applications low-code pour les applications RAG et multi-agents IA. Il est basé sur Python et agnostique à tout modèle, API ou base de données.
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      1. **Basé sur Python** et agnostique aux modèles, APIs, sources de données ou bases de données.
+      2. **IDE visuel** pour la construction et le test de flux de travail par glisser-déposer.
+      3. **Aire de jeu** pour tester et itérer immédiatement les flux de travail avec un contrôle étape par étape.
+      4. **Orchestration multi-agents** et gestion des conversations et de la récupération.
+      5. **Service cloud gratuit** pour démarrer en quelques minutes sans configuration.
+      6. **Publication en tant qu'API** ou export en tant qu'application Python.
+      7. **Observabilité** avec intégration LangSmith, LangFuse ou LangWatch.
+      8. **Niveau entreprise** sécurité et évolutivité avec le service cloud DataStax Langflow gratuit.
+      9. **Personnalisation des flux de travail** ou création de flux entièrement en Python.
+      10. **Intégrations écosystème** comme composants réutilisables pour tout modèle, API ou base de données.
+
+      ## Intégrations
+
+      ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  pt:
+    description: Construtor de aplicativos low-code para aplicações RAG e de IA multi-agente
+    readme: |-
+      Langflow é um construtor de aplicativos low-code para aplicações RAG e de IA multi-agente. É baseado em Python e agnóstico a qualquer modelo, API ou banco de dados.
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## Recursos
+
+      1. **Baseado em Python** e agnóstico a modelos, APIs, fontes de dados ou bancos de dados.
+      2. **IDE Visual** para construção e teste de fluxos de trabalho com arrastar e soltar.
+      3. **Playground** para testar e iterar fluxos de trabalho imediatamente com controle passo a passo.
+      4. Orquestração **multi-agente** e gerenciamento e recuperação de conversas.
+      5. **Serviço em nuvem gratuito** para começar em minutos sem configuração.
+      6. **Publicação como API** ou exportação como aplicação Python.
+      7. **Observabilidade** com integração LangSmith, LangFuse ou LangWatch.
+      8. Segurança e escalabilidade de **nível empresarial** com serviço gratuito DataStax Langflow na nuvem.
+      9. **Personalização de fluxos de trabalho** ou criação de fluxos inteiramente usando Python.
+      10. **Integrações do ecossistema** como componentes reutilizáveis para qualquer modelo, API ou banco de dados.
+
+      ## Integrações
+
+      ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  ru:
+    description: Конструктор приложений с низким кодом для RAG и мультиагентных
+      ИИ-приложений
+    readme: |-
+      Langflow - это конструктор приложений с низким порогом входа для RAG и мультиагентных ИИ-приложений. Он основан на Python и агностичен к любой модели, API или базе данных.
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## Возможности
+
+      1. **Основан на Python** и агностичен к моделям, API, источникам данных или базам данных.
+      2. **Визуальная IDE** для создания и тестирования рабочих процессов путем перетаскивания.
+      3. **Playground** для мгновенного тестирования и итерации рабочих процессов с пошаговым контролем.
+      4. **Мультиагентная** оркестрация и управление диалогами и поиском.
+      5. **Бесплатный облачный сервис** для быстрого старта без настройки.
+      6. **Публикация в виде API** или экспорт в виде Python-приложения.
+      7. **Наблюдаемость** с интеграцией LangSmith, LangFuse или LangWatch.
+      8. **Корпоративный уровень** безопасности и масштабируемости с бесплатным облачным сервисом DataStax Langflow.
+      9. **Настройка рабочих процессов** или создание потоков полностью с использованием Python.
+      10. **Интеграции экосистемы** как многоразовые компоненты для любой модели, API или базы данных.
+
+      ## Интеграции
+
+      ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  ko:
+    description: RAG 및 멀티 에이전트 AI 애플리케이션을 위한 로우코드 앱 빌더
+    readme: |-
+      Langflow는 RAG 및 멀티 에이전트 AI 애플리케이션을 위한 로우코드 앱 빌더입니다. Python 기반이며 모든 모델, API 또는 데이터베이스에 구애받지 않습니다.
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## 특징
+
+      1. **Python 기반**이며 모델, API, 데이터 소스 또는 데이터베이스에 구애받지 않습니다.
+      2. 드래그 앤 드롭 방식의 워크플로우 구축 및 테스트를 위한 **시각적 IDE**.
+      3. 단계별 제어로 워크플로우를 즉시 테스트하고 반복할 수 있는 **플레이그라운드**.
+      4. **멀티 에이전트** 오케스트레이션과 대화 관리 및 검색.
+      5. 설정 없이 몇 분 만에 시작할 수 있는 **무료 클라우드 서비스**.
+      6. **API로 게시** 또는 Python 애플리케이션으로 내보내기.
+      7. LangSmith, LangFuse 또는 LangWatch 통합을 통한 **관찰 가능성**.
+      8. 무료 DataStax Langflow 클라우드 서비스를 통한 **기업급** 보안 및 확장성.
+      9. Python만 사용하여 워크플로우를 **사용자 정의**하거나 완전히 새로 만들 수 있습니다.
+      10. 모든 모델, API 또는 데이터베이스를 위한 재사용 가능한 구성 요소로서의 **생태계 통합**.
+
+      ## 통합
+
+      ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  it:
+    description:
+      Costruttore di applicazioni low-code per RAG e applicazioni di IA
+      multi-agente
+    readme: |-
+      Langflow è un costruttore di applicazioni low-code per applicazioni RAG e AI multi-agente. È basato su Python ed è agnostico rispetto a qualsiasi modello, API o database.
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## Caratteristiche
+
+      1. **Basato su Python** e agnostico rispetto a modelli, API, fonti dati o database.
+      2. **IDE visuale** per la creazione e il test dei flussi di lavoro con drag-and-drop.
+      3. **Playground** per testare e iterare immediatamente i flussi di lavoro con controllo passo-passo.
+      4. Orchestrazione **multi-agente** e gestione delle conversazioni e recupero.
+      5. **Servizio cloud gratuito** per iniziare in pochi minuti senza configurazione.
+      6. **Pubblicazione come API** o esportazione come applicazione Python.
+      7. **Osservabilità** con integrazione LangSmith, LangFuse o LangWatch.
+      8. Sicurezza e scalabilità di **livello enterprise** con il servizio cloud gratuito DataStax Langflow.
+      9. **Personalizzazione dei flussi di lavoro** o creazione di flussi interamente usando Python.
+      10. **Integrazioni ecosistema** come componenti riutilizzabili per qualsiasi modello, API o database.
+
+      ## Integrazioni
+
+      ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  ar:
+    description:
+      منصة إنشاء تطبيقات منخفضة التعليمات البرمجية لتطبيقات RAG والذكاء
+      الاصطناعي متعدد الوكلاء
+    readme: |-
+      لانجفلو هو منشئ تطبيقات منخفض الكود لتطبيقات الذكاء الاصطناعي متعددة الوكلاء وRAG. يعتمد على بايثون وهو محايد لأي نموذج أو واجهة برمجة تطبيقات أو قاعدة بيانات.
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## المميزات
+
+      1. **يعتمد على بايثون** ومحايد للنماذج وواجهات برمجة التطبيقات ومصادر البيانات وقواعد البيانات.
+      2. **بيئة تطوير مرئية** لبناء واختبار مسارات العمل بالسحب والإفلات.
+      3. **ساحة تجريب** لاختبار وتكرار مسارات العمل فوراً مع تحكم خطوة بخطوة.
+      4. **تنسيق متعدد الوكلاء** وإدارة المحادثات واسترجاعها.
+      5. **خدمة سحابية مجانية** للبدء في دقائق بدون إعداد.
+      6. **النشر كواجهة برمجة تطبيقات** أو التصدير كتطبيق بايثون.
+      7. **قابلية المراقبة** مع تكامل LangSmith وLangFuse وLangWatch.
+      8. **مستوى مؤسسي** من الأمان وقابلية التوسع مع خدمة DataStax Langflow السحابية المجانية.
+      9. **تخصيص مسارات العمل** أو إنشاء التدفقات باستخدام بايثون فقط.
+      10. **تكاملات النظام البيئي** كمكونات قابلة لإعادة الاستخدام لأي نموذج أو واجهة برمجة تطبيقات أو قاعدة بيانات.
+
+      ## التكاملات
+
+      ![التكاملات](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  zh:
+    description: 低代码应用程序构建器，用于RAG和多智能体AI应用程序
+    readme: |-
+      Langflow 是一个用于 RAG 和多智能体 AI 应用程序的低代码应用构建器。它基于 Python，并且对任何模型、API 或数据库都保持中立。
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## 功能特点
+
+      1. **基于 Python**，对模型、API、数据源或数据库保持中立。
+      2. **可视化 IDE**，用于拖放式构建和测试工作流。
+      3. **游乐场**，可立即测试和迭代工作流，并进行逐步控制。
+      4. **多智能体**编排、对话管理和检索。
+      5. **免费云服务**，几分钟内即可开始使用，无需设置。
+      6. **发布为 API** 或导出为 Python 应用程序。
+      7. 通过 LangSmith、LangFuse 或 LangWatch 集成实现**可观察性**。
+      8. 通过免费的 DataStax Langflow 云服务提供**企业级**安全性和可扩展性。
+      9. **自定义工作流**或仅使用 Python 完全创建流程。
+      10. **生态系统集成**作为任何模型、API 或数据库的可重用组件。
+
+      ## 集成
+
+      ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  hi:
+    description: कम-कोड ऐप बिल्डर RAG और मल्टी-एजेंट AI एप्लिकेशन के लिए
+    readme: |-
+      लैंगफ्लो RAG और मल्टी-एजेंट AI एप्लिकेशन के लिए एक लो-कोड ऐप बिल्डर है। यह पायथन-आधारित है और किसी भी मॉडल, API, या डेटाबेस के लिए तटस्थ है।
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## विशेषताएं
+
+      1. **पायथन-आधारित** और मॉडल, API, डेटा स्रोतों, या डेटाबेस के लिए तटस्थ।
+      2. वर्कफ्लो के ड्रैग-एंड-ड्रॉप निर्माण और परीक्षण के लिए **विजुअल IDE**।
+      3. वर्कफ्लो को तुरंत परीक्षण और चरण-दर-चरण नियंत्रण के साथ पुनरावृत्ति के लिए **प्लेग्राउंड**।
+      4. **मल्टी-एजेंट** ऑर्केस्ट्रेशन और वार्तालाप प्रबंधन और पुनर्प्राप्ति।
+      5. बिना किसी सेटअप के मिनटों में शुरू करने के लिए **मुफ्त क्लाउड सेवा**।
+      6. **API के रूप में प्रकाशित करें** या पायथन एप्लिकेशन के रूप में निर्यात करें।
+      7. LangSmith, LangFuse, या LangWatch एकीकरण के साथ **अवलोकन क्षमता**।
+      8. मुफ्त DataStax लैंगफ्लो क्लाउड सेवा के साथ **एंटरप्राइज-ग्रेड** सुरक्षा और स्केलेबिलिटी।
+      9. **वर्कफ्लो को कस्टमाइज करें** या केवल पायथन का उपयोग करके पूरी तरह से फ्लो बनाएं।
+      10. किसी भी मॉडल, API या डेटाबेस के लिए पुन: प्रयोज्य घटकों के रूप में **इकोसिस्टम एकीकरण**।
+
+      ## एकीकरण
+
+      ![एकीकरण](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
+  ja:
+    description: RAGとマルチエージェントAIアプリケーション向けローコードアプリビルダー
+    readme: |-
+      Langflowは、RAGとマルチエージェントAIアプリケーション向けのローコードアプリビルダーです。Pythonベースで、モデル、API、またはデータベースに依存しません。
+
+      ![preview](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/hero.png)
+
+      <hr>
+
+      ## 機能
+
+      1. **Pythonベース**で、モデル、API、データソース、データベースに依存しません。
+      2. ドラッグ＆ドロップでワークフローを構築・テストできる**ビジュアルIDE**。
+      3. ワークフローを即座にテストし、段階的に制御できる**プレイグラウンド**。
+      4. **マルチエージェント**のオーケストレーションと会話管理、検索機能。
+      5. セットアップ不要で数分で始められる**無料クラウドサービス**。
+      6. APIとして公開、またはPythonアプリケーションとしてエクスポート可能。
+      7. LangSmith、LangFuse、またはLangWatchとの統合による**可観測性**。
+      8. DataStax Langflowクラウドサービスによる**エンタープライズグレード**のセキュリティとスケーラビリティ。
+      9. Pythonだけを使用してワークフローのカスタマイズや完全なフロー作成が可能。
+      10. あらゆるモデル、API、データベース向けの再利用可能なコンポーネントとしての**エコシステム統合**。
+
+      ## 統合
+
+      ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)

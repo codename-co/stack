@@ -1,0 +1,45 @@
+services:
+  # GraphQL Mesh, in charge of generating the GraphQL schema
+  graphql-schema-build:
+    build:
+      context: .
+    pull_policy: build
+    labels:
+      dash.name: GraphQL Mesh
+      dash.icon: graphql
+      dash.desc: Generates the GraphQL schema with Mesh
+      traefik.enable: false
+    volumes:
+      - type: volume
+        source: graphql-schema
+        target: /app/schema
+
+  # Hive Gateway, in charge of serving the GraphQL schema
+  graphql-gateway:
+    image: ghcr.io/ardatan/hive-gateway:${HIVE_GATEWAY_VERSION:-1.4}
+    depends_on:
+      graphql-schema-build:
+        condition: service_completed_successfully
+    # command: npm i @parcel/watcher@2.4.1 && supergraph
+    command: supergraph
+    # ports:
+    #   - :4000
+    labels:
+      dash.name: GraphQL Gateway
+      dash.icon: graphql
+      dash.desc: Serves the GraphQL schema with Hive
+      dash.url: https://$PROJECT.$DOMAIN/graphql
+      traefik.http.routers.graphql-gateway.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/graphql`)
+      traefik.http.services.graphql-gateway.loadbalancer.server.port: 4000
+    volumes:
+      # - /supergraph.graphql:/serve/supergraph.graphql:ro
+      - type: volume
+        source: graphql-schema
+        target: /serve/supergraph.graphql
+        volume:
+          subpath: supergraph.graphql
+        read_only: true
+
+volumes:
+  graphql-schema:
+    driver: local

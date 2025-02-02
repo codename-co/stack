@@ -1,0 +1,17 @@
+services:
+  trailbase:
+    image: trailbase/trailbase:${TRAILBASE_VERSION:-0.3.2}
+    restart: unless-stopped
+    # ports:
+    #   - 4000:4000
+    volumes:
+      - data:/app/traildepot
+    labels:
+      dash.name: Trailbase
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.trailbase.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.trailbase.loadbalancer.server.port: 4000
+
+volumes:
+  data:
+    driver: local

@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: bitwarden
+name: Bitwarden
+flavor: DockerCompose
+version: "2024.11.1-beta"
+updated_at: 2024-11-26
+description: An open source password manager
+author: Bitwarden
+license: GPL 3.0
+homepage: https://bitwarden.com
+repository: https://github.com/bitwarden/server
+stars: 15800
+tags: [security]
+alternativeTo: [1password, lastpass]
+readme: |
+  Bitwarden is the best password manager for securely storing, managing, and sharing sensitive online data such as passwords, passkeys, and credit cards.
+
+  ![preview](https://res.cloudinary.com/bw-com/image/upload/f_auto/v1/ctf/7rncvj1f8mw7/1PO0QhQSXq0swBoa9dxpsn/11b3504508449f6b03b63a12e5632b48/Bitwarden-multiple-devices.webp?_a=DAJAUVWIZAAB)
+
+  <hr>
+
+  ### Powerful security in minutes
+
+  Do more, secure more, and collaborate more! The Bitwarden Password Manager is fast and easy to set up for both individuals and businesses.
+
+  ### Unlimited passwords, unlimited devices
+
+  Cross platform access for mobile, browser, and desktop apps. Supported in over 50 languages.
+
+  ### Protect what's important to you
+
+  From family TV streaming logins to bank accounts, trust Bitwarden to securely generate, autofill, and protect your digital life.

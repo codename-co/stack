@@ -1,0 +1,8 @@
+services:
+  openspeedtest:
+    image: openspeedtest/latest:v${OPEN_SPEED_TEST_VERSION:-2.0.6}
+    restart: unless-stopped
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.openspeedtest.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.openspeedtest.loadbalancer.server.port: 3000

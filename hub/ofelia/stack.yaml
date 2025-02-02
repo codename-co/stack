@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: ofelia
+name: Ofelia
+icon: Ⓞ
+flavor: DockerCompose
+version: "0.3.15"
+updated_at: 2025-01-26
+description: A Docker job scheduler
+author: Máximo Cuadros
+license: MIT
+repository: https://github.com/mcuadros/ofelia
+stars: 3200
+tags:
+  - scheduler
+  - cron
+readme: >
+  Ofelia is a modern and low footprint job scheduler for docker environments, built on Go. Ofelia aims to be a replacement for the old fashioned cron.

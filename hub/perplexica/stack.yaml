@@ -1,0 +1,301 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: perplexica
+name: Perplexica
+icon: Ⓟ
+flavor: DockerCompose
+version: "1.9.3"
+updated_at: 2024-11-19
+description: AI-powered search engine
+author: ItzCrazyKns
+license: MIT
+repository: https://github.com/ItzCrazyKns/Perplexica
+stars: 18500
+tags:
+  - llm
+  - ai
+  - chatbot
+alternativeTo:
+  - perplexity
+readme: |
+  Perplexica is an open-source AI-powered searching tool or an AI-powered search engine that goes deep into the internet to find answers. Inspired by Perplexity AI, it's an open-source option that not just searches the web but understands your questions. It uses advanced machine learning algorithms like similarity searching and embeddings to refine results and provides clear answers with sources cited.
+
+  ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+  <hr>
+
+  ## Features
+
+  - **Local LLMs**: You can make use local LLMs such as Llama3 and Mixtral using Ollama.
+  - **Two Main Modes:**
+    - **Copilot Mode:** (In development) Boosts search by generating different queries to find more relevant internet sources. Like normal search instead of just using the context by SearxNG, it visits the top matches and tries to find relevant sources to the user's query directly from the page.
+    - **Normal Mode:** Processes your query and performs a web search.
+  - **Focus Modes:** Special modes to better answer specific types of questions. Perplexica currently has 6 focus modes:
+    - **All Mode:** Searches the entire web to find the best results.
+    - **Writing Assistant Mode:** Helpful for writing tasks that does not require searching the web.
+    - **Academic Search Mode:** Finds articles and papers, ideal for academic research.
+    - **YouTube Search Mode:** Finds YouTube videos based on the search query.
+    - **Wolfram Alpha Search Mode:** Answers queries that need calculations or data analysis using Wolfram Alpha.
+    - **Reddit Search Mode:** Searches Reddit for discussions and opinions related to the query.
+  - **Current Information:** Some search tools might give you outdated info because they use data from crawling bots and convert them into embeddings and store them in a index. Unlike them, Perplexica uses SearxNG, a metasearch engine to get the results and rerank and get the most relevant source out of it, ensuring you always get the latest information without the overhead of daily data updates.
+  - **API**: Integrate Perplexica into your existing applications and make use of its capibilities.
+i18n:
+  es:
+    description: Motor de búsqueda impulsado por IA
+    readme: |-
+      Perplexica es una herramienta de búsqueda de código abierto impulsada por IA o un motor de búsqueda potenciado por IA que profundiza en internet para encontrar respuestas. Inspirada en Perplexity AI, es una opción de código abierto que no solo busca en la web sino que comprende tus preguntas. Utiliza algoritmos avanzados de aprendizaje automático como búsqueda por similitud y embeddings para refinar resultados y proporciona respuestas claras con fuentes citadas.
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## Características
+
+      - **LLMs Locales**: Puedes hacer uso de LLMs locales como Llama3 y Mixtral usando Ollama.
+      - **Dos Modos Principales:**
+        - **Modo Copiloto:** (En desarrollo) Mejora la búsqueda generando diferentes consultas para encontrar fuentes de internet más relevantes. Como una búsqueda normal en lugar de usar solo el contexto de SearxNG, visita las mejores coincidencias y trata de encontrar fuentes relevantes para la consulta del usuario directamente desde la página.
+        - **Modo Normal:** Procesa tu consulta y realiza una búsqueda web.
+      - **Modos de Enfoque:** Modos especiales para responder mejor a tipos específicos de preguntas. Perplexica actualmente tiene 6 modos de enfoque:
+        - **Modo Todo:** Busca en toda la web para encontrar los mejores resultados.
+        - **Modo Asistente de Escritura:** Útil para tareas de escritura que no requieren buscar en la web.
+        - **Modo Búsqueda Académica:** Encuentra artículos y documentos, ideal para investigación académica.
+        - **Modo Búsqueda YouTube:** Encuentra videos de YouTube basados en la consulta de búsqueda.
+        - **Modo Búsqueda Wolfram Alpha:** Responde consultas que necesitan cálculos o análisis de datos usando Wolfram Alpha.
+        - **Modo Búsqueda Reddit:** Busca en Reddit discusiones y opiniones relacionadas con la consulta.
+      - **Información Actual:** Algunas herramientas de búsqueda pueden darte información desactualizada porque usan datos de bots de rastreo y los convierten en embeddings y los almacenan en un índice. A diferencia de ellos, Perplexica usa SearxNG, un motor de metabúsqueda para obtener los resultados y reordenar y obtener la fuente más relevante, asegurando que siempre obtengas la información más reciente sin la sobrecarga de actualizaciones diarias de datos.
+      - **API**: Integra Perplexica en tus aplicaciones existentes y aprovecha sus capacidades.
+  it:
+    description: Motore di ricerca basato sull'intelligenza artificiale
+    readme: |-
+      Perplexica è uno strumento di ricerca open-source basato sull'IA o un motore di ricerca potenziato dall'IA che esplora in profondità internet per trovare risposte. Ispirato da Perplexity AI, è un'opzione open-source che non si limita a cercare nel web ma comprende le tue domande. Utilizza algoritmi avanzati di machine learning come la ricerca per similitudine e gli embedding per raffinare i risultati e fornisce risposte chiare con citazione delle fonti.
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## Caratteristiche
+
+      - **LLM Locali**: Puoi utilizzare LLM locali come Llama3 e Mixtral usando Ollama.
+      - **Due Modalità Principali:**
+        - **Modalità Copilot:** (In sviluppo) Potenzia la ricerca generando diverse query per trovare fonti internet più pertinenti. Come nella ricerca normale invece di utilizzare solo il contesto di SearxNG, visita i risultati principali e cerca di trovare fonti rilevanti per la query dell'utente direttamente dalla pagina.
+        - **Modalità Normale:** Elabora la tua query ed esegue una ricerca web.
+      - **Modalità Focus:** Modalità speciali per rispondere meglio a tipi specifici di domande. Perplexica ha attualmente 6 modalità focus:
+        - **Modalità Completa:** Cerca in tutto il web per trovare i migliori risultati.
+        - **Modalità Assistente di Scrittura:** Utile per compiti di scrittura che non richiedono ricerche web.
+        - **Modalità Ricerca Accademica:** Trova articoli e documenti, ideale per la ricerca accademica.
+        - **Modalità Ricerca YouTube:** Trova video YouTube basati sulla query di ricerca.
+        - **Modalità Ricerca Wolfram Alpha:** Risponde a query che necessitano di calcoli o analisi dati usando Wolfram Alpha.
+        - **Modalità Ricerca Reddit:** Cerca su Reddit discussioni e opinioni relative alla query.
+      - **Informazioni Attuali:** Alcuni strumenti di ricerca potrebbero fornire informazioni obsolete perché utilizzano dati da bot di crawling e li convertono in embedding memorizzandoli in un indice. A differenza di questi, Perplexica utilizza SearxNG, un metamotore di ricerca per ottenere i risultati e riordinarli per ottenere la fonte più rilevante, assicurando che tu riceva sempre le informazioni più recenti senza il sovraccarico di aggiornamenti quotidiani dei dati.
+      - **API**: Integra Perplexica nelle tue applicazioni esistenti e sfrutta le sue capacità.
+  ru:
+    description: Поисковая система на базе искусственного интеллекта
+    readme: |-
+      Perplexica - это инструмент поиска с открытым исходным кодом на базе ИИ или поисковая система с ИИ, которая глубоко исследует интернет для поиска ответов. Вдохновленная Perplexity AI, это опция с открытым исходным кодом, которая не просто ищет в интернете, но и понимает ваши вопросы. Она использует продвинутые алгоритмы машинного обучения, такие как поиск по схожести и вложения, для уточнения результатов и предоставляет четкие ответы с указанием источников.
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## Функции
+
+      - **Локальные LLM**: Вы можете использовать локальные LLM, такие как Llama3 и Mixtral, используя Ollama.
+      - **Два основных режима:**
+        - **Режим Copilot:** (В разработке) Улучшает поиск, генерируя различные запросы для нахождения более релевантных интернет-источников. Как обычный поиск, вместо использования только контекста SearxNG, он посещает лучшие совпадения и пытается найти релевантные источники для запроса пользователя непосредственно со страницы.
+        - **Обычный режим:** Обрабатывает ваш запрос и выполняет веб-поиск.
+      - **Режимы фокусировки:** Специальные режимы для лучшего ответа на конкретные типы вопросов. Perplexica в настоящее время имеет 6 режимов фокусировки:
+        - **Общий режим:** Ищет по всему интернету для нахождения лучших результатов.
+        - **Режим помощника по письму:** Полезен для письменных задач, не требующих поиска в интернете.
+        - **Режим академического поиска:** Находит статьи и научные работы, идеален для академических исследований.
+        - **Режим поиска YouTube:** Находит видео на YouTube на основе поискового запроса.
+        - **Режим поиска Wolfram Alpha:** Отвечает на запросы, требующие вычислений или анализа данных, используя Wolfram Alpha.
+        - **Режим поиска Reddit:** Ищет обсуждения и мнения на Reddit, связанные с запросом.
+      - **Актуальная информация:** Некоторые поисковые инструменты могут давать устаревшую информацию, так как они используют данные от поисковых роботов и преобразуют их во вложения, сохраняя в индексе. В отличие от них, Perplexica использует SearxNG, метапоисковую систему, для получения результатов, их переранжирования и получения наиболее релевантного источника, обеспечивая всегда актуальную информацию без необходимости ежедневного обновления данных.
+      - **API**: Интегрируйте Perplexica в свои существующие приложения и используйте ее возможности.
+  fr:
+    description: Moteur de recherche propulsé par l'IA
+    readme: |-
+      Perplexica est un outil de recherche open-source propulsé par l'IA ou un moteur de recherche alimenté par l'IA qui explore en profondeur Internet pour trouver des réponses. Inspiré par Perplexity AI, c'est une option open-source qui ne fait pas que chercher sur le web mais comprend vos questions. Il utilise des algorithmes avancés d'apprentissage automatique comme la recherche par similarité et les embeddings pour affiner les résultats et fournit des réponses claires avec sources citées.
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - **LLMs Locaux** : Vous pouvez utiliser des LLMs locaux comme Llama3 et Mixtral en utilisant Ollama.
+      - **Deux Modes Principaux :**
+        - **Mode Copilote :** (En développement) Améliore la recherche en générant différentes requêtes pour trouver plus de sources Internet pertinentes. Comme une recherche normale, au lieu d'utiliser uniquement le contexte de SearxNG, il visite les meilleurs résultats et essaie de trouver des sources pertinentes directement depuis la page.
+        - **Mode Normal :** Traite votre requête et effectue une recherche web.
+      - **Modes de Focus :** Modes spéciaux pour mieux répondre à des types de questions spécifiques. Perplexica dispose actuellement de 6 modes de focus :
+        - **Mode Tout :** Recherche sur tout le web pour trouver les meilleurs résultats.
+        - **Mode Assistant d'Écriture :** Utile pour les tâches d'écriture ne nécessitant pas de recherche web.
+        - **Mode Recherche Académique :** Trouve des articles et des documents, idéal pour la recherche académique.
+        - **Mode Recherche YouTube :** Trouve des vidéos YouTube basées sur la requête de recherche.
+        - **Mode Recherche Wolfram Alpha :** Répond aux requêtes nécessitant des calculs ou une analyse de données via Wolfram Alpha.
+        - **Mode Recherche Reddit :** Recherche sur Reddit des discussions et opinions liées à la requête.
+      - **Informations Actuelles :** Certains outils de recherche peuvent vous donner des informations obsolètes car ils utilisent des données de robots d'indexation et les convertissent en embeddings stockés dans un index. Contrairement à eux, Perplexica utilise SearxNG, un métamoteur de recherche pour obtenir les résultats, les reclasser et obtenir la source la plus pertinente, garantissant que vous obtenez toujours les informations les plus récentes sans la surcharge des mises à jour quotidiennes.
+      - **API** : Intégrez Perplexica dans vos applications existantes et utilisez ses capacités.
+  pt:
+    description: Motor de busca com inteligência artificial
+    readme: |-
+      Perplexica é uma ferramenta de busca de código aberto alimentada por IA ou um mecanismo de busca com IA que mergulha profundamente na internet para encontrar respostas. Inspirado no Perplexity AI, é uma opção de código aberto que não apenas pesquisa na web, mas entende suas perguntas. Usa algoritmos avançados de aprendizado de máquina como busca por similaridade e embeddings para refinar resultados e fornece respostas claras com fontes citadas.
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## Funcionalidades
+
+      - **LLMs Locais**: Você pode utilizar LLMs locais como Llama3 e Mixtral usando Ollama.
+      - **Dois Modos Principais:**
+        - **Modo Copilot:** (Em desenvolvimento) Melhora a busca gerando diferentes consultas para encontrar fontes mais relevantes na internet. Como uma busca normal em vez de usar apenas o contexto do SearxNG, visita as principais correspondências e tenta encontrar fontes relevantes para a consulta do usuário diretamente da página.
+        - **Modo Normal:** Processa sua consulta e realiza uma busca na web.
+      - **Modos de Foco:** Modos especiais para responder melhor a tipos específicos de perguntas. Perplexica atualmente tem 6 modos de foco:
+        - **Modo Completo:** Pesquisa em toda a web para encontrar os melhores resultados.
+        - **Modo Assistente de Escrita:** Útil para tarefas de escrita que não requerem busca na web.
+        - **Modo de Busca Acadêmica:** Encontra artigos e papers, ideal para pesquisa acadêmica.
+        - **Modo de Busca no YouTube:** Encontra vídeos do YouTube com base na consulta de pesquisa.
+        - **Modo de Busca Wolfram Alpha:** Responde consultas que precisam de cálculos ou análise de dados usando Wolfram Alpha.
+        - **Modo de Busca no Reddit:** Pesquisa no Reddit por discussões e opiniões relacionadas à consulta.
+      - **Informações Atuais:** Algumas ferramentas de busca podem fornecer informações desatualizadas porque usam dados de robôs de rastreamento e os convertem em embeddings e os armazenam em um índice. Diferentemente delas, o Perplexica usa o SearxNG, um metamecanismo de busca para obter os resultados e reclassificar e obter a fonte mais relevante, garantindo que você sempre obtenha as informações mais recentes sem a sobrecarga de atualizações diárias de dados.
+      - **API**: Integre o Perplexica em seus aplicativos existentes e faça uso de suas capacidades.
+  ar:
+    description: محرك بحث مدعوم بالذكاء الاصطناعي
+    readme: |-
+      بيربليكسيكا هي أداة بحث مفتوحة المصدر مدعومة بالذكاء الاصطناعي تتعمق في الإنترنت للعثور على إجابات. مستوحاة من Perplexity AI، وهي خيار مفتوح المصدر لا يبحث في الويب فحسب، بل يفهم أسئلتك. يستخدم خوارزميات التعلم الآلي المتقدمة مثل البحث التشابهي والتضمينات لتحسين النتائج ويقدم إجابات واضحة مع ذكر المصادر.
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## المميزات
+
+      - **نماذج اللغة المحلية**: يمكنك استخدام نماذج اللغة المحلية مثل Llama3 و Mixtral باستخدام Ollama.
+      - **وضعان رئيسيان:**
+        - **وضع المساعد:** (قيد التطوير) يعزز البحث من خلال إنشاء استعلامات مختلفة للعثور على مصادر إنترنت أكثر صلة. مثل البحث العادي بدلاً من استخدام السياق بواسطة SearxNG فقط، يزور أفضل التطابقات ويحاول العثور على مصادر ذات صلة باستعلام المستخدم مباشرة من الصفحة.
+        - **الوضع العادي:** يعالج استعلامك ويجري بحثًا على الويب.
+      - **أوضاع التركيز:** أوضاع خاصة للإجابة بشكل أفضل على أنواع معينة من الأسئلة. يحتوي بيربليكسيكا حاليًا على 6 أوضاع تركيز:
+        - **وضع الكل:** يبحث في الويب بأكمله للعثور على أفضل النتائج.
+        - **وضع مساعد الكتابة:** مفيد لمهام الكتابة التي لا تتطلب البحث في الويب.
+        - **وضع البحث الأكاديمي:** يجد المقالات والأوراق البحثية، مثالي للبحث الأكاديمي.
+        - **وضع بحث يوتيوب:** يجد مقاطع فيديو يوتيوب بناءً على استعلام البحث.
+        - **وضع بحث Wolfram Alpha:** يجيب على الاستعلامات التي تحتاج إلى حسابات أو تحليل بيانات باستخدام Wolfram Alpha.
+        - **وضع بحث ريديت:** يبحث في ريديت عن المناقشات والآراء المتعلقة بالاستعلام.
+      - **المعلومات الحالية:** قد تعطيك بعض أدوات البحث معلومات قديمة لأنها تستخدم بيانات من روبوتات الزحف وتحولها إلى تضمينات وتخزنها في فهرس. على عكسها، يستخدم بيربليكسيكا SearxNG، وهو محرك بحث متعدد للحصول على النتائج و
+  hi:
+    description: एआई-संचालित खोज इंजन
+    readme: |-
+      Perplexica एक ओपन-सोर्स AI-संचालित खोज टूल या AI-संचालित सर्च इंजन है जो उत्तरों को खोजने के लिए इंटरनेट में गहराई से जाता है। Perplexity AI से प्रेरित, यह एक ओपन-सोर्स विकल्प है जो न केवल वेब खोजता है बल्कि आपके प्रश्नों को समझता है। यह परिणामों को परिष्कृत करने के लिए समानता खोज और एम्बेडिंग जैसे उन्नत मशीन लर्निंग एल्गोरिदम का उपयोग करता है और स्रोतों के साथ स्पष्ट उत्तर प्रदान करता है।
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - **स्थानीय LLMs**: आप Ollama का उपयोग करके Llama3 और Mixtral जैसे स्थानीय LLMs का उपयोग कर सकते हैं।
+      - **दो मुख्य मोड:**
+        - **कोपायलट मोड:** (विकास में) अधिक प्रासंगिक इंटरनेट स्रोतों को खोजने के लिए विभिन्न क्वेरी जनरेट करके खोज को बढ़ाता है। सामान्य खोज की तरह, SearxNG द्वारा केवल संदर्भ का उपयोग करने के बजाय, यह शीर्ष मैचों पर जाता है और सीधे पेज से उपयोगकर्ता की क्वेरी से संबंधित प्रासंगिक स्रोतों को खोजने का प्रयास करता है।
+        - **सामान्य मोड:** आपकी क्वेरी को प्रोसेस करता है और वेब खोज करता है।
+      - **फोकस मोड:** विशिष्ट प्रकार के प्रश्नों का बेहतर उत्तर देने के लिए विशेष मोड। Perplexica में वर्तमान में 6 फोकस मोड हैं:
+        - **सभी मोड:** सर्वश्रेष्ठ परिणाम खोजने के लिए पूरे वेब में खोजता है।
+        - **लेखन सहायक मोड:** वेब खोज की आवश्यकता न होने वाले लेखन कार्यों के लिए सहायक।
+        - **अकादमिक खोज मोड:** लेख और शोधपत्र खोजता है, अकादमिक अनुसंधान के लिए आदर्श।
+        - **YouTube खोज मोड:** खोज क्वेरी के आधार पर YouTube वीडियो खोजता है।
+        - **Wolfram Alpha खोज मोड:** Wolfram Alpha का उपयोग करके गणना या डेटा विश्लेषण की आवश्यकता वाली क्वेरी का उत्तर देता है।
+        - **Reddit खोज मोड:** क्वेरी से संबंधित चर्चाओं और
+  zh:
+    description: AI驱动的搜索引擎
+    readme: |-
+      Perplexica是一个开源的人工智能搜索工具或搜索引擎，可以深入互联网寻找答案。受Perplexity AI启发，它是一个不仅可以搜索网页，还能理解你的问题的开源选项。它使用相似度搜索和嵌入等高级机器学习算法来优化结果，并提供带有引用来源的清晰答案。
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## 功能特点
+
+      - **本地LLM**：你可以通过Ollama使用本地LLM，如Llama3和Mixtral。
+      - **两种主要模式：**
+        - **副驾驶模式：**（开发中）通过生成不同的查询来提升搜索，找到更多相关的互联网资源。与普通搜索不同，它不仅使用SearxNG的上下文，还会访问排名靠前的匹配结果，直接从页面中寻找与用户查询相关的资源。
+        - **普通模式：**处理你的查询并执行网络搜索。
+      - **专注模式：**特殊模式可以更好地回答特定类型的问题。Perplexica目前有6种专注模式：
+        - **全模式：**搜索整个网络以找到最佳结果。
+        - **写作助手模式：**适用于不需要搜索网络的写作任务。
+        - **学术搜索模式：**查找文章和论文，适合学术研究。
+        - **YouTube搜索模式：**根据搜索查询查找YouTube视频。
+        - **Wolfram Alpha搜索模式：**使用Wolfram Alpha回答需要计算或数据分析的查询。
+        - **Reddit搜索模式：**在Reddit上搜索相关讨论和意见。
+      - **最新信息：**一些搜索工具可能会给你过时的信息，因为它们使用爬虫机器人的数据并将其转换为嵌入存储在索引中。与它们不同，Perplexica使用SearxNG元搜索引擎获取结果，并重新排序获得最相关的源，确保你始终获得最新信息，无需每日数据更新的开销。
+      - **API**：将Perplexica集成到你现有的应用程序中，利用其功能。
+  de:
+    description: KI-gestützte Suchmaschine
+    readme: |-
+      Perplexica ist ein quelloffenes KI-gestütztes Suchwerkzeug oder eine KI-gestützte Suchmaschine, die tief im Internet nach Antworten sucht. Inspiriert von Perplexity AI ist es eine Open-Source-Option, die nicht nur das Web durchsucht, sondern Ihre Fragen versteht. Es verwendet fortschrittliche maschinelle Lernalgorithmen wie Ähnlichkeitssuche und Embeddings, um Ergebnisse zu verfeinern und liefert klare Antworten mit zitierten Quellen.
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## Funktionen
+
+      - **Lokale LLMs**: Sie können lokale LLMs wie Llama3 und Mixtral mit Ollama nutzen.
+      - **Zwei Hauptmodi:**
+        - **Copilot-Modus:** (In Entwicklung) Verbessert die Suche durch Generierung verschiedener Abfragen, um relevantere Internetquellen zu finden. Wie bei einer normalen Suche besucht es die besten Übereinstimmungen und versucht, anstatt nur den Kontext von SearxNG zu verwenden, relevante Quellen direkt von der Seite zur Benutzeranfrage zu finden.
+        - **Normaler Modus:** Verarbeitet Ihre Anfrage und führt eine Websuche durch.
+      - **Fokus-Modi:** Spezielle Modi für bessere Antworten auf spezifische Fragetypen. Perplexica hat derzeit 6 Fokus-Modi:
+        - **Alle-Modus:** Durchsucht das gesamte Web nach den besten Ergebnissen.
+        - **Schreibassistent-Modus:** Hilfreich für Schreibaufgaben, die keine Websuche erfordern.
+        - **Akademischer Suchmodus:** Findet Artikel und Papers, ideal für akademische Recherche.
+        - **YouTube-Suchmodus:** Findet YouTube-Videos basierend auf der Suchanfrage.
+        - **Wolfram Alpha-Suchmodus:** Beantwortet Anfragen, die Berechnungen oder Datenanalysen mit Wolfram Alpha benötigen.
+        - **Reddit-Suchmodus:** Durchsucht Reddit nach Diskussionen und Meinungen zur Anfrage.
+      - **Aktuelle Informationen:** Einige Suchwerkzeuge liefern möglicherweise veraltete Informationen, da sie Daten von Crawling-Bots verwenden und diese in Embeddings umwandeln und in einem Index speichern. Im Gegensatz dazu verwendet Perplexica SearxNG, eine Metasuchmaschine, um die Ergebnisse zu erhalten, neu zu ordnen und die relevanteste Quelle daraus zu gewinnen, was sicherstellt, dass Sie immer die neuesten Informationen ohne den Overhead täglicher Datenaktualisierungen erhalten.
+      - **API**: Integrieren Sie Perplexica in Ihre bestehenden Anwendungen und nutzen Sie dessen Fähigkeiten.
+  ko:
+    description: AI 기반 검색엔진
+    readme: |-
+      Perplexica는 인터넷을 깊이 검색하여 답을 찾는 오픈소스 AI 기반 검색 도구 또는 AI 기반 검색 엔진입니다. Perplexity AI에서 영감을 받아 만들어진 이 오픈소스 옵션은 단순히 웹을 검색할 뿐만 아니라 질문을 이해합니다. 유사도 검색과 임베딩과 같은 고급 머신러닝 알고리즘을 사용하여 결과를 개선하고 출처가 인용된 명확한 답변을 제공합니다.
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## 기능
+
+      - **로컬 LLM**: Ollama를 사용하여 Llama3와 Mixtral 같은 로컬 LLM을 활용할 수 있습니다.
+      - **두 가지 주요 모드:**
+        - **코파일럿 모드:** (개발 중) 더 관련성 있는 인터넷 소스를 찾기 위해 다양한 쿼리를 생성하여 검색을 향상시킵니다. SearxNG의 컨텍스트만 사용하는 대신 상위 매칭 결과를 방문하여 페이지에서 직접 사용자의 쿼리와 관련된 소스를 찾으려고 시도합니다.
+        - **일반 모드:** 쿼리를 처리하고 웹 검색을 수행합니다.
+      - **포커스 모드:** 특정 유형의 질문에 더 나은 답변을 제공하는 특별 모드입니다. Perplexica는 현재 6가지 포커스 모드를 제공합니다:
+        - **전체 모드:** 최상의 결과를 찾기 위해 전체 웹을 검색합니다.
+        - **글쓰기 지원 모드:** 웹 검색이 필요하지 않은 글쓰기 작업에 도움이 됩니다.
+        - **학술 검색 모드:** 학술 연구에 이상적인 논문과 기사를 찾습니다.
+        - **유튜브 검색 모드:** 검색 쿼리를 기반으로 유튜브 동영상을 찾습니다.
+        - **Wolfram Alpha 검색 모드:** Wolfram Alpha를 사용하여 계산이나 데이터 분석이 필요한 쿼리에 답변합니다.
+        - **레딧 검색 모드:** 쿼리와 관련된 토론과 의견을 레딧에서 검색합니다.
+      - **최신 정보:** 일부 검색 도구는 크롤링 봇의 데이터를 임베딩으로 변환하여 인덱스에 저장하기 때문에 오래된 정보를 제공할 수 있습니다. 이와 달리 Perplexica는 SearxNG 메타검색 엔진을 사용하여 결과를 얻고 재순위화하여 가장 관련성 있는 소스를 찾아냄으로써, 일일 데이터 업데이트의 부담 없이 항상
+  ja:
+    description: AI搭載検索エンジン
+    readme: |-
+      Perplexicaは、インターネットを深く検索して回答を見つけるAI駆動の検索ツール、またはAI駆動の検索エンジンのオープンソースです。Perplexity AIにインスパイアされ、単にウェブを検索するだけでなく、質問を理解するオープンソースのオプションです。類似性検索や埋め込みなどの高度な機械学習アルゴリズムを使用して結果を絞り込み、ソースを引用した明確な回答を提供します。
+
+      ![preview](https://github.com/ItzCrazyKns/Perplexica/raw/master/.assets/perplexica-preview.gif)
+
+      <hr>
+
+      ## 機能
+
+      - **ローカルLLM**: Ollamaを使用してLlama3やMixtralなどのローカルLLMを利用できます。
+      - **2つのメインモード:**
+        - **コパイロットモード:** (開発中) より関連性の高いインターネットソースを見つけるために異なるクエリを生成して検索を強化します。通常の検索とは異なり、SearxNGによるコンテキストを使用するだけでなく、上位の一致を訪問し、ページから直接ユーザーのクエリに関連するソースを見つけようとします。
+        - **通常モード:** クエリを処理してウェブ検索を実行します。
+      - **フォーカスモード:** 特定の種類の質問により良く答えるための特別なモード。Perplexicaには現在6つのフォーカスモードがあります：
+        - **全モード:** 最適な結果を見つけるために全ウェブを検索します。
+        - **文章作成アシスタントモード:** ウェブ検索を必要としない文章作成タスクに役立ちます。
+        - **学術検索モード:** 論文や記事を見つけ、学術研究に最適です。
+        - **YouTube検索モード:** 検索クエリに基づいてYouTube動画を見つけます。
+        - **Wolfram Alpha検索モード:** Wolfram Alphaを使用して計算やデータ分析が必要なクエリに回答します。
+        - **Reddit検索モード:** クエリに関連する議論や意見をRedditで検索します。
+      - **最新情報:** 一部の検索ツールは、クローリングボットからのデータを埋め込みに変換してインデックスに保存するため、古い情報を提供する可能性があります。それらとは異なり、Perplexicaはメタ検索エンジンSearxNGを使用して結果を取得し、最も関連性の高いソースを再ランク付けして取得するため、日々のデータ更新のオーバーヘッドなしに常に最新の情報を得ることができます。
+      - **API**: Perplexicaを既存のアプリケーションに統合し、その機能を活用できます。

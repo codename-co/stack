@@ -1,0 +1,127 @@
+# Original: <https://github.com/ToolJet/ToolJet/blob/00db0592b75de3759dbeaeb445d9056881a61e3c/docker-compose.yaml>
+
+services:
+  # tooljet-plugins:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./docker/plugins.Dockerfile.dev
+  #   image: tooljet-plugins:development
+  #   container_name: plugins
+  #   platform: linux/x86_64
+  #   volumes:
+  #     - ./plugins:/app/plugins
+  #   command: npm run --prefix plugins start
+
+  # tooljet-client:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./docker/client.Dockerfile.dev
+  #   image: tooljet/tooljet-client-ce:v${TOOLJET_VERSION:-2.4.2}
+  #   container_name: client
+  #   platform: linux/amd64
+  #   volumes:
+  #     - ./frontend:/app/frontend:delegated
+  #     # - ./plugins:/app/plugins
+  #     - /app/frontend/node_modules/
+  #   ports:
+  #     - 8082:8082
+  #   environment:
+  #     - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+  #     - NODE_ENV=development
+  #     - SERVE_CLIENT=false
+  #   command: npm run --prefix frontend start
+
+  # tooljet-server:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./docker/server.Dockerfile.dev
+  #   image: tooljet-server:development
+  #   container_name: server
+  #   platform: linux/x86_64
+  #   depends_on:
+  #     - postgres
+  #   volumes:
+  #     - ./server:/app/server:delegated
+  #     - ./plugins:/app/plugins
+  #     - /app/server/node_modules/
+  #     - ./.env:/app/.env
+  #     - ./.env.test:/app/.env.test
+  #   ports:
+  #     - 3000:3000
+  #   environment:
+  #     - SERVE_CLIENT=false
+  #     - FORCE_COLOR=1
+  #   command: npm run --prefix server start:dev
+
+  tooljet:
+    tty: true
+    stdin_open: true
+    container_name: Tooljet-app
+    image: tooljet/tooljet-ce:v${TOOLJET_VERSION:-3.0.14}-ce-lts
+    platform: linux/amd64
+    restart: always
+    env_file: .env
+    # ports:
+    #   - 80:80
+    deploy: # Please adjust the resource according to your usecase
+      resources:
+        limits:
+          cpus: "1"
+          memory: 2G
+    depends_on:
+      - tooljet-postgres
+      - tooljet-redis
+    environment:
+      SERVE_CLIENT: "true"
+      PORT: "80"
+    command: npm run start:prod
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.tooljet.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.tooljet.loadbalancer.server.port: 80
+
+  tooljet-postgrest:
+    container_name: postgrest
+    image: postgrest/postgrest:v12.0.2
+    # ports:
+    #   - "3001:3000"
+    env_file:
+      - .env
+    depends_on:
+      - tooljet-postgres
+    labels:
+      dash.url: http://api.$PROJECT.$DOMAIN
+      traefik.http.routers.tooljet-postgrest.rule: Host(`api.$PROJECT.$DOMAIN`)
+      traefik.http.services.tooljet-postgrest.loadbalancer.server.port: 3000
+
+  tooljet-postgres:
+    container_name: ${PG_HOST}
+    image: postgres:13
+    restart: always
+    # ports:
+    #   - 5432:5432
+    volumes:
+      - postgres:/data/postgres
+    env_file: .env
+    environment:
+      - POSTGRES_USER=${PG_USER}
+      - POSTGRES_PASSWORD=${PG_PASS}
+
+  tooljet-redis:
+    container_name: ${REDIS_HOST}
+    image: redis:6.2
+    restart: always
+    deploy: # Please adjust the resource according to your usecase
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    env_file:
+      - .env
+    environment:
+      - MASTER=${REDIS_HOST}
+      - REDIS_USER=${REDIS_USER}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+
+volumes:
+  postgres:

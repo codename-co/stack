@@ -1,0 +1,11 @@
+services:
+  lobe-chat:
+    image: lobehub/lobe-chat:v${LOBECHAT_VERSION:-1.49.4}
+    restart: always
+    # ports:
+    #   - 3210:3210
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.lobe-chat.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.lobe-chat.loadbalancer.server.port: 3210

@@ -1,0 +1,32 @@
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v${MEILI_VERSION:-1.11}
+    volumes:
+      - data:/meili_data
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.meilisearch.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.meilisearch.loadbalancer.server.port: 7700
+
+  meilisearch-ui:
+    image: riccoxie/meilisearch-ui:v0.9.5
+    env_file: .env
+    environment:
+      REACT_APP_MEILISEARCH_URL: http://meilisearch:7700
+      # BASE_PATH: /admin
+      VITE_SINGLETON_MODE: true
+      VITE_SINGLETON_HOST: http://meilisearch:7700
+      VITE_SINGLETON_API_KEY: ${MEILI_MASTER_KEY}
+    depends_on:
+      meilisearch:
+        condition: service_started
+    labels:
+      dash.url: https://$PROJECT-ui.$DOMAIN
+      traefik.http.routers.meilisearch-ui.rule: Host(`$PROJECT-ui.$DOMAIN`)
+      traefik.http.services.meilisearch-ui.loadbalancer.server.port: 24900
+      # traefik.http.routers.meilisearch-ui.middlewares: admin
+      # traefik.http.middlewares.admin.stripprefix.prefixes: /admin
+
+volumes:
+  data:

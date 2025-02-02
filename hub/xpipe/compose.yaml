@@ -1,0 +1,18 @@
+services:
+  xpipe:
+    image: ghcr.io/xpipe-io/xpipe-webtop:main
+    restart: unless-stopped
+    # ports:
+    #   - 3000:3000
+    env_file: .env
+    volumes:
+      - config:/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.xpipe.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.xpipe.loadbalancer.server.port: 3000
+
+volumes:
+  config:
+    driver: local

@@ -1,0 +1,292 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: metabase
+name: Metabase
+flavor: DockerCompose
+version: "0.51.9.4"
+updated_at: 2024-12-21
+description: Business Intelligence for everyone
+author: Metabase
+license: AGPL
+homepage: https://www.metabase.com
+repository: https://github.com/metabase/metabase
+stars: 39200
+tags:
+  - bi
+  - analytics
+alternativeTo:
+  - powerbi
+  - tableau
+readme: |
+  Metabase is the easy, open-source way for everyone in your company to ask questions and learn from data.
+
+  ![Metabase Product Screenshot](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+  <hr>
+
+  ## Features
+
+  - [Set up in five minutes](https://www.metabase.com/docs/latest/setting-up-metabase.html) (we're not kidding).
+  - Let anyone on your team [ask questions](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) without knowing SQL.
+  - Use the [SQL editor](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql) for more complex queries.
+  - Build handsome, interactive [dashboards](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html) with filters, auto-refresh, fullscreen, and custom click behavior.
+  - Create [models](https://www.metabase.com/learn/getting-started/models) that clean up, annotate, and/or combine raw tables.
+  - Define canonical [segments and metrics](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html) for your team to use.
+  - Send data to Slack or email on a schedule with [dashboard subscriptions](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions).
+  - Set up [alerts](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) to have Metabase notify you when your data changes.
+  - [Embed charts and dashboards](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) in your app, or even [your entire Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
+
+  ## Supported databases
+
+  - [Officially supported databases](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+  - [Partner and Community drivers](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+i18n:
+  ar:
+    description: ذكاء الأعمال للجميع
+    readme: |-
+      ميتابيس هو الطريقة السهلة ومفتوحة المصدر التي تتيح لكل شخص في شركتك طرح الأسئلة والتعلم من البيانات.
+
+      ![لقطة شاشة لمنتج ميتابيس](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## المميزات
+
+      - [إعداد في خمس دقائق](https://www.metabase.com/docs/latest/setting-up-metabase.html) (نحن لا نمزح).
+      - دع أي شخص في فريقك [يطرح الأسئلة](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) دون معرفة SQL.
+      - استخدم [محرر SQL](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql) للاستعلامات الأكثر تعقيدًا.
+      - قم ببناء [لوحات معلومات](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html) جميلة وتفاعلية مع مرشحات، وتحديث تلقائي، وشاشة كاملة، وسلوك نقر مخصص.
+      - إنشاء [نماذج](https://www.metabase.com/learn/getting-started/models) لتنظيف أو توضيح و/أو دمج الجداول الأولية.
+      - تحديد [شرائح ومقاييس](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html) قياسية ليستخدمها فريقك.
+      - إرسال البيانات إلى سلاك أو البريد الإلكتروني وفق جدول زمني مع [اشتراكات لوحة المعلومات](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions).
+      - إعداد [تنبيهات](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) ليقوم ميتابيس بإخطارك عند تغير بياناتك.
+      - [تضمين المخططات ولوحات المعلومات](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) في تطبيقك، أو حتى [ميتابيس بالكامل](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
+
+      ## قواعد البيانات المدعومة
+
+      - [قواعد البيانات المدعومة رسمياً](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [برامج تشغيل الشركاء والمجتمع](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+  zh:
+    description: 人人都能用的商业智能
+    readme: |-
+      Metabase是一种简单、开源的方式，让公司中的每个人都能提出问题并从数据中学习。
+
+      ![Metabase产品截图](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## 功能特点
+
+      - [五分钟内完成设置](https://www.metabase.com/docs/latest/setting-up-metabase.html)（我们不是开玩笑）。
+      - 让团队中的任何人都能[提出问题](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html)，无需了解SQL。
+      - 使用[SQL编辑器](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql)进行更复杂的查询。
+      - 构建美观、交互式的[仪表板](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html)，具有过滤器、自动刷新、全屏和自定义点击行为功能。
+      - 创建[模型](https://www.metabase.com/learn/getting-started/models)来清理、注释和/或组合原始表格。
+      - 为团队定义规范的[细分和指标](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html)。
+      - 通过[仪表板订阅](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions)按计划发送数据到Slack或邮件。
+      - 设置[警报](https://www.metabase.com/docs/latest/users-guide/15-alerts.html)，当数据发生变化时Metabase会通知您。
+      - 在您的应用中[嵌入图表和仪表板](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html)，甚至可以[嵌入整个Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html)。
+
+      ## 支持的数据库
+
+      - [官方支持的数据库](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [合作伙伴和社区驱动程序](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+  es:
+    description: Inteligencia de Negocios para todos
+    readme: |-
+      Metabase es la forma fácil y de código abierto para que todos en tu empresa hagan preguntas y aprendan de los datos.
+
+      ![Captura de pantalla del producto Metabase](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## Características
+
+      - [Configura en cinco minutos](https://www.metabase.com/docs/latest/setting-up-metabase.html) (no es broma).
+      - Permite que cualquiera en tu equipo [haga preguntas](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) sin saber SQL.
+      - Usa el [editor SQL](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql) para consultas más complejas.
+      - Construye elegantes e interactivos [tableros](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html) con filtros, actualización automática, pantalla completa y comportamiento personalizado de clics.
+      - Crea [modelos](https://www.metabase.com/learn/getting-started/models) que limpian, anotan y/o combinan tablas sin procesar.
+      - Define [segmentos y métricas](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html) canónicos para que use tu equipo.
+      - Envía datos a Slack o correo electrónico según un horario con [suscripciones a tableros](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions).
+      - Configura [alertas](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) para que Metabase te notifique cuando tus datos cambien.
+      - [Incrusta gráficos y tableros](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) en tu aplicación, o incluso [tu Metabase completo](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
+
+      ## Bases de datos soportadas
+
+      - [Bases de datos oficialmente soportadas](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [Controladores de socios y comunidad](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+  fr:
+    description: Business Intelligence pour tous
+    readme: |-
+      Metabase est le moyen simple et open-source permettant à chacun dans votre entreprise de poser des questions et d'apprendre à partir des données.
+
+      ![Capture d'écran du produit Metabase](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - [Installation en cinq minutes](https://www.metabase.com/docs/latest/setting-up-metabase.html) (nous ne plaisantons pas).
+      - Permettez à n'importe qui dans votre équipe de [poser des questions](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) sans connaître SQL.
+      - Utilisez l'[éditeur SQL](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql) pour des requêtes plus complexes.
+      - Créez de beaux [tableaux de bord](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html) interactifs avec filtres, actualisation automatique, plein écran et comportement de clic personnalisé.
+      - Créez des [modèles](https://www.metabase.com/learn/getting-started/models) qui nettoient, annotent et/ou combinent des tables brutes.
+      - Définissez des [segments et métriques](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html) canoniques pour votre équipe.
+      - Envoyez des données vers Slack ou par email selon un calendrier avec les [abonnements aux tableaux de bord](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions).
+      - Configurez des [alertes](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) pour que Metabase vous notifie lorsque vos données changent.
+      - [Intégrez des graphiques et tableaux de bord](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) dans votre application, ou même [votre Metabase complet](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
+
+      ## Bases de données prises en charge
+
+      - [Bases de données officiellement supportées](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [Pilotes partenaires et communautaires](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+  it:
+    description: Business Intelligence per tutti
+    readme: |-
+      Metabase è il modo semplice e open-source per permettere a tutti nella tua azienda di fare domande e imparare dai dati.
+
+      ![Screenshot del Prodotto Metabase](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## Caratteristiche
+
+      - [Configurazione in cinque minuti](https://www.metabase.com/docs/latest/setting-up-metabase.html) (non stiamo scherzando).
+      - Permetti a chiunque nel tuo team di [fare domande](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) senza conoscere SQL.
+      - Usa l'[editor SQL](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql) per query più complesse.
+      - Crea eleganti [dashboard](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html) interattive con filtri, aggiornamento automatico, schermo intero e comportamento personalizzato dei click.
+      - Crea [modelli](https://www.metabase.com/learn/getting-started/models) che puliscono, annotano e/o combinano tabelle grezze.
+      - Definisci [segmenti e metriche](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html) canonici per il tuo team.
+      - Invia dati a Slack o email secondo una programmazione con [sottoscrizioni dashboard](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions).
+      - Imposta [avvisi](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) per fare in modo che Metabase ti notifichi quando i tuoi dati cambiano.
+      - [Incorpora grafici e dashboard](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) nella tua app, o persino [il tuo intero Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
+
+      ## Database supportati
+
+      - [Database ufficialmente supportati](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [Driver partner e della comunità](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+  ja:
+    description: 誰でもできるビジネスインテリジェンス
+    readme: |-
+      Metabaseは、企業の全員がデータについて質問し、学ぶことができる、簡単でオープンソースな方法です。
+
+      ![Metabase製品のスクリーンショット](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## 機能
+
+      - [5分でセットアップ](https://www.metabase.com/docs/latest/setting-up-metabase.html)（冗談ではありません）。
+      - チームの誰でもSQLを知らなくても[質問できます](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html)。
+      - より複雑なクエリには[SQLエディタ](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql)を使用。
+      - フィルター、自動更新、全画面表示、カスタムクリック動作を備えた、見栄えの良いインタラクティブな[ダッシュボード](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html)を作成。
+      - 生のテーブルをクリーンアップ、注釈付け、結合する[モデル](https://www.metabase.com/learn/getting-started/models)を作成。
+      - チームが使用する標準的な[セグメントとメトリクス](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html)を定義。
+      - [ダッシュボードサブスクリプション](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions)でスケジュールに従ってSlackやメールにデータを送信。
+      - [アラート](https://www.metabase.com/docs/latest/users-guide/15-alerts.html)を設定してデータが変更された時に通知を受け取る。
+      - アプリにチャートやダッシュボードを[埋め込む](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html)か、[Metabase全体](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html)を埋め込む。
+
+      ## 対応データベース
+
+      - [公式対応データベース](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [パートナーおよびコミュニティドライバー](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+  pt:
+    description: Inteligência de Negócios para todos
+    readme: |-
+      Metabase é a maneira fácil e de código aberto para que todos em sua empresa façam perguntas e aprendam com dados.
+
+      ![Captura de Tela do Produto Metabase](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## Funcionalidades
+
+      - [Configure em cinco minutos](https://www.metabase.com/docs/latest/setting-up-metabase.html) (não estamos brincando).
+      - Permita que qualquer pessoa em sua equipe [faça perguntas](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) sem saber SQL.
+      - Use o [editor SQL](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql) para consultas mais complexas.
+      - Construa [painéis](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html) bonitos e interativos com filtros, atualização automática, tela cheia e comportamento personalizado de clique.
+      - Crie [modelos](https://www.metabase.com/learn/getting-started/models) que limpam, anotam e/ou combinam tabelas brutas.
+      - Defina [segmentos e métricas](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html) canônicos para sua equipe usar.
+      - Envie dados para Slack ou email em um cronograma com [assinaturas de painel](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions).
+      - Configure [alertas](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) para que o Metabase notifique você quando seus dados mudarem.
+      - [Incorpore gráficos e painéis](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) em seu aplicativo, ou até mesmo [seu Metabase inteiro](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
+
+      ## Bancos de dados suportados
+
+      - [Bancos de dados oficialmente suportados](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [Drivers de parceiros e da comunidade](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+  de:
+    description: Business Intelligence für alle
+    readme: |-
+      Metabase ist der einfache, quelloffene Weg für jeden in Ihrem Unternehmen, Fragen zu stellen und aus Daten zu lernen.
+
+      ![Metabase Produkt Screenshot](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## Funktionen
+
+      - [In fünf Minuten einrichten](https://www.metabase.com/docs/latest/setting-up-metabase.html) (wir machen keine Witze).
+      - Lassen Sie jeden in Ihrem Team [Fragen stellen](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) ohne SQL zu kennen.
+      - Nutzen Sie den [SQL-Editor](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql) für komplexere Abfragen.
+      - Erstellen Sie ansprechende, interaktive [Dashboards](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html) mit Filtern, automatischer Aktualisierung, Vollbildmodus und anpassbarem Klickverhalten.
+      - Erstellen Sie [Modelle](https://www.metabase.com/learn/getting-started/models), die Rohtabellen bereinigen, kommentieren und/oder kombinieren.
+      - Definieren Sie kanonische [Segmente und Metriken](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html) für Ihr Team.
+      - Senden Sie Daten zeitgesteuert per Slack oder E-Mail mit [Dashboard-Abonnements](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions).
+      - Richten Sie [Benachrichtigungen](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) ein, damit Metabase Sie über Datenänderungen informiert.
+      - [Betten Sie Diagramme und Dashboards](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) in Ihre App ein, oder sogar [Ihre gesamte Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
+
+      ## Unterstützte Datenbanken
+
+      - [Offiziell unterstützte Datenbanken](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [Partner- und Community-Treiber](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+  ko:
+    description: 모두를 위한 비즈니스 인텔리전스
+    readme: |-
+      Metabase는 회사의 모든 사람이 데이터에 대해 질문하고 배울 수 있는 쉽고 오픈소스인 방법입니다.
+
+      ![Metabase 제품 스크린샷](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## 기능
+
+      - [5분 안에 설치](https://www.metabase.com/docs/latest/setting-up-metabase.html) (농담이 아닙니다).
+      - SQL을 모르더라도 팀원 누구나 [질문할 수 있습니다](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html).
+      - 더 복잡한 쿼리를 위한 [SQL 에디터](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql)를 사용하세요.
+      - 필터, 자동 새로고침, 전체화면 및 맞춤 클릭 동작이 포함된 보기 좋은 인터랙티브 [대시보드](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html)를 구축하세요.
+      - 원시 테이블을 정리, 주석 처리 및/또는 결합하는 [모델](https://www.metabase.com/learn/getting-started/models)을 만드세요.
+      - 팀이 사용할 표준 [세그먼트와 메트릭](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html)을 정의하세요.
+      - [대시보드 구독](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions)으로 일정에 따라 Slack이나 이메일로 데이터를 전송하세요.
+      - [알림](https://www.metabase.com/docs/latest/users-guide/15-alerts.html)을 설정하여 데이터가 변경될 때 Metabase가 알려주도록 하세요.
+      - 앱에 차트와 대시보드를 [임베드](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html)하거나, [전체 Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html)를 임베드할 수 있습니다.
+
+      ## 지원되는 데이터베이스
+
+      - [공식 지원 데이터베이스](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [파트너 및 커뮤니티 드라이버](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
+  ru:
+    description: Бизнес-аналитика для всех
+    readme: |-
+      Metabase - это простой инструмент с открытым исходным кодом, позволяющий каждому сотруднику вашей компании задавать вопросы и получать знания из данных.
+
+      ![Metabase Product Screenshot](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+
+      <hr>
+
+      ## Возможности
+
+      - [Настройка за пять минут](https://www.metabase.com/docs/latest/setting-up-metabase.html) (мы не шутим).
+      - Позвольте любому члену вашей команды [задавать вопросы](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) без знания SQL.
+      - Используйте [SQL-редактор](https://www.metabase.com/docs/latest/questions/native-editor/writing-sql) для более сложных запросов.
+      - Создавайте красивые, интерактивные [дашборды](https://www.metabase.com/docs/latest/users-guide/07-dashboards.html) с фильтрами, автообновлением, полноэкранным режимом и настраиваемым поведением при клике.
+      - Создавайте [модели](https://www.metabase.com/learn/getting-started/models), которые очищают, аннотируют и/или объединяют исходные таблицы.
+      - Определяйте канонические [сегменты и метрики](https://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html) для использования вашей командой.
+      - Отправляйте данные в Slack или по электронной почте по расписанию с помощью [подписок на дашборды](https://www.metabase.com/docs/latest/users-guide/dashboard-subscriptions).
+      - Настраивайте [оповещения](https://www.metabase.com/docs/latest/users-guide/15-alerts.html), чтобы Metabase уведомлял вас об изменениях в данных.
+      - [Встраивайте графики и дашборды](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) в ваше приложение или даже [весь ваш Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
+
+      ## Поддерживаемые базы данных
+
+      - [Официально поддерживаемые базы данных](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
+      - [Партнерские и общественные драйверы](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)

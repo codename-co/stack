@@ -1,0 +1,16 @@
+services:
+  pgadmin:
+    image: dpage/pgadmin4:${PGADMIN_VERSION:-8}
+    restart: unless-stopped
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    env_file: .env
+    labels:
+      dash.name: pgAdmin
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.pgadmin.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.pgadmin.loadbalancer.server.port: 80
+
+volumes:
+  pgadmin:
+    driver: local

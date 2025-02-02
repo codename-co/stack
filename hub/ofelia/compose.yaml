@@ -1,0 +1,15 @@
+services:
+  ofelia:
+    image: mcuadros/ofelia:${OFELIA_VERSION:-0.3.15}
+    # depends_on:
+    #   - nginx
+    command: daemon --docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  nginx:
+    image: nginx
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.datecron.schedule: "@every 5s"
+      ofelia.job-exec.datecron.command: "uname -a"

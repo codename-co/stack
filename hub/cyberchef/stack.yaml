@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: cyberchef
+name: CyberChef
+icon: 👨‍🍳
+flavor: DockerCompose
+version: "10.19.4"
+updated_at: 2024-10-24
+description: The Cyber Swiss Army Knife webapp
+author: Matt Pepping
+license: Apache-2.0
+homepage: https://gchq.github.io/CyberChef/
+repository: https://github.com/gchq/CyberChef
+stars: 29800
+tags:
+  - security
+alternativeTo: []
+readme: |
+  CyberChef is a simple, intuitive web app for carrying out all manner of "cyber" operations within a web browser. These operations include simple encoding like XOR and Base64, more complex encryption like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, IPv6 and X.509 parsing, changing character encodings, and much more.
+
+  The tool is designed to enable both technical and non-technical analysts to manipulate data in complex ways without having to deal with complex tools or algorithms. It was conceived, designed, built and incrementally improved by an analyst in their 10% innovation time over several years.

@@ -1,0 +1,324 @@
+services:
+  # dns:
+  #   image: dockurr/dnsmasq:2.90
+  #   command: --no-daemon --log-queries --log-facility=-
+  #   ports:
+  #     - 53:53/udp
+  #   cap_add:
+  #     - NET_ADMIN
+  #   configs:
+  #     - source: dnsmasq_conf
+  #       target: /etc/dnsmasq.conf
+  #   labels:
+  #     dash.name: DNS
+  #     dash.desc: DNS server
+  #     dash.url: https://dns.$DOMAIN
+  #     traefik.http.routers.dns.rule: Host(`dns.$DOMAIN`)
+  #     traefik.http.services.dns.loadbalancer.server.port: 53
+
+  traefik:
+    image: traefik:v3.2
+    command:
+      - --providers.docker=true
+      - --entrypoints.https.address=:443
+      - --entrypoints.https.http.tls=true
+    ports:
+      - ${HTTP_PORT:-80}:80
+      - ${HTTPS_PORT:-443}:443
+      # - 8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # - ./config:/etc/traefik:ro
+      # - ./certs:/certs:ro
+    configs:
+      - source: traefik_conf
+        target: /etc/traefik/traefik.yml
+      - source: traefik_fileconf
+        target: /etc/traefik/fileConfig.yml
+      - source: server.cer
+        target: /certs/server.cer
+      - source: server.key
+        target: /certs/server.key
+    stop_grace_period: 0s
+    labels:
+      dash.name: Reverse proxy
+      dash.icon: traefikproxy
+      dash.desc: HTTP reverse proxy
+      dash.url: https://traefik.$DOMAIN/dashboard/#/http/routers
+      traefik.http.routers.traefik.rule: Host(`traefik.$DOMAIN`)
+      traefik.http.services.traefik.loadbalancer.server.port: 8080
+# configs:
+#   dnsmasq_conf:
+#     content: |
+#       #log all dns queries
+#       log-queries
+#       #dont use hosts nameservers
+#       no-resolv
+#       #use google as default nameservers
+#       server=8.8.4.4
+#       server=8.8.8.8
+#       #explicitly define host-ip mappings
+#       address=/router/10.1.1.1
+#       address=/server/10.1.1.2
+#       addres
+
+# services:
+#   # HTTP reverse proxy
+#   # <https://proxy.localhost/dashboard/#/http/routers>
+#   traefik:
+#     image: traefik:v3.2
+#     command:
+#       - --providers.docker=true
+#       - "--certificatesresolvers.default.tlschallenge=false" # Disable automatic cert generation
+#     ports:
+#       - ${HTTP_PORT:-80}:80
+#       - ${HTTPS_PORT:-443}:443
+#       # - 8080
+#     environment:
+#       - SSL_CERT_FILE=/certs/server.cer # Add these
+#       - SSL_KEY_FILE=/certs/server.key # environment variables
+#     volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock:ro
+#       - ./config:/etc/traefik:ro
+#       - ./certs:/certs:ro
+#     # configs:
+#     #   - source: traefik_conf
+#     #     target: /etc/traefik/traefik.yml
+#     stop_grace_period: 0s
+#     labels:
+#       dash.name: Reverse proxy
+#       dash.icon: traefikproxy
+#       dash.desc: HTTP reverse proxy
+#       dash.url: https://proxy.$DOMAIN/dashboard/#/http/routers
+#       traefik.http.routers.traefik.rule: Host(`proxy.$DOMAIN`)
+#       traefik.http.services.traefik.loadbalancer.server.port: 8080
+
+configs:
+  traefik_conf:
+    content: |
+      global:
+        checkNewVersion: false
+        sendAnonymousUsage: false
+
+      api:
+        dashboard: true
+        insecure: true
+
+      log:
+        {}
+        # level: DEBUG
+        # format: json
+
+      accessLog:
+        format: common
+        addInternals: true
+        # fields:
+        #   defaultMode: keep
+        #   names:
+        #     RequestHost: keep
+
+      entryPoints:
+        http:
+          address: :80
+          http:
+            redirections:
+              entryPoint:
+                to: https
+                scheme: https
+
+        https:
+          address: :443
+          http:
+            tls:
+              options: default
+            middlewares:
+              - security-headers@file
+              # - rate-limit@file
+
+      serversTransport:
+        insecureSkipVerify: true
+
+      #   https:
+      #     address: :443
+      #     http:
+      #       tls:
+      #         options: default
+      #         # domains:
+      #         #   - main: localhost
+      #         #     sans:
+      #         #       - proxy.localhost
+      #         #       - "*.localhost"
+      #       # middlewares:
+      #       #   - security-headers@file
+      #       #   - rate-limit@file
+
+      providers:
+        providersThrottleDuration: 2s
+
+        file:
+          filename: /etc/traefik/fileConfig.yml
+          watch: true
+
+        docker:
+          watch: true
+      #     # network: traefikproxy
+      #     exposedByDefault: true
+      #     defaultRule: Host(`{{ index .Labels "com.docker.compose.service" }}.$DOMAIN`)
+
+      # tls:
+      #   options:
+      #     default:
+      #       minVersion: VersionTLS12
+      #       sniStrict: true
+
+      #   stores:
+      #     default:
+      #       defaultCertificate:
+      #         certFile: /certs/server.cer
+      #         keyFile: /certs/server.key
+
+      #   certificates:
+      #     - certFile: /certs/server.cer
+      #       keyFile: /certs/server.key
+      #       stores:
+      #         - default
+
+  traefik_fileconf:
+    content: |
+      http:
+        ### accept self-signed certificates when proxying a HTTPS target
+        serversTransports:
+          insecureTransport:
+            insecureSkipVerify: true
+
+        ### MIDDLEWARES
+        middlewares:
+          ### Only Allow Local networks
+          local-ipwhitelist:
+            ipWhiteList:
+              sourceRange:
+                - 127.0.0.1/32 # localhost
+                - 10.0.0.0/8 # private class A
+                - 172.16.0.0/12 # private class B
+                - 192.168.0.0/16 # private class C
+
+          ### SECURITY HEADERS
+          security-headers:
+            headers:
+              customResponseHeaders: # field names are case-insensitive
+                X-Robots-Tag: "none,noarchive,nosnippet,notranslate,noimageindex"
+                Server: "" # prevent version disclosure
+                X-Powered-By: "" # prevent version disclosure
+                X-Forwarded-Proto: "https"
+                #Permissions-Policy: "geolocation=(self), midi=(self), camera=(self), usb=(self), magnetometer=(self), accelerometer=(self), gyroscope=(self), microphone=(self)"
+                #Cross-Origin-Embedder-Policy: "unsafe-none"
+                #Cross-Origin-Opener-Policy: "same-origin"
+                #Cross-Origin-Resource-Policy: "same-site"
+                X-Frames-Options: "" # Deactivate X-Frame-Options
+                Content-Security-Policy: "" # Deactivate CSP
+              sslProxyHeaders:
+                X-Forwarded-Proto: "https"
+              hostsProxyHeaders:
+                - "X-Forwarded-Host"
+                - "X-Forwarded-For"
+                - "X-Forwarded-Proto"
+              customRequestHeaders:
+                X-Forwarded-Proto: "https"
+              contentTypeNosniff: true # X-Content-Type-Options
+              # customFrameOptionsValue: "SAMEORIGIN" # X-Frame-Options
+              browserXssFilter: false # X-XSS-Protection; deprecated
+              referrerPolicy: "strict-origin-when-cross-origin" # Referrer-Policy
+              forceSTSHeader: true # HTTP-Strict-Transport-Security (HSTS)
+              stsIncludeSubdomains: true # HTTP-Strict-Transport-Security (HSTS)
+              stsSeconds: 63072000 # HTTP-Strict-Transport-Security (HSTS)
+              stsPreload: true # HTTP-Strict-Transport-Security (HSTS)
+              # contentSecurityPolicy: "block-all-mixed-content" # Content-Security-Policy (CSP)
+
+          ### rate limiting
+          rate-limit:
+            rateLimit:
+              average: 100
+              period: 1
+              burst: 100
+
+      ### Only use secure TLS ciphers
+      ### https://ssl-config.mozilla.org/#server=traefik&version=2.9&config=intermediate&guideline=5.6
+      tls:
+        certificates:
+          - certFile: /certs/server.cer
+            keyFile: /certs/server.key
+            stores:
+              - default
+
+        options:
+          default:
+            minVersion: VersionTLS12
+            cipherSuites:
+              - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+              - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+              - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+              - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+              - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+              - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
+            sniStrict: false # Change to false temporarily for testing
+
+        stores:
+          default:
+            defaultCertificate:
+              certFile: /certs/server.cer
+              keyFile: /certs/server.key
+
+  server.cer:
+    content: |
+      -----BEGIN CERTIFICATE-----
+      MIIDezCCAmOgAwIBAgIBezANBgkqhkiG9w0BAQsFADArMREwDwYDVQQKEwhjb2Rl
+      bmFtZTEWMBQGA1UEAxMNU3RhY2sgUm9vdCBDQTAeFw0yNDEyMjEyMjQ3MjBaFw0y
+      NzAzMjYyMjQ3MjBaMCsxETAPBgNVBAoTCGNvZGVuYW1lMRYwFAYDVQQDEw1TdGFj
+      ayBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnY1R9spc
+      V10kYVC9BVKv0BVwz/7Zws1jgnjdpUzdVu3AgdhztTX/PIKh0sZNKwPeofIY7Ud+
+      KyEL5YhpER65OuhTHUunBsc62nN8QR85QU9z+ccd6ldboCeBCULeIUq2VN3lw4S+
+      DngCtyST36VrssaIqsYyQ7YQgRCn/2V4oMXROpirV4CdPKOkZwS+jQQQt4mrpnmd
+      4xsCupUDNZ0mn/uiqlcELsxDUdhQWR5RoieaVHoTXxOGhkULB60szETUSkAISItg
+      7JdtlsovW8Je7Vwd0PiTd+J4uYnUFbnzLOM8WcIXsjdeWWpE0jpUhy0dITl0Gr3G
+      tw4HKkgu9uMqxQIDAQABo4GpMIGmMA4GA1UdDwEB/wQEAwIDiDBUBgNVHREETTBL
+      gglsb2NhbGhvc3SCCyoubG9jYWxob3N0gg0qLnN0YWNrLmxvY2Fsgg9zdGFjay5s
+      b2NhbGhvc3SCESouc3RhY2subG9jYWxob3N0MB0GA1UdDgQWBBRLbVRrAHmObRuH
+      XVbhzpcKHnEe9zAfBgNVHSMEGDAWgBQdRZETrSHOKWAqf3bNBdNsD6TjUzANBgkq
+      hkiG9w0BAQsFAAOCAQEAJYcrnenRnt1I+QejhL3SjD/0LEtnv8P6gtvNRu1uQ0Ez
+      NZUCS6tAWqY4Kctu86bschiP3f6Z7ZzUJl+sH+YEDkNg4iPn8hwRaqjipaoNQHMx
+      LPM5QPQGcdKOyznHRXcMXxFDcGNrx+77krzoawvWsOFCz/OnLWbvVOEsw3y+8Fvp
+      4SLTqKOubTXO33oxJ8GGxv+/vmr26VK5J3rlQQ5A8pFkq+Fmhtvw98N+lP50FKaj
+      mKPmJmzlGbgO/r59Oj9lUmK9OICLDStFgXrgYrB0kuPWcIBAh7Nbf/ojst6l/ydk
+      06RWnCyTV6QSUFxld3fGWrPbTxUMNTHLYbaeH4upaA==
+      -----END CERTIFICATE-----
+
+  server.key:
+    content: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCdjVH2ylxXXSRh
+      UL0FUq/QFXDP/tnCzWOCeN2lTN1W7cCB2HO1Nf88gqHSxk0rA96h8hjtR34rIQvl
+      iGkRHrk66FMdS6cGxzrac3xBHzlBT3P5xx3qV1ugJ4EJQt4hSrZU3eXDhL4OeAK3
+      JJPfpWuyxoiqxjJDthCBEKf/ZXigxdE6mKtXgJ08o6RnBL6NBBC3iaumeZ3jGwK6
+      lQM1nSaf+6KqVwQuzENR2FBZHlGiJ5pUehNfE4aGRQsHrSzMRNRKQAhIi2Dsl22W
+      yi9bwl7tXB3Q+JN34ni5idQVufMs4zxZwheyN15ZakTSOlSHLR0hOXQavca3Dgcq
+      SC724yrFAgMBAAECggEABj/1pShUXuvVNl4NTYGA82xyT/HwYfujS6jvQ/AnZJwk
+      U5JKTsEwWY5mDHYs1/y8j2iK6Bi6rsvODMIrRtBU8TsHlwUqAEkVctZ7cpriOs7D
+      z0AAlgv2mMUQZ5VlOeVck8PEqkug/XJxyyGSkx/dBJe/EqUvl8OIZpJKU8WK8jeu
+      vML9U9lKYvc92NO5kIlLuFF8XT0f24LqSuGhQjT3K1A2dVITWA0SjnScJhMCJckP
+      Q0ymrxDhZzHu1U6lTFwjIMsynysJjo/Qb6SzKMacnWphMnyB4jTnWpMOcAkcQy/H
+      6Co0SMMbmHGiMWEG8KJ3/mKV/BJKHXhgXqblYiEfkQKBgQDKHokPGvBUgzSVjKEO
+      GHgTKSlzfNTUdxH5HTJo9URoxPF/gnbAeV2mo60+PENaxXoEcwkQouusmTPZzJIh
+      OjxJ6vwvYWxhlVapRYy4vgohoe6HafxN4p3TWtViqTAsAUKQLY9oMQC0pU16Qmex
+      sZ6tTlb/g0peGaZNX6Il0xa4VQKBgQDHjVRb4IfkD84NPwULcP2zAJtItVNwtfwb
+      oWGBbZi8QKxdviOzb6xw9NqiYRSMSZdZ08MvtwEU1DHbdq7EFHbtfXBdT295rmmb
+      oN15OlxA73TpmU8AEOtgRSLHVLQXWIaxDWPmxmAbzT/PEMxTvv2r+rVRvfNadW1B
+      gafHtA7YsQKBgEn8f4NuAweMt9T+k34LavjommnSCj50D7o2+9r73TzUyuo4Iaw3
+      QRbc12/us2Eo5I94ZJsYaFjYA+j4P422OZd9Uy8s5HWcKwrvkKGXvzGsixo6q8b+
+      63MQzwe8kwuosmsAonwrY+y8je3xHPAo6sLZ6HLD5pcnoH62QS7DZI+5AoGAN/7K
+      izWILFDbCxCCA+Hi7tXevRpUna4TXlV8nOr6Duk+9NckAXf2tYOfzizbrToBRG2N
+      udfqb8PTcbft9oufi6jFXQmrSEPO0qLjQt9Df90xu1MPvf8BbXQ4/CIinuJyeUA+
+      pkVINsTzgNE/5MgVOqsRMizRGrMUw2r0f69g8yECgYBZYDBXqWxPpt2y2c8GPetr
+      /0MOqvshnemXOZg+pAYLjyklmhzuAZBVMd3+fmQTbmgSjpU+Fhj6lPrl7BPhb/om
+      efSnb3yC4qF884mo5Miv0LZ+8V05geozHLQAOTB5oU5AYlniBHZYshudvtI8We4j
+      fy1BFlBVYOOFx8OfTQ0wqg==
+      -----END PRIVATE KEY-----

@@ -1,0 +1,27 @@
+services:
+  tabbyml:
+    image: tabbyml/tabby:${TABBYML_VERSION:-0.23.0}
+    platform: linux/amd64
+    # restart: always
+    env_file: .env
+    # command: serve --model $MODEL --chat-model CHAT_MODEL --device cuda
+    command: serve --model StarCoder-1B --chat-model Qwen2-1.5B-Instruct --device cuda
+    volumes:
+      - data:/data
+    # ports:
+    #   - 8080:8080
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.tabbyml.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.tabbyml.loadbalancer.server.port: 8080
+
+volumes:
+  data:
+    driver: local

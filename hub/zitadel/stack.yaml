@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: zitadel
+name: Zitadel
+icon: 🔐
+flavor: DockerCompose
+version: latest
+updated_at: 2024-12-18
+description: Identity and Access Management
+author: Zitadel Inc
+license: Apache-2.0
+homepage: https://zitadel.com
+repository: https://github.com/zitadel/zitadel
+stars: 9400
+tags: [security, identity-management, access-management]
+alternativeTo: [keycloak, auth0]
+readme: |
+  ZITADEL is the identity infrastructure, simplified for you.
+
+  <hr>
+
+  We provide you with a wide range of out-of-the-box features to accelerate your project, including:
+
+  - ✅ Multi-tenancy with team management
+  - ✅ Secure login
+  - ✅ Self-service
+  - ✅ OpenID Connect
+  - ✅ OAuth2.x
+  - ✅ SAML2
+  - ✅ LDAP
+  - ✅ Passkeys / FIDO2
+  - ✅ OTP
+  - and an unlimited audit trail is there for you, ready to use.
+
+  With ZITADEL, you are assured of a robust and customizable turnkey solution for all your authentication and authorization needs.

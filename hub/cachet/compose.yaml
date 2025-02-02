@@ -1,0 +1,31 @@
+services:
+  cachet:
+    build:
+      context: .
+    env_file: .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: on-failure:3
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.cachet.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.cachet.loadbalancer.server.port: 8000
+
+  postgres:
+    image: postgres:17-alpine
+    restart: on-failure:3
+    volumes:
+      - data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME}"]
+      interval: 2s
+      timeout: 5s
+      retries: 5
+    environment:
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+
+volumes:
+  data:
+    driver: local

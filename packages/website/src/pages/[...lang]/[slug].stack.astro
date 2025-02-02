@@ -1,0 +1,292 @@
+---
+import { getCollection } from "astro:content";
+import { format as timeago } from "timeago.js";
+import DownloadBase from "~/components/download-base.html";
+import Logo from "~/components/Logo";
+import Tag from "~/components/tag.html";
+import { getStacks } from "~/content/collections/stacks";
+import { formatStars } from "~/helpers";
+import { langs, useTranslations, useUrl } from "~/i18n";
+import Layout from "~/layouts/Layout.astro";
+
+export const getStaticPaths = () => {
+  return langs
+    .map((lang) =>
+      getStacks(lang).map(({ data }) => ({ params: { lang, slug: data.slug } }))
+    )
+    .flat();
+};
+
+const slug = Astro.params.slug;
+if (!slug) {
+  Astro.response.status = 404;
+  Astro.response.statusText = "Not found";
+  return new Response("Missing parameter", { status: 404 });
+}
+const lang = Astro.params.lang;
+const stack = getStacks(lang).find((stack) => stack.data.slug === slug)?.data;
+if (!stack) {
+  Astro.response.status = 404;
+  Astro.response.statusText = "Not found";
+  return new Response("Not found", { status: 404 });
+}
+
+const t = useTranslations(lang);
+const url = useUrl(lang);
+
+// Astro.response.status = 301;
+// Astro.response.headers.set("Location", `stack://${slug}`);
+
+// const redirectUrl = `stack://${slug}`;
+// TODO:
+const redirectUrl = `/downloads/${slug}.stack`;
+
+const tags = await getCollection("tags");
+
+const {
+  name,
+  description,
+  version,
+  updated_at,
+  tags: _tags,
+  homepage,
+  repository,
+  stars,
+  license,
+  author,
+} = stack;
+
+console.log(name, description, version, redirectUrl);
+---
+
+<!-- <meta http-equiv="refresh" id="redirecter" content={`1;url=${redirectUrl}`} /> -->
+<Layout lang={lang} leftTransition="fade">
+  <input type="hidden" id="name" value={name} />
+  <input type="hidden" id="slug" value={slug} />
+  <input type="hidden" id="version" value={version} />
+  <input type="hidden" id="url" value={`https://${slug}.stack.localhost`} />
+  <input type="hidden" id="redirectUrl" value={redirectUrl} />
+
+  <div slot="left" class="section h-full">
+    <div class="sticky top-12">
+      <!-- <div
+      class="hidden float-right md:flex md:flex-grow language-none w-full flex-1 items-center justify-between rounded-lg border border-neutral-200 font-mono font-medium text-neutral-600 focus:border-neutral-200 focus:ring-0 focus:ring-transparent md:max-w-xs"
+    >
+      <input
+        name="command"
+        class="py-1.5 px-3 w-full border-0 border-r border-slate-200 bg-transparent text-[13px] focus:border-slate-200 focus:outline-none focus:ring-0 focus:ring-transparent truncate"
+        value={command}
+        readonly
+      />
+      <button
+        class="cursor-pointer px-2 text-slate-500 hover:text-black focus:outline-none"
+        onclick="copyToClipboard(this)"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="h-5 w-5"
+          stroke-width="1.5"
+          stroke="currentColor"
+          fill="none"
+        >
+          <path
+            d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <script>
+      // implement copyToClipboard
+      globalThis.copyToClipboard = (button) => {
+        const input = button.previousElementSibling;
+        input.select();
+        document.execCommand("copy");
+        button.querySelector("svg").classList.add("text-green-500");
+        setTimeout(() => {
+          button.querySelector("svg").classList.remove("text-green-500");
+        }, 1000);
+      };
+    </script> -->
+
+      <!-- <a href={`stack://${slug}`}> -->
+
+      <h1 transition:name={`title-${name}`}>
+        <Logo slug={slug} />&nbsp;{name}
+      </h1>
+      <p>{description}</p>
+      {stars && <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>}
+      {
+        _tags
+          ?.map((tag) => {
+            const t = tags.find(({ data }) => data.slug === tag)?.data;
+            if (!t) return null;
+
+            return (
+              <a href={url(`/?q=%23${tag}`)}>
+                <Tag>
+                  <abbr title={t.title}>{t.name}</abbr>
+                </Tag>
+              </a>
+            );
+          })
+          .filter(Boolean)
+      }
+      {
+        (homepage || repository) && (
+          <p class="text-sm">
+            {homepage && <a href={homepage}>Homepage</a>}
+            {homepage && repository && " · "}
+            {repository && <a href={repository}>Source code</a>}
+          </p>
+        )
+      }
+      <span class="text-sm">
+        {author && <span>Author: {author}</span>}
+        {
+          license && (
+            <span>
+              {author && " · "}License: {license}
+            </span>
+          )
+        }
+      </span>
+      <p class="text-sm">
+        Version: {version}
+        {
+          updated_at && (
+            <span class="text-sm subtle">
+              · Updated
+              <time datetime={updated_at.toISOString()}>
+                {timeago(updated_at)}
+              </time>
+            </span>
+          )
+        }
+      </p>
+      <div class="pt-4">
+        <a href={url(`/${slug}`)} rel="nofollow">
+          <DownloadBase>
+            <svg
+              class="fill-current w-4 h-4 m-1 inline"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="4 4 16 16"
+            >
+              <!-- left chevron -->
+              <path d="M11 16L6 11L11 6"></path>
+            </svg>
+            <span set:html={t("Back")} />
+            <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
+          </DownloadBase>
+        </a>
+        <a
+          href={`/downloads/${slug}.stack`}
+          rel="nofollow"
+          data-title={t("Download the stack file")}
+        >
+          <DownloadBase>
+            <svg
+              class="fill-current w-4 h-4 m-1 inline"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 17 17"
+            >
+              <path d="M12 8V2H8v6H2l8 8 8-8"></path>
+            </svg>
+            <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
+          </DownloadBase>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <iframe
+    id="render"
+    class="!section w-full h-0 transition-all"
+    style="margin:0 !important"></iframe>
+  <div class="section">
+    <div id="info">
+      <h2 set:html={t("{name} {version} is starting…", { name, version })} />
+    </div>
+  </div>
+
+  <script
+    type="module"
+    is:inline
+    define:vars={{
+      title: t("{name} {version} is live.", { name, version }),
+      fullscreen: t("Access it in fullscreen"),
+    }}
+  >
+    const name = document.querySelector("#name").value;
+    const slug = document.querySelector("#slug").value;
+    // const version = document.querySelector("#version").value;
+    const url = document.querySelector("#url").value;
+    const redirectUrl = document.querySelector("#redirectUrl").value;
+
+    console.log(name, slug, url, redirectUrl);
+
+    const STACK_API_ORIGIN = "https://127.1:57404";
+
+    const fetcher = async (endpoint, init) => {
+      const response = await fetch(`${STACK_API_ORIGIN}${endpoint}`, init);
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.text();
+    };
+
+    export const isApiAccessible = async () => {
+      return (await fetcher("/health")) === "OK";
+    };
+
+    export const runStack = async (slug) => {
+      return fetcher(`/run`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ slug }),
+      });
+    };
+
+    isApiAccessible()
+      .catch(() => {
+        console.log(`Redirecting to ${redirectUrl}`);
+      })
+      .then((isAccessible) => {
+        console.log(
+          isAccessible ? "API is accessible" : "API is not accessible"
+        );
+
+        if (!isAccessible) {
+          console.log(`Redirecting to ${redirectUrl}`);
+          window.location.href = redirectUrl;
+          return;
+        }
+
+        const stackFullUrl = new URL(
+          window.location.origin + redirectUrl
+        ).toString();
+        console.log(stackFullUrl);
+        runStack(stackFullUrl)
+          .catch(() => {
+            console.log(`Redirecting to ${redirectUrl}`);
+          })
+          .then(() => {
+            console.log("Stack is running");
+
+            window.render.src = url;
+            window.render.onload = () => {
+              window.render.style.height = "60vh";
+              window.render.style.margin = "unset";
+            };
+            window.info.innerHTML = `
+            <h2>${title}</h2>
+            <p>
+              <a href="${url}">${fullscreen}</a>
+            </p>
+          `;
+          });
+      });
+  </script>
+</Layout>

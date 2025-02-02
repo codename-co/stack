@@ -1,0 +1,17 @@
+services:
+  grafana:
+    image: grafana/grafana-enterprise:${GRAFANA_VERSION:-11.4.0}
+    # container_name: grafana
+    restart: unless-stopped
+    # ports:
+    #   - 3000:3000
+    volumes:
+      - grafana:/var/lib/grafana
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.grafana.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.grafana.loadbalancer.server.port: 3000
+
+volumes:
+  grafana:
+    driver: local

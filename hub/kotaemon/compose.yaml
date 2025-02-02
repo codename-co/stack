@@ -1,0 +1,14 @@
+services:
+  kotaemon:
+    image: ghcr.io/cinnamon/kotaemon:main-lite
+    # ports:
+    #   - 7860:7860
+    env_file: .env
+    environment:
+      GRADIO_SERVER_NAME: 0.0.0.0
+      GRADIO_SERVER_PORT: 7860
+    labels:
+      dash.desc: RAG-based tool for chatting with your documents
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.kotaemon.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.kotaemon.loadbalancer.server.port: 7860

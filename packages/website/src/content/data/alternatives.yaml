@@ -1,0 +1,246 @@
+alternatives:
+  - slug: 1password
+    name: 1Password
+    description: A password manager that keeps you safe online
+  - slug: adobe-acrobat
+    name: Adobe Acrobat
+    description: PDF viewer and editor
+  - slug: adobe-xd
+    name: Adobe XD
+    description: Design and prototyping tool
+  - slug: after-effects
+    name: After Effects
+    description: Motion graphics and visual effects software
+  - slug: airtable
+    name: Airtable
+    description: A spreadsheet-database hybrid
+  - slug: algolia
+    name: Algolia
+    description: Search and discovery API
+  - slug: amazonapigateway
+    name: Amazon API Gateway
+    description: API management platform
+  - slug: amplitude
+    name: Amplitude
+    description: Product analytics tool
+  - slug: apigee
+    name: Apigee
+    icon: google
+    description: API management platform
+  - slug: apollo-server
+    name: Apollo Server
+    icon: apollographql
+    description: GraphQL server
+  - slug: jfrog-artifactory
+    name: JFrog Artifactory
+    icon: jfrog
+    description: Universal artifact repository manager
+  - slug: asana
+    name: Asana
+    description: Project management tool
+  - slug: auth0
+    name: Auth0
+    description: Identity and access management
+  - slug: bitbucket
+    name: Bitbucket
+    description: Code hosting platform
+  - slug: calendly
+    name: Calendly
+    description: Scheduling software
+  - slug: chatgpt
+    name: ChatGPT
+    icon: openai
+    description: AI chatbot
+  - slug: datagrip
+    name: DataGrip
+    description: Database management tool
+  - slug: dialogflow-cx
+    name: Dialogflow CX
+    icon: dialogflow
+    description: Conversational AI platform
+  - slug: discord
+    name: Discord
+    description: Chat platform
+  - slug: dropbox
+    name: Dropbox
+    description: File hosting service
+  - slug: evernote
+    name: Evernote
+    description: Note-taking app
+  - slug: excel
+    name: Excel
+    description: Spreadsheet software
+  - slug: fast.com
+    name: Fast.com
+    icon: netflix
+    description: Internet speed test tool
+  - slug: figma
+    name: Figma
+    description: Design and prototyping tool
+  - slug: firebase
+    name: Firebase
+    description: App development platform
+  - slug: github
+    name: GitHub
+    description: Code hosting platform
+  - slug: github-copilot
+    icon: githubcopilot
+    name: GitHub Copilot
+    description: AI pair programmer
+  - slug: googledrive
+    name: Google Drive
+    description: File hosting service
+  - slug: google-meet
+    name: Google Meet
+    description: Video conferencing tool
+  - slug: google-photos
+    icon: googlephotos
+    name: Google Photos
+    description: Photo management tool
+  - slug: guacamole
+    name: Guacamole
+    icon: apacheguacamole
+    description: Remote desktop gateway
+  - slug: hasura
+    name: Hasura
+    description: GraphQL engine
+  - slug: heroku
+    name: Heroku
+    description: Cloud platform as a service
+  - slug: homepage
+    name: Homepage
+    description: Website builder
+  - slug: ifttt
+    name: IFTTT
+    description: Automation platform
+  - slug: invision
+    name: InVision
+    description: Design collaboration tool
+  - slug: intellij-idea
+    name: IntelliJ IDEA
+    icon: intellijidea
+    description: Integrated development environment
+  - slug: jira
+    name: Jira
+    description: Project management tool
+  - slug: keycloak
+    name: Keycloak
+    description: Identity and access management
+  - slug: lastpass
+    name: LastPass
+    description: Password manager
+  - slug: linear
+    name: Linear
+    description: Issue tracking tool
+  - slug: lucidchart
+    name: Lucidchart
+    icon: lucid
+    description: Diagramming tool
+  - slug: make
+    name: Make
+    description: Automation platform
+  - slug: memcached
+    name: Memcached
+    description: Distributed memory caching system
+  - slug: midjourney
+    name: Midjourney
+    # icon: ⛵
+    description: Picture generation with AI
+  - slug: mint
+    name: Mint
+    description: Personal finance tool
+  - slug: miro
+    name: Miro
+    description: Online whiteboard
+  - slug: mixpanel
+    name: Mixpanel
+    description: Product analytics tool
+  - slug: monday
+    name: Monday
+    description: Project management tool
+  - slug: netlify
+    name: Netlify
+    description: Web hosting service
+  - slug: notion
+    name: Notion
+    description: Note-taking app
+  - slug: peertube
+    name: PeerTube
+    description: Decentralized video platform
+  - slug: perplexity
+    name: Perplexity
+    description: AI text generation and search
+  - slug: postman
+    name: Postman
+    description: API development platform
+  - slug: powerapps
+    name: PowerApps
+    description: Low-code app development platform
+  - slug: powerbi
+    name: PowerBI
+    description: Business intelligence tool
+  - slug: prometheus
+    name: Prometheus
+    description: Monitoring and alerting toolkit
+  - slug: rasa
+    name: Rasa
+    description: Conversational AI platform
+  - slug: retool
+    name: Retool
+    description: Low-code app development tool
+  - slug: retrotool
+    name: RetroTool
+    description: Retrospective tool
+  - slug: sketch
+    name: Sketch
+    description: Design tool
+  - slug: slack
+    name: Slack
+    description: Chat
+  - slug: speedtest
+    name: Speedtest
+    description: Internet speed test tool
+  - slug: splunk
+    name: Splunk
+    description: Data analytics tool
+  - slug: tableau
+    name: Tableau
+    description: Business intelligence tool
+  - slug: teamviewer
+    name: TeamViewer
+    description: Remote desktop software
+  - slug: twitch
+    name: Twitch
+    description: Video streaming platform
+  - slug: twitter
+    name: Twitter
+    icon: x
+    description: Social media platform
+  - slug: uptimerobot
+    name: UptimeRobot
+    icon: 🤖
+    description: Website monitoring tool
+  - slug: vercel
+    name: Vercel
+    description: Web hosting service
+  - slug: visio
+    name: Visio
+    description: Diagramming tool
+  - slug: vnc
+    name: VNC
+    description: Remote desktop software
+  - slug: webflow
+    name: Webflow
+    description: Website builder
+  - slug: wordpress
+    name: WordPress
+    description: Web content management system
+  - slug: youtube
+    name: YouTube
+    description: Video sharing platform
+  - slug: zapier
+    name: Zapier
+    description: Automation platform
+  - slug: zoom
+    name: Zoom
+    description: Video conferencing tool

@@ -1,0 +1,11 @@
+services:
+  firefox:
+    image: kasmweb/firefox:${FIREFOX_VERSION:-1.16.1}
+    env_file: .env
+    # ports:
+    #   - 6901:6901
+    shm_size: 512m
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.firefox.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.firefox.loadbalancer.server.port: 6902

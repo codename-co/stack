@@ -1,0 +1,11 @@
+{
+  "name": "stack",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "app": "npm run -w packages/app start",
+    "website": "npm run -w packages/website dev"
+  }
+}

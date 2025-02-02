@@ -1,0 +1,292 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: huginn
+name: Huginn
+icon: 🦅
+flavor: DockerCompose
+version: latest
+updated_at: 2025-01-04
+description: Create agents that monitor and act on your behalf
+author: Huggin
+license: MIT
+repository: https://github.com/huginn/huginn
+stars: 44200
+tags:
+  - automation
+  - monitoring
+  - agents
+alternativeTo:
+  - zapier
+  - make
+  - ifttt
+readme: |
+  Huginn is a system for building agents that perform automated tasks for you online. They can read the web, watch for events, and take actions on your behalf. Huginn's Agents create and consume events, propagating them along a directed graph. Think of it as a hackable version of IFTTT or Zapier on your own server. You always know who has your data. You do.
+
+  ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+  <hr>
+
+  ## Use cases
+
+  - Track the weather and get an email when it's going to rain (or snow) tomorrow ("Don't forget your umbrella!")
+  - List terms that you care about and receive email when their occurrence on Twitter changes.  (For example, want to know when something interesting has happened in the world of Machine Learning?  Huginn will watch the term "machine learning" on Twitter and tell you when there is a spike in discussion.)
+  - Watch for air travel or shopping deals
+  - Follow your project names on Twitter and get updates when people mention them
+  - Scrape websites and receive email when they change
+  - Connect to Adioso, HipChat, FTP, IMAP, Jabber, JIRA, MQTT, nextbus, Pushbullet, Pushover, RSS, Bash, Slack, StubHub, translation APIs, Twilio, Twitter, and Weibo, to name a few.
+  - Send digest email with things that you care about at specific times during the day
+  - Track counts of high frequency events and send an SMS within moments when they spike, such as the term "san francisco emergency"
+  - Send and receive WebHooks
+  - Run custom JavaScript or CoffeeScript functions
+  - Track your location over time
+  - Create Amazon Mechanical Turk workflows as the inputs, or outputs, of agents (the Amazon Turk Agent is called the "HumanTaskAgent"). For example: "Once a day, ask 5 people for a funny cat photo; send the results to 5 more people to be rated; send the top-rated photo to 5 people for a funny caption; send to 5 final people to rate for funniest caption; finally, post the best captioned photo on my blog."
+i18n:
+  de:
+    description: Erstellen Sie Agenten, die in Ihrem Namen überwachen und handeln
+    readme: |-
+      Huginn ist ein System zum Erstellen von Agenten, die automatisierte Online-Aufgaben für Sie ausführen. Sie können das Web lesen, nach Ereignissen Ausschau halten und in Ihrem Namen Aktionen durchführen. Huginns Agenten erstellen und verarbeiten Ereignisse und verbreiten sie entlang eines gerichteten Graphen. Stellen Sie sich das als eine hackbare Version von IFTTT oder Zapier auf Ihrem eigenen Server vor. Sie wissen immer, wer Ihre Daten hat. Sie selbst.
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## Anwendungsfälle
+
+      - Verfolgen Sie das Wetter und erhalten Sie eine E-Mail, wenn es morgen regnen (oder schneien) wird ("Vergessen Sie Ihren Regenschirm nicht!")
+      - Erstellen Sie eine Liste mit Begriffen, die Sie interessieren, und erhalten Sie eine E-Mail, wenn sich deren Vorkommen auf Twitter ändert. (Sie möchten zum Beispiel wissen, wenn in der Welt des maschinellen Lernens etwas Interessantes passiert ist? Huginn überwacht den Begriff "machine learning" auf Twitter und informiert Sie, wenn die Diskussionen darüber zunehmen.)
+      - Nach Flugreisen oder Einkaufsangeboten suchen
+      - Verfolgen Sie Ihre Projektnamen auf Twitter und erhalten Sie Updates, wenn Menschen sie erwähnen
+      - Websiten durchsuchen und E-Mail-Benachrichtigungen erhalten, wenn sich diese ändern
+      - Verbindung zu Adioso, HipChat, FTP, IMAP, Jabber, JIRA, MQTT, nextbus, Pushbullet, Pushover, RSS, Bash, Slack, StubHub, Übersetzungs-APIs, Twilio, Twitter und Weibo, um nur einige zu nennen
+      - Digest-E-Mails mit Dingen, die Sie interessieren, zu bestimmten Tageszeiten versenden
+      - Häufigkeit von Ereignissen überwachen und innerhalb von Momenten eine SMS senden, wenn diese stark ansteigen, wie zum Beispiel bei dem Begriff "san francisco emergency"
+      - WebHooks senden und empfangen
+      - Benutzerdefinierte JavaScript- oder CoffeeScript-Funktionen ausführen
+      - Ihren Standort über die Zeit verfolgen
+      - Amazon Mechanical Turk-Workflows als Ein- oder Ausgaben von Agenten erstellen (der Amazon Turk Agent wird "HumanTaskAgent" genannt). Zum Beispiel: "Einmal täglich 5 Personen nach einem lustigen Katzenfoto fragen; die Ergebnisse an 5 weitere Personen zur Bewertung senden; das am besten bewertete Foto an 5 Personen für eine lustige Bildunterschrift senden; an 5 weitere Personen zur Bewertung der lustigsten Bildunterschrift senden; schließlich das Foto mit der besten Bildunterschrift in meinem Blog veröffentlichen."
+  es:
+    description: Crear agentes que supervisen y actúen en tu nombre
+    readme: |-
+      Huginn es un sistema para crear agentes que realizan tareas automatizadas en línea por ti. Pueden leer la web, vigilar eventos y realizar acciones en tu nombre. Los Agentes de Huginn crean y consumen eventos, propagándolos a lo largo de un grafo dirigido. Piensa en él como una versión hackeable de IFTTT o Zapier en tu propio servidor. Siempre sabes quién tiene tus datos. Tú los tienes.
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## Casos de uso
+
+      - Monitorear el clima y recibir un correo cuando vaya a llover (o nevar) mañana ("¡No olvides tu paraguas!")
+      - Listar términos que te interesan y recibir correos cuando su frecuencia en Twitter cambie. (Por ejemplo, ¿quieres saber cuándo ha sucedido algo interesante en el mundo del Aprendizaje Automático? Huginn vigilará el término "machine learning" en Twitter y te avisará cuando haya un pico en las discusiones.)
+      - Buscar ofertas de vuelos o compras
+      - Seguir los nombres de tus proyectos en Twitter y recibir actualizaciones cuando la gente los mencione
+      - Rastrear sitios web y recibir correos cuando cambien
+      - Conectar con Adioso, HipChat, FTP, IMAP, Jabber, JIRA, MQTT, nextbus, Pushbullet, Pushover, RSS, Bash, Slack, StubHub, APIs de traducción, Twilio, Twitter y Weibo, por nombrar algunos
+      - Enviar correos resumen con cosas que te interesan en momentos específicos del día
+      - Rastrear conteos de eventos de alta frecuencia y enviar un SMS en momentos cuando hay picos, como el término "emergencia san francisco"
+      - Enviar y recibir WebHooks
+      - Ejecutar funciones personalizadas en JavaScript o CoffeeScript
+      - Rastrear tu ubicación a lo largo del tiempo
+      - Crear flujos de trabajo de Amazon Mechanical Turk como entradas o salidas de agentes (el Agente de Amazon Turk se llama "HumanTaskAgent"). Por ejemplo: "Una vez al día, pedir a 5 personas una foto graciosa de gato; enviar los resultados a otras 5 personas para que los califiquen; enviar la foto mejor calificada a 5 personas para un pie de foto gracioso; enviar a 5 personas finales para calificar el pie de foto más gracioso; finalmente, publicar la foto con el mejor pie de foto en mi blog."
+  hi:
+    description: एजेंट बनाएं जो आपकी ओर से निगरानी और कार्रवाई करें
+    readme: |-
+      हुगिन एक ऐसी प्रणाली है जो आपके लिए ऑनलाइन स्वचालित कार्य करने वाले एजेंट बनाने में मदद करती है। वे वेब को पढ़ सकते हैं, घटनाओं पर नज़र रख सकते हैं, और आपकी ओर से कार्रवाई कर सकते हैं। हुगिन के एजेंट घटनाओं को बनाते और उपभोग करते हैं, उन्हें एक निर्देशित ग्राफ के साथ प्रसारित करते हैं। इसे अपने स्वयं के सर्वर पर IFTTT या Zapier के हैक करने योग्य संस्करण के रूप में सोचें। आप हमेशा जानते हैं कि आपका डेटा किसके पास है। आपके पास है।
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## उपयोग के मामले
+
+      - मौसम पर नज़र रखें और कल जब बारिश (या बर्फ) होने वाली हो तो ईमेल प्राप्त करें ("अपनी छतरी मत भूलना!")
+      - उन शब्दों को सूचीबद्ध करें जिनकी आप परवाह करते हैं और ट्विटर पर उनकी उपस्थिति में बदलाव होने पर ईमेल प्राप्त करें। (उदाहरण के लिए, क्या आप जानना चाहते हैं कि मशीन लर्निंग की दुनिया में कुछ दिलचस्प हुआ है? हुगिन ट्विटर पर "मशीन लर्निंग" शब्द पर नज़र रखेगा और जब चर्चा में वृद्धि होगी तो आपको बताएगा।)
+      - हवाई यात्रा या शॉपिंग डील्स पर नज़र रखें
+      - ट्विटर पर अपने प्रोजेक्ट के नामों का अनुसरण करें और लोग उनका उल्लेख करें तो अपडेट प्राप्त करें
+      - वेबसाइटों को स्क्रैप करें और जब वे बदलें तो ईमेल प्राप्त करें
+      - Adioso, HipChat, FTP, IMAP, Jabber, JIRA, MQTT, nextbus, Pushbullet, Pushover, RSS, Bash, Slack, StubHub, अनुवाद APIs, Twilio, Twitter, और Weibo से कनेक्ट करें, कुछ नाम लेने के लिए
+      - दिन के विशिष्ट समय पर आपकी रुचि की चीजों के साथ डाइजेस्ट ईमेल भेजें
+      - उच्च आवृत्ति वाली घटनाओं की गिनती पर नज़र रखें और जब वे बढ़ें तो कुछ ही क्षणों में एसएमएस भेजें, जैसे "सैन फ्रांसिस्को आपातकाल" शब्द
+      - वेबहुक भेजें और प्राप्
+  zh:
+    description: 创建可以代表你监控和行动的代理程序
+    readme: |-
+      Huginn 是一个用于构建代理的系统，可以为您在线执行自动化任务。它们可以阅读网页、监视事件并代表您采取行动。Huginn 的代理创建和消费事件，沿着有向图传播它们。可以将其视为在您自己服务器上的可破解版 IFTTT 或 Zapier。您始终知道谁拥有您的数据。是您自己。
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## 使用场景
+
+      - 跟踪天气，在明天要下雨（或下雪）时收到电子邮件（"别忘了带伞！"）
+      - 列出您关心的术语，当它们在 Twitter 上的出现频率发生变化时收到电子邮件。（例如，想知道机器学习领域发生了什么有趣的事情？Huginn 会在 Twitter 上监控"机器学习"一词，并在讨论出现激增时通知您。）
+      - 关注机票或购物优惠
+      - 在 Twitter 上关注您的项目名称，在有人提到它们时获取更新
+      - 抓取网站并在网站发生变化时接收电子邮件
+      - 连接 Adioso、HipChat、FTP、IMAP、Jabber、JIRA、MQTT、nextbus、Pushbullet、Pushover、RSS、Bash、Slack、StubHub、翻译 API、Twilio、Twitter 和微博等服务
+      - 在一天中特定时间发送包含您关心内容的摘要邮件
+      - 跟踪高频事件的计数，并在出现激增时立即发送短信，例如"旧金山紧急情况"一词
+      - 发送和接收 WebHooks
+      - 运行自定义 JavaScript 或 CoffeeScript 函数
+      - 随时间跟踪您的位置
+      - 创建亚马逊机械土耳其人工作流作为代理的输入或输出（亚马逊土耳其人代理被称为"HumanTaskAgent"）。例如："每天请 5 个人提供有趣的猫咪照片；将结果发送给另外 5 个人进行评分；将评分最高的照片发送给 5 个人添加有趣的标题；将结果发送给最后 5 个人评选最有趣的标题；最后，将最佳标题照片发布到我的博客上。"
+  it:
+    description: Creare agenti che monitorano e agiscono per tuo conto
+    readme: |-
+      Huginn è un sistema per creare agenti che eseguono compiti automatizzati online per te. Possono leggere il web, monitorare eventi e compiere azioni per tuo conto. Gli Agenti di Huginn creano e consumano eventi, propagandoli lungo un grafo diretto. Pensalo come una versione hackerabile di IFTTT o Zapier sul tuo server. Sai sempre chi ha i tuoi dati. Tu.
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## Casi d'uso
+
+      - Monitora il meteo e ricevi un'email quando domani pioverà (o nevicherà) ("Non dimenticare l'ombrello!")
+      - Elenca i termini che ti interessano e ricevi email quando la loro occorrenza su Twitter cambia. (Per esempio, vuoi sapere quando è successo qualcosa di interessante nel mondo del Machine Learning? Huginn monitorerà il termine "machine learning" su Twitter e ti dirà quando c'è un picco nella discussione.)
+      - Monitora offerte di viaggi aerei o shopping
+      - Segui i nomi dei tuoi progetti su Twitter e ricevi aggiornamenti quando le persone li menzionano
+      - Scraping di siti web e ricezione di email quando cambiano
+      - Connettiti a Adioso, HipChat, FTP, IMAP, Jabber, JIRA, MQTT, nextbus, Pushbullet, Pushover, RSS, Bash, Slack, StubHub, API di traduzione, Twilio, Twitter e Weibo, per citarne alcuni.
+      - Invia email di riepilogo con le cose che ti interessano in momenti specifici durante il giorno
+      - Monitora il conteggio di eventi ad alta frequenza e invia un SMS in pochi istanti quando hanno un picco, come il termine "emergenza san francisco"
+      - Invia e ricevi WebHooks
+      - Esegui funzioni personalizzate JavaScript o CoffeeScript
+      - Traccia la tua posizione nel tempo
+      - Crea flussi di lavoro Amazon Mechanical Turk come input o output degli agenti (l'Agente Amazon Turk si chiama "HumanTaskAgent"). Per esempio: "Una volta al giorno, chiedi a 5 persone una foto divertente di gatti; invia i risultati ad altre 5 persone per essere valutati; invia la foto più votata a 5 persone per una didascalia divertente; invia a 5 persone finali per votare la didascalia più divertente; infine, pubblica la foto con la migliore didascalia sul mio blog."
+  ko:
+    description: 당신을 대신하여 모니터링하고 행동하는 에이전트 만들기
+    readme: |-
+      Huginn은 온라인에서 자동화된 작업을 수행하는 에이전트를 구축하기 위한 시스템입니다. 웹을 읽고, 이벤트를 감시하고, 사용자를 대신하여 작업을 수행할 수 있습니다. Huginn의 에이전트들은 이벤트를 생성하고 소비하며, 방향성 그래프를 따라 전파합니다. 자체 서버에서 실행되는 해킹 가능한 버전의 IFTTT나 Zapier라고 생각하면 됩니다. 누가 여러분의 데이터를 가지고 있는지 항상 알 수 있습니다. 바로 여러분입니다.
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## 사용 사례
+
+      - 날씨를 추적하고 내일 비(또는 눈)가 올 예정일 때 이메일 받기 ("우산 잊지 마세요!")
+      - 관심 있는 용어를 나열하고 트위터에서 해당 용어의 발생 빈도가 변경될 때 이메일 받기 (예: 머신 러닝 분야에서 흥미로운 일이 발생했는지 알고 싶으신가요? Huginn이 트위터에서 "machine learning" 용어를 감시하고 논의가 급증할 때 알려드립니다.)
+      - 항공권이나 쇼핑 할인 정보 감시
+      - 트위터에서 프로젝트 이름을 팔로우하고 사람들이 언급할 때 업데이트 받기
+      - 웹사이트를 스크랩하고 변경 사항이 있을 때 이메일 받기
+      - Adioso, HipChat, FTP, IMAP, Jabber, JIRA, MQTT, nextbus, Pushbullet, Pushover, RSS, Bash, Slack, StubHub, 번역 API, Twilio, Twitter, Weibo 등과 연결
+      - 하루 중 특정 시간에 관심 있는 내용을 요약한 이메일 보내기
+      - "san francisco emergency"와 같은 고빈도 이벤트의 수를 추적하고 급증할 때 즉시 SMS 보내기
+      - WebHook 송수신
+      - 커스텀 JavaScript 또는 CoffeeScript 함수 실행
+      - 시간에 따른 위치 추적
+      - Amazon Mechanical Turk 워크플로우를 에이전트의 입력 또는 출력으로 생성 (Amazon Turk 에이전트는 "HumanTaskAgent"라고 함). 예: "매일 5명에게 재미있는 고양이 사진을 요청하고; 결과를 5명에게 더 보내 평가받고; 최고 평점을 받은 사진을 5명에게 보내 재미있는 캡션을 달게 하고; 최종 5명에게 보내 가장 재미있는 캡션을 평가받은 후; 최종적으로 최고의 캡션이 달린 사진을 내 블로그에 게시."
+  pt:
+    description: Criar agentes que monitoram e agem em seu nome
+    readme: |-
+      Huginn é um sistema para construir agentes que executam tarefas automatizadas online para você. Eles podem ler a web, monitorar eventos e realizar ações em seu nome. Os Agentes do Huginn criam e consomem eventos, propagando-os ao longo de um grafo direcionado. Pense nele como uma versão hackeável do IFTTT ou Zapier em seu próprio servidor. Você sempre sabe quem tem seus dados. Você tem.
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## Casos de uso
+
+      - Acompanhe o clima e receba um e-mail quando for chover (ou nevar) amanhã ("Não se esqueça do seu guarda-chuva!")
+      - Liste termos que você se importa e receba e-mail quando sua ocorrência no Twitter muda. (Por exemplo, quer saber quando algo interessante aconteceu no mundo do Machine Learning? Huginn irá observar o termo "machine learning" no Twitter e informar quando houver um pico nas discussões.)
+      - Monitore ofertas de viagens aéreas ou compras
+      - Siga os nomes de seus projetos no Twitter e receba atualizações quando as pessoas os mencionarem
+      - Faça scraping de sites e receba e-mail quando eles mudarem
+      - Conecte-se ao Adioso, HipChat, FTP, IMAP, Jabber, JIRA, MQTT, nextbus, Pushbullet, Pushover, RSS, Bash, Slack, StubHub, APIs de tradução, Twilio, Twitter e Weibo, para citar alguns
+      - Envie e-mail com resumo das coisas que você se importa em horários específicos durante o dia
+      - Acompanhe contagens de eventos de alta frequência e envie um SMS em momentos quando houver picos, como o termo "emergência san francisco"
+      - Envie e receba WebHooks
+      - Execute funções personalizadas em JavaScript ou CoffeeScript
+      - Acompanhe sua localização ao longo do tempo
+      - Crie fluxos de trabalho do Amazon Mechanical Turk como entradas ou saídas de agentes (o Agente Amazon Turk é chamado de "HumanTaskAgent"). Por exemplo: "Uma vez por dia, peça a 5 pessoas uma foto engraçada de gato; envie os resultados para mais 5 pessoas avaliarem; envie a foto mais bem avaliada para 5 pessoas criarem uma legenda engraçada; envie para 5 pessoas finais avaliarem a legenda mais engraçada; finalmente, publique a foto com a melhor legenda no meu blog."
+  ar:
+    description: إنشاء وكلاء يراقبون ويتصرفون نيابة عنك
+    readme: |-
+      هوجن هو نظام لبناء وكلاء يقومون بتنفيذ مهام آلية لك عبر الإنترنت. يمكنهم قراءة الويب، ومراقبة الأحداث، واتخاذ إجراءات نيابة عنك. وكلاء هوجن يقومون بإنشاء واستهلاك الأحداث، ونشرها عبر رسم بياني موجه. فكر فيه كنسخة قابلة للتعديل من IFTTT أو Zapier على خادمك الخاص. أنت دائماً تعرف من يملك بياناتك. أنت تملكها.
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## حالات الاستخدام
+
+      - تتبع حالة الطقس والحصول على بريد إلكتروني عندما يتوقع هطول المطر (أو الثلج) غداً ("لا تنس مظلتك!")
+      - قم بإدراج المصطلحات التي تهتم بها واستلم بريداً إلكترونياً عندما يتغير ظهورها على تويتر. (على سبيل المثال، هل تريد أن تعرف متى حدث شيء مثير للاهتمام في عالم التعلم الآلي؟ سيراقب هوجن مصطلح "التعلم الآلي" على تويتر ويخبرك عندما يكون هناك ارتفاع في النقاش.)
+      - مراقبة عروض السفر الجوي أو التسوق
+      - متابعة أسماء مشاريعك على تويتر والحصول على تحديثات عندما يذكرها الناس
+      - استخراج البيانات من المواقع واستلام بريد إلكتروني عند تغيرها
+      - الاتصال بـ Adioso وHipChat وFTP وIMAP وJabber وJIRA وMQTT وnextbus وPushbullet وPushover وRSS وBash وSlack وStubHub وواجهات برمجة الترجمة وTwilio وTwitter وWeibo، على سبيل المثال لا الحصر
+      - إرسال بريد إلكتروني ملخص يحتوي على الأشياء التي تهتم بها في أوقات محددة خلال اليوم
+      - تتبع عدد الأحداث عالية التكرار وإرسال رسالة SMS خلال لحظات عند ارتفاعها، مثل مصطلح "طوارئ سان فرانسيسكو"
+      - إرسال واستقبال WebHooks
+      - تشغيل دوال JavaScript أو CoffeeScript مخصصة
+      - تتبع موقعك عبر الزمن
+      - إنشاء سير عمل Amazon Mechanical Turk كمدخلات أو مخرجات للوكلاء (وكيل Amazon Turk يسمى "HumanTaskAgent"). على سبيل المثال: "مرة واحدة يومياً، اطلب من 5 أشخاص صورة قطة مضحكة؛ أرسل النتائج إلى 5 أشخاص آخرين للتقييم؛ أرسل الصورة الأعلى تقييماً إلى
+  ja:
+    description: エージェントを作成して、あなたの代わりに監視や行動を行わせる
+    readme: |-
+      Huginnは、オンラインで自動化されたタスクを実行するエージェントを構築するためのシステムです。ウェブを読み取り、イベントを監視し、あなたに代わってアクションを実行できます。Huginnのエージェントはイベントを作成・消費し、有向グラフに沿って伝播させます。これは、自分のサーバー上でハッキング可能なIFTTTやZapierのバージョンと考えてください。誰があなたのデータを持っているのかを常に把握できます。それはあなた自身です。
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## ユースケース
+
+      - 天気を追跡し、明日雨（または雪）が降る際にメールを受け取る（「傘を忘れずに！」）
+      - 関心のある用語をリストアップし、Twitterでの出現頻度に変化があった際にメールを受け取る（例：機械学習の世界で興味深いことが起きたことを知りたい場合、HuginnはTwitterで「machine learning」という用語を監視し、議論が急増した際に通知します）
+      - 航空券やショッピングのお得な情報を監視
+      - プロジェクト名をTwitterでフォローし、言及があった際に更新情報を受け取る
+      - ウェブサイトをスクレイピングし、変更があった際にメールを受け取る
+      - Adioso、HipChat、FTP、IMAP、Jabber、JIRA、MQTT、nextbus、Pushbullet、Pushover、RSS、Bash、Slack、StubHub、翻訳API、Twilio、Twitter、Weiboなど多数のサービスに接続
+      - 一日の特定の時間に、関心のある情報をダイジェストメールで送信
+      - 「san francisco emergency」などの高頻度イベントの数を追跡し、急増した際に即座にSMSを送信
+      - WebHooksの送受信
+      - カスタムJavaScriptまたはCoffeeScript関数の実行
+      - 時間経過による位置情報の追跡
+      - エージェントの入出力としてAmazon Mechanical Turkワークフローを作成（Amazon TurkエージェントはHumanTaskAgentと呼ばれます）。例：「毎日5人に面白い猫の写真を依頼し、その結果を別の5人に評価してもらい、最高評価の写真を5人にキャプションを付けてもらい、最後の5人に最も面白いキャプションを評価してもらい、最終的に最高のキャプション付き写真をブログに投稿する」
+  fr:
+    description: Créer des agents qui surveillent et agissent en votre nom
+    readme: |-
+      Huginn est un système permettant de créer des agents qui effectuent des tâches automatisées en ligne pour vous. Ils peuvent lire le web, surveiller des événements et entreprendre des actions en votre nom. Les Agents de Huginn créent et consomment des événements, les propageant le long d'un graphe orienté. Considérez-le comme une version hackable d'IFTTT ou Zapier sur votre propre serveur. Vous savez toujours qui possède vos données. Vous.
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## Cas d'utilisation
+
+      - Suivre la météo et recevoir un email quand il va pleuvoir (ou neiger) demain ("N'oubliez pas votre parapluie !")
+      - Répertorier les termes qui vous intéressent et recevoir un email lorsque leur fréquence sur Twitter change. (Par exemple, vous voulez savoir quand quelque chose d'intéressant s'est produit dans le monde du Machine Learning ? Huginn surveillera le terme "machine learning" sur Twitter et vous préviendra quand il y a un pic de discussion.)
+      - Surveiller les offres de voyage en avion ou les bonnes affaires
+      - Suivre les noms de vos projets sur Twitter et recevoir des mises à jour quand les gens les mentionnent
+      - Scraper des sites web et recevoir un email quand ils changent
+      - Se connecter à Adioso, HipChat, FTP, IMAP, Jabber, JIRA, MQTT, nextbus, Pushbullet, Pushover, RSS, Bash, Slack, StubHub, APIs de traduction, Twilio, Twitter, et Weibo, pour n'en citer que quelques-uns
+      - Envoyer des emails récapitulatifs avec les choses qui vous intéressent à des moments précis de la journée
+      - Suivre le nombre d'événements à haute fréquence et envoyer un SMS en quelques instants lorsqu'ils atteignent un pic, comme le terme "urgence san francisco"
+      - Envoyer et recevoir des WebHooks
+      - Exécuter des fonctions JavaScript ou CoffeeScript personnalisées
+      - Suivre votre localisation dans le temps
+      - Créer des workflows Amazon Mechanical Turk comme entrées ou sorties d'agents (l'Agent Amazon Turk s'appelle "HumanTaskAgent"). Par exemple : "Une fois par jour, demander à 5 personnes une photo de chat drôle ; envoyer les résultats à 5 autres personnes pour être notés ; envoyer la photo la mieux notée à 5 personnes pour une légende drôle ; envoyer à 5 dernières personnes pour noter la légende la plus drôle ; enfin, publier la photo avec la meilleure légende sur mon blog."
+  ru:
+    description: Создавайте агентов, которые отслеживают и действуют от вашего имени
+    readme: |-
+      Huginn - это система для создания агентов, выполняющих автоматизированные задачи для вас онлайн. Они могут читать веб, следить за событиями и выполнять действия от вашего имени. Агенты Huginn создают и потребляют события, распространяя их по направленному графу. Представьте это как настраиваемую версию IFTTT или Zapier на вашем собственном сервере. Вы всегда знаете, у кого ваши данные. У вас.
+
+      ![preview](https://raw.githubusercontent.com/huginn/huginn/master/doc/imgs/diagram.png)
+
+      <hr>
+
+      ## Варианты использования
+
+      - Отслеживайте погоду и получайте email, когда завтра будет дождь (или снег) ("Не забудьте зонтик!")
+      - Составьте список интересующих вас терминов и получайте уведомления, когда меняется частота их упоминания в Twitter. (Например, хотите узнать, когда произошло что-то интересное в мире машинного обучения? Huginn будет следить за термином "machine learning" в Twitter и сообщит вам, когда возникнет всплеск обсуждений.)
+      - Следите за предложениями авиабилетов или скидками на покупки
+      - Отслеживайте названия ваших проектов в Twitter и получайте обновления, когда люди их упоминают
+      - Сканируйте веб-сайты и получайте уведомления при их изменении
+      - Подключайтесь к Adioso, HipChat, FTP, IMAP, Jabber, JIRA, MQTT, nextbus, Pushbullet, Pushover, RSS, Bash, Slack, StubHub, API перевода, Twilio, Twitter и Weibo, и это лишь некоторые из возможностей.
+      - Отправляйте дайджест-письма с интересующей вас информацией в определенное время дня
+      - Отслеживайте количество часто происходящих событий и отправляйте SMS в течение нескольких минут при их всплеске, например, для термина "san francisco emergency"
+      - Отправляйте и получайте WebHooks
+      - Запускайте пользовательские функции JavaScript или CoffeeScript
+      - Отслеживайте свое местоположение с течением времени
+      - Создавайте рабочие процессы Amazon Mechanical Turk в качестве входных или выходных данных агентов (агент Amazon Turk называется "HumanTaskAgent"). Например: "Раз в день просите 5 человек прислать смешное фото кота; отправляйте результаты еще 5 людям для оценки; отправляйте фото с самым высоким рейтингом 5 людям для создания смешной подписи; отправляйте 5 финальным людям для оценки самой смешной подписи; наконец, публикуйте лучшее фото с подписью в своем блоге."

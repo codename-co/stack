@@ -1,0 +1,178 @@
+tags:
+  ## flavors
+  # - slug: HelmChart
+  #   name: Helm Chart
+  #   type: flavor
+  # - slug: DockerCompose
+  #   name: Docker Compose
+  #   type: flavor
+  # - slug: DockerService
+  #   name: Docker service
+  #   type: flavor
+  # - slug: NodePackage
+  #   name: Node package
+  #   type: flavor
+  # - slug: GoPackage
+  #   name: Go package
+  #   type: flavor
+  # - slug: StaticWebsite
+  #   name: Static website
+  #   type: flavor
+
+  ## tags
+  - slug: knowledge-base
+    name: Knowledge base
+  - slug: note-taking
+    name: Note-taking
+  - slug: cms
+    name: CMS
+    title: Content Management System
+  - slug: collaboration
+    name: Collaboration
+  - slug: dashboard
+    name: Dashboard
+  - slug: calendar
+    name: Calendar
+  - slug: scheduling
+    name: Scheduling
+  - slug: project-management
+    name: Project management
+  # - slug: crm
+  #   name: CRM
+  #   title: Customer Relationship Management
+  - slug: ai
+    name: AI
+    title: Artificial Intelligence
+  - slug: llm
+    name: LLM
+    title: Large Language model
+  - slug: rag
+    name: RAG
+    title: Retrieval-Augmented Generation
+  - slug: chatbot
+    name: Chatbot
+  - slug: webdev
+    name: Web development
+  - slug: ide
+    name: IDE
+    title: Integrated Development Environment
+  # - slug: devops
+  #   name: DevOps
+  - slug: observability
+    name: Observability
+  - slug: monitoring
+    name: Monitoring
+  - slug: security
+    name: Security
+  - slug: data
+    name: Data
+  - slug: database
+    name: Database
+  - slug: analytics
+    name: Analytics
+  - slug: bi
+    name: Business Intelligence
+  - slug: ml
+    name: Machine learning
+  # - slug: nlp
+  #   name: Natural language processing
+  - slug: data-science
+    name: Data science
+  - slug: internal-tool
+    name: Internal tool
+  - slug: low-code
+    name: Low-code
+  - slug: no-code
+    name: No-code
+  - slug: coding
+    name: Coding
+  - slug: website-builder
+    name: Website builder
+  - slug: forum
+    name: Forum
+  - slug: api
+    name: API
+    title: Application Programming Interface
+  - slug: game
+    name: Game
+  - slug: dataviz
+    name: Data visualization
+  - slug: api-gateway
+    name: API gateway
+  - slug: reverse-proxy
+    name: Reverse proxy
+  - slug: design
+    name: Design
+  - slug: automation
+    name: Automation
+  - slug: workflow
+    name: Workflow
+  - slug: spreadsheet
+    name: Spreadsheet
+  - slug: identity-management
+    name: Identity management
+  - slug: access-management
+    name: Access management
+  - slug: social-network
+    name: Social network
+  - slug: agile
+    name: Agile
+  - slug: scrum
+    name: Scrum
+  - slug: issue-tracking
+    name: Issue tracking
+  - slug: finance
+    name: Finance
+  - slug: graphql
+    name: GraphQL
+  - slug: video
+    name: Video
+  - slug: resume
+    name: Resume
+  - slug: product-analytics
+    name: Product analytics
+  - slug: feature-flagging
+    name: Feature flagging
+  - slug: a-b-testing
+    name: A/B testing
+  - slug: file-sharing
+    name: File sharing
+  - slug: search-engine
+    name: Search engine
+  - slug: home-automation
+    name: Home automation
+  - slug: log-management
+    name: Log management
+  - slug: key-value-store
+    name: Key-value store
+  - slug: diagram
+    name: Diagram
+  - slug: whiteboard
+    name: Whiteboard
+  - slug: paas
+    name: PaaS
+    title: Platform as a Service
+  - slug: git
+    name: Git
+  - slug: software-development
+    name: Software development
+  - slug: browser
+    name: Browser
+  - slug: registry
+    name: Registry
+  - slug: desktop
+    name: Desktop
+  - slug: document-management
+    name: Document management
+  - slug: photo-management
+    name: Photo management
+  - slug: streaming
+    name: Streaming
+  - slug: network
+    name: Network
+  - slug: scheduler
+    name: Scheduler
+  - slug: cron
+    name: Cron
+  - slug: status-page
+    name: Status page

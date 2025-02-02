@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: webstudio
+name: Webstudio
+icon: 📐
+flavor: DockerCompose
+version: "0.196.0"
+updated_at: 2024-12-26
+description: Advanced website builder
+author: Webstudio, Inc
+license: AGPL-3.0
+homepage: https://webstudio.is
+repository: https://github.com/webstudio-is/webstudio
+stars: 5600
+tags: [website-builder]
+alternativeTo: [webflow]
+readme: |
+  Webstudio is an Open Source Visual Development Platform for developers, designers, and cross-functional teams. You own the data, components, and infrastructure.
+
+  <iframe src="https://player.vimeo.com/video/831343124?h=beddd00bf3" width="100%" height="380" frameborder="0" allowfullscreen></iframe>

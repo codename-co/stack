@@ -1,0 +1,23 @@
+services:
+  drawio:
+    image: jgraph/drawio:${DRAWIO_VERSION:-26.0.3}
+    # ports:
+    #   - 8080:8080
+    #   - 8443:8443
+    environment:
+      PUBLIC_DNS: https://$PROJECT.$DOMAIN
+      ORGANISATION_UNIT: unit
+      ORGANISATION: org
+      CITY: city
+      STATE: state
+      COUNTRY_CODE: country
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080 || exit 1"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.drawio.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.drawio.loadbalancer.server.port: 8080

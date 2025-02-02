@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: directus
+name: Directus
+flavor: DockerCompose
+version: "11.3"
+updated_at: 2024-12-18
+description: An open-source headless CMS
+author: Monospace, Inc
+license: BSL
+homepage: https://directus.io
+repository: https://github.com/directus/directus
+stars: 28600
+tags: [cms, database, data]
+alternativeTo: [wordpress]
+readme: |
+  Directus is a real-time API and App dashboard for managing SQL database content.
+
+  <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+  <hr>
+
+  ## Features
+
+  - **Open Source.** No artificial limitations, vendor lock-in, or hidden paywalls.
+  - **REST & GraphQL API.** Instantly layers a blazingly fast Node.js API on top of any SQL database.
+  - **Manage Pure SQL.** Works with new or existing SQL databases, no migration required.
+  - **Choose your Database.** Supports PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB, and MS-SQL.
+  - **On-Prem or Cloud.** Run locally, install on-premises, or use our self-service Cloud service.
+  - **Completely Extensible.** Built to white-label, it is easy to customize our modular platform.
+  - **A Modern Dashboard.** Our no-code Vue.js app is safe and intuitive for non-technical users, no training required.

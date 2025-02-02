@@ -1,0 +1,11 @@
+services:
+  cyberchef:
+    image: mpepping/cyberchef:v${CYBERCHEF_VERSION:-10.19.4}
+    restart: unless-stopped
+    # ports:
+    #   - 8000:8000
+    labels:
+      dash.name: CyberChef
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.cyberchef.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.cyberchef.loadbalancer.server.port: 8000

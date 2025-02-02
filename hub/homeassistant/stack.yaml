@@ -1,0 +1,86 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: homeassistant
+name: Home Assistant
+flavor: DockerCompose
+version: "2025.1"
+updated_at: 2025-01-03
+description: Home automation platform
+author: Nabu Casa
+license: Apache-2.0
+homepage: https://www.home-assistant.io
+repository: https://github.com/home-assistant/core
+stars: 75500
+tags:
+  - home-automation
+alternativeTo: []
+readme: |
+  Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.
+
+  ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+i18n:
+  ar:
+    description: منصة أتمتة المنزل
+    readme: |-
+      نظام منزل ذكي مفتوح المصدر يضع التحكم المحلي والخصوصية في المقام الأول. مدعوم من مجتمع عالمي من المطورين وهواة التقنية. مثالي للتشغيل على جهاز راسبيري باي أو خادم محلي.
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  zh:
+    description: 家庭自动化平台
+    readme: |-
+      首先考虑本地控制和隐私的开源家庭自动化系统。由全球修理匠和DIY爱好者社区驱动。完美运行于树莓派或本地服务器。
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  de:
+    description: Hausautomatisierungsplattform
+    readme: |-
+      Open Source Smart Home Automatisierung, die lokale Kontrolle und Privatsphäre an erste Stelle setzt. Unterstützt von einer weltweiten Community von Bastlern und DIY-Enthusiasten. Perfekt geeignet für den Betrieb auf einem Raspberry Pi oder einem lokalen Server.
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  es:
+    description: Plataforma de domótica
+    readme: |-
+      Automatización del hogar de código abierto que prioriza el control local y la privacidad. Impulsada por una comunidad mundial de aficionados al bricolaje y la experimentación. Perfecto para ejecutar en una Raspberry Pi o un servidor local.
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  fr:
+    description: Plateforme de domotique
+    readme: |-
+      Domotique open source qui privilégie le contrôle local et la confidentialité. Soutenue par une communauté mondiale de bricoleurs et de passionnés du DIY. Parfait pour fonctionner sur un Raspberry Pi ou un serveur local.
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  ja:
+    description: ホームオートメーションプラットフォーム
+    readme: |-
+      オープンソースのホームオートメーションで、ローカルコントロールとプライバシーを最優先します。世界中のティンカラーとDIY愛好家のコミュニティによって支えられています。ラズベリーパイやローカルサーバーでの実行に最適です。
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  ko:
+    description: 홈 자동화 플랫폼
+    readme: |-
+      로컬 제어와 개인정보 보호를 최우선으로 하는 오픈소스 홈 오토메이션. 전 세계의 취미 개발자와 DIY 애호가들이 만든 커뮤니티가 지원합니다. 라즈베리 파이나 로컬 서버에서 실행하기에 완벽합니다.
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  pt:
+    description: Plataforma de automação residencial
+    readme: |-
+      Automação residencial de código aberto que prioriza o controle local e a privacidade. Desenvolvida por uma comunidade mundial de entusiastas do faça você mesmo. Perfeita para rodar em um Raspberry Pi ou servidor local.
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  it:
+    description: Piattaforma di domotica
+    readme: |-
+      Domotica open source che mette al primo posto il controllo locale e la privacy. Alimentata da una comunità mondiale di appassionati del fai da te e sperimentatori. Perfetta per essere eseguita su un Raspberry Pi o su un server locale.
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  ru:
+    description: Платформа домашней автоматизации
+    readme: |-
+      Программное обеспечение для домашней автоматизации с открытым исходным кодом, которое ставит локальный контроль и конфиденциальность на первое место. Работает благодаря всемирному сообществу энтузиастов и любителей DIY. Идеально подходит для запуска на Raspberry Pi или локальном сервере.
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)
+  hi:
+    description: होम ऑटोमेशन प्लेटफॉर्म
+    readme: |-
+      ओपन सोर्स होम ऑटोमेशन जो स्थानीय नियंत्रण और गोपनीयता को सर्वोच्च प्राथमिकता देता है। दुनिया भर के टिंकरर्स और DIY उत्साही लोगों के समुदाय द्वारा संचालित। रास्पबेरी पाई या स्थानीय सर्वर पर चलाने के लिए एकदम सही।
+
+      ![preview](https://raw.githubusercontent.com/home-assistant/core/dev/.github/assets/screenshot-states.png)

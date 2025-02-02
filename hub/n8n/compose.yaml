@@ -1,0 +1,67 @@
+x-shared: &shared
+  restart: always
+  image: n8nio/n8n:${N8N_VERSION:-1.72.1}
+  env_file: .env
+  links:
+    - n8n-postgres
+    - n8n-redis
+  volumes:
+    - n8n_storage:/home/node/.n8n
+  depends_on:
+    n8n-redis:
+      condition: service_healthy
+    n8n-postgres:
+      condition: service_healthy
+
+services:
+  n8n-postgres:
+    image: postgres:16
+    restart: always
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_NON_ROOT_USER
+      - POSTGRES_NON_ROOT_PASSWORD
+    volumes:
+      - db_storage:/var/lib/postgresql/data
+      - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  n8n-redis:
+    image: redis:6-alpine
+    restart: always
+    volumes:
+      - redis_storage:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  n8n:
+    <<: *shared
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.n8n.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.n8n.loadbalancer.server.port: 5678
+
+  n8n-worker:
+    <<: *shared
+    command: worker
+    depends_on:
+      - n8n
+
+volumes:
+  db_storage:
+  n8n_storage:
+  redis_storage:

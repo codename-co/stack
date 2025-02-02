@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: openspeedtest
+name: OpenSpeedTest
+icon: Ⓞ
+flavor: DockerCompose
+version: "2.0.6"
+updated_at: 2025-01-09
+description: Network Performance Estimation Tool
+author: OpenSpeedTest
+license: MIT
+homepage: https://openspeedtest.com
+repository: https://github.com/openspeedtest/Speed-Test
+stars: 2400
+tags:
+  - network
+alternativeTo:
+  - speedtest
+  - fast.com
+readme: |
+  SpeedTest by OpenSpeedTest™ is a Free and Open-Source HTML5 Network Performance Estimation Tool Written in Vanilla Javascript and only uses built-in Web APIs like XMLHttpRequest (XHR), HTML, CSS, JS, & SVG.
+
+  ![preview](https://github.com/openspeedtest/v2-Test/raw/main/images/10G-S.gif)
+
+  <hr>
+
+  ## Features
+
+  - **Secure by Design:**
+    OpenSpeedTest contains Only STATIC Files like HTML,CSS & JS.
+    So you don't need to worry about Security Updates or Hidden Exploits that may compromise your secure environments.
+
+  - **Lightweight, High Performance:**
+    OpenSpeedTest is written in Vanilla JavaScript. No Third-Party frameworks or libraries were used. SpeedTest script file size is under 8kB gzip. The unexpected side effect of using Vanilla JavaScript is High Performance.
+
+  - **Run a speed test from Any Device:**
+    OpenSpeedTest will run on Any Web Browser that is IE10 or newer.
+
+  - **Ready for Any Display Size and Resolution:**
+    OpenSpeedTest User interface is written in SVG. So it will look sharp on any display size and resolution.

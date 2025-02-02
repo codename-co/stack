@@ -1,0 +1,349 @@
+---
+import { getCollection } from "astro:content";
+import { marked } from "marked";
+import { format as timeago } from "timeago.js";
+import DownloadBase from "~/components/download-base.html";
+import Logo from "~/components/Logo";
+import Tag from "~/components/tag.html";
+import { getStacks } from "~/content/collections/stacks";
+import { langs, useTranslations, useUrl } from "~/i18n";
+import Layout from "~/layouts/Layout.astro";
+import {
+  getTagName,
+  formatStars,
+  getAlternativeMetadata,
+  getTagTitle,
+} from "~/helpers";
+
+export const getStaticPaths = async () => {
+  return langs
+    .map((lang) =>
+      getStacks(lang).map(({ data }) => ({ params: { lang, slug: data.slug } }))
+    )
+    .flat();
+};
+
+const slug = Astro.params.slug;
+if (!slug) {
+  Astro.response.status = 404;
+  Astro.response.statusText = "Not found";
+  return new Response("Missing parameter", { status: 404 });
+}
+
+const lang = Astro.params.lang;
+const t = useTranslations(lang);
+const url = useUrl(lang);
+
+const stacks = getStacks(lang);
+
+const stack = stacks.find((stack) => stack.data.slug === slug)?.data;
+if (!stack) {
+  Astro.response.status = 404;
+  Astro.response.statusText = "Not found";
+  return new Response("Not found", { status: 404 });
+}
+
+const tags = await getCollection("tags");
+
+const {
+  name,
+  description,
+  version,
+  updated_at,
+  tags: _tags,
+  readme,
+  env,
+  homepage,
+  repository,
+  stars,
+  license,
+  author,
+  alternativeTo,
+} = stack;
+
+// const command = `stack run ${slug}`;
+
+const similar = Array.from(
+  new Set(
+    [
+      ...stacks.filter(
+        (candidate) =>
+          candidate.data.slug !== slug &&
+          // ensure both alternativeTo and candidate.alternativeTo have an intersection
+          (alternativeTo || []).some((slug) =>
+            candidate.data.alternativeTo?.includes(slug)
+          )
+      ),
+      // ...stacks.filter(
+      //   (candidate) =>
+      //     candidate.data.slug !== slug &&
+      //     // ensure both tags and candidate.tags have an intersection
+      //     (tags || []).some((tag) => candidate.data.tags?.includes(tag.id))
+      // ),
+    ].map((entry) => entry.data.slug)
+  )
+)
+  .slice(0, 5)
+  .map((slug) => stacks.find((stack) => stack.data.slug === slug)?.data);
+---
+
+<Layout lang={lang} title={`${name} stack`} description={description}>
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@id": [slug, lang].filter(Boolean).join("-"),
+      "@type": "SoftwareApplication",
+      name,
+      url: new URL(Astro.url.pathname, Astro.site),
+      softwareVersion: version,
+      headline: name,
+      description,
+      // about: description,
+      // screenshot: "[image-url]",
+      image: {
+        "@type": "ImageObject",
+        url: readme?.match(/!\[.*\]\((.*)\)/)?.[1],
+      },
+      applicationCategory: "BrowserApplication",
+      // applicationSubCategory: "Product Comparison",
+      inLanguage: lang,
+      operatingSystem: "Web Browser",
+      browserRequirements: "Requires Stack Desktop",
+      dateModified: new Date(updated_at ?? "").toISOString(),
+      // aggregateRating: {
+      //   "@type": "AggregateRating",
+      //   ratingValue: 4.7,
+      //   ratingCount: stars,
+      // },
+      downloadUrl: new URL(url(`/downloads/${slug}.stack`), Astro.site),
+    })}
+  />
+
+  <div slot="left" class="section h-full">
+    <div class="sticky top-12">
+      <h1 transition:name={`title-${name}`}>
+        <Logo slug={slug} />&nbsp;{name}
+      </h1>
+      <p>{description}</p>
+      {stars && <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>}
+      {
+        _tags
+          ?.map((tag) => {
+            const t = tags.find(({ data }) => data.slug === tag)?.data;
+            if (!t) return null;
+
+            return (
+              <a href={url(`/?q=%23${tag}`)}>
+                <Tag>
+                  <abbr title={t.title}>{t.name}</abbr>
+                </Tag>
+              </a>
+            );
+          })
+          .filter(Boolean)
+      }
+      {
+        (homepage || repository) && (
+          <p class="text-sm">
+            {homepage && <a href={homepage}>Homepage</a>}
+            {homepage && repository && " · "}
+            {repository && <a href={repository}>Source code</a>}
+          </p>
+        )
+      }
+      <span class="text-sm">
+        {author && <span>Author: {author}</span>}
+        {
+          license && (
+            <span>
+              {author && " · "}License: {license}
+            </span>
+          )
+        }
+      </span>
+      <p class="text-sm">
+        Version: {version}
+        {
+          updated_at && (
+            <span class="text-sm subtle">
+              · Updated
+              <time datetime={updated_at.toISOString()}>
+                {timeago(updated_at)}
+              </time>
+            </span>
+          )
+        }
+      </p>
+
+      <div class="pt-4">
+        <!-- <div
+      class="hidden float-right md:flex md:flex-grow language-none w-full flex-1 items-center justify-between rounded-lg border border-neutral-200 font-mono font-medium text-neutral-600 focus:border-neutral-200 focus:ring-0 focus:ring-transparent md:max-w-xs"
+    >
+      <input
+        name="command"
+        class="py-1.5 px-3 w-full border-0 border-r border-slate-200 bg-transparent text-[13px] focus:border-slate-200 focus:outline-none focus:ring-0 focus:ring-transparent truncate"
+        value={command}
+        readonly
+      />
+      <button
+        class="cursor-pointer px-2 text-slate-500 hover:text-black focus:outline-none"
+        onclick="copyToClipboard(this)"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="h-5 w-5"
+          stroke-width="1.5"
+          stroke="currentColor"
+          fill="none"
+        >
+          <path
+            d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <script>
+      // implement copyToClipboard
+      globalThis.copyToClipboard = (button) => {
+        const input = button.previousElementSibling;
+        input.select();
+        document.execCommand("copy");
+        button.querySelector("svg").classList.add("text-green-500");
+        setTimeout(() => {
+          button.querySelector("svg").classList.remove("text-green-500");
+        }, 1000);
+      };
+    </script> -->
+
+        <!-- <a href={`stack://${slug}`}> -->
+        <a href={url(`/${slug}.stack`)} rel="nofollow">
+          <DownloadBase>
+            <svg
+              class="fill-current w-4 h-4 m-1 inline"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 17 17"
+            >
+              <path d="M2 1l14 7-14 7z"></path>
+            </svg>
+            <span set:html={t("Start it now")} />
+            <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
+          </DownloadBase>
+        </a>
+        <a
+          href={`/downloads/${slug}.stack`}
+          rel="nofollow"
+          data-title={t("Download the stack file")}
+        >
+          <DownloadBase>
+            <svg
+              class="fill-current w-4 h-4 m-1 inline"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 17 17"
+            >
+              <path d="M12 8V2H8v6H2l8 8 8-8"></path>
+            </svg>
+            <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
+          </DownloadBase>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 set:html={t("About *{name}*", { name })} />
+    {
+      readme ? (
+        <div class="content" set:html={marked.parse(readme)} />
+      ) : (
+        <p class="subtle">No description provided.</p>
+      )
+    }
+    <hr class="hr" />
+
+    <h2 set:html={t("Environment variables")} />
+    {
+      Object.entries(env ?? {}).length === 0 ? (
+        <p class="subtle" set:html={t("No environment variables defined.")} />
+      ) : (
+        <details>
+          <summary class="subtle" set:html={t("View environment variables")} />
+          <dl class="max-h-96 overflow-y-auto">
+            {Object.entries(env ?? {}).map(([key, value]) => (
+              <>
+                <dt>{key}</dt>
+                <dd>
+                  <span style="user-select: none; -webkit-user-select: none;">
+                    &nbsp;
+                  </span>
+                  {value}
+                </dd>
+              </>
+            ))}
+          </dl>
+        </details>
+      )
+    }
+  </div>
+
+  <div slot="right">
+    {
+      Boolean(alternativeTo?.length) && (
+        <div class="section">
+          <h2 set:html={t("An alternative to")} />
+          <ol class="light">
+            {alternativeTo?.map((slug) => (
+              <li class="mb-4">
+                <a href={url(`/alternativesto/${slug}`)}>
+                  <Logo slug={slug} />
+                  &nbsp;{getAlternativeMetadata(slug)?.name}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )
+    }
+    {
+      similar && similar.length > 0 && (
+        <div class="section">
+          <h2 set:html={t("Related")} />
+          <ol class="light">
+            {similar
+              .map((e) => e as any)
+              .map(({ slug, name, description, tags, stars }) => (
+                <li class="mb-8">
+                  {/* <div class="float-right mr-6 if-connected">
+                  <a href={`/${slug}.stack`}>
+                    <Button>Install</Button>
+                  </a>
+                </div> */}
+                  <h3 transition:name={`title-${name}`}>
+                    <a href={url(`/${slug}`)}>
+                      <Logo slug={slug} />
+                      &nbsp;{name}
+                    </a>
+                  </h3>
+                  <p>{description}</p>
+                  {stars && (
+                    <span class="subtle text-sm">
+                      ★&nbsp;{formatStars(stars)}
+                    </span>
+                  )}
+                  {tags?.map((tag: any) => (
+                    <a href={url(`/?q=%23${tag}`)}>
+                      <Tag>
+                        <abbr title={getTagTitle(tag)}>{getTagName(tag)}</abbr>
+                      </Tag>
+                    </a>
+                  ))}
+                </li>
+              ))}
+          </ol>
+        </div>
+      )
+    }
+  </div>
+</Layout>

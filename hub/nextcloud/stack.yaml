@@ -1,0 +1,193 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: nextcloud
+name: Nextcloud
+flavor: DockerCompose
+version: "30.0.3"
+updated_at: 2024-12-06
+description: File sharing and collaboration platform
+author: Nextcloud GmbH
+license: AGPL-3.0
+homepage: https://nextcloud.com
+repository: https://github.com/nextcloud/server
+stars: 27600
+tags:
+  - file-sharing
+  - collaboration
+alternativeTo:
+  - dropbox
+  - googledrive
+readme: |
+  Nextcloud server, a safe home for all your data.
+
+  ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+  <hr>
+
+  ## Features
+
+  * 📁 **Access your Data** You can store your files, contacts, calendars, and more on a server of your choosing.
+  * 🔄 **Sync your Data** You keep your files, contacts, calendars, and more synchronized amongst your devices.
+  * 🙌 **Share your Data** …by giving others access to the stuff you want them to see or to collaborate with.
+  * 🚀 **Expandable with hundreds of Apps** ...like [Calendar](https://github.com/nextcloud/calendar), [Contacts](https://github.com/nextcloud/contacts), [Mail](https://github.com/nextcloud/mail), [Video Chat](https://github.com/nextcloud/spreed) and all those you can discover in our [App Store](https://apps.nextcloud.com)
+  * 🔒 **Security** with our encryption mechanisms, [HackerOne bounty program](https://hackerone.com/nextcloud) and two-factor authentication.
+i18n:
+  ar:
+    description: منصة مشاركة الملفات والتعاون
+    readme: |-
+      خادم Nextcloud، موطن آمن لجميع بياناتك.
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## المميزات
+
+      * 📁 **الوصول إلى بياناتك** يمكنك تخزين ملفاتك وجهات اتصالك والتقويمات والمزيد على خادم من اختيارك.
+      * 🔄 **مزامنة بياناتك** تحافظ على ملفاتك وجهات اتصالك والتقويمات والمزيد متزامنة بين أجهزتك.
+      * 🙌 **مشاركة بياناتك** ...من خلال منح الآخرين حق الوصول إلى الأشياء التي تريدهم رؤيتها أو التعاون معها.
+      * 🚀 **قابل للتوسيع مع مئات التطبيقات** ...مثل [التقويم](https://github.com/nextcloud/calendar)، و[جهات الاتصال](https://github.com/nextcloud/contacts)، و[البريد](https://github.com/nextcloud/mail)، و[دردشة الفيديو](https://github.com/nextcloud/spreed) وكل ما يمكنك اكتشافه في [متجر التطبيقات](https://apps.nextcloud.com)
+      * 🔒 **الأمان** مع آليات التشفير الخاصة بنا، و[برنامج مكافآت HackerOne](https://hackerone.com/nextcloud) والمصادقة الثنائية.
+  de:
+    description: Plattform für Dateifreigabe und Zusammenarbeit
+    readme: |-
+      Nextcloud-Server, ein sicheres Zuhause für all Ihre Daten.
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## Funktionen
+
+      * 📁 **Zugriff auf Ihre Daten** Sie können Ihre Dateien, Kontakte, Kalender und mehr auf einem Server Ihrer Wahl speichern.
+      * 🔄 **Synchronisieren Sie Ihre Daten** Sie halten Ihre Dateien, Kontakte, Kalender und mehr zwischen Ihren Geräten synchronisiert.
+      * 🙌 **Teilen Sie Ihre Daten** ...indem Sie anderen Zugriff auf die Inhalte gewähren, die sie sehen sollen oder an denen sie mitarbeiten sollen.
+      * 🚀 **Erweiterbar mit hunderten von Apps** ...wie [Calendar](https://github.com/nextcloud/calendar), [Contacts](https://github.com/nextcloud/contacts), [Mail](https://github.com/nextcloud/mail), [Video Chat](https://github.com/nextcloud/spreed) und alle anderen, die Sie in unserem [App Store](https://apps.nextcloud.com) entdecken können
+      * 🔒 **Sicherheit** durch unsere Verschlüsselungsmechanismen, [HackerOne-Bounty-Programm](https://hackerone.com/nextcloud) und Zwei-Faktor-Authentifizierung.
+  zh:
+    description: 文件共享和协作平台
+    readme: |-
+      Nextcloud 服务器，为您的所有数据提供安全的家园。
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## 功能特点
+
+      * 📁 **访问您的数据** 您可以在自选的服务器上存储文件、联系人、日历等内容。
+      * 🔄 **同步您的数据** 您可以在不同设备之间保持文件、联系人、日历等内容的同步。
+      * 🙌 **分享您的数据** ……通过让他人访问您想要他们查看或协作的内容。
+      * 🚀 **可通过数百个应用扩展** ……如[日历](https://github.com/nextcloud/calendar)、[联系人](https://github.com/nextcloud/contacts)、[邮件](https://github.com/nextcloud/mail)、[视频聊天](https://github.com/nextcloud/spreed)以及所有您可以在我们的[应用商店](https://apps.nextcloud.com)中发现的应用
+      * 🔒 **安全性** 通过我们的加密机制、[HackerOne 赏金计划](https://hackerone.com/nextcloud)和双因素认证实现。
+  fr:
+    description: Plateforme de partage de fichiers et de collaboration
+    readme: |-
+      Serveur Nextcloud, un espace sûr pour toutes vos données.
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      * 📁 **Accédez à vos données** Vous pouvez stocker vos fichiers, contacts, calendriers et plus encore sur le serveur de votre choix.
+      * 🔄 **Synchronisez vos données** Gardez vos fichiers, contacts, calendriers et plus encore synchronisés entre vos appareils.
+      * 🙌 **Partagez vos données** ...en donnant aux autres l'accès aux contenus que vous souhaitez leur montrer ou sur lesquels collaborer.
+      * 🚀 **Extensible avec des centaines d'applications** ...comme [Calendar](https://github.com/nextcloud/calendar), [Contacts](https://github.com/nextcloud/contacts), [Mail](https://github.com/nextcloud/mail), [Video Chat](https://github.com/nextcloud/spreed) et toutes celles que vous pouvez découvrir dans notre [App Store](https://apps.nextcloud.com)
+      * 🔒 **Sécurité** avec nos mécanismes de chiffrement, notre [programme de primes HackerOne](https://hackerone.com/nextcloud) et l'authentification à deux facteurs.
+  ja:
+    description: ファイル共有とコラボレーションプラットフォーム
+    readme: |-
+      Nextcloudサーバー、あなたのすべてのデータの安全な保管場所。
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## 機能
+
+      * 📁 **データへのアクセス** 選択したサーバーにファイル、連絡先、カレンダーなどを保存できます。
+      * 🔄 **データの同期** デバイス間でファイル、連絡先、カレンダーなどを同期させることができます。
+      * 🙌 **データの共有** 他の人に見せたい、または協力したいものへのアクセス権を与えることができます。
+      * 🚀 **数百のアプリで拡張可能** [カレンダー](https://github.com/nextcloud/calendar)、[連絡先](https://github.com/nextcloud/contacts)、[メール](https://github.com/nextcloud/mail)、[ビデオチャット](https://github.com/nextcloud/spreed)など、[アプリストア](https://apps.nextcloud.com)で見つけることができるアプリがあります。
+      * 🔒 **セキュリティ** 暗号化メカニズム、[HackerOne報奨金プログラム](https://hackerone.com/nextcloud)、二要素認証を提供します。
+  es:
+    description: Plataforma de colaboración y uso compartido de archivos
+    readme: |-
+      Servidor Nextcloud, un hogar seguro para todos tus datos.
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## Características
+
+      * 📁 **Accede a tus datos** Puedes almacenar tus archivos, contactos, calendarios y más en el servidor que elijas.
+      * 🔄 **Sincroniza tus datos** Mantén tus archivos, contactos, calendarios y más sincronizados entre tus dispositivos.
+      * 🙌 **Comparte tus datos** ...dando a otros acceso a las cosas que quieres que vean o con las que quieres colaborar.
+      * 🚀 **Expandible con cientos de aplicaciones** ...como [Calendario](https://github.com/nextcloud/calendar), [Contactos](https://github.com/nextcloud/contacts), [Correo](https://github.com/nextcloud/mail), [Video Chat](https://github.com/nextcloud/spreed) y todas las que puedes descubrir en nuestra [Tienda de Aplicaciones](https://apps.nextcloud.com)
+      * 🔒 **Seguridad** con nuestros mecanismos de cifrado, [programa de recompensas HackerOne](https://hackerone.com/nextcloud) y autenticación de dos factores.
+  it:
+    description: Piattaforma di condivisione file e collaborazione
+    readme: |-
+      Server Nextcloud, una casa sicura per tutti i tuoi dati.
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## Caratteristiche
+
+      * 📁 **Accedi ai tuoi Dati** Puoi archiviare i tuoi file, contatti, calendari e altro su un server di tua scelta.
+      * 🔄 **Sincronizza i tuoi Dati** Mantieni i tuoi file, contatti, calendari e altro sincronizzati tra i tuoi dispositivi.
+      * 🙌 **Condividi i tuoi Dati** ...dando ad altri l'accesso alle cose che vuoi che vedano o con cui vuoi collaborare.
+      * 🚀 **Espandibile con centinaia di App** ...come [Calendar](https://github.com/nextcloud/calendar), [Contacts](https://github.com/nextcloud/contacts), [Mail](https://github.com/nextcloud/mail), [Video Chat](https://github.com/nextcloud/spreed) e tutte quelle che puoi scoprire nel nostro [App Store](https://apps.nextcloud.com)
+      * 🔒 **Sicurezza** con i nostri meccanismi di crittografia, [programma bug bounty HackerOne](https://hackerone.com/nextcloud) e autenticazione a due fattori.
+  ko:
+    description: 파일 공유 및 협업 플랫폼
+    readme: |-
+      Nextcloud 서버, 당신의 모든 데이터를 위한 안전한 공간.
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## 기능
+
+      * 📁 **데이터 접근** 원하는 서버에 파일, 연락처, 캘린더 등을 저장할 수 있습니다.
+      * 🔄 **데이터 동기화** 기기 간에 파일, 연락처, 캘린더 등을 동기화 상태로 유지합니다.
+      * 🙌 **데이터 공유** 다른 사람들에게 보여주고 싶거나 협업하고 싶은 내용에 대한 접근 권한을 제공합니다.
+      * 🚀 **수백 개의 앱으로 확장 가능** [캘린더](https://github.com/nextcloud/calendar), [연락처](https://github.com/nextcloud/contacts), [메일](https://github.com/nextcloud/mail), [화상 채팅](https://github.com/nextcloud/spreed) 등과 같은 앱들을 [앱 스토어](https://apps.nextcloud.com)에서 찾아볼 수 있습니다
+      * 🔒 **보안** 암호화 메커니즘, [HackerOne 바운티 프로그램](https://hackerone.com/nextcloud) 및 2단계 인증을 통한 보안을 제공합니다.
+  pt:
+    description: Plataforma de compartilhamento de arquivos e colaboração
+    readme: |-
+      Servidor Nextcloud, um local seguro para todos os seus dados.
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## Recursos
+
+      * 📁 **Acesse seus Dados** Você pode armazenar seus arquivos, contatos, calendários e mais em um servidor de sua escolha.
+      * 🔄 **Sincronize seus Dados** Mantenha seus arquivos, contatos, calendários e mais sincronizados entre seus dispositivos.
+      * 🙌 **Compartilhe seus Dados** ...dando a outros acesso ao conteúdo que você quer que eles vejam ou para colaborar.
+      * 🚀 **Expansível com centenas de Aplicativos** ...como [Calendário](https://github.com/nextcloud/calendar), [Contatos](https://github.com/nextcloud/contacts), [E-mail](https://github.com/nextcloud/mail), [Video Chat](https://github.com/nextcloud/spreed) e todos aqueles que você pode descobrir em nossa [Loja de Aplicativos](https://apps.nextcloud.com)
+      * 🔒 **Segurança** com nossos mecanismos de criptografia, [programa de recompensas HackerOne](https://hackerone.com/nextcloud) e autenticação de dois fatores.
+  ru:
+    description: Платформа для обмена файлами и совместной работы
+    readme: |-
+      Сервер Nextcloud - безопасный дом для всех ваших данных.
+
+      ![preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
+
+      <hr>
+
+      ## Возможности
+
+      * 📁 **Доступ к вашим данным** Вы можете хранить файлы, контакты, календари и многое другое на выбранном вами сервере.
+      * 🔄 **Синхронизация данных** Ваши файлы, контакты, календари и другие данные синхронизируются между вашими устройствами.
+      * 🙌 **Делитесь данными** ...предоставляя другим доступ к материалам, которые вы хотите им показать или над которыми хотите сотрудничать.
+      * 🚀 **Расширяемость сотнями приложений** ...таких как [Календарь](https://github.com/nextcloud/calendar), [Контакты](https://github.com/nextcloud/contacts), [Почта](https://github.com/nextcloud/mail), [Видеочат](https://github.com/nextcloud/spreed) и всех тех, которые вы можете найти в нашем [Магазине приложений](https://apps.nextcloud.com)
+      * 🔒 **Безопасность** с нашими механизмами шифрования, [программой вознаграждения HackerOne](https://hackerone.com/nextcloud) и двухфакторной аутентификацией.

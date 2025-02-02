@@ -1,0 +1,5 @@
+# Stack License
+
+This repository is licensed under the MIT License ; excepted for the following subfolders:
+
+- [packages/app](packages/app) which is covered by its own proprietary license.

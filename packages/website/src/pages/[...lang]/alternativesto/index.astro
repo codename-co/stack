@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import Logo from "~/components/Logo";
+import Tag from "~/components/tag.html";
+import { getStacks } from '~/content/collections/stacks';
+import { langs, useTranslations, useUrl } from "~/i18n";
+import Layout from "~/layouts/Layout.astro";
+
+export const getStaticPaths = () => {
+  return langs.map((lang) => ({ params: { lang } }));
+};
+
+const lang = Astro.params.lang;
+const t = useTranslations(lang);
+const url = useUrl(lang);
+
+const stacks = getStacks(lang);
+
+const alternatives = await getCollection("alternatives");
+
+const tags = (await getCollection('tags')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const title = t("Alternatives to popular software");
+---
+
+<Layout lang={lang} title={title}>
+  <div slot="left" class="section">
+    <h1 set:html={t("The open source ecosystem is *awe-inspiring*.")} />
+    <p class="subtle" set:html={t("The community has created numerous high-quality, open source alternatives to popular software. Discover our curated list of amazing alternatives below.")} />
+  </div>
+
+  <div class="section">
+    <h2 class="my-12" set:html={t("Kinda *popular software* and their open counterparts")} />
+    <dl class="sm:columns-2 md:columns-3">
+      {
+        alternatives.sort().map(({ data }) => data).map(({ slug, name }) => (
+          <dt class="mb-4">
+            <a href={url(`/alternativesto/${slug}`)}>
+              <Logo slug={slug} />&nbsp;{name}
+            </a>
+          </dt>
+          <div class="mb-4">
+            {stacks.map(({ data }) => data).filter(({ alternativeTo }) => alternativeTo?.includes(slug))
+            .map(({ slug, name }) => (
+            <dd class="mb-4">
+              <a href={url(`/${slug}`)}>
+              <Logo slug={slug} />&nbsp;{name}
+              </a>
+            </dd>
+            ))
+            }
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+
+  <div class="section">
+    <h2 class="my-12" set:html={t("Browse *by category*")} />
+    <ol class="light sm:columns-2 md:columns-2">
+      {
+        tags.map(({data: { slug, name, title }}) => (
+          <li class="mb-4">
+            <a href={url(`/?q=%23${slug}`)}>
+              {title ? `${title} (${name})` : name}
+            </a>
+            <Tag>{stacks.map(({ data }) => data).filter(({ tags }) => tags?.includes(slug)).length}</Tag>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</Layout>

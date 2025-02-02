@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: drawio
+name: Draw.io
+icon: diagramsdotnet
+flavor: DockerCompose
+version: "26.0.3"
+updated_at: 2024-10-01
+description: JavaScript, client-side editor for general diagramming
+author: JGraph Ltd
+license: Apache-2.0
+homepage: https://www.drawio.com
+repository: https://github.com/jgraph/drawio-desktop
+stars: 51800
+tags: [diagram]
+alternativeTo: [miro, lucidchart, visio]
+readme: |
+  Browser-based diagramming components and applications.
+
+  ![preview](https://www.drawio.com/assets/img/blog/uml-2-5-activity-diagram-example.png)

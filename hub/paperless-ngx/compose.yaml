@@ -1,0 +1,46 @@
+services:
+  paperless-ngx-broker:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+
+  paperless-ngx-db:
+    image: postgres:16
+    restart: unless-stopped
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: paperless
+
+  paperless-ngx:
+    image: ghcr.io/paperless-ngx/paperless-ngx:${PAPERLESS_VERSION:-2.14}
+    restart: unless-stopped
+    depends_on:
+      - paperless-ngx-db
+      - paperless-ngx-broker
+    # ports:
+    #   - 8000:8000
+    volumes:
+      - data:/usr/src/paperless/data
+      - media:/usr/src/paperless/media
+      - export:/usr/src/paperless/export
+      - consume:/usr/src/paperless/consume
+    env_file: .env
+    environment:
+      PAPERLESS_REDIS: redis://paperless-ngx-broker:6379
+      PAPERLESS_DBHOST: paperless-ngx-db
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.paperless-ngx.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.paperless-ngx.loadbalancer.server.port: 8000
+
+volumes:
+  data:
+  media:
+  pgdata:
+  redisdata:
+  export:
+  consume:

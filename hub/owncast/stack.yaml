@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: owncast
+name: Owncast
+icon: Ⓞ
+flavor: DockerCompose
+version: "0.2.1"
+updated_at: 2025-01-19
+description: Live video streaming + chat out of the box
+author: Gabe Kangas
+license: MIT
+homepage: https://owncast.online
+repository: https://github.com/owncast/owncast
+stars: 9700
+tags:
+  - streaming
+  - video
+alternativeTo:
+  - twitch
+  - youtube
+  - peertube
+readme: |
+  Owncast is an open source, self-hosted, decentralized, single user live video streaming and chat server for running your own live streams similar in style to the large mainstream options. It offers complete ownership over your content, interface, moderation and audience.
+
+  ![preview](https://owncast.online/images/owncast-splash.png)
+
+  <hr>
+
+  ## Features
+
+  - **Self hosted and Independent:**
+    Have complete control and ownership over your stream, allowing you to create the content and community you want.
+  - **Chat:**
+    The frictionless built-in chat allows your viewers to be a part of the action. Include custom emotes and build chat bots to encourage engagement from your viewers.
+  - **Works with your software:**
+    Point your existing broadcasting software at your Owncast server and begin streaming on your own server in minutes.
+  - **The Fediverse:**
+    Your live stream can reach a wider audience on The Fediverse, allowing people to follow and share your stream on Mastodon and other Fediverse services.

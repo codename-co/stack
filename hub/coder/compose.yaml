@@ -1,0 +1,16 @@
+services:
+  coder:
+    image: linuxserver/code-server:${CODER_VERSION:-4.96.2}
+    restart: unless-stopped
+    # ports:
+    #   - 8443:8443
+    volumes:
+      - config:/config
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.coder.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.coder.loadbalancer.server.port: 8443
+
+volumes:
+  config:

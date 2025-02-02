@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: ghostfolio
+name: Ghostfolio
+icon: 👻
+flavor: DockerCompose
+version: "2"
+updated_at: 2024-12-30
+description: Wealth management software
+author: Ghostfolio
+license: AGPL-3.0
+homepage: https://ghostfol.io
+repository: https://github.com/ghostfolio/ghostfolio
+stars: 4800
+tags: [finance]
+alternativeTo: [mint]
+readme: |
+  Ghostfolio is an open source wealth management software built with web technology. The application empowers busy people to keep track of stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions. The software is designed for personal use in continuous operation.
+
+  [![preview](https://github.com/ghostfolio/ghostfolio/blob/main/apps/client/src/assets/images/video-preview.jpg?raw=true)](https://www.youtube.com/watch?v=yY6ObSQVJZk)
+
+  <hr>
+
+  ## Why Ghostfolio?
+
+  Ghostfolio is for you if you are...
+
+  - 💼 trading stocks, ETFs or cryptocurrencies on multiple platforms
+  - 🏦 pursuing a buy & hold strategy
+  - 🎯 interested in getting insights of your portfolio composition
+  - 👻 valuing privacy and data ownership
+  - 🧘 into minimalism
+  - 🧺 caring about diversifying your financial resources
+  - 🆓 interested in financial independence
+  - 🙅 saying no to spreadsheets
+  - 😎 still reading this list
+
+  ## Features
+
+  - Create, update and delete transactions
+  - Multi account management
+  - Portfolio performance: Time-weighted rate of return (TWR) for Today, WTD, MTD, YTD, 1Y, 5Y, Max
+  - Various charts
+  - Static analysis to identify potential risks in your portfolio
+  - Import and export transactions
+  - Dark Mode
+  - Zen Mode
+  - Progressive Web App (PWA) with a mobile-first design

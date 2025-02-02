@@ -1,0 +1,135 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: hoppscotch
+name: Hoppscotch
+flavor: DockerCompose
+version: "2024.11.0"
+updated_at: 2024-11-28
+description: Postman-like API client
+author: Hoppscotch
+license: MIT
+homepage: https://hoppscotch.io
+repository: https://github.com/hoppscotch/hoppscotch
+stars: 66100
+tags:
+  - api
+alternativeTo:
+  - postman
+readme: |
+  Hoppscotch is a lightweight, web-based API development suite.
+
+  ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+  <hr>
+
+  It was built from the ground up with ease of use and accessibility in mind providing all the functionality needed for API developers with minimalist, unobtrusive UI.
+i18n:
+  es:
+    description: Cliente API tipo Postman
+    readme: |-
+      Hoppscotch es una suite de desarrollo de API ligera y basada en web.
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      Fue construida desde cero pensando en la facilidad de uso y accesibilidad, proporcionando toda la funcionalidad necesaria para desarrolladores de API con una interfaz de usuario minimalista y discreta.
+  pt:
+    description: Cliente de API similar ao Postman
+    readme: |-
+      Hoppscotch é uma suíte de desenvolvimento de API leve e baseada na web.
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      Foi construída desde o início com foco na facilidade de uso e acessibilidade, fornecendo todas as funcionalidades necessárias para desenvolvedores de API com uma interface minimalista e discreta.
+  fr:
+    description: Client API similaire à Postman
+    readme: |-
+      Hoppscotch est une suite de développement d'API web légère et basée sur le web.
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      Elle a été conçue de A à Z en pensant à la facilité d'utilisation et à l'accessibilité, offrant toutes les fonctionnalités nécessaires aux développeurs d'API avec une interface utilisateur minimaliste et discrète.
+  it:
+    description: Client API simile a Postman
+    readme: |-
+      Hoppscotch è una suite di sviluppo API leggera e basata sul web.
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      È stata costruita da zero pensando alla facilità d'uso e all'accessibilità, fornendo tutte le funzionalità necessarie per gli sviluppatori API con un'interfaccia utente minimalista e discreta.
+  de:
+    description: API-Client ähnlich wie Postman
+    readme: |-
+      Hoppscotch ist eine leichte, webbasierte API-Entwicklungsumgebung.
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      Sie wurde von Grund auf mit Fokus auf Benutzerfreundlichkeit und Zugänglichkeit entwickelt und bietet alle Funktionen, die API-Entwickler mit einer minimalistischen, dezenten Benutzeroberfläche benötigen.
+  ru:
+    description: API-клиент по типу Postman
+    readme: |-
+      Hoppscotch - это легкое веб-приложение для разработки API.
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      Оно было создано с нуля с учетом простоты использования и доступности, предоставляя всю необходимую функциональность для разработчиков API с минималистичным, ненавязчивым интерфейсом.
+  ar:
+    description: عميل API شبيه لـ Postman
+    readme: |-
+      هوبسكوتش هي مجموعة تطوير واجهات برمجة التطبيقات خفيفة الوزن تعمل على الويب.
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      تم بناؤها من الصفر مع وضع سهولة الاستخدام وإمكانية الوصول في الاعتبار، حيث توفر جميع الوظائف التي يحتاجها مطورو واجهات برمجة التطبيقات مع واجهة مستخدم بسيطة وغير متطفلة.
+  hi:
+    description: पोस्टमैन जैसा एपीआई क्लाइंट
+    readme: |-
+      Hoppscotch एक हल्का, वेब-आधारित API विकास सूट है।
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      इसे उपयोग में आसानी और पहुंच को ध्यान में रखते हुए शुरू से बनाया गया था, जो न्यूनतम, अबाधित UI के साथ API डेवलपर्स के लिए आवश्यक सभी कार्यक्षमता प्रदान करता है।
+  zh:
+    description: 类似 Postman 的 API 客户端
+    readme: |-
+      Hoppscotch 是一个轻量级的基于网络的 API 开发套件。
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      它从零开始构建，注重易用性和可访问性，通过简约、不引人注目的用户界面为 API 开发人员提供所需的所有功能。
+  ko:
+    description: API 클라이언트 테스트 도구
+    readme: |-
+      Hoppscotch는 가벼운 웹 기반 API 개발 도구입니다.
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      최소한의 방해되지 않는 UI로 API 개발자에게 필요한 모든 기능을 제공하면서 사용의 편의성과 접근성을 고려하여 처음부터 설계되었습니다.
+  ja:
+    description: POSTMANライクなAPIクライアント
+    readme: |-
+      Hoppscotchは軽量なWebベースのAPI開発スイートです。
+
+      ![preview](https://mintlify.s3.us-west-1.amazonaws.com/hoppscotch/images/hero-dark.png)
+
+      <hr>
+
+      使いやすさとアクセシビリティを念頭に置いて一から構築され、ミニマルで邪魔にならないUIで、API開発者に必要なすべての機能を提供します。

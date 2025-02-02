@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: nginx
+name: Nginx
+flavor: DockerCompose
+version: "1.27.3"
+updated_at: 2024-12-03
+description: High-performance web server and reverse proxy
+author: F5 Networks
+license: BSD-2-Clause
+homepage: https://www.nginx.org
+repository: https://github.com/nginx/nginx
+stars: 25400
+tags: [web-server, reverse-proxy]
+alternativeTo: []
+readme: |
+  NGINX is the world's most popular Web Server, high performance Load Balancer, Reverse Proxy, API Gateway and Content Cache.

@@ -1,0 +1,100 @@
+$schema: http://json-schema.org/draft-07/schema#
+title: Stack Configuration Schema
+description: Schema for validating stack.yaml configuration files
+type: object
+required:
+  - slug
+  - name
+  - flavor
+  - version
+  - description
+  - author
+  - license
+properties:
+  slug:
+    type: string
+    description: Slug of the stack application
+    examples: ["parabol"]
+
+  name:
+    type: string
+    description: Name of the stack application
+    examples: ["Parabol"]
+
+  icon:
+    type: string
+    description: Simple icon reference or emoji icon for the stack
+
+  flavor:
+    type: string
+    description: Type of deployment configuration
+    enum: ["DockerCompose", "DockerService"]
+
+  version:
+    type: string
+    description: Version of the stack
+
+  updated_at:
+    type: string
+    format: date
+    description: Date of the last update
+    pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+
+  description:
+    type: string
+    description: Brief description of the stack functionality
+
+  author:
+    type: string
+    description: Author or organization name
+
+  license:
+    type: string
+    description: License details (Either in SPDX format, URL or plain text)
+    # pattern: "^([A-Za-z0-9.-]+)|^https?://.+$"
+
+  homepage:
+    type: string
+    format: uri
+    description: URL of the product homepage
+
+  repository:
+    type: string
+    format: uri
+    description: URL of the source code repository
+
+  stars:
+    type: integer
+    description: Number of stars on the repository
+
+  tags:
+    type: array
+    items:
+      type: string
+    description: List of tags for the stack
+
+  alternativeTo:
+    type: array
+    items:
+      type: string
+    description: List of alternative software to the stack
+
+  readme:
+    type: string
+    description: Detailed description of the stack
+
+  i18n:
+    type: object
+    description: Internationalization translations for the stack
+    patternProperties:
+      "^[a-z]{2}$":
+        type: object
+        properties:
+          description:
+            type: string
+            description: Translated description of the stack
+          readme:
+            type: string
+            description: Translated readme content
+
+additionalProperties: false

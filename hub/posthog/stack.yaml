@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: posthog
+name: PostHog
+flavor: DockerCompose
+version: latest
+updated_at: 2024-12-07
+description: The single platform to analyze, test, observe, and deploy new features
+author: PostHog, Inc
+license: MIT Expat
+homepage: https://posthog.com
+repository: https://github.com/PostHog/posthog
+stars: 22400
+tags: [analytics, product-analytics, feature-flagging, a-b-testing]
+alternativeTo: [mixpanel, amplitude]
+readme: |
+  PostHog provides open-source web & product analytics, session recording, feature flagging and A/B testing that you can self-host.
+
+  ![preview](https://user-images.githubusercontent.com/85295485/144591577-fe97e4a5-5631-4a60-a684-45caf421507f.gif)
+
+  <hr>
+
+  ## Features
+
+  - Specify events manually, or use autocapture to get started quickly
+  - Analyze data with ready-made visualizations, or do it yourself with SQL
+  - Track website visitors separately with our GA4 alternative
+  - Only capture properties on the people you want to track, save money when you don't
+  - Gather insights by capturing session replays, console logs, and network monitoring
+  - Improve your product with Experiments that automatically analyze performance
+  - Safely roll out features to select users or cohorts with feature flags
+  - Send out fully customizable surveys to specific cohorts of users
+  - Connect to external services and manage data flows with PostHog CDP

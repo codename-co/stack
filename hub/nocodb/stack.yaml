@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: nocodb
+name: NocoDB
+icon: Ⓝ
+flavor: DockerCompose
+version: "0.258.3"
+updated_at: 2024-11-28
+description: Open-source Airtable alternative
+author: NocoDB, Inc
+license: AGPL-3.0
+homepage: https://nocodb.com
+repository: https://github.com/nocodb/nocodb
+stars: 50300
+tags: [database, data, spreadsheet]
+alternativeTo: [airtable, excel]
+readme: |
+  NocoDB is the fastest and easiest way to build databases online.
+
+  ![](https://github.com/nocodb/nocodb/assets/86527202/e2fad786-f211-4dcb-9bd3-aaece83a6783)
+
+  <hr>
+
+  ## Features
+
+  ### Rich Spreadsheet Interface
+
+  - ⚡ Basic Operations: Create, Read, Update and Delete Tables, Columns, and Rows
+  - ⚡ Fields Operations: Sort, Filter, Group, Hide / Unhide Columns
+  - ⚡ Multiple Views Types: Grid, Gallery, Form, Kanban and Calendar View
+  - ⚡ View Permissions Types: Collaborative Views, & Locked Views
+  - ⚡ Share Bases / Views: either Public or Private (with Password Protected)
+  - ⚡ Variant Cell Types: ID, Links, Lookup, Rollup, SingleLineText, Attachment, Currency, Formula, User, etc
+  - ⚡ Access Control with Roles: Fine-grained Access Control at different levels
+  - ⚡ and more ...
+
+  ### App Store for Workflow Automations
+
+  We provide different integrations in three main categories. See <a href="https://docs.nocodb.com/account-settings/oss-specific-details/#app-store" target="_blank">App Store</a> for details.
+
+  - ⚡ Chat: Slack, Discord, Mattermost, and etc
+  - ⚡ Email: AWS SES, SMTP, MailerSend, and etc
+  - ⚡ Storage: AWS S3, Google Cloud Storage, Minio, and etc
+
+  ### Programmatic Access
+
+  We provide the following ways to let users programmatically invoke actions. You can use a token (either JWT or Social Auth) to sign your requests for authorization to NocoDB.
+
+  - ⚡ REST APIs
+  - ⚡ NocoDB SDK

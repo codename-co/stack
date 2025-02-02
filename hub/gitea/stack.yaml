@@ -1,0 +1,165 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: gitea
+name: Gitea
+flavor: DockerCompose
+version: "1.22.6"
+updated_at: 2024-12-13
+description: All-in-one software development service with git hosting
+author: CommitGo, Inc
+license: MIT
+homepage: https://about.gitea.com
+repository: https://github.com/go-gitea/gitea
+stars: 46400
+tags:
+  - git
+  - software-development
+alternativeTo:
+  - github
+  - bitbucket
+readme: |
+  The goal of this project is to make the easiest, fastest, and most painless
+  way of setting up a self-hosted Git service.
+
+  ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+  <hr>
+
+  Painless self-hosted all-in-one software development service, including Git
+  hosting, code review, team collaboration, package registry and CI/CD.
+i18n:
+  de:
+    description: All-in-One Softwareentwicklungsdienst mit Git-Hosting
+    readme: |-
+      Das Ziel dieses Projekts ist es, den einfachsten, schnellsten und
+      unkompliziertesten Weg zur Einrichtung eines selbst gehosteten
+      Git-Dienstes zu schaffen.
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      Unkomplizierte, selbst gehostete All-in-One-Softwareentwicklungsplattform,
+      einschließlich Git-Hosting, Code-Review, Team-Zusammenarbeit,
+      Paket-Registry und CI/CD.
+  es:
+    description: Servicio integral de desarrollo de software con alojamiento git
+    readme: |-
+      El objetivo de este proyecto es crear la forma más sencilla, rápida y sin
+      complicaciones de configurar un servicio Git autohospedado.
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      Servicio de desarrollo de software todo en uno autohospedado y sin
+      complicaciones, que incluye alojamiento Git, revisión de código,
+      colaboración en equipo, registro de paquetes y CI/CD.
+  it:
+    description: Servizio di sviluppo software tutto in uno con hosting git
+    readme: |-
+      L'obiettivo di questo progetto è creare il modo più semplice, veloce e
+      indolore per configurare un servizio Git self-hosted.
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      Servizio di sviluppo software all-in-one self-hosted senza complicazioni,
+      che include hosting Git, revisione del codice, collaborazione del team,
+      registro dei pacchetti e CI/CD.
+  fr:
+    description: Service complet de développement logiciel avec hébergement git
+    readme: |-
+      L'objectif de ce projet est de créer la méthode la plus simple, la plus
+      rapide et la moins contraignante pour mettre en place un service Git
+      auto-hébergé.
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      Service de développement logiciel tout-en-un auto-hébergé et sans
+      contraintes, comprenant l'hébergement Git, la revue de code, la
+      collaboration d'équipe, le registre de paquets et
+      l'intégration/déploiement continus.
+  pt:
+    description: Serviço completo de desenvolvimento de software com hospedagem git
+    readme: |-
+      O objetivo deste projeto é criar a forma mais fácil, rápida e indolor de
+      configurar um serviço Git auto-hospedado.
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      Serviço de desenvolvimento de software tudo-em-um auto-hospedado e sem
+      complicações, incluindo hospedagem Git, revisão de código, colaboração em
+      equipe, registro de pacotes e CI/CD.
+  ru:
+    description: Комплексный сервис разработки программного обеспечения с git-хостингом
+    readme: |-
+      Цель данного проекта - создать самый простой, быстрый и безболезненный
+      способ настройки самостоятельно размещаемого Git-сервиса.
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      Простое самостоятельно размещаемое комплексное решение для разработки
+      программного обеспечения, включающее Git-хостинг, проверку кода,
+      совместную работу команды, реестр пакетов и CI/CD.
+  ar:
+    description: خدمة تطوير برمجيات شاملة مع استضافة جيت
+    readme: |-
+      الهدف من هذا المشروع هو توفير أسهل وأسرع وأبسط طريقة لإعداد خدمة Git ذاتية
+      الاستضافة.
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      خدمة تطوير برمجيات شاملة ذاتية الاستضافة وبدون تعقيد، تشمل استضافة Git،
+      ومراجعة الكود، والتعاون الجماعي، وسجل الحزم وCI/CD.
+  hi:
+    description: गिट होस्टिंग के साथ ऑल-इन-वन सॉफ्टवेयर डेवलपमेंट सर्विस
+    readme: |-
+      इस प्रोजेक्ट का लक्ष्य सेल्फ-होस्टेड गिट सेवा स्थापित करने का सबसे आसान,
+      सबसे तेज़ और सबसे सरल तरीका बनाना है।
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      सरल सेल्फ-होस्टेड ऑल-इन-वन सॉफ्टवेयर डेवलपमेंट सेवा, जिसमें गिट होस्टिंग,
+      कोड समीक्षा, टीम सहयोग, पैकेज रजिस्ट्री और सीआई/सीडी शामिल हैं।
+  zh:
+    description: 一体化软件开发服务，包含git托管
+    readme: |-
+      本项目的目标是提供最简单、最快速、最便捷的方式来搭建自托管Git服务。
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      便捷的自托管一体化软件开发服务，包含Git托管、代码审查、团队协作、包注册中心和CI/CD。
+  ko:
+    description: 올인원 Git 호스팅 소프트웨어 개발 서비스
+    readme: |-
+      이 프로젝트의 목표는 자체 호스팅 Git 서비스를 설정하는 가장 쉽고, 빠르며, 가장 간편한 방법을 만드는 것입니다.
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      Git 호스팅, 코드 리뷰, 팀 협업, 패키지 레지스트리 및 CI/CD를 포함한 간편한 자체 호스팅 올인원 소프트웨어 개발
+      서비스입니다.
+  ja:
+    description: オールインワンのGitホスティング付きソフトウェア開発サービス
+    readme: |-
+      このプロジェクトの目的は、セルフホスト型Gitサービスの構築を、最も簡単で、最も速く、最も手間のかからない方法で実現することです。
+
+      ![preview](https://about.gitea.com/img/home-screenshot.png)
+
+      <hr>
+
+      手間のかからないセルフホスト型オールインワンソフトウェア開発サービスで、Gitホスティング、コードレビュー、チームコラボレーション、パッケージレジストリ、CI/CDを含みます。

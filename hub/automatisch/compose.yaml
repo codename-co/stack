@@ -1,0 +1,57 @@
+services:
+  automatisch:
+    image: automatischio/automatisch:${AUTOMATISCH_VERSION:-0.14.0}
+    # entrypoint: /compose-entrypoint.sh
+    # ports:
+    #   - 3000:3000
+    depends_on:
+      automatisch-postgres:
+        condition: service_healthy
+      automatisch-redis:
+        condition: service_started
+    env_file: .env
+    volumes:
+      - automatisch_storage:/automatisch/storage
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.automatisch.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.automatisch.loadbalancer.server.port: 3000
+
+  automatisch-worker:
+    image: automatischio/automatisch:${AUTOMATISCH_VERSION:-0.14.0}
+    # entrypoint: /compose-entrypoint.sh
+    depends_on:
+      automatisch-postgres:
+        condition: service_healthy
+      automatisch-redis:
+        condition: service_started
+    env_file: .env
+    environment:
+      - WORKER=true
+    volumes:
+      - automatisch_storage:/automatisch/storage
+
+  automatisch-postgres:
+    image: postgres:14.5
+    env_file: .env
+    environment:
+      - POSTGRES_DB=automatisch
+      - POSTGRES_USER=automatisch_user
+      - POSTGRES_PASSWORD=automatisch_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  automatisch-redis:
+    image: redis:7.0.4
+    volumes:
+      - redis_data:/data
+
+volumes:
+  automatisch_storage:
+  postgres_data:
+  redis_data:

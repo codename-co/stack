@@ -1,0 +1,525 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: superset
+name: Superset
+icon: apachesuperset
+flavor: DockerCompose
+version: "9e5b568"
+updated_at: 2024-11-21
+description: Data visualization and exploration
+author: Apache Software Foundation
+license: Apache-2.0
+homepage: https://superset.apache.org
+repository: https://github.com/apache/superset
+stars: 63000
+tags:
+  - dataviz
+  - data
+  - bi
+alternativeTo:
+  - powerbi
+  - tableau
+readme: >
+  Superset is a modern data exploration and data visualization platform.
+  Superset can replace or augment proprietary business intelligence tools for
+  many teams. Superset integrates well with a variety of data sources.
+
+
+  <!-- File hosted here
+  https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+  <video controls width="100%">
+    <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+    ⚠️ Your browser does not support the video tag.
+  </video>
+
+
+  <hr>
+
+
+  ### Superset provides
+
+
+  - A **no-code interface** for building charts quickly
+
+  - A powerful, web-based **SQL Editor** for advanced querying
+
+  - A **lightweight semantic layer** for quickly defining custom dimensions and
+  metrics
+
+  - Out of the box support for **nearly any SQL** database or data engine
+
+  - A wide array of **beautiful visualizations** to showcase your data, ranging
+  from simple bar charts to geospatial visualizations
+
+  - Lightweight, configurable **caching layer** to help ease database load
+
+  - Highly extensible **security roles and authentication** options
+
+  - An **API** for programmatic customization
+
+  - A **cloud-native architecture** designed from the ground up for scale
+i18n:
+  de:
+    description: Datenvisualisierung und -exploration
+    readme: >-
+      Superset ist eine moderne Plattform für Datenexploration und
+      Datenvisualisierung. Superset kann proprietäre Business-Intelligence-Tools
+      für viele Teams ersetzen oder ergänzen. Superset lässt sich gut mit
+      verschiedenen Datenquellen integrieren.
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ Ihr Browser unterstützt das Video-Tag nicht.
+      </video>
+
+
+      <hr>
+
+
+      ### Superset bietet
+
+
+      - Eine **No-Code-Oberfläche** zum schnellen Erstellen von Diagrammen
+
+      - Einen leistungsstarken, webbasierten **SQL-Editor** für fortgeschrittene
+      Abfragen
+
+      - Eine **leichtgewichtige semantische Ebene** zur schnellen Definition
+      benutzerdefinierter Dimensionen und Metriken
+
+      - Integrierte Unterstützung für **nahezu jede SQL**-Datenbank oder
+      Daten-Engine
+
+      - Eine große Auswahl an **schönen Visualisierungen** zur Darstellung Ihrer
+      Daten, von einfachen Balkendiagrammen bis hin zu geografischen
+      Visualisierungen
+
+      - Leichtgewichtige, konfigurierbare **Caching-Ebene** zur Entlastung der
+      Datenbank
+
+      - Hochgradig erweiterbare **Sicherheitsrollen und
+      Authentifizierungsoptionen**
+
+      - Eine **API** für programmatische Anpassungen
+
+      - Eine **Cloud-native Architektur**, die von Grund auf für Skalierbarkeit
+      entwickelt wurde
+  it:
+    description: Visualizzazione ed esplorazione dei dati
+    readme: >-
+      Superset è una moderna piattaforma di esplorazione e visualizzazione dei
+      dati. Superset può sostituire o integrare strumenti di business
+      intelligence proprietari per molti team. Superset si integra bene con una
+      varietà di fonti di dati.
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ Il tuo browser non supporta il tag video.
+      </video>
+
+
+      <hr>
+
+
+      ### Superset fornisce
+
+
+      - Un'**interfaccia no-code** per creare grafici rapidamente
+
+      - Un potente **Editor SQL** basato su web per query avanzate
+
+      - Uno **strato semantico leggero** per definire rapidamente dimensioni e
+      metriche personalizzate
+
+      - Supporto integrato per **quasi ogni database SQL** o motore dati
+
+      - Un'ampia gamma di **belle visualizzazioni** per mostrare i tuoi dati,
+      dai semplici grafici a barre alle visualizzazioni geospaziali
+
+      - Uno **strato di caching** leggero e configurabile per aiutare a ridurre
+      il carico del database
+
+      - **Ruoli di sicurezza e opzioni di autenticazione** altamente estensibili
+
+      - Un'**API** per personalizzazione programmatica
+
+      - Un'**architettura cloud-native** progettata da zero per la scalabilità
+  pt:
+    description: Visualização e exploração de dados
+    readme: >-
+      O Superset é uma plataforma moderna de exploração e visualização de dados.
+      O Superset pode substituir ou complementar ferramentas proprietárias de
+      business intelligence para muitas equipes. O Superset integra-se bem com
+      uma variedade de fontes de dados.
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ Seu navegador não suporta a tag de vídeo.
+      </video>
+
+
+      <hr>
+
+
+      ### O Superset oferece
+
+
+      - Uma **interface sem código** para criar gráficos rapidamente
+
+      - Um poderoso **Editor SQL** baseado na web para consultas avançadas
+
+      - Uma **camada semântica leve** para definir rapidamente dimensões e
+      métricas personalizadas
+
+      - Suporte nativo para **praticamente qualquer** banco de dados SQL ou
+      mecanismo de dados
+
+      - Uma ampla variedade de **belas visualizações** para mostrar seus dados,
+      desde simples gráficos de barras até visualizações geoespaciais
+
+      - **Camada de cache** leve e configurável para ajudar a reduzir a carga do
+      banco de dados
+
+      - **Funções de segurança e opções de autenticação** altamente extensíveis
+
+      - Uma **API** para personalização programática
+
+      - Uma **arquitetura nativa para nuvem** projetada desde o início para
+      escala
+  ru:
+    description: Визуализация и исследование данных
+    readme: >-
+      Superset - это современная платформа для исследования данных и их
+      визуализации. Superset может заменить или дополнить проприетарные
+      инструменты бизнес-аналитики для многих команд. Superset хорошо
+      интегрируется с различными источниками данных.
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ Ваш браузер не поддерживает тег video.
+      </video>
+
+
+      <hr>
+
+
+      ### Superset предоставляет
+
+
+      - **Интерфейс без кода** для быстрого создания диаграмм
+
+      - Мощный, веб-based **SQL редактор** для продвинутых запросов
+
+      - **Легкий семантический слой** для быстрого определения пользовательских
+      измерений и метрик
+
+      - Поддержку **практически любой SQL** базы данных или движка данных из
+      коробки
+
+      - Широкий спектр **красивых визуализаций** для представления ваших данных,
+      от простых столбчатых диаграмм до геопространственных визуализаций
+
+      - Легкий, настраиваемый **слой кэширования** для снижения нагрузки на базу
+      данных
+
+      - Высоко расширяемые **роли безопасности и опции аутентификации**
+
+      - **API** для программной настройки
+
+      - **Облачная архитектура**, разработанная с нуля для масштабирования
+  es:
+    description: Visualización y exploración de datos
+    readme: >-
+      Superset es una plataforma moderna de exploración y visualización de
+      datos. Superset puede reemplazar o complementar herramientas propietarias
+      de inteligencia empresarial para muchos equipos. Superset se integra bien
+      con una variedad de fuentes de datos.
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ Tu navegador no soporta la etiqueta de video.
+      </video>
+
+
+      <hr>
+
+
+      ### Superset proporciona
+
+
+      - Una **interfaz sin código** para crear gráficos rápidamente
+
+      - Un potente **Editor SQL** basado en web para consultas avanzadas
+
+      - Una **capa semántica ligera** para definir rápidamente dimensiones y
+      métricas personalizadas
+
+      - Soporte incorporado para **casi cualquier** base de datos SQL o motor de
+      datos
+
+      - Una amplia gama de **hermosas visualizaciones** para mostrar tus datos,
+      desde simples gráficos de barras hasta visualizaciones geoespaciales
+
+      - Una **capa de caché** ligera y configurable para ayudar a reducir la
+      carga de la base de datos
+
+      - **Roles de seguridad y opciones de autenticación** altamente extensibles
+
+      - Una **API** para personalización programática
+
+      - Una **arquitectura nativa en la nube** diseñada desde cero para escalar
+  fr:
+    description: Visualisation et exploration des données
+    readme: >-
+      Superset est une plateforme moderne d'exploration et de visualisation de
+      données. Superset peut remplacer ou compléter les outils de business
+      intelligence propriétaires pour de nombreuses équipes. Superset s'intègre
+      bien avec une variété de sources de données.
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ Votre navigateur ne prend pas en charge la balise vidéo.
+      </video>
+
+
+      <hr>
+
+
+      ### Superset fournit
+
+
+      - Une **interface sans code** pour créer rapidement des graphiques
+
+      - Un puissant **éditeur SQL** basé sur le web pour des requêtes avancées
+
+      - Une **couche sémantique légère** pour définir rapidement des dimensions
+      et métriques personnalisées
+
+      - Une prise en charge native pour **presque toutes les bases de données
+      SQL** ou moteurs de données
+
+      - Une large gamme de **belles visualisations** pour présenter vos données,
+      allant des simples graphiques à barres aux visualisations géospatiales
+
+      - Une **couche de mise en cache** légère et configurable pour aider à
+      réduire la charge de la base de données
+
+      - Des **rôles de sécurité et options d'authentification** hautement
+      extensibles
+
+      - Une **API** pour la personnalisation programmatique
+
+      - Une **architecture cloud-native** conçue dès le départ pour
+      l'évolutivité
+  zh:
+    description: 数据可视化与探索
+    readme: >-
+      Superset 是一个现代化的数据探索和数据可视化平台。Superset 可以替代或补充许多团队的专有商业智能工具。Superset
+      能够与各种数据源很好地集成。
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ 您的浏览器不支持视频标签。
+      </video>
+
+
+      <hr>
+
+
+      ### Superset 提供
+
+
+      - 用于快速构建图表的**无代码界面**
+
+      - 用于高级查询的强大的基于网络的**SQL编辑器**
+
+      - 用于快速定义自定义维度和指标的**轻量级语义层**
+
+      - 对**几乎所有SQL**数据库或数据引擎的开箱即用支持
+
+      - 丰富的**精美可视化**选项以展示您的数据，从简单的条形图到地理空间可视化
+
+      - 轻量级、可配置的**缓存层**，有助于减轻数据库负载
+
+      - 高度可扩展的**安全角色和身份验证**选项
+
+      - 用于程序化定制的**API**
+
+      - 从一开始就为规模化设计的**云原生架构**
+  ar:
+    description: استكشاف وتصوير البيانات
+    readme: >-
+      Superset هي منصة حديثة لاستكشاف البيانات وتصويرها. يمكن لـ Superset
+      استبدال أو تعزيز أدوات ذكاء الأعمال المملوكة للعديد من الفرق. يتكامل
+      Superset بشكل جيد مع مجموعة متنوعة من مصادر البيانات.
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ متصفحك لا يدعم علامة الفيديو.
+      </video>
+
+
+      <hr>
+
+
+      ### يوفر Superset
+
+
+      - **واجهة بدون برمجة** لإنشاء المخططات بسرعة
+
+      - **محرر SQL** قوي قائم على الويب للاستعلامات المتقدمة
+
+      - **طبقة دلالية خفيفة** لتحديد الأبعاد والمقاييس المخصصة بسرعة
+
+      - دعم جاهز **لأي قاعدة بيانات SQL** تقريباً أو محرك بيانات
+
+      - مجموعة واسعة من **التصورات الجميلة** لعرض بياناتك، تتراوح من المخططات
+      الشريطية البسيطة إلى التصورات الجغرافية المكانية
+
+      - طبقة **تخزين مؤقت** خفيفة وقابلة للتكوين للمساعدة في تخفيف حمل قاعدة
+      البيانات
+
+      - **أدوار أمان وخيارات مصادقة** قابلة للتوسيع بدرجة كبيرة
+
+      - **واجهة برمجة تطبيقات (API)** للتخصيص البرمجي
+
+      - **بنية سحابية أصلية** مصممة من الأساس للتوسع
+  hi:
+    description: डेटा विज़ुअलाइज़ेशन और एक्सप्लोरेशन
+    readme: >-
+      सुपरसेट एक आधुनिक डेटा एक्सप्लोरेशन और डेटा विज़ुअलाइज़ेशन प्लेटफ़ॉर्म है।
+      सुपरसेट कई टीमों के लिए मालिकाना बिजनेस इंटेलिजेंस टूल्स को बदल सकता है या
+      उन्हें बढ़ा सकता है। सुपरसेट विभिन्न डेटा स्रोतों के साथ अच्छी तरह से
+      एकीकृत होता है।
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ आपका ब्राउज़र वीडियो टैग का समर्थन नहीं करता है।
+      </video>
+
+
+      <hr>
+
+
+      ### सुपरसेट प्रदान करता है
+
+
+      - चार्ट्स को जल्दी से बनाने के लिए एक **नो-कोड इंटरफ़ेस**
+
+      - उन्नत क्वेरी के लिए एक शक्तिशाली, वेब-आधारित **SQL एडिटर**
+
+      - कस्टम डाइमेंशन और मेट्रिक्स को तेज़ी से परिभाषित करने के लिए एक
+      **लाइटवेट सिमेंटिक लेयर**
+
+      - **लगभग किसी भी SQL** डेटाबेस या डेटा इंजन के लिए बॉक्स से बाहर समर्थन
+
+      - आपके डेटा को प्रदर्शित करने के लिए **सुंदर विज़ुअलाइज़ेशन** की एक
+      विस्तृत श्रृंखला, सरल बार चार्ट से लेकर भू-स्थानिक विज़ुअलाइज़ेशन तक
+
+      - डेटाबेस लोड को कम करने में मदद के लिए लाइटवेट, कॉन्फ़िगर करने योग्य
+      **कैशिंग लेयर**
+
+      - अत्यधिक विस्तार योग्य **सुरक्षा भूमिकाएं और प्रमाणीकरण** विकल्प
+
+      - प्रोग्रामेटिक कस्टमाइजेशन के लिए एक **API**
+
+      - स्केल के लिए शुरू से डिज़ाइन की गई एक **क्लाउड-नेटिव आर्किटेक्चर**
+  ko:
+    description: 데이터 시각화 및 탐색
+    readme: >-
+      Superset은 현대적인 데이터 탐색 및 데이터 시각화 플랫폼입니다. Superset은 많은 팀들의 독점적인 비즈니스 인텔리전스
+      도구를 대체하거나 보완할 수 있습니다. Superset은 다양한 데이터 소스와 잘 통합됩니다.
+
+
+      <!-- File hosted here
+      https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ 브라우저가 비디오 태그를 지원하지 않습니다.
+      </video>
+
+
+      <hr>
+
+
+      ### Superset이 제공하는 기능
+
+
+      - 차트를 빠르게 구축할 수 있는 **노코드 인터페이스**
+
+      - 고급 쿼리를 위한 강력한 웹 기반 **SQL 편집기**
+
+      - 사용자 정의 차원과 지표를 빠르게 정의할 수 있는 **경량 시맨틱 레이어**
+
+      - **거의 모든 SQL** 데이터베이스 또는 데이터 엔진에 대한 즉시 지원
+
+      - 간단한 막대 차트부터 지리 공간 시각화에 이르기까지 데이터를 보여주는 다양한 **아름다운 시각화**
+
+      - 데이터베이스 부하를 줄이는데 도움이 되는 경량의 구성 가능한 **캐싱 레이어**
+
+      - 확장 가능한 **보안 역할 및 인증** 옵션
+
+      - 프로그래밍 방식의 사용자 정의를 위한 **API**
+
+      - 규모 확장을 위해 처음부터 설계된 **클라우드 네이티브 아키텍처**
+  ja:
+    description: データの可視化と探索
+    readme: |-
+      Supersetは、現代のデータ探索およびデータ可視化プラットフォームです。Supersetは多くのチームにとって、独自のビジネスインテリジェンスツールの代替または補完となることができます。Supersetは様々なデータソースとうまく連携します。
+
+      <!-- File hosted here https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
+      <video controls width="100%">
+        <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
+        ⚠️ お使いのブラウザはビデオタグをサポートしていません。
+      </video>
+
+      <hr>
+
+      ### Supersetが提供するもの
+
+      - チャートを素早く作成するための**コード不要のインターフェース**
+      - 高度なクエリを実行するための強力な、ウェブベースの**SQLエディタ**
+      - カスタムディメンションやメトリクスを素早く定義するための**軽量なセマンティックレイヤー**
+      - **ほぼすべてのSQL**データベースやデータエンジンに対する標準サポート
+      - 単純な棒グラフから地理空間可視化まで、データを展示するための幅広い**美しい可視化**機能
+      - データベース負荷を軽減するための設定可能な**軽量キャッシュレイヤー**
+      - 高度に拡張可能な**セキュリティロールと認証**オプション
+      - プログラムによるカスタマイズのための**API**
+      - スケールを考慮して設計された**クラウドネイティブアーキテクチャ**

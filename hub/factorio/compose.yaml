@@ -1,0 +1,16 @@
+services:
+  factorio:
+    image: factoriotools/factorio:${FACTORIO_VERSION:-1}
+    ports:
+      - "34197:34197/udp"
+      - "27015:27015/tcp"
+    deploy:
+      resources:
+        limits:
+          memory: 1.5G
+    volumes:
+      - data:/factorio
+
+volumes:
+  data:
+    driver: local

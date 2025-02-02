@@ -1,0 +1,10 @@
+{
+  "name": "graphql-mesh",
+  "version": "0.1.0",
+  "dependencies": {
+    "@graphql-mesh/compose-cli": "^1.1.6"
+  },
+  "engines": {
+    "node": "22"
+  }
+}

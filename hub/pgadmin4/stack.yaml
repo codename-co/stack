@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: pgadmin4
+name: pgAdmin 4
+icon: 🐘
+flavor: DockerCompose
+version: "8"
+updated_at: 2024-12-12
+description: Web-based administration tool for PostgreSQL
+author: pgAdmin Development Team
+license: PostgreSQL
+homepage: https://www.pgadmin.org
+repository: https://github.com/pgadmin-org/pgadmin4
+stars: 2600
+tags:
+  - database
+alternativeTo:
+  - datagrip
+readme: |
+  pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL, the most advanced Open Source database in the world.
+
+  ![preview](https://www.pgadmin.org/static/COMPILED/assets/img/screenshot.webp)

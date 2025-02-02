@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: jitsi
+name: Jitsi Meet
+flavor: DockerCompose
+version: unstable
+updated_at: 2024-12-29
+description: Secure, Simple and Scalable Video Conferences
+author: 8x8, Inc
+license: Apache-2.0
+homepage: https://jitsi.org/jitsi-meet
+repository: https://github.com/jitsi/jitsi-meet
+stars: 23600
+tags: [video-conferencing, web-conferencing]
+alternativeTo: [zoom, google-meet]
+readme: |
+  Jitsi Meet is a set of Open Source projects which empower users to use and deploy video conferencing platforms with state-of-the-art video quality and features.
+
+  ![preview](https://raw.githubusercontent.com/jitsi/jitsi-meet/master/readme-img1.png)
+
+  <hr>
+
+  Amongst others here are the main features Jitsi Meet offers:
+
+  - Support for all current browsers
+  - Mobile applications
+  - Web and native SDKs for integration
+  - HD audio and video
+  - Content sharing
+  - Raise hand and reactions
+  - Chat with private conversations
+  - Polls
+  - Virtual backgrounds
+
+  And many more!

@@ -1,0 +1,14 @@
+# docker run --platform linux/amd64 --publish 8000:8080 ghcr.io/mermaid-js/mermaid-live-editor
+
+services:
+  mermaid:
+    image: ghcr.io/mermaid-js/mermaid-live-editor
+    platform: linux/amd64
+    # ports:
+    #   - 8000:8080
+    labels:
+      dash.name: Mermaid
+      dash.icon: mermaid
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.mermaid.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.mermaid.loadbalancer.server.port: 8080

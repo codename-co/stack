@@ -1,0 +1,247 @@
+# Original: <https://github.com/PostHog/posthog/blob/23e18697258e695c6276c9fa659dedd82f20f9d8/docker-compose.hobby.yml>
+
+#
+# `docker-compose` file used ONLY for hobby deployments.
+#
+# Please take a look at https://posthog.com/docs/self-host/deploy/hobby
+# for more info.
+#
+# PostHog has sunset support for self-hosted K8s deployments.
+# See: https://posthog.com/blog/sunsetting-helm-support-posthog
+#
+
+services:
+  posthog-db:
+    extends:
+      file: compose.base.yaml
+      service: posthog-db
+    # Pin to postgres 12 until we have a process for pg_upgrade to postgres 15 for exsisting installations
+    image: ${DOCKER_REGISTRY_PREFIX:-}postgres:12-alpine
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  posthog-redis:
+    extends:
+      file: compose.base.yaml
+      service: posthog-redis
+    volumes:
+      - redis-data:/data
+
+  posthog-redis7:
+    extends:
+      file: compose.base.yaml
+      service: posthog-redis7
+    volumes:
+      - redis7-data:/data
+
+  posthog-clickhouse:
+    #
+    # Note: please keep the default version in sync across
+    #       `posthog` and the `charts-clickhouse` repos
+    #
+    extends:
+      file: compose.base.yaml
+      service: posthog-clickhouse
+    restart: on-failure
+    depends_on:
+      - posthog-kafka
+      - posthog-zookeeper
+    volumes:
+      - ./posthog/posthog/idl:/idl
+      - ./posthog/docker/clickhouse/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ./posthog/docker/clickhouse/config.xml:/etc/clickhouse-server/config.xml
+      - ./posthog/docker/clickhouse/users.xml:/etc/clickhouse-server/users.xml
+      - clickhouse-data:/var/lib/clickhouse
+
+  posthog-zookeeper:
+    extends:
+      file: compose.base.yaml
+      service: posthog-zookeeper
+    volumes:
+      - zookeeper-datalog:/datalog
+      - zookeeper-data:/data
+      - zookeeper-logs:/logs
+
+  posthog-kafka:
+    extends:
+      file: compose.base.yaml
+      service: posthog-kafka
+    depends_on:
+      - posthog-zookeeper
+    environment:
+      KAFKA_LOG_RETENTION_MS: 3600000
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 300000
+      KAFKA_LOG_RETENTION_HOURS: 1
+    volumes:
+      - kafka-data:/bitnami/kafka
+
+  posthog-worker:
+    extends:
+      file: compose.base.yaml
+      service: posthog-worker
+    environment:
+      SENTRY_DSN: $SENTRY_DSN
+      SITE_URL: https://$PROJECT.$DOMAIN
+      SECRET_KEY: $POSTHOG_SECRET
+      OBJECT_STORAGE_ACCESS_KEY_ID: "object_storage_root_user"
+      OBJECT_STORAGE_SECRET_ACCESS_KEY: "object_storage_root_password"
+      OBJECT_STORAGE_ENDPOINT: http://posthog-objectstorage:19000
+      OBJECT_STORAGE_ENABLED: true
+      ENCRYPTION_SALT_KEYS: $ENCRYPTION_SALT_KEYS
+    image: $REGISTRY_URL:$POSTHOG_APP_TAG
+
+  posthog-web:
+    extends:
+      file: compose.base.yaml
+      service: posthog-web
+    command: /compose/start
+    volumes:
+      - ./compose:/compose
+    image: $REGISTRY_URL:$POSTHOG_APP_TAG
+    environment:
+      SENTRY_DSN: $SENTRY_DSN
+      SITE_URL: https://$PROJECT.$DOMAIN
+      SECRET_KEY: $POSTHOG_SECRET
+      OBJECT_STORAGE_ACCESS_KEY_ID: "object_storage_root_user"
+      OBJECT_STORAGE_SECRET_ACCESS_KEY: "object_storage_root_password"
+      OBJECT_STORAGE_ENDPOINT: http://posthog-objectstorage:19000
+      OBJECT_STORAGE_ENABLED: true
+      ENCRYPTION_SALT_KEYS: $ENCRYPTION_SALT_KEYS
+    depends_on:
+      - posthog-db
+      - posthog-redis
+      - posthog-clickhouse
+      - posthog-kafka
+      - posthog-objectstorage
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.posthog-caddy.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.posthog-caddy.loadbalancer.server.port: 80
+
+  posthog-plugins:
+    extends:
+      file: compose.base.yaml
+      service: posthog-plugins
+    image: $REGISTRY_URL:$POSTHOG_APP_TAG
+    environment:
+      SENTRY_DSN: $SENTRY_DSN
+      SITE_URL: https://$PROJECT.$DOMAIN
+      SECRET_KEY: $POSTHOG_SECRET
+      OBJECT_STORAGE_ACCESS_KEY_ID: "object_storage_root_user"
+      OBJECT_STORAGE_SECRET_ACCESS_KEY: "object_storage_root_password"
+      OBJECT_STORAGE_ENDPOINT: http://posthog-objectstorage:19000
+      OBJECT_STORAGE_ENABLED: true
+      CDP_REDIS_HOST: posthog-redis7
+      CDP_REDIS_PORT: 6379
+      ENCRYPTION_SALT_KEYS: $ENCRYPTION_SALT_KEYS
+    depends_on:
+      - posthog-db
+      - posthog-redis
+      - posthog-redis7
+      - posthog-clickhouse
+      - posthog-kafka
+      - posthog-objectstorage
+
+  # posthog-caddy:
+  #   image: caddy:2.6.1
+  #   restart: unless-stopped
+  #   # ports:
+  #   #   - "80:80"
+  #   #   - "443:443"
+  #   volumes:
+  #     - ./Caddyfile:/etc/caddy/Caddyfile
+  #     - caddy-data:/data
+  #     - caddy-config:/config
+  #   depends_on:
+  #     - posthog-web
+
+  posthog-objectstorage:
+    extends:
+      file: compose.base.yaml
+      service: posthog-objectstorage
+    restart: on-failure
+    volumes:
+      - objectstorage:/data
+    ports:
+      - "19000:19000"
+      - "19001:19001"
+
+  posthog-asyncmigrationscheck:
+    extends:
+      file: compose.base.yaml
+      service: posthog-asyncmigrationscheck
+    image: $REGISTRY_URL:$POSTHOG_APP_TAG
+    environment:
+      SENTRY_DSN: $SENTRY_DSN
+      SITE_URL: https://$PROJECT.$DOMAIN
+      SECRET_KEY: $POSTHOG_SECRET
+      SKIP_ASYNC_MIGRATIONS_SETUP: 0
+
+  # Temporal containers
+  posthog-temporal:
+    extends:
+      file: compose.base.yaml
+      service: posthog-temporal
+    environment:
+      - ENABLE_ES=false
+    ports:
+      - 7233:7233
+    volumes:
+      - ./posthog/docker/temporal/dynamicconfig:/etc/temporal/config/dynamicconfig
+
+  posthog-elasticsearch:
+    extends:
+      file: compose.base.yaml
+      service: posthog-elasticsearch
+
+  posthog-temporal-admin-tools:
+    extends:
+      file: compose.base.yaml
+      service: posthog-temporal-admin-tools
+    depends_on:
+      - posthog-temporal
+
+  posthog-temporal-ui:
+    extends:
+      file: compose.base.yaml
+      service: posthog-temporal-ui
+    ports:
+      - 8081:8080
+    depends_on:
+      posthog-temporal:
+        condition: service_started
+      posthog-db:
+        condition: service_healthy
+
+  posthog-temporal-django-worker:
+    command: /compose/temporal-django-worker
+    extends:
+      file: compose.base.yaml
+      service: posthog-temporal-django-worker
+    volumes:
+      - ./compose:/compose
+    image: $REGISTRY_URL:$POSTHOG_APP_TAG
+    environment:
+      SENTRY_DSN: $SENTRY_DSN
+      SITE_URL: https://$PROJECT.$DOMAIN
+      SECRET_KEY: $POSTHOG_SECRET
+    depends_on:
+      - posthog-db
+      - posthog-redis
+      - posthog-clickhouse
+      - posthog-kafka
+      - posthog-objectstorage
+      - posthog-temporal
+
+volumes:
+  zookeeper-data:
+  zookeeper-datalog:
+  zookeeper-logs:
+  objectstorage:
+  postgres-data:
+  clickhouse-data:
+  caddy-data:
+  caddy-config:
+  redis-data:
+  redis7-data:
+  kafka-data:

@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: webtop
+name: Webtop
+icon: Ⓦ
+flavor: DockerCompose
+version: "fccb91ce"
+updated_at: 2025-01-14
+description: Linux in a web browser supporting popular desktop environments
+author: LinuxServer.io
+license: GPL-3.0
+homepage: https://docs.linuxserver.io/images/docker-webtop/
+repository: https://github.com/linuxserver/docker-webtop
+stars: 2200
+tags:
+  - desktop
+alternativeTo:
+  - guacamole
+  - vnc
+readme: |
+  Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.

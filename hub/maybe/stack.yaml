@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: maybe
+name: Maybe
+icon: 📈
+flavor: DockerCompose
+version: latest
+updated_at: 2024-12-05
+description: The OS for your personal finances
+author: Maybe Finance, Inc
+license: AGPL-3.0
+homepage: https://maybefinance.com
+repository: https://github.com/maybe-finance/maybe
+stars: 34200
+tags: [finance]
+alternativeTo: [mint]
+readme: |
+  Maybe: The OS for your personal finances
+
+  ![preview](https://github.com/maybe-finance/maybe/assets/35243/a7763d0e-a942-42db-bde7-eb8d28106917)

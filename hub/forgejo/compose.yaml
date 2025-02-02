@@ -1,0 +1,20 @@
+services:
+  server:
+    image: codeberg.org/forgejo/forgejo:${FORGEJO_VERSION:-10}
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    volumes:
+      - forgejo:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    # ports:
+    #   - 3000:3000
+    #   - 222:22
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.forgejo.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.forgejo.loadbalancer.server.port: 3000
+
+volumes:
+  forgejo:

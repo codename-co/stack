@@ -1,0 +1,76 @@
+services:
+  affine:
+    image: ghcr.io/toeverything/affine-graphql:${AFFINE_VERSION:-stable-f64d62d}
+    # container_name: affine_selfhosted
+    command:
+      ["sh", "-c", "node ./scripts/self-host-predeploy && node ./dist/index.js"]
+    # ports:
+    #   - "3010:3010"
+    #   - "5555:5555"
+    depends_on:
+      affine-redis:
+        condition: service_healthy
+      affine-postgres:
+        condition: service_healthy
+    volumes:
+      # custom configurations
+      - config:/root/.affine/config
+      # blob storage
+      - storage:/root/.affine/storage
+    logging:
+      driver: json-file
+      options:
+        max-size: 1000m
+    restart: unless-stopped
+    environment:
+      - NODE_OPTIONS="--import=./scripts/register.js"
+      - AFFINE_CONFIG_PATH=/root/.affine/config
+      - REDIS_SERVER_HOST=affine-redis
+      - DATABASE_URL=postgres://affine:affine@affine-postgres:5432/affine
+      - NODE_ENV=production
+      # - TELEMETRY_ENABLE=false
+      - ENABLE_TELEMETRY=false
+      # - AFFINE_SERVER_EXTERNAL_URL=
+      # - AFFINE_SERVER_PORT=
+      # - AFFINE_SERVER_HOST=
+      # - AFFINE_SERVER_SUB_PATH=
+      # - AFFINE_SERVER_HTTPS=
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.affine.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.affine.loadbalancer.server.port: 3010
+
+  affine-redis:
+    image: redis
+    # container_name: affine_redis
+    restart: unless-stopped
+    volumes:
+      - redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  affine-postgres:
+    image: postgres:16
+    # container_name: affine_postgres
+    restart: unless-stopped
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U affine"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      POSTGRES_USER: affine
+      POSTGRES_PASSWORD: affine
+      POSTGRES_DB: affine
+      PGDATA: /var/lib/postgresql/data/pgdata
+
+volumes:
+  config:
+  storage:
+  redis:
+  postgres:

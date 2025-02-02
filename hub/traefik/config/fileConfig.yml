@@ -1,0 +1,82 @@
+http:
+  ### accept self-signed certificates when proxying a HTTPS target
+  serversTransports:
+    insecureTransport:
+      insecureSkipVerify: true
+
+  ### MIDDLEWARES
+  middlewares:
+    ### Only Allow Local networks
+    local-ipwhitelist:
+      ipWhiteList:
+        sourceRange:
+          - 127.0.0.1/32 # localhost
+          - 10.0.0.0/8 # private class A
+          - 172.16.0.0/12 # private class B
+          - 192.168.0.0/16 # private class C
+
+    ### SECURITY HEADERS
+    security-headers:
+      headers:
+        customResponseHeaders: # field names are case-insensitive
+          X-Robots-Tag: "none,noarchive,nosnippet,notranslate,noimageindex"
+          Server: "" # prevent version disclosure
+          X-Powered-By: "" # prevent version disclosure
+          X-Forwarded-Proto: "https"
+          #Permissions-Policy: "geolocation=(self), midi=(self), camera=(self), usb=(self), magnetometer=(self), accelerometer=(self), gyroscope=(self), microphone=(self)"
+          #Cross-Origin-Embedder-Policy: "unsafe-none"
+          #Cross-Origin-Opener-Policy: "same-origin"
+          #Cross-Origin-Resource-Policy: "same-site"
+          X-Frames-Options: "" # Deactivate X-Frame-Options
+          Content-Security-Policy: "" # Deactivate CSP
+        sslProxyHeaders:
+          X-Forwarded-Proto: "https"
+        hostsProxyHeaders:
+          - "X-Forwarded-Host"
+          - "X-Forwarded-For"
+          - "X-Forwarded-Proto"
+        customRequestHeaders:
+          X-Forwarded-Proto: "https"
+        contentTypeNosniff: true # X-Content-Type-Options
+        # customFrameOptionsValue: "SAMEORIGIN" # X-Frame-Options
+        browserXssFilter: false # X-XSS-Protection; deprecated
+        referrerPolicy: "strict-origin-when-cross-origin" # Referrer-Policy
+        forceSTSHeader: true # HTTP-Strict-Transport-Security (HSTS)
+        stsIncludeSubdomains: true # HTTP-Strict-Transport-Security (HSTS)
+        stsSeconds: 63072000 # HTTP-Strict-Transport-Security (HSTS)
+        stsPreload: true # HTTP-Strict-Transport-Security (HSTS)
+        # contentSecurityPolicy: "block-all-mixed-content" # Content-Security-Policy (CSP)
+
+    ### rate limiting
+    rate-limit:
+      rateLimit:
+        average: 100
+        period: 1
+        burst: 100
+
+### Only use secure TLS ciphers
+### https://ssl-config.mozilla.org/#server=traefik&version=2.9&config=intermediate&guideline=5.6
+tls:
+  certificates:
+    - certFile: /certs/server.cer
+      keyFile: /certs/server.key
+      stores:
+        - default
+
+  options:
+    default:
+      minVersion: VersionTLS12
+      cipherSuites:
+        - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+        - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
+      sniStrict: false # Change to false temporarily for testing
+
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /certs/server.cer
+        keyFile: /certs/server.key

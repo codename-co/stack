@@ -1,0 +1,10 @@
+services:
+  bolt:
+    build:
+      dockerfile: Dockerfile.dev
+    env_file: ./.env
+    labels:
+      dash.name: Bolt
+      dash.icon: stackblitz
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.services.bolt.loadbalancer.server.port: 5173

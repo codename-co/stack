@@ -1,0 +1,17 @@
+SPDXVersion: SPDX-2.1
+PackageName: stack
+PackageSupplier: Organization: Codename SAS
+PackageHomePage: https://stack.lol
+PackageLicenseDeclared: MIT
+PackageLicenseDeclared: UNLICENSED
+PackageCopyrightText: 2025, Codename SAS
+PackageSummary: <text>Stack aims to make the best of software accessible.
+                </text>
+PackageComment: <text>It relies is on a hub of recipes (open source, MIT)
+and a desktop app (Proprietary, unlicensed) for local installation.
+                </text>
+Created: 2025-02-02T15:00:00Z
+PackageDownloadLocation: git://github.com/codename-co/stack
+PackageDownloadLocation: git+https://github.com/codename-co/stack.git
+PackageDownloadLocation: git+ssh://github.com/codename-co/stack.git
+Creator: Person: Arnaud Leymet

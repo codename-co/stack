@@ -1,0 +1,36 @@
+FROM ubuntu AS source-fetcher
+
+RUN apt-get update  && \
+  apt-get install -y git && \
+  rm -rf /var/lib/apt/lists/*
+
+RUN git clone --depth 1 --branch 0.190.0 https://github.com/webstudio-is/webstudio.git /sources && cd /sources
+
+
+FROM node:20-slim
+
+RUN apt-get update && \
+  apt-get install -y git openssl && \
+  rm -rf /var/lib/apt/lists/*
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+WORKDIR /app
+
+COPY --from=source-fetcher /sources/package.json ./
+RUN corepack enable && corepack install
+
+COPY --from=source-fetcher /sources/pnpm-* ./
+COPY --from=source-fetcher /sources/apps/builder/package.json ./apps/builder/
+COPY --from=source-fetcher /sources/patches ./patches
+COPY --from=source-fetcher /sources/packages ./packages
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install
+
+COPY --from=source-fetcher /sources ./
+RUN pnpm build
+
+# Remove the HTTPS protocol from the vite.config.ts file
+RUN sed -i '/https: {/,/},/d' apps/builder/vite.config.ts
+
+CMD [ "pnpm", "dev", "--host"]

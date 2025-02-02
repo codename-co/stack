@@ -1,0 +1,195 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: litellm
+name: LiteLLM
+icon: 🤖
+flavor: DockerCompose
+version: "1.56.4"
+updated_at: 2024-12-29
+description: Proxy Server to call 100+ LLMs in the OpenAI format
+author: Berrie AI, Inc
+license: MIT
+homepage: https://www.litellm.ai
+repository: https://github.com/BerriAI/litellm
+stars: 15500
+tags:
+  - ai
+  - llm
+alternativeTo:
+  - chatgpt
+readme: |
+  Call all LLM APIs using the OpenAI format [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq etc.]
+
+  ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+  <hr>
+
+  ## Features
+
+  - Translate inputs to provider's `completion`, `embedding`, and `image_generation` endpoints
+  - [Consistent output](https://docs.litellm.ai/docs/completion/output), text responses will always be available at `['choices'][0]['message']['content']`
+  - Retry/fallback logic across multiple deployments (e.g. Azure/OpenAI) - [Router](https://docs.litellm.ai/docs/routing)
+  - Set Budgets & Rate limits per project, api key, model [LiteLLM Proxy Server (LLM Gateway)](https://docs.litellm.ai/docs/simple_proxy)
+i18n:
+  es:
+    description: Servidor proxy para llamar a más de 100 LLMs en el formato OpenAI
+    readme: |-
+      Llama a todas las APIs de LLM usando el formato OpenAI [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq etc.]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## Características
+
+      - Traduce entradas a los endpoints de `completion`, `embedding` y `image_generation` del proveedor
+      - [Salida consistente](https://docs.litellm.ai/docs/completion/output), las respuestas de texto siempre estarán disponibles en `['choices'][0]['message']['content']`
+      - Lógica de reintento/respaldo en múltiples implementaciones (por ejemplo, Azure/OpenAI) - [Router](https://docs.litellm.ai/docs/routing)
+      - Establecer presupuestos y límites de tasa por proyecto, clave api, modelo [Servidor Proxy LiteLLM (Gateway LLM)](https://docs.litellm.ai/docs/simple_proxy)
+  fr:
+    description: Serveur Proxy pour appeler plus de 100 LLMs au format OpenAI
+    readme: |-
+      Appelez toutes les API LLM en utilisant le format OpenAI [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq etc.]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - Traduisez les entrées vers les endpoints `completion`, `embedding` et `image_generation` du fournisseur
+      - [Sortie cohérente](https://docs.litellm.ai/docs/completion/output), les réponses textuelles seront toujours disponibles à `['choices'][0]['message']['content']`
+      - Logique de réessai/repli sur plusieurs déploiements (par ex. Azure/OpenAI) - [Router](https://docs.litellm.ai/docs/routing)
+      - Définissez des budgets et des limites de taux par projet, clé API, modèle [Serveur Proxy LiteLLM (Passerelle LLM)](https://docs.litellm.ai/docs/simple_proxy)
+  de:
+    description: Proxy-Server zum Aufruf von 100+ LLMs im OpenAI-Format
+    readme: |-
+      Rufen Sie alle LLM APIs im OpenAI-Format auf [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq etc.]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## Funktionen
+
+      - Übersetzt Eingaben in die `completion`, `embedding` und `image_generation` Endpunkte des Anbieters
+      - [Konsistente Ausgabe](https://docs.litellm.ai/docs/completion/output), Textantworten sind immer unter `['choices'][0]['message']['content']` verfügbar
+      - Wiederholungs-/Fallback-Logik über mehrere Deployments (z.B. Azure/OpenAI) - [Router](https://docs.litellm.ai/docs/routing)
+      - Festlegen von Budgets & Ratelimits pro Projekt, API-Schlüssel, Modell [LiteLLM Proxy Server (LLM Gateway)](https://docs.litellm.ai/docs/simple_proxy)
+  it:
+    description: Server Proxy per chiamare più di 100 LLM nel formato OpenAI
+    readme: |-
+      Chiama tutte le API LLM usando il formato OpenAI [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq ecc.]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## Caratteristiche
+
+      - Traduce gli input negli endpoint `completion`, `embedding` e `image_generation` del provider
+      - [Output consistente](https://docs.litellm.ai/docs/completion/output), le risposte testuali saranno sempre disponibili in `['choices'][0]['message']['content']`
+      - Logica di retry/fallback tra più deployment (es. Azure/OpenAI) - [Router](https://docs.litellm.ai/docs/routing)
+      - Imposta budget e limiti di velocità per progetto, chiave api, modello [Server Proxy LiteLLM (Gateway LLM)](https://docs.litellm.ai/docs/simple_proxy)
+  pt:
+    description: Servidor Proxy para chamar 100+ LLMs no formato OpenAI
+    readme: |-
+      Chame todas as APIs de LLM usando o formato OpenAI [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq etc.]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## Funcionalidades
+
+      - Traduz entradas para endpoints de `completion`, `embedding` e `image_generation` do provedor
+      - [Saída consistente](https://docs.litellm.ai/docs/completion/output), respostas de texto estarão sempre disponíveis em `['choices'][0]['message']['content']`
+      - Lógica de tentativa/fallback em várias implantações (ex: Azure/OpenAI) - [Router](https://docs.litellm.ai/docs/routing)
+      - Define Orçamentos & Limites de taxa por projeto, chave de api, modelo [Servidor Proxy LiteLLM (Gateway LLM)](https://docs.litellm.ai/docs/simple_proxy)
+  ru:
+    description: Прокси-сервер для вызова более 100 LLM в формате OpenAI
+    readme: |-
+      Вызывайте все LLM API, используя формат OpenAI [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq и др.]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## Возможности
+
+      - Преобразование входных данных для конечных точек провайдера `completion`, `embedding` и `image_generation`
+      - [Согласованный вывод](https://docs.litellm.ai/docs/completion/output), текстовые ответы всегда будут доступны по пути `['choices'][0]['message']['content']`
+      - Логика повторных попыток/резервного копирования для нескольких развертываний (например, Azure/OpenAI) - [Маршрутизатор](https://docs.litellm.ai/docs/routing)
+      - Установка бюджетов и ограничений скорости для проекта, API-ключа, модели [Прокси-сервер LiteLLM (LLM Gateway)](https://docs.litellm.ai/docs/simple_proxy)
+  ar:
+    description: خادم وكيل للاتصال بأكثر من 100 نموذج لغوي كبير بتنسيق OpenAI
+    readme: |-
+      استدعِ جميع واجهات برمجة التطبيقات LLM باستخدام تنسيق OpenAI [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq وغيرها]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## المميزات
+
+      - ترجمة المدخلات إلى نقاط نهاية `completion` و`embedding` و`image_generation` الخاصة بالمزود
+      - [مخرجات متناسقة](https://docs.litellm.ai/docs/completion/output)، ستكون الاستجابات النصية متاحة دائمًا في `['choices'][0]['message']['content']`
+      - منطق إعادة المحاولة/الرجوع عبر عمليات نشر متعددة (مثل Azure/OpenAI) - [Router](https://docs.litellm.ai/docs/routing)
+      - تعيين الميزانيات وحدود المعدلات لكل مشروع ومفتاح API ونموذج [خادم LiteLLM Proxy (بوابة LLM)](https://docs.litellm.ai/docs/simple_proxy)
+  zh:
+    description: 代理服务器用于以OpenAI格式调用100多个LLM模型
+    readme: |-
+      使用OpenAI格式调用所有LLM API [Bedrock、Huggingface、VertexAI、TogetherAI、Azure、OpenAI、Groq等]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## 功能特点
+
+      - 将输入转换到提供商的`completion`、`embedding`和`image_generation`端点
+      - [一致的输出](https://docs.litellm.ai/docs/completion/output)，文本响应将始终位于`['choices'][0]['message']['content']`
+      - 跨多个部署（如Azure/OpenAI）的重试/故障转移逻辑 - [路由器](https://docs.litellm.ai/docs/routing)
+      - 为每个项目、API密钥、模型设置预算和速率限制 [LiteLLM代理服务器（LLM网关）](https://docs.litellm.ai/docs/simple_proxy)
+  hi:
+    description: 100+ बड़ी भाषा मॉडल को OpenAI फॉर्मैट में कॉल करने के लिए प्रॉक्सी सर्वर
+    readme: |-
+      सभी LLM APIs को OpenAI फॉर्मेट का उपयोग करके कॉल करें [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq आदि]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - प्रदाता के `completion`, `embedding`, और `image_generation` एंडपॉइंट्स के लिए इनपुट का अनुवाद करें
+      - [निरंतर आउटपुट](https://docs.litellm.ai/docs/completion/output), टेक्स्ट प्रतिक्रियाएं हमेशा `['choices'][0]['message']['content']` पर उपलब्ध होंगी
+      - कई डिप्लॉयमेंट्स (जैसे Azure/OpenAI) में पुनः प्रयास/फॉलबैक लॉजिक - [राउटर](https://docs.litellm.ai/docs/routing)
+      - प्रति प्रोजेक्ट, एपीआई कुंजी, मॉडल के लिए बजट और दर सीमाएं सेट करें [LiteLLM प्रॉक्सी सर्वर (LLM गेटवे)](https://docs.litellm.ai/docs/simple_proxy)
+  ko:
+    description: 100개 이상의 LLM을 OpenAI 형식으로 호출하기 위한 프록시 서버
+    readme: |-
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## 기능
+
+      - 제공자의 `completion`, `embedding`, `image_generation` 엔드포인트로 입력을 변환
+      - [일관된 출력](https://docs.litellm.ai/docs/completion/output), 텍스트 응답은 항상 `['choices'][0]['message']['content']`에서 사용 가능
+      - 여러 배포(예: Azure/OpenAI)에 걸친 재시도/대체 로직 - [라우터](https://docs.litellm.ai/docs/routing)
+      - 프로젝트, API 키, 모델별 예산 및 속도 제한 설정 [LiteLLM 프록시 서버 (LLM 게이트웨이)](https://docs.litellm.ai/docs/simple_proxy)
+  ja:
+    description: 100以上のLLMをOpenAIフォーマットで呼び出すためのプロキシサーバー
+    readme: |-
+      すべてのLLM APIをOpenAIフォーマットで呼び出す [Bedrock、Huggingface、VertexAI、TogetherAI、Azure、OpenAI、Groq など]
+
+      ![preview](https://github.com/BerriAI/litellm/assets/29436595/47c97d5e-b9be-4839-b28c-43d7f4f10033)
+
+      <hr>
+
+      ## 機能
+
+      - プロバイダーの`completion`、`embedding`、`image_generation`エンドポイントへの入力を変換
+      - [一貫した出力](https://docs.litellm.ai/docs/completion/output)、テキスト応答は常に`['choices'][0]['message']['content']`で利用可能
+      - 複数のデプロイメント間（Azure/OpenAIなど）での再試行/フォールバックロジック - [Router](https://docs.litellm.ai/docs/routing)
+      - プロジェクト、APIキー、モデルごとの予算とレート制限の設定 [LiteLLM Proxyサーバー（LLMゲートウェイ）](https://docs.litellm.ai/docs/simple_proxy)

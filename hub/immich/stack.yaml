@@ -1,0 +1,509 @@
+slug: immich
+name: Immich
+flavor: DockerCompose
+version: 1.124.2
+updated_at: 2025-01-08
+description: High performance self-hosted photo and video management solution
+author: FUTO
+license: AGPL-3.0
+homepage: https://immich.app
+repository: https://github.com/immich-app/immich
+stars: 56500
+tags:
+  - photo-management
+alternativeTo:
+  - google-photos
+readme: |
+  Easily back up, organize, and manage your photos on your own server. Immich helps you browse, search and organize your photos and videos with ease, without sacrificing your privacy.
+
+  ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+  <hr>
+
+  ## Features
+
+  - Upload and view videos and photos
+  - Auto backup when the app is opened
+  - Prevent duplication of assets
+  - Selective album(s) for backup
+  - Download photos and videos to local device
+  - Multi-user support
+  - Album and Shared albums
+  - Scrubbable/draggable scrollbar
+  - Support raw formats
+  - Metadata view (EXIF, map)
+  - Search by metadata, objects, faces, and CLIP
+  - Administrative functions (user management)
+  - Background backup
+  - Virtual scroll
+  - OAuth support
+  - API Keys
+  - LivePhoto/MotionPhoto backup and playback
+  - Support 360 degree image display
+  - User-defined storage structure
+  - Public Sharing
+  - Archive and Favorites
+  - Global Map
+  - Partner Sharing
+  - Facial recognition and clustering
+  - Memories (x years ago)
+  - Offline support
+  - Read-only gallery
+  - Stacked Photos
+  - Tags
+  - Folder View
+i18n:
+  es:
+    description: Solución autogestionada de alto rendimiento para la administración
+      de fotos y videos
+    readme: |-
+      Haga copias de seguridad, organice y gestione sus fotos fácilmente en su propio servidor. Immich le ayuda a navegar, buscar y organizar sus fotos y videos con facilidad, sin sacrificar su privacidad.
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## Características
+
+      - Subir y ver videos y fotos
+      - Copia de seguridad automática cuando se abre la aplicación
+      - Prevención de duplicación de archivos
+      - Álbumes selectivos para copia de seguridad
+      - Descarga de fotos y videos al dispositivo local
+      - Soporte multiusuario
+      - Álbumes y álbumes compartidos
+      - Barra de desplazamiento deslizable/arrastrable
+      - Soporte para formatos raw
+      - Vista de metadatos (EXIF, mapa)
+      - Búsqueda por metadatos, objetos, rostros y CLIP
+      - Funciones administrativas (gestión de usuarios)
+      - Copia de seguridad en segundo plano
+      - Desplazamiento virtual
+      - Soporte OAuth
+      - Claves API
+      - Copia de seguridad y reproducción de LivePhoto/MotionPhoto
+      - Soporte para visualización de imágenes 360 grados
+      - Estructura de almacenamiento definida por el usuario
+      - Compartir públicamente
+      - Archivo y Favoritos
+      - Mapa global
+      - Compartir con pareja
+      - Reconocimiento facial y agrupamiento
+      - Recuerdos (hace x años)
+      - Soporte sin conexión
+      - Galería de solo lectura
+      - Fotos apiladas
+      - Etiquetas
+      - Vista de carpetas
+  fr:
+    description: Solution auto-hébergée haute performance de gestion de photos et vidéos
+    readme: |-
+      Sauvegardez, organisez et gérez facilement vos photos sur votre propre serveur. Immich vous aide à parcourir, rechercher et organiser vos photos et vidéos facilement, sans sacrifier votre vie privée.
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - Téléchargement et visualisation des vidéos et photos
+      - Sauvegarde automatique à l'ouverture de l'application
+      - Prévention de la duplication des fichiers
+      - Sélection d'album(s) pour la sauvegarde
+      - Téléchargement des photos et vidéos sur l'appareil local
+      - Support multi-utilisateurs
+      - Albums et albums partagés
+      - Barre de défilement manipulable
+      - Support des formats raw
+      - Affichage des métadonnées (EXIF, carte)
+      - Recherche par métadonnées, objets, visages et CLIP
+      - Fonctions administratives (gestion des utilisateurs)
+      - Sauvegarde en arrière-plan
+      - Défilement virtuel
+      - Support OAuth
+      - Clés API
+      - Sauvegarde et lecture LivePhoto/MotionPhoto
+      - Support des images à 360 degrés
+      - Structure de stockage personnalisable
+      - Partage public
+      - Archives et Favoris
+      - Carte mondiale
+      - Partage partenaire
+      - Reconnaissance et regroupement facial
+      - Souvenirs (il y a x années)
+      - Support hors ligne
+      - Galerie en lecture seule
+      - Photos empilées
+      - Étiquettes
+      - Vue par dossiers
+  de:
+    description: Hochleistungsfähige selbstgehostete Foto- und Videoverwaltungslösung
+    readme: |-
+      Sichern, organisieren und verwalten Sie Ihre Fotos ganz einfach auf Ihrem eigenen Server. Immich hilft Ihnen, Ihre Fotos und Videos mühelos zu durchsuchen, zu finden und zu organisieren, ohne Ihre Privatsphäre zu gefährden.
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## Funktionen
+
+      - Hochladen und Ansehen von Videos und Fotos
+      - Automatische Sicherung beim Öffnen der App
+      - Vermeidung von Duplikaten
+      - Selektive Album-Sicherung
+      - Herunterladen von Fotos und Videos auf lokale Geräte
+      - Mehrbenutzer-Unterstützung
+      - Alben und geteilte Alben
+      - Ziehbare/scrollbare Bildlaufleiste
+      - Unterstützung für RAW-Formate
+      - Metadaten-Ansicht (EXIF, Karte)
+      - Suche nach Metadaten, Objekten, Gesichtern und CLIP
+      - Administrative Funktionen (Benutzerverwaltung)
+      - Hintergrundsicherung
+      - Virtuelles Scrollen
+      - OAuth-Unterstützung
+      - API-Schlüssel
+      - LivePhoto/MotionPhoto-Sicherung und -Wiedergabe
+      - Unterstützung für 360-Grad-Bildanzeige
+      - Benutzerdefinierte Speicherstruktur
+      - Öffentliches Teilen
+      - Archiv und Favoriten
+      - Globale Karte
+      - Partner-Sharing
+      - Gesichtserkennung und -gruppierung
+      - Erinnerungen (vor x Jahren)
+      - Offline-Unterstützung
+      - Schreibgeschützte Galerie
+      - Gestapelte Fotos
+      - Tags
+      - Ordneransicht
+  ru:
+    description: Высокопроизводительное решение для самостоятельного управления
+      фотографиями и видео
+    readme: |-
+      Легко создавайте резервные копии, упорядочивайте и управляйте своими фотографиями на собственном сервере. Immich помогает просматривать, искать и организовывать ваши фотографии и видео с легкостью, не жертвуя конфиденциальностью.
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## Возможности
+
+      - Загрузка и просмотр видео и фотографий
+      - Автоматическое резервное копирование при открытии приложения
+      - Предотвращение дублирования файлов
+      - Выборочное резервное копирование альбомов
+      - Загрузка фотографий и видео на локальное устройство
+      - Поддержка нескольких пользователей
+      - Альбомы и общие альбомы
+      - Прокручиваемая/перетаскиваемая полоса прокрутки
+      - Поддержка RAW форматов
+      - Просмотр метаданных (EXIF, карта)
+      - Поиск по метаданным, объектам, лицам и CLIP
+      - Административные функции (управление пользователями)
+      - Фоновое резервное копирование
+      - Виртуальная прокрутка
+      - Поддержка OAuth
+      - API-ключи
+      - Резервное копирование и воспроизведение LivePhoto/MotionPhoto
+      - Поддержка отображения 360-градусных изображений
+      - Настраиваемая структура хранения
+      - Публичный доступ
+      - Архив и Избранное
+      - Глобальная карта
+      - Партнерский доступ
+      - Распознавание и группировка лиц
+      - Воспоминания (x лет назад)
+      - Поддержка офлайн-режима
+      - Галерея только для чтения
+      - Сгруппированные фотографии
+      - Теги
+      - Просмотр папок
+  ar:
+    description: حل إدارة الصور والفيديو ذاتي الاستضافة عالي الأداء
+    readme: |-
+      قم بنسخ واحتياطي وتنظيم وإدارة صورك بسهولة على خادمك الخاص. يساعدك Immich في تصفح وبحث وتنظيم صورك ومقاطع الفيديو الخاصة بك بسهولة، دون التضحية بخصوصيتك.
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## المميزات
+
+      - تحميل ومشاهدة مقاطع الفيديو والصور
+      - نسخ احتياطي تلقائي عند فتح التطبيق
+      - منع تكرار الملفات
+      - اختيار ألبومات محددة للنسخ الاحتياطي
+      - تنزيل الصور ومقاطع الفيديو على الجهاز المحلي
+      - دعم متعدد المستخدمين
+      - الألبومات والألبومات المشتركة
+      - شريط تمرير قابل للسحب
+      - دعم الصيغ الخام
+      - عرض البيانات الوصفية (EXIF، الخريطة)
+      - البحث حسب البيانات الوصفية والأشياء والوجوه وCLIP
+      - وظائف إدارية (إدارة المستخدمين)
+      - نسخ احتياطي في الخلفية
+      - تمرير افتراضي
+      - دعم OAuth
+      - مفاتيح API
+      - نسخ احتياطي وتشغيل LivePhoto/MotionPhoto
+      - دعم عرض الصور 360 درجة
+      - هيكل تخزين يحدده المستخدم
+      - مشاركة عامة
+      - الأرشيف والمفضلة
+      - خريطة عالمية
+      - مشاركة الشريك
+      - التعرف على الوجوه وتجميعها
+      - الذكريات (منذ × سنوات)
+      - دعم وضع عدم الاتصال
+      - معرض للقراءة فقط
+      - الصور المكدسة
+      - العلامات
+      - عرض المجلدات
+  pt:
+    description: Solução auto-hospedada de alto desempenho para gerenciamento de
+      fotos e vídeos
+    readme: |-
+      Faça backup, organize e gerencie suas fotos facilmente em seu próprio servidor. Immich ajuda você a navegar, pesquisar e organizar suas fotos e vídeos com facilidade, sem sacrificar sua privacidade.
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## Funcionalidades
+
+      - Upload e visualização de vídeos e fotos
+      - Backup automático quando o aplicativo é aberto
+      - Prevenção de duplicação de arquivos
+      - Álbuns seletivos para backup
+      - Download de fotos e vídeos para o dispositivo local
+      - Suporte a múltiplos usuários
+      - Álbuns e álbuns compartilhados
+      - Barra de rolagem deslizável/arrastável
+      - Suporte a formatos raw
+      - Visualização de metadados (EXIF, mapa)
+      - Pesquisa por metadados, objetos, rostos e CLIP
+      - Funções administrativas (gerenciamento de usuários)
+      - Backup em segundo plano
+      - Rolagem virtual
+      - Suporte a OAuth
+      - Chaves de API
+      - Backup e reprodução de LivePhoto/MotionPhoto
+      - Suporte a imagens 360 graus
+      - Estrutura de armazenamento definida pelo usuário
+      - Compartilhamento público
+      - Arquivo e Favoritos
+      - Mapa global
+      - Compartilhamento com parceiros
+      - Reconhecimento facial e agrupamento
+      - Memórias (há x anos)
+      - Suporte offline
+      - Galeria somente leitura
+      - Fotos empilhadas
+      - Tags
+      - Visualização em pastas
+  hi:
+    description: उच्च प्रदर्शन वाला स्व-होस्टेड फोटो और वीडियो प्रबंधन समाधान
+    readme: |-
+      अपने स्वयं के सर्वर पर आसानी से बैकअप लें, फ़ोटो व्यवस्थित और प्रबंधित करें। Immich आपकी गोपनीयता का त्याग किए बिना आपको अपनी फ़ोटो और वीडियो को ब्राउज़, खोजने और व्यवस्थित करने में मदद करता है।
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - वीडियो और फ़ोटो अपलोड करें और देखें
+      - ऐप खोलने पर स्वचालित बैकअप
+      - संपत्तियों की प्रतिलिपि को रोकें
+      - बैकअप के लिए चयनात्मक एल्बम
+      - स्थानीय डिवाइस पर फ़ोटो और वीडियो डाउनलोड करें
+      - बहु-उपयोगकर्ता समर्थन
+      - एल्बम और साझा एल्बम
+      - स्क्रबेबल/खींचने योग्य स्क्रॉलबार
+      - रॉ फॉर्मेट का समर्थन
+      - मेटाडेटा दृश्य (EXIF, मानचित्र)
+      - मेटाडेटा, वस्तुओं, चेहरों और CLIP द्वारा खोज
+      - प्रशासनिक कार्य (उपयोगकर्ता प्रबंधन)
+      - पृष्ठभूमि बैकअप
+      - वर्चुअल स्क्रॉल
+      - OAuth समर्थन
+      - API कुंजियां
+      - लाइवफोटो/मोशनफोटो बैकअप और प्लेबैक
+      - 360 डिग्री छवि प्रदर्शन का समर्थन
+      - उपयोगकर्ता-परिभाषित भंडारण संरचना
+      - सार्वजनिक साझाकरण
+      - संग्रह और पसंदीदा
+      - वैश्विक मानचित्र
+      - साथी साझाकरण
+      - चेहरा पहचान और समूहीकरण
+      - यादें (x साल पहले)
+      - ऑफ़लाइन समर्थन
+      - केवल-पठन गैलरी
+      - स्टैक्ड फोटो
+      - टैग
+      - फोल्डर दृश्य
+  it:
+    description: Soluzione autogestita ad alte prestazioni per la gestione di foto e video
+    readme: |-
+      Esegui facilmente il backup, organizza e gestisci le tue foto sul tuo server. Immich ti aiuta a sfogliare, cercare e organizzare le tue foto e i tuoi video con facilità, senza sacrificare la tua privacy.
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## Funzionalità
+
+      - Caricamento e visualizzazione di video e foto
+      - Backup automatico all'apertura dell'app
+      - Prevenzione della duplicazione dei file
+      - Album selettivi per il backup
+      - Download di foto e video sul dispositivo locale
+      - Supporto multi-utente
+      - Album e album condivisi
+      - Barra di scorrimento trascinabile
+      - Supporto formati raw
+      - Visualizzazione metadati (EXIF, mappa)
+      - Ricerca per metadati, oggetti, volti e CLIP
+      - Funzioni amministrative (gestione utenti)
+      - Backup in background
+      - Scorrimento virtuale
+      - Supporto OAuth
+      - Chiavi API
+      - Backup e riproduzione LivePhoto/MotionPhoto
+      - Supporto visualizzazione immagini a 360 gradi
+      - Struttura di archiviazione personalizzabile
+      - Condivisione pubblica
+      - Archivio e Preferiti
+      - Mappa globale
+      - Condivisione con partner
+      - Riconoscimento facciale e raggruppamento
+      - Ricordi (x anni fa)
+      - Supporto offline
+      - Galleria in sola lettura
+      - Foto impilate
+      - Tag
+      - Vista cartelle
+  zh:
+    description: 高性能的自托管照片和视频管理解决方案
+    readme: |-
+      在您自己的服务器上轻松备份、整理和管理照片。Immich帮助您轻松浏览、搜索和整理照片和视频，同时不会牺牲您的隐私。
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## 功能特点
+
+      - 上传和查看视频和照片
+      - 打开应用时自动备份
+      - 防止资产重复
+      - 可选择性备份相册
+      - 下载照片和视频到本地设备
+      - 多用户支持
+      - 相册和共享相册
+      - 可拖动的滚动条
+      - 支持原始格式
+      - 元数据查看（EXIF、地图）
+      - 通过元数据、物体、人脸和CLIP搜索
+      - 管理功能（用户管理）
+      - 后台备份
+      - 虚拟滚动
+      - OAuth支持
+      - API密钥
+      - 实况照片/动态照片备份和播放
+      - 支持360度图像显示
+      - 用户自定义存储结构
+      - 公共分享
+      - 归档和收藏
+      - 全球地图
+      - 伙伴共享
+      - 人脸识别和聚类
+      - 回忆（往年今日）
+      - 离线支持
+      - 只读图库
+      - 堆叠照片
+      - 标签
+      - 文件夹视图
+  ko:
+    description: 고성능 자체 호스팅 사진 및 비디오 관리 솔루션
+    readme: |-
+      자신의 서버에서 사진을 쉽게 백업하고, 정리하고, 관리하세요. Immich를 사용하면 개인정보를 침해하지 않으면서도 사진과 비디오를 쉽게 찾아보고, 검색하고, 정리할 수 있습니다.
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## 기능
+
+      - 비디오와 사진 업로드 및 보기
+      - 앱 실행 시 자동 백업
+      - 자산 중복 방지
+      - 선택적 앨범 백업
+      - 로컬 기기에 사진과 비디오 다운로드
+      - 다중 사용자 지원
+      - 앨범 및 공유 앨범
+      - 스크러블/드래그 가능한 스크롤바
+      - RAW 포맷 지원
+      - 메타데이터 보기 (EXIF, 지도)
+      - 메타데이터, 객체, 얼굴, CLIP으로 검색
+      - 관리자 기능 (사용자 관리)
+      - 백그라운드 백업
+      - 가상 스크롤
+      - OAuth 지원
+      - API 키
+      - LivePhoto/MotionPhoto 백업 및 재생
+      - 360도 이미지 표시 지원
+      - 사용자 정의 저장소 구조
+      - 공개 공유
+      - 보관함 및 즐겨찾기
+      - 전역 지도
+      - 파트너 공유
+      - 얼굴 인식 및 클러스터링
+      - 추억 (X년 전)
+      - 오프라인 지원
+      - 읽기 전용 갤러리
+      - 스택 사진
+      - 태그
+      - 폴더 보기
+  ja:
+    description: 高性能なセルフホスト型写真・動画管理ソリューション
+    readme: |-
+      自分のサーバーで簡単に写真のバックアップ、整理、管理ができます。Immichを使えば、プライバシーを犠牲にすることなく、写真や動画の閲覧、検索、整理が簡単にできます。
+
+      ![preview](https://github.com/immich-app/immich/raw/main/design/immich-screenshots.png)
+
+      <hr>
+
+      ## 機能
+
+      - 動画と写真のアップロードと表示
+      - アプリ起動時の自動バックアップ
+      - アセットの重複防止
+      - バックアップ用アルバムの選択
+      - 写真と動画のローカルデバイスへのダウンロード
+      - マルチユーザー対応
+      - アルバムと共有アルバム
+      - スクラブ可能/ドラッグ可能なスクロールバー
+      - RAW形式対応
+      - メタデータ表示（EXIF、地図）
+      - メタデータ、オブジェクト、顔、CLIPによる検索
+      - 管理機能（ユーザー管理）
+      - バックグラウンドバックアップ
+      - バーチャルスクロール
+      - OAuth対応
+      - APIキー
+      - LivePhoto/MotionPhotoのバックアップと再生
+      - 360度画像表示対応
+      - ユーザー定義のストレージ構造
+      - 公開共有
+      - アーカイブとお気に入り
+      - グローバルマップ
+      - パートナー共有
+      - 顔認識とクラスタリング
+      - メモリー（x年前）
+      - オフライン対応
+      - 読み取り専用ギャラリー
+      - スタック写真
+      - タグ
+      - フォルダービュー

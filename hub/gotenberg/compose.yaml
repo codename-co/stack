@@ -1,0 +1,10 @@
+services:
+  gotenberg:
+    image: gotenberg/gotenberg:${GOTENBERG_VERSION:-8}
+    # ports:
+    #   - 3000:3000
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.gotenberg.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.gotenberg.loadbalancer.server.port: 3000

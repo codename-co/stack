@@ -1,0 +1,367 @@
+slug: lobechat
+name: LobeChat
+icon: 🤯
+flavor: DockerCompose
+version: 1.49.4
+updated_at: 2025-01-28
+description: Open-source, modern-design AI chat framework
+author: LobeHub, LLC
+license: Apache-2.0 (with a twist)
+homepage: https://lobehub.com
+repository: https://github.com/lobehub/lobe-chat
+stars: 52300
+tags:
+  - llm
+  - ai
+  - rag
+  - chatbot
+alternativeTo:
+  - chatgpt
+  - perplexity
+readme: |
+  An open-source, modern-design ChatGPT/LLMs UI/Framework that supports speech-synthesis, multi-modal, and extensible (function call) plugin system.
+
+  <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+  <video controls width="100%">
+    <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+    ⚠️ Your browser does not support the video tag.
+  </video>
+
+  <hr>
+
+  ## Features
+
+  - File Upload/Knowledge Base
+  - Multi-Model Service Provider Support
+  - Local Large Language Model (LLM) Support
+  - Model Visual Recognition
+  - TTS & STT Voice Conversation
+  - Text to Image Generation
+  - Plugin System (Function Calling)
+  - Agent Market (GPTs)
+  - Support Local / Remote Database
+  - Support Multi-User Management
+  - Progressive Web App (PWA)
+  - Mobile Device Adaptation
+  - Custom Themes
+i18n:
+  es:
+    description: Marco de chat de IA de código abierto y diseño moderno
+    readme: |-
+      Una interfaz/marco de código abierto con diseño moderno para ChatGPT/LLMs que admite síntesis de voz, multimodalidad y un sistema de plugins extensible (llamada de funciones).
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ Tu navegador no soporta la etiqueta de video.
+      </video>
+
+      <hr>
+
+      ## Características
+
+      - Carga de Archivos/Base de Conocimientos
+      - Soporte para Múltiples Proveedores de Modelos
+      - Soporte para Modelos de Lenguaje Grandes (LLM) Locales
+      - Reconocimiento Visual del Modelo
+      - Conversación por Voz TTS y STT
+      - Generación de Imágenes desde Texto
+      - Sistema de Plugins (Llamada de Funciones)
+      - Mercado de Agentes (GPTs)
+      - Soporte para Base de Datos Local / Remota
+      - Soporte para Gestión Multi-Usuario
+      - Aplicación Web Progresiva (PWA)
+      - Adaptación para Dispositivos Móviles
+      - Temas Personalizables
+  pt:
+    description: Framework de chat com IA de design moderno e código aberto
+    readme: |-
+      Uma interface/framework de código aberto com design moderno para ChatGPT/LLMs que suporta síntese de voz, multi-modalidade e sistema de plugins extensível (chamada de função).
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ Seu navegador não suporta a tag de vídeo.
+      </video>
+
+      <hr>
+
+      ## Funcionalidades
+
+      - Upload de Arquivos/Base de Conhecimento
+      - Suporte a Múltiplos Provedores de Modelo
+      - Suporte a Modelo de Linguagem Local (LLM)
+      - Reconhecimento Visual de Modelo
+      - Conversação por Voz TTS & STT
+      - Geração de Imagem a partir de Texto
+      - Sistema de Plugins (Chamada de Função)
+      - Mercado de Agentes (GPTs)
+      - Suporte a Banco de Dados Local / Remoto
+      - Suporte a Gerenciamento Multi-Usuário
+      - Aplicativo Web Progressivo (PWA)
+      - Adaptação para Dispositivos Móveis
+      - Temas Personalizados
+  hi:
+    description: ओपन-सोर्स, आधुनिक-डिज़ाइन एआई चैट फ्रेमवर्क
+    readme: |-
+      एक ओपन-सोर्स, आधुनिक-डिज़ाइन ChatGPT/LLMs यूआई/फ्रेमवर्क जो स्पीच-सिंथेसिस, मल्टी-मोडल, और विस्तार योग्य (फंक्शन कॉल) प्लगइन सिस्टम को सपोर्ट करता है।
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ आपका ब्राउज़र वीडियो टैग को सपोर्ट नहीं करता है।
+      </video>
+
+      <hr>
+
+      ## विशेषताएं
+
+      - फाइल अपलोड/नॉलेज बेस
+      - मल्टी-मॉडल सर्विस प्रोवाइडर सपोर्ट
+      - लोकल लार्ज लैंग्वेज मॉडल (LLM) सपोर्ट
+      - मॉडल विजुअल रिकग्निशन
+      - TTS और STT वॉइस कन्वर्सेशन
+      - टेक्स्ट टू इमेज जनरेशन
+      - प्लगइन सिस्टम (फंक्शन कॉलिंग)
+      - एजेंट मार्केट (GPTs)
+      - लोकल / रिमोट डेटाबेस सपोर्ट
+      - मल्टी-यूजर मैनेजमेंट सपोर्ट
+      - प्रोग्रेसिव वेब ऐप (PWA)
+      - मोबाइल डिवाइस अडैप्टेशन
+      - कस्टम थीम्स
+  de:
+    description: Open-Source-KI-Chat-Framework mit modernem Design
+    readme: |-
+      Ein Open-Source-, modern gestaltetes ChatGPT/LLMs UI/Framework, das Sprachsynthese, Multi-Modal und ein erweiterbares (Funktionsaufruf) Plugin-System unterstützt.
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ Ihr Browser unterstützt das Video-Tag nicht.
+      </video>
+
+      <hr>
+
+      ## Funktionen
+
+      - Datei-Upload/Wissensdatenbank
+      - Unterstützung mehrerer Modell-Dienstanbieter
+      - Unterstützung lokaler großer Sprachmodelle (LLM)
+      - Visuelle Modellerkennung
+      - TTS & STT Sprachkonversation
+      - Text-zu-Bild-Generierung
+      - Plugin-System (Funktionsaufrufe)
+      - Agenten-Marktplatz (GPTs)
+      - Unterstützung lokaler / entfernter Datenbanken
+      - Unterstützung von Multi-User-Verwaltung
+      - Progressive Web App (PWA)
+      - Anpassung an mobile Geräte
+      - Benutzerdefinierte Themes
+  it:
+    description: Framework di chat AI open-source dal design moderno
+    readme: |-
+      Un'interfaccia utente/framework open-source con design moderno per ChatGPT/LLM che supporta sintesi vocale, multi-modalità e un sistema di plugin estensibile (chiamate di funzione).
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ Il tuo browser non supporta il tag video.
+      </video>
+
+      <hr>
+
+      ## Caratteristiche
+
+      - Caricamento File/Base di Conoscenza
+      - Supporto Multi-Modello per Provider di Servizi
+      - Supporto per Modelli Linguistici Locali (LLM)
+      - Riconoscimento Visivo del Modello
+      - Conversazione Vocale TTS & STT
+      - Generazione di Immagini da Testo
+      - Sistema di Plugin (Chiamate di Funzione)
+      - Mercato degli Agenti (GPTs)
+      - Supporto Database Locale / Remoto
+      - Supporto Gestione Multi-Utente
+      - App Web Progressiva (PWA)
+      - Adattamento per Dispositivi Mobili
+      - Temi Personalizzabili
+  fr:
+    description: Framework de chat IA open-source au design moderne
+    readme: |-
+      Une interface/framework open-source moderne pour ChatGPT/LLMs avec un design moderne qui prend en charge la synthèse vocale, le multimodal et un système de plugins extensible (appel de fonction).
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ Votre navigateur ne prend pas en charge la balise vidéo.
+      </video>
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - Téléchargement de fichiers/Base de connaissances
+      - Support multi-fournisseurs de modèles
+      - Support des modèles de langage locaux (LLM)
+      - Reconnaissance visuelle des modèles
+      - Conversation vocale TTS & STT
+      - Génération d'images à partir de texte
+      - Système de plugins (Appel de fonctions)
+      - Marché d'agents (GPTs)
+      - Support de base de données locale / distante
+      - Support de gestion multi-utilisateurs
+      - Application web progressive (PWA)
+      - Adaptation aux appareils mobiles
+      - Thèmes personnalisables
+  ar:
+    description: إطار عمل دردشة ذكاء اصطناعي مفتوح المصدر بتصميم عصري
+    readme: |-
+      واجهة مستخدم/إطار عمل مفتوح المصدر وحديث التصميم لـ ChatGPT/LLMs يدعم توليد الكلام، والوسائط المتعددة، ونظام إضافات قابل للتوسيع (استدعاء الدوال).
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ متصفحك لا يدعم وسم الفيديو.
+      </video>
+
+      <hr>
+
+      ## المميزات
+
+      - رفع الملفات/قاعدة المعرفة
+      - دعم مزودي خدمات النماذج المتعددة
+      - دعم النماذج اللغوية الكبيرة (LLM) المحلية
+      - التعرف البصري للنموذج
+      - محادثات صوتية عبر تحويل النص إلى كلام والكلام إلى نص
+      - توليد الصور من النص
+      - نظام الإضافات (استدعاء الدوال)
+      - سوق العملاء (GPTs)
+      - دعم قواعد البيانات المحلية / البعيدة
+      - دعم إدارة المستخدمين المتعددين
+      - تطبيق ويب تقدمي (PWA)
+      - التكيف مع الأجهزة المحمولة
+      - سمات مخصصة
+  ru:
+    description: AI-чат фреймворк с открытым исходным кодом и современным дизайном
+    readme: |-
+      Фреймворк/интерфейс с открытым исходным кодом и современным дизайном для ChatGPT/LLM с поддержкой синтеза речи, мультимодальности и расширяемой системой плагинов (вызов функций).
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ Ваш браузер не поддерживает тег video.
+      </video>
+
+      <hr>
+
+      ## Возможности
+
+      - Загрузка файлов/База знаний
+      - Поддержка нескольких провайдеров моделей
+      - Поддержка локальных больших языковых моделей (LLM)
+      - Визуальное распознавание моделей
+      - Голосовое общение с TTS и STT
+      - Генерация изображений из текста
+      - Система плагинов (вызов функций)
+      - Магазин агентов (GPTs)
+      - Поддержка локальной/удаленной базы данных
+      - Поддержка многопользовательского управления
+      - Прогрессивное веб-приложение (PWA)
+      - Адаптация под мобильные устройства
+      - Настраиваемые темы
+  zh:
+    description: 开源、现代设计的人工智能聊天框架
+    readme: |-
+      一个开源的、现代设计的 ChatGPT/LLMs 用户界面/框架，支持语音合成、多模态和可扩展（函数调用）插件系统。
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ 您的浏览器不支持视频标签。
+      </video>
+
+      <hr>
+
+      ## 功能特点
+
+      - 文件上传/知识库
+      - 多模型服务提供商支持
+      - 本地大语言模型（LLM）支持
+      - 模型视觉识别
+      - TTS 和 STT 语音对话
+      - 文本生成图像
+      - 插件系统（函数调用）
+      - 智能体市场（GPTs）
+      - 支持本地/远程数据库
+      - 支持多用户管理
+      - 渐进式网页应用（PWA）
+      - 移动设备适配
+      - 自定义主题
+  ko:
+    description: 오픈소스, 현대적 디자인의 AI 채팅 프레임워크
+    readme: |-
+      음성 합성, 멀티모달, 확장 가능한 (함수 호출) 플러그인 시스템을 지원하는 오픈소스 현대적 디자인의 ChatGPT/LLMs UI/프레임워크입니다.
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ 브라우저가 비디오 태그를 지원하지 않습니다.
+      </video>
+
+      <hr>
+
+      ## 기능
+
+      - 파일 업로드/지식 베이스
+      - 다중 모델 서비스 제공자 지원
+      - 로컬 대규모 언어 모델(LLM) 지원
+      - 모델 시각 인식
+      - TTS & STT 음성 대화
+      - 텍스트 이미지 생성
+      - 플러그인 시스템 (함수 호출)
+      - 에이전트 마켓 (GPTs)
+      - 로컬/원격 데이터베이스 지원
+      - 다중 사용자 관리 지원
+      - 프로그레시브 웹 앱 (PWA)
+      - 모바일 기기 적응
+      - 사용자 정의 테마
+  ja:
+    description: オープンソース、モダンデザインのAIチャットフレームワーク
+    readme: |-
+      オープンソースで現代的なデザインのChatGPT/LLMs UI/フレームワークで、音声合成、マルチモーダル、拡張可能な（ファンクションコール）プラグインシステムをサポートしています。
+
+      <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
+
+      <video controls width="100%">
+        <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
+        ⚠️ お使いのブラウザはビデオタグをサポートしていません。
+      </video>
+
+      <hr>
+
+      ## 特徴
+
+      - ファイルアップロード/ナレッジベース
+      - マルチモデルサービスプロバイダーサポート
+      - ローカル大規模言語モデル（LLM）サポート
+      - モデルの視覚認識
+      - TTS & STT 音声会話
+      - テキストから画像生成
+      - プラグインシステム（ファンクションコーリング）
+      - エージェントマーケット（GPTs）
+      - ローカル/リモートデータベースサポート
+      - マルチユーザー管理サポート
+      - プログレッシブウェブアプリ（PWA）
+      - モバイルデバイス対応
+      - カスタムテーマ

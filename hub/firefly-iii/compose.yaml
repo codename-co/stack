@@ -1,0 +1,47 @@
+services:
+  firefly-app:
+    image: fireflyiii/core:version-${FIREFLY_VERSION:-6.1}
+    hostname: app
+    # container_name: firefly_iii_core
+    restart: always
+    volumes:
+      - firefly_iii_upload:/var/www/html/storage/upload
+    env_file: .env
+    networks:
+      - firefly_iii
+    # ports:
+    #   - 80:8080
+    depends_on:
+      - firefly-db
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      dash.icon: fireflyiii
+      traefik.http.routers.firefly-iii.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.firefly-iii.loadbalancer.server.port: 8080
+
+  firefly-db:
+    image: mariadb:lts
+    hostname: db
+    # container_name: firefly_iii_db
+    restart: always
+    env_file: .db.env
+    networks:
+      - firefly_iii
+    volumes:
+      - firefly_iii_db:/var/lib/mysql
+
+  firefly-cron:
+    image: alpine
+    restart: always
+    # container_name: firefly_iii_cron
+    command: sh -c "echo \"0 3 * * * wget -qO- http://firefly-app:8080/api/v1/cron/${STATIC_CRON_TOKEN};echo\" | crontab - && crond -f -L /dev/stdout"
+    networks:
+      - firefly_iii
+
+volumes:
+  firefly_iii_upload:
+  firefly_iii_db:
+
+networks:
+  firefly_iii:
+    driver: bridge

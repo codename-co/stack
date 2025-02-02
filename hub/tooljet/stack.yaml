@@ -1,0 +1,358 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: tooljet
+name: Tooljet
+icon: 🚀
+flavor: DockerCompose
+version: "3.0.14"
+updated_at: 2024-12-20
+description: A low-code platform for building internal tools
+author: ToolJet, Inc
+license: AGPL-3.0
+homepage: https://www.tooljet.com
+repository: https://github.com/ToolJet/ToolJet
+stars: 33600
+tags:
+  - internal-tool
+  - low-code
+  - no-code
+alternativeTo:
+  - retool
+  - powerapps
+readme: |
+  ToolJet is an open-source low-code framework to build and deploy internal tools with minimal engineering effort. ToolJet's drag-and-drop frontend builder allows you to create complex, responsive frontends within minutes. Additionally, you can integrate various data sources, including databases like PostgreSQL, MongoDB, and Elasticsearch; API endpoints with OpenAPI spec and OAuth2 support; SaaS tools such as Stripe, Slack, Google Sheets, Airtable, and Notion; as well as object storage services like S3, GCS, and Minio, to fetch and write data.
+
+  ![Tooljet dashboard showing inventory and orders](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+  <hr>
+
+  ### All features
+
+  - **Visual App Builder:** 45+ built-in responsive components, including Tables, Charts, Lists, Forms, and Progress Bars.
+  - **ToolJet Database:** Built-in no-code database.
+  - **Multi-Page:** Build an application with multiple pages.
+  - **Multiplayer editing:** Allows simultaneous app building by multiple developers.
+  - **50+ data sources:** Integrate with external databases, cloud storage, and APIs.
+  - **Desktop & mobile:** Customize layout widths to fit various screen sizes.
+  - **Self-host:** Supports Docker, Kubernetes, AWS EC2, Google Cloud Run, and more.
+  - **Collaborate:** Add comments anywhere on the canvas and tag your team members.
+  - **Extend with plugins:** Use our [command-line tool](https://www.npmjs.com/package/@tooljet/cli) to easily bootstrap new connectors.
+  - **Version control:** Manage multiple application versions with a structured release cycle.
+  - **Run JS & Python code:** Execute custom JavaScript and Python snippets.
+  - **Granular access control:** Set permissions at both group and app levels.
+  - **Low-code:** Use JS code almost anywhere within the builder, such as setting text color based on status with
+  `status === 'success' ? 'green' : 'red'`.
+  - **No-code query editors:** Query Editors are available for all supported data sources.
+  - **Join and transform data:** Transform query results using JavaScript or Python code.
+  - **Secure:** All the credentials are securely encrypted using `aes-256-gcm`.
+  - **Data Privacy:** ToolJet serves solely as a proxy and does not store data.
+  - **SSO:** Supports multiple Single Sign-On providers.
+i18n:
+  ar:
+    description: منصة منخفضة الكود لبناء الأدوات الداخلية
+    readme: |-
+      تولجت هو إطار عمل مفتوح المصدر منخفض التشفير لبناء ونشر الأدوات الداخلية بأقل جهد هندسي. يتيح لك منشئ واجهة المستخدم السحب والإفلات في تولجت إنشاء واجهات أمامية معقدة ومتجاوبة في غضون دقائق. بالإضافة إلى ذلك، يمكنك دمج مصادر بيانات متنوعة، بما في ذلك قواعد البيانات مثل PostgreSQL وMongoDB وElasticsearch؛ نقاط نهاية API مع دعم OpenAPI وOAuth2؛ أدوات SaaS مثل Stripe وSlack وGoogle Sheets وAirtable وNotion؛ بالإضافة إلى خدمات تخزين الكائنات مثل S3 وGCS وMinio، لجلب البيانات وكتابتها.
+
+      ![لوحة تحكم تولجت تعرض المخزون والطلبات](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### جميع الميزات
+
+      - **منشئ التطبيقات المرئي:** أكثر من 45 مكونًا متجاوبًا مدمجًا، بما في ذلك الجداول والمخططات والقوائم والنماذج وأشرطة التقدم.
+      - **قاعدة بيانات تولجت:** قاعدة بيانات مدمجة بدون تشفير.
+      - **متعدد الصفحات:** بناء تطبيق بصفحات متعددة.
+      - **التحرير متعدد اللاعبين:** يسمح ببناء التطبيق في وقت واحد من قبل عدة مطورين.
+      - **أكثر من 50 مصدر للبيانات:** التكامل مع قواعد البيانات الخارجية والتخزين السحابي وواجهات API.
+      - **سطح المكتب والجوال:** تخصيص عرض التخطيط ليناسب أحجام الشاشات المختلفة.
+      - **الاستضافة الذاتية:** يدعم Docker وKubernetes وAWS EC2 وGoogle Cloud Run والمزيد.
+      - **التعاون:** إضافة تعليقات في أي مكان على اللوحة وإشارة إلى أعضاء فريقك.
+      - **التوسع بالإضافات:** استخدم [أداة سطر الأوامر](https://www.npmjs.com/package/@tooljet/cli) لدينا لتمهيد موصلات جديدة بسهولة.
+      - **التحكم في الإصدارات:** إدارة إصدارات متعددة للتطبيق مع دورة إصدار منظمة.
+      - **تشغيل كود JS وPython:** تنفيذ مقتطفات JavaScript وPython مخصصة.
+      - **التحكم الدقيق في الوصول:** تعيين الأذونات على مستوى المجموعة والتطبيق.
+      - **تشفير منخفض:** استخدام كود JS في أي مكان تقريبًا داخل المنشئ، مثل ت
+  de:
+    description: Eine Low-Code-Plattform zum Erstellen interner Tools
+    readme: |-
+      ToolJet ist ein Open-Source-Low-Code-Framework zum Erstellen und Bereitstellen interner Tools mit minimalem Entwicklungsaufwand. Mit ToolJets Drag-and-Drop-Frontend-Builder können Sie innerhalb von Minuten komplexe, responsive Frontends erstellen. Darüber hinaus können Sie verschiedene Datenquellen integrieren, einschließlich Datenbanken wie PostgreSQL, MongoDB und Elasticsearch; API-Endpunkte mit OpenAPI-Spezifikation und OAuth2-Unterstützung; SaaS-Tools wie Stripe, Slack, Google Sheets, Airtable und Notion; sowie Objektspeicherdienste wie S3, GCS und Minio, um Daten abzurufen und zu schreiben.
+
+      ![Tooljet-Dashboard mit Bestand und Bestellungen](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### Alle Funktionen
+
+      - **Visueller App-Builder:** Über 45 integrierte responsive Komponenten, einschließlich Tabellen, Diagramme, Listen, Formulare und Fortschrittsbalken.
+      - **ToolJet-Datenbank:** Integrierte No-Code-Datenbank.
+      - **Mehrere Seiten:** Erstellen Sie eine Anwendung mit mehreren Seiten.
+      - **Mehrbenutzer-Bearbeitung:** Ermöglicht gleichzeitiges App-Building durch mehrere Entwickler.
+      - **Über 50 Datenquellen:** Integration mit externen Datenbanken, Cloud-Speicher und APIs.
+      - **Desktop & Mobil:** Anpassbare Layoutbreiten für verschiedene Bildschirmgrößen.
+      - **Selbst-Hosting:** Unterstützt Docker, Kubernetes, AWS EC2, Google Cloud Run und mehr.
+      - **Zusammenarbeit:** Fügen Sie überall auf der Arbeitsfläche Kommentare hinzu und markieren Sie Ihre Teammitglieder.
+      - **Erweiterbar durch Plugins:** Nutzen Sie unser [Command-Line-Tool](https://www.npmjs.com/package/@tooljet/cli) zum einfachen Bootstrapping neuer Connectoren.
+      - **Versionskontrolle:** Verwalten Sie mehrere Anwendungsversionen mit einem strukturierten Release-Zyklus.
+      - **JS & Python Code ausführen:** Führen Sie benutzerdefinierte JavaScript- und Python-Snippets aus.
+      - **Granulare Zugriffssteuerung:** Legen Sie Berechtigungen sowohl auf Gruppen- als auch auf App-Ebene fest.
+      - **Low-Code:** Verwenden Sie JS-Code fast überall im Builder, zum Beispiel um die Textfarbe basierend auf dem Status festzulegen mit
+      `status === 'success' ? 'green' : 'red'`.
+      - **No-Code-Abfrage-Editoren:** Abfrage-Editoren sind für alle unterstützten Datenquellen verfügbar.
+      - **Daten verbinden und transformieren:** Transformieren Sie Abfrageergebnisse mit JavaScript- oder Python-Code.
+      - **Sicher:** Alle Anmeldedaten sind sicher mit `aes-256-gcm` verschlüsselt.
+      - **Datenschutz:** ToolJet dient ausschließlich als Proxy und speichert keine Daten.
+      - **SSO:** Unterstützt mehrere Single Sign-On-Anbieter.
+  zh:
+    description: 用于构建内部工具的低代码平台
+    readme: |-
+      ToolJet是一个开源低代码框架，用于以最少的工程努力构建和部署内部工具。ToolJet的拖放式前端构建器允许您在几分钟内创建复杂、响应式的前端。此外，您可以集成各种数据源，包括PostgreSQL、MongoDB和Elasticsearch等数据库；支持OpenAPI规范和OAuth2的API端点；Stripe、Slack、Google Sheets、Airtable和Notion等SaaS工具；以及S3、GCS和Minio等对象存储服务，用于获取和写入数据。
+
+      ![Tooljet仪表板显示库存和订单](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### 所有功能
+
+      - **可视化应用构建器：** 45+内置响应式组件，包括表格、图表、列表、表单和进度条。
+      - **ToolJet数据库：** 内置无代码数据库。
+      - **多页面：** 构建具有多个页面的应用程序。
+      - **多人编辑：** 允许多个开发者同时构建应用。
+      - **50+数据源：** 集成外部数据库、云存储和API。
+      - **桌面和移动端：** 自定义布局宽度以适应各种屏幕尺寸。
+      - **自托管：** 支持Docker、Kubernetes、AWS EC2、Google Cloud Run等。
+      - **协作：** 在画布上的任何位置添加评论并标记团队成员。
+      - **插件扩展：** 使用我们的[命令行工具](https://www.npmjs.com/package/@tooljet/cli)轻松引导新连接器。
+      - **版本控制：** 通过结构化发布周期管理多个应用版本。
+      - **运行JS和Python代码：** 执行自定义JavaScript和Python脚本。
+      - **精细的访问控制：** 在组和应用级别设置权限。
+      - **低代码：** 在构建器中几乎任何地方都可以使用JS代码，例如根据状态设置文本颜色：
+      `status === 'success' ? 'green' : 'red'`。
+      - **无代码查询编辑器：** 为所有支持的数据源提供查询编辑器。
+      - **连接和转换数据：** 使用JavaScript或Python代码转换查询结果。
+      - **安全：** 所有凭证都使用`aes-256-gcm`安全加密。
+      - **数据隐私：** ToolJet仅作为代理，不存储数据。
+      - **SSO：** 支持多个单点登录提供商。
+  fr:
+    description: Une plateforme low-code pour créer des outils internes
+    readme: |-
+      ToolJet est un framework low-code open-source pour créer et déployer des outils internes avec un minimum d'effort d'ingénierie. Le constructeur d'interface frontend drag-and-drop de ToolJet vous permet de créer des interfaces complexes et réactives en quelques minutes. De plus, vous pouvez intégrer diverses sources de données, y compris des bases de données comme PostgreSQL, MongoDB et Elasticsearch ; des points d'accès API avec support OpenAPI spec et OAuth2 ; des outils SaaS comme Stripe, Slack, Google Sheets, Airtable et Notion ; ainsi que des services de stockage d'objets comme S3, GCS et Minio, pour récupérer et écrire des données.
+
+      ![Tableau de bord Tooljet montrant l'inventaire et les commandes](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### Toutes les fonctionnalités
+
+      - **Constructeur d'applications visuel :** Plus de 45 composants réactifs intégrés, notamment des tableaux, graphiques, listes, formulaires et barres de progression.
+      - **Base de données ToolJet :** Base de données no-code intégrée.
+      - **Multi-pages :** Créez une application avec plusieurs pages.
+      - **Édition multijoueur :** Permet la construction simultanée d'applications par plusieurs développeurs.
+      - **Plus de 50 sources de données :** Intégration avec des bases de données externes, du stockage cloud et des API.
+      - **Desktop & mobile :** Personnalisez les largeurs de mise en page pour s'adapter à différentes tailles d'écran.
+      - **Auto-hébergement :** Prend en charge Docker, Kubernetes, AWS EC2, Google Cloud Run, et plus encore.
+      - **Collaboration :** Ajoutez des commentaires n'importe où sur le canevas et mentionnez les membres de votre équipe.
+      - **Extension par plugins :** Utilisez notre [outil en ligne de commande](https://www.npmjs.com/package/@tooljet/cli) pour créer facilement de nouveaux connecteurs.
+      - **Contrôle de version :** Gérez plusieurs versions d'applications avec un cycle de publication structuré.
+      - **Exécution de code JS & Python :** Exécutez des fragments personnalisés de JavaScript et Python.
+      - **Contrôle d'accès granulaire :** Définissez des permissions au niveau des groupes et des applications.
+      - **Low-code :** Utilisez du code JS presque partout dans le constructeur, comme définir la couleur du texte selon le statut avec
+      `status === 'success' ? 'green' : 'red'`.
+      - **Éditeurs de requêtes no-code :** Des éditeurs de requêtes sont disponibles pour toutes les sources de données prises en charge.
+      - **Joindre et transformer les données :** Transformez les résultats des requêtes en utilisant du code JavaScript ou Python.
+      - **Sécurisé :** Toutes les informations d'identification sont cryptées de manière sécurisée avec `aes-256-gcm`.
+      - **Confidentialité des données :** ToolJet sert uniquement de proxy et ne stocke pas de données.
+      - **SSO :** Prend en charge plusieurs fournisseurs d'authentification unique.
+  es:
+    description: Una plataforma low-code para construir herramientas internas
+    readme: |-
+      ToolJet es un framework de código abierto y bajo código para crear e implementar herramientas internas con un mínimo esfuerzo de ingeniería. El constructor frontend de arrastrar y soltar de ToolJet te permite crear interfaces complejas y responsivas en minutos. Además, puedes integrar varias fuentes de datos, incluyendo bases de datos como PostgreSQL, MongoDB y Elasticsearch; endpoints de API con soporte para OpenAPI spec y OAuth2; herramientas SaaS como Stripe, Slack, Google Sheets, Airtable y Notion; así como servicios de almacenamiento de objetos como S3, GCS y Minio, para obtener y escribir datos.
+
+      ![Panel de control de Tooljet mostrando inventario y pedidos](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### Todas las características
+
+      - **Constructor Visual de Aplicaciones:** Más de 45 componentes responsivos integrados, incluyendo Tablas, Gráficos, Listas, Formularios y Barras de Progreso.
+      - **Base de Datos ToolJet:** Base de datos sin código integrada.
+      - **Múltiples Páginas:** Construye una aplicación con múltiples páginas.
+      - **Edición Multijugador:** Permite la construcción simultánea de aplicaciones por múltiples desarrolladores.
+      - **Más de 50 fuentes de datos:** Integración con bases de datos externas, almacenamiento en la nube y APIs.
+      - **Escritorio y móvil:** Personaliza anchos de diseño para adaptarse a varios tamaños de pantalla.
+      - **Auto-alojamiento:** Soporta Docker, Kubernetes, AWS EC2, Google Cloud Run y más.
+      - **Colaboración:** Añade comentarios en cualquier parte del lienzo y etiqueta a los miembros de tu equipo.
+      - **Extensible con plugins:** Usa nuestra [herramienta de línea de comandos](https://www.npmjs.com/package/@tooljet/cli) para crear nuevos conectores fácilmente.
+      - **Control de versiones:** Gestiona múltiples versiones de aplicaciones con un ciclo de lanzamiento estructurado.
+      - **Ejecuta código JS y Python:** Ejecuta fragmentos personalizados de JavaScript y Python.
+      - **Control de acceso granular:** Establece permisos tanto a nivel de grupo como de aplicación.
+      - **Bajo código:** Usa código JS casi en cualquier parte del constructor, como establecer el color del texto según el estado con
+      `status === 'success' ? 'green' : 'red'`.
+      - **Editores de consultas sin código:** Editores de Consultas disponibles para todas las fuentes de datos soportadas.
+      - **Une y transforma datos:** Transforma resultados de consultas usando código JavaScript o Python.
+      - **Seguro:** Todas las credenciales están cifradas de forma segura usando `aes-256-gcm`.
+      - **Privacidad de Datos:** ToolJet funciona únicamente como proxy y no almacena datos.
+      - **SSO:** Soporta múltiples proveedores de Inicio de Sesión Único.
+  it:
+    description: Una piattaforma low-code per creare strumenti interni
+    readme: |-
+      ToolJet è un framework open-source low-code per costruire e distribuire strumenti interni con un minimo sforzo di sviluppo. Il costruttore di frontend drag-and-drop di ToolJet ti permette di creare frontend complessi e reattivi in pochi minuti. Inoltre, puoi integrare varie fonti di dati, inclusi database come PostgreSQL, MongoDB ed Elasticsearch; endpoint API con supporto OpenAPI spec e OAuth2; strumenti SaaS come Stripe, Slack, Google Sheets, Airtable e Notion; così come servizi di archiviazione oggetti come S3, GCS e Minio, per recuperare e scrivere dati.
+
+      ![Dashboard Tooljet che mostra inventario e ordini](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### Tutte le funzionalità
+
+      - **Costruttore di App Visuale:** Più di 45 componenti reattivi incorporati, inclusi Tabelle, Grafici, Liste, Moduli e Barre di Avanzamento.
+      - **Database ToolJet:** Database no-code incorporato.
+      - **Multi-Pagina:** Costruisci un'applicazione con più pagine.
+      - **Modifica multiplayer:** Permette la costruzione simultanea dell'app da parte di più sviluppatori.
+      - **Più di 50 fonti di dati:** Integrazione con database esterni, archiviazione cloud e API.
+      - **Desktop e mobile:** Personalizza le larghezze del layout per adattarsi a varie dimensioni dello schermo.
+      - **Self-host:** Supporta Docker, Kubernetes, AWS EC2, Google Cloud Run e altro.
+      - **Collaborazione:** Aggiungi commenti ovunque sulla canvas e tagga i membri del tuo team.
+      - **Estendi con plugin:** Usa il nostro [strumento da riga di comando](https://www.npmjs.com/package/@tooljet/cli) per creare facilmente nuovi connettori.
+      - **Controllo versione:** Gestisci più versioni dell'applicazione con un ciclo di rilascio strutturato.
+      - **Esegui codice JS e Python:** Esegui snippet personalizzati JavaScript e Python.
+      - **Controllo accessi granulare:** Imposta permessi sia a livello di gruppo che di app.
+      - **Low-code:** Usa codice JS quasi ovunque nel costruttore, come impostare il colore del testo in base allo stato con
+      `status === 'success' ? 'green' : 'red'`.
+      - **Editor di query no-code:** Editor di Query sono disponibili per tutte le fonti di dati supportate.
+      - **Unisci e trasforma dati:** Trasforma i risultati delle query usando codice JavaScript o Python.
+      - **Sicuro:** Tutte le credenziali sono crittografate in modo sicuro usando `aes-256-gcm`.
+      - **Privacy dei Dati:** ToolJet funge solo da proxy e non memorizza dati.
+      - **SSO:** Supporta molteplici provider di Single Sign-On.
+  ru:
+    description: Платформа low-code для создания внутренних инструментов
+    readme: |-
+      ToolJet - это низкокодовый фреймворк с открытым исходным кодом для создания и развертывания внутренних инструментов с минимальными затратами на разработку. Конструктор интерфейсов ToolJet с drag-and-drop функционалом позволяет создавать сложные, адаптивные интерфейсы за считанные минуты. Кроме того, вы можете интегрировать различные источники данных, включая базы данных, такие как PostgreSQL, MongoDB и Elasticsearch; API-endpoints с поддержкой OpenAPI spec и OAuth2; SaaS-инструменты, такие как Stripe, Slack, Google Sheets, Airtable и Notion; а также сервисы объектного хранения, такие как S3, GCS и Minio, для получения и записи данных.
+
+      ![Панель управления Tooljet, показывающая инвентарь и заказы](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### Все функции
+
+      - **Визуальный конструктор приложений:** Более 45 встроенных адаптивных компонентов, включая таблицы, диаграммы, списки, формы и индикаторы прогресса.
+      - **База данных ToolJet:** Встроенная база данных без кода.
+      - **Многостраничность:** Создание приложения с несколькими страницами.
+      - **Многопользовательское редактирование:** Позволяет нескольким разработчикам одновременно создавать приложение.
+      - **Более 50 источников данных:** Интеграция с внешними базами данных, облачными хранилищами и API.
+      - **Десктоп и мобильные устройства:** Настройка ширины макета под различные размеры экранов.
+      - **Самостоятельное размещение:** Поддержка Docker, Kubernetes, AWS EC2, Google Cloud Run и других.
+      - **Совместная работа:** Добавление комментариев в любом месте холста и упоминание членов команды.
+      - **Расширение с помощью плагинов:** Использование нашего [инструмента командной строки](https://www.npmjs.com/package/@tooljet/cli) для легкого создания новых коннекторов.
+      - **Контроль версий:** Управление несколькими версиями приложения со структурированным циклом релизов.
+      - **Выполнение JS и Python кода:** Запуск пользовательских скриптов JavaScript и Python.
+      - **Детальное управление доступом:** Настройка разрешений на уровне групп и приложений.
+      - **Низкий код:** Использование JS кода практически везде в конструкторе, например, установка цвета текста в зависимости от статуса:
+      `status === 'success' ? 'green' : 'red'`.
+      - **Редакторы запросов без кода:** Редакторы запросов доступны для всех поддерживаемых источников данных.
+      - **Объединение и преобразование данных:** Преобразование результатов запросов с помощью JavaScript или Python кода.
+      - **Безопасность:** Все учетные данные надежно зашифрованы с помощью `aes-256-gcm`.
+      - **Конфиденциальность данных:** ToolJet служит только прокси и не хранит данные.
+      - **SSO:** Поддержка нескольких провайдеров единого входа.
+  hi:
+    description: आंतरिक टूल्स बनाने के लिए एक लो-कोड प्लेटफॉर्म
+    readme: |-
+      टूलजेट एक ओपन-सोर्स लो-कोड फ्रेमवर्क है जो न्यूनतम इंजीनियरिंग प्रयास से आंतरिक टूल्स को बनाने और डिप्लॉय करने की सुविधा देता है। टूलजेट का ड्रैग-एंड-ड्रॉप फ्रंटएंड बिल्डर आपको मिनटों में जटिल, रेस्पॉन्सिव फ्रंटएंड बनाने की क्षमता देता है। इसके अतिरिक्त, आप विभिन्न डेटा स्रोतों को एकीकृत कर सकते हैं, जिसमें PostgreSQL, MongoDB, और Elasticsearch जैसे डेटाबेस; OpenAPI स्पेक और OAuth2 समर्थन वाले API एंडपॉइंट्स; Stripe, Slack, Google Sheets, Airtable, और Notion जैसे SaaS टूल्स; साथ ही S3, GCS, और Minio जैसी ऑब्जेक्ट स्टोरेज सेवाएं शामिल हैं, जिनसे डेटा प्राप्त और लिख सकते हैं।
+
+      ![टूलजेट डैशबोर्ड इन्वेंटरी और ऑर्डर दिखा रहा है](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### सभी सुविधाएं
+
+      - **विजुअल ऐप बिल्डर:** 45+ बिल्ट-इन रेस्पॉन्सिव कंपोनेंट्स, जिनमें टेबल्स, चार्ट्स, लिस्ट्स, फॉर्म्स और प्रोग्रेस बार्स शामिल हैं।
+      - **टूलजेट डेटाबेस:** बिल्ट-इन नो-कोड डेटाबेस।
+      - **मल्टी-पेज:** कई पेजों वाला एप्लिकेशन बनाएं।
+      - **मल्टीप्लेयर एडिटिंग:** कई डेवलपर्स द्वारा एक साथ ऐप बिल्डिंग की सुविधा।
+      - **50+ डेटा स्रोत:** बाहरी डेटाबेस, क्लाउड स्टोरेज और API के साथ एकीकरण।
+      - **डेस्कटॉप और मोबाइल:** विभिन्न स्क्रीन साइज के लिए लेआउट चौड़ाई को अनुकूलित करें।
+      - **सेल्फ-होस्ट:** Docker, Kubernetes, AWS EC2, Google Cloud Run और अन्य का समर्थन।
+      - **सहयोग:** कैनवास पर कहीं भी टिप्पणियां जोड़ें और टीम के सदस्यों को टैग करें।
+      - **प्लगइन्स से विस्तार:** नए कनेक्टर्स को आसानी से बूटस्ट्रैप करने के लिए हमारे [
+  ko:
+    description: 내부 도구를 구축하기 위한 로우코드 플랫폼
+    readme: |-
+      ToolJet은 최소한의 엔지니어링 노력으로 내부 도구를 구축하고 배포할 수 있는 오픈소스 로우코드 프레임워크입니다. ToolJet의 드래그 앤 드롭 프론트엔드 빌더를 사용하면 몇 분 안에 복잡하고 반응형 프론트엔드를 만들 수 있습니다. 또한 PostgreSQL, MongoDB, Elasticsearch와 같은 데이터베이스; OpenAPI 명세와 OAuth2를 지원하는 API 엔드포인트; Stripe, Slack, Google Sheets, Airtable, Notion과 같은 SaaS 도구; S3, GCS, Minio와 같은 오브젝트 스토리지 서비스 등 다양한 데이터 소스를 통합하여 데이터를 가져오고 쓸 수 있습니다.
+
+      ![재고와 주문을 보여주는 Tooljet 대시보드](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### 모든 기능
+
+      - **시각적 앱 빌더:** 테이블, 차트, 목록, 양식, 진행 막대를 포함한 45개 이상의 내장 반응형 컴포넌트.
+      - **ToolJet 데이터베이스:** 내장된 노코드 데이터베이스.
+      - **멀티페이지:** 여러 페이지로 구성된 애플리케이션 구축.
+      - **멀티플레이어 편집:** 여러 개발자가 동시에 앱을 구축할 수 있음.
+      - **50개 이상의 데이터 소스:** 외부 데이터베이스, 클라우드 스토리지, API와 통합.
+      - **데스크톱 & 모바일:** 다양한 화면 크기에 맞게 레이아웃 너비 customizing.
+      - **셀프 호스팅:** Docker, Kubernetes, AWS EC2, Google Cloud Run 등 지원.
+      - **협업:** 캔버스 어디에나 댓글을 추가하고 팀원을 태그할 수 있음.
+      - **플러그인으로 확장:** [명령줄 도구](https://www.npmjs.com/package/@tooljet/cli)를 사용하여 새로운 커넥터를 쉽게 부트스트랩.
+      - **버전 관리:** 구조화된 릴리스 주기로 여러 애플리케이션 버전 관리.
+      - **JS & Python 코드 실행:** 커스텀 JavaScript와 Python 스니펫 실행.
+      - **세분화된 접근 제어:** 그룹과 앱 수준 모두에서 권한 설정.
+      - **로우코드:** `status === 'success' ? 'green' : 'red'`와 같이 상태에 따라 텍스트 색상을 설정하는 등 빌더 내 거의 모든 곳에서 JS 코드 사용 가능.
+      - **노코드 쿼리 에디터:** 지원되는 모든 데이터 소스에 대해 쿼리 에디터 사용 가능.
+      - **데이터 결합 및 변환:** JavaScript 또는 Python 코
+  pt:
+    description: Uma plataforma low-code para construir ferramentas internas
+    readme: |-
+      O ToolJet é um framework de baixo código open-source para construir e implantar ferramentas internas com mínimo esforço de engenharia. O construtor frontend drag-and-drop do ToolJet permite criar frontends complexos e responsivos em minutos. Além disso, você pode integrar várias fontes de dados, incluindo bancos de dados como PostgreSQL, MongoDB e Elasticsearch; endpoints de API com suporte a OpenAPI spec e OAuth2; ferramentas SaaS como Stripe, Slack, Google Sheets, Airtable e Notion; bem como serviços de armazenamento de objetos como S3, GCS e Minio, para buscar e gravar dados.
+
+      ![Painel do Tooljet mostrando inventário e pedidos](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### Todas as funcionalidades
+
+      - **Construtor Visual de Aplicativos:** Mais de 45 componentes responsivos integrados, incluindo Tabelas, Gráficos, Listas, Formulários e Barras de Progresso.
+      - **Banco de Dados ToolJet:** Banco de dados no-code integrado.
+      - **Múltiplas Páginas:** Construa uma aplicação com várias páginas.
+      - **Edição multiplayer:** Permite a construção simultânea de aplicativos por múltiplos desenvolvedores.
+      - **Mais de 50 fontes de dados:** Integre com bancos de dados externos, armazenamento em nuvem e APIs.
+      - **Desktop & mobile:** Personalize larguras de layout para se adequar a vários tamanhos de tela.
+      - **Auto-hospedagem:** Suporta Docker, Kubernetes, AWS EC2, Google Cloud Run e mais.
+      - **Colaboração:** Adicione comentários em qualquer lugar do canvas e marque membros da sua equipe.
+      - **Extensível com plugins:** Use nossa [ferramenta de linha de comando](https://www.npmjs.com/package/@tooljet/cli) para facilmente criar novos conectores.
+      - **Controle de versão:** Gerencie múltiplas versões de aplicativos com um ciclo de lançamento estruturado.
+      - **Execute código JS & Python:** Execute snippets personalizados de JavaScript e Python.
+      - **Controle de acesso granular:** Define permissões tanto em nível de grupo quanto de aplicativo.
+      - **Low-code:** Use código JS em praticamente qualquer lugar dentro do construtor, como definir a cor do texto baseado no status com
+      `status === 'success' ? 'green' : 'red'`.
+      - **Editores de consulta no-code:** Editores de Consulta estão disponíveis para todas as fontes de dados suportadas.
+      - **Una e transforme dados:** Transforme resultados de consultas usando código JavaScript ou Python.
+      - **Seguro:** Todas as credenciais são criptografadas de forma segura usando `aes-256-gcm`.
+      - **Privacidade de Dados:** O ToolJet serve apenas como proxy e não armazena dados.
+      - **SSO:** Suporta múltiplos provedores de Single Sign-On.
+  ja:
+    description: 社内ツールを構築するためのローコードプラットフォーム
+    readme: |-
+      ToolJetは、最小限のエンジニアリング作業で内部ツールを構築・展開できるオープンソースのローコードフレームワークです。ToolJetのドラッグ・アンド・ドロップフロントエンドビルダーを使用すると、数分で複雑なレスポンシブフロントエンドを作成できます。さらに、PostgreSQL、MongoDB、Elasticsearchなどのデータベース、OpenAPI仕様とOAuth2をサポートするAPIエンドポイント、Stripe、Slack、Google Sheets、Airtable、Notionなどのサービス、S3、GCS、Minioなどのオブジェクトストレージサービスを統合してデータの取得と書き込みが可能です。
+
+      ![Tooljet dashboard showing inventory and orders](https://user-images.githubusercontent.com/7828962/211444352-4d6d2e4a-13c9-4980-9e16-4aed4af9811b.png)
+
+      <hr>
+
+      ### 全機能
+
+      - **ビジュアルアプリビルダー：** テーブル、チャート、リスト、フォーム、プログレスバーなど45以上の組み込みレスポンシブコンポーネント。
+      - **ToolJetデータベース：** 組み込みのノーコードデータベース。
+      - **マルチページ：** 複数ページのアプリケーションを構築可能。
+      - **マルチプレイヤー編集：** 複数の開発者による同時アプリ構築が可能。
+      - **50以上のデータソース：** 外部データベース、クラウドストレージ、APIとの統合。
+      - **デスクトップ＆モバイル：** 様々な画面サイズに対応するレイアウト幅のカスタマイズ。
+      - **セルフホスト：** Docker、Kubernetes、AWS EC2、Google Cloud Runなどをサポート。
+      - **コラボレーション：** キャンバス上の任意の場所にコメントを追加し、チームメンバーをタグ付け。
+      - **プラグインによる拡張：** [コマンドラインツール](https://www.npmjs.com/package/@tooljet/cli)を使用して新しいコネクタを簡単に作成。
+      - **バージョン管理：** 構造化されたリリースサイクルで複数のアプリケーションバージョンを管理。
+      - **JSとPythonコードの実行：** カスタムJavaScriptとPythonスニペットを実行。
+      - **詳細なアクセス制御：** グループレベルとアプリレベルの両方で権限を設定。
+      - **ローコード：** `status === 'success' ? 'green' : 'red'`のようなステータスに基づくテキスト色の設定など、ビルダー内のほぼすべての場所でJSコードを使用可能。
+      - **ノーコードクエリエディタ：** サポートされているすべてのデータソースでクエリエディタを利用可能。
+      - **データの結合と変換：** JavaScriptまたはPythonコードを使用してクエリ結果を変換。
+      - **セキュア：** すべての認証情報は`aes-256-gcm`を使用して安全に暗号化。
+      - **データプライバシー：** ToolJetはプロキシとしてのみ機能し、データを保存しません。
+      - **SSO：** 複数のシングルサインオン

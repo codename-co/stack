@@ -1,0 +1,100 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: xpipe
+name: XPipe
+icon: Ⓧ
+flavor: DockerCompose
+version: "13.4.4"
+updated_at: 2024-12-13
+description: Your entire server infrastructure at your fingertips
+author: XPipe UG
+license: Apache-2.0
+homepage: https://xpipe.io
+repository: https://github.com/xpipe-io/xpipe
+stars: 4200
+tags:
+  - desktop
+alternativeTo:
+  - guacamole
+  - vnc
+readme: |
+  XPipe is a new type of shell connection hub and remote file manager that allows you to access your entire server infrastructure from your local machine. It works on top of your installed command-line programs and does not require any setup on your remote systems. So if you normally use CLI tools like `ssh`, `docker`, `kubectl`, etc. to connect to your servers, you can just use XPipe on top of that.
+
+  ![preview](https://xpipe.io/_next/image?url=%2Fassets%2Fimages%2FHomePage%2Fbanner.png&w=3840&q=75)
+
+  <hr>
+
+  ## Features
+
+  XPipe fully integrates with your tools such as your favourite text/code editors, terminals, shells, command-line tools and more. The platform is designed to be extensible, allowing anyone to add easily support for more tools or to implement custom functionality through a modular extension system.
+
+  It currently supports:
+  - [SSH](https://www.ssh.com/academy/ssh/protocol) connections, config files, and tunnels
+  - [Docker](https://www.docker.com/), [Podman](https://podman.io/), and [LXD](https://linuxcontainers.org/lxd/introduction/) container instances located on any host
+  - [Proxmox PVE](https://www.proxmox.com/en/proxmox-virtual-environment/overview) virtual machines and containers
+  - [Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/), [KVM/QEMU](https://linux-kvm.org/page/Main_Page), [VMware Player/Workstation/Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion) virtual machines
+  - [Kubernetes](https://kubernetes.io/) clusters, pods, and containers
+  - [Windows Subsystem for Linux](https://ubuntu.com/wsl), [Cygwin](https://www.cygwin.com/), and [MSYS2](https://www.msys2.org/) instances
+  - [Powershell Remote Sessions](https://learn.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.3)
+  - [Teleport tsh connections](https://goteleport.com/)
+  - VNC connections
+  - Any other custom remote connection methods that work through the command-line
+
+  ### Connection hub
+
+  - Easily connect to and access all kinds of remote connections in one place
+  - Organize all your connections in hierarchical categories so you can keep an overview hundreds of connections
+  - Create specific login environments on any system to instantly jump into a properly set up environment for every use case
+  - Quickly perform various commonly used actions like starting/stopping containers, establishing tunnels, and more
+  - Create desktop shortcuts that automatically open remote connections in your terminal without having to open any GUI
+
+  ![Connections](https://github.com/xpipe-io/.github/raw/main/img/hub_shadow.png)
+
+  ### Powerful file management
+
+  - Interact with the file system of any remote system using a workflow optimized for professionals
+  - Quickly open a terminal session into any directory in your favourite terminal emulator
+  - Utilize your entire arsenal of locally installed programs to open and edit remote files
+  - Dynamically elevate sessions with sudo when required without having to restart the session
+  - Seamlessly transfer files from and to your system desktop environment
+  - Work and perform transfers on multiple systems at the same time with the built-in tabbed multitasking
+
+  ![Browser](https://github.com/xpipe-io/.github/raw/main/img/browser_shadow.png)
+
+  ## Terminal launcher
+
+  - Boots you into a shell session in your favourite terminal with one click. Automatically fills password prompts and more
+  - Comes with support for all commonly used terminal emulators across all operating systems
+  - Supports opening custom terminal emulators as well via a custom command-line spec
+  - Works with all command shells such as bash, zsh, cmd, PowerShell, and more, locally and remote
+  - Connects to a system while the terminal is still starting up, allowing for faster connections than otherwise possible
+
+  ![Terminal](https://github.com/xpipe-io/.github/raw/main/img/terminal_shadow.png)
+
+  <br>
+  <p align="center">
+    <img src="https://github.com/xpipe-io/.github/raw/main/img/terminal.gif" alt="Terminal launcher"/>
+  </p>
+  <br>
+
+  ### Versatile scripting system
+
+  - Create reusable simple shell scripts, templates, and groups to run on connected remote systems
+  - Automatically make your scripts available in the PATH on any remote system without any setup
+  - Setup shell init environments for connections to fully customize your work environment for every purpose
+  - Open custom shells and custom remote connections by providing your own commands
+
+  ![scripts](https://github.com/xpipe-io/.github/raw/main/img/scripts_shadow.png)
+
+  ### Secure vault
+
+  - All data is stored exclusively on your local system in a cryptographically secure vault. You can also choose to increase security by using a custom master passphrase for further encryption
+  - XPipe is able to retrieve secrets automatically from your password manager via it's command-line interface.
+  - There are no servers involved, all your information stays on your systems. The XPipe application does not send any personal or sensitive information to outside services.
+  - Vault changes can be pushed and pulled from your own remote git repository by multiple team members across many systems
+
+  ### Programmatic connection control via the API
+
+  - The XPipe API provides programmatic access to XPipe’s features via an HTTP interface
+  - Manage all your remote systems and access their file systems in your own favorite programming language
+  - Either call the API directly or with the help of the [python library](https://github.com/xpipe-io/xpipe-python-api)
+  - Full documentation can be either found in the application itself under the API tab or in the [OpenAPI](https://github.com/xpipe-io/xpipe/blob/master/openapi.yaml) spec file

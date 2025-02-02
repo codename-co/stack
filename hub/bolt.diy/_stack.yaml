@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: bolt.diy
+name: Bolt.diy
+flavor: DockerCompose
+version: "0.0.3"
+updated_at: 2024-12-18
+description: Prompt, run, edit, and deploy full-stack web applications
+author: StackBlitz
+license: MIT
+homepage: https://bolt.diy
+repository: https://github.com/stackblitz-labs/bolt.diy
+stars: 6900
+tags: [chatbot, ai, webdev]
+alternativeTo: [bolt]
+readme: |
+  Bolt.diy is an AI-powered web development agent that allows you to prompt, run, edit, and deploy full-stack applications directly from your browser—no local setup required. If you're here to build your own AI-powered web dev agent using the Bolt open source codebase, click here to get started!
+
+  <hr>
+
+  ## Features
+
+  Welcome to bolt.diy, the official open source version of Bolt.new (previously known as oTToDev and bolt.new ANY LLM), which allows you to choose the LLM that you use for each prompt! Currently, you can use OpenAI, Anthropic, Ollama, OpenRouter, Gemini, LMStudio, Mistral, xAI, HuggingFace, DeepSeek, or Groq models - and it is easily extended to use any other model supported by the Vercel AI SDK! See the instructions below for running this locally and extending it to include more models.
+
+  Check the [bolt.diy Docs](https://stackblitz-labs.github.io/bolt.diy/) for more information.

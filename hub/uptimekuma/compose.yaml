@@ -1,0 +1,14 @@
+services:
+  uptimekuma:
+    image: louislam/uptime-kuma:${VERSION:-1.23.16}-alpine
+    volumes:
+      - data:/app/data
+    restart: unless-stopped
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.uptimekuma.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.uptimekuma.loadbalancer.server.port: 3001
+
+volumes:
+  data:
+    driver: local

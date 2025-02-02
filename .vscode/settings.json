@@ -1,0 +1,3 @@
+{
+  "i18n-ally.localesPaths": ["website/src/i18n", "website/src/i18n/locales"]
+}

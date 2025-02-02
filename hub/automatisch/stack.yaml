@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: automatisch
+name: Automatisch
+icon: Ⓐ
+flavor: DockerCompose
+version: "0.14.0"
+updated_at: 2024-11-18
+description: Build workflow automation without spending time and money
+author: AB Software GmbH
+license: AGPL-3.0
+homepage: https://automatisch.io
+repository: https://github.com/automatisch/automatisch
+stars: 6800
+tags:
+  - workflow
+  - automation
+alternativeTo:
+  - zapier
+  - make
+  - ifttt
+readme: |
+  Automatisch is a business automation tool that lets you connect different services like Twitter, Slack, and more to automate your business processes.
+
+  ![preview](https://user-images.githubusercontent.com/2501931/191562539-e42f6c34-03c7-4dc4-bcf9-7f9473a9c64f.png)
+
+  <hr>
+
+  ## Advantages
+
+  There are other existing solutions in the market, like Zapier and Integromat, so you might be wondering why you should use Automatisch.
+
+  - ✅ One of the main benefits of using Automatisch is that it allows you to store your data on your own servers, which is essential for businesses that handle sensitive user information and cannot risk sharing it with external cloud services. This is especially relevant for industries such as healthcare and finance, as well as for European companies that must adhere to the General Data Protection Regulation (GDPR).
+  - 🤓 Your contributions are vital to the development of Automatisch. As an open-source software, anyone can have an impact on how it is being developed.
+  - 💙 No vendor lock-in. If you ever decide that Automatisch is no longer helpful for your business, you can switch to any other provider, which will be easier than switching from the one cloud provider to another since you have all data and flexibility.

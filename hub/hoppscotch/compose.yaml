@@ -1,0 +1,95 @@
+# Original: <https://github.com/hoppscotch/hoppscotch/blob/908f936f50b6b22ea556e7cd92ea14fae3721672/docker-compose.yml>
+
+# To make it easier to self-host, we have a preset docker compose config that also
+# has a container with a Postgres instance running.
+# You can tweak around this file to match your instances
+
+services:
+  # This service runs the backend app in the port 3170
+  hoppscotch-backend:
+    # container_name: hoppscotch-backend
+    image: hoppscotch/hoppscotch-backend:${TAG:-2024.11.0}
+    env_file: .env
+    restart: always
+    environment:
+      # Edit the below line to match your PostgresDB URL if you have an outside DB (make sure to update the .env file as well)
+      - DATABASE_URL=postgresql://postgres:testpass@hoppscotch-db:5432/hoppscotch?connect_timeout=300
+      - PORT=8080
+    volumes:
+      # Uncomment the line below when modifying code. Only applicable when using the "dev" target.
+      # - ./packages/hoppscotch-backend/:/usr/src/app
+      - /usr/src/app/node_modules/
+    depends_on:
+      hoppscotch-db:
+        condition: service_healthy
+    # ports:
+    #   - "3180:80"
+    #   - "3170:3170"
+    labels:
+      dash.name: Hoppscotch Backend
+      dash.icon: node
+      dash.url: http://backend.$PROJECT.$DOMAIN
+      traefik.http.routers.hoppscotch-backend.rule: Host(`backend.$PROJECT.$DOMAIN`)
+      traefik.http.services.hoppscotch-backend.loadbalancer.server.port: 3170
+
+  # The main hoppscotch app. This will be hosted at port 3000
+  # NOTE: To do TLS or play around with how the app is hosted, you can look into the Caddyfile for
+  #       the SH admin dashboard server at packages/hoppscotch-selfhost-web/Caddyfile
+  hoppscotch-app:
+    # container_name: hoppscotch-app
+    image: hoppscotch/hoppscotch-frontend:${TAG:-2024.11.0}
+    env_file: .env
+    depends_on:
+      - hoppscotch-backend
+    # ports:
+    #   - "3080:80"
+    #   - "3000:3000"
+    labels:
+      dash.name: Hoppscotch
+      dash.icon: vue
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.hoppscotch-app.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.hoppscotch-app.loadbalancer.server.port: 3000
+
+  # The Self Host dashboard for managing the app. This will be hosted at port 3100
+  # NOTE: To do TLS or play around with how the app is hosted, you can look into the Caddyfile for
+  #       the SH admin dashboard server at packages/hoppscotch-sh-admin/Caddyfile
+  hoppscotch-admin:
+    # container_name: hoppscotch-sh-admin
+    image: hoppscotch/hoppscotch-admin:${TAG:-2024.11.0}
+    env_file: .env
+    depends_on:
+      - hoppscotch-backend
+    # ports:
+    #   - "3280:80"
+    #   - "3100:3100"
+    labels:
+      dash.name: Hoppscotch Admin
+      dash.icon: vue
+      dash.url: http://admin.$PROJECT.$DOMAIN
+      traefik.http.routers.hoppscotch-admin.rule: Host(`admin.$PROJECT.$DOMAIN`)
+      traefik.http.services.hoppscotch-admin.loadbalancer.server.port: 3100
+
+  # The preset DB service, you can delete/comment the below lines if
+  # you are using an external postgres instance
+  # This will be exposed at port 5432
+  hoppscotch-db:
+    image: postgres:15
+    # ports:
+    #   - "5432:5432"
+    user: postgres
+    environment:
+      # The default user defined by the docker image
+      POSTGRES_USER: postgres
+      # NOTE: Please UPDATE THIS PASSWORD!
+      POSTGRES_PASSWORD: testpass
+      POSTGRES_DB: hoppscotch
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "sh -c 'pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}'",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10

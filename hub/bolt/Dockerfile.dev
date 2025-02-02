@@ -1,0 +1,20 @@
+FROM ubuntu AS source-fetcher
+
+RUN apt-get update
+RUN apt-get install -y git
+
+RUN git clone https://github.com/stackblitz/bolt.new.git /sources && cd /sources
+
+FROM node:20-slim
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+RUN corepack enable
+
+WORKDIR /app
+
+COPY --from=source-fetcher /sources .
+RUN pnpm install
+
+CMD [ "pnpm", "run", "dev", "--host"]

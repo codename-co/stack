@@ -1,0 +1,378 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: openwebui
+name: Open WebUI
+icon: ollama
+flavor: DockerCompose
+version: "0.5.7"
+updated_at: 2025-01-23
+description: A user-friendly interface for AI chat
+author: Open WebUI
+license: MIT
+homepage: https://openwebui.com
+repository: https://github.com/open-webui/open-webui
+stars: 65500
+tags:
+  - llm
+  - ai
+  - rag
+  - chatbot
+alternativeTo:
+  - chatgpt
+  - perplexity
+readme: >
+  An extensible, feature-rich, and user-friendly self-hosted WebUI designed to
+  operate entirely offline. It supports various LLM runners, including Ollama
+  and OpenAI-compatible APIs.
+
+
+  ![Open WebUI
+  Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+
+  <hr>
+
+
+  ## Features
+
+
+  - 🚀 **Effortless Setup**: Install seamlessly using Docker or Kubernetes
+  (kubectl, kustomize or helm) for a hassle-free experience with support for
+  both `:ollama` and `:cuda` tagged images.
+
+  - 🤝 **Ollama/OpenAI API Integration**: Effortlessly integrate
+  OpenAI-compatible APIs for versatile conversations alongside Ollama models.
+  Customize the OpenAI API URL to link with **LMStudio, GroqCloud, Mistral,
+  OpenRouter, and more**.
+
+  - 🛡️ **Granular Permissions and User Groups**: By allowing administrators to
+  create detailed user roles and permissions, we ensure a secure user
+  environment. This granularity not only enhances security but also allows for
+  customized user experiences, fostering a sense of ownership and responsibility
+  amongst users.
+
+  - 📱 **Responsive Design**: Enjoy a seamless experience across Desktop PC,
+  Laptop, and Mobile devices.
+
+  - 📱 **Progressive Web App (PWA) for Mobile**: Enjoy a native app-like
+  experience on your mobile device with our PWA, providing offline access on
+  localhost and a seamless user interface.
+
+  - ✒️🔢 **Full Markdown and LaTeX Support**: Elevate your LLM experience with
+  comprehensive Markdown and LaTeX capabilities for enriched interaction.
+
+  - 🎤📹 **Hands-Free Voice/Video Call**: Experience seamless communication with
+  integrated hands-free voice and video call features, allowing for a more
+  dynamic and interactive chat environment.
+
+  - 🛠️ **Model Builder**: Easily create Ollama models via the Web UI. Create
+  and add custom characters/agents, customize chat elements, and import models
+  effortlessly through [Open WebUI Community](https://openwebui.com/)
+  integration.
+
+  - 🐍 **Native Python Function Calling Tool**: Enhance your LLMs with built-in
+  code editor support in the tools workspace. Bring Your Own Function (BYOF) by
+  simply adding your pure Python functions, enabling seamless integration with
+  LLMs.
+
+  - 📚 **Local RAG Integration**: Dive into the future of chat interactions with
+  groundbreaking Retrieval Augmented Generation (RAG) support. This feature
+  seamlessly integrates document interactions into your chat experience. You can
+  load documents directly into the chat or add files to your document library,
+  effortlessly accessing them using the `#` command before a query.
+
+  - 🔍 **Web Search for RAG**: Perform web searches using providers like
+  `SearXNG`, `Google PSE`, `Brave Search`, `serpstack`, `serper`, `Serply`,
+  `DuckDuckGo`, `TavilySearch`, `SearchApi` and `Bing` and inject the results
+  directly into your chat experience.
+
+  - 🌐 **Web Browsing Capability**: Seamlessly integrate websites into your chat
+  experience using the `#` command followed by a URL. This feature allows you to
+  incorporate web content directly into your conversations, enhancing the
+  richness and depth of your interactions.
+
+  - 🎨 **Image Generation Integration**: Seamlessly incorporate image generation
+  capabilities using options such as AUTOMATIC1111 API or ComfyUI (local), and
+  OpenAI's DALL-E (external), enriching your chat experience with dynamic visual
+  content.
+
+  - ⚙️ **Many Models Conversations**: Effortlessly engage with various models
+  simultaneously, harnessing their unique strengths for optimal responses.
+  Enhance your experience by leveraging a diverse set of models in parallel.
+
+  - 🔐 **Role-Based Access Control (RBAC)**: Ensure secure access with
+  restricted permissions; only authorized individuals can access your Ollama,
+  and exclusive model creation/pulling rights are reserved for administrators.
+
+  - 🌐🌍 **Multilingual Support**: Experience Open WebUI in your preferred
+  language with our internationalization (i18n) support. Join us in expanding
+  our supported languages! We're actively seeking contributors!
+
+  - 🧩 **Pipelines, Open WebUI Plugin Support**: Seamlessly integrate custom
+  logic and Python libraries into Open WebUI using [Pipelines Plugin
+  Framework](https://github.com/open-webui/pipelines). Launch your Pipelines
+  instance, set the OpenAI URL to the Pipelines URL, and explore endless
+  possibilities.
+  [Examples](https://github.com/open-webui/pipelines/tree/main/examples) include
+  **Function Calling**, User **Rate Limiting** to control access, **Usage
+  Monitoring** with tools like Langfuse, **Live Translation with
+  LibreTranslate** for multilingual support, **Toxic Message Filtering** and
+  much more.
+
+  - 🌟 **Continuous Updates**: We are committed to improving Open WebUI with
+  regular updates, fixes, and new features.
+
+
+  For more information, be sure to check out our [Open WebUI
+  Documentation](https://docs.openwebui.com/).
+i18n:
+  fr:
+    description: Une interface conviviale pour l'IA conversationnelle
+    readme: |-
+      Une interface web auto-hébergée, extensible, riche en fonctionnalités et conviviale, conçue pour fonctionner entièrement hors ligne. Elle prend en charge divers exécuteurs de LLM, y compris Ollama et les API compatibles OpenAI.
+
+      ![Démo Open WebUI](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - 🚀 **Installation Facile**: Installation simplifiée via Docker ou Kubernetes (kubectl, kustomize ou helm) pour une expérience sans tracas avec prise en charge des images tagguées `:ollama` et `:cuda`.
+      - 🤝 **Intégration Ollama/OpenAI API**: Intégrez facilement les API compatibles OpenAI pour des conversations polyvalentes aux côtés des modèles Ollama. Personnalisez l'URL de l'API OpenAI pour vous connecter à **LMStudio, GroqCloud, Mistral, OpenRouter, et plus encore**.
+      - 🛡️ **Permissions Granulaires et Groupes d'Utilisateurs**: En permettant aux administrateurs de créer des rôles et des permissions détaillés, nous assurons un environnement utilisateur sécurisé. Cette granularité améliore la sécurité et permet des expériences utilisateur personnalisées.
+      - 📱 **Design Responsive**: Profitez d'une expérience fluide sur PC de bureau, ordinateur portable et appareils mobiles.
+      - 📱 **Application Web Progressive (PWA) pour Mobile**: Profitez d'une expérience similaire à une application native sur votre appareil mobile avec notre PWA, offrant un accès hors ligne en localhost et une interface utilisateur fluide.
+      - ✒️🔢 **Support Complet Markdown et LaTeX**: Améliorez votre expérience LLM avec des capacités complètes en Markdown et LaTeX pour une interaction enrichie.
+      - 🎤📹 **Appel Vocal/Vidéo Mains Libres**: Expérimentez une communication fluide avec des fonctionnalités d'appel vocal et vidéo mains libres intégrées.
+      - 🛠️ **Constructeur de Modèles**: Créez facilement des modèles Ollama via l'interface web. Créez et ajoutez des personnages/agents personnalisés, personnalisez les éléments de chat et importez des modèles via l'intégration [Open WebUI Community](https://openwebui.com/).
+      - 🐍 **Outil d'Appel de Fonctions Python Natif**: Améliorez vos LLMs avec le support d'éditeur de code intégré. Apportez vos propres fonctions (BYOF) en ajoutant simplement vos fonctions Python pures.
+      - 📚 **Intégration RAG Locale**: Plongez dans le futur des interactions de chat avec le support RAG (Retrieval Augmented Generation). Chargez des documents directement dans le chat ou ajoutez des fichiers à votre bibliothèque.
+      - 🔍 **Recherche Web pour RAG**: Effectuez des recherches web avec des fournisseurs comme `SearXNG`, `Google PSE`, `Brave Search`, `serpstack`, et autres.
+      - 🌐 **Capacité de Navigation Web**: Intégrez des sites web dans vos conversations en utilisant la commande `#` suivie d'une URL.
+      - 🎨 **Intégration de Génération d'Images**: Incorporez des capacités de génération d'images en utilisant AUTOMATIC1111 API, ComfyUI (local), ou DALL-E d'OpenAI (externe).
+      - ⚙️ **Conversations Multi-Modèles**: Interagissez facilement avec plusieurs modèles simultanément.
+      - 🔐 **Contrôle d'Accès Basé sur les Rôles (RBAC)**: Assurez un accès sécurisé avec des permissions restreintes.
+      - 🌐🌍 **Support Multilingue**: Utilisez Open WebUI dans votre langue préférée grâce au support i18n.
+      - 🧩 **Support des Pipelines et Plugins Open WebUI**: Intégrez facilement des logiques personnalisées et des bibliothèques Python.
+      - 🌟 **Mises à Jour Continues**: Nous nous engageons à améliorer Open WebUI avec des mises à jour régulières.
+
+      Pour plus d'informations, consultez notre [Documentation Open WebUI](https://docs.openwebui.com/).
+  zh:
+    description: AI聊天的用户友好界面
+    readme: |-
+      一个可扩展、功能丰富且用户友好的自托管 WebUI，设计为完全离线运行。它支持各种 LLM 运行器，包括 Ollama 和兼容 OpenAI 的 API。
+
+      ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## 功能特点
+
+      - 🚀 **简便设置**：使用 Docker 或 Kubernetes（kubectl、kustomize 或 helm）无缝安装，支持`:ollama`和`:cuda`标签镜像，提供无忧体验。
+      - 🤝 **Ollama/OpenAI API 集成**：轻松集成兼容 OpenAI 的 API，实现与 Ollama 模型的多功能对话。可自定义 OpenAI API URL 以连接 **LMStudio、GroqCloud、Mistral、OpenRouter 等**。
+      - 🛡️ **精细权限和用户组**：管理员可创建详细的用户角色和权限，确保安全的用户环境。这种精细度不仅提升安全性，还允许自定义用户体验，培养用户的所有权和责任感。
+      - 📱 **响应式设计**：在台式电脑、笔记本和移动设备上享受流畅体验。
+      - 📱 **渐进式 Web 应用（PWA）**：通过 PWA 在移动设备上享受类原生应用体验，提供本地主机离线访问和流畅的用户界面。
+      - ✒️🔢 **完整 Markdown 和 LaTeX 支持**：通过全面的 Markdown 和 LaTeX 功能提升 LLM 体验，实现丰富的交互。
+      - 🎤📹 **免提语音/视频通话**：体验集成的免提语音和视频通话功能，实现更动态和互动的聊天环境。
+      - 🛠️ **模型构建器**：通过 Web UI 轻松创建 Ollama 模型。通过[Open WebUI Community](https://openwebui.com/)集成，创建和添加自定义角色/代理，自定义聊天元素，轻松导入模型。
+      - 🐍 **原生 Python 函数调用工具**：在工具工作区通过内置代码编辑器支持增强 LLM。通过简单添加纯 Python 函数实现自带函数（BYOF），实现与 LLM 的无缝集成。
+      - 📚 **本地 RAG 集成**：通过突破性的检索增强生成（RAG）支持，探索聊天交互的未来。此功能将文档交互无缝集成到聊天体验中。您可以直接将文档加载到聊天中或添加文件到文档库，使用查询前的`#`命令轻松访问它们。
+      - 🔍 **RAG 网络搜索**：使用`SearXNG`、`Google PSE`、`Brave Search`、`serpstack`、`serper`、`Serply`、`DuckDuckGo`、`TavilySearch`、`SearchApi`和`Bing`等提供商进行网络搜索，并将结果直接注入聊天体验。
+      - 🌐 **网页浏览功能**：使用`#`命令后跟 URL，将网站无缝集成到聊天体验中。此功能允许您将网络内容直接整合到
+  es:
+    description: Una interfaz amigable para chat con IA
+    readme: |-
+      Una WebUI autoalojada extensible, rica en funciones y fácil de usar, diseñada para funcionar completamente sin conexión. Admite varios ejecutores de LLM, incluidos Ollama y APIs compatibles con OpenAI.
+
+      ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## Características
+
+      - 🚀 **Configuración sin esfuerzo**: Instalación perfecta usando Docker o Kubernetes (kubectl, kustomize o helm) para una experiencia sin complicaciones con soporte para imágenes etiquetadas `:ollama` y `:cuda`.
+      - 🤝 **Integración con API de Ollama/OpenAI**: Integra sin esfuerzo APIs compatibles con OpenAI para conversaciones versátiles junto con modelos de Ollama. Personaliza la URL de la API de OpenAI para conectar con **LMStudio, GroqCloud, Mistral, OpenRouter y más**.
+      - 🛡️ **Permisos granulares y grupos de usuarios**: Al permitir que los administradores creen roles y permisos de usuario detallados, aseguramos un entorno de usuario seguro. Esta granularidad no solo mejora la seguridad sino que también permite experiencias de usuario personalizadas, fomentando un sentido de propiedad y responsabilidad entre los usuarios.
+      - 📱 **Diseño responsivo**: Disfruta de una experiencia perfecta en PC de escritorio, portátil y dispositivos móviles.
+      - 📱 **Aplicación web progresiva (PWA) para móviles**: Disfruta de una experiencia similar a una aplicación nativa en tu dispositivo móvil con nuestra PWA, proporcionando acceso sin conexión en localhost y una interfaz de usuario fluida.
+      - ✒️🔢 **Soporte completo de Markdown y LaTeX**: Eleva tu experiencia LLM con capacidades completas de Markdown y LaTeX para una interacción enriquecida.
+      - 🎤📹 **Llamadas de voz/video manos libres**: Experimenta una comunicación fluida con funciones integradas de llamadas de voz y video manos libres, permitiendo un entorno de chat más dinámico e interactivo.
+      - 🛠️ **Constructor de modelos**: Crea fácilmente modelos de Ollama a través de la interfaz web. Crea y añade personajes/agentes personalizados, personaliza elementos del chat e importa modelos sin esfuerzo a través de la integración con [Open WebUI Community](https://openwebui.com/).
+      - 🐍 **Herramienta nativa de llamada a funciones Python**: Mejora tus LLMs con soporte de editor de código integrado en el espacio de trabajo de herramientas. Trae tus propias funciones (BYOF) simplemente añadiendo tus funciones Python puras, permitiendo una integración perfecta con LLMs.
+      - 📚 **Integración RAG local**: Sumérgete en el futuro de las interacciones de chat con el revolucionario soporte de Generación Aumentada por Recuperación (RAG). Esta función integra perfectamente las interacciones con documentos en tu experiencia de chat. Puedes cargar documentos directamente en el chat o añadir archivos a tu biblioteca de documentos, accediendo a ellos sin esfuerzo usando el comando `#` antes de una consulta.
+      - 🔍 **Búsqueda web para RAG**: Realiza búsquedas web usando proveedores como `SearXNG`, `Google PSE`, `Brave Search`, `serpstack`, `serper`, `Serply`, `DuckDuckGo`, `TavilySearch`, `SearchApi` y `Bing` e inyecta los resultados directamente en tu experiencia de chat.
+      - 🌐 **Capacidad de navegación web**: Integra perfectamente sitios web en tu experiencia de chat usando el comando `#` seguido de una URL. Esta función te permite
+  ar:
+    description: واجهة سهلة الاستخدام للدردشة مع الذكاء الاصطناعي
+    readme: |-
+      واجهة مستخدم ويب ذاتية الاستضافة قابلة للتمديد وغنية بالميزات وسهلة الاستخدام مصممة للعمل بشكل كامل دون اتصال بالإنترنت. تدعم مختلف مشغلات نماذج اللغة الكبيرة، بما في ذلك Ollama وواجهات برمجة التطبيقات المتوافقة مع OpenAI.
+
+      ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## المميزات
+
+      - 🚀 **إعداد سهل**: تثبيت سلس باستخدام Docker أو Kubernetes (kubectl, kustomize أو helm) لتجربة خالية من المتاعب مع دعم للصور الموسومة بـ `:ollama` و `:cuda`.
+      - 🤝 **تكامل Ollama/OpenAI API**: دمج سلس لواجهات برمجة التطبيقات المتوافقة مع OpenAI للمحادثات المتنوعة جنبًا إلى جنب مع نماذج Ollama. خصص عنوان URL لواجهة برمجة OpenAI للربط مع **LMStudio وGroqCloud وMistral وOpenRouter والمزيد**.
+      - 🛡️ **أذونات تفصيلية ومجموعات المستخدمين**: من خلال السماح للمسؤولين بإنشاء أدوار وأذونات مستخدم مفصلة، نضمن بيئة مستخدم آمنة. لا يعزز هذا التفصيل الأمان فحسب، بل يسمح أيضًا بتجارب مستخدم مخصصة، مما يعزز الشعور بالملكية والمسؤولية بين المستخدمين.
+      - 📱 **تصميم متجاوب**: استمتع بتجربة سلسة عبر أجهزة الكمبيوتر المكتبي والمحمول والأجهزة المحمولة.
+      - 📱 **تطبيق ويب تقدمي (PWA) للجوال**: استمتع بتجربة شبيهة بالتطبيق الأصلي على جهازك المحمول مع PWA، مما يوفر وصولاً دون اتصال على localhost وواجهة مستخدم سلسة.
+      - ✒️🔢 **دعم كامل لـ Markdown وLaTeX**: ارتقِ بتجربة نماذج اللغة الكبيرة مع إمكانيات Markdown وLaTeX الشاملة للتفاعل المعزز.
+      - 🎤📹 **مكالمات صوتية/فيديو بدون استخدام اليدين**: استمتع بالتواصل السلس مع ميزات المكالمات الصوتية والفيديو المدمجة بدون استخدام اليدين، مما يتيح بيئة دردشة أكثر ديناميكية وتفاعلية.
+      - 🛠️ **منشئ النماذج**: إنشاء نماذج Ollama بسهولة عبر واجهة الويب. إنشاء وإضافة شخصيات/وكلاء مخصصين،
+  de:
+    description: Eine benutzerfreundliche Oberfläche für KI-Chat
+    readme: |-
+      Eine erweiterbare, funktionsreiche und benutzerfreundliche selbst-gehostete WebUI, die vollständig offline betrieben werden kann. Sie unterstützt verschiedene LLM-Runner, einschließlich Ollama und OpenAI-kompatible APIs.
+
+      ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## Funktionen
+
+      - 🚀 **Mühelose Einrichtung**: Installieren Sie nahtlos mit Docker oder Kubernetes (kubectl, kustomize oder helm) für eine problemlose Erfahrung mit Unterstützung für sowohl `:ollama` als auch `:cuda` markierte Images.
+      - 🤝 **Ollama/OpenAI API Integration**: Integrieren Sie mühelos OpenAI-kompatible APIs für vielseitige Konversationen neben Ollama-Modellen. Passen Sie die OpenAI API URL an, um sich mit **LMStudio, GroqCloud, Mistral, OpenRouter und mehr** zu verbinden.
+      - 🛡️ **Detaillierte Berechtigungen und Benutzergruppen**: Durch die Möglichkeit für Administratoren, detaillierte Benutzerrollen und Berechtigungen zu erstellen, gewährleisten wir eine sichere Benutzerumgebung. Diese Granularität verbessert nicht nur die Sicherheit, sondern ermöglicht auch personalisierte Benutzererfahrungen und fördert ein Gefühl von Eigenverantwortung unter den Benutzern.
+      - 📱 **Responsives Design**: Genießen Sie eine nahtlose Erfahrung auf Desktop-PC, Laptop und Mobilgeräten.
+      - 📱 **Progressive Web App (PWA) für Mobile**: Genießen Sie eine native App-ähnliche Erfahrung auf Ihrem Mobilgerät mit unserer PWA, die Offline-Zugriff auf localhost und eine nahtlose Benutzeroberfläche bietet.
+      - ✒️🔢 **Vollständige Markdown und LaTeX Unterstützung**: Verbessern Sie Ihre LLM-Erfahrung mit umfassenden Markdown- und LaTeX-Funktionen für eine bereicherte Interaktion.
+      - 🎤📹 **Freihändige Sprach-/Videoanrufe**: Erleben Sie nahtlose Kommunikation mit integrierten freihändigen Sprach- und Videoanruffunktionen für eine dynamischere und interaktivere Chatumgebung.
+      - 🛠️ **Modell-Builder**: Erstellen Sie einfach Ollama-Modelle über die Web-UI. Erstellen und fügen Sie benutzerdefinierte Charaktere/Agenten hinzu, passen Sie Chat-Elemente an und importieren Sie Modelle mühelos durch [Open WebUI Community](https://openwebui.com/) Integration.
+      - 🐍 **Native Python-Funktionsaufruf-Tool**: Erweitern Sie Ihre LLMs mit eingebauter Code-Editor-Unterstützung im Tools-Arbeitsbereich. Bringen Sie Ihre eigenen Funktionen (BYOF) ein, indem Sie einfach Ihre reinen Python-Funktionen hinzufügen und eine nahtlose Integration mit LLMs ermöglichen.
+      - 📚 **Lokale RAG-Integration**: Tauchen Sie ein in die Zukunft der Chat-Interaktionen mit bahnbrechender Retrieval Augmented Generation (RAG) Unterstützung. Diese Funktion integriert Dokumenteninteraktionen nahtlos in Ihre Chat-Erfahrung. Sie können Dokumente direkt in den Chat laden oder Dateien zu Ihrer Dokumentenbibliothek hinzufügen und mühelos mit dem `#`-Befehl vor einer Anfrage darauf zugreifen.
+      - 🔍 **Websuche für RAG**: Führen Sie Web
+  it:
+    description: Un'interfaccia intuitiva per la chat con l'IA
+    readme: |-
+      Una WebUI self-hosted estensibile, ricca di funzionalità e facile da usare, progettata per funzionare completamente offline. Supporta vari runner LLM, inclusi Ollama e API compatibili con OpenAI.
+
+      ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## Funzionalità
+
+      - 🚀 **Configurazione Semplice**: Installazione fluida utilizzando Docker o Kubernetes (kubectl, kustomize o helm) per un'esperienza senza problemi con supporto per immagini taggate sia `:ollama` che `:cuda`.
+      - 🤝 **Integrazione API Ollama/OpenAI**: Integra facilmente API compatibili con OpenAI per conversazioni versatili insieme ai modelli Ollama. Personalizza l'URL dell'API OpenAI per collegarti con **LMStudio, GroqCloud, Mistral, OpenRouter e altri**.
+      - 🛡️ **Permessi Granulari e Gruppi Utenti**: Permettendo agli amministratori di creare ruoli utente e permessi dettagliati, assicuriamo un ambiente utente sicuro. Questa granularità non solo migliora la sicurezza ma permette anche esperienze utente personalizzate, promuovendo un senso di proprietà e responsabilità tra gli utenti.
+      - 📱 **Design Responsivo**: Goditi un'esperienza fluida su PC Desktop, Laptop e dispositivi mobili.
+      - 📱 **App Web Progressiva (PWA) per Mobile**: Goditi un'esperienza simile a un'app nativa sul tuo dispositivo mobile con la nostra PWA, fornendo accesso offline su localhost e un'interfaccia utente fluida.
+      - ✒️🔢 **Supporto Completo per Markdown e LaTeX**: Eleva la tua esperienza LLM con capacità complete di Markdown e LaTeX per un'interazione arricchita.
+      - 🎤📹 **Chiamate Vocali/Video Hands-Free**: Sperimenta una comunicazione fluida con funzionalità integrate di chiamate vocali e video hands-free, permettendo un ambiente di chat più dinamico e interattivo.
+      - 🛠️ **Costruttore di Modelli**: Crea facilmente modelli Ollama tramite la Web UI. Crea e aggiungi personaggi/agenti personalizzati, personalizza elementi della chat e importa modelli senza sforzo attraverso l'integrazione con [Open WebUI Community](https://openwebui.com/).
+      - 🐍 **Strumento di Chiamata Funzioni Python Nativo**: Migliora i tuoi LLM con il supporto integrato dell'editor di codice nell'area di lavoro degli strumenti. Porta le Tue Funzioni (BYOF) semplicemente aggiungendo le tue funzioni Python pure, permettendo un'integrazione fluida con gli LLM.
+      - 📚 **Integrazione RAG Locale**: Immergiti nel futuro delle interazioni chat con il rivoluzionario supporto per il Retrieval Augmented Generation (RAG). Questa funzionalità integra perfettamente le interazioni con i documenti nella tua esperienza di chat. Puoi caricare documenti direttamente nella chat o aggiungere file alla tua libreria documenti, accedendovi facilmente usando il comando `#` prima di una query.
+      - 🔍 **Ricerca Web per RAG**: Esegui ricerche web usando provider come `SearXNG`, `Google PSE`, `Brave Search`, `serpstack`, `serper`, `Serply`, `DuckDuckGo`, `TavilySearch`, `SearchApi` e `Bing` e inserisci i risultati direttamente nella tua esperienza di chat.
+      - 🌐 **Capacità di Navigazione Web**: Integra perfettamente siti web nella tua esperienza di chat usando il comando `#` seguito da un URL. Questa funzionalità
+  ja:
+    description: AIチャットのためのユーザーフレンドリーなインターフェース
+    readme: |-
+      オフラインで完全に動作するように設計された、拡張可能で機能豊富、そしてユーザーフリーンドリーな自己ホスト型WebUIです。OllamaやOpenAI互換APIを含む、様々なLLMランナーをサポートしています。
+
+      ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## 機能
+
+      - 🚀 **簡単セットアップ**: `:ollama`と`:cuda`タグ付きイメージをサポートし、DockerやKubernetes（kubectl、kustomizeまたはhelm）を使用して手間なくインストール可能。
+      - 🤝 **Ollama/OpenAI API連携**: Ollamaモデルと共に、OpenAI互換APIを簡単に統合して多様な会話が可能。OpenAI APIのURLをカスタマイズして、**LMStudio、GroqCloud、Mistral、OpenRouterなど**と連携可能。
+      - 🛡️ **詳細な権限とユーザーグループ**: 管理者が詳細なユーザーロールと権限を作成できることで、安全なユーザー環境を確保。この詳細な制御により、セキュリティが向上し、ユーザーごとにカスタマイズされた体験を提供。
+      - 📱 **レスポンシブデザイン**: デスクトップPC、ノートPC、モバイルデバイスで一貫した体験を提供。
+      - 📱 **モバイル向けプログレッシブWebアプリ（PWA）**: localhostでのオフラインアクセスとシームレスなユーザーインターフェースを備えた、ネイティブアプリのような体験をモバイルデバイスで提供。
+      - ✒️🔢 **完全なMarkdownとLaTeXサポート**: 包括的なMarkdownとLaTeX機能で、LLM体験を向上。
+      - 🎤📹 **ハンズフリー音声/ビデオ通話**: より動的でインタラクティブなチャット環境のための、統合されたハンズフリー音声とビデオ通話機能。
+      - 🛠️ **モデルビルダー**: Web UIを通じてOllamaモデルを簡単に作成。[Open WebUI Community](https://openwebui.com/)統合によるカスタムキャラクター/エージェントの作成、チャット要素のカスタマイズ、モデルの簡単インポート。
+      - 🐍 **ネイティブPython関数呼び出しツール**: ツールワークスペースでの組み込みコードエディタサポートでLLMを強化。純粋なPython関数を追加するだけのBYOF（Bring Your Own Function）で、LLMとシームレスに統合。
+      - 📚 **ローカルRAG統合**: 画期的なRetrieval Augmented Generation（RAG）サポートでチャットインタラクションの未来を体験。チャットに直接ドキュメントを読み込むか、ドキュメントライブラリにファイルを追加し、クエリの前に`#`コマンドを使用して簡単にアクセス可能。
+      - 🔍 **RAG用ウェブ検索**: `SearXNG`、`Google PSE`、`Brave Search`、`serpstack`、`serper`、`Serply`、`DuckDuck
+  ko:
+    description: AI 채팅을 위한 사용자 친화적 인터페이스
+    readme: |-
+      Ollama 및 OpenAI 호환 API를 포함한 다양한 LLM 러너를 지원하는 완전히 오프라인으로 작동하도록 설계된 확장 가능하고 기능이 풍부하며 사용자 친화적인 셀프 호스팅 WebUI입니다.
+
+      ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## 기능
+
+      - 🚀 **간편한 설치**: Docker 또는 Kubernetes(kubectl, kustomize 또는 helm)를 사용하여 `:ollama` 및 `:cuda` 태그 이미지를 지원하는 번거로움 없는 경험을 위해 원활하게 설치하세요.
+      - 🤝 **Ollama/OpenAI API 통합**: Ollama 모델과 함께 다목적 대화를 위해 OpenAI 호환 API를 손쉽게 통합하세요. OpenAI API URL을 사용자 지정하여 **LMStudio, GroqCloud, Mistral, OpenRouter 등**과 연결하세요.
+      - 🛡️ **세분화된 권한과 사용자 그룹**: 관리자가 상세한 사용자 역할과 권한을 생성할 수 있도록 하여 안전한 사용자 환경을 보장합니다. 이러한 세분화는 보안을 강화할 뿐만 아니라 사용자 맞춤형 경험을 제공하여 사용자들 간의 소유권과 책임감을 촉진합니다.
+      - 📱 **반응형 디자인**: 데스크톱 PC, 노트북, 모바일 기기에서 원활한 경험을 즐기세요.
+      - 📱 **모바일용 프로그레시브 웹 앱(PWA)**: localhost에서 오프라인 접속과 원활한 사용자 인터페이스를 제공하는 PWA로 모바일 기기에서 네이티브 앱과 같은 경험을 즐기세요.
+      - ✒️🔢 **완벽한 마크다운과 LaTeX 지원**: 풍부한 상호작용을 위한 포괄적인 마크다운과 LaTeX 기능으로 LLM 경험을 향상시키세요.
+      - 🎤📹 **핸즈프리 음성/영상 통화**: 더 역동적이고 대화형 채팅 환경을 위한 통합된 핸즈프리 음성 및 영상 통화 기능으로 원활한 소통을 경험하세요.
+      - 🛠️ **모델 빌더**: 웹 UI를 통해 Ollama 모델을 쉽게 생성하세요. [Open WebUI Community](https://openwebui.com/) 통합을 통해 맞춤형 캐릭터/에이전트를 생성하고, 채팅 요소를 사용자 정의하며, 모델을 손쉽게 가져오세요.
+      - 🐍 **네이티브 파이썬 함수 호출 도구**: 도구 작업 공간에서 내장된 코드 에디터 지원으로 LLM을 강화하세요. 순수 파이썬 함수를 추가하여 자
+  pt:
+    description: Uma interface amigável para chat com IA
+    readme: |-
+      Uma interface web auto-hospedada extensível, rica em recursos e amigável, projetada para operar totalmente offline. Suporta vários executores de LLM, incluindo Ollama e APIs compatíveis com OpenAI.
+
+      ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## Recursos
+
+      - 🚀 **Configuração Simples**: Instale facilmente usando Docker ou Kubernetes (kubectl, kustomize ou helm) para uma experiência sem complicações com suporte para imagens marcadas com `:ollama` e `:cuda`.
+      - 🤝 **Integração com API Ollama/OpenAI**: Integre facilmente APIs compatíveis com OpenAI para conversas versáteis junto com modelos Ollama. Personalize a URL da API OpenAI para conectar com **LMStudio, GroqCloud, Mistral, OpenRouter e outros**.
+      - 🛡️ **Permissões Granulares e Grupos de Usuários**: Ao permitir que administradores criem papéis e permissões detalhadas de usuários, garantimos um ambiente de usuário seguro. Essa granularidade não apenas melhora a segurança, mas também permite experiências personalizadas, promovendo um senso de propriedade e responsabilidade entre os usuários.
+      - 📱 **Design Responsivo**: Desfrute de uma experiência perfeita em PC Desktop, Laptop e dispositivos móveis.
+      - 📱 **Aplicativo Web Progressivo (PWA) para Mobile**: Desfrute de uma experiência semelhante a um aplicativo nativo em seu dispositivo móvel com nosso PWA, fornecendo acesso offline no localhost e uma interface de usuário integrada.
+      - ✒️🔢 **Suporte Completo a Markdown e LaTeX**: Eleve sua experiência LLM com recursos abrangentes de Markdown e LaTeX para interação enriquecida.
+      - 🎤📹 **Chamada de Voz/Vídeo Hands-Free**: Experimente uma comunicação perfeita com recursos integrados de chamada de voz e vídeo hands-free, permitindo um ambiente de chat mais dinâmico e interativo.
+      - 🛠️ **Construtor de Modelos**: Crie facilmente modelos Ollama via interface web. Crie e adicione personagens/agentes personalizados, personalize elementos do chat e importe modelos facilmente através da integração com [Open WebUI Community](https://openwebui.com/).
+      - 🐍 **Ferramenta Nativa de Chamada de Função Python**: Aprimore seus LLMs com suporte integrado ao editor de código no espaço de trabalho de ferramentas. Traga Sua Própria Função (BYOF) simplesmente adicionando suas funções Python puras, permitindo integração perfeita com LLMs.
+      - 📚 **Integração RAG Local**: Mergulhe no futuro das interações de chat com suporte revolucionário à Geração Aumentada por Recuperação (RAG). Este recurso integra perfeitamente interações com documentos em sua experiência de chat. Você pode carregar documentos diretamente no chat ou adicionar arquivos à sua biblioteca de documentos, acessando-os facilmente usando o comando `#` antes de uma consulta.
+      - 🔍 **Pesquisa Web para RAG**: Realize pesquisas na web usando provedores como `SearXNG`, `Google PSE`, `Brave Search`, `serpstack`, `serper`, `Serply`, `DuckDuckGo`, `TavilySearch`, `SearchApi` e `Bing` e injete os resultados diretamente em sua experiência de chat.
+      - 🌐 **Capacidade de Navegação Web**: Integre sites perfeitamente em sua experiência de chat usando o comando `#` seguido por uma URL. Este recurso permite incorporar conteúdo web diretamente em suas conversas, aprimorando a riqueza e profundidade de suas interações
+  ru:
+    description: Удобный интерфейс для общения с ИИ
+    readme: |-
+      Расширяемый, многофункциональный и удобный для пользователя веб-интерфейс для автономной работы. Поддерживает различные LLM-системы, включая Ollama и API, совместимые с OpenAI.
+
+      ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## Возможности
+
+      - 🚀 **Простая установка**: Удобная установка с использованием Docker или Kubernetes (kubectl, kustomize или helm) с поддержкой образов с тегами `:ollama` и `:cuda`.
+      - 🤝 **Интеграция Ollama/OpenAI API**: Легкая интеграция API, совместимых с OpenAI, для разносторонних диалогов наряду с моделями Ollama. Настройка URL OpenAI API для подключения к **LMStudio, GroqCloud, Mistral, OpenRouter и другим**.
+      - 🛡️ **Детальные разрешения и группы пользователей**: Администраторы могут создавать подробные роли и разрешения пользователей, обеспечивая безопасную среду. Эта детализация не только повышает безопасность, но и позволяет настраивать пользовательский опыт.
+      - 📱 **Адаптивный дизайн**: Удобное использование на настольных ПК, ноутбуках и мобильных устройствах.
+      - 📱 **Прогрессивное веб-приложение (PWA)**: Возможности нативного приложения на мобильных устройствах с офлайн-доступом на localhost.
+      - ✒️🔢 **Полная поддержка Markdown и LaTeX**: Расширенные возможности взаимодействия с поддержкой Markdown и LaTeX.
+      - 🎤📹 **Голосовые/видео звонки**: Встроенные функции голосовых и видеозвонков для динамичного общения.
+      - 🛠️ **Конструктор моделей**: Создание моделей Ollama через веб-интерфейс. Создание персонажей/агентов, настройка элементов чата и импорт моделей через интеграцию с [Open WebUI Community](https://openwebui.com/).
+      - 🐍 **Встроенный инструмент вызова Python-функций**: Встроенный редактор кода в рабочем пространстве инструментов. Возможность добавления собственных Python-функций.
+      - 📚 **Локальная RAG-интеграция**: Поддержка Retrieval Augmented Generation (RAG) для работы с документами. Загрузка документов в чат или библиотеку с доступом через команду `#`.
+      - 🔍 **Веб-поиск для RAG**: Поиск в интернете через `SearXNG`, `Google PSE`, `Brave Search`, `serpstack`, `serper`, `Serply`, `DuckDuckGo`, `TavilySearch`, `SearchApi` и `Bing`.
+      - 🌐 **Возможность веб-браузинга**: Интеграция веб-сайтов в чат с помощью команды `#` и URL.
+      - 🎨 **Интеграция генерации изображений**: Поддержка AUTOMATIC1111 API, ComfyUI (локально) и OpenAI DALL-E (внешний).
+      - ⚙️ **Беседы с разными моделями**: Одновременное взаимодействие с различными моделями.
+      - 🔐 **Контроль доступа на основ
+  hi:
+    description: एआई चैट के लिए उपयोगकर्ता-अनुकूल इंटरफेस
+    readme: |-
+      एक विस्तार योग्य, सुविधा-समृद्ध, और उपयोगकर्ता-अनुकूल स्व-होस्टेड वेबयूआई जो पूरी तरह से ऑफलाइन काम करने के लिए डिज़ाइन किया गया है। यह Ollama और OpenAI-संगत APIs सहित विभिन्न LLM रनर्स का समर्थन करता है।
+
+      ![Open WebUI डेमो](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - 🚀 **सरल सेटअप**: `:ollama` और `:cuda` टैग की गई छवियों के समर्थन के साथ परेशानी मुक्त अनुभव के लिए Docker या Kubernetes (kubectl, kustomize या helm) का उपयोग करके आसानी से स्थापित करें।
+      - 🤝 **Ollama/OpenAI API एकीकरण**: Ollama मॉडल के साथ बहुमुखी वार्तालाप के लिए OpenAI-संगत APIs को आसानी से एकीकृत करें। **LMStudio, GroqCloud, Mistral, OpenRouter, और अधिक** से जुड़ने के लिए OpenAI API URL को कस्टमाइज़ करें।
+      - 🛡️ **विस्तृत अनुमतियां और उपयोगकर्ता समूह**: प्रशासकों को विस्तृत उपयोगकर्ता भूमिकाएं और अनुमतियां बनाने की अनुमति देकर, हम एक सुरक्षित उपयोगकर्ता वातावरण सुनिश्चित करते हैं। यह विस्तृतता न केवल सुरक्षा को बढ़ाती है बल्कि अनुकूलित उपयोगकर्ता अनुभवों की भी अनुमति देती है।
+      - 📱 **प्रतिक्रियाशील डिजाइन**: डेस्कटॉप पीसी, लैपटॉप और मोबाइल उपकरणों पर निर्बाध अनुभव का आनंद लें।
+      - 📱 **प्रोग्रेसिव वेब ऐप (PWA) मोबाइल के लिए**: हमारे PWA के साथ अपने मोबाइल डिवाइस पर नेटिव ऐप जैसा अनुभव प्राप्त करें।
+      - ✒️🔢 **पूर्ण मार्कडाउन और LaTeX समर्थन**: समृद्ध इंटरैक्शन के लिए व्यापक मार्कडाउन और LaTeX क्षमताओं के साथ अपने LLM अनुभव को बढ़ाएं।
+      - 🎤📹 **हैंड्स-फ्री वॉइस/वीडियो कॉल**: एकीकृत हैंड्स-फ्री वॉइस और वीडियो कॉल सुविधाओं के साथ निर्बाध संचार का अनुभव करें।
+      - 🛠️ **मॉडल बिल्डर**: वेब UI के माध

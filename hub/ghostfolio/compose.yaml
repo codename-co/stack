@@ -1,0 +1,71 @@
+services:
+  ghostfolio:
+    image: ghostfolio/ghostfolio:${GHOSTFOLIO_VERSION:-2}
+    # container_name: ghostfolio
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@ghostfolio-postgres:5432/${POSTGRES_DB}?connect_timeout=300&sslmode=prefer
+      REDIS_HOST: ghostfolio-redis
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+    # ports:
+    #   - 3333:3333
+    depends_on:
+      ghostfolio-postgres:
+        condition: service_healthy
+      ghostfolio-redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3333/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN/en/register
+      traefik.http.routers.ghostfolio.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.ghostfolio.loadbalancer.server.port: 3333
+
+  ghostfolio-postgres:
+    image: library/postgres:15
+    # container_name: gf-postgres
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_READ_SEARCH
+      - FOWNER
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    env_file: .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  ghostfolio-redis:
+    image: redis:alpine
+    # container_name: gf-redis
+    user: 999:1000
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    env_file: .env
+    command: ["redis-server", "--requirepass", $REDIS_PASSWORD]
+    healthcheck:
+      test: ["CMD-SHELL", 'redis-cli --pass "$REDIS_PASSWORD" ping | grep PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres:

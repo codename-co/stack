@@ -1,0 +1,90 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: supabase
+name: Supabase
+flavor: DockerCompose
+version: "20241111-d7c6eb1"
+updated_at: 2024-11-11
+description: Open source Firebase alternative
+author: Supabase
+license: Apache-2.0
+homepage: https://supabase.com
+repository: https://github.com/supabase/supabase
+stars: 75800
+tags:
+  - database
+  - data
+  - api
+alternativeTo:
+  - firebase
+  - hasura
+readme: |
+  Supabase is an open-source Firebase alternative.
+
+  ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+i18n:
+  de:
+    description: Open-Source-Alternative zu Firebase
+    readme: |-
+      Supabase ist eine Open-Source-Alternative zu Firebase.
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  it:
+    description: Alternativa open source a Firebase
+    readme: |-
+      Supabase è un'alternativa open-source a Firebase.
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  pt:
+    description: Alternativa de código aberto ao Firebase
+    readme: |-
+      Supabase é uma alternativa de código aberto ao Firebase.
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  fr:
+    description: Alternative open source à Firebase
+    readme: |-
+      Supabase est une alternative open-source à Firebase.
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  hi:
+    description: फायरबेस का ओपन सोर्स विकल्प
+    readme: |-
+      सुपाबेस एक ओपन-सोर्स फायरबेस विकल्प है।
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  ru:
+    description: Альтернатива Firebase с открытым исходным кодом
+    readme: |-
+      Supabase - это альтернатива Firebase с открытым исходным кодом.
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  ar:
+    description: بديل مفتوح المصدر لـ Firebase
+    readme: |-
+      سوبابيس هي بديل مفتوح المصدر لفايربيس.
+
+      ![لوحة تحكم سوبابيس](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  es:
+    description: Alternativa de código abierto a Firebase
+    readme: |-
+      Supabase es una alternativa de código abierto a Firebase.
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  zh:
+    description: 开源 Firebase 替代方案
+    readme: |-
+      Supabase 是一个开源的 Firebase 替代方案。
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  ko:
+    description: 오픈소스 Firebase 대안
+    readme: |-
+      Supabase는 오픈소스 Firebase 대체재입니다.
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+  ja:
+    description: オープンソースのFirebase代替サービス
+    readme: |-
+      SupabaseはオープンソースのFirebase代替サービスです。
+
+      ![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)

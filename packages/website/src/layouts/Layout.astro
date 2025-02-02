@@ -1,0 +1,67 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { Debug } from "~/components/Debug";
+import Footer from "~/components/footer.html";
+import Navbar from "~/components/Navbar.astro";
+import { langs, textDirection } from "~/i18n";
+import "/public/global.css";
+
+const { lang = "en", title, description, leftTransition } = Astro.props;
+---
+
+<html lang={lang} dir={textDirection(lang)}>
+  <head>
+    <ClientRouter />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/32x32.png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5"
+    />
+    <title>{title ? `${title} · Stack` : "Stack"}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {
+      langs.map((lang) => (
+        <link
+          rel="alternate"
+          hreflang={lang || "en"}
+          href={`https://stack.lol/${lang}`}
+        />
+      ))
+    }
+    <slot name="head" />
+  </head>
+  <body class="rtl:*">
+    <main role="main" class="flex-grow w-full">
+      <Debug
+        client:only="react"
+        transition:persist
+        transition:name="debug"
+        lang={lang}
+      />
+      <Navbar transition:persist transition:name="navbar" />
+      <div
+        id="left"
+        transition:name="left"
+        transition:animate={leftTransition ?? "slide"}
+      >
+        <slot name="left" />
+      </div>
+      <div id="content" transition:name="content" transition:animate="fade">
+        <slot />
+      </div>
+      <slot name="right" />
+      <!-- <center class="section">
+        <img
+          src="/128x128.png"
+          alt=""
+          style="opacity: 20%; user-select: none; pointer-events: none;"
+        />
+      </center> -->
+      <Footer transition:persist>
+        <span slot="year">{new Date().getFullYear()}</span>
+      </Footer>
+    </main>
+  </body>
+</html>

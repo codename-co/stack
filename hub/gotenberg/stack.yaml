@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: gotenberg
+name: Gotenberg
+icon: 📄
+flavor: DockerCompose
+version: "8"
+updated_at: 2024-11-21
+description: API for converting HTML, Markdown, and Office documents to PDF
+author: Julien Neuhart
+license: MIT
+homepage: https://gotenberg.dev
+repository: https://github.com/gotenberg/gotenberg
+stars: 8200
+tags: []
+alternativeTo: []
+readme: |
+  Gotenberg provides a developer-friendly API to interact with powerful tools like Chromium and LibreOffice for converting numerous document formats (HTML, Markdown, Word, Excel, etc.) into PDF files, and more!

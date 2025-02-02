@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "lokalise.i18n-ally",
+    "rust-lang.rust-analyzer",
+    "tauri-apps.tauri-vscode"
+  ]
+}

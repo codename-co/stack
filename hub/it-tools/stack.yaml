@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: it-tools
+name: IT Tools
+icon: 🔧️
+flavor: DockerCompose
+version: latest
+updated_at: 2024-10-22
+description: Collection of handy online tools for developers
+author: Corentin Thomasset
+license: GPL-3.0
+homepage: https://it-tools.tech
+repository: https://github.com/CorentinTh/it-tools
+stars: 24300
+tags:
+  - development
+  - productivity
+  - tools
+alternativeTo: []
+readme: |
+  Useful tools for developer and people working in IT.
+
+  <hr>
+
+  ## Features
+
+  - Crypto
+  - Converters
+  - Web
+  - Images & Videos
+  - Development
+  - Network
+  - Math
+  - Measurement
+  - Text
+  - Data

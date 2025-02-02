@@ -1,0 +1,18 @@
+services:
+  chromium:
+    image: linuxserver/chromium:${CHROMIUM_VERSION:-latest}
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - config:/config
+    # ports:
+    #   - 3000:3000
+    #   - 3001:3001
+    shm_size: 1gb
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.chromium.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.chromium.loadbalancer.server.port: 3000
+
+volumes:
+  config:

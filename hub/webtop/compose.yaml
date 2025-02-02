@@ -1,0 +1,17 @@
+services:
+  webtop:
+    image: linuxserver/webtop:version-${WEBTOP_VERSION:-fccb91ce}
+    restart: unless-stopped
+    # ports:
+    #   - 3000:3000
+    env_file: .env
+    volumes:
+      - config:/config
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.webtop.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.webtop.loadbalancer.server.port: 3000
+
+volumes:
+  config:
+    driver: local

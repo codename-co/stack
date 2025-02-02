@@ -1,0 +1,57 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:${GITLAB_VERSION:-17.7.0-ce.0}
+    # container_name: gitlab
+    # restart: always
+    # hostname: "gitlab.example.com"
+    # environment:
+    #   GITLAB_OMNIBUS_CONFIG: |
+    #     # Add any other gitlab.rb configuration here, each on its own line
+    #     external_url 'https://gitlab.example.com'
+    # ports:
+    #   - "80:80"
+    #   - "443:443"
+    #   - "22:22"
+    volumes:
+      - config:/etc/gitlab"
+      - logs:/var/log/gitlab"
+      - data:/var/opt/gitlab"
+    shm_size: "256m"
+    configs:
+      - source: gitlab_config
+        target: /omnibus_config.rb
+    secrets:
+      - gitlab_root_password
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.gitlab.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.gitlab.loadbalancer.server.port: 80
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:alpine
+    configs:
+      - source: runner_config
+        target: /etc/gitlab-runner/config.toml
+    deploy:
+      mode: replicated
+      replicas: 2
+
+configs:
+  gitlab_config:
+    content: |
+      gitlab_rails['initial_root_password'] = File.read('/run/secrets/gitlab_root_password').gsub("\n", "")
+
+  runner_config:
+    content: |
+      concurrent = 5
+      check_interval = 3
+      log_format = "runner"
+
+secrets:
+  gitlab_root_password:
+    file: ./root_password.txt
+
+volumes:
+  config:
+  logs:
+  data:

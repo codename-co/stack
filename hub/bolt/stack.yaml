@@ -1,0 +1,461 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: bolt
+name: Bolt.new
+icon: stackblitz
+flavor: DockerCompose
+version: latest
+updated_at: 2024-12-17
+description: Prompt, run, edit, and deploy full-stack web applications
+author: StackBlitz
+license: MIT
+homepage: https://bolt.new
+repository: https://github.com/stackblitz/bolt.new
+stars: 11700
+tags:
+  - chatbot
+  - ai
+  - webdev
+alternativeTo: []
+readme: >
+  Bolt.new is an AI-powered web development agent that allows you to prompt,
+  run, edit, and deploy full-stack applications directly from your browser—no
+  local setup required. If you're here to build your own AI-powered web dev
+  agent using the Bolt open source codebase, click here to get started!
+
+
+  <hr>
+
+
+  ### What Makes Bolt.new Different
+
+
+  Claude, v0, etc are incredible- but you can't install packages, run backends
+  or edit code. That’s where Bolt.new stands out:
+
+
+  - **Full-Stack in the Browser**: Bolt.new integrates cutting-edge AI models
+  with an in-browser development environment powered by StackBlitz’s
+  WebContainers. This allows you to:
+
+    - Install and run npm tools and libraries (like Vite, Next.js, and more)
+    - Run Node.js servers
+    - Interact with third-party APIs
+    - Deploy to production from chat
+    - Share your work via a URL
+  - **AI with Environment Control**: Unlike traditional dev environments where
+  the AI can only assist in code generation, Bolt.new gives AI models complete
+  control over the entire environment including the filesystem, node server,
+  package manager, terminal, and browser console. This empowers AI agents to
+  handle the entire app lifecycle—from creation to deployment.
+
+
+  Whether you’re an experienced developer, a PM or designer, Bolt.new allows you
+  to build production-grade full-stack applications with ease.
+i18n:
+  es:
+    description: Crear, ejecutar, editar e implementar aplicaciones web de pila completa
+    readme: >-
+      Bolt.new es un agente de desarrollo web impulsado por IA que te permite
+      solicitar, ejecutar, editar e implementar aplicaciones full-stack
+      directamente desde tu navegador, sin necesidad de configuración local. Si
+      estás aquí para construir tu propio agente de desarrollo web impulsado por
+      IA usando el código base de Bolt de código abierto, ¡haz clic aquí para
+      comenzar!
+
+
+      <hr>
+
+
+      ### Qué Hace a Bolt.new Diferente
+
+
+      Claude, v0, etc. son increíbles, pero no puedes instalar paquetes,
+      ejecutar backends o editar código. Ahí es donde Bolt.new destaca:
+
+
+      - **Full-Stack en el Navegador**: Bolt.new integra modelos de IA de
+      vanguardia con un entorno de desarrollo en el navegador impulsado por
+      WebContainers de StackBlitz. Esto te permite:
+
+        - Instalar y ejecutar herramientas y bibliotecas npm (como Vite, Next.js y más)
+        - Ejecutar servidores Node.js
+        - Interactuar con APIs de terceros
+        - Implementar a producción desde el chat
+        - Compartir tu trabajo mediante una URL
+      - **IA con Control del Entorno**: A diferencia de los entornos de
+      desarrollo tradicionales donde la IA solo puede ayudar en la generación de
+      código, Bolt.new otorga a los modelos de IA control completo sobre todo el
+      entorno, incluyendo el sistema de archivos, servidor node, gestor de
+      paquetes, terminal y consola del navegador. Esto permite a los agentes de
+      IA manejar todo el ciclo de vida de la aplicación, desde la creación hasta
+      la implementación.
+
+
+      Ya seas un desarrollador experimentado, un PM o diseñador, Bolt.new te
+      permite construir aplicaciones full-stack de nivel producción con
+      facilidad.
+  pt:
+    description: Criar, executar, editar e implantar aplicações web full-stack
+    readme: >-
+      O Bolt.new é um agente de desenvolvimento web baseado em IA que permite
+      solicitar, executar, editar e implantar aplicações full-stack diretamente
+      do seu navegador—sem necessidade de configuração local. Se você está aqui
+      para construir seu próprio agente de desenvolvimento web baseado em IA
+      usando o código-fonte aberto do Bolt, clique aqui para começar!
+
+
+      <hr>
+
+
+      ### O Que Torna o Bolt.new Diferente
+
+
+      Claude, v0, etc são incríveis- mas você não pode instalar pacotes,
+      executar backends ou editar código. É aí que o Bolt.new se destaca:
+
+
+      - **Full-Stack no Navegador**: O Bolt.new integra modelos de IA de ponta
+      com um ambiente de desenvolvimento no navegador alimentado pelos
+      WebContainers da StackBlitz. Isso permite que você:
+
+        - Instale e execute ferramentas e bibliotecas npm (como Vite, Next.js e mais)
+        - Execute servidores Node.js
+        - Interaja com APIs de terceiros
+        - Implante em produção a partir do chat
+        - Compartilhe seu trabalho através de uma URL
+      - **IA com Controle do Ambiente**: Diferente dos ambientes de
+      desenvolvimento tradicionais onde a IA só pode auxiliar na geração de
+      código, o Bolt.new dá aos modelos de IA controle completo sobre todo o
+      ambiente, incluindo o sistema de arquivos, servidor node, gerenciador de
+      pacotes, terminal e console do navegador. Isso capacita os agentes de IA a
+      lidar com todo o ciclo de vida do aplicativo—da criação à implantação.
+
+
+      Seja você um desenvolvedor experiente, um PM ou designer, o Bolt.new
+      permite que você construa aplicações full-stack de nível de produção com
+      facilidade.
+  de:
+    description: Prompt, ausführen, bearbeiten und bereitstellen von
+      Full-Stack-Webanwendungen
+    readme: >-
+      Bolt.new ist ein KI-gesteuerter Webentwicklungsagent, mit dem Sie
+      Full-Stack-Anwendungen direkt aus Ihrem Browser heraus erstellen,
+      ausführen, bearbeiten und bereitstellen können – ganz ohne lokale
+      Einrichtung. Wenn Sie hier sind, um Ihren eigenen KI-gesteuerten
+      Webentwicklungsagenten mit der Bolt Open-Source-Codebasis zu erstellen,
+      klicken Sie hier, um loszulegen!
+
+
+      <hr>
+
+
+      ### Was Bolt.new anders macht
+
+
+      Claude, v0 usw. sind unglaublich – aber Sie können keine Pakete
+      installieren, Backends ausführen oder Code bearbeiten. Hier hebt sich
+      Bolt.new ab:
+
+
+      - **Full-Stack im Browser**: Bolt.new verbindet modernste KI-Modelle mit
+      einer browserbasierten Entwicklungsumgebung, die von StackBlitz's
+      WebContainers betrieben wird. Dies ermöglicht:
+
+        - Installation und Ausführung von npm-Tools und Bibliotheken (wie Vite, Next.js und mehr)
+        - Ausführung von Node.js-Servern
+        - Interaktion mit Drittanbieter-APIs
+        - Produktivbereitstellung direkt aus dem Chat
+        - Teilen Ihrer Arbeit über eine URL
+      - **KI mit Umgebungskontrolle**: Im Gegensatz zu traditionellen
+      Entwicklungsumgebungen, bei denen die KI nur bei der Codegenerierung
+      unterstützen kann, gibt Bolt.new KI-Modellen vollständige Kontrolle über
+      die gesamte Umgebung, einschließlich Dateisystem, Node-Server,
+      Paketmanager, Terminal und Browser-Konsole. Dies ermöglicht KI-Agenten,
+      den gesamten Anwendungslebenszyklus – von der Erstellung bis zur
+      Bereitstellung – zu handhaben.
+
+
+      Ob erfahrener Entwickler, Projektmanager oder Designer – mit Bolt.new
+      können Sie problemlos produktionsreife Full-Stack-Anwendungen erstellen.
+  fr:
+    description: Concevoir, exécuter, modifier et déployer des applications web full-stack
+    readme: >-
+      Bolt.new est un agent de développement web alimenté par l'IA qui vous
+      permet de créer, exécuter, modifier et déployer des applications
+      full-stack directement depuis votre navigateur, sans configuration locale
+      requise. Si vous souhaitez créer votre propre agent de développement web
+      alimenté par l'IA en utilisant le code source open source de Bolt, cliquez
+      ici pour commencer !
+
+
+      <hr>
+
+
+      ### Ce qui rend Bolt.new différent
+
+
+      Claude, v0, etc. sont incroyables, mais vous ne pouvez pas installer de
+      packages, exécuter des backends ou modifier du code. C'est là que Bolt.new
+      se démarque :
+
+
+      - **Full-Stack dans le navigateur** : Bolt.new intègre des modèles d'IA de
+      pointe avec un environnement de développement dans le navigateur alimenté
+      par les WebContainers de StackBlitz. Cela vous permet de :
+
+        - Installer et exécuter des outils et bibliothèques npm (comme Vite, Next.js, et plus)
+        - Exécuter des serveurs Node.js
+        - Interagir avec des API tierces
+        - Déployer en production depuis le chat
+        - Partager votre travail via une URL
+      - **IA avec contrôle de l'environnement** : Contrairement aux
+      environnements de développement traditionnels où l'IA ne peut qu'assister
+      à la génération de code, Bolt.new donne aux modèles d'IA un contrôle
+      complet sur l'ensemble de l'environnement, y compris le système de
+      fichiers, le serveur node, le gestionnaire de packages, le terminal et la
+      console du navigateur. Cela permet aux agents IA de gérer l'ensemble du
+      cycle de vie de l'application, de la création au déploiement.
+
+
+      Que vous soyez un développeur expérimenté, un chef de projet ou un
+      designer, Bolt.new vous permet de créer facilement des applications
+      full-stack de qualité production.
+  it:
+    description: Creare, eseguire, modificare e distribuire applicazioni web full-stack
+    readme: >-
+      Bolt.new è un agente di sviluppo web basato su IA che ti permette di
+      suggerire, eseguire, modificare e distribuire applicazioni full-stack
+      direttamente dal tuo browser, senza necessità di configurazione locale. Se
+      sei qui per costruire il tuo agente di sviluppo web basato su IA
+      utilizzando il codice open source di Bolt, clicca qui per iniziare!
+
+
+      <hr>
+
+
+      ### Cosa Rende Bolt.new Diverso
+
+
+      Claude, v0, ecc. sono incredibili, ma non puoi installare pacchetti,
+      eseguire backend o modificare codice. È qui che Bolt.new si distingue:
+
+
+      - **Full-Stack nel Browser**: Bolt.new integra modelli di IA
+      all'avanguardia con un ambiente di sviluppo nel browser alimentato dai
+      WebContainers di StackBlitz. Questo ti permette di:
+
+        - Installare ed eseguire strumenti e librerie npm (come Vite, Next.js e altri)
+        - Eseguire server Node.js
+        - Interagire con API di terze parti
+        - Distribuire in produzione dalla chat
+        - Condividere il tuo lavoro tramite URL
+      - **IA con Controllo dell'Ambiente**: A differenza degli ambienti di
+      sviluppo tradizionali dove l'IA può solo assistere nella generazione del
+      codice, Bolt.new fornisce ai modelli di IA il controllo completo
+      sull'intero ambiente, inclusi il filesystem, il server node, il gestore
+      dei pacchetti, il terminale e la console del browser. Questo permette agli
+      agenti IA di gestire l'intero ciclo di vita dell'applicazione, dalla
+      creazione alla distribuzione.
+
+
+      Che tu sia uno sviluppatore esperto, un PM o un designer, Bolt.new ti
+      permette di costruire applicazioni full-stack di livello professionale con
+      facilità.
+  ru:
+    description: Создавайте, запускайте, редактируйте и разворачивайте
+      полнофункциональные веб-приложения
+    readme: >-
+      Bolt.new - это ИИ-агент для веб-разработки, который позволяет создавать,
+      запускать, редактировать и развертывать полностековые приложения прямо из
+      браузера—без локальной настройки. Если вы хотите создать собственного
+      ИИ-агента для веб-разработки, используя открытый исходный код Bolt,
+      нажмите здесь, чтобы начать!
+
+
+      <hr>
+
+
+      ### Чем отличается Bolt.new
+
+
+      Claude, v0 и другие - потрясающие, но вы не можете устанавливать пакеты,
+      запускать бэкенд или редактировать код. Именно здесь выделяется Bolt.new:
+
+
+      - **Полный стек в браузере**: Bolt.new объединяет передовые модели ИИ с
+      браузерной средой разработки на базе WebContainers от StackBlitz. Это
+      позволяет:
+
+        - Устанавливать и запускать npm инструменты и библиотеки (такие как Vite, Next.js и другие)
+        - Запускать Node.js серверы
+        - Взаимодействовать со сторонними API
+        - Разворачивать в продакшн из чата
+        - Делиться своей работой через URL
+      - **ИИ с контролем среды**: В отличие от традиционных сред разработки, где
+      ИИ может только помогать в генерации кода, Bolt.new предоставляет моделям
+      ИИ полный контроль над всей средой, включая файловую систему, node сервер,
+      менеджер пакетов, терминал и консоль браузера. Это позволяет ИИ-агентам
+      управлять всем жизненным циклом приложения — от создания до развертывания.
+
+
+      Независимо от того, являетесь ли вы опытным разработчиком, PM или
+      дизайнером, Bolt.new позволяет легко создавать полностековые приложения
+      производственного уровня.
+  ar:
+    description: تصميم وتشغيل وتحرير ونشر تطبيقات الويب متكاملة المكونات
+    readme: >-
+      Bolt.new هو وكيل تطوير ويب مدعوم بالذكاء الاصطناعي يتيح لك توجيه وتشغيل
+      وتحرير ونشر تطبيقات متكاملة مباشرة من متصفحك - دون الحاجة إلى إعداد محلي.
+      إذا كنت هنا لبناء وكيل تطوير ويب خاص بك مدعوم بالذكاء الاصطناعي باستخدام
+      الشفرة المصدرية المفتوحة لـ Bolt، انقر هنا للبدء!
+
+
+      <hr>
+
+
+      ### ما الذي يميز Bolt.new
+
+
+      Claude وv0 وغيرها رائعة - لكن لا يمكنك تثبيت الحزم أو تشغيل الخوادم
+      الخلفية أو تحرير الكود. هنا يبرز Bolt.new:
+
+
+      - **تطوير متكامل في المتصفح**: يدمج Bolt.new نماذج الذكاء الاصطناعي
+      المتطورة مع بيئة تطوير داخل المتصفح مدعومة بـ WebContainers من StackBlitz.
+      هذا يتيح لك:
+
+        - تثبيت وتشغيل أدوات ومكتبات npm (مثل Vite وNext.js والمزيد)
+        - تشغيل خوادم Node.js
+        - التفاعل مع واجهات API خارجية
+        - النشر للإنتاج من المحادثة
+        - مشاركة عملك عبر رابط URL
+      - **ذكاء اصطناعي مع تحكم في البيئة**: على عكس بيئات التطوير التقليدية حيث
+      يمكن للذكاء الاصطناعي فقط المساعدة في توليد الكود، يمنح Bolt.new نماذج
+      الذكاء الاصطناعي تحكماً كاملاً في البيئة بأكملها بما في ذلك نظام الملفات
+      وخادم node ومدير الحزم والطرفية ووحدة تحكم المتصفح. هذا يمكّن وكلاء الذكاء
+      الاصطناعي من التعامل مع دورة حياة التطبيق بأكملها - من الإنشاء إلى النشر.
+
+
+      سواء كنت مطوراً متمرساً أو مدير مشروع أو مصمماً، يتيح لك Bolt.new بناء
+      تطبيقات متكاملة بجودة إنتاجية بسهولة.
+  ko:
+    description: 전체 스택 웹 애플리케이션을 프롬프트로 실행하고, 편집하고, 배포하기
+    readme: >-
+      Bolt.new는 브라우저에서 직접 프롬프트를 작성하고, 실행하고, 편집하고, 풀스택 애플리케이션을 배포할 수 있게 해주는 AI 기반
+      웹 개발 에이전트입니다—로컬 설정이 필요 없습니다. Bolt 오픈소스 코드베이스를 사용하여 자신만의 AI 기반 웹 개발 에이전트를
+      구축하고 싶다면, 여기를 클릭하여 시작하세요!
+
+
+      <hr>
+
+
+      ### Bolt.new가 다른 점
+
+
+      Claude, v0 등은 놀랍지만 패키지를 설치하거나, 백엔드를 실행하거나 코드를 편집할 수 없습니다. 이것이 Bolt.new가
+      돋보이는 점입니다:
+
+
+      - **브라우저에서 풀스택**: Bolt.new는 최신 AI 모델을 StackBlitz의 WebContainers로 구동되는 브라우저
+      내 개발 환경과 통합합니다. 이를 통해 다음이 가능합니다:
+
+        - npm 도구와 라이브러리 설치 및 실행 (Vite, Next.js 등)
+        - Node.js 서버 실행
+        - 서드파티 API와 상호작용
+        - 채팅에서 프로덕션 배포
+        - URL을 통한 작업 공유
+      - **환경 제어가 가능한 AI**: AI가 코드 생성만 지원할 수 있는 기존 개발 환경과 달리, Bolt.new는 AI 모델이
+      파일시스템, 노드 서버, 패키지 매니저, 터미널, 브라우저 콘솔을 포함한 전체 환경을 완벽하게 제어할 수 있게 합니다. 이를 통해
+      AI 에이전트가 생성부터 배포까지 전체 앱 라이프사이클을 처리할 수 있습니다.
+
+
+      숙련된 개발자이든, PM이나 디자이너이든, Bolt.new를 통해 손쉽게 프로덕션급 풀스택 애플리케이션을 구축할 수 있습니다.
+  hi:
+    description: पूर्ण-स्टैक वेब एप्लिकेशन को प्रॉम्प्ट, रन, एडिट और डिप्लॉय करें
+    readme: >-
+      Bolt.new एक AI-संचालित वेब डेवलपमेंट एजेंट है जो आपको अपने ब्राउज़र से
+      सीधे फुल-स्टैक एप्लिकेशन को प्रॉम्प्ट, रन, एडिट और डिप्लॉय करने की सुविधा
+      देता है—कोई लोकल सेटअप की आवश्यकता नहीं है। यदि आप Bolt ओपन सोर्स कोडबेस
+      का उपयोग करके अपना खुद का AI-संचालित वेब डेव एजेंट बनाना चाहते हैं, तो
+      आरंभ करने के लिए यहां क्लिक करें!
+
+
+      <hr>
+
+
+      ### Bolt.new को क्या अलग बनाता है
+
+
+      Claude, v0, आदि अद्भुत हैं- लेकिन आप पैकेज इंस्टॉल नहीं कर सकते, बैकएंड
+      नहीं चला सकते या कोड एडिट नहीं कर सकते। यहीं पर Bolt.new अलग है:
+
+
+      - **ब्राउज़र में फुल-स्टैक**: Bolt.new अत्याधुनिक AI मॉडल को StackBlitz के
+      WebContainers द्वारा संचालित इन-ब्राउज़र डेवलपमेंट एनवायरनमेंट के साथ
+      एकीकृत करता है। यह आपको निम्नलिखित की सुविधा देता है:
+
+        - npm टूल्स और लाइब्रेरी इंस्टॉल और रन करें (जैसे Vite, Next.js, और अन्य)
+        - Node.js सर्वर चलाएं
+        - थर्ड-पार्टी API के साथ इंटरैक्ट करें
+        - चैट से प्रोडक्शन में डिप्लॉय करें
+        - URL के माध्यम से अपना काम शेयर करें
+      - **एनवायरनमेंट कंट्रोल के साथ AI**: पारंपरिक डेव एनवायरनमेंट के विपरीत
+      जहां AI केवल कोड जनरेशन में सहायता कर सकती है, Bolt.new AI मॉडल को फाइल
+      सिस्टम, नोड सर्वर, पैकेज मैनेजर, टर्मिनल और ब्राउज़र कंसोल सहित पूरे
+      एनवायरनमेंट पर पूर्ण नियंत्रण देता है। यह AI एजेंट्स को क्रिएशन से
+      डिप्लॉयमेंट तक पूरे ऐप लाइफसाइकल को संभालने में सक्षम बनाता है।
+
+
+      चाहे आप एक अनुभवी डेवलपर हों, एक PM या डिज़ाइनर, Bolt.new आपको आसानी से
+      प्रोडक्शन-ग्रेड फुल-स्टैक एप्लिकेशन बनाने की सुविधा देता है।
+  zh:
+    description: 提示、运行、编辑和部署全栈网络应用程序
+    readme: >-
+      Bolt.new 是一个人工智能驱动的网络开发代理，允许您直接在浏览器中提示、运行、编辑和部署全栈应用程序——无需本地设置。如果您想使用 Bolt
+      开源代码库构建自己的人工智能网络开发代理，请点击此处开始！
+
+
+      <hr>
+
+
+      ### Bolt.new 的与众不同之处
+
+
+      Claude、v0 等都很出色——但您无法安装软件包、运行后端或编辑代码。这就是 Bolt.new 的突出之处：
+
+
+      - **浏览器中的全栈开发**：Bolt.new 将前沿的人工智能模型与基于 StackBlitz WebContainers
+      的浏览器内开发环境相结合。这使您能够：
+
+        - 安装和运行 npm 工具和库（如 Vite、Next.js 等）
+        - 运行 Node.js 服务器
+        - 与第三方 API 交互
+        - 通过聊天部署到生产环境
+        - 通过 URL 分享您的作品
+      - **具有环境控制的人工智能**：与传统的开发环境不同，在传统环境中人工智能只能协助代码生成，Bolt.new
+      让人工智能模型完全控制整个环境，包括文件系统、node
+      服务器、包管理器、终端和浏览器控制台。这使人工智能代理能够处理从创建到部署的整个应用程序生命周期。
+
+
+      无论您是经验丰富的开发人员、产品经理还是设计师，Bolt.new 都能让您轻松构建生产级别的全栈应用程序。
+  ja:
+    description: フルスタックWebアプリケーションのプロンプト作成、実行、編集、デプロイ
+    readme: |-
+      Bolt.newは、ブラウザから直接フルスタックアプリケーションをプロンプト、実行、編集、デプロイできるAI搭載のWeb開発エージェントです。ローカル環境のセットアップは不要です。Boltのオープンソースコードベースを使用して独自のAI搭載Web開発エージェントを構築する場合は、ここをクリックして始めてください！
+
+      <hr>
+
+      ### Bolt.newの特徴
+
+      Claude、v0などは素晴らしいですが、パッケージのインストール、バックエンドの実行、コードの編集はできません。そこがBolt.newの特徴です：
+
+      - **ブラウザ上のフルスタック**: Bolt.newは最先端のAIモデルとStackBlitzのWebContainersを活用したブラウザベースの開発環境を統合しています。これにより以下が可能です：
+
+        - npmツールやライブラリ（Vite、Next.jsなど）のインストールと実行
+        - Node.jsサーバーの実行
+        - サードパーティAPIとの連携
+        - チャットからの本番環境へのデプロイ
+        - URLを介した作業の共有
+      - **環境制御を備えたAI**: 従来の開発環境ではAIはコード生成の支援しかできませんでしたが、Bolt.newではAIモデルがファイルシステム、Nodeサーバー、パッケージマネージャー、ターミナル、ブラウザコンソールなど、環境全体を完全に制御できます。これによりAIエージェントは作成からデプロイまでアプリケーションのライフサイクル全体を管理できます。
+
+      経験豊富な開発者でも、PMやデザイナーでも、Bolt.newを使えば本番環境に対応したフルスタックアプリケーションを簡単に構築できます。

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: trailbase
+name: TrailBase
+icon: 🐿️
+flavor: DockerCompose
+version: "0.3.2"
+updated_at: 2024-12-19
+description: Blazingly fast open-source application server
+author: TrailBase
+license: OSL-3.0
+homepage: https://trailbase.io
+repository: https://github.com/trailbaseio/trailbase
+stars: 1200
+readme: |
+  A blazingly fast, open-source application server with type-safe APIs, built-in JS/ES6/TS Runtime, Auth, and Admin UI built on Rust, SQLite & V8.
+
+  ![preview](https://raw.githubusercontent.com/trailbaseio/trailbase/refs/heads/main/docs/src/assets/screenshot.webp)
+
+  <hr>
+
+  Simplify with fewer moving parts: an easy to self-host, single-file, extensible backend for your mobile, web or desktop application. Sub-millisecond latencies eliminate the need for dedicated caches, no more stale or inconsistent data.

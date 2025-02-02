@@ -1,0 +1,24 @@
+services:
+  jupyter-notebook:
+    image: quay.io/jupyter/minimal-notebook:notebook-${JUPYTER_VERSION:-7.3.1}
+    command: start-notebook.sh --ServerApp.ip=0.0.0.0 --NotebookApp.token=
+    # ports:
+    #   - 8888:8888
+    volumes:
+      - jupyter-data:/home/jovyan
+    environment:
+      JUPYTER_ENABLE_LAB: true
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.jupyter-notebook.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.jupyter-notebook.loadbalancer.server.port: 8888
+    networks:
+      - proxy
+
+volumes:
+  jupyter-data:
+    driver: local
+
+networks:
+  proxy:
+    external: true

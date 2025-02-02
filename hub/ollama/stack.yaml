@@ -1,0 +1,188 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: ollama
+name: Ollama
+flavor: DockerCompose
+version: "0.5.7"
+updated_at: 2025-01-16
+description: The easiest way to get up and running with large language models
+author: Ollama
+license: BSD-3-Clause
+homepage: https://ollama.com
+repository: https://github.com/ollama/ollama
+stars: 109000
+tags:
+  - llm
+  - ai
+alternativeTo:
+  - chatgpt
+readme: |
+  Ollama is a platform that makes it easy to get up and running with large language models. It provides a simple API to interact with the models, and you can use it to generate text, answer questions, and more.
+
+  <hr>
+
+  ## Features
+
+  - Simple API to interact with large language models
+  - Generate text, answer questions, and more
+  - Easy to use
+  - Fast and reliable
+  - Free to use
+i18n:
+  de:
+    description: Der einfachste Weg, um mit großen Sprachmodellen zu starten und zu arbeiten
+    readme: |-
+      Ollama ist eine Plattform, die es einfach macht, mit großen Sprachmodellen zu arbeiten. Sie bietet eine einfache API zur Interaktion mit den Modellen, und Sie können sie nutzen, um Text zu generieren, Fragen zu beantworten und mehr.
+
+      <hr>
+
+      ## Funktionen
+
+      - Einfache API zur Interaktion mit großen Sprachmodellen
+      - Generieren Sie Text, beantworten Sie Fragen und mehr
+      - Einfach zu bedienen
+      - Schnell und zuverlässig
+      - Kostenlos nutzbar
+  es:
+    description: La manera más sencilla de comenzar y avanzar con modelos de
+      lenguaje grandes
+    readme: |-
+      Ollama es una plataforma que facilita la puesta en marcha con modelos de lenguaje grandes. Proporciona una API simple para interactuar con los modelos, y puedes usarla para generar texto, responder preguntas y más.
+
+      <hr>
+
+      ## Características
+
+      - API simple para interactuar con modelos de lenguaje grandes
+      - Genera texto, responde preguntas y más
+      - Fácil de usar
+      - Rápido y confiable
+      - Gratuito para usar
+  it:
+    description: Il modo più semplice per iniziare a utilizzare i modelli di
+      linguaggio di grandi dimensioni
+    readme: |-
+      Ollama è una piattaforma che facilita l'avvio e l'utilizzo di modelli linguistici di grandi dimensioni. Fornisce una semplice API per interagire con i modelli, e puoi utilizzarla per generare testo, rispondere a domande e altro ancora.
+
+      <hr>
+
+      ## Caratteristiche
+
+      - API semplice per interagire con modelli linguistici di grandi dimensioni
+      - Genera testo, risponde a domande e altro ancora
+      - Facile da usare
+      - Veloce e affidabile
+      - Gratuito
+  pt:
+    description:
+      A maneira mais fácil de começar e avançar com modelos de linguagem
+      de grande escala
+    readme: |-
+      Ollama é uma plataforma que facilita a configuração e utilização de modelos de linguagem de grande escala. Ela fornece uma API simples para interagir com os modelos, e você pode usá-la para gerar texto, responder perguntas e muito mais.
+
+      <hr>
+
+      ## Recursos
+
+      - API simples para interagir com modelos de linguagem de grande escala
+      - Gere texto, responda perguntas e muito mais
+      - Fácil de usar
+      - Rápido e confiável
+      - Gratuito para usar
+  ru:
+    description: Самый простой способ начать работу с большими языковыми моделями
+    readme: |-
+      Ollama - это платформа, которая позволяет легко начать работу с большими языковыми моделями. Она предоставляет простой API для взаимодействия с моделями, и вы можете использовать его для генерации текста, ответов на вопросы и многого другого.
+
+      <hr>
+
+      ## Возможности
+
+      - Простой API для взаимодействия с большими языковыми моделями
+      - Генерация текста, ответы на вопросы и многое другое
+      - Простота использования
+      - Быстрая и надежная работа
+      - Бесплатное использование
+  ar:
+    description: أسهل طريقة للبدء والانطلاق مع نماذج اللغة الكبيرة
+    readme: |-
+      أولاما هي منصة تجعل من السهل البدء والعمل مع نماذج اللغة الكبيرة. تقدم واجهة برمجة تطبيقات بسيطة للتفاعل مع النماذج، ويمكنك استخدامها لتوليد النصوص، والإجابة على الأسئلة، والمزيد.
+
+      <hr>
+
+      ## المميزات
+
+      - واجهة برمجة تطبيقات بسيطة للتفاعل مع نماذج اللغة الكبيرة
+      - توليد النصوص، والإجابة على الأسئلة، والمزيد
+      - سهلة الاستخدام
+      - سريعة وموثوقة
+      - مجانية الاستخدام
+  hi:
+    description: बड़ी भाषा मॉडल्स के साथ शुरुआत करने और काम करने का सबसे आसान तरीका
+    readme: |-
+      ओल्लामा एक प्लेटफॉर्म है जो बड़े भाषा मॉडल के साथ आसानी से शुरू करने में मदद करता है। यह मॉडल के साथ संवाद करने के लिए एक सरल एपीआई प्रदान करता है, और आप इसका उपयोग टेक्स्ट जनरेट करने, प्रश्नों के उत्तर देने और बहुत कुछ करने के लिए कर सकते हैं।
+
+      <hr>
+
+      ## विशेषताएं
+
+      - बड़े भाषा मॉडल के साथ संवाद करने के लिए सरल एपीआई
+      - टेक्स्ट जनरेट करें, प्रश्नों के उत्तर दें, और बहुत कुछ
+      - उपयोग में आसान
+      - तेज और विश्वसनीय
+      - उपयोग के लिए मुफ्त
+  zh:
+    description: 使用大语言模型的最简单方法
+    readme: |-
+      Ollama 是一个让大型语言模型易于使用的平台。它提供了一个简单的 API 来与模型进行交互，你可以用它来生成文本、回答问题等。
+
+      <hr>
+
+      ## 特点
+
+      - 与大型语言模型交互的简单 API
+      - 生成文本、回答问题等
+      - 易于使用
+      - 快速可靠
+      - 免费使用
+  ko:
+    description: 대규모 언어 모델을 시작하고 실행하는 가장 쉬운 방법
+    readme: |-
+      Ollama는 대규모 언어 모델을 쉽게 시작하고 실행할 수 있게 해주는 플랫폼입니다. 모델과 상호작용할 수 있는 간단한 API를 제공하며, 텍스트 생성, 질문 답변 등 다양한 용도로 사용할 수 있습니다.
+
+      <hr>
+
+      ## 특징
+
+      - 대규모 언어 모델과 상호작용하기 위한 간단한 API
+      - 텍스트 생성, 질문 답변 등 가능
+      - 사용하기 쉬움
+      - 빠르고 안정적
+      - 무료로 사용 가능
+  ja:
+    description: 大規模言語モデルを使い始める最も簡単な方法
+    readme: |-
+      Ollamaは、大規模言語モデルを簡単に利用できるようにするプラットフォームです。モデルと対話するためのシンプルなAPIを提供し、テキスト生成や質問応答などに使用できます。
+
+      <hr>
+
+      ## 特徴
+
+      - 大規模言語モデルと対話するためのシンプルなAPI
+      - テキスト生成や質問応答などが可能
+      - 使いやすい
+      - 高速で信頼性が高い
+      - 無料で利用可能
+  fr:
+    description: La façon la plus simple de démarrer avec les grands modèles de langage
+    readme: |-
+      Ollama est une plateforme qui permet de démarrer et d'utiliser facilement des modèles de langage de grande envergure. Elle fournit une API simple pour interagir avec les modèles, et vous pouvez l'utiliser pour générer du texte, répondre à des questions, et plus encore.
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - API simple pour interagir avec des modèles de langage de grande envergure
+      - Génération de texte, réponses aux questions, et plus encore
+      - Facile à utiliser
+      - Rapide et fiable
+      - Gratuit

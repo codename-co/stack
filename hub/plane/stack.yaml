@@ -1,0 +1,247 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: plane
+name: Plane
+icon: ✈️
+flavor: DockerCompose
+version: "0.24.1"
+updated_at: 2024-12-10
+description: Issue tracking and project management
+author: Plane
+license: AGPL-3.0
+homepage: https://plane.so
+repository: https://github.com/makeplane/plane
+stars: 31600
+tags:
+  - issue-tracking
+  - project-management
+alternativeTo:
+  - jira
+  - asana
+  - linear
+  - monday
+readme: |
+  Meet Plane, an open-source project management tool to track issues, run sprints cycles, and manage product roadmaps without the chaos of managing the tool itself.
+
+  ![Plane Screens](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+  <hr>
+
+  ## Features
+
+  - **Issues**: Quickly create issues and add details using a powerful rich text editor that supports file uploads. Add sub-properties and references to problems for better organization and tracking.
+  - **Cycles**:
+    Keep up your team's momentum with Cycles. Gain insights into your project's progress with burn-down charts and other valuable features.
+  - **Modules**: Break down your large projects into smaller, more manageable modules. Assign modules between teams to track and plan your project's progress easily.
+  - **Views**: Create custom filters to display only the issues that matter to you. Save and share your filters in just a few clicks.
+  - **Pages**: Plane pages, equipped with AI and a rich text editor, let you jot down your thoughts on the fly. Format your text, upload images, hyperlink, or sync your existing ideas into an actionable item or issue.
+  - **Analytics**: Get insights into all your Plane data in real-time. Visualize issue data to spot trends, remove blockers, and progress your work.
+  - **Drive** (_coming soon_): The drive helps you share documents, images, videos, or any other files that make sense to you or your team and align on the problem/solution.
+i18n:
+  de:
+    description: Erfassung von Problemen und Projektmanagement
+    readme: |-
+      Lernen Sie Plane kennen, ein Open-Source-Projektmanagement-Tool zur Verfolgung von Issues, Durchführung von Sprint-Zyklen und Verwaltung von Produkt-Roadmaps ohne das Chaos der Tool-Verwaltung selbst.
+
+      ![Plane Screens](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## Funktionen
+
+      - **Issues**: Erstellen Sie schnell Issues und fügen Sie Details mit einem leistungsstarken Rich-Text-Editor hinzu, der Datei-Uploads unterstützt. Fügen Sie Untereigenschaften und Referenzen zu Problemen für bessere Organisation und Nachverfolgung hinzu.
+      - **Zyklen**:
+        Halten Sie den Schwung Ihres Teams mit Zyklen aufrecht. Gewinnen Sie Einblicke in den Fortschritt Ihres Projekts mit Burndown-Charts und anderen wertvollen Funktionen.
+      - **Module**: Unterteilen Sie Ihre großen Projekte in kleinere, besser handhabbare Module. Weisen Sie Module zwischen Teams zu, um den Fortschritt Ihres Projekts einfach zu verfolgen und zu planen.
+      - **Ansichten**: Erstellen Sie benutzerdefinierte Filter, um nur die für Sie relevanten Issues anzuzeigen. Speichern und teilen Sie Ihre Filter mit wenigen Klicks.
+      - **Seiten**: Plane-Seiten, ausgestattet mit KI und einem Rich-Text-Editor, ermöglichen es Ihnen, Ihre Gedanken spontan festzuhalten. Formatieren Sie Ihren Text, laden Sie Bilder hoch, verlinken Sie oder synchronisieren Sie Ihre bestehenden Ideen zu einem umsetzbaren Element oder Issue.
+      - **Analytik**: Erhalten Sie Einblicke in alle Ihre Plane-Daten in Echtzeit. Visualisieren Sie Issue-Daten, um Trends zu erkennen, Blockaden zu beseitigen und Ihre Arbeit voranzutreiben.
+      - **Drive** (_in Kürze_): Das Drive hilft Ihnen, Dokumente, Bilder, Videos oder andere Dateien zu teilen, die für Sie oder Ihr Team sinnvoll sind und sich am Problem/der Lösung orientieren.
+  fr:
+    description: Suivi des problèmes et gestion de projet
+    readme: |-
+      Découvrez Plane, un outil de gestion de projet open-source pour suivre les problèmes, gérer les cycles de sprint et les feuilles de route produit sans le chaos de la gestion de l'outil lui-même.
+
+      ![Écrans Plane](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - **Problèmes** : Créez rapidement des problèmes et ajoutez des détails grâce à un puissant éditeur de texte enrichi qui prend en charge le téléchargement de fichiers. Ajoutez des sous-propriétés et des références aux problèmes pour une meilleure organisation et un meilleur suivi.
+      - **Cycles** :
+        Maintenez l'élan de votre équipe avec les Cycles. Obtenez des informations sur l'avancement de votre projet grâce aux graphiques d'avancement et autres fonctionnalités utiles.
+      - **Modules** : Décomposez vos grands projets en modules plus petits et plus gérables. Attribuez des modules entre les équipes pour suivre et planifier facilement l'avancement de votre projet.
+      - **Vues** : Créez des filtres personnalisés pour afficher uniquement les problèmes qui vous intéressent. Enregistrez et partagez vos filtres en quelques clics.
+      - **Pages** : Les pages Plane, équipées d'IA et d'un éditeur de texte enrichi, vous permettent de noter vos pensées à la volée. Formatez votre texte, téléchargez des images, créez des liens hypertextes ou synchronisez vos idées existantes en éléments ou problèmes exploitables.
+      - **Analytique** : Obtenez des informations sur toutes vos données Plane en temps réel. Visualisez les données des problèmes pour repérer les tendances, supprimer les blocages et faire progresser votre travail.
+      - **Drive** (_à venir_) : Le drive vous aide à partager des documents, des images, des vidéos ou tout autre fichier pertinent pour vous ou votre équipe et à vous aligner sur le problème/la solution.
+  it:
+    description: Monitoraggio dei problemi e gestione dei progetti
+    readme: |-
+      Scopri Plane, uno strumento open-source di gestione progetti per tracciare problemi, gestire cicli sprint e pianificare roadmap di prodotto senza il caos di dover gestire lo strumento stesso.
+
+      ![Plane Screens](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## Funzionalità
+
+      - **Issues**: Crea rapidamente segnalazioni e aggiungi dettagli utilizzando un potente editor di testo che supporta il caricamento di file. Aggiungi sotto-proprietà e riferimenti ai problemi per una migliore organizzazione e monitoraggio.
+      - **Cicli**:
+        Mantieni lo slancio del tuo team con i Cicli. Ottieni informazioni sui progressi del tuo progetto con grafici burn-down e altre funzionalità utili.
+      - **Moduli**: Suddividi i tuoi grandi progetti in moduli più piccoli e gestibili. Assegna moduli tra i team per tracciare e pianificare facilmente i progressi del tuo progetto.
+      - **Viste**: Crea filtri personalizzati per visualizzare solo le segnalazioni che ti interessano. Salva e condividi i tuoi filtri con pochi clic.
+      - **Pagine**: Le pagine di Plane, dotate di AI e un editor di testo avanzato, ti permettono di annotare i tuoi pensieri al volo. Formatta il testo, carica immagini, inserisci collegamenti ipertestuali o sincronizza le tue idee esistenti in elementi o segnalazioni attuabili.
+      - **Analisi**: Ottieni informazioni su tutti i tuoi dati Plane in tempo reale. Visualizza i dati delle segnalazioni per individuare tendenze, rimuovere blocchi e far progredire il tuo lavoro.
+      - **Drive** (_in arrivo_): Il drive ti aiuta a condividere documenti, immagini, video o qualsiasi altro file utile a te o al tuo team e ad allinearti sul problema/soluzione.
+  es:
+    description: Seguimiento de incidencias y gestión de proyectos
+    readme: |-
+      Conoce Plane, una herramienta de gestión de proyectos de código abierto para dar seguimiento a problemas, ejecutar ciclos de sprint y gestionar hojas de ruta de productos sin el caos de administrar la herramienta en sí.
+
+      ![Pantallas de Plane](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## Características
+
+      - **Problemas**: Crea rápidamente problemas y agrega detalles usando un potente editor de texto enriquecido que admite carga de archivos. Agrega subpropiedades y referencias a los problemas para una mejor organización y seguimiento.
+      - **Ciclos**:
+        Mantén el impulso de tu equipo con Ciclos. Obtén información sobre el progreso de tu proyecto con gráficos de trabajo pendiente y otras características valiosas.
+      - **Módulos**: Divide tus grandes proyectos en módulos más pequeños y manejables. Asigna módulos entre equipos para rastrear y planificar fácilmente el progreso de tu proyecto.
+      - **Vistas**: Crea filtros personalizados para mostrar solo los problemas que te importan. Guarda y comparte tus filtros con solo unos clics.
+      - **Páginas**: Las páginas de Plane, equipadas con IA y un editor de texto enriquecido, te permiten anotar tus pensamientos al instante. Da formato a tu texto, sube imágenes, añade hipervínculos o sincroniza tus ideas existentes en un elemento o problema accionable.
+      - **Análisis**: Obtén información sobre todos tus datos de Plane en tiempo real. Visualiza datos de problemas para identificar tendencias, eliminar obstáculos y avanzar en tu trabajo.
+      - **Drive** (_próximamente_): El drive te ayuda a compartir documentos, imágenes, videos o cualquier otro archivo que tenga sentido para ti o tu equipo y alinearte con el problema/solución.
+  pt:
+    description: Rastreamento de problemas e gestão de projetos
+    readme: |-
+      Conheça o Plane, uma ferramenta de gestão de projetos de código aberto para acompanhar problemas, executar ciclos de sprints e gerenciar roadmaps de produtos sem o caos de gerenciar a própria ferramenta.
+
+      ![Telas do Plane](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## Funcionalidades
+
+      - **Issues**: Crie rapidamente issues e adicione detalhes usando um poderoso editor de texto rico que suporta upload de arquivos. Adicione subpropriedades e referências aos problemas para melhor organização e acompanhamento.
+      - **Ciclos**: Mantenha o ritmo da sua equipe com Ciclos. Obtenha insights sobre o progresso do seu projeto com gráficos burndown e outros recursos valiosos.
+      - **Módulos**: Divida seus grandes projetos em módulos menores e mais gerenciáveis. Atribua módulos entre equipes para acompanhar e planejar o progresso do seu projeto facilmente.
+      - **Visualizações**: Crie filtros personalizados para exibir apenas as issues que importam para você. Salve e compartilhe seus filtros em apenas alguns cliques.
+      - **Páginas**: As páginas do Plane, equipadas com IA e um editor de texto rico, permitem que você anote seus pensamentos rapidamente. Formate seu texto, faça upload de imagens, crie hyperlinks ou sincronize suas ideias existentes em um item ou issue acionável.
+      - **Analytics**: Obtenha insights sobre todos os seus dados do Plane em tempo real. Visualize dados de issues para identificar tendências, remover bloqueios e progredir em seu trabalho.
+      - **Drive** (_em breve_): O drive ajuda você a compartilhar documentos, imagens, vídeos ou quaisquer outros arquivos que façam sentido para você ou sua equipe e alinhar sobre o problema/solução.
+  ru:
+    description: Отслеживание задач и управление проектами
+    readme: |-
+      Познакомьтесь с Plane — инструментом управления проектами с открытым исходным кодом для отслеживания задач, управления спринт-циклами и планирования продуктовых дорожных карт без хаоса в управлении самим инструментом.
+
+      ![Plane Screens](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## Возможности
+
+      - **Задачи**: Быстро создавайте задачи и добавляйте детали с помощью мощного текстового редактора, поддерживающего загрузку файлов. Добавляйте подсвойства и ссылки на проблемы для лучшей организации и отслеживания.
+      - **Циклы**:
+        Поддерживайте темп работы вашей команды с помощью Циклов. Получайте информацию о прогрессе вашего проекта с помощью диаграмм сгорания и других полезных функций.
+      - **Модули**: Разбивайте крупные проекты на более мелкие, удобные в управлении модули. Распределяйте модули между командами для легкого отслеживания и планирования прогресса проекта.
+      - **Представления**: Создавайте пользовательские фильтры для отображения только важных для вас задач. Сохраняйте и делитесь фильтрами всего в несколько кликов.
+      - **Страницы**: Страницы Plane, оснащенные ИИ и богатым текстовым редактором, позволяют быстро записывать ваши мысли. Форматируйте текст, загружайте изображения, добавляйте гиперссылки или преобразуйте существующие идеи в выполнимые задачи.
+      - **Аналитика**: Получайте информацию о всех ваших данных в Plane в реальном времени. Визуализируйте данные о задачах, чтобы выявлять тенденции, устранять препятствия и продвигать работу.
+      - **Диск** (_скоро_): Диск помогает делиться документами, изображениями, видео или любыми другими файлами, которые имеют значение для вас или вашей команды, и согласовывать проблему/решение.
+  ar:
+    description: تتبع المشكلات وإدارة المشاريع
+    readme: |-
+      تعرّف على Plane، أداة مفتوحة المصدر لإدارة المشاريع لتتبع المشكلات، وتشغيل دورات السباق القصيرة، وإدارة خارطة طريق المنتج دون فوضى إدارة الأداة نفسها.
+
+      ![شاشات Plane](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## المميزات
+
+      - **المشكلات**: إنشاء المشكلات بسرعة وإضافة التفاصيل باستخدام محرر نصوص غني وقوي يدعم تحميل الملفات. أضف خصائص فرعية ومراجع للمشكلات للتنظيم والتتبع بشكل أفضل.
+      - **الدورات**:
+        حافظ على زخم فريقك مع الدورات. احصل على رؤى حول تقدم مشروعك من خلال مخططات الاحتراق والميزات القيمة الأخرى.
+      - **الوحدات**: قم بتقسيم مشاريعك الكبيرة إلى وحدات أصغر وأكثر قابلية للإدارة. قم بتعيين الوحدات بين الفرق لتتبع وتخطيط تقدم مشروعك بسهولة.
+      - **العروض**: إنشاء مرشحات مخصصة لعرض المشكلات التي تهمك فقط. احفظ وشارك مرشحاتك بنقرات قليلة.
+      - **الصفحات**: صفحات Plane، المجهزة بالذكاء الاصطناعي ومحرر النصوص الغني، تتيح لك تدوين أفكارك بسرعة. قم بتنسيق النص، وتحميل الصور، وإضافة روابط تشعبية، أو مزامنة أفكارك الحالية في عنصر أو مشكلة قابلة للتنفيذ.
+      - **التحليلات**: احصل على رؤى حول جميع بيانات Plane الخاصة بك في الوقت الفعلي. قم بتصور بيانات المشكلات لاكتشاف الاتجاهات، وإزالة العوائق، وتقدم عملك.
+      - **Drive** (_قريباً_): يساعدك Drive في مشاركة المستندات والصور ومقاطع الفيديو أو أي ملفات أخرى تناسبك أو تناسب فريقك والتوافق على المشكلة/الحل.
+  hi:
+    description: मुद्दा ट्रैकिंग और परियोजना प्रबंधन
+    readme: |-
+      प्लेन से मिलें, एक ओपन-सोर्स प्रोजेक्ट मैनेजमेंट टूल जो मुद्दों को ट्रैक करने, स्प्रिंट चक्र चलाने और टूल के प्रबंधन के उलझन के बिना प्रोडक्ट रोडमैप को मैनेज करने में मदद करता है।
+
+      ![प्लेन स्क्रीन्स](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - **मुद्दे**: एक शक्तिशाली रिच टेक्स्ट एडिटर का उपयोग करके तेजी से मुद्दे बनाएं और विवरण जोड़ें जो फ़ाइल अपलोड का समर्थन करता है। बेहतर संगठन और ट्रैकिंग के लिए समस्याओं में उप-गुण और संदर्भ जोड़ें।
+      - **चक्र**:
+        साइकल्स के साथ अपनी टीम की गति बनाए रखें। बर्न-डाउन चार्ट और अन्य मूल्यवान सुविधाओं के साथ अपने प्रोजेक्ट की प्रगति की जानकारी प्राप्त करें।
+      - **मॉड्यूल**: अपने बड़े प्रोजेक्ट्स को छोटे, अधिक प्रबंधनीय मॉड्यूल में विभाजित करें। अपने प्रोजेक्ट की प्रगति को आसानी से ट्रैक और प्लान करने के लिए टीमों के बीच मॉड्यूल असाइन करें।
+      - **व्यूज**: केवल उन मुद्दों को प्रदर्शित करने के लिए कस्टम फ़िल्टर बनाएं जो आपके लिए मायने रखते हैं। कुछ ही क्लिक में अपने फ़िल्टर सेव करें और शेयर करें।
+      - **पेज**: एआई और रिच टेक्स्ट एडिटर से लैस प्लेन पेज आपको तुरंत अपने विचार लिखने की सुविधा देते हैं। टेक्स्ट को फॉर्मेट करें, इमेज अपलोड करें, हाइपरलिंक करें, या अपने मौजूदा विचारों को एक कार्ययोग्य आइटम या मुद्दे में सिंक करें।
+      - **एनालिटिक्स**: वास्तविक समय में अपने सभी प्लेन डेटा की जानकारी प्राप्त करें। रुझानों को पहचानने, बाधाओं को दूर करने और अपने काम को आगे बढ़ाने के लिए मुद्दों के डेटा को विजुअलाइज़ करें।
+      - **ड्राइव** (_जल्द आ रहा है_): ड्राइव आपको दस्तावेज़, छवियां, वीडियो या कोई
+  zh:
+    description: 问题追踪和项目管理
+    readme: |-
+      认识 Plane，这是一个开源项目管理工具，用于跟踪问题、运行冲刺周期，并在不产生工具管理混乱的情况下管理产品路线图。
+
+      ![Plane Screens](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## 功能特点
+
+      - **问题追踪**：使用支持文件上传的强大富文本编辑器快速创建问题并添加详细信息。为问题添加子属性和引用，以实现更好的组织和跟踪。
+      - **周期管理**：
+        通过周期保持团队的发展势头。使用燃尽图和其他有价值的功能深入了解项目进度。
+      - **模块化**：将大型项目分解成更小、更易管理的模块。在团队之间分配模块，轻松跟踪和规划项目进度。
+      - **视图**：创建自定义过滤器，只显示与你相关的问题。只需点击几下即可保存和共享过滤器。
+      - **页面**：Plane页面配备了AI和富文本编辑器，让你随时记录想法。可以格式化文本、上传图片、添加超链接，或将现有想法同步为可执行的项目或问题。
+      - **分析**：实时获取所有Plane数据的洞察。可视化问题数据以发现趋势、消除障碍并推进工作。
+      - **云盘**（即将推出）：云盘帮助你共享文档、图片、视频或任何其他对你或你的团队有意义的文件，并就问题/解决方案达成一致。
+  ko:
+    description: 이슈 추적 및 프로젝트 관리
+    readme: |-
+      Plane을 만나보세요. 도구 자체를 관리하는 혼란 없이 이슈를 추적하고, 스프린트 주기를 실행하며, 제품 로드맵을 관리할 수 있는 오픈소스 프로젝트 관리 도구입니다.
+
+      ![Plane Screens](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## 기능
+
+      - **이슈**: 파일 업로드를 지원하는 강력한 리치 텍스트 에디터를 사용하여 신속하게 이슈를 생성하고 세부 정보를 추가할 수 있습니다. 더 나은 구성과 추적을 위해 문제에 하위 속성과 참조를 추가하세요.
+      - **주기**:
+        주기를 통해 팀의 모멘텀을 유지하세요. 번다운 차트와 기타 유용한 기능을 통해 프로젝트 진행 상황에 대한 인사이트를 얻으세요.
+      - **모듈**: 대규모 프로젝트를 더 작고 관리하기 쉬운 모듈로 분할하세요. 팀 간에 모듈을 할당하여 프로젝트 진행 상황을 쉽게 추적하고 계획하세요.
+      - **뷰**: 사용자에게 중요한 이슈만 표시하도록 맞춤형 필터를 생성하세요. 몇 번의 클릭만으로 필터를 저장하고 공유하세요.
+      - **페이지**: AI와 리치 텍스트 에디터를 갖춘 Plane 페이지로 즉시 생각을 기록하세요. 텍스트 서식을 지정하고, 이미지를 업로드하고, 하이퍼링크를 걸거나, 기존 아이디어를 실행 가능한 항목이나 이슈로 동기화하세요.
+      - **분석**: 모든 Plane 데이터에 대한 실시간 인사이트를 얻으세요. 이슈 데이터를 시각화하여 트렌드를 파악하고, 장애물을 제거하며, 작업을 진행하세요.
+      - **드라이브** (_출시 예정_): 드라이브를 통해 문서, 이미지, 비디오 또는 사용자나 팀에게 의미 있는 다른 파일을 공유하고 문제/해결책에 대해 조율할 수 있습니다.
+  ja:
+    description: 課題管理とプロジェクト管理
+    readme: |-
+      Plane をご紹介します。ツール自体の管理の混乱なく、課題を追跡し、スプリントサイクルを実行し、製品ロードマップを管理するためのオープンソースのプロジェクト管理ツールです。
+
+      ![Plane Screens](https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp)
+
+      <hr>
+
+      ## 機能
+
+      - **課題**: ファイルのアップロードをサポートする強力なリッチテキストエディタを使用して、素早く課題を作成し詳細を追加できます。より良い整理と追跡のために、問題にサブプロパティと参照を追加できます。
+      - **サイクル**:
+        チームの勢いを維持します。バーンダウンチャートやその他の価値ある機能で、プロジェクトの進捗状況を把握できます。
+      - **モジュール**: 大規模なプロジェクトをより管理しやすい小さなモジュールに分割します。チーム間でモジュールを割り当て、プロジェクトの進捗を簡単に追跡・計画できます。
+      - **ビュー**: カスタムフィルターを作成して、関心のある課題のみを表示できます。数回のクリックでフィルターを保存・共有できます。
+      - **ページ**: AIとリッチテキストエディタを搭載したPlaneページで、アイデアをすぐにメモできます。テキストの書式設定、画像のアップロード、ハイパーリンクの作成、または既存のアイデアを実行可能なアイテムや課題に同期できます。
+      - **分析**: すべてのPlaneデータをリアルタイムで把握できます。課題データを視覚化して、傾向を特定し、ブロッカーを取り除き、作業を進めることができます。
+      - **ドライブ**（_近日公開_）: ドライブは、文書、画像、動画、またはあなたやチームにとって意味のあるその他のファイルを共有し、問題/解決策について調整するのに役立ちます。

@@ -1,0 +1,15 @@
+services:
+  appsmith:
+    image: appsmith/appsmith-ce:v${APP_VERSION:-1.54}
+    env_file: .env
+    volumes:
+      - stacks:/appsmith-stacks
+    labels:
+      dash.icon: appsmith
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.appsmith.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.appsmith.loadbalancer.server.port: 80
+
+volumes:
+  stacks:
+    driver: local

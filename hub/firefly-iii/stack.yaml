@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: firefly-iii
+name: Firefly III
+icon: fireflyiii
+flavor: DockerCompose
+version: "6.1"
+updated_at: 2024-12-18
+description: A personal finance manager
+author: James Cole
+license: AGPL-3.0
+homepage: https://firefly-iii.org
+repository: https://github.com/firefly-iii/firefly-iii
+stars: 16800
+tags: [finance]
+alternativeTo: [mint]
+readme: |
+  A free and open source personal finance manager
+
+  ![preview](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/imac-complete.png)
+
+  <hr>
+
+  Personal financial management is pretty difficult, and everybody has their own approach to it. Some people make budgets, other people limit their cashflow by throwing away their credit cards, others try to increase their current cashflow. There are tons of ways to save and earn money. Firefly III works on the principle that if you know where your money is going, you can stop it from going there.
+
+  By keeping track of your expenses and your income you can budget accordingly and save money. Stop living from paycheck to paycheck but give yourself the financial wiggle room you need.
+
+  You can read more about the purpose of Firefly III in the [documentation](https://docs.firefly-iii.org/).
+
+  ## Features
+
+  Firefly III is pretty feature packed. Some important stuff first:
+
+  * It is completely self-hosted and isolated, and will never contact external servers until you explicitly tell it to.
+  * It features a REST JSON API that covers almost every part of Firefly III.
+
+  The most exciting features are:
+
+  * Create [recurring transactions to manage your money](https://docs.firefly-iii.org/explanation/financial-concepts/recurring/).
+  * [Rule based transaction handling](https://docs.firefly-iii.org/how-to/firefly-iii/features/rules/) with the ability to create your own rules.
+
+  Then the things that make you go "yeah OK, makes sense".
+
+  * A [double-entry](https://en.wikipedia.org/wiki/Double-entry_bookkeeping_system) bookkeeping system.
+  * Save towards a goal using [piggy banks](https://docs.firefly-iii.org/explanation/financial-concepts/piggy-banks/).
+  * View [income and expense reports](https://docs.firefly-iii.org/how-to/firefly-iii/finances/reports/).
+
+  And the things you would hope for but not expect:
+
+  * 2 factor authentication for extra security 🔒.
+  * Supports [any currency you want](https://docs.firefly-iii.org/how-to/firefly-iii/features/currencies/).
+  * There is a [Docker image](https://docs.firefly-iii.org/how-to/firefly-iii/installation/docker/).
+
+  And to organise everything:
+
+  * Clear views that should show you how you're doing.
+  * Easy navigation through your records.
+  * Lots of charts because we all love them.
+
+  Many more features are listed in the [documentation](https://docs.firefly-iii.org/explanation/firefly-iii/about/introduction/).

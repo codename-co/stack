@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: jupyter-notebook
+name: Jupyter Notebook
+icon: jupyter
+flavor: DockerCompose
+version: "7.3.1"
+updated_at: 2024-12-04
+description: Jupyter Interactive Notebook
+author: Jupyter Development Team
+license: BSD-3-Clause
+homepage: https://jupyter.org
+repository: https://github.com/jupyter/notebook
+stars: 11800
+tags: [data-science, data, ml]
+alternativeTo: []
+readme: |
+  The Jupyter notebook is a web-based notebook environment for interactive computing.
+
+  ![preview](https://github.com/jupyter/notebook/blob/main/docs/resources/running_code_med.png?raw=true)
+
+  <hr>
+
+  A computational notebook is a shareable document that combines computer code, plain language descriptions, data, rich visualizations like 3D models, charts, graphs and figures, and interactive controls. A notebook, along with an editor like Jupyter Notebook, provides a fast interactive environment for prototyping and explaining code, exploring and visualizing data, and sharing ideas with others.

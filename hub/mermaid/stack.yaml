@@ -1,0 +1,203 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: mermaid
+name: Mermaid Live Editor
+flavor: DockerCompose
+version: latest
+updated_at: 2024-11-18
+description: Edit, preview and share mermaid charts/diagrams
+author: Mermaid community
+license: MIT
+homepage: https://mermaid.live/
+repository: https://github.com/mermaid-js/mermaid-live-editor
+stars: 4400
+tags:
+  - diagram
+alternativeTo:
+  - lucidchart
+readme: >
+  Edit, preview and share mermaid charts/diagrams.
+
+
+  ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+
+  <hr>
+
+
+  ## Features
+
+
+  - Edit and preview flowcharts, sequence diagrams, gantt diagrams in real time.
+
+  - Save the result as a svg
+
+  - Get a link to a viewer of the diagram so that you can share it with others.
+
+  - Get a link to edit the diagram so that someone else can tweak it and send a
+  new link back
+i18n:
+  fr:
+    description: Éditer, prévisualiser et partager des graphiques/diagrammes mermaid
+    readme: |-
+      Éditez, prévisualisez et partagez des graphiques/diagrammes mermaid.
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - Éditez et prévisualisez des organigrammes, des diagrammes de séquence, des diagrammes de Gantt en temps réel.
+      - Sauvegardez le résultat en svg
+      - Obtenez un lien vers une visionneuse du diagramme pour le partager avec d'autres.
+      - Obtenez un lien pour éditer le diagramme afin que quelqu'un d'autre puisse le modifier et renvoyer un nouveau lien
+  it:
+    description: Modifica, visualizza in anteprima e condividi diagrammi/grafici mermaid
+    readme: |-
+      Modifica, anteprima e condivisione di diagrammi/grafici mermaid.
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## Funzionalità
+
+      - Modifica e anteprima in tempo reale di diagrammi di flusso, diagrammi di sequenza, diagrammi di Gantt.
+      - Salvataggio del risultato come svg
+      - Ottieni un link per visualizzare il diagramma così da poterlo condividere con altri.
+      - Ottieni un link per modificare il diagramma così che qualcun altro possa perfezionarlo e inviare un nuovo link
+  de:
+    description: Mermaid-Diagramme/Grafiken bearbeiten, als Vorschau anzeigen und teilen
+    readme: |-
+      Mermaid-Diagramme/Grafiken bearbeiten, vorschauen und teilen.
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## Funktionen
+
+      - Bearbeiten und Vorschau von Flussdiagrammen, Sequenzdiagrammen und Gantt-Diagrammen in Echtzeit.
+      - Speichern des Ergebnisses als SVG
+      - Erhalten eines Links zur Diagrammvorschau, um sie mit anderen zu teilen.
+      - Erhalten eines Links zur Bearbeitung des Diagramms, sodass jemand anderes es anpassen und einen neuen Link zurücksenden kann
+  pt:
+    description: Edite, pré-visualize e compartilhe gráficos/diagramas mermaid
+    readme: |-
+      Edite, visualize e compartilhe gráficos/diagramas mermaid.
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## Recursos
+
+      - Edite e visualize fluxogramas, diagramas de sequência, diagramas de gantt em tempo real.
+      - Salve o resultado como svg
+      - Obtenha um link para um visualizador do diagrama para compartilhá-lo com outras pessoas.
+      - Obtenha um link para editar o diagrama para que outra pessoa possa ajustá-lo e enviar um novo link de volta
+  zh:
+    description: 编辑、预览和分享mermaid图表/示意图
+    readme: |-
+      编辑、预览和分享美人鱼图表/图解。
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## 功能特点
+
+      - 实时编辑和预览流程图、时序图、甘特图
+      - 将结果保存为svg格式
+      - 获取图表查看器的链接，以便与他人分享
+      - 获取编辑图表的链接，以便其他人可以调整并发送新的链接回来
+  ko:
+    description: mermaid 차트/다이어그램 편집, 미리보기 및 공유
+    readme: |-
+      mermaid 차트/다이어그램을 편집, 미리보기 및 공유하세요.
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## 기능
+
+      - 실시간으로 순서도, 시퀀스 다이어그램, 간트 차트를 편집하고 미리볼 수 있습니다.
+      - 결과물을 svg로 저장
+      - 다른 사람과 공유할 수 있도록 다이어그램 뷰어 링크 생성
+      - 다른 사람이 수정하고 새로운 링크를 다시 보낼 수 있도록 편집 링크 생성
+  ru:
+    description: Редактируйте, просматривайте и делитесь диаграммами/схемами mermaid
+    readme: |-
+      Редактируйте, просматривайте и делитесь диаграммами/схемами mermaid.
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## Возможности
+
+      - Редактируйте и просматривайте блок-схемы, диаграммы последовательностей, диаграммы Ганта в реальном времени.
+      - Сохраняйте результат как svg
+      - Получайте ссылку на просмотрщик диаграммы, чтобы поделиться ею с другими.
+      - Получайте ссылку на редактирование диаграммы, чтобы кто-то другой мог её подправить и отправить новую ссылку обратно
+  ar:
+    description: تحرير ومعاينة ومشاركة المخططات/الرسوم البيانية Mermaid
+    readme: |-
+      تحرير ومعاينة ومشاركة مخططات/رسوم بيانية Mermaid.
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## المميزات
+
+      - تحرير ومعاينة مخططات التدفق، مخططات التسلسل، مخططات غانت في الوقت الفعلي.
+      - حفظ النتيجة كملف svg
+      - الحصول على رابط لعارض المخطط حتى تتمكن من مشاركته مع الآخرين.
+      - الحصول على رابط لتحرير المخطط بحيث يمكن لشخص آخر تعديله وإرسال رابط جديد مرة أخرى
+  hi:
+    description: मरमेड चार्ट/आरेख को संपादित करें, पूर्वावलोकन करें और साझा करें
+    readme: |-
+      मर्मेड चार्ट/आरेखों को संपादित, पूर्वावलोकन और साझा करें।
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - फ्लोचार्ट, सीक्वेंस डायग्राम, गैंट डायग्राम को वास्तविक समय में संपादित और पूर्वावलोकन करें।
+      - परिणाम को एसवीजी के रूप में सहेजें
+      - आरेख के व्यूअर का लिंक प्राप्त करें ताकि आप इसे दूसरों के साथ साझा कर सकें।
+      - आरेख को संपादित करने का लिंक प्राप्त करें ताकि कोई अन्य व्यक्ति इसे समायोजित कर सके और एक नया लिंक वापस भेज सके
+  es:
+    description: Editar, previsualizar y compartir diagramas/gráficos de mermaid
+    readme: |-
+      Edita, previsualiza y comparte diagramas/gráficos mermaid.
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## Características
+
+      - Edita y previsualiza diagramas de flujo, diagramas de secuencia, diagramas de gantt en tiempo real.
+      - Guarda el resultado como svg
+      - Obtén un enlace a un visor del diagrama para poder compartirlo con otros.
+      - Obtén un enlace para editar el diagrama de modo que alguien más pueda ajustarlo y enviar un nuevo enlace de vuelta
+  ja:
+    description: mermaid 図/ダイアグラムの編集、プレビュー、共有
+    readme: |-
+      マーメイドチャート/ダイアグラムの編集、プレビュー、共有。
+
+      ![preview](https://github.com/mermaid-js/mermaid/raw/develop/img/header.png)
+
+      <hr>
+
+      ## 機能
+
+      - フローチャート、シーケンス図、ガントチャートをリアルタイムで編集・プレビュー
+      - SVG形式で保存
+      - 図を他の人と共有できるビューワーへのリンクを取得
+      - 図を編集できるリンクを取得し、他の人が修正して新しいリンクを送り返すことが可能

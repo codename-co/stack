@@ -1,0 +1,222 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: gitlab
+name: GitLab
+flavor: DockerCompose
+version: "1.22.6"
+updated_at: 2024-12-13
+description: All-in-one software development service with git hosting
+author: CommitGo, Inc
+license: MIT
+homepage: https://about.gitlab.com
+repository: https://github.com/gitlabhq/gitlabhq
+stars: 23900
+tags:
+  - git
+  - software-development
+alternativeTo:
+  - github
+  - bitbucket
+readme: |
+  GitLab is an open source end-to-end software development platform with built-in version control, issue tracking, code review, CI/CD, and more. Self-host GitLab on your own servers, in a container, or on a cloud provider.
+
+  ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+  <hr>
+
+  ## Features
+
+  - Manage Git repositories with fine grained access controls that keep your code secure
+  - Perform code reviews and enhance collaboration with merge requests
+  - Complete continuous integration (CI) and continuous deployment/delivery (CD) pipelines to build, test, and deploy your applications
+  - Each project can also have an issue tracker, issue board, and a wiki
+  - Used by more than 100,000 organizations, GitLab is the most popular solution to manage Git repositories on-premises
+  - Completely free and open source (MIT Expat license)
+i18n:
+  de:
+    description: All-in-One Softwareentwicklungsdienst mit Git-Hosting
+    readme: |-
+      GitLab ist eine Open-Source-Plattform für die komplette Softwareentwicklung mit integrierter Versionskontrolle, Issue-Tracking, Code-Review, CI/CD und mehr. Hosten Sie GitLab auf Ihren eigenen Servern, in einem Container oder bei einem Cloud-Anbieter.
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## Funktionen
+
+      - Verwalten Sie Git-Repositories mit feingranularen Zugriffskontrollen, die Ihren Code sicher halten
+      - Führen Sie Code-Reviews durch und verbessern Sie die Zusammenarbeit mit Merge Requests
+      - Vollständige Continuous Integration (CI) und Continuous Deployment/Delivery (CD) Pipelines zum Erstellen, Testen und Bereitstellen Ihrer Anwendungen
+      - Jedes Projekt kann auch einen Issue-Tracker, ein Issue-Board und ein Wiki haben
+      - GitLab wird von mehr als 100.000 Organisationen genutzt und ist die beliebteste Lösung zur Verwaltung von Git-Repositories vor Ort
+      - Komplett kostenlos und Open Source (MIT Expat Lizenz)
+  es:
+    description: Servicio integral de desarrollo de software con alojamiento git
+    readme: |-
+      GitLab es una plataforma de desarrollo de software de código abierto de extremo a extremo con control de versiones integrado, seguimiento de problemas, revisión de código, CI/CD y más. Aloje GitLab en sus propios servidores, en un contenedor o en un proveedor de la nube.
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## Características
+
+      - Gestione repositorios Git con controles de acceso detallados que mantienen su código seguro
+      - Realice revisiones de código y mejore la colaboración con solicitudes de fusión
+      - Complete canales de integración continua (CI) y despliegue/entrega continua (CD) para construir, probar y desplegar sus aplicaciones
+      - Cada proyecto también puede tener un rastreador de problemas, un tablero de problemas y una wiki
+      - Utilizado por más de 100.000 organizaciones, GitLab es la solución más popular para gestionar repositorios Git en las instalaciones
+      - Completamente gratuito y de código abierto (licencia MIT Expat)
+  ar:
+    description: خدمة تطوير البرمجيات الشاملة مع استضافة جيت
+    readme: |-
+      جتلاب هو منصة تطوير برمجيات مفتوحة المصدر متكاملة مع نظام تحكم بالإصدارات مدمج، وتتبع للمشكلات، ومراجعة الكود، والتكامل المستمر/النشر المستمر، والمزيد. يمكنك استضافة جتلاب على خوادمك الخاصة، في حاوية، أو على مزود خدمة سحابية.
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+       ## المميزات
+
+      - إدارة مستودعات Git مع ضوابط وصول دقيقة تحافظ على أمان الكود الخاص بك
+      - إجراء مراجعات الكود وتعزيز التعاون من خلال طلبات الدمج
+      - إكمال مسارات التكامل المستمر (CI) والنشر/التسليم المستمر (CD) لبناء واختبار ونشر تطبيقاتك
+      - يمكن لكل مشروع أيضاً أن يحتوي على متتبع مشكلات، ولوحة مشكلات، وويكي
+      - يستخدم من قبل أكثر من 100,000 منظمة، جتلاب هو الحل الأكثر شعبية لإدارة مستودعات Git داخل المؤسسة
+      - مجاني تماماً ومفتوح المصدر (رخصة MIT Expat)
+  fr:
+    description: Service tout-en-un de développement logiciel avec hébergement git
+    readme: |-
+      GitLab est une plateforme de développement logiciel open source de bout en bout avec un contrôle de version intégré, un suivi des problèmes, une revue de code, CI/CD, et plus encore. Hébergez GitLab sur vos propres serveurs, dans un conteneur ou chez un fournisseur cloud.
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - Gérez les dépôts Git avec des contrôles d'accès précis qui garantissent la sécurité de votre code
+      - Effectuez des revues de code et améliorez la collaboration avec les demandes de fusion
+      - Complétez les pipelines d'intégration continue (CI) et de déploiement/livraison continue (CD) pour construire, tester et déployer vos applications
+      - Chaque projet peut également avoir un système de suivi des problèmes, un tableau des problèmes et un wiki
+      - Utilisé par plus de 100 000 organisations, GitLab est la solution la plus populaire pour gérer les dépôts Git en local
+      - Totalement gratuit et open source (licence MIT Expat)
+  pt:
+    description: Serviço de desenvolvimento de software tudo-em-um com hospedagem git
+    readme: |-
+      O GitLab é uma plataforma de desenvolvimento de software completa e de código aberto com controle de versão integrado, rastreamento de problemas, revisão de código, CI/CD e muito mais. Hospede o GitLab em seus próprios servidores, em um contêiner ou em um provedor de nuvem.
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## Recursos
+
+      - Gerencie repositórios Git com controles de acesso refinados que mantêm seu código seguro
+      - Realize revisões de código e melhore a colaboração com solicitações de merge
+      - Complete pipelines de integração contínua (CI) e implantação/entrega contínua (CD) para construir, testar e implantar suas aplicações
+      - Cada projeto também pode ter um rastreador de problemas, quadro de problemas e uma wiki
+      - Usado por mais de 100.000 organizações, o GitLab é a solução mais popular para gerenciar repositórios Git localmente
+      - Completamente gratuito e de código aberto (licença MIT Expat)
+  ru:
+    description: Универсальный сервис для разработки программного обеспечения с
+      хостингом git
+    readme: |-
+      GitLab - это платформа разработки программного обеспечения с открытым исходным кодом, включающая встроенную систему контроля версий, отслеживание задач, проверку кода, CI/CD и многое другое. Разверните GitLab на собственных серверах, в контейнере или в облачном провайдере.
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## Возможности
+
+      - Управление Git-репозиториями с детальным контролем доступа для обеспечения безопасности кода
+      - Выполнение проверки кода и улучшение совместной работы с помощью запросов на слияние
+      - Полные конвейеры непрерывной интеграции (CI) и непрерывного развертывания/доставки (CD) для сборки, тестирования и развертывания приложений
+      - Каждый проект также может иметь систему отслеживания задач, доску задач и вики
+      - GitLab используется более чем 100 000 организаций и является самым популярным решением для управления Git-репозиториями на собственных серверах
+      - Полностью бесплатный и с открытым исходным кодом (лицензия MIT Expat)
+  hi:
+    description: ऑल-इन-वन सॉफ्टवेयर डेवलपमेंट सेवा गिट होस्टिंग के साथ
+    readme: |-
+      GitLab एक ओपन सोर्स एंड-टू-एंड सॉफ्टवेयर डेवलपमेंट प्लेटफॉर्म है जिसमें बिल्ट-इन वर्जन कंट्रोल, इशू ट्रैकिंग, कोड रिव्यू, CI/CD और बहुत कुछ शामिल है। अपने सर्वर पर, कंटेनर में, या क्लाउड प्रोवाइडर पर GitLab को सेल्फ-होस्ट करें।
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - अपने कोड को सुरक्षित रखने के लिए बारीक नियंत्रण के साथ Git रिपॉजिटरी का प्रबंधन करें
+      - मर्ज रिक्वेस्ट के साथ कोड रिव्यू करें और सहयोग बढ़ाएं
+      - अपने एप्लिकेशन को बनाने, टेस्ट करने और डिप्लॉय करने के लिए सतत एकीकरण (CI) और सतत परिनियोजन/वितरण (CD) पाइपलाइन को पूरा करें
+      - प्रत्येक प्रोजेक्ट में एक इशू ट्रैकर, इशू बोर्ड और विकी भी हो सकती है
+      - 100,000 से अधिक संगठनों द्वारा उपयोग किया जाता है, GitLab ऑन-प्रिमाइसेस Git रिपॉजिटरी को प्रबंधित करने का सबसे लोकप्रिय समाधान है
+      - पूरी तरह से मुफ्त और ओपन सोर्स (MIT एक्सपैट लाइसेंस)
+  zh:
+    description: 一体化软件开发服务，包含 git 托管
+    readme: |-
+      GitLab是一个开源的端到端软件开发平台，内置版本控制、问题跟踪、代码审查、CI/CD等功能。您可以在自己的服务器上、容器中或云服务提供商上自行托管GitLab。
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## 功能特点
+
+      - 通过细粒度的访问控制管理Git仓库，确保代码安全
+      - 通过合并请求进行代码审查并加强协作
+      - 完整的持续集成（CI）和持续部署/交付（CD）流程，用于构建、测试和部署应用程序
+      - 每个项目都可以拥有问题跟踪器、问题看板和wiki
+      - 超过100,000个组织使用，GitLab是最受欢迎的本地Git仓库管理解决方案
+      - 完全免费和开源（MIT Expat许可证）
+  it:
+    description: Servizio di sviluppo software tutto-in-uno con hosting git
+    readme: |-
+      GitLab è una piattaforma di sviluppo software open source end-to-end con controllo versione integrato, tracciamento dei problemi, revisione del codice, CI/CD e altro. Puoi ospitare GitLab sui tuoi server, in un container o su un provider cloud.
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## Caratteristiche
+
+      - Gestisci repository Git con controlli di accesso granulari che mantengono sicuro il tuo codice
+      - Esegui revisioni del codice e migliora la collaborazione con le richieste di unione
+      - Completa pipeline di integrazione continua (CI) e distribuzione/consegna continua (CD) per costruire, testare e distribuire le tue applicazioni
+      - Ogni progetto può anche avere un sistema di tracciamento dei problemi, una bacheca delle issue e un wiki
+      - Utilizzato da più di 100.000 organizzazioni, GitLab è la soluzione più popolare per gestire repository Git in sede
+      - Completamente gratuito e open source (licenza MIT Expat)
+  ko:
+    description: 올인원 Git 호스팅을 지원하는 소프트웨어 개발 서비스
+    readme: |-
+      GitLab은 버전 관리, 이슈 추적, 코드 리뷰, CI/CD 등이 내장된 오픈 소스 엔드투엔드 소프트웨어 개발 플랫폼입니다. 자체 서버, 컨테이너 또는 클라우드 제공업체에서 GitLab을 자체 호스팅할 수 있습니다.
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## 특징
+
+      - 세분화된 접근 제어로 Git 저장소를 관리하여 코드를 안전하게 보호
+      - 병합 요청을 통한 코드 리뷰 수행 및 협업 강화
+      - 애플리케이션을 빌드, 테스트 및 배포하기 위한 지속적 통합(CI) 및 지속적 배포/전달(CD) 파이프라인 완비
+      - 각 프로젝트는 이슈 트래커, 이슈 보드 및 위키를 보유 가능
+      - 100,000개 이상의 조직에서 사용하며, GitLab은 온프레미스 환경에서 Git 저장소를 관리하는 가장 인기 있는 솔루션
+      - 완전히 무료이며 오픈 소스(MIT Expat 라이선스)
+  ja:
+    description: オールインワンのソフトウェア開発サービス（Gitホスティング付き）
+    readme: |-
+      GitLabは、バージョン管理、課題追跡、コードレビュー、CI/CD などを備えたオープンソースのエンドツーエンドソフトウェア開発プラットフォームです。自社のサーバー、コンテナ、またはクラウドプロバイダーで GitLab をセルフホストできます。
+
+      ![preview](https://images.ctfassets.net/xz1dnu24egyd/5T4fBtZPK48WS8IMUrCJaa/6a37be7f580956216f7c6d471df08b5a/homepage-image.png)
+
+      <hr>
+
+      ## 機能
+
+      - きめ細かなアクセス制御でコードを安全に保ちながら Git リポジトリを管理
+      - マージリクエストによるコードレビューとコラボレーションの強化
+      - アプリケーションのビルド、テスト、デプロイを行うための継続的インテグレーション（CI）と継続的デプロイメント/デリバリー（CD）パイプライン
+      - 各プロジェクトには課題トラッカー、課題ボード、Wikiを設置可能
+      - 10万以上の組織で使用されており、GitLabはオンプレミスでGitリポジトリを管理する最も人気のあるソリューション
+      - 完全に無料でオープンソース（MIT Expatライセンス）

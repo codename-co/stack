@@ -1,0 +1,104 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: appsmith
+name: Appsmith
+flavor: DockerCompose
+version: "1.54"
+updated_at: 2024-12-25
+description: Internal tool builder
+author: Appsmith, Inc
+license: Apache-2.0
+homepage: https://www.appsmith.com
+repository: https://github.com/appsmithorg/appsmith
+stars: 35100
+tags:
+  - internal-tool
+  - low-code
+  - no-code
+alternativeTo:
+  - retool
+  - powerapps
+readme: >
+  Organizations build internal applications such as dashboards, database GUIs,
+  admin panels, approval apps, customer support dashboards, and more to help
+  their teams perform day-to-day operations.
+
+  Appsmith is an open-source tool that enables the rapid development of these
+  internal apps.
+
+
+  <iframe width="100%" height="400"
+  src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB"
+  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+i18n:
+  de:
+    description: Entwickler für interne Werkzeuge
+    readme: |-
+      Organisationen entwickeln interne Anwendungen wie Dashboards, Datenbank-GUIs, Admin-Panels, Genehmigungs-Apps, Kundenservice-Dashboards und mehr, um ihren Teams die tägliche Arbeit zu erleichtern.
+      Appsmith ist ein Open-Source-Tool, das die schnelle Entwicklung dieser internen Apps ermöglicht.
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  zh:
+    description: 内部工具开发者
+    readme: |-
+      组织构建内部应用程序，如仪表板、数据库图形界面、管理面板、审批应用、客户支持仪表板等，以帮助团队执行日常运营。
+      Appsmith是一个开源工具，能够快速开发这些内部应用。
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  it:
+    description: Costruttore di strumenti interni
+    readme: |-
+      Le organizzazioni creano applicazioni interne come dashboard, interfacce grafiche per database, pannelli di amministrazione, app per approvazioni, dashboard per il supporto clienti e altro per aiutare i loro team a svolgere le operazioni quotidiane.
+      Appsmith è uno strumento open-source che permette lo sviluppo rapido di queste applicazioni interne.
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  ar:
+    description: أداة بناء داخلية
+    readme: |-
+      تقوم المؤسسات ببناء تطبيقات داخلية مثل لوحات المعلومات وواجهات قواعد البيانات الرسومية ولوحات الإدارة وتطبيقات الموافقة ولوحات معلومات دعم العملاء والمزيد لمساعدة فرقها في أداء العمليات اليومية.
+      Appsmith هي أداة مفتوحة المصدر تمكّن من التطوير السريع لهذه التطبيقات الداخلية.
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  es:
+    description: Constructor de herramientas internas
+    readme: |-
+      Las organizaciones construyen aplicaciones internas como paneles de control, interfaces gráficas de bases de datos, paneles de administración, aplicaciones de aprobación, paneles de soporte al cliente y más para ayudar a sus equipos a realizar operaciones diarias.
+      Appsmith es una herramienta de código abierto que permite el desarrollo rápido de estas aplicaciones internas.
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  ja:
+    description: 社内ツール開発者
+    readme: |-
+      組織は、チームが日々の業務を遂行するのを支援するために、ダッシュボード、データベースGUI、管理パネル、承認アプリ、カスタマーサポートダッシュボードなどの内部アプリケーションを構築します。
+      Appsmithは、これらの内部アプリケーションの迅速な開発を可能にするオープンソースツールです。
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  ko:
+    description: 내부 도구 제작자
+    readme: |-
+      조직은 팀이 일상적인 운영을 수행하는 데 도움이 되도록 대시보드, 데이터베이스 GUI, 관리자 패널, 승인 앱, 고객 지원 대시보드 등의 내부 애플리케이션을 구축합니다.
+      Appsmith는 이러한 내부 앱의 신속한 개발을 가능하게 하는 오픈소스 도구입니다.
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  fr:
+    description: Créateur d'outils internes
+    readme: |-
+      Les organisations créent des applications internes telles que des tableaux de bord, des interfaces graphiques de bases de données, des panneaux d'administration, des applications d'approbation, des tableaux de bord de support client, et plus encore pour aider leurs équipes à effectuer leurs opérations quotidiennes.
+      Appsmith est un outil open-source qui permet le développement rapide de ces applications internes.
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  pt:
+    description: Construtor de ferramentas internas
+    readme: |-
+      As organizações criam aplicações internas como painéis, interfaces gráficas de banco de dados, painéis administrativos, aplicativos de aprovação, painéis de suporte ao cliente e muito mais para ajudar suas equipes a realizar operações diárias.
+      O Appsmith é uma ferramenta de código aberto que permite o desenvolvimento rápido dessas aplicações internas.
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  ru:
+    description: Создатель внутренних инструментов
+    readme: |-
+      Организации создают внутренние приложения, такие как информационные панели, графические интерфейсы баз данных, панели администрирования, приложения для согласований, панели поддержки клиентов и другие, чтобы помочь своим командам выполнять повседневные операции.
+      Appsmith - это инструмент с открытым исходным кодом, который позволяет быстро разрабатывать такие внутренние приложения.
+
+      <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/NnaJdA1A11s?si=-1eCCviIbXWvKQxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

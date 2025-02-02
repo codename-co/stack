@@ -1,0 +1,17 @@
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:${STIRLINGPDF_VERSION:-0.36.6}
+    # ports:
+    #   - 8080:8080
+    # volumes:
+    #   - ./StirlingPDF/trainingData:/usr/share/tessdata # Required for extra OCR languages
+    #   - ./StirlingPDF/extraConfigs:/configs
+    #   - ./StirlingPDF/customFiles:/customFiles/
+    #   - ./StirlingPDF/logs:/logs/
+    #   - ./StirlingPDF/pipeline:/pipeline/
+    env_file: .env
+    labels:
+      dash.name: Stirling PDF
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.stirling-pdf.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.stirling-pdf.loadbalancer.server.port: 8080

@@ -1,0 +1,123 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: appflowy
+name: Appflowy
+icon: Ⓐ
+flavor: DockerCompose
+version: "0.7.8"
+updated_at: 2024-12-17
+description: Collaborative workspace (Linux only)
+author: AppFlowy
+license: AGPL-3.0
+homepage: https://appflowy.io/
+repository: https://github.com/AppFlowy-IO/appflowy
+stars: 58800
+tags:
+  - knowledge-base
+  - note-taking
+  - collaboration
+alternativeTo:
+  - notion
+readme: >
+  AppFlowy is the AI workspace where you achieve more without losing control of
+  your data
+
+
+  ![AppFlowy Kanban Board for
+  To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+i18n:
+  ar:
+    description: مساحة العمل التعاونية (لينكس فقط)
+    readme: >-
+      أبفلوي هو مساحة العمل المدعومة بالذكاء الاصطناعي حيث يمكنك تحقيق المزيد
+      دون فقدان السيطرة على بياناتك
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  de:
+    description: Gemeinsamer Arbeitsbereich (nur Linux)
+    readme: >-
+      AppFlowy ist der KI-Arbeitsbereich, in dem Sie mehr erreichen, ohne die
+      Kontrolle über Ihre Daten zu verlieren
+
+
+      ![AppFlowy Kanban Board für
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  zh:
+    description: 协作工作空间（仅限Linux）
+    readme: >-
+      AppFlowy 是一个人工智能工作空间，让你在不失去数据控制权的情况下实现更多目标
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  es:
+    description: Espacio de trabajo colaborativo (solo Linux)
+    readme: >-
+      AppFlowy es el espacio de trabajo con IA donde logras más sin perder el
+      control de tus datos
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  fr:
+    description: Espace de travail collaboratif (Linux uniquement)
+    readme: >-
+      AppFlowy est l'espace de travail IA où vous accomplissez davantage sans
+      perdre le contrôle de vos données
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  it:
+    description: Spazio di lavoro collaborativo (solo Linux)
+    readme: >-
+      AppFlowy è lo spazio di lavoro IA dove puoi ottenere di più senza perdere
+      il controllo dei tuoi dati
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  ko:
+    description: 공동 작업 공간 (Linux 전용)
+    readme: >-
+      AppFlowy는 데이터 제어를 잃지 않고 더 많은 것을 달성할 수 있는 AI 워크스페이스입니다
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  pt:
+    description: Espaço de trabalho colaborativo (somente Linux)
+    readme: >-
+      AppFlowy é o espaço de trabalho com IA onde você realiza mais sem perder o
+      controle dos seus dados
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  ru:
+    description: Совместное рабочее пространство (только для Linux)
+    readme: >-
+      AppFlowy - это рабочее пространство с ИИ, где вы достигаете большего, не
+      теряя контроля над своими данными
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  hi:
+    description: सहयोगी कार्यस्थल (केवल लिनक्स)
+    readme: >-
+      AppFlowy एक AI वर्कस्पेस है जहाँ आप अपने डेटा पर नियंत्रण खोए बिना अधिक
+      हासिल करते हैं
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)
+  ja:
+    description: 共同作業スペース (Linuxのみ)
+    readme: >-
+      AppFlowyはAIワークスペースで、データの管理を失うことなくより多くのことを達成できます。
+
+
+      ![AppFlowy Kanban Board for
+      To-dos](https://appflowy.io/_next/static/media/tasks.796c753e.png)

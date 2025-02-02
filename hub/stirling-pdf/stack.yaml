@@ -1,0 +1,255 @@
+slug: stirling-pdf
+name: Stirling PDF
+icon: 📃
+flavor: DockerCompose
+version: 0.36.6
+updated_at: 2025-01-02
+description: Perform various operations on PDF files
+author: Stirling-PDF, Inc
+license: MIT
+homepage: https://www.stirlingpdf.com
+repository: https://github.com/Stirling-Tools/Stirling-PDF
+stars: 48700
+tags:
+  - pdf
+alternativeTo:
+  - adobe-acrobat
+readme: |
+  Stirling-PDF is a robust, locally hosted web-based PDF manipulation tool using Docker. It enables you to carry out various operations on PDF files, including splitting, merging, converting, reorganizing, adding images, rotating, compressing, and more. This locally hosted web application has evolved to encompass a comprehensive set of features, addressing all your PDF requirements.
+
+  ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+  <hr>
+
+  ## Features
+
+  - 50+ PDF Operations
+  - Parallel file processing and downloads
+  - Dark mode support
+  - Custom download options
+  - Custom 'Pipelines' to run multiple features in a automated queue
+  - API for integration with external scripts
+  - Optional Login and Authentication support (see [here](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security) for documentation)
+  - Database Backup and Import (see [here](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE) for documentation)
+  - Enterprise features like SSO see [here](https://docs.stirlingpdf.com/Enterprise%20Edition)
+i18n:
+  ar:
+    description: إجراء عمليات مختلفة على ملفات PDF
+    readme: |-
+      Stirling-PDF هو أداة قوية لمعالجة ملفات PDF عبر الويب تستضيفها محلياً باستخدام Docker. يتيح لك تنفيذ عمليات متنوعة على ملفات PDF، بما في ذلك التقسيم، والدمج، والتحويل، وإعادة التنظيم، وإضافة الصور، والتدوير، والضغط، والمزيد. هذا التطبيق المستضاف محلياً تطور ليشمل مجموعة شاملة من الميزات، مما يلبي جميع متطلباتك المتعلقة بملفات PDF.
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## المميزات
+
+      - أكثر من 50 عملية لملفات PDF
+      - معالجة وتنزيل الملفات بشكل متوازٍ
+      - دعم الوضع المظلم
+      - خيارات تنزيل مخصصة
+      - "مسارات" مخصصة لتشغيل ميزات متعددة في قائمة انتظار آلية
+      - واجهة برمجة التطبيقات (API) للتكامل مع النصوص البرمجية الخارجية
+      - دعم اختياري لتسجيل الدخول والمصادقة (راجع [هنا](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security) للتوثيق)
+      - النسخ الاحتياطي وإستيراد قاعدة البيانات (راجع [هنا](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE) للتوثيق)
+      - ميزات المؤسسات مثل تسجيل الدخول الموحد SSO راجع [هنا](https://docs.stirlingpdf.com/Enterprise%20Edition)
+  ja:
+    description: PDFファイルに対してさまざまな操作を実行する
+    readme: |-
+      Stirling-PDFは、Dockerを使用したローカルホスト型のウェブベースPDF操作ツールです。分割、結合、変換、再編成、画像の追加、回転、圧縮など、PDFファイルに対する様々な操作を実行することができます。このローカルホスト型ウェブアプリケーションは、あらゆるPDFニーズに対応する包括的な機能セットへと進化しています。
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## 機能
+
+      - 50以上のPDF操作
+      - 並列ファイル処理とダウンロード
+      - ダークモード対応
+      - カスタムダウンロードオプション
+      - 自動化されたキューで複数の機能を実行するカスタム'パイプライン'
+      - 外部スクリプトと統合するためのAPI
+      - オプションのログインと認証サポート（ドキュメントは[こちら](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security)）
+      - データベースのバックアップとインポート（ドキュメントは[こちら](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE)）
+      - SSOなどのエンタープライズ機能は[こちら](https://docs.stirlingpdf.com/Enterprise%20Edition)
+  es:
+    description: Realizar diversas operaciones en archivos PDF
+    readme: |-
+      Stirling-PDF es una robusta herramienta web de manipulación de PDF alojada localmente que utiliza Docker. Te permite realizar varias operaciones en archivos PDF, incluyendo dividir, fusionar, convertir, reorganizar, añadir imágenes, rotar, comprimir y más. Esta aplicación web alojada localmente ha evolucionado para abarcar un conjunto completo de características, atendiendo todas tus necesidades de PDF.
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## Características
+
+      - Más de 50 operaciones PDF
+      - Procesamiento y descargas paralelas de archivos
+      - Soporte para modo oscuro
+      - Opciones de descarga personalizadas
+      - 'Pipelines' personalizados para ejecutar múltiples funciones en una cola automatizada
+      - API para integración con scripts externos
+      - Soporte opcional de inicio de sesión y autenticación (ver [aquí](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security) para documentación)
+      - Respaldo e importación de base de datos (ver [aquí](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE) para documentación)
+      - Características empresariales como SSO ver [aquí](https://docs.stirlingpdf.com/Enterprise%20Edition)
+  hi:
+    description: पीडीएफ फाइलों पर विभिन्न कार्य करें
+    readme: |-
+      Stirling-PDF एक मजबूत, स्थानीय रूप से होस्ट किया गया वेब-आधारित PDF संचालन टूल है जो Docker का उपयोग करता है। यह आपको PDF फाइलों पर विभिन्न कार्य करने में सक्षम बनाता है, जिसमें विभाजन, विलय, रूपांतरण, पुनर्व्यवस्थित करना, छवियां जोड़ना, घुमाना, संपीड़न और अधिक शामिल हैं। यह स्थानीय रूप से होस्ट किया गया वेब एप्लिकेशन आपकी सभी PDF आवश्यकताओं को पूरा करने के लिए व्यापक सुविधाओं के साथ विकसित हुआ है।
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - 50+ PDF कार्य
+      - समानांतर फाइल प्रोसेसिंग और डाउनलोड
+      - डार्क मोड समर्थन
+      - कस्टम डाउनलोड विकल्प
+      - स्वचालित कतार में कई सुविधाओं को चलाने के लिए कस्टम 'पाइपलाइन'
+      - बाहरी स्क्रिप्ट के साथ एकीकरण के लिए API
+      - वैकल्पिक लॉगिन और प्रमाणीकरण समर्थन (दस्तावेज़ीकरण के लिए [यहां](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security) देखें)
+      - डेटाबेस बैकअप और आयात (दस्तावेज़ीकरण के लिए [यहां](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE) देखें)
+      - एंटरप्राइज सुविधाएं जैसे SSO [यहां](https://docs.stirlingpdf.com/Enterprise%20Edition) देखें
+  de:
+    description: PDF-Dateien verschiedene Operationen durchführen
+    readme: |-
+      Stirling-PDF ist ein leistungsfähiges, lokal gehostetes webbasiertes PDF-Bearbeitungstool, das Docker verwendet. Es ermöglicht Ihnen verschiedene Operationen an PDF-Dateien durchzuführen, einschließlich Teilen, Zusammenführen, Konvertieren, Neuordnen, Bilder hinzufügen, Rotieren, Komprimieren und mehr. Diese lokal gehostete Webanwendung hat sich zu einem umfassenden Funktionspaket entwickelt, das alle Ihre PDF-Anforderungen erfüllt.
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## Funktionen
+
+      - Über 50 PDF-Operationen
+      - Parallele Dateiverarbeitung und Downloads
+      - Unterstützung für Dark Mode
+      - Anpassbare Download-Optionen
+      - Benutzerdefinierte 'Pipelines' zur automatisierten Ausführung mehrerer Funktionen
+      - API zur Integration mit externen Skripten
+      - Optionale Anmeldung und Authentifizierung (siehe [hier](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security) für Dokumentation)
+      - Datenbank-Backup und Import (siehe [hier](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE) für Dokumentation)
+      - Enterprise-Funktionen wie SSO siehe [hier](https://docs.stirlingpdf.com/Enterprise%20Edition)
+  fr:
+    description: Effectuer diverses opérations sur des fichiers PDF
+    readme: |-
+      Stirling-PDF est un outil robuste de manipulation PDF basé sur le web et hébergé localement utilisant Docker. Il vous permet d'effectuer diverses opérations sur les fichiers PDF, notamment la division, la fusion, la conversion, la réorganisation, l'ajout d'images, la rotation, la compression, et plus encore. Cette application web hébergée localement a évolué pour englober un ensemble complet de fonctionnalités, répondant à tous vos besoins en matière de PDF.
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - Plus de 50 opérations PDF
+      - Traitement et téléchargement parallèles des fichiers
+      - Support du mode sombre
+      - Options de téléchargement personnalisées
+      - 'Pipelines' personnalisés pour exécuter plusieurs fonctionnalités dans une file d'attente automatisée
+      - API pour l'intégration avec des scripts externes
+      - Support optionnel de connexion et d'authentification (voir [ici](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security) pour la documentation)
+      - Sauvegarde et importation de base de données (voir [ici](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE) pour la documentation)
+      - Fonctionnalités entreprise comme SSO voir [ici](https://docs.stirlingpdf.com/Enterprise%20Edition)
+  it:
+    description: Eseguire varie operazioni sui file PDF
+    readme: |-
+      Stirling-PDF è un potente strumento web di manipolazione PDF ospitato in locale tramite Docker. Permette di eseguire varie operazioni sui file PDF, inclusi la divisione, l'unione, la conversione, la riorganizzazione, l'aggiunta di immagini, la rotazione, la compressione e altro. Questa applicazione web ospitata localmente si è evoluta fino a includere un set completo di funzionalità, rispondendo a tutte le tue esigenze PDF.
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## Funzionalità
+
+      - Oltre 50 operazioni PDF
+      - Elaborazione e download paralleli dei file
+      - Supporto modalità scura
+      - Opzioni di download personalizzate
+      - "Pipeline" personalizzate per eseguire più funzionalità in una coda automatizzata
+      - API per l'integrazione con script esterni
+      - Supporto opzionale per login e autenticazione (vedi [qui](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security) per la documentazione)
+      - Backup e importazione del database (vedi [qui](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE) per la documentazione)
+      - Funzionalità aziendali come SSO vedi [qui](https://docs.stirlingpdf.com/Enterprise%20Edition)
+  zh:
+    description: 对 PDF 文件执行各种操作
+    readme: |-
+      Stirling-PDF 是一个强大的、本地托管的基于网络的 PDF 处理工具，使用 Docker 运行。它使您能够对 PDF 文件进行各种操作，包括拆分、合并、转换、重组、添加图像、旋转、压缩等。这个本地托管的网络应用程序已发展成为一个功能全面的工具，满足您所有的 PDF 需求。
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## 功能特点
+
+      - 50多种PDF操作
+      - 并行文件处理和下载
+      - 深色模式支持
+      - 自定义下载选项
+      - 自定义"流水线"以自动队列运行多个功能
+      - 用于与外部脚本集成的API
+      - 可选的登录和身份验证支持（文档请参见[这里](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security)）
+      - 数据库备份和导入（文档请参见[这里](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE)）
+      - 企业版功能如SSO（详见[这里](https://docs.stirlingpdf.com/Enterprise%20Edition)）
+  pt:
+    description: Realizar várias operações em arquivos PDF
+    readme: |-
+      Stirling-PDF é uma ferramenta robusta de manipulação de PDF baseada na web e hospedada localmente usando Docker. Ela permite realizar várias operações em arquivos PDF, incluindo dividir, mesclar, converter, reorganizar, adicionar imagens, rotacionar, comprimir e mais. Esta aplicação web hospedada localmente evoluiu para abranger um conjunto abrangente de recursos, atendendo a todas as suas necessidades de PDF.
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## Recursos
+
+      - Mais de 50 operações com PDF
+      - Processamento e downloads paralelos de arquivos
+      - Suporte ao modo escuro
+      - Opções personalizadas de download
+      - 'Pipelines' personalizados para executar múltiplos recursos em uma fila automatizada
+      - API para integração com scripts externos
+      - Suporte opcional a Login e Autenticação (veja [aqui](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security) para documentação)
+      - Backup e Importação de Banco de Dados (veja [aqui](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE) para documentação)
+      - Recursos empresariais como SSO veja [aqui](https://docs.stirlingpdf.com/Enterprise%20Edition)
+  ru:
+    description: Выполнять различные операции с PDF файлами
+    readme: |-
+      Stirling-PDF - это надежный локально размещенный веб-инструмент для работы с PDF-файлами, использующий Docker. Он позволяет выполнять различные операции с PDF-файлами, включая разделение, объединение, конвертацию, реорганизацию, добавление изображений, поворот, сжатие и многое другое. Это локально размещенное веб-приложение развилось до комплексного набора функций, отвечающего всем вашим потребностям в работе с PDF.
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## Возможности
+
+      - Более 50 операций с PDF
+      - Параллельная обработка файлов и загрузки
+      - Поддержка темного режима
+      - Настраиваемые параметры загрузки
+      - Пользовательские 'Конвейеры' для выполнения нескольких функций в автоматизированной очереди
+      - API для интеграции с внешними скриптами
+      - Опциональная поддержка входа и аутентификации (см. документацию [здесь](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security))
+      - Резервное копирование и импорт базы данных (см. документацию [здесь](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE))
+      - Корпоративные функции, такие как SSO, см. [здесь](https://docs.stirlingpdf.com/Enterprise%20Edition)
+  ko:
+    description: PDF 파일에 대한 다양한 작업 수행
+    readme: |-
+      Stirling-PDF는 Docker를 사용하는 강력한 로컬 호스팅 웹 기반 PDF 조작 도구입니다. PDF 파일 분할, 병합, 변환, 재구성, 이미지 추가, 회전, 압축 등 다양한 작업을 수행할 수 있습니다. 이 로컬 호스팅 웹 애플리케이션은 모든 PDF 요구 사항을 충족하는 포괄적인 기능 세트로 발전했습니다.
+
+      ![preview](https://github.com/Stirling-Tools/Stirling-PDF/raw/main/images/stirling-home.jpg)
+
+      <hr>
+
+      ## 기능
+
+      - 50개 이상의 PDF 작업
+      - 병렬 파일 처리 및 다운로드
+      - 다크 모드 지원
+      - 맞춤형 다운로드 옵션
+      - 자동화된 대기열에서 여러 기능을 실행하는 맞춤형 '파이프라인'
+      - 외부 스크립트와의 통합을 위한 API
+      - 선택적 로그인 및 인증 지원 (문서는 [여기](https://docs.stirlingpdf.com/Advanced%20Configuration/System%20and%20Security) 참조)
+      - 데이터베이스 백업 및 가져오기 (문서는 [여기](https://docs.stirlingpdf.com/Advanced%20Configuration/DATABASE) 참조)
+      - SSO와 같은 엔터프라이즈 기능은 [여기](https://docs.stirlingpdf.com/Enterprise%20Edition) 참조

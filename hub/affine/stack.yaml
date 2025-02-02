@@ -1,0 +1,175 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: affine
+name: Affine
+flavor: DockerCompose
+version: "0.19.4"
+updated_at: 2024-12-31
+description: Collaborative workspace for your knowledge base
+author: TOEVERYTHING PTE
+license: MIT
+homepage: https://affine.pro
+repository: https://github.com/toeverything/AFFiNE
+stars: 44100
+tags:
+  - knowledge-base
+  - note-taking
+  - collaboration
+  - whiteboard
+alternativeTo:
+  - notion
+  - miro
+readme: |
+  This is the Community Edition of Affine.
+
+  ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+  <hr>
+
+  AFFiNE is an open-source, all-in-one workspace and an operating system for all the building blocks that assemble your knowledge base and much more -- wiki, knowledge management, presentation and digital assets. It's a better alternative to Notion and Miro.
+
+  A privacy-focused, local-first, open-source, and ready-to-use alternative for Notion & Miro.
+  One hyper-fused platform for wildly creative minds.
+i18n:
+  fr:
+    description: Espace de travail collaboratif pour votre base de connaissances
+    readme: |-
+      Voici l'édition Communautaire d'Affine.
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      AFFiNE est un espace de travail tout-en-un open source et un système d'exploitation pour tous les éléments qui constituent votre base de connaissances et bien plus encore -- wiki, gestion des connaissances, présentation et ressources numériques. C'est une meilleure alternative à Notion et Miro.
+
+      Une alternative à Notion et Miro axée sur la confidentialité, privilégiant le local, open source et prête à l'emploi.
+      Une plateforme hyper-fusionnée pour les esprits créatifs.
+  ar:
+    description: مساحة عمل تعاونية لقاعدة المعرفة الخاصة بك
+    readme: |-
+      هذا هو الإصدار المجتمعي من Affine.
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      AFFiNE هو مساحة عمل مفتوحة المصدر متكاملة ونظام تشغيل لجميع اللبنات الأساسية التي تشكل قاعدة معرفتك والكثير غير ذلك -- ويكي، إدارة المعرفة، العروض التقديمية والأصول الرقمية. إنه بديل أفضل لـ Notion و Miro.
+
+      بديل يركز على الخصوصية، يعمل محلياً أولاً، مفتوح المصدر، وجاهز للاستخدام عن Notion و Miro.
+      منصة مدمجة واحدة للعقول المبدعة بشكل كبير.
+  zh:
+    description: 知识库的协作工作空间
+    readme: |-
+      这是 Affine 的社区版本。
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      AFFiNE 是一个开源的多合一工作空间和操作系统，用于组建你的知识库及更多功能 -- 包括 wiki、知识管理、演示和数字资产。它是 Notion 和 Miro 的更好替代品。
+
+      一个注重隐私、本地优先、开源且即可使用的 Notion 和 Miro 替代方案。
+      为富有创造力的思维打造的超融合平台。
+  de:
+    description: Kollaborativer Arbeitsbereich für Ihre Wissensdatenbank
+    readme: |-
+      Dies ist die Community Edition von Affine.
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      AFFiNE ist ein Open-Source-All-in-One-Arbeitsbereich und ein Betriebssystem für alle Bausteine, die Ihre Wissensbasis und vieles mehr zusammenstellen -- Wiki, Wissensmanagement, Präsentation und digitale Assets. Es ist eine bessere Alternative zu Notion und Miro.
+
+      Eine datenschutzorientierte, local-first, Open-Source und sofort einsatzfähige Alternative zu Notion & Miro.
+      Eine hyper-vernetzte Plattform für außergewöhnlich kreative Köpfe.
+  es:
+    description: Espacio de trabajo colaborativo para tu base de conocimiento
+    readme: |-
+      Esta es la Edición Comunitaria de Affine.
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      AFFiNE es un espacio de trabajo todo en uno de código abierto y un sistema operativo para todos los componentes que conforman tu base de conocimiento y mucho más -- wiki, gestión del conocimiento, presentación y activos digitales. Es una mejor alternativa a Notion y Miro.
+
+      Una alternativa a Notion y Miro enfocada en la privacidad, primero local, de código abierto y lista para usar.
+      Una plataforma híper-fusionada para mentes altamente creativas.
+  ru:
+    description: Совместное рабочее пространство для вашей базы знаний
+    readme: |-
+      Это Community Edition приложения Affine.
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      AFFiNE — это рабочее пространство с открытым исходным кодом, объединяющее в себе все необходимые инструменты для создания базы знаний и многого другого — вики, управление знаниями, презентации и цифровые ресурсы. Это лучшая альтернатива Notion и Miro.
+
+      Ориентированная на конфиденциальность, локально-ориентированная, с открытым исходным кодом и готовая к использованию альтернатива Notion и Miro.
+      Единая многофункциональная платформа для творческих умов.
+  ko:
+    description: 지식 데이터베이스를 위한 협업 작업 공간
+    readme: |-
+      이것은 Affine의 커뮤니티 에디션입니다.
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      AFFiNE은 위키, 지식 관리, 프레젠테이션, 디지털 자산 등 지식 기반을 구성하는 모든 구성 요소를 위한 오픈소스 올인원 워크스페이스이자 운영 체제입니다. Notion과 Miro의 더 나은 대안입니다.
+
+      프라이버시 중심, 로컬 우선, 오픈소스이며 바로 사용 가능한 Notion과 Miro의 대안입니다.
+      창의적인 마인드를 위한 하나의 통합된 플랫폼입니다.
+  pt:
+    description: Espaço colaborativo para sua base de conhecimento
+    readme: |-
+      Esta é a Edição Comunitária do Affine.
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      O AFFiNE é um espaço de trabalho tudo-em-um de código aberto e um sistema operacional para todos os blocos de construção que montam sua base de conhecimento e muito mais -- wiki, gestão de conhecimento, apresentação e ativos digitais. É uma alternativa melhor ao Notion e Miro.
+
+      Uma alternativa ao Notion & Miro focada em privacidade, primeiramente local, de código aberto e pronta para usar.
+      Uma plataforma hiper-integrada para mentes extremamente criativas.
+  it:
+    description: Spazio di lavoro collaborativo per la tua base di conoscenze
+    readme: |-
+      Questa è l'Edizione Community di Affine.
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      AFFiNE è uno spazio di lavoro tutto-in-uno open-source e un sistema operativo per tutti gli elementi costitutivi che compongono la tua base di conoscenza e molto altro -- wiki, gestione della conoscenza, presentazioni e risorse digitali. È una migliore alternativa a Notion e Miro.
+
+      Un'alternativa a Notion e Miro incentrata sulla privacy, local-first, open-source e pronta all'uso.
+      Una piattaforma iper-integrata per menti estremamente creative.
+  ja:
+    description: ナレッジベースのための共同作業スペース
+    readme: |-
+      これはAffineのコミュニティエディションです。
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      AFFiNEは、ウィキ、ナレッジマネジメント、プレゼンテーション、デジタルアセットなど、あなたのナレッジベースを構成するすべての要素のためのオープンソースのオールインワンワークスペースであり、オペレーティングシステムです。NotionやMiroのより良い代替として機能します。
+
+      プライバシー重視、ローカルファースト、オープンソース、そしてすぐに使えるNotion & Miroの代替ツール。
+      創造的な思考のための一つの融合プラットフォーム。
+  hi:
+    description: आपके ज्ञान-आधार के लिए सहयोगात्मक कार्यस्थल
+    readme: |-
+      यह अफाइन का कम्युनिटी एडिशन है।
+
+      ![](https://github.com/toeverything/AFFiNE/assets/79301703/49a426bb-8d2b-4216-891a-fa5993642253)
+
+      <hr>
+
+      अफाइन एक ओपन-सोर्स, ऑल-इन-वन वर्कस्पेस और ऑपरेटिंग सिस्टम है जो आपके नॉलेज बेस और बहुत कुछ बनाने वाले सभी बिल्डिंग ब्लॉक्स के लिए है -- विकी, नॉलेज मैनेजमेंट, प्रेजेंटेशन और डिजिटल एसेट्स। यह नोशन और मीरो का एक बेहतर विकल्प है।
+
+      एक प्राइवेसी-फोकस्ड, लोकल-फर्स्ट, ओपन-सोर्स, और तुरंत उपयोग के लिए तैयार नोशन और मीरो का विकल्प।
+      रचनात्मक दिमाग वालों के लिए एक हाइपर-फ्यूज्ड प्लेटफॉर्म।

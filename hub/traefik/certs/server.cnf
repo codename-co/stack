@@ -1,0 +1,21 @@
+[ req ]
+prompt             = no
+string_mask        = default
+default_bits       = 2048
+distinguished_name = req_distinguished_name
+x509_extensions    = x509_ext
+
+[ req_distinguished_name ]
+organizationName = codename
+commonName = Stack Root CA
+
+[ x509_ext ]
+keyUsage=critical,digitalSignature,keyAgreement
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = localhost
+DNS.2 = *.localhost
+DNS.3 = *.stack.local
+DNS.4 = stack.localhost
+DNS.5 = *.stack.localhost

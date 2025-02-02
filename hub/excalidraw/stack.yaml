@@ -1,0 +1,354 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: excalidraw
+name: Excalidraw
+flavor: DockerCompose
+version: latest
+updated_at: 2024-12-29
+description: Whiteboard for sketching hand-drawn like diagrams
+author: Excalidraw
+license: MIT
+homepage: https://excalidraw.com
+repository: https://github.com/excalidraw/excalidraw
+stars: 88300
+tags:
+  - diagram
+  - whiteboard
+alternativeTo:
+  - miro
+  - lucidchart
+  - visio
+readme: |
+  An open source virtual hand-drawn style whiteboard.
+  Collaborative and end-to-end encrypted.
+
+  ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+  <hr>
+
+  ## Features
+
+  The Excalidraw editor (npm package) supports:
+
+  - 💯&nbsp;Free & open-source.
+  - 🎨&nbsp;Infinite, canvas-based whiteboard.
+  - ✍️&nbsp;Hand-drawn like style.
+  - 🌓&nbsp;Dark mode.
+  - 🏗️&nbsp;Customizable.
+  - 📷&nbsp;Image support.
+  - 😀&nbsp;Shape libraries support.
+  - 👅&nbsp;Localization (i18n) support.
+  - 🖼️&nbsp;Export to PNG, SVG & clipboard.
+  - 💾&nbsp;Open format - export drawings as an `.excalidraw` json file.
+  - ⚒️&nbsp;Wide range of tools - rectangle, circle, diamond, arrow, line, free-draw, eraser...
+  - ➡️&nbsp;Arrow-binding & labeled arrows.
+  - 🔙&nbsp;Undo / Redo.
+  - 🔍&nbsp;Zoom and panning support.
+i18n:
+  fr:
+    description: Tableau blanc pour dessiner des diagrammes à main levée
+    readme: |-
+      Un tableau blanc virtuel open source avec un style dessiné à la main.
+      Collaboratif et chiffré de bout en bout.
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      L'éditeur Excalidraw (package npm) propose :
+
+      - 💯&nbsp;Gratuit et open-source.
+      - 🎨&nbsp;Tableau blanc infini basé sur le canvas.
+      - ✍️&nbsp;Style dessiné à la main.
+      - 🌓&nbsp;Mode sombre.
+      - 🏗️&nbsp;Personnalisable.
+      - 📷&nbsp;Support des images.
+      - 😀&nbsp;Support des bibliothèques de formes.
+      - 👅&nbsp;Support de la localisation (i18n).
+      - 🖼️&nbsp;Export en PNG, SVG et presse-papier.
+      - 💾&nbsp;Format ouvert - export des dessins en fichier json `.excalidraw`.
+      - ⚒️&nbsp;Large gamme d'outils - rectangle, cercle, diamant, flèche, ligne, dessin libre, gomme...
+      - ➡️&nbsp;Liaisons par flèches et flèches étiquetées.
+      - 🔙&nbsp;Annuler / Refaire.
+      - 🔍&nbsp;Support du zoom et du déplacement.
+  de:
+    description: Whiteboard zum Skizzieren handgezeichneter Diagramme
+    readme: |
+      Ein Open-Source virtuelles Whiteboard im handgezeichneten Stil.
+      Kollaborativ und Ende-zu-Ende verschlüsselt.
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## Funktionen
+
+      Der Excalidraw Editor (npm-Paket) unterstützt:
+
+      - 💯&nbsp;Kostenlos & Open-Source.
+      - 🎨&nbsp;Unendliche, canvas-basierte Whiteboard.
+      - ✍️&nbsp;Handgezeichneter Stil.
+      - 🌓&nbsp;Dunkelmodus.
+      - 🏗️&nbsp;Anpassbar.
+      - 📷&nbsp;Bildunterstützung.
+      - 😀&nbsp;Unterstützung für Form-Bibliotheken.
+      - 👅&nbsp;Lokalisierung (i18n) Unterstützung.
+      - 🖼️&nbsp;Export als PNG, SVG & in die Zwischenablage.
+      - 💾&nbsp;Offenes Format - Export von Zeichnungen als `.excalidraw` JSON-Datei.
+      - ⚒️&nbsp;Große Auswahl an Werkzeugen - Rechteck, Kreis, Raute, Pfeil, Linie, Freihand, Radierer...
+      - ➡️&nbsp;Pfeilbindung & beschriftete Pfeile.
+      - 🔙&nbsp;Rückgängig / Wiederherstellen.
+      - 🔍&nbsp;Zoom und Schwenk-Unterstützung.
+  ar:
+    description: سبورة بيضاء لرسم المخططات التي تبدو كأنها مرسومة باليد
+    readme: |-
+      لوح رسم افتراضي مفتوح المصدر بنمط مرسوم يدويًا.
+      تعاوني ومشفر من طرف إلى طرف.
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## المميزات
+
+      يدعم محرر Excalidraw (حزمة npm):
+
+      - 💯&nbsp;مجاني ومفتوح المصدر.
+      - 🎨&nbsp;لوح رسم لا نهائي.
+      - ✍️&nbsp;نمط يشبه الرسم اليدوي.
+      - 🌓&nbsp;الوضع الداكن.
+      - 🏗️&nbsp;قابل للتخصيص.
+      - 📷&nbsp;دعم الصور.
+      - 😀&nbsp;دعم مكتبات الأشكال.
+      - 👅&nbsp;دعم التعريب (i18n).
+      - 🖼️&nbsp;تصدير إلى PNG وSVG والحافظة.
+      - 💾&nbsp;تنسيق مفتوح - تصدير الرسومات كملف json بامتداد `.excalidraw`.
+      - ⚒️&nbsp;مجموعة واسعة من الأدوات - مستطيل، دائرة، معين، سهم، خط، رسم حر، ممحاة...
+      - ➡️&nbsp;ربط الأسهم والأسهم المُسماة.
+      - 🔙&nbsp;تراجع / إعادة.
+      - 🔍&nbsp;دعم التكبير والتحريك.
+  zh:
+    description: 画板用于绘制手绘风格的图表
+    readme: |-
+      一个开源的手绘风格虚拟白板。
+      协作性且端到端加密。
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## 功能特性
+
+      Excalidraw编辑器（npm包）支持：
+
+      - 💯&nbsp;免费且开源。
+      - 🎨&nbsp;无限的画布白板。
+      - ✍️&nbsp;手绘风格。
+      - 🌓&nbsp;深色模式。
+      - 🏗️&nbsp;可定制。
+      - 📷&nbsp;支持图片。
+      - 😀&nbsp;支持形状库。
+      - 👅&nbsp;支持本地化（i18n）。
+      - 🖼️&nbsp;导出为PNG、SVG和剪贴板。
+      - 💾&nbsp;开放格式 - 将绘图导出为.excalidraw json文件。
+      - ⚒️&nbsp;丰富的工具 - 矩形、圆形、菱形、箭头、直线、自由绘制、橡皮擦等。
+      - ➡️&nbsp;箭头绑定和标记箭头。
+      - 🔙&nbsp;撤销/重做。
+      - 🔍&nbsp;支持缩放和平移。
+  it:
+    description: Lavagna per disegnare schemi come fatti a mano
+    readme: |-
+      Una lavagna virtuale open source in stile disegnato a mano.
+      Collaborativa e crittografata end-to-end.
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## Caratteristiche
+
+      L'editor Excalidraw (pacchetto npm) supporta:
+
+      - 💯&nbsp;Gratuito e open-source.
+      - 🎨&nbsp;Lavagna infinita basata su canvas.
+      - ✍️&nbsp;Stile simile al disegno a mano.
+      - 🌓&nbsp;Modalità scura.
+      - 🏗️&nbsp;Personalizzabile.
+      - 📷&nbsp;Supporto immagini.
+      - 😀&nbsp;Supporto librerie di forme.
+      - 👅&nbsp;Supporto localizzazione (i18n).
+      - 🖼️&nbsp;Esportazione in PNG, SVG e negli appunti.
+      - 💾&nbsp;Formato aperto - esporta disegni come file json `.excalidraw`.
+      - ⚒️&nbsp;Ampia gamma di strumenti - rettangolo, cerchio, rombo, freccia, linea, disegno libero, gomma...
+      - ➡️&nbsp;Collegamento frecce e frecce etichettate.
+      - 🔙&nbsp;Annulla / Ripristina.
+      - 🔍&nbsp;Supporto zoom e panoramica.
+  ko:
+    description: 스케치와 손으로 그린듯한 다이어그램을 위한 화이트보드
+    readme: |-
+      오픈소스 가상 손그림 스타일 화이트보드.
+      협업 및 종단간 암호화 지원.
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## 기능
+
+      Excalidraw 에디터(npm 패키지)는 다음을 지원합니다:
+
+      - 💯&nbsp;무료 & 오픈소스.
+      - 🎨&nbsp;무한대의 캔버스 기반 화이트보드.
+      - ✍️&nbsp;손그림 스타일.
+      - 🌓&nbsp;다크 모드.
+      - 🏗️&nbsp;커스터마이징 가능.
+      - 📷&nbsp;이미지 지원.
+      - 😀&nbsp;도형 라이브러리 지원.
+      - 👅&nbsp;현지화(i18n) 지원.
+      - 🖼️&nbsp;PNG, SVG & 클립보드로 내보내기.
+      - 💾&nbsp;개방형 포맷 - `.excalidraw` json 파일로 그림 내보내기.
+      - ⚒️&nbsp;다양한 도구 - 사각형, 원, 다이아몬드, 화살표, 선, 자유곡선, 지우개...
+      - ➡️&nbsp;화살표 연결 & 라벨이 있는 화살표.
+      - 🔙&nbsp;실행 취소 / 다시 실행.
+      - 🔍&nbsp;확대/축소 및 이동 지원.
+  es:
+    description: Pizarra para dibujar diagramas con aspecto de hechos a mano
+    readme: |-
+      Una pizarra virtual de estilo dibujado a mano de código abierto.
+      Colaborativa y cifrada de extremo a extremo.
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## Características
+
+      El editor Excalidraw (paquete npm) soporta:
+
+      - 💯&nbsp;Gratuito y de código abierto.
+      - 🎨&nbsp;Pizarra infinita basada en canvas.
+      - ✍️&nbsp;Estilo similar al dibujado a mano.
+      - 🌓&nbsp;Modo oscuro.
+      - 🏗️&nbsp;Personalizable.
+      - 📷&nbsp;Soporte de imágenes.
+      - 😀&nbsp;Soporte de bibliotecas de formas.
+      - 👅&nbsp;Soporte de localización (i18n).
+      - 🖼️&nbsp;Exportación a PNG, SVG y portapapeles.
+      - 💾&nbsp;Formato abierto - exporta dibujos como archivo json `.excalidraw`.
+      - ⚒️&nbsp;Amplia gama de herramientas - rectángulo, círculo, diamante, flecha, línea, dibujo libre, borrador...
+      - ➡️&nbsp;Vinculación de flechas y flechas etiquetadas.
+      - 🔙&nbsp;Deshacer / Rehacer.
+      - 🔍&nbsp;Soporte de zoom y desplazamiento.
+  ja:
+    description: 手書きのような図を描くためのホワイトボード
+    readme: |-
+      オープンソースの手書き風バーチャルホワイトボード。
+      コラボレーション機能と端末間暗号化に対応。
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## 機能
+
+      Excalidrawエディタ（npmパッケージ）の機能：
+
+      - 💯&nbsp;無料＆オープンソース。
+      - 🎨&nbsp;無限のキャンバスベースのホワイトボード。
+      - ✍️&nbsp;手書き風スタイル。
+      - 🌓&nbsp;ダークモード。
+      - 🏗️&nbsp;カスタマイズ可能。
+      - 📷&nbsp;画像対応。
+      - 😀&nbsp;図形ライブラリ対応。
+      - 👅&nbsp;ローカライゼーション（i18n）対応。
+      - 🖼️&nbsp;PNG、SVG、クリップボードへのエクスポート。
+      - 💾&nbsp;オープンフォーマット - 図面を`.excalidraw`JSONファイルとしてエクスポート。
+      - ⚒️&nbsp;豊富なツール - 長方形、円、ダイヤモンド、矢印、直線、フリーハンド、消しゴムなど。
+      - ➡️&nbsp;矢印の結合＆ラベル付き矢印。
+      - 🔙&nbsp;元に戻す/やり直し。
+      - 🔍&nbsp;ズームとパン操作対応。
+  pt:
+    description: Quadro branco para desenhar diagramas com aparência de feitos à mão
+    readme: |-
+      Um quadro branco virtual de estilo desenhado à mão em código aberto.
+      Colaborativo e criptografado ponta a ponta.
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## Funcionalidades
+
+      O editor Excalidraw (pacote npm) suporta:
+
+      - 💯&nbsp;Gratuito e código aberto.
+      - 🎨&nbsp;Quadro branco infinito baseado em canvas.
+      - ✍️&nbsp;Estilo desenhado à mão.
+      - 🌓&nbsp;Modo escuro.
+      - 🏗️&nbsp;Personalizável.
+      - 📷&nbsp;Suporte a imagens.
+      - 😀&nbsp;Suporte a bibliotecas de formas.
+      - 👅&nbsp;Suporte a localização (i18n).
+      - 🖼️&nbsp;Exportação para PNG, SVG e área de transferência.
+      - 💾&nbsp;Formato aberto - exporta desenhos como arquivo json `.excalidraw`.
+      - ⚒️&nbsp;Ampla gama de ferramentas - retângulo, círculo, diamante, seta, linha, desenho livre, borracha...
+      - ➡️&nbsp;Vinculação de setas e setas rotuladas.
+      - 🔙&nbsp;Desfazer / Refazer.
+      - 🔍&nbsp;Suporte a zoom e panorâmica.
+  ru:
+    description: Доска для рисования диаграмм от руки
+    readme: |-
+      Виртуальная доска с рукописным стилем с открытым исходным кодом.
+      Совместная работа и сквозное шифрование.
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## Возможности
+
+      Редактор Excalidraw (npm пакет) поддерживает:
+
+      - 💯&nbsp;Бесплатный и с открытым исходным кодом.
+      - 🎨&nbsp;Бесконечный холст.
+      - ✍️&nbsp;Рукописный стиль.
+      - 🌓&nbsp;Тёмная тема.
+      - 🏗️&nbsp;Настраиваемость.
+      - 📷&nbsp;Поддержка изображений.
+      - 😀&nbsp;Поддержка библиотек фигур.
+      - 👅&nbsp;Поддержка локализации (i18n).
+      - 🖼️&nbsp;Экспорт в PNG, SVG и буфер обмена.
+      - 💾&nbsp;Открытый формат - экспорт рисунков в виде json-файла `.excalidraw`.
+      - ⚒️&nbsp;Широкий набор инструментов - прямоугольник, круг, ромб, стрелка, линия, свободное рисование, ластик...
+      - ➡️&nbsp;Привязка стрелок и стрелки с надписями.
+      - 🔙&nbsp;Отмена / Повтор действий.
+      - 🔍&nbsp;Поддержка масштабирования и панорамирования.
+  hi:
+    description: व्हाइटबोर्ड हाथ से बनाई गई जैसी आरेख बनाने के लिए
+    readme: |-
+      एक ओपन सोर्स वर्चुअल हाथ से बनाई गई शैली वाला व्हाइटबोर्ड।
+      सहयोगात्मक और एंड-टू-एंड एन्क्रिप्टेड।
+
+      ![preview](https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png)
+
+      <hr>
+
+      ## विशेषताएं
+
+      Excalidraw एडिटर (npm पैकेज) समर्थन करता है:
+
+      - 💯&nbsp;मुफ्त और ओपन-सोर्स।
+      - 🎨&nbsp;अनंत, कैनवास-आधारित व्हाइटबोर्ड।
+      - ✍️&nbsp;हाथ से बनाई गई जैसी शैली।
+      - 🌓&nbsp;डार्क मोड।
+      - 🏗️&nbsp;अनुकूलन योग्य।
+      - 📷&nbsp;छवि समर्थन।
+      - 😀&nbsp;आकृति लाइब्रेरी समर्थन।
+      - 👅&nbsp;स्थानीयकरण (i18n) समर्थन।
+      - 🖼️&nbsp;PNG, SVG और क्लिपबोर्ड में निर्यात।
+      - 💾&nbsp;खुला प्रारूप - चित्रों को `.excalidraw` json फ़ाइल के रूप में निर्यात करें।
+      - ⚒️&nbsp;टूल्स की विस्तृत श्रृंखला - आयत, वृत्त, हीरा, तीर, रेखा, मुक्त-चित्र, रबड़...
+      - ➡️&nbsp;तीर-बाइंडिंग और लेबल किए गए तीर।
+      - 🔙&nbsp;पूर्ववत करें / पुनः करें।
+      - 🔍&nbsp;ज़ूम और पैनिंग समर्थन।

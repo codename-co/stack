@@ -1,0 +1,444 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: dify
+name: Dify
+icon: 🤖
+flavor: DockerCompose
+version: "0.15.2"
+updated_at: 2025-01-22
+description: Platform for building apps with AI
+author: LangGenius, Inc
+license: Apache-2.0 (with a twist)
+homepage: https://dify.ai/
+repository: https://github.com/langgenius/dify
+stars: 61000
+tags:
+  - llm
+  - ai
+  - rag
+  - chatbot
+alternativeTo:
+  - dialogflow-cx
+  - rasa
+  - midjourney
+readme: |
+  Dify is an open-source LLM app development platform. Its intuitive interface combines agentic AI workflow, RAG pipeline, agent capabilities, model management, observability features and more, letting you quickly go from prototype to production.
+
+  <video controls width="100%">
+    <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+    ⚠️ Your browser does not support the video tag.
+  </video>
+
+  <hr>
+
+  ## Features
+
+  **1. Workflow**:
+    Build and test powerful AI workflows on a visual canvas, leveraging all the following features and beyond.
+
+  **2. Comprehensive model support**:
+    Seamless integration with hundreds of proprietary / open-source LLMs from dozens of inference providers and self-hosted solutions, covering GPT, Mistral, Llama3, and any OpenAI API-compatible models. A full list of supported model providers can be found [here](https://docs.dify.ai/getting-started/readme/model-providers).
+
+  ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+  **3. Prompt IDE**:
+    Intuitive interface for crafting prompts, comparing model performance, and adding additional features such as text-to-speech to a chat-based app.
+
+  **4. RAG Pipeline**:
+    Extensive RAG capabilities that cover everything from document ingestion to retrieval, with out-of-box support for text extraction from PDFs, PPTs, and other common document formats.
+
+  **5. Agent capabilities**:
+    You can define agents based on LLM Function Calling or ReAct, and add pre-built or custom tools for the agent. Dify provides 50+ built-in tools for AI agents, such as Google Search, DALL·E, Stable Diffusion and WolframAlpha.
+
+  **6. LLMOps**:
+    Monitor and analyze application logs and performance over time. You could continuously improve prompts, datasets, and models based on production data and annotations.
+
+  **7. Backend-as-a-Service**:
+    All of Dify's offerings come with corresponding APIs, so you could effortlessly integrate Dify into your own business logic.
+i18n:
+  fr:
+    description: Plateforme pour créer des applications avec l'IA
+    readme: |-
+      Dify est une plateforme open-source de développement d'applications LLM. Son interface intuitive combine un flux de travail IA, un pipeline RAG, des capacités d'agent, la gestion des modèles, des fonctionnalités d'observabilité et plus encore, vous permettant de passer rapidement du prototype à la production.
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ Votre navigateur ne prend pas en charge la balise vidéo.
+      </video>
+
+      <hr>
+
+      ## Fonctionnalités
+
+      **1. Flux de travail**:
+        Créez et testez des flux de travail IA puissants sur un canevas visuel, exploitant toutes les fonctionnalités suivantes et plus encore.
+
+      **2. Support complet des modèles**:
+        Intégration transparente avec des centaines de modèles LLM propriétaires / open-source de dizaines de fournisseurs d'inférence et de solutions auto-hébergées, couvrant GPT, Mistral, Llama3, et tous les modèles compatibles avec l'API OpenAI. Une liste complète des fournisseurs de modèles supportés peut être trouvée [ici](https://docs.dify.ai/getting-started/readme/model-providers).
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. IDE de Prompt**:
+        Interface intuitive pour créer des prompts, comparer les performances des modèles et ajouter des fonctionnalités supplémentaires comme la synthèse vocale à une application de chat.
+
+      **4. Pipeline RAG**:
+        Des capacités RAG étendues qui couvrent tout, de l'ingestion de documents à la récupération, avec une prise en charge intégrée de l'extraction de texte à partir de PDF, PPT et autres formats de documents courants.
+
+      **5. Capacités d'agent**:
+        Vous pouvez définir des agents basés sur l'appel de fonction LLM ou ReAct, et ajouter des outils préconçus ou personnalisés pour l'agent. Dify fournit plus de 50 outils intégrés pour les agents IA, tels que Google Search, DALL·E, Stable Diffusion et WolframAlpha.
+
+      **6. LLMOps**:
+        Surveillez et analysez les journaux et les performances des applications au fil du temps. Vous pouvez améliorer continuellement les prompts, les jeux de données et les modèles en fonction des données de production et des annotations.
+
+      **7. Backend-as-a-Service**:
+        Toutes les fonctionnalités de Dify sont accompagnées d'API correspondantes, vous permettant d'intégrer facilement Dify dans votre propre logique métier.
+  ar:
+    description: منصة لبناء التطبيقات باستخدام الذكاء الاصطناعي
+    readme: |-
+      Dify هي منصة مفتوحة المصدر لتطوير تطبيقات LLM. تجمع واجهتها السهلة بين سير عمل الذكاء الاصطناعي، وخط أنابيب RAG، وقدرات الوكيل، وإدارة النماذج، وميزات المراقبة والمزيد، مما يتيح لك الانتقال سريعاً من النموذج الأولي إلى الإنتاج.
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ متصفحك لا يدعم علامة الفيديو.
+      </video>
+
+      <hr>
+
+      ## الميزات
+
+      **1. سير العمل**:
+        بناء واختبار سير عمل الذكاء الاصطناعي القوي على لوحة مرئية، مع الاستفادة من جميع الميزات التالية وما بعدها.
+
+      **2. دعم شامل للنماذج**:
+        تكامل سلس مع مئات النماذج المملوكة/مفتوحة المصدر من عشرات مزودي الاستدلال والحلول المستضافة ذاتياً، بما في ذلك GPT وMistral وLlama3 وأي نماذج متوافقة مع واجهة برمجة تطبيقات OpenAI. يمكن العثور على قائمة كاملة بمزودي النماذج المدعومين [هنا](https://docs.dify.ai/getting-started/readme/model-providers).
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. بيئة تطوير متكاملة للتوجيهات**:
+        واجهة بديهية لصياغة التوجيهات، ومقارنة أداء النماذج، وإضافة ميزات إضافية مثل تحويل النص إلى كلام في تطبيق قائم على المحادثة.
+
+      **4. خط أنابيب RAG**:
+        قدرات RAG واسعة تغطي كل شيء من استيعاب المستندات إلى الاسترجاع، مع دعم جاهز لاستخراج النصوص من ملفات PDF وPPT وتنسيقات المستندات الشائعة الأخرى.
+
+      **5. قدرات الوكيل**:
+        يمكنك تحديد الوكلاء استناداً إلى استدعاء وظائف LLM أو ReAct، وإضافة أدوات مسبقة البناء أو مخصصة للوكيل. يوفر Dify أكثر من 50 أداة مدمجة لوكلاء الذكاء الاصطناعي، مثل بحث Google وDALL·E وStable Diffusion وWolframAlpha.
+
+      **6. عمليات LLM**:
+        مراقبة وتحليل سجلات التطبيق والأداء بمرور الوقت. يمكنك تحسين التوجيهات ومجموعات البيانات والنماذج باستمرار بناءً على بيانات الإنت
+  es:
+    description: Plataforma para construir aplicaciones con IA
+    readme: |-
+      Dify es una plataforma de desarrollo de aplicaciones LLM de código abierto. Su interfaz intuitiva combina flujo de trabajo de IA agéntica, pipeline RAG, capacidades de agente, gestión de modelos, características de observabilidad y más, permitiéndote pasar rápidamente del prototipo a la producción.
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ Tu navegador no soporta la etiqueta de video.
+      </video>
+
+      <hr>
+
+      ## Características
+
+      **1. Flujo de trabajo**:
+        Construye y prueba potentes flujos de trabajo de IA en un lienzo visual, aprovechando todas las siguientes características y más.
+
+      **2. Soporte integral de modelos**:
+        Integración perfecta con cientos de modelos LLM propietarios/código abierto de docenas de proveedores de inferencia y soluciones autohospedadas, cubriendo GPT, Mistral, Llama3 y cualquier modelo compatible con la API de OpenAI. Puedes encontrar una lista completa de proveedores de modelos compatibles [aquí](https://docs.dify.ai/getting-started/readme/model-providers).
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. IDE de Prompts**:
+        Interfaz intuitiva para crear prompts, comparar el rendimiento de modelos y agregar características adicionales como texto a voz a una aplicación basada en chat.
+
+      **4. Pipeline RAG**:
+        Amplias capacidades RAG que cubren todo, desde la ingestión de documentos hasta la recuperación, con soporte inmediato para la extracción de texto de PDFs, PPTs y otros formatos de documentos comunes.
+
+      **5. Capacidades de agente**:
+        Puedes definir agentes basados en Function Calling de LLM o ReAct, y agregar herramientas preconfiguradas o personalizadas para el agente. Dify proporciona más de 50 herramientas integradas para agentes de IA, como Google Search, DALL·E, Stable Diffusion y WolframAlpha.
+
+      **6. LLMOps**:
+        Monitorea y analiza los registros y el rendimiento de la aplicación a lo largo del tiempo. Podrías mejorar continuamente los prompts, conjuntos de datos y modelos basándote en datos de producción y anotaciones.
+
+      **7. Backend-como-Servicio**:
+        Todas las ofertas de Dify vienen con APIs correspondientes, por lo que podrías integrar fácilmente Dify en tu propia lógica de negocio.
+  zh:
+    description: 使用AI构建应用程序的平台
+    readme: |-
+      Dify 是一个开源的 LLM 应用开发平台。其直观的界面集成了智能 AI 工作流、RAG 管道、智能代理功能、模型管理、可观测性等特性，让您能够快速从原型转向生产环境。
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ 您的浏览器不支持视频标签。
+      </video>
+
+      <hr>
+
+      ## 功能特性
+
+      **1. 工作流**：
+        在可视化画布上构建和测试强大的 AI 工作流，充分利用以下所有功能及更多特性。
+
+      **2. 全面的模型支持**：
+        无缝集成来自数十个推理提供商和自托管解决方案的数百个专有/开源 LLM，涵盖 GPT、Mistral、Llama3 和任何兼容 OpenAI API 的模型。支持的模型提供商完整列表可以在[这里](https://docs.dify.ai/getting-started/readme/model-providers)找到。
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. Prompt IDE**：
+        直观的界面用于编写提示词、比较模型性能，并为基于对话的应用添加文本转语音等附加功能。
+
+      **4. RAG 管道**：
+        广泛的 RAG 功能，涵盖从文档摄入到检索的全过程，开箱即用地支持从 PDF、PPT 和其他常见文档格式中提取文本。
+
+      **5. 智能代理功能**：
+        您可以基于 LLM 函数调用或 ReAct 定义代理，并为代理添加预构建或自定义工具。Dify 为 AI 代理提供了 50 多个内置工具，如 Google 搜索、DALL·E、Stable Diffusion 和 WolframAlpha。
+
+      **6. LLMOps**：
+        监控和分析应用日志和性能随时间的变化。您可以基于生产数据和注释持续改进提示词、数据集和模型。
+
+      **7. 后端即服务**：
+        Dify 的所有功能都配备相应的 API，因此您可以轻松地将 Dify 集成到您自己的业务逻辑中。
+  de:
+    description: Plattform zum Erstellen von Apps mit KI
+    readme: |-
+      Dify ist eine Open-Source-Plattform zur Entwicklung von LLM-Anwendungen. Die intuitive Benutzeroberfläche kombiniert agentische KI-Workflows, RAG-Pipeline, Agentenfähigkeiten, Modellverwaltung, Beobachtbarkeitsfunktionen und mehr, sodass Sie schnell von der Prototypenphase zur Produktion übergehen können.
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ Ihr Browser unterstützt das Video-Tag nicht.
+      </video>
+
+      <hr>
+
+      ## Funktionen
+
+      **1. Workflow**:
+        Erstellen und testen Sie leistungsstarke KI-Workflows auf einer visuellen Oberfläche und nutzen Sie alle folgenden Funktionen und mehr.
+
+      **2. Umfassende Modellunterstützung**:
+        Nahtlose Integration mit Hunderten von proprietären/Open-Source-LLMs von Dutzenden von Inferenzanbietern und selbst gehosteten Lösungen, die GPT, Mistral, Llama3 und alle OpenAI API-kompatiblen Modelle abdecken. Eine vollständige Liste der unterstützten Modellanbieter finden Sie [hier](https://docs.dify.ai/getting-started/readme/model-providers).
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. Prompt-IDE**:
+        Intuitive Oberfläche zum Erstellen von Prompts, Vergleichen der Modellleistung und Hinzufügen zusätzlicher Funktionen wie Text-zu-Sprache zu einer Chat-basierten Anwendung.
+
+      **4. RAG-Pipeline**:
+        Umfangreiche RAG-Funktionen, die alles von der Dokumentenaufnahme bis zur Abfrage abdecken, mit sofortiger Unterstützung für Textextraktion aus PDFs, PPTs und anderen gängigen Dokumentformaten.
+
+      **5. Agentenfähigkeiten**:
+        Sie können Agenten basierend auf LLM Function Calling oder ReAct definieren und vorgefertigte oder benutzerdefinierte Tools für den Agenten hinzufügen. Dify bietet über 50 integrierte Tools für KI-Agenten, wie Google Search, DALL·E, Stable Diffusion und WolframAlpha.
+
+      **6. LLMOps**:
+        Überwachen und analysieren Sie Anwendungsprotokolle und Leistung im Zeitverlauf. Sie können Prompts, Datensätze und Modelle kontinuierlich auf Basis von Produktionsdaten und Annotationen verbessern.
+
+      **7. Backend-as-a-Service**:
+        Alle Angebote von Dify verfügen über entsprechende APIs, sodass Sie Dify mühelos in Ihre eigene Geschäftslogik integrieren können.
+  it:
+    description: Piattaforma per creare applicazioni con l'IA
+    readme: |-
+      Dify è una piattaforma open-source per lo sviluppo di applicazioni LLM. La sua interfaccia intuitiva combina workflow AI agentico, pipeline RAG, capacità di agenti, gestione dei modelli, funzionalità di osservabilità e altro ancora, permettendoti di passare rapidamente dal prototipo alla produzione.
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ Il tuo browser non supporta il tag video.
+      </video>
+
+      <hr>
+
+      ## Caratteristiche
+
+      **1. Workflow**:
+        Costruisci e testa potenti workflow AI su una canvas visuale, sfruttando tutte le seguenti funzionalità e oltre.
+
+      **2. Supporto completo dei modelli**:
+        Integrazione perfetta con centinaia di modelli LLM proprietari/open-source da decine di fornitori di inferenza e soluzioni self-hosted, che coprono GPT, Mistral, Llama3 e qualsiasi modello compatibile con l'API OpenAI. Un elenco completo dei provider di modelli supportati può essere trovato [qui](https://docs.dify.ai/getting-started/readme/model-providers).
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. IDE per Prompt**:
+        Interfaccia intuitiva per creare prompt, confrontare le prestazioni dei modelli e aggiungere funzionalità aggiuntive come il text-to-speech a un'app basata su chat.
+
+      **4. Pipeline RAG**:
+        Ampie capacità RAG che coprono tutto, dall'inserimento dei documenti al recupero, con supporto immediato per l'estrazione di testo da PDF, PPT e altri formati di documenti comuni.
+
+      **5. Capacità degli agenti**:
+        Puoi definire agenti basati su LLM Function Calling o ReAct e aggiungere strumenti precostruiti o personalizzati per l'agente. Dify fornisce oltre 50 strumenti integrati per gli agenti AI, come Google Search, DALL·E, Stable Diffusion e WolframAlpha.
+
+      **6. LLMOps**:
+        Monitora e analizza i log delle applicazioni e le prestazioni nel tempo. Potresti migliorare continuamente prompt, dataset e modelli basandoti su dati di produzione e annotazioni.
+
+      **7. Backend-as-a-Service**:
+        Tutte le offerte di Dify sono fornite con le relative API, così da poter integrare facilmente Dify nella tua logica di business.
+  ja:
+    description: AIでアプリを構築するためのプラットフォーム
+    readme: |-
+      DifyはオープンソースのLLMアプリ開発プラットフォームです。直感的なインターフェースにはエージェントAIワークフロー、RAGパイプライン、エージェント機能、モデル管理、可観測性機能などが統合されており、プロトタイプから本番環境まで素早く移行できます。
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ お使いのブラウザはビデオタグをサポートしていません。
+      </video>
+
+      <hr>
+
+      ## 機能
+
+      **1. ワークフロー**：
+        ビジュアルキャンバス上で強力なAIワークフローを構築・テストし、以下の機能などを活用できます。
+
+      **2. 包括的なモデルサポート**：
+        数十のインференスプロバイダーやセルフホストソリューションから、数百の独自/オープンソースLLMとのシームレスな統合が可能です。GPT、Mistral、Llama3、およびOpenAI API互換のモデルをカバーしています。サポートされているモデルプロバイダーの完全なリストは[こちら](https://docs.dify.ai/getting-started/readme/model-providers)でご確認いただけます。
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. プロンプトIDE**：
+        プロンプトの作成、モデルパフォーマンスの比較、チャットベースのアプリへの音声合成などの追加機能を直感的に行えるインターフェース。
+
+      **4. RAGパイプライン**：
+        文書の取り込みから検索まで、幅広いRAG機能を提供。PDF、PPTなどの一般的な文書フォーマットからのテキスト抽出にも対応しています。
+
+      **5. エージェント機能**：
+        LLM Function CallingやReActに基づくエージェントを定義し、事前構築されたツールやカスタムツールを追加できます。DifyはGoogle検索、DALL·E、Stable Diffusion、WolframAlphaなど、50以上の組み込みツールをAIエージェント向けに提供しています。
+
+      **6. LLMOps**：
+        アプリケーションのログやパフォーマンスを時系列で監視・分析できます。本番データやアノテーションに基づいて、プロンプト、データセット、モデルを継続的に改善できます。
+
+      **7. Backend-as-a-Service**：
+        Difyのすべての機能に対応するAPIが提供されており、Difyを独自のビジネスロジックに簡単に統合できます。
+  ko:
+    description: AI로 앱을 만드는 플랫폼
+    readme: |-
+      Dify는 오픈소스 LLM 앱 개발 플랫폼입니다. 직관적인 인터페이스는 에이전트 AI 워크플로우, RAG 파이프라인, 에이전트 기능, 모델 관리, 관찰 가능성 기능 등을 결합하여 프로토타입에서 프로덕션까지 신속하게 진행할 수 있게 해줍니다.
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ 브라우저가 비디오 태그를 지원하지 않습니다.
+      </video>
+
+      <hr>
+
+      ## 기능
+
+      **1. 워크플로우**:
+        시각적 캔버스에서 강력한 AI 워크플로우를 구축하고 테스트하며, 다음의 모든 기능 등을 활용할 수 있습니다.
+
+      **2. 포괄적인 모델 지원**:
+        수십 개의 추론 제공업체와 자체 호스팅 솔루션에서 제공하는 수백 개의 독점/오픈소스 LLM과 원활하게 통합되며, GPT, Mistral, Llama3 및 OpenAI API 호환 모델을 포함합니다. 지원되는 모델 제공업체의 전체 목록은 [여기](https://docs.dify.ai/getting-started/readme/model-providers)에서 확인할 수 있습니다.
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. 프롬프트 IDE**:
+        프롬프트 작성, 모델 성능 비교, 채팅 기반 앱에 음성 변환과 같은 추가 기능을 더할 수 있는 직관적인 인터페이스.
+
+      **4. RAG 파이프라인**:
+        문서 수집에서 검색까지 모든 것을 다루는 광범위한 RAG 기능으로, PDF, PPT 및 기타 일반적인 문서 형식의 텍스트 추출을 즉시 지원합니다.
+
+      **5. 에이전트 기능**:
+        LLM 함수 호출 또는 ReAct를 기반으로 에이전트를 정의하고, 에이전트에 미리 구축된 도구나 맞춤형 도구를 추가할 수 있습니다. Dify는 Google 검색, DALL·E, Stable Diffusion, WolframAlpha와 같은 50개 이상의 내장 도구를 AI 에이전트용으로 제공합니다.
+
+      **6. LLMOps**:
+        시간 경과에 따른 애플리케이션 로그와 성능을 모니터링하고 분석합니다. 프로덕션 데이터와 주석을 기반으로 프롬프트, 데이터셋, 모델을 지속적으로 개선할 수 있습니다.
+
+      **7. Backend-as-a-Service**:
+        Dify의 모든 제품은 해당하는 API와 함께 제공되므로, Dify를 자체
+  ru:
+    description: Платформа для создания приложений с ИИ
+    readme: |-
+      Dify - это платформа с открытым исходным кодом для разработки LLM-приложений. Её интуитивный интерфейс объединяет агентный рабочий процесс ИИ, конвейер RAG, возможности агентов, управление моделями, функции наблюдаемости и многое другое, позволяя быстро пройти путь от прототипа к продакшену.
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ Ваш браузер не поддерживает тег video.
+      </video>
+
+      <hr>
+
+      ## Функции
+
+      **1. Рабочий процесс**:
+        Создавайте и тестируйте мощные рабочие процессы ИИ на визуальном холсте, используя все нижеперечисленные функции и не только.
+
+      **2. Комплексная поддержка моделей**:
+        Беспрепятственная интеграция с сотнями проприетарных и открытых LLM-моделей от десятков провайдеров вывода и самостоятельно размещаемых решений, включая GPT, Mistral, Llama3 и любые модели, совместимые с OpenAI API. Полный список поддерживаемых провайдеров моделей можно найти [здесь](https://docs.dify.ai/getting-started/readme/model-providers).
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. Prompt IDE**:
+        Интуитивный интерфейс для создания промптов, сравнения производительности моделей и добавления дополнительных функций, таких как преобразование текста в речь для чат-приложений.
+
+      **4. Конвейер RAG**:
+        Обширные возможности RAG, охватывающие всё от загрузки документов до поиска, с готовой поддержкой извлечения текста из PDF, PPT и других распространенных форматов документов.
+
+      **5. Возможности агентов**:
+        Вы можете определять агентов на основе LLM Function Calling или ReAct и добавлять предустановленные или пользовательские инструменты для агента. Dify предоставляет более 50 встроенных инструментов для ИИ-агентов, таких как Google Search, DALL·E, Stable Diffusion и WolframAlpha.
+
+      **6. LLMOps**:
+        Отслеживайте и анализируйте логи приложений и производительность с течением времени. Вы можете постоянно улучшать промпты, наборы данных и модели на основе производственных данных и аннотаций.
+
+      **7. Backend-как-Сервис**:
+        Все предложения Dify поставляются с соответствующими API, поэтому вы можете легко интегрировать Dify в свою бизнес-логику.
+  pt:
+    description: Plataforma para construir aplicações com IA
+    readme: |-
+      O Dify é uma plataforma de código aberto para desenvolvimento de aplicações LLM. Sua interface intuitiva combina fluxo de trabalho de IA agêntica, pipeline RAG, capacidades de agente, gerenciamento de modelos, recursos de observabilidade e mais, permitindo que você passe rapidamente do protótipo à produção.
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ Seu navegador não suporta a tag de vídeo.
+      </video>
+
+      <hr>
+
+      ## Recursos
+
+      **1. Fluxo de trabalho**:
+        Construa e teste poderosos fluxos de trabalho de IA em uma tela visual, aproveitando todos os recursos a seguir e além.
+
+      **2. Suporte abrangente a modelos**:
+        Integração perfeita com centenas de modelos LLM proprietários/código aberto de dezenas de provedores de inferência e soluções auto-hospedadas, cobrindo GPT, Mistral, Llama3 e quaisquer modelos compatíveis com API OpenAI. Uma lista completa de provedores de modelos suportados pode ser encontrada [aqui](https://docs.dify.ai/getting-started/readme/model-providers).
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. IDE de Prompt**:
+        Interface intuitiva para criar prompts, comparar desempenho de modelos e adicionar recursos adicionais, como texto para fala em um aplicativo baseado em chat.
+
+      **4. Pipeline RAG**:
+        Capacidades RAG extensivas que cobrem tudo, desde a ingestão de documentos até a recuperação, com suporte pronto para extração de texto de PDFs, PPTs e outros formatos comuns de documentos.
+
+      **5. Capacidades de agente**:
+        Você pode definir agentes baseados em Function Calling LLM ou ReAct, e adicionar ferramentas pré-construídas ou personalizadas para o agente. O Dify fornece mais de 50 ferramentas integradas para agentes de IA, como Pesquisa Google, DALL·E, Stable Diffusion e WolframAlpha.
+
+      **6. LLMOps**:
+        Monitore e analise logs e desempenho da aplicação ao longo do tempo. Você pode melhorar continuamente prompts, conjuntos de dados e modelos com base em dados de produção e anotações.
+
+      **7. Backend-como-Serviço**:
+        Todas as ofertas do Dify vêm com APIs correspondentes, para que você possa integrar facilmente o Dify em sua própria lógica de negócios.
+  hi:
+    description: एआई के साथ ऐप्स बनाने का प्लेटफॉर्म
+    readme: |-
+      Dify एक ओपन-सोर्स LLM ऐप डेवलपमेंट प्लेटफॉर्म है। इसका सहज इंटरफ़ेस एजेंटिक AI वर्कफ़्लो, RAG पाइपलाइन, एजेंट क्षमताएं, मॉडल प्रबंधन, अवलोकन सुविधाएं और बहुत कुछ को जोड़ता है, जो आपको प्रोटोटाइप से प्रोडक्शन तक जल्दी पहुंचने में मदद करता है।
+
+      <video controls width="100%">
+        <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
+        ⚠️ आपका ब्राउज़र वीडियो टैग को सपोर्ट नहीं करता है।
+      </video>
+
+      <hr>
+
+      ## विशेषताएं
+
+      **1. वर्कफ़्लो**:
+        विज़ुअल कैनवास पर शक्तिशाली AI वर्कफ़्लो का निर्माण और परीक्षण करें, निम्नलिखित सभी सुविधाओं और उससे आगे का लाभ उठाएं।
+
+      **2. व्यापक मॉडल समर्थन**:
+        दर्जनों इन्फरेंस प्रदाताओं और सेल्फ-होस्टेड समाधानों से सैकड़ों प्रोप्राइटरी/ओपन-सोर्स LLM के साथ निर्बाध एकीकरण, जिसमें GPT, Mistral, Llama3, और कोई भी OpenAI API-संगत मॉडल शामिल हैं। समर्थित मॉडल प्रदाताओं की पूरी सूची [यहां](https://docs.dify.ai/getting-started/readme/model-providers) देखी जा सकती है।
+
+      ![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+
+      **3. प्रॉम्प्ट IDE**:
+        प्रॉम्प्ट्स बनाने, मॉडल प्रदर्शन की तुलना करने, और चैट-आधारित ऐप में टेक्स्ट-टू-स्पीच जैसी अतिरिक्त सुविधाएं जोड़ने के लिए सहज इंटरफ़ेस।
+
+      **4. RAG पाइपलाइन**:
+        व्यापक RAG क्षमताएं जो दस्तावेज़ इनजेस्शन से लेकर पुनर्प्राप्ति तक सब कुछ कवर करती हैं, PDF, PPT और अन्य सामान्य दस्तावेज़ प्रारूपों से टेक्स्ट निकालने के लिए आउट-ऑफ-बॉक्स समर्थन के साथ।
+
+      **5. एजेंट क्षमताएं**:
+        आप LLM फंक्शन कॉलिंग या ReAct के आधार पर एजेंट

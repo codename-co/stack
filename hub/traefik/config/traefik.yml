@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=https://json.schemastore.org/traefik-v3.json
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+api:
+  dashboard: true
+  insecure: true
+
+log:
+  {}
+  # level: DEBUG
+  # format: json
+
+accessLog:
+  format: common
+  addInternals: true
+  # fields:
+  #   defaultMode: keep
+  #   names:
+  #     RequestHost: keep
+
+entryPoints:
+  http:
+    address: :80
+    http:
+      redirections:
+        entryPoint:
+          to: https
+          scheme: https
+
+  https:
+    address: :443
+    http:
+      tls:
+        options: default
+      middlewares:
+        - security-headers@file
+        # - rate-limit@file
+
+serversTransport:
+  insecureSkipVerify: true
+
+#   https:
+#     address: :443
+#     http:
+#       tls:
+#         options: default
+#         # domains:
+#         #   - main: localhost
+#         #     sans:
+#         #       - proxy.localhost
+#         #       - "*.localhost"
+#       # middlewares:
+#       #   - security-headers@file
+#       #   - rate-limit@file
+
+providers:
+  providersThrottleDuration: 2s
+
+  file:
+    filename: /etc/traefik/fileConfig.yml
+    watch: true
+
+  docker:
+    watch: true
+#     # network: traefikproxy
+#     exposedByDefault: true
+#     defaultRule: Host(`{{ index .Labels "com.docker.compose.service" }}.localhost`)
+
+# tls:
+#   options:
+#     default:
+#       minVersion: VersionTLS12
+#       sniStrict: true
+
+#   stores:
+#     default:
+#       defaultCertificate:
+#         certFile: /certs/server.cer
+#         keyFile: /certs/server.key
+
+#   certificates:
+#     - certFile: /certs/server.cer
+#       keyFile: /certs/server.key
+#       stores:
+#         - default

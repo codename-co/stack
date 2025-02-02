@@ -1,0 +1,1100 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: coolify
+name: Coolify
+icon: 📦
+flavor: DockerCompose
+version: "4.0.0-beta.380"
+updated_at: 2024-12-27
+description: An open-source & self-hostable Heroku / Netlify / Vercel alternative.
+author: coolLabs Technologies Bt.
+license: Apache-2.0
+homepage: https://coolify.io
+repository: https://github.com/coollabsio/coolify
+stars: 35800
+tags:
+  - paas
+alternativeTo:
+  - heroku
+  - netlify
+  - vercel
+readme: >
+  Coolify is an open-source & self-hostable alternative to Heroku / Netlify /
+  Vercel / etc.
+
+
+  It helps you manage your servers, applications, and databases on your own
+  hardware; you only need an SSH connection. You can manage VPS, Bare Metal,
+  Raspberry PIs, and anything else.
+
+
+  <hr>
+
+
+  Imagine having the ease of a cloud but with your own servers. That is Coolify.
+
+
+  No vendor lock-in, which means that all the configurations for your
+  applications/databases/etc are saved to your server. So, if you decide to stop
+  using Coolify (oh nooo), you could still manage your running resources. You
+  lose the automations and all the magic. 🪄️
+
+
+  ## Features
+
+
+  **Any Language:**
+
+  Coolify is compatible with a wide range of programming languages and
+  frameworks, enabling you to launch static websites, APIs, backends, databases,
+  services, and other types of applications.
+
+
+  **Any Server:**
+
+  You can deploy your resources to any server, including your own servers, VPS,
+  Raspberry Pi, EC2, DigitalOcean, Linode, Hetzner, and more. All you need is an
+  SSH connection.
+
+
+  **Any Use-Case:**
+
+  You can deploy your resources to a single server, multiple servers, or Docker
+  Swarm clusters according to your requirements. (Support for Kubernetes is on
+  the way!)
+
+
+  **Any Service:**
+
+  You can deploy any service you want that is compatible with Docker. Also there
+  are lots of one-click services available to deploy.
+
+  See the full list here.
+
+
+  **Push to deploy:**
+
+  Nowadays, Git integration is considered the norm. We provide integration with
+  both hosted and self-hosted platforms like GitHub, GitLab, Bitbucket, Gitea,
+  and others.
+
+
+  **Free SSL Certificates:**
+
+  Coolify takes care of automatically setting up and renewing Let's Encrypt SSL
+  certificates for your custom domains, so you can relax and not have to deal
+  with it.
+
+
+  **No vendor lock-in:**
+
+  You have complete control over your data. All settings are saved on your own
+  servers, giving you the ability to oversee everything even if you decide to
+  stop using Coolify (oh nooo).
+
+
+  **Automatic DB Backups:**
+
+  Your data is automatically backed up to any S3 compatible solution, allowing
+  you to easily restore it with just a few clicks if any problems occur.
+
+
+  **Webhooks:**
+
+  Integrate into your CI/CD pipelines or create custom integrations using Github
+  Actions, Gitlab CI, Bitbucket Pipelines, or any other CI/CD tool of your
+  choice.
+
+
+  **Powerful API:**
+
+  Coolify offers a robust API that enables you to automate deployments, manage
+  resources, and integrate with your current tools, providing limitless
+  possibilities.
+
+
+  **Real-time Terminal:**
+
+  You do not need to leave your browser to manage your servers. Coolify's
+  real-time terminal allows you to run commands on your servers directly from
+  your browser.
+
+
+  **Collaborative:**
+
+  Share your projects with your team members and work together on them. You can
+  also control permissions and roles for each member.
+
+
+  **Pull Request Deployments:**
+
+  Automagically deploy new commits and pull requests separately to quickly
+  review contributions and speed up your teamwork!
+
+
+  **Server Automations:**
+
+  Once your server is connected, Coolify will handle numerous tasks
+  automatically, allowing you to concentrate on your code.
+
+
+  **Monitoring:**
+
+  Coolify will keep an eye on your deployments, servers, disk usage, and other
+  aspects, and notify you if any issues arise.
+
+
+  **Notifications:**
+
+  Coolify will notify you through your chosen channels like Discord, Telegram,
+  and email in case of any events on your server or with your deployments.
+i18n:
+  es:
+    description: Una alternativa de código abierto y auto-alojable a Heroku /
+      Netlify / Vercel.
+    readme: >-
+      Coolify es una alternativa de código abierto y auto-alojada a Heroku /
+      Netlify / Vercel / etc.
+
+
+      Te ayuda a gestionar tus servidores, aplicaciones y bases de datos en tu
+      propio hardware; solo necesitas una conexión SSH. Puedes gestionar VPS,
+      Metal Puro, Raspberry PIs y cualquier otra cosa.
+
+
+      <hr>
+
+
+      Imagina tener la facilidad de una nube pero con tus propios servidores.
+      Eso es Coolify.
+
+
+      Sin dependencia de proveedores, lo que significa que todas las
+      configuraciones de tus aplicaciones/bases de datos/etc se guardan en tu
+      servidor. Así que, si decides dejar de usar Coolify (oh nooo), aún podrías
+      gestionar tus recursos en ejecución. Pierdes las automatizaciones y toda
+      la magia. 🪄️
+
+
+      ## Características
+
+
+      **Cualquier Lenguaje:**
+
+      Coolify es compatible con una amplia gama de lenguajes de programación y
+      frameworks, permitiéndote lanzar sitios web estáticos, APIs, backends,
+      bases de datos, servicios y otros tipos de aplicaciones.
+
+
+      **Cualquier Servidor:**
+
+      Puedes desplegar tus recursos en cualquier servidor, incluyendo tus
+      propios servidores, VPS, Raspberry Pi, EC2, DigitalOcean, Linode, Hetzner
+      y más. Solo necesitas una conexión SSH.
+
+
+      **Cualquier Caso de Uso:**
+
+      Puedes desplegar tus recursos en un solo servidor, múltiples servidores o
+      clusters de Docker Swarm según tus necesidades. (¡El soporte para
+      Kubernetes está en camino!)
+
+
+      **Cualquier Servicio:**
+
+      Puedes desplegar cualquier servicio que desees que sea compatible con
+      Docker. También hay muchos servicios disponibles para desplegar con un
+      solo clic.
+
+      Consulta la lista completa aquí.
+
+
+      **Despliegue por push:**
+
+      Hoy en día, la integración con Git se considera la norma. Proporcionamos
+      integración tanto con plataformas alojadas como auto-alojadas como GitHub,
+      GitLab, Bitbucket, Gitea y otros.
+
+
+      **Certificados SSL Gratuitos:**
+
+      Coolify se encarga de configurar y renovar automáticamente los
+      certificados SSL de Let's Encrypt para tus dominios personalizados, así
+      que puedes relajarte y no tener que lidiar con ello.
+
+
+      **Sin dependencia de proveedores:**
+
+      Tienes control total sobre tus datos. Toda la configuración se guarda en
+      tus propios servidores, dándote la capacidad de supervisar todo incluso si
+      decides dejar de usar Coolify (oh nooo).
+
+
+      **Copias de Seguridad Automáticas de BD:**
+
+      Tus datos se respaldan automáticamente en cualquier solución compatible
+      con S3, permitiéndote restaurarlos fácilmente con unos pocos clics si
+      surge algún problema.
+
+
+      **Webhooks:**
+
+      Intégrate en tus pipelines de CI/CD o crea integraciones personalizadas
+      usando Github Actions, Gitlab CI, Bitbucket Pipelines o cualquier otra
+      herramienta de CI/CD de tu elección.
+
+
+      **API Potente:**
+
+      Coolify ofrece una API robusta que te permite automatizar despliegues,
+      gestionar recursos e integrarte con tus herramientas actuales,
+      proporcionando posibilidades ilimitadas.
+
+
+      **Terminal en Tiempo Real:**
+
+      No necesitas salir de tu navegador para gestionar tus servidores. La
+      terminal en tiempo real de Coolify te permite ejecutar comandos en tus
+      servidores directamente desde tu navegador.
+
+
+      **Colaborativo:**
+
+      Comparte tus proyectos con los miembros de tu equipo y trabajen juntos en
+      ellos. También puedes controlar permisos y roles para cada miembro.
+
+
+      **Despliegues de Pull Request:**
+
+      ¡Despliega automágicamente nuevos commits y pull requests por separado
+      para revisar rápidamente las contribuciones y acelerar el trabajo en
+      equipo!
+
+
+      **Automatizaciones de Servidor:**
+
+      Una vez que tu servidor está conectado, Coolify manejará numerosas tareas
+      automát
+  fr:
+    description:
+      Une alternative open-source et auto-hébergeable à Heroku / Netlify
+      / Vercel.
+    readme: >-
+      Coolify est une alternative open-source et auto-hébergeable à Heroku /
+      Netlify / Vercel / etc.
+
+
+      Il vous aide à gérer vos serveurs, applications et bases de données sur
+      votre propre matériel ; vous avez seulement besoin d'une connexion SSH.
+      Vous pouvez gérer des VPS, des serveurs bare metal, des Raspberry Pi et
+      bien plus encore.
+
+
+      <hr>
+
+
+      Imaginez avoir la simplicité d'un cloud mais avec vos propres serveurs.
+      C'est Coolify.
+
+
+      Pas de dépendance à un fournisseur, ce qui signifie que toutes les
+      configurations de vos applications/bases de données/etc sont sauvegardées
+      sur votre serveur. Donc, si vous décidez d'arrêter d'utiliser Coolify (oh
+      non), vous pourriez toujours gérer vos ressources en cours d'exécution.
+      Vous perdez les automatisations et toute la magie. 🪄️
+
+
+      ## Fonctionnalités
+
+
+      **Tous les langages :**
+
+      Coolify est compatible avec un large éventail de langages de programmation
+      et de frameworks, vous permettant de lancer des sites web statiques, des
+      API, des backends, des bases de données, des services et d'autres types
+      d'applications.
+
+
+      **Tous les serveurs :**
+
+      Vous pouvez déployer vos ressources sur n'importe quel serveur, y compris
+      vos propres serveurs, VPS, Raspberry Pi, EC2, DigitalOcean, Linode,
+      Hetzner, et plus encore. Vous avez seulement besoin d'une connexion SSH.
+
+
+      **Tous les cas d'utilisation :**
+
+      Vous pouvez déployer vos ressources sur un seul serveur, plusieurs
+      serveurs, ou des clusters Docker Swarm selon vos besoins. (Le support pour
+      Kubernetes est en cours !)
+
+
+      **Tous les services :**
+
+      Vous pouvez déployer n'importe quel service compatible avec Docker. Il
+      existe également de nombreux services disponibles en un clic à déployer.
+
+      Consultez la liste complète ici.
+
+
+      **Déploiement par push :**
+
+      De nos jours, l'intégration Git est considérée comme la norme. Nous
+      proposons une intégration avec les plateformes hébergées et auto-hébergées
+      comme GitHub, GitLab, Bitbucket, Gitea, et d'autres.
+
+
+      **Certificats SSL gratuits :**
+
+      Coolify s'occupe automatiquement de la configuration et du renouvellement
+      des certificats SSL Let's Encrypt pour vos domaines personnalisés, vous
+      pouvez donc vous détendre et ne pas avoir à vous en soucier.
+
+
+      **Pas de dépendance à un fournisseur :**
+
+      Vous avez un contrôle total sur vos données. Tous les paramètres sont
+      sauvegardés sur vos propres serveurs, vous donnant la possibilité de tout
+      superviser même si vous décidez d'arrêter d'utiliser Coolify (oh non).
+
+
+      **Sauvegardes automatiques des bases de données :**
+
+      Vos données sont automatiquement sauvegardées vers toute solution
+      compatible S3, vous permettant de les restaurer facilement en quelques
+      clics en cas de problème.
+
+
+      **Webhooks :**
+
+      Intégrez dans vos pipelines CI/CD ou créez des intégrations personnalisées
+      en utilisant Github Actions, Gitlab CI, Bitbucket Pipelines, ou tout autre
+      outil CI/CD de votre choix.
+
+
+      **API puissante :**
+
+      Coolify offre une API robuste qui vous permet d'automatiser les
+      déploiements, gérer les ressources et s'intégrer à vos outils actuels,
+      offrant des possibilités illimitées.
+
+
+      **Terminal en temps réel :**
+
+      Vous n'avez pas besoin de quitter votre navigateur pour gérer vos
+      serveurs. Le terminal en temps réel de Coolify vous permet d'exécuter des
+      commandes sur vos serveurs directement depuis votre navigateur.
+
+
+      **Collaboratif :**
+
+      Partagez vos projets avec les membres de votre équipe et travaillez
+      ensemble dess
+  de:
+    description:
+      Eine quelloffene & selbst-hostbare Alternative zu Heroku / Netlify
+      / Vercel.
+    readme: >-
+      Coolify ist eine Open-Source- und selbst-hostbare Alternative zu Heroku /
+      Netlify / Vercel / etc.
+
+
+      Es hilft Ihnen bei der Verwaltung Ihrer Server, Anwendungen und
+      Datenbanken auf Ihrer eigenen Hardware; Sie benötigen nur eine
+      SSH-Verbindung. Sie können VPS, Bare Metal, Raspberry PIs und alles andere
+      verwalten.
+
+
+      <hr>
+
+
+      Stellen Sie sich die Einfachheit einer Cloud vor, aber mit Ihren eigenen
+      Servern. Das ist Coolify.
+
+
+      Kein Vendor Lock-in, was bedeutet, dass alle Konfigurationen für Ihre
+      Anwendungen/Datenbanken/etc. auf Ihrem Server gespeichert werden. Wenn Sie
+      also aufhören möchten, Coolify zu nutzen (oh nein), können Sie Ihre
+      laufenden Ressourcen weiterhin verwalten. Sie verlieren nur die
+      Automatisierungen und die ganze Magie. 🪄️
+
+
+      ## Funktionen
+
+
+      **Jede Sprache:**
+
+      Coolify ist mit einer Vielzahl von Programmiersprachen und Frameworks
+      kompatibel und ermöglicht es Ihnen, statische Websites, APIs, Backends,
+      Datenbanken, Dienste und andere Arten von Anwendungen zu starten.
+
+
+      **Jeder Server:**
+
+      Sie können Ihre Ressourcen auf jedem Server bereitstellen, einschließlich
+      Ihrer eigenen Server, VPS, Raspberry Pi, EC2, DigitalOcean, Linode,
+      Hetzner und mehr. Sie benötigen lediglich eine SSH-Verbindung.
+
+
+      **Jeder Anwendungsfall:**
+
+      Sie können Ihre Ressourcen je nach Anforderung auf einem einzelnen Server,
+      mehreren Servern oder Docker Swarm Clustern bereitstellen.
+      (Kubernetes-Unterstützung ist in Arbeit!)
+
+
+      **Jeder Dienst:**
+
+      Sie können jeden Dienst bereitstellen, der mit Docker kompatibel ist.
+      Außerdem gibt es viele One-Click-Dienste zur Bereitstellung.
+
+      Siehe hier die vollständige Liste.
+
+
+      **Push to Deploy:**
+
+      Heutzutage ist Git-Integration Standard. Wir bieten Integration mit
+      gehosteten und selbst-gehosteten Plattformen wie GitHub, GitLab,
+      Bitbucket, Gitea und anderen.
+
+
+      **Kostenlose SSL-Zertifikate:**
+
+      Coolify kümmert sich automatisch um die Einrichtung und Erneuerung von
+      Let's Encrypt SSL-Zertifikaten für Ihre benutzerdefinierten Domains.
+
+
+      **Kein Vendor Lock-in:**
+
+      Sie haben vollständige Kontrolle über Ihre Daten. Alle Einstellungen
+      werden auf Ihren eigenen Servern gespeichert, sodass Sie alles überwachen
+      können, selbst wenn Sie Coolify nicht mehr nutzen möchten (oh nein).
+
+
+      **Automatische DB-Backups:**
+
+      Ihre Daten werden automatisch in jeder S3-kompatiblen Lösung gesichert,
+      sodass Sie sie bei Problemen mit wenigen Klicks wiederherstellen können.
+
+
+      **Webhooks:**
+
+      Integrieren Sie sich in Ihre CI/CD-Pipelines oder erstellen Sie
+      benutzerdefinierte Integrationen mit Github Actions, Gitlab CI, Bitbucket
+      Pipelines oder anderen CI/CD-Tools Ihrer Wahl.
+
+
+      **Leistungsstarke API:**
+
+      Coolify bietet eine robuste API, mit der Sie Bereitstellungen
+      automatisieren, Ressourcen verwalten und in Ihre aktuellen Tools
+      integrieren können, was unbegrenzte Möglichkeiten bietet.
+
+
+      **Echtzeit-Terminal:**
+
+      Sie müssen Ihren Browser nicht verlassen, um Ihre Server zu verwalten. Mit
+      Coolify's Echtzeit-Terminal können Sie Befehle direkt aus Ihrem Browser
+      auf Ihren Servern ausführen.
+
+
+      **Kollaborativ:**
+
+      Teilen Sie Ihre Projekte mit Ihren Teammitgliedern und arbeiten Sie
+      gemeinsam daran. Sie können auch Berech
+  pt:
+    description: Uma alternativa ao Heroku / Netlify / Vercel de código aberto e
+      auto-hospedável.
+    readme: >-
+      Coolify é uma alternativa de código aberto e auto-hospedável ao Heroku /
+      Netlify / Vercel / etc.
+
+
+      Ele ajuda você a gerenciar seus servidores, aplicações e bancos de dados
+      em seu próprio hardware; você só precisa de uma conexão SSH. Você pode
+      gerenciar VPS, Bare Metal, Raspberry PIs e qualquer outra coisa.
+
+
+      <hr>
+
+
+      Imagine ter a facilidade de uma nuvem, mas com seus próprios servidores.
+      Isso é o Coolify.
+
+
+      Sem aprisionamento a fornecedor, o que significa que todas as
+      configurações para suas aplicações/bancos de dados/etc são salvas em seu
+      servidor. Então, se você decidir parar de usar o Coolify (oh não), você
+      ainda poderia gerenciar seus recursos em execução. Você perde as
+      automações e toda a mágica. 🪄️
+
+
+      ## Funcionalidades
+
+
+      **Qualquer Linguagem:**
+
+      O Coolify é compatível com uma ampla gama de linguagens de programação e
+      frameworks, permitindo que você lance sites estáticos, APIs, backends,
+      bancos de dados, serviços e outros tipos de aplicações.
+
+
+      **Qualquer Servidor:**
+
+      Você pode implantar seus recursos em qualquer servidor, incluindo seus
+      próprios servidores, VPS, Raspberry Pi, EC2, DigitalOcean, Linode, Hetzner
+      e mais. Tudo que você precisa é uma conexão SSH.
+
+
+      **Qualquer Caso de Uso:**
+
+      Você pode implantar seus recursos em um único servidor, múltiplos
+      servidores ou clusters Docker Swarm de acordo com suas necessidades.
+      (Suporte para Kubernetes está a caminho!)
+
+
+      **Qualquer Serviço:**
+
+      Você pode implantar qualquer serviço que seja compatível com Docker.
+      Também há muitos serviços de um clique disponíveis para implantação.
+
+      Veja a lista completa aqui.
+
+
+      **Push para implantar:**
+
+      Hoje em dia, a integração com Git é considerada padrão. Fornecemos
+      integração com plataformas hospedadas e auto-hospedadas como GitHub,
+      GitLab, Bitbucket, Gitea e outras.
+
+
+      **Certificados SSL Gratuitos:**
+
+      O Coolify cuida automaticamente da configuração e renovação de
+      certificados SSL Let's Encrypt para seus domínios personalizados, então
+      você pode relaxar e não se preocupar com isso.
+
+
+      **Sem aprisionamento a fornecedor:**
+
+      Você tem controle total sobre seus dados. Todas as configurações são
+      salvas em seus próprios servidores, dando a você a capacidade de
+      supervisionar tudo mesmo se decidir parar de usar o Coolify (oh não).
+
+
+      **Backups Automáticos de BD:**
+
+      Seus dados são automaticamente salvos em backup em qualquer solução
+      compatível com S3, permitindo que você os restaure facilmente com apenas
+      alguns cliques se ocorrerem problemas.
+
+
+      **Webhooks:**
+
+      Integre em seus pipelines de CI/CD ou crie integrações personalizadas
+      usando Github Actions, Gitlab CI, Bitbucket Pipelines ou qualquer outra
+      ferramenta de CI/CD de sua escolha.
+
+
+      **API Poderosa:**
+
+      O Coolify oferece uma API robusta que permite automatizar implantações,
+      gerenciar recursos e integrar com suas ferramentas atuais, proporcionando
+      possibilidades ilimitadas.
+
+
+      **Terminal em Tempo Real:**
+
+      Você não precisa sair do seu navegador para gerenciar seus servidores. O
+      terminal em tempo real do Coolify permite executar comandos em seus
+      servidores diretamente do seu navegador.
+
+
+      **Colaborativo:**
+
+      Compartilhe seus projetos com membros da sua equipe e trabalhem juntos
+      neles. Você também pode controlar permissões e funções para cada membro.
+
+
+      **Implantações de Pull Request:**
+
+      Implante automaticamente novos commits e pull requests separadamente para
+      revisar contribuições rapidamente e acelerar seu trabalho em equipe!
+
+
+      **Automações de Servidor:**
+
+      Uma vez que seu servidor está conectado, o Coolify lidará com numerosas
+      tarefas automaticamente, permitindo que você se concentre em seu código.
+
+
+      **Monitoramento:**
+  ru:
+    description: Альтернатива с открытым исходным кодом и возможностью
+      самостоятельного размещения Heroku / Netlify / Vercel.
+    readme: >-
+      Coolify - это открытая и самостоятельно размещаемая альтернатива Heroku /
+      Netlify / Vercel и других подобных сервисов.
+
+
+      Она помогает управлять вашими серверами, приложениями и базами данных на
+      собственном оборудовании; вам нужно только SSH-подключение. Вы можете
+      управлять VPS, физическими серверами, Raspberry Pi и чем угодно еще.
+
+
+      <hr>
+
+
+      Представьте удобство облака, но с вашими собственными серверами. Это и
+      есть Coolify.
+
+
+      Никакой привязки к поставщику услуг, что означает, что все конфигурации
+      для ваших приложений/баз данных и т.д. сохраняются на вашем сервере.
+      Поэтому, если вы решите прекратить использовать Coolify (о нееет), вы все
+      равно сможете управлять своими запущенными ресурсами. Вы теряете только
+      автоматизацию и всю магию. 🪄️
+
+
+      ## Возможности
+
+
+      **Любой язык программирования:**
+
+      Coolify совместим с широким спектром языков программирования и
+      фреймворков, позволяя запускать статические веб-сайты, API, бэкенды, базы
+      данных, сервисы и другие типы приложений.
+
+
+      **Любой сервер:**
+
+      Вы можете развертывать свои ресурсы на любом сервере, включая собственные
+      серверы, VPS, Raspberry Pi, EC2, DigitalOcean, Linode, Hetzner и другие.
+      Все, что вам нужно - это SSH-подключение.
+
+
+      **Любой сценарий использования:**
+
+      Вы можете развертывать свои ресурсы на одном сервере, нескольких серверах
+      или кластерах Docker Swarm в соответствии с вашими требованиями.
+      (Поддержка Kubernetes в разработке!)
+
+
+      **Любой сервис:**
+
+      Вы можете развернуть любой сервис, совместимый с Docker. Также доступно
+      множество сервисов для развертывания в один клик.
+
+      Полный список можно посмотреть здесь.
+
+
+      **Развертывание при push:**
+
+      В наши дни интеграция с Git считается нормой. Мы предоставляем интеграцию
+      как с хостируемыми, так и с самостоятельно размещаемыми платформами,
+      такими как GitHub, GitLab, Bitbucket, Gitea и другими.
+
+
+      **Бесплатные SSL-сертификаты:**
+
+      Coolify автоматически настраивает и обновляет SSL-сертификаты Let's
+      Encrypt для ваших пользовательских доменов, поэтому вы можете расслабиться
+      и не беспокоиться об этом.
+
+
+      **Отсутствие привязки к поставщику:**
+
+      У вас полный контроль над вашими данными. Все настройки сохраняются на
+      ваших собственных серверах, давая вам возможность контролировать все, даже
+      если вы решите прекратить использовать Coolify (о нееет).
+
+
+      **Автоматическое резервное копирование БД:**
+
+      Ваши данные автоматически резервируются в любое S3-совместимое решение,
+      позволяя легко восстановить их в несколько кликов при возникновении
+      проблем.
+
+
+      **Вебхуки:**
+
+      Интегрируйтесь в свои CI/CD pipeline или создавайте пользовательские
+      интеграции, используя Github Actions, Gitlab CI, Bitbucket Pipelines или
+      любой другой инструмент CI/CD по вашему выбору.
+
+
+      **
+  it:
+    description: Un'alternativa open-source e autogestibile a Heroku / Netlify / Vercel.
+    readme: >-
+      Coolify è un'alternativa open-source e auto-ospitabile a Heroku / Netlify
+      / Vercel / ecc.
+
+
+      Ti aiuta a gestire i tuoi server, applicazioni e database sul tuo
+      hardware; hai solo bisogno di una connessione SSH. Puoi gestire VPS, Bare
+      Metal, Raspberry PI e altro ancora.
+
+
+      <hr>
+
+
+      Immagina di avere la facilità di un cloud ma con i tuoi server. Questo è
+      Coolify.
+
+
+      Nessun vendor lock-in, il che significa che tutte le configurazioni per le
+      tue applicazioni/database/ecc sono salvate sul tuo server. Quindi, se
+      decidi di smettere di usare Coolify (oh nooo), potresti comunque gestire
+      le tue risorse in esecuzione. Perdi le automazioni e tutta la magia. 🪄️
+
+
+      ## Caratteristiche
+
+
+      **Qualsiasi Linguaggio:**
+
+      Coolify è compatibile con un'ampia gamma di linguaggi di programmazione e
+      framework, permettendoti di lanciare siti web statici, API, backend,
+      database, servizi e altri tipi di applicazioni.
+
+
+      **Qualsiasi Server:**
+
+      Puoi distribuire le tue risorse su qualsiasi server, inclusi i tuoi
+      server, VPS, Raspberry Pi, EC2, DigitalOcean, Linode, Hetzner e altri.
+      Tutto ciò di cui hai bisogno è una connessione SSH.
+
+
+      **Qualsiasi Caso d'Uso:**
+
+      Puoi distribuire le tue risorse su un singolo server, più server o cluster
+      Docker Swarm in base alle tue esigenze. (Il supporto per Kubernetes è in
+      arrivo!)
+
+
+      **Qualsiasi Servizio:**
+
+      Puoi distribuire qualsiasi servizio compatibile con Docker. Inoltre, sono
+      disponibili molti servizi one-click da distribuire.
+
+      Vedi la lista completa qui.
+
+
+      **Push to deploy:**
+
+      Al giorno d'oggi, l'integrazione Git è considerata la norma. Forniamo
+      integrazione sia con piattaforme hosted che self-hosted come GitHub,
+      GitLab, Bitbucket, Gitea e altri.
+
+
+      **Certificati SSL Gratuiti:**
+
+      Coolify si occupa automaticamente di configurare e rinnovare i certificati
+      SSL Let's Encrypt per i tuoi domini personalizzati, così puoi rilassarti e
+      non doverne occuparti.
+
+
+      **Nessun vendor lock-in:**
+
+      Hai il controllo completo dei tuoi dati. Tutte le impostazioni sono
+      salvate sui tuoi server, dandoti la possibilità di supervisionare tutto
+      anche se decidi di smettere di usare Coolify (oh nooo).
+
+
+      **Backup Automatici DB:**
+
+      I tuoi dati vengono automaticamente salvati su qualsiasi soluzione
+      compatibile con S3, permettendoti di ripristinarli facilmente con pochi
+      clic in caso di problemi.
+
+
+      **Webhook:**
+
+      Integra nei tuoi pipeline CI/CD o crea integrazioni personalizzate usando
+      Github Actions, Gitlab CI, Bitbucket Pipelines o qualsiasi altro strumento
+      CI/CD di tua scelta.
+
+
+      **API Potente:**
+
+      Coolify offre un'API robusta che ti permette di automatizzare le
+      distribuzioni, gestire le risorse e integrare con i tuoi strumenti
+      attuali, offrendo possibilità illimitate.
+
+
+      **Terminale in Tempo Reale:**
+
+      Non devi lasciare il tuo browser per gestire i tuoi server. Il terminale
+      in tempo reale di Coolify ti permette di eseguire comandi sui tuoi server
+      direttamente dal browser.
+
+
+      **Collaborativo:**
+
+      Condividi i tuoi progetti con i membri del tuo team e lavorate insieme su
+      di essi. Puoi anche controllare permessi e ruoli per ogni membro.
+
+
+      **Distribuzioni Pull Request:**
+
+      Distribuisci automaticamente nuovi commit e pull request separatamente per
+      rivedere rapidamente i contributi e velocizzare il lavoro di squadra!
+
+
+      **Automazioni Server:**
+
+      Una volta che il tuo server è connesso, Coolify gestirà numerose attività
+      automaticamente, permettendoti di concentrarti sul tuo codice.
+
+
+      **Mon
+  ar:
+    description: مشروع مفتوح المصدر وقابل للاستضافة الذاتية كبديل لـ Heroku /
+      Netlify / Vercel.
+    readme: >-
+      كوليفاي هو بديل مفتوح المصدر وقابل للاستضافة الذاتية لـ Heroku / Netlify /
+      Vercel وغيرها.
+
+
+      يساعدك في إدارة خوادمك وتطبيقاتك وقواعد بياناتك على أجهزتك الخاصة؛ كل ما
+      تحتاجه هو اتصال SSH. يمكنك إدارة VPS والأجهزة المادية وأجهزة Raspberry Pi
+      وغيرها.
+
+
+      <hr>
+
+
+      تخيل أن تحصل على سهولة السحابة ولكن مع خوادمك الخاصة. هذا هو كوليفاي.
+
+
+      لا يوجد قيود من المزود، مما يعني أن جميع إعدادات تطبيقاتك/قواعد
+      بياناتك/إلخ يتم حفظها على خادمك. لذا، إذا قررت التوقف عن استخدام كوليفاي
+      (يا لا!)، فلا يزال بإمكانك إدارة مواردك التشغيلية. ستفقد الأتمتة وكل
+      السحر. 🪄️
+
+
+      ## المميزات
+
+
+      **أي لغة:**
+
+      كوليفاي متوافق مع مجموعة واسعة من لغات البرمجة والأطر، مما يتيح لك إطلاق
+      مواقع ويب ثابتة وواجهات برمجة التطبيقات والخلفيات وقواعد البيانات والخدمات
+      وأنواع أخرى من التطبيقات.
+
+
+      **أي خادم:**
+
+      يمكنك نشر مواردك على أي خادم، بما في ذلك خوادمك الخاصة وVPS وRaspberry Pi
+      وEC2 وDigitalOcean وLinode وHetzner وغيرها. كل ما تحتاجه هو اتصال SSH.
+
+
+      **أي حالة استخدام:**
+
+      يمكنك نشر مواردك على خادم واحد أو عدة خوادم أو مجموعات Docker Swarm وفقًا
+      لمتطلباتك. (دعم Kubernetes قادم!)
+
+
+      **أي خدمة:**
+
+      يمكنك نشر أي خدمة تريدها متوافقة مع Docker. كما تتوفر العديد من الخدمات
+      سهلة التثبيت بنقرة واحدة.
+
+      شاهد القائمة الكاملة هنا.
+
+
+      **النشر بالدفع:**
+
+      في الوقت الحاضر، يعتبر تكامل Git معيارًا. نوفر تكاملاً مع المنصات
+      المستضافة والذاتية الاستضافة مثل GitHub وGitLab وBitbucket وGitea وغيرها.
+
+
+      **شهادات SSL مجانية:**
+
+      يتولى كوليفاي إعداد وتجديد شهادات SSL من Let's Encrypt لنطاقاتك المخصصة
+      تلقائيًا، لذا يمكنك الاسترخاء وعدم التعامل معها.
+
+
+      **لا قيود من المزود:**
+
+      لديك تحكم كامل في بياناتك. يتم حفظ جميع الإعدادات على خوادمك الخاصة، مما
+      يمنحك القدرة على الإشراف على كل شيء حتى إذا قررت التوق
+  hi:
+    description: एक ओपन-सोर्स और सेल्फ-होस्टेबल हेरोकू / नेटलिफाई / वर्सेल विकल्प।
+    readme: >-
+      Coolify एक ओपन-सोर्स और सेल्फ-होस्टेबल विकल्प है Heroku / Netlify / Vercel
+      / आदि का।
+
+
+      यह आपको अपने सर्वर, एप्लिकेशन और डेटाबेस को अपने खुद के हार्डवेयर पर
+      प्रबंधित करने में मदद करता है; आपको केवल एक SSH कनेक्शन की आवश्यकता है। आप
+      VPS, बेयर मेटल, रास्पबेरी पाई और कुछ भी प्रबंधित कर सकते हैं।
+
+
+      <hr>
+
+
+      कल्पना कीजिए क्लाउड की सुविधा के साथ अपने खुद के सर्वर। यही है Coolify।
+
+
+      कोई वेंडर लॉक-इन नहीं, जिसका अर्थ है कि आपके एप्लिकेशन/डेटाबेस/आदि के सभी
+      कॉन्फ़िगरेशन आपके सर्वर पर सहेजे जाते हैं। तो, अगर आप Coolify का उपयोग बंद
+      करने का निर्णय लेते हैं (ओह नहीं), तब भी आप अपने चल रहे संसाधनों को
+      प्रबंधित कर सकते हैं। आप स्वचालन और सभी जादू खो देते हैं। 🪄️
+
+
+      ## विशेषताएं
+
+
+      **कोई भी भाषा:**
+
+      Coolify विभिन्न प्रोग्रामिंग भाषाओं और फ्रेमवर्क के साथ संगत है, जो आपको
+      स्टैटिक वेबसाइट, API, बैकएंड, डेटाबेस, सेवाएं और अन्य प्रकार के एप्लिकेशन
+      लॉन्च करने में सक्षम बनाता है।
+
+
+      **कोई भी सर्वर:**
+
+      आप अपने संसाधनों को किसी भी सर्वर पर डिप्लॉय कर सकते हैं, जिसमें आपके खुद
+      के सर्वर, VPS, रास्पबेरी पाई, EC2, डिजिटलओशन, लिनोड, हेट्जनर और अन्य शामिल
+      हैं। आपको बस एक SSH कनेक्शन की आवश्यकता है।
+
+
+      **कोई भी उपयोग-केस:**
+
+      आप अपनी आवश्यकताओं के अनुसार अपने संसाधनों को एकल सर्वर, कई सर्वर या डॉकर
+      स्वार्म क्लस्टर पर डिप्लॉय कर सकते हैं। (कुबेरनेट्स के लिए समर्थन जल्द आ
+      रहा है!)
+
+
+      **कोई भी सेवा:**
+
+      आप कोई भी सेवा डिप्लॉय कर सकते हैं जो डॉकर के साथ संगत है। साथ ही डिप्लॉय
+      करने के लिए बहुत सारी वन-क्लिक सेवाएं उपलब्ध हैं।
+
+      पूरी सूची यहां देखें।
+
+
+      **पुश टू डिप्लॉय:**
+  ko:
+    description: 오픈소스 & 자체 호스팅 가능한 Heroku / Netlify / Vercel 대안
+    readme: >-
+      Coolify는 Heroku / Netlify / Vercel 등의 오픈소스이자 자체 호스팅 가능한 대안입니다.
+
+
+      자체 하드웨어에서 서버, 애플리케이션 및 데이터베이스를 관리하는 데 도움을 주며, SSH 연결만 있으면 됩니다. VPS, 베어메탈,
+      라즈베리파이 등 모든 것을 관리할 수 있습니다.
+
+
+      <hr>
+
+
+      자체 서버로 클라우드의 편리함을 누리는 것을 상상해보세요. 그것이 바로 Coolify입니다.
+
+
+      벤더 종속성이 없어 애플리케이션/데이터베이스 등의 모든 구성이 서버에 저장됩니다. 따라서 Coolify 사용을 중단하기로
+      결정하더라도(오 안돼) 실행 중인 리소스를 계속 관리할 수 있습니다. 자동화와 모든 마법을 잃게 되지만요. 🪄️
+
+
+      ## 기능
+
+
+      **모든 언어:**
+
+      Coolify는 광범위한 프로그래밍 언어와 프레임워크와 호환되어 정적 웹사이트, API, 백엔드, 데이터베이스, 서비스 및 기타
+      유형의 애플리케이션을 실행할 수 있습니다.
+
+
+      **모든 서버:**
+
+      자체 서버, VPS, 라즈베리파이, EC2, DigitalOcean, Linode, Hetzner 등 모든 서버에 리소스를 배포할 수
+      있습니다. SSH 연결만 있으면 됩니다.
+
+
+      **모든 사용 사례:**
+
+      요구사항에 따라 단일 서버, 다중 서버 또는 Docker Swarm 클러스터에 리소스를 배포할 수 있습니다. (쿠버네티스 지원
+      예정!)
+
+
+      **모든 서비스:**
+
+      Docker와 호환되는 모든 서비스를 배포할 수 있습니다. 또한 원클릭으로 배포 가능한 많은 서비스들이 있습니다.
+
+      전체 목록은 여기서 확인하세요.
+
+
+      **푸시 투 디플로이:**
+
+      요즘은 Git 통합이 일반적입니다. GitHub, GitLab, Bitbucket, Gitea 등 호스팅 및 자체 호스팅 플랫폼과의
+      통합을 제공합니다.
+
+
+      **무료 SSL 인증서:**
+
+      Coolify는 사용자 정의 도메인에 대한 Let's Encrypt SSL 인증서를 자동으로 설정하고 갱신하므로 신경 쓸 필요가
+      없습니다.
+
+
+      **벤더 종속성 없음:**
+
+      데이터를 완전히 제어할 수 있습니다. 모든 설정이 자체 서버에 저장되어 Coolify 사용을 중단하더라도(오 안돼) 모든 것을 관리할
+      수 있습니다.
+
+
+      **자동 DB 백업:**
+
+      데이터가 S3 호환 솔루션에 자동으로 백업되어 문제 발생 시 몇 번의 클릭으로 쉽게 복원할 수 있습니다.
+
+
+      **웹훅:**
+
+      Github Actions,
+  ja:
+    description: オープンソースで自己ホスト可能なHeroku / Netlify / Vercelの代替サービス。
+    readme: |-
+      Coolify は、Heroku / Netlify / Vercel などのオープンソースで自己ホスト可能な代替サービスです。
+
+      サーバー、アプリケーション、データベースを自身のハードウェアで管理することができ、SSHコネクションのみが必要です。VPS、ベアメタル、Raspberry Pi、その他のあらゆるものを管理できます。
+
+      <hr>
+
+      クラウドの利便性を自身のサーバーで実現することができます。それがCoolifyです。
+
+      ベンダーロックインがないため、アプリケーション/データベース等の全ての設定はサーバーに保存されます。そのため、Coolifyの使用を中止しても（まさか！）、実行中のリソースを管理し続けることができます。自動化と魔法のような機能は失われますが。🪄️
+
+      ## 機能
+
+      **あらゆる言語：**
+      Coolifyは幅広いプログラミング言語とフレームワークに対応しており、静的ウェブサイト、API、バックエンド、データベース、サービス、その他のアプリケーションを展開できます。
+
+      **あらゆるサーバー：**
+      自身のサーバー、VPS、Raspberry Pi、EC2、DigitalOcean、Linode、Hetznerなど、あらゆるサーバーにリソースをデプロイできます。必要なのはSSH接続だけです。
+
+      **あらゆるユースケース：**
+      要件に応じて、単一サーバー、複数サーバー、Docker Swarmクラスターにリソースをデプロイできます。（Kubernetes対応は開発中！）
+
+      **あらゆるサービス：**
+      Dockerと互換性のあるあらゆるサービスをデプロイできます。また、ワンクリックでデプロイ可能な多くのサービスも利用できます。
+      詳細なリストはこちらをご覧ください。
+
+      **プッシュでデプロイ：**
+      現在、Git統合は標準となっています。GitHub、GitLab、Bitbucket、Giteaなどのホスト型および自己ホスト型プラットフォームとの統合を提供します。
+
+      **無料のSSL証明書：**
+      CoolifyがカスタムドメインのためのLet's Encrypt SSL証明書の設定と更新を自動的に処理するため、手間がかかりません。
+
+      **ベンダーロックインなし：**
+      データを完全にコントロールできます。全ての設定は自身のサーバーに保存されるため、Coolifyの使用を中止しても（まさか！）すべてを管理できます。
+
+      **自動データベースバックアップ：**
+      データはS3互換のソリューションに自動的にバックアップされ、問題が発生した場合も数クリックで簡単に復元できます。
+
+      **Webhook：**
+      Github Actions、Gitlab CI、Bitbucket Pipelines、その他のCI/CDツールを使用して、CI/CDパイプラインに統合したりカスタム統合を作成したりできます。
+
+      **パワフルなAPI：**
+      Coolifyは堅牢なAPIを提供し、デプロイメントの自動化、リソース管理、既存ツールとの統合を可能にし、無限の可能性を提供します。
+
+      **リアルタイムターミナル：**
+      サーバーを管理するためにブラウザを離れる必要はありません。Coolifyのリアルタイムターミナルで、

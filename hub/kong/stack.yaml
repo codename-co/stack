@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: kong
+name: Kong
+flavor: DockerCompose
+version: "3.9"
+updated_at: 2024-12-21
+description: The Cloud-Native API Gateway and AI Gateway
+author: Kong Inc.
+license: Apache-2.0
+homepage: https://konghq.com
+repository: https://github.com/Kong/kong
+stars: 39800
+tags:
+  - api-gateway
+alternativeTo:
+  - apigee
+  - amazonapigateway
+readme: |
+  Kong (or Kong API Gateway) is a cloud-native, platform-agnostic, scalable API Gateway distinguished for its high performance and extensibility via plugins. It also provides advanced AI capabilities with multi-LLM support.
+
+  ![](https://konghq.com/wp-content/uploads/2018/05/kong-benefits-github-readme.png)
+
+  <hr>
+
+  ## Features
+
+  By centralizing common API functionality across all your organization's services, the Kong API Gateway creates more freedom for engineering teams to focus on the challenges that matter most.
+
+  The top Kong features include:
+  - Advanced routing, load balancing, health checking - all configurable via a RESTful admin API or declarative configuration.
+  - Authentication and authorization for APIs using methods like JWT, basic auth, OAuth, ACLs and more.
+  - Proxy, SSL/TLS termination, and connectivity support for L4 or L7 traffic.
+  - Plugins for enforcing traffic controls, rate limiting, req/res transformations, logging, monitoring and including a plugin developer hub.
+  - Plugins for AI traffic to support multi-LLM implementations and no-code AI use cases, with advanced AI prompt engineering, AI observability, AI security and more.
+  - Sophisticated deployment models like Declarative Databaseless Deployment and Hybrid Deployment (control plane/data plane separation) without any vendor lock-in.
+  - Native [ingress controller](https://github.com/Kong/kubernetes-ingress-controller) support for serving Kubernetes.

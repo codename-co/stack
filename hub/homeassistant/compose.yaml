@@ -1,0 +1,33 @@
+services:
+  homeassistant:
+    # container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:${HOMEASSISTANT_VERSION:-2024.1}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+      - config:/config
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    configs:
+      - source: homeassistant-config.yaml
+        target: /config/configuration.yaml
+    labels:
+      dash.icon: homeassistant
+      dash.url: https://$PROJECT.$DOMAIN/config/integrations/dashboard
+      traefik.http.routers.homeassistant.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.homeassistant.loadbalancer.server.port: 8123
+
+configs:
+  homeassistant-config.yaml:
+    content: |
+      http:
+        use_x_forwarded_for: true
+        trusted_proxies:
+          - 127.0.0.1
+          - 172.16.0.0/12
+          - ::1
+
+volumes:
+  config:
+    driver: local

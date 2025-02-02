@@ -1,0 +1,330 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: traefik
+name: Traefik proxy
+icon: traefikproxy
+flavor: DockerCompose
+version: "3.2"
+updated_at: 2024-12-16
+description: A reverse proxy for HTTP services
+author: Containous SAS
+license: MIT
+homepage: https://traefik.io
+repository: https://github.com/traefik/traefik
+stars: 52000
+tags:
+  - api-gateway
+  - reverse-proxy
+alternativeTo:
+  - apigee
+  - amazonapigateway
+readme: |
+  Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.
+
+  ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+  <hr>
+
+  ## Features
+
+  - Continuously updates its configuration (No restarts!)
+  - Supports multiple load balancing algorithms
+  - Provides HTTPS to your microservices by leveraging Let's Encrypt (wildcard certificates support)
+  - Circuit breakers, retry
+  - See the magic through its clean web UI
+  - WebSocket, HTTP/2, gRPC ready
+  - Provides metrics (Rest, Prometheus, Datadog, Statsd, InfluxDB 2.X)
+  - Keeps access logs (JSON, CLF)
+  - Fast
+  - Exposes a Rest API
+  - Packaged as a single binary file (made with ❤️ with go) and available as an official docker image
+
+  ## Diagram
+
+  ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+i18n:
+  ar:
+    description: خادم وكيل عكسي لخدمات HTTP
+    readme: |-
+      ترايفيك هو وكيل عكسي حديث لبروتوكول HTTP وموازن تحميل يجعل نشر الخدمات المصغرة سهلاً.
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+       ## المميزات
+
+      - يحدّث إعداداته باستمرار (بدون إعادة تشغيل!)
+      - يدعم خوارزميات متعددة لتوازن التحميل
+      - يوفر HTTPS لخدماتك المصغرة باستخدام Let's Encrypt (يدعم شهادات العلامة النجمية)
+      - قواطع الدائرة، إعادة المحاولة
+      - شاهد السحر من خلال واجهة المستخدم النظيفة
+      - جاهز لـ WebSocket وHTTP/2 وgRPC
+      - يوفر مقاييس (Rest، Prometheus، Datadog، Statsd، InfluxDB 2.X)
+      - يحتفظ بسجلات الوصول (JSON، CLF)
+      - سريع
+      - يكشف واجهة برمجة تطبيقات Rest
+      - معبأ كملف ثنائي واحد (صُنع بـ ❤️ باستخدام go) ومتوفر كصورة دوكر رسمية
+
+       ## مخطط
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  de:
+    description: Ein Reverse-Proxy für HTTP-Dienste
+    readme: |-
+      Traefik ist ein moderner HTTP-Reverse-Proxy und Load Balancer, der das Bereitstellen von Microservices vereinfacht.
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## Funktionen
+
+      - Aktualisiert seine Konfiguration kontinuierlich (Keine Neustarts!)
+      - Unterstützt mehrere Lastenausgleich-Algorithmen
+      - Stellt HTTPS für Ihre Microservices durch Let's Encrypt bereit (Unterstützung für Wildcard-Zertifikate)
+      - Stromkreisunterbrecher, Wiederholungsversuche
+      - Übersichtliche Bedienung durch klare Web-Oberfläche
+      - WebSocket, HTTP/2, gRPC-bereit
+      - Stellt Metriken bereit (Rest, Prometheus, Datadog, Statsd, InfluxDB 2.X)
+      - Führt Zugriffsprotokoll (JSON, CLF)
+      - Schnell
+      - Bietet eine Rest-API
+      - Als einzelne Binärdatei gepackt (mit ❤️ in Go erstellt) und als offizielle Docker-Image verfügbar
+
+      ## Diagramm
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  fr:
+    description: Un proxy inverse pour services HTTP
+    readme: |-
+      Traefik est un proxy inverse HTTP moderne et un équilibreur de charge qui simplifie le déploiement des microservices.
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - Met à jour sa configuration en continu (Pas de redémarrages !)
+      - Prend en charge plusieurs algorithmes d'équilibrage de charge
+      - Fournit HTTPS à vos microservices en utilisant Let's Encrypt (support des certificats wildcard)
+      - Disjoncteurs, nouvelles tentatives
+      - Visualisez la magie à travers son interface web épurée
+      - Compatible WebSocket, HTTP/2, gRPC
+      - Fournit des métriques (Rest, Prometheus, Datadog, Statsd, InfluxDB 2.X)
+      - Conserve les journaux d'accès (JSON, CLF)
+      - Rapide
+      - Expose une API Rest
+      - Distribué comme un fichier binaire unique (créé avec ❤️ en go) et disponible en tant qu'image docker officielle
+
+      ## Schéma
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  zh:
+    description: HTTP服务的反向代理
+    readme: |-
+      Traefik是一个现代化的HTTP反向代理和负载均衡器，可以轻松部署微服务。
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## 特性
+
+      - 持续更新配置（无需重启！）
+      - 支持多种负载均衡算法
+      - 通过Let's Encrypt为微服务提供HTTPS（支持通配符证书）
+      - 断路器，重试机制
+      - 通过清晰的网页界面查看运行状态
+      - 支持WebSocket、HTTP/2和gRPC
+      - 提供监控指标（Rest、Prometheus、Datadog、Statsd、InfluxDB 2.X）
+      - 保存访问日志（JSON、CLF）
+      - 快速
+      - 提供Rest API
+      - 打包为单个二进制文件（使用go语言开发，充满❤️）并提供官方docker镜像
+
+      ## 架构图
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  es:
+    description: Un proxy inverso para servicios HTTP
+    readme: |-
+      Traefik es un proxy inverso HTTP moderno y balanceador de carga que facilita la implementación de microservicios.
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## Características
+
+      - Actualiza su configuración continuamente (¡Sin reinicios!)
+      - Soporta múltiples algoritmos de balanceo de carga
+      - Proporciona HTTPS a tus microservicios utilizando Let's Encrypt (soporte para certificados wildcard)
+      - Circuit breakers, reintentos
+      - Ve la magia a través de su limpia interfaz web
+      - Listo para WebSocket, HTTP/2, gRPC
+      - Proporciona métricas (Rest, Prometheus, Datadog, Statsd, InfluxDB 2.X)
+      - Mantiene registros de acceso (JSON, CLF)
+      - Rápido
+      - Expone una API Rest
+      - Empaquetado como un único archivo binario (hecho con ❤️ con go) y disponible como imagen oficial de docker
+
+      ## Diagrama
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  it:
+    description: Un proxy inverso per servizi HTTP
+    readme: |-
+      Traefik è un moderno proxy HTTP inverso e bilanciatore di carico che rende semplice il deployment dei microservizi.
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## Caratteristiche
+
+      - Aggiorna continuamente la sua configurazione (Nessun riavvio!)
+      - Supporta molteplici algoritmi di bilanciamento del carico
+      - Fornisce HTTPS ai tuoi microservizi sfruttando Let's Encrypt (supporto per certificati wildcard)
+      - Circuit breaker, retry
+      - Visualizza la magia attraverso la sua chiara interfaccia web
+      - Pronto per WebSocket, HTTP/2, gRPC
+      - Fornisce metriche (Rest, Prometheus, Datadog, Statsd, InfluxDB 2.X)
+      - Mantiene i log di accesso (JSON, CLF)
+      - Veloce
+      - Espone un'API Rest
+      - Distribuito come singolo file binario (realizzato con ❤️ in go) e disponibile come immagine docker ufficiale
+
+      ## Diagramma
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  ja:
+    description: HTTPサービス用のリバースプロキシ
+    readme: |-
+      Traefikは、マイクロサービスのデプロイを容易にする最新のHTTPリバースプロキシおよびロードバランサーです。
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## 機能
+
+      - 設定を継続的に更新（再起動不要！）
+      - 複数のロードバランシングアルゴリズムをサポート
+      - Let's Encryptを活用してマイクロサービスにHTTPSを提供（ワイルドカード証明書対応）
+      - サーキットブレーカー、リトライ
+      - クリーンなウェブUIで動作状況を確認
+      - WebSocket、HTTP/2、gRPC対応
+      - メトリクスの提供（Rest、Prometheus、Datadog、Statsd、InfluxDB 2.X）
+      - アクセスログの保持（JSON、CLF）
+      - 高速
+      - Rest APIの公開
+      - 単一のバイナリファイルとして配布（goで❤️を込めて作成）および公式Dockerイメージとして利用可能
+
+      ## 図解
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  ko:
+    description: HTTP 서비스를 위한 리버스 프록시
+    readme: |-
+      Traefik은 마이크로서비스 배포를 쉽게 만드는 현대적인 HTTP 리버스 프록시 및 로드 밸런서입니다.
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## 기능
+
+      - 구성을 지속적으로 업데이트 (재시작 불필요!)
+      - 다양한 로드 밸런싱 알고리즘 지원
+      - Let's Encrypt를 활용한 마이크로서비스용 HTTPS 제공 (와일드카드 인증서 지원)
+      - 서킷 브레이커, 재시도
+      - 깔끔한 웹 UI를 통한 모니터링
+      - WebSocket, HTTP/2, gRPC 지원
+      - 메트릭 제공 (Rest, Prometheus, Datadog, Statsd, InfluxDB 2.X)
+      - 접근 로그 유지 (JSON, CLF)
+      - 빠른 속도
+      - Rest API 제공
+      - 단일 바이너리 파일로 패키징 (go로 만든 ❤️) 및 공식 도커 이미지로 제공
+
+      ## 다이어그램
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  ru:
+    description: Обратный прокси для HTTP-сервисов
+    readme: |-
+      Traefik - это современный HTTP обратный прокси и балансировщик нагрузки, который упрощает развертывание микросервисов.
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## Возможности
+
+      - Непрерывно обновляет свою конфигурацию (Без перезапусков!)
+      - Поддерживает множество алгоритмов балансировки нагрузки
+      - Обеспечивает HTTPS для ваших микросервисов с помощью Let's Encrypt (поддержка общих сертификатов)
+      - Предохранители, повторные попытки
+      - Наблюдайте за магией через удобный веб-интерфейс
+      - Поддержка WebSocket, HTTP/2, gRPC
+      - Предоставляет метрики (Rest, Prometheus, Datadog, Statsd, InfluxDB 2.X)
+      - Ведет журналы доступа (JSON, CLF)
+      - Быстрый
+      - Предоставляет Rest API
+      - Упакован в единый бинарный файл (создан с ❤️ на go) и доступен как официальный docker образ
+
+      ## Диаграмма
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  pt:
+    description: Um proxy reverso para serviços HTTP
+    readme: |-
+      Traefik é um proxy reverso HTTP moderno e balanceador de carga que facilita a implantação de microsserviços.
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## Funcionalidades
+
+      - Atualiza sua configuração continuamente (Sem reinicializações!)
+      - Suporta múltiplos algoritmos de balanceamento de carga
+      - Fornece HTTPS para seus microsserviços utilizando Let's Encrypt (suporte a certificados wildcard)
+      - Circuit breakers, retry
+      - Veja a mágica através de sua interface web limpa
+      - Pronto para WebSocket, HTTP/2, gRPC
+      - Fornece métricas (Rest, Prometheus, Datadog, Statsd, InfluxDB 2.X)
+      - Mantém logs de acesso (JSON, CLF)
+      - Rápido
+      - Expõe uma API Rest
+      - Empacotado como um único arquivo binário (feito com ❤️ em go) e disponível como uma imagem docker oficial
+
+      ## Diagrama
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
+  hi:
+    description: HTTP सेवाओं के लिए एक रिवर्स प्रॉक्सी
+    readme: |-
+      ट्रैफिक एक आधुनिक HTTP रिवर्स प्रॉक्सी और लोड बैलेंसर है जो माइक्रोसर्विसेज को डिप्लॉय करना आसान बनाता है।
+
+      ![preview](https://traefik.io/static/9f5727261417aed97749750225f8acb6/94395/what_is_traefik.webp)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - लगातार अपना कॉन्फ़िगरेशन अपडेट करता है (रीस्टार्ट की आवश्यकता नहीं!)
+      - कई लोड बैलेंसिंग एल्गोरिथम का समर्थन करता है
+      - Let's Encrypt का उपयोग करके आपकी माइक्रोसर्विसेज को HTTPS प्रदान करता है (वाइल्डकार्ड सर्टिफिकेट समर्थन)
+      - सर्किट ब्रेकर्स, रीट्राई
+      - इसके स्वच्छ वेब UI के माध्यम से जादू देखें
+      - WebSocket, HTTP/2, gRPC रेडी
+      - मेट्रिक्स प्रदान करता है (Rest, Prometheus, Datadog, Statsd, InfluxDB 2.X)
+      - एक्सेस लॉग रखता है (JSON, CLF)
+      - तेज़
+      - एक Rest API प्रदान करता है
+      - एक सिंगल बाइनरी फ़ाइल के रूप में पैकेज किया गया है (go के साथ ❤️ से बनाया गया) और एक आधिकारिक डॉकर इमेज के रूप में उपलब्ध है
+
+      ## आरेख
+
+      ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)

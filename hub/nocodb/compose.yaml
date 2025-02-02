@@ -1,0 +1,37 @@
+services:
+  nocodb:
+    image: nocodb/nocodb:${NOCODB_VERSION:-0.258.3}
+    env_file: .env
+    environment:
+      - "NC_DB=pg://nocodb-db:5432?u=${DATABASE_USER}&p=${DATABASE_PW}&d=${DATABASE_NAME}"
+      - "NC_PUBLIC_URL=https://$PROJECT.$DOMAIN"
+    depends_on:
+      - nocodb-db
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.nocodb.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.nocodb.loadbalancer.server.port: 8080
+    restart: always
+    volumes:
+      - nocodb-data:/usr/app/data
+
+  nocodb-db:
+    image: postgres:12.17-alpine
+    environment:
+      POSTGRES_DB: "${DATABASE_NAME}"
+      POSTGRES_PASSWORD: "${DATABASE_PW}"
+      POSTGRES_USER: "${DATABASE_USER}"
+    healthcheck:
+      interval: 10s
+      retries: 10
+      test: "pg_isready -U ${DATABASE_USER} -d ${DATABASE_NAME}"
+      timeout: 2s
+    restart: always
+    volumes:
+      - nocodb-db:/var/lib/postgresql/data
+
+volumes:
+  nocodb-data:
+    name: nocodb-data
+  nocodb-db:
+    name: nocodb-db

@@ -1,0 +1,138 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: n8n
+name: n8n
+flavor: DockerCompose
+version: "1.72.1"
+updated_at: 2024-12-12
+description: Workflow automation tool
+author: n8n.io
+license: Fair Use
+homepage: https://n8n.io
+repository: https://github.com/n8n-io/n8n
+stars: 53900
+tags:
+  - workflow
+  - automation
+alternativeTo:
+  - zapier
+  - make
+  - ifttt
+readme: |
+  n8n is an extendable workflow automation tool. With a fair-code distribution model, n8n will always have visible source code, be available to self-host, and allow you to add your own custom functions, logic and apps. n8n's node-based approach makes it highly versatile, enabling you to connect anything to everything.
+
+  ![On-board new joiners and provision accounts](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+  <hr>
+
+  n8n has 200+ different nodes to automate workflows. The list can be found on: <https://n8n.io/integrations>.
+i18n:
+  de:
+    description: Workflow-Automatisierungswerkzeug
+    readme: |-
+      n8n ist ein erweiterbares Workflow-Automatisierungstool. Mit einem Fair-Code-Vertriebsmodell wird n8n immer einen sichtbaren Quellcode haben, als Self-Hosting-Option verfügbar sein und es Ihnen ermöglichen, eigene benutzerdefinierte Funktionen, Logik und Anwendungen hinzuzufügen. Der knotenbasierte Ansatz von n8n macht es äußerst vielseitig und ermöglicht es Ihnen, alles mit allem zu verbinden.
+
+      ![Neue Mitarbeiter einarbeiten und Konten bereitstellen](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      n8n verfügt über mehr als 200 verschiedene Knoten zur Workflow-Automatisierung. Die Liste ist zu finden unter: <https://n8n.io/integrations>.
+  es:
+    description: Herramienta de automatización de flujos de trabajo
+    readme: |-
+      n8n es una herramienta de automatización de flujos de trabajo extensible. Con un modelo de distribución de código justo, n8n siempre tendrá código fuente visible, estará disponible para auto-alojamiento y te permitirá agregar tus propias funciones personalizadas, lógica y aplicaciones. El enfoque basado en nodos de n8n lo hace altamente versátil, permitiéndote conectar cualquier cosa con todo.
+
+      ![Incorporar nuevos miembros y aprovisionar cuentas](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      n8n tiene más de 200 nodos diferentes para automatizar flujos de trabajo. La lista se puede encontrar en: <https://n8n.io/integrations>.
+  it:
+    description: Strumento di automazione del flusso di lavoro
+    readme: |-
+      n8n è uno strumento estendibile per l'automazione dei flussi di lavoro. Con un modello di distribuzione fair-code, n8n avrà sempre il codice sorgente visibile, sarà disponibile per l'auto-hosting e ti permetterà di aggiungere le tue funzioni personalizzate, logica e applicazioni. L'approccio basato su nodi di n8n lo rende altamente versatile, permettendoti di connettere qualsiasi cosa a tutto.
+
+      ![Integrazione dei nuovi assunti e provisioning degli account](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      n8n ha più di 200 nodi diversi per automatizzare i flussi di lavoro. La lista può essere trovata su: <https://n8n.io/integrations>.
+  fr:
+    description: Outil d'automatisation des flux de travail
+    readme: |-
+      n8n est un outil d'automatisation de flux de travail extensible. Avec un modèle de distribution fair-code, n8n aura toujours un code source visible, sera disponible en auto-hébergement et vous permettra d'ajouter vos propres fonctions, logique et applications personnalisées. L'approche basée sur les nœuds de n8n le rend hautement polyvalent, vous permettant de connecter n'importe quoi à tout.
+
+      ![Intégrer les nouveaux arrivants et provisionner les comptes](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      n8n dispose de plus de 200 nœuds différents pour automatiser les flux de travail. La liste est disponible sur : <https://n8n.io/integrations>.
+  pt:
+    description: Ferramenta de automação de fluxo de trabalho
+    readme: |-
+      n8n é uma ferramenta de automação de fluxo de trabalho extensível. Com um modelo de distribuição fair-code, o n8n sempre terá código-fonte visível, estará disponível para auto-hospedagem e permitirá que você adicione suas próprias funções, lógica e aplicativos personalizados. A abordagem baseada em nós do n8n o torna altamente versátil, permitindo que você conecte qualquer coisa a tudo.
+
+      ![Integração de novos membros e provisionamento de contas](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      O n8n possui mais de 200 nós diferentes para automatizar fluxos de trabalho. A lista pode ser encontrada em: <https://n8n.io/integrations>.
+  ru:
+    description: Инструмент автоматизации рабочих процессов
+    readme: |-
+      n8n - это расширяемый инструмент для автоматизации рабочих процессов. Благодаря модели распространения fair-code, исходный код n8n всегда будет открытым, доступным для самостоятельного размещения, и позволит вам добавлять собственные пользовательские функции, логику и приложения. Узловой подход n8n делает его универсальным, позволяя соединять что угодно со всем.
+
+      ![Адаптация новых сотрудников и создание учетных записей](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      n8n имеет более 200 различных узлов для автоматизации рабочих процессов. Список можно найти на: <https://n8n.io/integrations>.
+  ar:
+    description: أداة أتمتة سير العمل
+    readme: |-
+      n8n هي أداة لأتمتة سير العمل قابلة للتوسيع. مع نموذج توزيع fair-code، سيكون لـ n8n دائماً شفرة مصدر مرئية، ومتاحة للاستضافة الذاتية، وتسمح لك بإضافة وظائفك وتطبيقاتك ومنطقك الخاص. نهج n8n القائم على العقد يجعلها متعددة الاستخدامات للغاية، مما يتيح لك ربط أي شيء بكل شيء.
+
+      ![ضم المنضمين الجدد وتوفير الحسابات](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      تحتوي n8n على أكثر من 200 عقدة مختلفة لأتمتة سير العمل. يمكن العثور على القائمة على: <https://n8n.io/integrations>.
+  hi:
+    description: कार्यप्रवाह स्वचालन टूल
+    readme: |-
+      n8n एक विस्तार योग्य वर्कफ़्लो ऑटोमेशन टूल है। फेयर-कोड वितरण मॉडल के साथ, n8n का सोर्स कोड हमेशा दृश्यमान रहेगा, स्व-होस्टिंग के लिए उपलब्ध होगा, और आपको अपने कस्टम फंक्शन, लॉजिक और ऐप्स जोड़ने की अनुमति देगा। n8n का नोड-आधारित दृष्टिकोण इसे अत्यधिक बहुमुखी बनाता है, जो आपको किसी भी चीज को हर चीज से जोड़ने में सक्षम बनाता है।
+
+      ![नए जॉइनर्स को ऑन-बोर्ड करें और खाते प्रोविजन करें](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      n8n में वर्कफ़्लो को स्वचालित करने के लिए 200+ विभिन्न नोड्स हैं। सूची यहाँ पाई जा सकती है: <https://n8n.io/integrations>।
+  zh:
+    description: 工作流自动化工具
+    readme: |-
+      n8n是一个可扩展的工作流自动化工具。采用公平代码分发模式，n8n将始终保持源代码可见，支持自托管，并允许您添加自己的自定义功能、逻辑和应用程序。n8n基于节点的方法使其具有高度的通用性，使您能够将任何事物连接到所有事物。
+
+      ![新成员入职和账户设置](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      n8n拥有200多个不同的节点用于自动化工作流。完整列表可在以下网址查看：<https://n8n.io/integrations>。
+  ko:
+    description: 업무 흐름 자동화 도구
+    readme: |-
+      n8n은 확장 가능한 워크플로우 자동화 도구입니다. 공정한 코드 배포 모델을 통해 n8n은 항상 소스 코드를 볼 수 있고, 자체 호스팅이 가능하며, 사용자가 직접 커스텀 기능, 로직 및 앱을 추가할 수 있습니다. n8n의 노드 기반 접근 방식은 매우 다재다능하여 모든 것을 서로 연결할 수 있게 해줍니다.
+
+      ![신규 입사자 온보딩 및 계정 프로비저닝](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      n8n은 워크플로우를 자동화하기 위한 200개 이상의 다양한 노드를 보유하고 있습니다. 전체 목록은 다음에서 확인할 수 있습니다: <https://n8n.io/integrations>.
+  ja:
+    description: ワークフロー自動化ツール
+    readme: |-
+      n8nは拡張可能なワークフロー自動化ツールです。フェアコードの配布モデルにより、n8nは常にソースコードが閲覧可能で、セルフホスティングが可能であり、独自のカスタム機能やロジック、アプリケーションを追加することができます。n8nのノードベースのアプローチにより、高い汎用性を持ち、あらゆるものを相互に接続することができます。
+
+      ![新規参加者のオンボーディングとアカウントのプロビジョニング](https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/itops_usecase_2x_1fbf6e467c.png)
+
+      <hr>
+
+      n8nには200以上の異なるノードがワークフローの自動化に利用できます。リストは以下で確認できます：<https://n8n.io/integrations>。

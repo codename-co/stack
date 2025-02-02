@@ -1,0 +1,185 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: coder
+name: Coder
+flavor: DockerCompose
+version: "4.96.2"
+updated_at: 2024-12-20
+description: Visual Studio Code in the browser
+author: Coder Technologies, Inc
+license: MIT
+homepage: https://coder.com
+repository: https://github.com/coder/code-server
+stars: 69300
+tags:
+  - ide
+  - coding
+alternativeTo:
+  - intellij-idea
+readme: |
+  Run VS Code on any machine anywhere and access it in the browser.
+
+  ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+  <hr>
+
+  ## Features
+
+  - Code on any device with a consistent development environment
+  - Use cloud servers to speed up tests, compilations, downloads, and more
+  - Preserve battery life when you're on the go; all intensive tasks run on your
+    server
+i18n:
+  es:
+    description: Visual Studio Code en el navegador
+    readme: |-
+      Ejecuta VS Code en cualquier máquina desde cualquier lugar y accede a él desde el navegador.
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## Características
+
+      - Programa en cualquier dispositivo con un entorno de desarrollo consistente
+      - Utiliza servidores en la nube para acelerar pruebas, compilaciones, descargas y más
+      - Conserva la batería cuando estés en movimiento; todas las tareas intensivas se ejecutan en tu servidor
+  fr:
+    description: Visual Studio Code dans le navigateur
+    readme: |-
+      Exécutez VS Code sur n'importe quelle machine et accédez-y depuis votre navigateur.
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - Codez sur n'importe quel appareil avec un environnement de développement cohérent
+      - Utilisez des serveurs cloud pour accélérer les tests, les compilations, les téléchargements et plus encore
+      - Préservez l'autonomie de la batterie lors de vos déplacements ; toutes les tâches intensives s'exécutent sur votre serveur
+  de:
+    description: Visual Studio Code im Browser
+    readme: |-
+      VS Code auf jeder Maschine ausführen und im Browser darauf zugreifen.
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## Funktionen
+
+      - Programmieren Sie auf jedem Gerät mit einer einheitlichen Entwicklungsumgebung
+      - Nutzen Sie Cloud-Server, um Tests, Kompilierungen, Downloads und mehr zu beschleunigen
+      - Schonen Sie den Akku unterwegs; alle rechenintensiven Aufgaben laufen auf Ihrem Server
+  it:
+    description: Visual Studio Code nel browser
+    readme: |-
+      Esegui VS Code su qualsiasi macchina ovunque e accedi tramite browser.
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## Caratteristiche
+
+      - Programma su qualsiasi dispositivo con un ambiente di sviluppo consistente
+      - Utilizza server cloud per velocizzare test, compilazioni, download e altro
+      - Preserva la durata della batteria quando sei in movimento; tutti i processi intensivi vengono eseguiti sul tuo server
+  pt:
+    description: Visual Studio Code no navegador
+    readme: |-
+      Execute o VS Code em qualquer máquina e acesse-o no navegador.
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## Funcionalidades
+
+      - Programe em qualquer dispositivo com um ambiente de desenvolvimento consistente
+      - Use servidores na nuvem para acelerar testes, compilações, downloads e muito mais
+      - Preserve a vida útil da bateria quando estiver em movimento; todas as tarefas intensivas são executadas no seu servidor
+  zh:
+    description: 浏览器中的 Visual Studio Code
+    readme: |-
+      在任何设备上运行VS Code并在浏览器中访问。
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## 功能特点
+
+      - 在任何设备上使用一致的开发环境进行编码
+      - 使用云服务器加速测试、编译、下载等操作
+      - 在移动时节省电池寿命；所有密集型任务都在服务器上运行
+  ar:
+    description: فيجوال ستوديو كود في المتصفح
+    readme: |-
+      قم بتشغيل VS Code على أي جهاز في أي مكان والوصول إليه عبر المتصفح.
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## المميزات
+
+      - برمج على أي جهاز مع بيئة تطوير متناسقة
+      - استخدم خوادم سحابية لتسريع الاختبارات والتجميع والتنزيلات والمزيد
+      - حافظ على عمر البطارية أثناء تنقلك؛ جميع المهام المكثفة تعمل على خادمك
+  hi:
+    description: ब्राउज़र में विजुअल स्टूडियो कोड
+    readme: |-
+      किसी भी मशीन पर VS Code चलाएं और इसे ब्राउज़र में एक्सेस करें।
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## विशेषताएं
+
+      - एक स्थिर विकास वातावरण के साथ किसी भी डिवाइस पर कोड करें
+      - टेस्ट, कम्पाइलेशन, डाउनलोड और अधिक को तेज करने के लिए क्लाउड सर्वर का उपयोग करें
+      - चलते-फिरते बैटरी लाइफ को बचाएं; सभी गहन कार्य आपके सर्वर पर चलते हैं
+  ko:
+    description: 브라우저에서의 Visual Studio Code
+    readme: |-
+      어디서든 VS Code를 실행하고 브라우저에서 접속하세요.
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## 기능
+
+      - 일관된 개발 환경으로 모든 기기에서 코딩
+      - 클라우드 서버를 사용하여 테스트, 컴파일, 다운로드 등을 더 빠르게 처리
+      - 이동 중일 때 배터리 수명을 절약; 모든 집약적인 작업은 서버에서 실행
+  ru:
+    description: Visual Studio Code в браузере
+    readme: |-
+      Запускайте VS Code на любом устройстве и получайте доступ к нему через браузер.
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## Возможности
+
+      - Пишите код на любом устройстве с единой средой разработки
+      - Используйте облачные серверы для ускорения тестов, компиляций, загрузок и многого другого
+      - Экономьте заряд батареи в пути; все ресурсоемкие задачи выполняются на вашем сервере
+  ja:
+    description: ブラウザで使用するVisual Studio Code
+    readme: |-
+      どのマシンでも VS Code を実行し、ブラウザからアクセスできます。
+
+      ![code-server](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
+
+      <hr>
+
+      ## 特徴
+
+      - 一貫した開発環境で、あらゆるデバイスでコーディングが可能
+      - クラウドサーバーを使用してテスト、コンパイル、ダウンロードなどを高速化
+      - 外出先でもバッテリー寿命を節約；負荷の高いタスクはすべてサーバーで実行

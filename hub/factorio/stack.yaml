@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: factorio
+name: Factorio server
+icon: 🎮
+flavor: DockerCompose
+version: "1"
+updated_at: 2025-01-06
+description: Factorio server
+author: Wube Software
+license: Proprietary
+homepage: https://www.factorio.com
+repository: https://github.com/factoriotools/factorio-docker
+stars: 1100
+tags: [game]
+readme: |
+  Factorio is a game about building and creating automated factories to produce items of increasing complexity, within an infinite 2D world. Use your imagination to design your factory, combine simple elements into ingenious structures, and finally protect it from the creatures who don't really like you.

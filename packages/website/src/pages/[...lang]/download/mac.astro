@@ -1,0 +1,31 @@
+---
+import { langs, useTranslations } from "~/i18n";
+import Layout from "~/layouts/Layout.astro";
+
+export const getStaticPaths = () => {
+  return langs.map((lang) => ({ params: { lang } }));
+};
+
+const lang = Astro.params.lang;
+const t = useTranslations(lang);
+
+const redirectUrl = "/releases/Stack_0.1.5_aarch64.dmg";
+---
+
+<Layout lang={lang}>
+  <meta http-equiv="refresh" content={`1;url=${redirectUrl}`} />
+
+  <div class="section">
+    <h1 set:html={t("Downloading Stack for {os}…", { os: "mac" })} />
+
+    <h2 set:html={t("Once the download is complete")} />
+    <ol>
+      <li
+        set:html={t(
+          "Install the Stack app by double-clicking the downloaded file. Then drag it to your Applications folder."
+        )}
+      />
+      <li set:html={t("Run the Stack app from your Applications folder.")} />
+    </ol>
+  </div>
+</Layout>

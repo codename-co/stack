@@ -1,0 +1,14 @@
+services:
+  owncast:
+    image: owncast/owncast:${OWNCAST_VERSION:-0.2.1}
+    ports:
+      - 1935:1935
+    volumes:
+      - owncast-data:/app/data
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.owncast.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.owncast.loadbalancer.server.port: 8080
+
+volumes:
+  owncast-data:

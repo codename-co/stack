@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: minecraft
+name: Minecraft server
+icon: 🎮
+flavor: DockerCompose
+version: "2024.10.2"
+updated_at: 2024-10-18
+description: Minecraft server with dynamic version, server types, and modpack support
+author: Microsoft
+license: Proprietary
+homepage: https://www.minecraft.net
+repository: https://github.com/itzg/docker-minecraft-server
+stars: 9600
+tags: [game]
+readme: |
+  Minecraft is a game about placing blocks and going on adventures. Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles.
+  Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs.
+
+  This server supports dynamic versions, server types, and modpacks.

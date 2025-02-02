@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: rustdesk
+name: Rustdesk
+flavor: DockerCompose
+version: "1"
+updated_at: 2024-10-07
+description: Remote desktop application
+author: Purslane
+license: AGPL-3.0
+homepage: https://rustdesk.com
+repository: https://github.com/rustdesk/rustdesk
+stars: 77900
+tags: [remote-desktop]
+alternativeTo: [teamviewer]
+readme: |
+  Open source remote desktop application.
+
+  ![preview](https://rustdesk.com/remote.jpg)
+
+  <hr>
+
+  Yet another remote desktop software, written in Rust. Works out of the box, no configuration required. You have full control of your data, with no concerns about security. You can use our rendezvous/relay server, [set up your own](https://rustdesk.com/server), or [write your own rendezvous/relay server](https://github.com/rustdesk/rustdesk-server-demo).
+
+  ## Screenshots
+
+  ![Connection Manager](https://github.com/rustdesk/rustdesk/assets/28412477/db82d4e7-c4bc-4823-8e6f-6af7eadf7651)
+
+  ![Connected to a Windows PC](https://github.com/rustdesk/rustdesk/assets/28412477/9baa91e9-3362-4d06-aa1a-7518edcbd7ea)
+
+  ![File Transfer](https://github.com/rustdesk/rustdesk/assets/28412477/39511ad3-aa9a-4f8c-8947-1cce286a46ad)
+
+  ![TCP Tunneling](https://github.com/rustdesk/rustdesk/assets/28412477/78e8708f-e87e-4570-8373-1360033ea6c5)

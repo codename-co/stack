@@ -1,0 +1,11 @@
+services:
+  it-tools:
+    image: corentinth/it-tools:${ITTOOLS_VERSION:-latest}
+    restart: unless-stopped
+    # ports:
+    #   - 80:80
+    labels:
+      dash.name: IT Tools
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.it-tools.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.it-tools.loadbalancer.server.port: 80

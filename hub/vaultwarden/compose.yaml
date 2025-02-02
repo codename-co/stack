@@ -1,0 +1,19 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:${VAULTWARDEN_VERSION:-1.32.7}-alpine
+    restart: unless-stopped
+    environment:
+      DOMAIN: https://$PROJECT.$DOMAIN
+    volumes:
+      - data/:/data/
+    # ports:
+    #   - 80:80
+    labels:
+      dash.name: Vaultwarden
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.vaultwarden.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.vaultwarden.loadbalancer.server.port: 80
+
+volumes:
+  data:
+    driver: local

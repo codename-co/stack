@@ -1,0 +1,98 @@
+services:
+  perplexica-searxng:
+    image: searxng/searxng:latest
+    # ports:
+    #   - 4000:8080
+    restart: unless-stopped
+    configs:
+      - source: searxng-settings.yml
+        target: /etc/searxng/settings.yml
+
+  perplexica-backend:
+    image: itzcrazykns1337/perplexica-backend:v${PERPLEXICA_VERSION:-1.9.3}
+    env_file: .env
+    depends_on:
+      - perplexica-searxng
+    # ports:
+    #   - 3001:3001
+    restart: unless-stopped
+    volumes:
+      - backend-dbstore:/home/perplexica/data
+      - uploads:/home/perplexica/uploads
+      # - ./config.toml:/home/perplexica/config.toml
+    configs:
+      - source: perplexica-config.toml
+        target: /home/perplexica/config.toml
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN/api/models
+      traefik.http.routers.perplexica-backend.rule: Host(`$PROJECT.$DOMAIN`) && (PathPrefix(`/api`) || Header(`Upgrade`, `websocket`))
+      traefik.http.services.perplexica-backend.loadbalancer.server.port: 3001
+
+  perplexica-frontend:
+    image: itzcrazykns1337/perplexica-frontend:v${PERPLEXICA_VERSION:-1.9.3}
+    env_file: .env
+    # environment:
+    #   NEXT_PUBLIC_WS_URL: ws://$PROJECT-api.$DOMAIN
+    #   NEXT_PUBLIC_API_URL: https://$PROJECT-api.$DOMAIN/api
+    command:
+      [
+        "sh",
+        "-c",
+        "find .next -type f -exec sed -i -e 's|http://127\\.0\\.0\\.1:3001|https://$PROJECT.$DOMAIN|g' -e 's|ws://127\\.0\\.0\\.1:3001|wss://$PROJECT.$DOMAIN|g' {} + && echo '✔ Env vars replaced; starting the app…' && yarn start",
+      ]
+    depends_on:
+      - perplexica-backend
+    # ports:
+    #   - 3000:3000
+    restart: unless-stopped
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.perplexica.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.perplexica.loadbalancer.server.port: 3000
+
+configs:
+  searxng-settings.yml:
+    content: |
+      # see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
+      use_default_settings: true
+
+      server:
+        secret_key: $SEARXNG_SECRET_KEY
+        limiter: false
+        image_proxy: true
+        port: 8080
+        bind_address: 0.0.0.0
+
+      ui:
+        static_use_hash: true
+
+      search:
+        safe_search: 0
+        autocomplete: ""
+        default_lang: ""
+        formats:
+          - html
+          - json
+
+  perplexica-config.toml:
+    content: |
+      [GENERAL]
+      PORT = 3001 # Port to run the server on
+      SIMILARITY_MEASURE = "$SIMILARITY_MEASURE"
+      KEEP_ALIVE = "$KEEP_ALIVE"
+
+      [API_KEYS]
+      OPENAI = "$OPENAI_API_KEY"
+      GROQ = "$GROK_API_KEY"
+      ANTHROPIC = "$ANTHROPIC_API_KEY"
+      GEMINI = "$GEMINI_API_KEY"
+
+      [API_ENDPOINTS]
+      SEARXNG = "$SEARXNG_ORIGIN"
+      OLLAMA = "$OLLAMA_ORIGIN"
+
+volumes:
+  backend-dbstore:
+  uploads:

@@ -1,0 +1,246 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: dash
+name: Dash
+icon: docker
+flavor: DockerCompose
+version: "0.7.6"
+updated_at: 2024-11-21
+description: A dashboard for your Docker containers
+author: Codename
+license: MIT
+repository: https://github.com/codename-co/dash
+stars: 3
+tags:
+  - dashboard
+alternativeTo:
+  - homepage
+readme: |
+  Drop-in minimalist Docker landing page with services auto-discovery.
+
+  ![preview](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+  <hr>
+
+  ## Features
+
+  - 🐳 Automatic Docker services discovery
+  - ⚡ Blazing-fast performances
+  - 🪶 Extra light Docker image (7MB)
+  - 🛡️ Robust typed codebase
+  - 🔄 Responsive user interface
+  - 🟢 Health check compliant
+  - 🔍 Search services by name, image
+  - 🕵️‍♂️ Identify same-network services
+  - 💄 Themable
+  - 🔧 Customizable
+i18n:
+  fr:
+    description: Un tableau de bord pour vos conteneurs Docker
+    readme: |-
+      Page d'accueil Docker minimaliste avec découverte automatique des services.
+
+      ![preview](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## Fonctionnalités
+
+      - 🐳 Découverte automatique des services Docker
+      - ⚡ Performances ultra-rapides
+      - 🪶 Image Docker ultra-légère (7MB)
+      - 🛡️ Base de code robuste et typée
+      - 🔄 Interface utilisateur responsive
+      - 🟢 Compatible avec les contrôles de santé
+      - 🔍 Recherche de services par nom, image
+      - 🕵️‍♂️ Identification des services sur le même réseau
+      - 💄 Personnalisation des thèmes
+      - 🔧 Personnalisable
+  ar:
+    description: لوحة تحكم لحاويات Docker الخاصة بك
+    readme: |-
+      صفحة هبوط بسيطة لدوكر مع اكتشاف تلقائي للخدمات.
+
+      ![preview](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## المميزات
+
+      - 🐳 اكتشاف تلقائي لخدمات دوكر
+      - ⚡ أداء فائق السرعة
+      - 🪶 صورة دوكر خفيفة جداً (7 ميجابايت)
+      - 🛡️ قاعدة شيفرة قوية ومطابقة للأنواع
+      - 🔄 واجهة مستخدم متجاوبة
+      - 🟢 متوافق مع فحص الحالة الصحية
+      - 🔍 البحث عن الخدمات حسب الاسم والصورة
+      - 🕵️‍♂️ تحديد الخدمات في نفس الشبكة
+      - 💄 قابل للتخصيص المظهري
+      - 🔧 قابل للتخصيص
+  de:
+    description: Ein Dashboard für Ihre Docker-Container
+    readme: |-
+      Drop-in minimalistische Docker-Landingpage mit automatischer Diensterkennung.
+
+      ![vorschau](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## Funktionen
+
+      - 🐳 Automatische Docker-Diensterkennung
+      - ⚡ Blitzschnelle Leistung
+      - 🪶 Extra leichtes Docker-Image (7MB)
+      - 🛡️ Robuste typisierte Codebasis
+      - 🔄 Responsive Benutzeroberfläche
+      - 🟢 Health-Check-konform
+      - 🔍 Dienste nach Name und Image durchsuchen
+      - 🕵️‍♂️ Identifizierung von Diensten im gleichen Netzwerk
+      - 💄 Anpassbares Design
+      - 🔧 Individuell konfigurierbar
+  zh:
+    description: Docker容器的仪表板
+    readme: |-
+      具有服务自动发现功能的简约 Docker 登陆页面。
+
+      ![预览](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## 功能特点
+
+      - 🐳 自动发现 Docker 服务
+      - ⚡ 极速性能表现
+      - 🪶 超轻量级 Docker 镜像（7MB）
+      - 🛡️ 健壮的类型化代码库
+      - 🔄 响应式用户界面
+      - 🟢 支持健康检查
+      - 🔍 按名称、镜像搜索服务
+      - 🕵️‍♂️ 识别同一网络的服务
+      - 💄 可主题化
+      - 🔧 可定制化
+  es:
+    description: Un panel de control para tus contenedores Docker
+    readme: |-
+      Página de inicio minimalista tipo Drop-in para Docker con descubrimiento automático de servicios.
+
+      ![vista previa](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## Características
+
+      - 🐳 Descubrimiento automático de servicios Docker
+      - ⚡ Rendimiento ultrarrápido
+      - 🪶 Imagen Docker extra ligera (7MB)
+      - 🛡️ Base de código robusta y tipada
+      - 🔄 Interfaz de usuario adaptable
+      - 🟢 Compatible con verificación de estado
+      - 🔍 Búsqueda de servicios por nombre, imagen
+      - 🕵️‍♂️ Identificación de servicios en la misma red
+      - 💄 Personalizable con temas
+      - 🔧 Configurable
+  it:
+    description: Un pannello di controllo per i tuoi container Docker
+    readme: |-
+      Pagina di destinazione Docker minimalista con rilevamento automatico dei servizi.
+
+      ![preview](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## Caratteristiche
+
+      - 🐳 Rilevamento automatico dei servizi Docker
+      - ⚡ Prestazioni fulminee
+      - 🪶 Immagine Docker ultra leggera (7MB)
+      - 🛡️ Codebase robusta e tipizzata
+      - 🔄 Interfaccia utente responsive
+      - 🟢 Conforme al controllo dello stato
+      - 🔍 Ricerca servizi per nome, immagine
+      - 🕵️‍♂️ Identificazione dei servizi sulla stessa rete
+      - 💄 Personalizzabile nei temi
+      - 🔧 Configurabile
+  ja:
+    description: Dockerコンテナ用のダッシュボード
+    readme: |-
+      Dockerサービスの自動検出機能を備えたミニマリストなDocker用ランディングページ。
+
+      ![preview](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## 機能
+
+      - 🐳 Dockerサービスの自動検出
+      - ⚡ 超高速なパフォーマンス
+      - 🪶 超軽量なDockerイメージ（7MB）
+      - 🛡️ 堅牢な型付きコードベース
+      - 🔄 レスポンシブなユーザーインターフェース
+      - 🟢 ヘルスチェック対応
+      - 🔍 名前やイメージでサービスを検索
+      - 🕵️‍♂️ 同一ネットワーク上のサービスを識別
+      - 💄 テーマ対応
+      - 🔧 カスタマイズ可能
+  ko:
+    description: Docker 컨테이너를 위한 대시보드
+    readme: |-
+      Docker 서비스 자동 감지 기능이 있는 미니멀한 Docker 랜딩 페이지입니다.
+
+      ![preview](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## 기능
+
+      - 🐳 Docker 서비스 자동 감지
+      - ⚡ 매우 빠른 성능
+      - 🪶 매우 가벼운 Docker 이미지 (7MB)
+      - 🛡️ 견고한 타입 기반 코드베이스
+      - 🔄 반응형 사용자 인터페이스
+      - 🟢 헬스 체크 지원
+      - 🔍 이름, 이미지로 서비스 검색
+      - 🕵️‍♂️ 동일 네트워크 서비스 식별
+      - 💄 테마 적용 가능
+      - 🔧 커스터마이징 가능
+  pt:
+    description: Um painel de controle para seus containers Docker
+    readme: |-
+      Página inicial minimalista Docker com descoberta automática de serviços.
+
+      ![preview](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## Funcionalidades
+
+      - 🐳 Descoberta automática de serviços Docker
+      - ⚡ Desempenho extremamente rápido
+      - 🪶 Imagem Docker extra leve (7MB)
+      - 🛡️ Base de código robusta e tipada
+      - 🔄 Interface de usuário responsiva
+      - 🟢 Compatível com verificação de saúde
+      - 🔍 Busca de serviços por nome, imagem
+      - 🕵️‍♂️ Identificação de serviços na mesma rede
+      - 💄 Personalizável com temas
+      - 🔧 Customizável
+  ru:
+    description: Панель управления для ваших Docker-контейнеров
+    readme: |-
+      Минималистичная целевая страница Docker с автоматическим обнаружением сервисов.
+
+      ![preview](https://github.com/codename-co/dash/raw/main/docs/screens/dash-theme-rainbow.webp)
+
+      <hr>
+
+      ## Возможности
+
+      - 🐳 Автоматическое обнаружение сервисов Docker
+      - ⚡ Молниеносная производительность
+      - 🪶 Сверхлегкий Docker-образ (7МБ)
+      - 🛡️ Надежная типизированная кодовая база
+      - 🔄 Адаптивный пользовательский интерфейс
+      - 🟢 Поддержка проверки работоспособности
+      - 🔍 Поиск сервисов по названию, образу
+      - 🕵️‍♂️ Определение сервисов в одной сети
+      - 💄 Настраиваемые темы
+      - 🔧 Возможность кастомизации

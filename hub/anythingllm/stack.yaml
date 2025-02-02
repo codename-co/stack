@@ -1,0 +1,339 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: anythingllm
+name: AnythingLLM
+icon: 🤖
+flavor: DockerCompose
+version: "1.3"
+updated_at: 2024-11-26
+description: The all-in-one AI app you were looking for
+author: Mintplex Labs Inc
+license: MIT
+homepage: https://anythingllm.com/
+repository: https://github.com/Mintplex-Labs/anything-llm
+stars: 27800
+tags:
+  - llm
+  - ai
+  - rag
+  - chatbot
+alternativeTo:
+  - chatgpt
+  - perplexity
+readme: |
+  Turn any document, resource, or piece of content into context that any LLM can use as references during chatting.
+
+  ![Chatting](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+  <hr>
+
+  ### Product Overview
+
+  AnythingLLM is a full-stack application where you can use commercial off-the-shelf LLMs or popular open source LLMs and vectorDB solutions to build a private ChatGPT with no compromises that you can run locally as well as host remotely and be able to chat intelligently with any documents you provide it.
+
+  AnythingLLM divides your documents into objects called `workspaces`. A Workspace functions a lot like a thread, but with the addition of containerization of your documents. Workspaces can share documents, but they do not talk to each other so you can keep your context for each workspace clean.
+
+  ### Cool features of AnythingLLM
+
+  - 🆕 [**Custom AI Agents**](https://docs.anythingllm.com/agent/custom/introduction)
+  - 🖼️ **Multi-modal support (both closed and open-source LLMs!)**
+  - 👤 Multi-user instance support and permissioning _Docker version only_
+  - 🦾 Agents inside your workspace (browse the web, run code, etc)
+  - 💬 Custom Embeddable Chat widget for your website
+  - 📖 Multiple document type support (PDF, TXT, DOCX, etc)
+  - Simple chat UI with Drag-n-Drop funcitonality and clear citations.
+  - 100% Cloud deployment ready.
+  - Works with all popular [closed and open-source LLM providers](#supported-llms-embedder-models-speech-models-and-vector-databases).
+  - Built-in cost & time-saving measures for managing very large documents compared to any other chat UI.
+  - Full Developer API for custom integrations!
+  - Much more...install and find out!
+i18n:
+  ar:
+    description: التطبيق الذكي الشامل الذي كنت تبحث عنه
+    readme: |-
+      حول أي مستند أو مورد أو محتوى إلى سياق يمكن لأي LLM استخدامه كمراجع أثناء المحادثة.
+
+      ![المحادثة](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### نظرة عامة على المنتج
+
+      AnythingLLM هو تطبيق متكامل يمكنك من خلاله استخدام نماذج LLM التجارية الجاهزة أو نماذج LLM مفتوحة المصدر الشائعة وحلول vectorDB لبناء ChatGPT خاص بدون تنازلات يمكنك تشغيله محليًا وكذلك استضافته عن بُعد والقدرة على الدردشة بذكاء مع أي مستندات تقدمها له.
+
+      يقسم AnythingLLM مستنداتك إلى كائنات تسمى `مساحات العمل`. تعمل مساحة العمل مثل المؤشر الترابطي، ولكن مع إضافة حاويات لمستنداتك. يمكن لمساحات العمل مشاركة المستندات، لكنها لا تتحدث مع بعضها البعض حتى تتمكن من الحفاظ على السياق الخاص بكل مساحة عمل نظيفًا.
+
+      ### ميزات رائعة لـ AnythingLLM
+
+      - 🆕 [**وكلاء الذكاء الاصطناعي المخصصين**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **دعم متعدد الوسائط (نماذج LLM المغلقة ومفتوحة المصدر!)**
+      - 👤 دعم وأذونات متعددة المستخدمين _إصدار Docker فقط_
+      - 🦾 وكلاء داخل مساحة العمل الخاصة بك (تصفح الويب، تشغيل الكود، إلخ)
+      - 💬 أداة دردشة مخصصة قابلة للتضمين لموقعك الإلكتروني
+      - 📖 دعم أنواع متعددة من المستندات (PDF، TXT، DOCX، إلخ)
+      - واجهة دردشة بسيطة مع وظيفة السحب والإفلات واقتباسات واضحة.
+      - جاهز 100٪ للنشر السحابي.
+      - يعمل مع جميع [مزودي LLM المغلقة ومفتوحة المصدر الشائعة](#الـLLMs-المدعومة-نماذج-المضمنات-نماذج-الكلام-وقواعد-البيانات-المتجهة).
+      - إجراءات مدمجة لتوفير التكلفة والوقت لإدارة المستندات الكبيرة جدًا مقارنة بأي واجهة دردشة أخرى.
+      - واجهة برمجة تطبيقات كاملة للمطورين للتكاملات المخصصة!
+      - والمزيد... قم بالتثبيت واكتشف!
+  de:
+    description: Die All-in-One KI-App, nach der Sie gesucht haben
+    readme: |-
+      Verwandeln Sie jedes Dokument, jede Ressource oder jeden Inhalt in Kontext, den jedes LLM als Referenz während des Chattens nutzen kann.
+
+      ![Chatting](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### Produktübersicht
+
+      AnythingLLM ist eine Full-Stack-Anwendung, mit der Sie handelsübliche LLMs oder beliebte Open-Source-LLMs und VektorDB-Lösungen nutzen können, um einen privaten ChatGPT ohne Kompromisse zu erstellen, den Sie lokal ausführen und remote hosten können und mit dem Sie intelligent mit allen von Ihnen bereitgestellten Dokumenten chatten können.
+
+      AnythingLLM teilt Ihre Dokumente in Objekte namens `Workspaces` ein. Ein Workspace funktioniert ähnlich wie ein Thread, aber mit der zusätzlichen Containerisierung Ihrer Dokumente. Workspaces können Dokumente gemeinsam nutzen, kommunizieren aber nicht miteinander, sodass der Kontext für jeden Workspace sauber bleibt.
+
+      ### Coole Funktionen von AnythingLLM
+
+      - 🆕 [**Benutzerdefinierte KI-Agenten**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **Multi-modale Unterstützung (sowohl geschlossene als auch Open-Source-LLMs!)**
+      - 👤 Multi-User-Instanz-Unterstützung und Berechtigungen _nur Docker-Version_
+      - 🦾 Agenten in Ihrem Workspace (im Web surfen, Code ausführen, etc)
+      - 💬 Anpassbares einbettbares Chat-Widget für Ihre Website
+      - 📖 Unterstützung mehrerer Dokumenttypen (PDF, TXT, DOCX, etc)
+      - Einfache Chat-Benutzeroberfläche mit Drag-n-Drop-Funktionalität und klaren Zitaten
+      - 100% Cloud-Deployment-bereit
+      - Funktioniert mit allen beliebten [geschlossenen und Open-Source-LLM-Anbietern](#supported-llms-embedder-models-speech-models-and-vector-databases)
+      - Eingebaute kosten- und zeitsparende Maßnahmen für die Verwaltung sehr großer Dokumente im Vergleich zu anderen Chat-Benutzeroberflächen
+      - Vollständige Entwickler-API für benutzerdefinierte Integrationen!
+      - Viel mehr... installieren Sie es und finden Sie es heraus!
+  zh:
+    description: 您一直在寻找的多功能AI应用
+    readme: |-
+      将任何文档、资源或内容转化为任何LLM在聊天时可以用作参考的上下文。
+
+      ![聊天](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### 产品概述
+
+      AnythingLLM是一个全栈应用程序，你可以使用商业现成的LLM或流行的开源LLM和向量数据库解决方案，构建一个无妥协的私人ChatGPT，既可以在本地运行，也可以远程托管，并能够与你提供的任何文档进行智能对话。
+
+      AnythingLLM将你的文档分成称为`工作区`的对象。工作区的功能类似于线程，但增加了文档的容器化功能。工作区可以共享文档，但它们之间不会互相通信，所以你可以保持每个工作区的上下文清晰。
+
+      ### AnythingLLM的酷炫功能
+
+      - 🆕 [**自定义AI代理**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **多模态支持（包括闭源和开源LLM！）**
+      - 👤 多用户实例支持和权限管理 _仅Docker版本_
+      - 🦾 工作区内的代理（浏览网页、运行代码等）
+      - 💬 为你的网站提供可嵌入的自定义聊天小部件
+      - 📖 支持多种文档类型（PDF、TXT、DOCX等）
+      - 简单的聊天界面，具有拖放功能和清晰的引用
+      - 100%支持云部署
+      - 适用于所有流行的[闭源和开源LLM提供商](#supported-llms-embedder-models-speech-models-and-vector-databases)
+      - 与其他任何聊天界面相比，具有内置的成本和时间节省措施，可管理非常大的文档
+      - 完整的开发者API，可用于自定义集成！
+      - 更多功能...安装后即可发现！
+  ja:
+    description: お探しだったオールインワンAIアプリ
+    readme: |-
+      どのようなドキュメント、リソース、コンテンツでもLLMがチャット中に参照できるコンテキストに変換できます。
+
+      ![Chatting](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### 製品概要
+
+      AnythingLLMは、市販のLLMや人気のオープンソースLLM、ベクターDBソリューションを使用して、妥協のないプライベートChatGPTを構築できるフルスタックアプリケーションです。ローカルで実行したり、リモートでホストしたりでき、提供したどのようなドキュメントとも知的にチャットすることができます。
+
+      AnythingLLMは、ドキュメントを`ワークスペース`と呼ばれるオブジェクトに分割します。ワークスペースはスレッドのように機能しますが、ドキュメントのコンテナ化が追加されています。ワークスペース間でドキュメントを共有できますが、相互に通信することはないため、各ワークスペースのコンテキストをクリーンに保つことができます。
+
+      ### AnythingLLMの優れた機能
+
+      - 🆕 [**カスタムAIエージェント**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **マルチモーダルサポート(クローズドおよびオープンソースLLM両対応!)**
+      - 👤 マルチユーザーインスタンスサポートと権限管理 _Dockerバージョンのみ_
+      - 🦾 ワークスペース内のエージェント(ウェブ閲覧、コード実行など)
+      - 💬 ウェブサイト用のカスタム埋め込みチャットウィジェット
+      - 📖 複数のドキュメントタイプサポート(PDF、TXT、DOCXなど)
+      - ドラッグアンドドロップ機能と明確な引用を備えたシンプルなチャットUI
+      - 100% クラウドデプロイメント対応
+      - すべての人気のある[クローズドおよびオープンソースLLMプロバイダー](#supported-llms-embedder-models-speech-models-and-vector-databases)で動作
+      - 他のチャットUIと比較して、大規模なドキュメントを管理するためのコストと時間を節約する組み込み機能
+      - カスタム統合のための完全な開発者API
+      - さらに多くの機能...インストールしてご確認ください!
+  es:
+    description: La aplicación de IA todo en uno que estabas buscando
+    readme: |-
+      Convierte cualquier documento, recurso o contenido en contexto que cualquier LLM puede usar como referencia durante el chat.
+
+      ![Chatting](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### Descripción del Producto
+
+      AnythingLLM es una aplicación full-stack donde puedes usar LLMs comerciales o LLMs populares de código abierto y soluciones vectorDB para construir un ChatGPT privado sin compromisos que puedes ejecutar localmente y también alojar remotamente y poder chatear de manera inteligente con cualquier documento que le proporciones.
+
+      AnythingLLM divide tus documentos en objetos llamados `workspaces`. Un Workspace funciona muy similar a un hilo, pero con la adición de containerización de tus documentos. Los Workspaces pueden compartir documentos, pero no se comunican entre sí para mantener el contexto de cada workspace limpio.
+
+      ### Características interesantes de AnythingLLM
+
+      - 🆕 [**Agentes AI Personalizados**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **Soporte multimodal (¡tanto LLMs cerrados como de código abierto!)**
+      - 👤 Soporte para múltiples usuarios y permisos _Solo versión Docker_
+      - 🦾 Agentes dentro de tu workspace (navega por la web, ejecuta código, etc)
+      - 💬 Widget de Chat personalizable e integrable para tu sitio web
+      - 📖 Soporte para múltiples tipos de documentos (PDF, TXT, DOCX, etc)
+      - Interfaz de chat simple con funcionalidad de arrastrar y soltar y citaciones claras.
+      - 100% Listo para despliegue en la nube.
+      - Funciona con todos los [proveedores de LLM cerrados y de código abierto populares](#supported-llms-embedder-models-speech-models-and-vector-databases).
+      - Medidas incorporadas de ahorro de costos y tiempo para gestionar documentos muy grandes en comparación con cualquier otra interfaz de chat.
+      - ¡API completa para desarrolladores para integraciones personalizadas!
+      - Mucho más... ¡instala y descúbrelo!
+  ko:
+    description: 찾고 계시던 올인원 AI 앱
+    readme: |-
+      어떤 문서, 자원 또는 콘텐츠든 LLM이 채팅 중에 참조할 수 있는 컨텍스트로 전환하세요.
+
+      ![Chatting](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### 제품 개요
+
+      AnythingLLM은 상용 LLM이나 인기 있는 오픈 소스 LLM 및 vectorDB 솔루션을 사용하여 타협 없이 프라이빗 ChatGPT를 구축할 수 있는 풀스택 애플리케이션입니다. 로컬에서 실행하거나 원격으로 호스팅할 수 있으며 제공한 문서와 지능적으로 대화할 수 있습니다.
+
+      AnythingLLM은 문서를 `워크스페이스`라는 객체로 나눕니다. 워크스페이스는 스레드와 매우 비슷하게 작동하지만 문서의 컨테이너화가 추가되었습니다. 워크스페이스는 문서를 공유할 수 있지만 서로 통신하지 않으므로 각 워크스페이스의 컨텍스트를 깨끗하게 유지할 수 있습니다.
+
+      ### AnythingLLM의 멋진 기능들
+
+      - 🆕 [**커스텀 AI 에이전트**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **멀티모달 지원 (클로즈드 및 오픈소스 LLM 모두!)**
+      - 👤 다중 사용자 인스턴스 지원 및 권한 부여 _Docker 버전만 해당_
+      - 🦾 워크스페이스 내 에이전트 (웹 브라우징, 코드 실행 등)
+      - 💬 웹사이트용 맞춤형 임베디드 채팅 위젯
+      - 📖 다양한 문서 유형 지원 (PDF, TXT, DOCX 등)
+      - 드래그 앤 드롭 기능과 명확한 인용이 있는 간단한 채팅 UI
+      - 100% 클라우드 배포 준비 완료
+      - 모든 인기 있는 [클로즈드 및 오픈소스 LLM 제공자](#supported-llms-embedder-models-speech-models-and-vector-databases)와 작동
+      - 다른 채팅 UI에 비해 매우 큰 문서를 관리하기 위한 비용 및 시간 절약 조치 내장
+      - 커스텀 통합을 위한 완전한 개발자 API!
+      - 더 많은 기능... 설치하고 확인해보세요!
+  fr:
+    description: L'application IA tout-en-un que vous cherchiez
+    readme: |-
+      Transformez n'importe quel document, ressource ou contenu en contexte qu'un LLM peut utiliser comme référence pendant une conversation.
+
+      ![Conversation](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### Présentation du produit
+
+      AnythingLLM est une application complète où vous pouvez utiliser des LLM commerciaux ou des LLM open source populaires et des solutions vectorDB pour créer un ChatGPT privé sans compromis, que vous pouvez exécuter localement et héberger à distance pour discuter intelligemment avec tous les documents que vous lui fournissez.
+
+      AnythingLLM divise vos documents en objets appelés `workspaces`. Un Workspace fonctionne comme un fil de discussion, mais avec l'ajout de la conteneurisation de vos documents. Les workspaces peuvent partager des documents, mais ils ne communiquent pas entre eux afin de garder le contexte de chaque workspace distinct.
+
+      ### Fonctionnalités intéressantes d'AnythingLLM
+
+      - 🆕 [**Agents IA personnalisés**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **Support multimodal (LLM propriétaires et open source !)**
+      - 👤 Support multi-utilisateurs et gestion des permissions _Version Docker uniquement_
+      - 🦾 Agents dans votre workspace (navigation web, exécution de code, etc)
+      - 💬 Widget de chat intégrable personnalisé pour votre site web
+      - 📖 Support de multiples types de documents (PDF, TXT, DOCX, etc)
+      - Interface de chat simple avec fonctionnalité glisser-déposer et citations claires
+      - 100% prêt pour le déploiement dans le cloud
+      - Fonctionne avec tous les fournisseurs de LLM populaires [propriétaires et open source](#supported-llms-embedder-models-speech-models-and-vector-databases)
+      - Mesures intégrées d'économie de coûts et de temps pour la gestion de très grands documents par rapport aux autres interfaces de chat
+      - API complète pour les développeurs permettant des intégrations personnalisées !
+      - Et bien plus encore... installez et découvrez !
+  pt:
+    description: O aplicativo de IA completo que você estava procurando
+    readme: |-
+      Transforme qualquer documento, recurso ou conteúdo em contexto que qualquer LLM possa usar como referência durante conversas.
+
+      ![Conversando](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### Visão Geral do Produto
+
+      AnythingLLM é uma aplicação full-stack onde você pode usar LLMs comerciais prontos para uso ou LLMs populares de código aberto e soluções vectorDB para construir um ChatGPT privado sem compromissos que você pode executar localmente e hospedar remotamente, sendo capaz de conversar inteligentemente com quaisquer documentos que você fornecer.
+
+      AnythingLLM divide seus documentos em objetos chamados `workspaces`. Um Workspace funciona muito como uma thread, mas com o adicional de containerização dos seus documentos. Workspaces podem compartilhar documentos, mas não se comunicam entre si para que você possa manter o contexto de cada workspace limpo.
+
+      ### Recursos interessantes do AnythingLLM
+
+      - 🆕 [**Agentes de IA Personalizados**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **Suporte multimodal (tanto LLMs fechados quanto de código aberto!)**
+      - 👤 Suporte a múltiplos usuários e permissionamento _Apenas versão Docker_
+      - 🦾 Agentes dentro do seu workspace (navegue na web, execute código, etc)
+      - 💬 Widget de Chat Personalizável e Incorporável para seu website
+      - 📖 Suporte a múltiplos tipos de documentos (PDF, TXT, DOCX, etc)
+      - Interface de chat simples com funcionalidade de arrastar e soltar e citações claras.
+      - 100% pronto para implantação na nuvem.
+      - Funciona com todos os [provedores LLM fechados e de código aberto populares](#supported-llms-embedder-models-speech-models-and-vector-databases).
+      - Medidas integradas de economia de custos e tempo para gerenciar documentos muito grandes em comparação com qualquer outra interface de chat.
+      - API completa para desenvolvedores para integrações personalizadas!
+      - Muito mais... instale e descubra!
+  ru:
+    description: Универсальное AI-приложение, которое вы искали
+    readme: |-
+      Превратите любой документ, ресурс или контент в контекст, который любая LLM может использовать в качестве справочного материала во время общения.
+
+      ![Общение](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### Обзор продукта
+
+      AnythingLLM - это полноценное приложение, где вы можете использовать коммерческие готовые LLM или популярные модели с открытым исходным кодом и решения vectorDB для создания частного ChatGPT без компромиссов, который можно запускать локально, а также размещать удаленно и иметь возможность интеллектуально общаться с любыми предоставленными документами.
+
+      AnythingLLM разделяет ваши документы на объекты, называемые `рабочими пространствами`. Рабочее пространство функционирует во многом как поток, но с добавлением контейнеризации ваших документов. Рабочие пространства могут совместно использовать документы, но они не взаимодействуют друг с другом, поэтому вы можете сохранять контекст для каждого рабочего пространства чистым.
+
+      ### Крутые функции AnythingLLM
+
+      - 🆕 [**Пользовательские ИИ-агенты**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **Мультимодальная поддержка (как закрытых, так и открытых LLM!)**
+      - 👤 Поддержка нескольких пользователей и разрешений _только для Docker версии_
+      - 🦾 Агенты внутри рабочего пространства (просмотр веб-страниц, запуск кода и т.д.)
+      - 💬 Настраиваемый встраиваемый виджет чата для вашего сайта
+      - 📖 Поддержка множества типов документов (PDF, TXT, DOCX и т.д.)
+      - Простой интерфейс чата с функцией drag-n-drop и четкими цитатами
+      - 100% готовность к облачному развертыванию
+      - Работает со всеми популярными [закрытыми и открытыми LLM-провайдерами, моделями встраивания, речевыми моделями и векторными базами данных]
+      - Встроенные меры экономии затрат и времени для управления очень большими документами по сравнению с любым другим интерфейсом чата
+      - Полный API для разработчиков для пользовательских интеграций!
+      - И многое другое... установите и узнайте!
+  it:
+    description: L'app di intelligenza artificiale tutto-in-uno che stavi cercando
+    readme: |-
+      Trasforma qualsiasi documento, risorsa o contenuto in un contesto che qualsiasi LLM può utilizzare come riferimento durante la chat.
+
+      ![Chatting](https://github.com/Mintplex-Labs/anything-llm/assets\/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859)
+
+      <hr>
+
+      ### Panoramica del Prodotto
+
+      AnythingLLM è un'applicazione full-stack dove puoi utilizzare LLM commerciali o popolari LLM open source e soluzioni vectorDB per costruire un ChatGPT privato senza compromessi che puoi eseguire localmente e ospitare in remoto, potendo chattare in modo intelligente con qualsiasi documento tu gli fornisca.
+
+      AnythingLLM divide i tuoi documenti in oggetti chiamati `workspace`. Un Workspace funziona molto come un thread, ma con l'aggiunta della containerizzazione dei tuoi documenti. I workspace possono condividere documenti, ma non comunicano tra loro così puoi mantenere pulito il contesto per ogni workspace.
+
+      ### Caratteristiche interessanti di AnythingLLM
+
+      - 🆕 [**Agenti AI Personalizzati**](https://docs.anythingllm.com/agent/custom/introduction)
+      - 🖼️ **Supporto multi-modale (sia LLM chiusi che open-source!)**
+      - 👤 Supporto multi-utente e gestione permessi _solo versione Docker_
+      - 🦾 Agenti all'interno del tuo workspace (naviga sul web, esegui codice, ecc)
+      - 💬 Widget di Chat personalizzabile e incorporabile nel tuo sito web
+      - 📖 Supporto per diversi tipi di documenti (PDF, TXT, DOCX, ecc)
+      - Semplice interfaccia chat con funzionalità Drag-n-Drop e citazioni chiare
+      - 100% pronto per il deployment su Cloud
+      - Funziona con tutti i popolari [fornitori LLM chiusi e open-source](#supported-llms-embedder-models-speech-models-and-vector-databases)
+      - Misure integrate di risparmio costi e tempo per gestire documenti molto grandi rispetto a qualsiasi altra interfaccia chat
+      - API completa per sviluppatori per integrazioni personalizzate!
+      - Molto altro... installa e scopri!

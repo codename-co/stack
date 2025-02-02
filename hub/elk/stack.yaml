@@ -1,0 +1,109 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: elk
+name: ELK stack
+icon: elastic
+flavor: DockerCompose
+version: "8.17.0"
+updated_at: 2024-12-17
+description: A log management stack with Elasticsearch, Logstash, Kibana
+author: Elastic
+license: Elastic License
+homepage: https://www.elastic.co/
+repository: https://github.com/elastic/elasticsearch
+stars: 71000
+tags:
+  - log-management
+  - monitoring
+  - search-engine
+  - observability
+alternativeTo:
+  - splunk
+readme: >
+  Elasticsearch is a distributed search and analytics engine, scalable data
+  store and vector database optimized for speed and relevance on
+  production-scale workloads. Elasticsearch is the foundation of Elastic’s open
+  Stack platform. Search in near real-time over massive datasets, perform vector
+  searches, integrate with generative AI applications, and much more.
+i18n:
+  es:
+    description: Una pila de gestión de registros con Elasticsearch, Logstash, Kibana
+    readme:
+      Elasticsearch es un motor distribuido de búsqueda y análisis, un almacén
+      de datos escalable y una base de datos vectorial optimizada para velocidad
+      y relevancia en cargas de trabajo a escala de producción. Elasticsearch es
+      la base de la plataforma Stack abierta de Elastic. Realiza búsquedas en
+      tiempo casi real en conjuntos de datos masivos, ejecuta búsquedas
+      vectoriales, integra con aplicaciones de IA generativa y mucho más.
+  it:
+    description: Una raccolta di gestione log con Elasticsearch, Logstash, Kibana
+    readme:
+      Elasticsearch è un motore di ricerca e analisi distribuito, un archivio
+      dati scalabile e un database vettoriale ottimizzato per velocità e
+      pertinenza su carichi di lavoro su scala di produzione. Elasticsearch è
+      alla base della piattaforma Stack open source di Elastic. Esegui ricerche
+      in tempo quasi reale su set di dati enormi, effettua ricerche vettoriali,
+      integrati con applicazioni di IA generativa e molto altro ancora.
+  fr:
+    description: Une pile de gestion des logs avec Elasticsearch, Logstash, Kibana
+    readme: Elasticsearch est un moteur de recherche et d'analyse distribué, une
+      base de données évolutive et une base de données vectorielle optimisée
+      pour la vitesse et la pertinence sur des charges de travail à l'échelle de
+      la production. Elasticsearch est le fondement de la plateforme Stack open
+      source d'Elastic. Effectuez des recherches en quasi temps réel sur des
+      ensembles de données massifs, réalisez des recherches vectorielles,
+      intégrez des applications d'IA générative, et bien plus encore.
+  ru:
+    description: Стек управления логами с Elasticsearch, Logstash, Kibana
+    readme:
+      Elasticsearch - это распределенная поисковая и аналитическая система,
+      масштабируемое хранилище данных и векторная база данных, оптимизированная
+      для скорости и релевантности в рабочих нагрузках производственного
+      масштаба. Elasticsearch является основой открытой платформы Stack от
+      Elastic. Осуществляйте поиск в режиме, близком к реальному времени, по
+      огромным наборам данных, выполняйте векторные поиски, интегрируйтесь с
+      приложениями генеративного ИИ и многое другое.
+  pt:
+    description: Uma pilha de gerenciamento de logs com Elasticsearch, Logstash, Kibana
+    readme: O Elasticsearch é um mecanismo de busca e análise distribuído,
+      armazenamento de dados escalável e banco de dados vetorial otimizado para
+      velocidade e relevância em cargas de trabalho em escala de produção. O
+      Elasticsearch é a base da plataforma Stack aberta da Elastic. Pesquise em
+      tempo quase real em conjuntos de dados massivos, realize pesquisas
+      vetoriais, integre com aplicações de IA generativa e muito mais.
+  ar:
+    description: مجموعة إدارة السجلات مع إلاستيكسيرش، لوغستاش، كيبانا
+    readme:
+      إلاستيكسيرش هو محرك بحث وتحليلات موزع، ومخزن بيانات قابل للتوسع وقاعدة
+      بيانات متجهية محسنة للسرعة والملاءمة في أعباء العمل على مستوى الإنتاج.
+      إلاستيكسيرش هو أساس منصة إلاستك المفتوحة. ابحث في الوقت شبه الفعلي عبر
+      مجموعات البيانات الضخمة، وقم بإجراء عمليات البحث المتجهي، وادمج مع تطبيقات
+      الذكاء الاصطناعي التوليدي، والكثير غير ذلك.
+  ja:
+    description: ElasticsearchとLogstash、Kibanaによるログ管理スタック
+    readme:
+      Elasticsearchは、本番環境規模のワークロードにおいて、速度と関連性に最適化された分散型の検索・分析エンジン、スケーラブルなデータストア、ベクターデータベースです。Elasticsearchは、Elasticのオープンスタックプラットフォームの基盤です。大規模なデータセットをほぼリアルタイムで検索し、ベクター検索を実行し、生成AI
+      アプリケーションと統合するなど、さまざまな機能を提供します。
+  de:
+    description: Ein Log-Management-Stack mit Elasticsearch, Logstash, Kibana
+    readme: Elasticsearch ist eine verteilte Such- und Analyse-Engine, ein
+      skalierbarer Datenspeicher und eine Vektordatenbank, die für
+      Geschwindigkeit und Relevanz bei Produktionsarbeitslasten optimiert ist.
+      Elasticsearch ist die Grundlage der offenen Stack-Plattform von Elastic.
+      Suchen Sie in Echtzeit in riesigen Datensätzen, führen Sie Vektorsuchen
+      durch, integrieren Sie generative KI-Anwendungen und vieles mehr.
+  hi:
+    description: एलास्टिकसर्च, लॉगस्टैश, किबाना के साथ एक लॉग प्रबंधन स्टैक
+    readme: इलास्टिकसर्च एक वितरित खोज और विश्लेषण इंजन, स्केलेबल डेटा स्टोर और
+      वेक्टर डेटाबेस है जो प्रोडक्शन-स्केल वर्कलोड पर गति और प्रासंगिकता के लिए
+      अनुकूलित है। इलास्टिकसर्च इलास्टिक के ओपन स्टैक प्लेटफ़ॉर्म की आधारशिला
+      है। विशाल डेटासेट पर लगभग रीयल-टाइम में खोज करें, वेक्टर खोज निष्पादित
+      करें, जेनरेटिव एआई एप्लिकेशन के साथ एकीकृत करें, और बहुत कुछ।
+  zh:
+    description: Elasticsearch、Logstash、Kibana的日志管理架构
+    readme: Elasticsearch是一个分布式搜索和分析引擎、可扩展的数据存储和向量数据库，针对生产规模工作负载的速度和相关性进行了优化。Elasticsearch是Elastic开放Stack平台的基础。在海量数据集上进行近实时搜索，执行向量搜索，与生成式AI应用程序集成，以及更多功能。
+  ko:
+    description: Elasticsearch, Logstash, Kibana를 사용한 로그 관리 스택
+    readme:
+      Elasticsearch는 프로덕션 규모의 워크로드에서 속도와 관련성에 최적화된 분산 검색 및 분석 엔진, 확장 가능한 데이터
+      스토어 및 벡터 데이터베이스입니다. Elasticsearch는 Elastic의 오픈 스택 플랫폼의 기초입니다. 대규모 데이터셋에 대해
+      실시간에 가까운 검색을 수행하고, 벡터 검색을 수행하며, 생성형 AI 애플리케이션과 통합하는 등 다양한 기능을 제공합니다.

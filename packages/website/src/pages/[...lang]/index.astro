@@ -1,0 +1,256 @@
+---
+import { getCollection } from "astro:content";
+import { format as timeago } from "timeago.js";
+import Download from "~/components/download-base.html";
+import Logo from "~/components/Logo";
+import Tag from "~/components/tag.html";
+import { getStacks } from "~/content/collections/stacks";
+import { langs, useTranslations, useUrl } from "~/i18n";
+import Layout from "~/layouts/Layout.astro";
+import { formatStars, getAlternativeMetadata } from "~/helpers";
+
+export const getStaticPaths = () => {
+  return langs.map((lang) => ({ params: { lang } }));
+};
+
+const lang = Astro.params.lang;
+const t = useTranslations(lang);
+const url = useUrl(lang);
+
+const stacks = getStacks(lang);
+
+const alternatives = await getCollection("alternatives");
+
+const tags = await getCollection("tags");
+
+const totalStars = stacks.reduce(
+  (acc, stack) => acc + (stack.data.stars ?? 0),
+  0
+);
+
+const title = t("The best of free software, accessible");
+const description = t(
+  "Access {count}+ curated open source software packages, ready to install with one click.",
+  { count: Math.floor(stacks.length / 10) * 10 }
+);
+---
+
+<Layout lang={lang} title={title} description={description}>
+  <div slot="left" class="section h-full">
+    <h1 set:html={t("The *best free software* made&nbsp;*accessible*.")} />
+    <p class="subtle mb-8" style="max-width: 24em">
+      {t("Spin up local alternatives to")}
+      <a
+        href={url("/alternativesto/notion")}
+        aria-label="Alternatives to Notion"
+        style="white-space: nowrap"
+      >
+        <Logo slug="notion" />
+        Notion</a
+      >, <a
+        href={url("/alternativesto/chatgpt")}
+        aria-label="Alternatives to ChatGPT"
+        style="white-space: nowrap"
+      >
+        <Logo slug="chatgpt" />
+        ChatGPT</a
+      >, <a
+        href={url("/alternativesto/figma")}
+        aria-label="Alternatives to Figma"
+        style="white-space: nowrap"
+      >
+        <Logo slug="figma" />
+        Figma</a
+      >
+      {t("and other")}
+      <a
+        href={url("/alternativesto")}
+        aria-label="Alternatives to popular software">{t("popular software")}</a
+      >. {t("Remix your own.")}
+    </p>
+    <div class="sticky top-8">
+      <a href={url("/download")} aria-label={t("Download Stack Desktop")}>
+        <Download>{t("Download")}</Download>
+      </a>
+      <p class="subtle my-3">
+        <small>{t("Available for macOS")}</small>
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>
+      {t("Simply the best")}
+      <span
+        class="subtle text-sm"
+        data-title--DISABLED={`Cumulative community likes across all stacks: ${totalStars}`}
+      >
+        ★&nbsp;{formatStars(totalStars)}
+      </span>
+    </h2>
+    <p
+      set:html={t(
+        "Access {count}+ curated open source software packages, ready to install with one click.",
+        { count: Math.floor(stacks.length / 10) * 10 }
+      )}
+    />
+    <p
+      set:html={t(
+        "Free, secure, and privacy-focused alternatives to [popular apps]({url}).",
+        { url: url("/alternativesto") }
+      )}
+    />
+  </div>
+
+  <div class="section relative">
+    <div
+      class="sticky top-8 h-13 z-20 outline outline-8"
+      style="outline-width: 2em; background: #f6f6f6; outline-color: #f6f6f6"
+    >
+      <input
+        id="search"
+        type="search"
+        list="autocomplete"
+        placeholder={t("Search software")}
+        class="w-full p-2 bg-white"
+      />
+    </div>
+    <datalist id="autocomplete">
+      {
+        [
+          ...alternatives.map(({ data }) => data.name),
+          ...stacks.map(({ data }) => data.name),
+        ]
+          .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+          .map((name) => <option value={name} />)
+      }
+    </datalist>
+    <br />
+    <br />
+    <ol id="stacks" class="light">
+      {
+        stacks
+          .map(({ data }) => data)
+          .map(
+            ({
+              slug,
+              name,
+              description,
+              updated_at,
+              tags: _tags,
+              stars,
+              alternativeTo,
+            }) => (
+              <li
+                class="relative"
+                data-search={`${_tags?.map((tag) => `#${tag}`).join(",")},${alternativeTo
+                  ?.map((slug) => getAlternativeMetadata(slug)?.name)
+                  .join(",")}`}
+              >
+                {(alternativeTo?.length ?? 0) > 0 && (
+                  <a
+                    class="absolute end-0 top-6 grid gap-2 grid-flow-col opacity-0 z-10 text-base select-none pointer-events-none transition-opacity"
+                    href={url(`/${slug}.stack`)}
+                    tabindex="-1"
+                    set:html={t("a smart alternative to {apps}", {
+                      apps: alternativeTo
+                        ?.map((slug) => [slug, Logo({ slug }) as any])
+                        .map(
+                          ([slug, { props }]) =>
+                            (props.dangerouslySetInnerHTML.__html
+                              ? `<span style="color: ${props.style.color}">${props.dangerouslySetInnerHTML.__html}</span>`
+                              : "") +
+                            alternatives.find(({ data }) => data.slug === slug)
+                              ?.data.name
+                        )
+                        .join(", "),
+                    })}
+                  />
+                  // <a
+                  //   class="absolute right-0 top-5 grid gap-3 grid-flow-col opacity-0"
+                  //   href={url(`/${slug}.stack`)}
+                  // >
+                  //   A smart alternative to
+                  //   {alternativeTo?.map((slug) => (
+                  //     <Logo slug={slug} />
+                  //   ))}
+                  // </a>
+                )}
+                <a href={url(`/${slug}`)} aria-label={name}>
+                  <article>
+                    <h4>
+                      <Logo slug={slug} />
+                      &nbsp;{name}
+                    </h4>
+                    <div class="text-base mt-2 mb-1">{description}</div>
+                    {/* <span class="subtle text-sm">{rank}</span> */}
+                    {stars && (
+                      <span class="subtle text-sm">
+                        ★&nbsp;{formatStars(stars)}
+                      </span>
+                    )}
+                    {_tags?.map((_tag) => {
+                      const tag = tags.find(
+                        ({ data }) => data.slug === _tag
+                      )?.data;
+
+                      return (
+                        <span
+                          onclick={`event.preventDefault(); search.value = "${`#${_tag}`}"; search.dispatchEvent(new Event("input"))`}
+                          aria-label={`Browse #${_tag} software`}
+                        >
+                          <Tag>
+                            <abbr title={tag?.title}>{tag?.name}</abbr>
+                          </Tag>
+                        </span>
+                      );
+                    })}
+                    {updated_at && (
+                      <span class="text-sm absolute end-0 bottom-6 subtle">
+                        Updated
+                        <time datetime={updated_at.toISOString()}>
+                          {timeago(updated_at)}
+                        </time>
+                      </span>
+                    )}
+                  </article>
+                </a>
+              </li>
+            )
+          )
+      }
+    </ol>
+  </div>
+
+  <script is:inline>
+    const applySearch = () => {
+      const q = new URL(location).searchParams.get("q");
+      const handleSearch = (q) => {
+        stacks
+          .querySelectorAll("li")
+          .forEach(
+            (li) =>
+              (li.hidden =
+                !li.dataset.search.toLowerCase().includes(q.toLowerCase()) &&
+                !li.textContent.toLowerCase().includes(q.toLowerCase()))
+          );
+      };
+      if (q) {
+        search.value = q;
+        handleSearch(q);
+      }
+      search.addEventListener("input", () => {
+        handleSearch(search.value);
+      });
+    };
+
+    applySearch();
+    document.addEventListener("astro:after-swap", applySearch);
+  </script>
+
+  <style>
+    li:hover .absolute {
+      opacity: 1;
+    }
+  </style>
+</Layout>

@@ -1,0 +1,8 @@
+services:
+  excalidraw:
+    image: excalidraw/excalidraw:${EXCALIDRAW_VERSION:-latest}
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.excalidraw.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.excalidraw.loadbalancer.server.port: 80

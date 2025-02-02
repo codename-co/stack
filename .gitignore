@@ -1,0 +1,7 @@
+.DS_Store
+*.cer
+*.pem
+*.stack
+Makefile
+node_modules
+/work/

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: vaultwarden
+name: Vaultwarden
+flavor: DockerCompose
+version: "1.32.7"
+updated_at: 2024-12-20
+description: Bitwarden compatible server written in Rust
+author: Vaultwarden
+license: AGPL-3.0
+repository: https://github.com/dani-garcia/vaultwarden
+stars: 40600
+tags:
+  - security
+alternativeTo: [1password, lastpass]
+readme: |
+  An alternative server implementation of the Bitwarden Client API, written in Rust and compatible with official Bitwarden clients, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.

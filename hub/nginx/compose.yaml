@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx:${NGINX_VERSION:-1.27.3}-alpine
+    # ports:
+    #   - 80:80
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.nginx.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.nginx.loadbalancer.server.port: 80

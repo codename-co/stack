@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: scrumlr
+name: Scrumlr
+icon: 🔄
+flavor: DockerCompose
+version: "3.10.0"
+updated_at: 2024-12-09
+description: Webapp for collaborative online retrospectives
+author: inovex GmbH
+license: MIT
+homepage: https://scrumlr.io
+repository: https://github.com/inovex/scrumlr.io
+stars: 270
+tags: [retrospective, agile, scrum]
+alternativeTo: [retrotool, miro]
+readme: |
+  Scrumlr is an online collaboration tool that helps teams reach new heights. Start your first retrospective or collaborative session in an instant - no registration required and completely free and open source.
+
+  ![preview](https://github.com/inovex/scrumlr.io/blob/main/board.png?raw=true)
+
+  <hr>
+
+  ## Features
+
+  - 🔁 Retrospectives made easy.
+  - 🤝 Collaborate with your team.
+  - 💯 Free & open-source.
+  - 🕵️ No registration required.
+  - 🌓 Dark mode.
+  - 📱 Responsive.
+  - 👅 Localization (i18n) support.
+  - 📋 Export to PDF, JSON, CSV and Markdown.

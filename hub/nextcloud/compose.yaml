@@ -1,0 +1,27 @@
+services:
+  nextcloud:
+    image: nextcloud:${NEXTCLOUD_VERSION:-30.0.3}-fpm-alpine
+    env_file: .env
+    # ports:
+    #   - :80
+    restart: unless-stopped
+    volumes:
+      - nc_data:/var/www/html
+    depends_on:
+      database:
+        condition: service_started
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+
+  database:
+    image: postgres:alpine
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+
+volumes:
+  db_data:
+  nc_data:

@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: cachet
+name: Cachet
+flavor: DockerCompose
+version: "3"
+updated_at: 2025-01-31
+description: Status page system
+author: Alt Three Services Limited
+license: Cachet License
+homepage: https://cachethq.io
+repository: https://github.com/cachethq/cachet
+stars: 14200
+tags:
+  - monitoring
+  - status-page
+alternativeTo:
+  - uptimerobot
+readme: |
+  Cachet 3.x Announcement
+
+  ![preview](https://cachethq.io/build/assets/screenshot-v3-83e074a1.png)
+
+  <hr>
+
+  ## Features
+  - **✨ Beautiful Design:**
+    Cachet uses Bootstrap 3 to provide a clean, responsive interface that works on any device.
+  - **🌐 Multilingual:**
+    Cachet supports over ten languages, making it accessible to users worldwide.
+  - **🔗 JSON API:**
+    Automate status updates with Cachet's simple and powerful JSON API.
+  - **🛠️ Maintenance Scheduling:**
+    Plan maintenance events in advance and keep a record of them in the timeline.
+  - **📊 Metrics:**
+    Track various metrics like uptime and error rates. Add data points easily via the API.
+  - **🔒 Security:**
+    Enable two-factor authentication for added security. Compatible with password managers like 1Password, Bitwarden, and Google Authenticator.
