@@ -1,11 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import { format as timeago } from "timeago.js";
 import DownloadBase from "~/components/download-base.html";
 import Logo from "~/components/Logo";
 import Tag from "~/components/tag.html";
 import { getStacks } from "~/content/collections/stacks";
-import { formatStars } from "~/helpers";
+import { formatStars, timeago } from "~/helpers";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
 
@@ -156,7 +155,7 @@ console.log(name, description, version, redirectUrl);
         {
           updated_at && (
             <span class="text-sm subtle">
-              · Updated
+              ·
               <time
                 datetime={updated_at.toISOString()}
                 title={new Intl.DateTimeFormat(lang, {
@@ -164,7 +163,7 @@ console.log(name, description, version, redirectUrl);
                   timeStyle: undefined,
                 }).format(updated_at)}
               >
-                {timeago(updated_at)}
+                {timeago(updated_at, lang)}
               </time>
             </span>
           )

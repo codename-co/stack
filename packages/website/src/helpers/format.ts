@@ -46,3 +46,31 @@ export const formatStars = (stars?: number) => {
   const b = m / 1000;
   return f(b) + "b";
 };
+
+import { format as timeagojs, register } from "timeago.js";
+import {
+  ar,
+  de,
+  es,
+  fr,
+  hi_IN,
+  it,
+  ja,
+  ko,
+  pt_BR,
+  ru,
+  zh_CN,
+} from "timeago.js/lib/lang";
+register("ar", ar);
+register("de", de);
+register("es", es);
+register("fr", fr);
+register("hi", hi_IN);
+register("it", it);
+register("ja", ja);
+register("ko", ko);
+register("pt", pt_BR);
+register("ru", ru);
+register("zh", zh_CN);
+
+export const timeago = timeagojs;

@@ -1,13 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import { format as timeago } from "timeago.js";
 import Download from "~/components/download-base.html";
 import Logo from "~/components/Logo";
 import Tag from "~/components/tag.html";
 import { getStacks } from "~/content/collections/stacks";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
-import { formatStars, getAlternativeMetadata } from "~/helpers";
+import { formatStars, getAlternativeMetadata, timeago } from "~/helpers";
 
 export const getStaticPaths = () => {
   return langs.map((lang) => ({ params: { lang } }));
@@ -207,7 +206,6 @@ const description = t(
                     })}
                     {updated_at && (
                       <span class="text-sm absolute end-0 bottom-6 subtle">
-                        Updated
                         <time
                           datetime={updated_at.toISOString()}
                           title={new Intl.DateTimeFormat(lang, {
@@ -215,7 +213,7 @@ const description = t(
                             timeStyle: undefined,
                           }).format(updated_at)}
                         >
-                          {timeago(updated_at)}
+                          {timeago(updated_at, lang)}
                         </time>
                       </span>
                     )}

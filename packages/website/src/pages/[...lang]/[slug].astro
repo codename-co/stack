@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import { marked } from "marked";
-import { format as timeago } from "timeago.js";
 import DownloadBase from "~/components/download-base.html";
 import Logo from "~/components/Logo";
 import Tag from "~/components/tag.html";
@@ -13,6 +12,7 @@ import {
   formatStars,
   getAlternativeMetadata,
   getTagTitle,
+  timeago,
 } from "~/helpers";
 
 export const getStaticPaths = async () => {
@@ -168,7 +168,7 @@ const similar = Array.from(
         {
           updated_at && (
             <span class="text-sm subtle">
-              · Updated
+              ·
               <time
                 datetime={updated_at.toISOString()}
                 title={new Intl.DateTimeFormat(lang, {
@@ -176,7 +176,7 @@ const similar = Array.from(
                   timeStyle: undefined,
                 }).format(updated_at)}
               >
-                {timeago(updated_at)}
+                {timeago(updated_at, lang)}
               </time>
             </span>
           )
