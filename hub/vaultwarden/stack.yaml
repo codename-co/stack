@@ -8,7 +8,7 @@ description: Bitwarden compatible server written in Rust
 author: Vaultwarden
 license: AGPL-3.0
 repository: https://github.com/dani-garcia/vaultwarden
-stars: 40600
+stars: 41347
 tags:
   - security
 alternativeTo: [1password, lastpass]

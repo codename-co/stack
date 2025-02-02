@@ -10,7 +10,7 @@ author: LinuxServer.io
 license: GPL-3.0
 homepage: https://docs.linuxserver.io/images/docker-webtop/
 repository: https://github.com/linuxserver/docker-webtop
-stars: 2200
+stars: 2835
 tags:
   - desktop
 alternativeTo:
