@@ -44,6 +44,7 @@ actix-cors = "0.7.0"
 openssl = { version = "0.10", features = ["vendored"] }
 reqwest = "0.12.9"
 tauri-plugin-notification = "2"
+tauri-plugin-opener = "2"
 
 [target."cfg(not(any(target_os = \"android\", target_os = \"ios\")))".dependencies]
 tauri-plugin-autostart = "2"

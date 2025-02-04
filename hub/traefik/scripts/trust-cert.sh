@@ -11,7 +11,7 @@ if [ ! -f "$CERT_PATH" ]; then
 fi
 
 # Add to keychain
-sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "$CERT_PATH"
+sudo security add-trusted-cert -d -r trustRoot -p ssl -k "/Library/Keychains/System.keychain" "$CERT_PATH"
 
 # Verify
 if security find-certificate -c "$CERT_NAME" "/Library/Keychains/System.keychain" >/dev/null 2>&1; then

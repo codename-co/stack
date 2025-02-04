@@ -80,6 +80,7 @@ pub fn run() {
     // let system_tray = SystemTray::new().with_menu(tray_menu);
 
     tauri::Builder::default()
+        .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_notification::init())
         .setup(|app| {
             use tauri_plugin_notification::NotificationExt;

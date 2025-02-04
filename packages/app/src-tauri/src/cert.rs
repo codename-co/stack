@@ -2,6 +2,7 @@ use std::path::Path;
 use std::process::Command;
 use tauri::path::BaseDirectory;
 use tauri::Manager;
+use tauri_plugin_opener::OpenerExt;
 
 pub fn trust_certificate(app: &tauri::AppHandle) -> Result<(), String> {
     let script_path = app
@@ -18,21 +19,25 @@ pub fn trust_certificate(app: &tauri::AppHandle) -> Result<(), String> {
     // Trust the certificate
     log::info!("Adding certificate to keychain");
     log::debug!("Executing script: {:?}", script_path);
-    let output = Command::new("sh")
-        .arg(script_path)
-        .output()
+
+    let output = app
+        .opener()
+        .open_path(
+            script_path.to_string_lossy().to_string(),
+            Some("Terminal.app"),
+        )
         .map_err(|e| format!("Failed to execute command: {}", e))?;
 
-    if !output.status.success() {
-        log::error!(
-            "Failed to add certificate to keychain: {}",
-            String::from_utf8_lossy(&output.stderr)
-        );
-        return Err(format!(
-            "Failed to add certificate to keychain: {}",
-            String::from_utf8_lossy(&output.stderr)
-        ));
-    }
+    // if !output.status.success() {
+    //     log::error!(
+    //         "Failed to add certificate to keychain: {}",
+    //         String::from_utf8_lossy(&output.stderr)
+    //     );
+    //     return Err(format!(
+    //         "Failed to add certificate to keychain: {}",
+    //         String::from_utf8_lossy(&output.stderr)
+    //     ));
+    // }
 
     // // Add to keychain
     // log::info!("Adding certificate to keychain");
