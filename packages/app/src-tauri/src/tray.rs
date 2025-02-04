@@ -11,19 +11,13 @@ use tauri::{
     Manager, Runtime, WebviewUrl,
 };
 use tauri_plugin_shell::ShellExt;
+use tokio::time::interval;
+use tokio::time::Duration;
 
-use crate::{cert, cli, updater};
+use crate::{cert, docker, updater};
 
 fn create_menu(handle: &tauri::AppHandle<tauri::Wry>) -> tauri::Result<Menu<tauri::Wry>> {
-    let menu = MenuBuilder::new(handle)
-        // .item(&submenu)
-        // .item(&MenuItem::with_id(
-        //     handle,
-        //     "test_download",
-        //     "Test download",
-        //     true,
-        //     Some("cmd+t"),
-        // )?)
+    let mut menu_builder = MenuBuilder::new(handle)
         .item(&MenuItem::with_id(
             handle,
             "new",
@@ -31,8 +25,22 @@ fn create_menu(handle: &tauri::AppHandle<tauri::Wry>) -> tauri::Result<Menu<taur
             true,
             Some("cmd+n"),
         )?)
-        // .check("checkitem2", "CheckMenuItem 2")
-        .separator()
+        .separator();
+
+    let stacks: Result<Vec<String>, String> = tauri::async_runtime::block_on(docker::list_stacks());
+
+    for stack in stacks {
+        let name = &stack[0];
+        menu_builder = menu_builder.item(&MenuItem::with_id(
+            handle,
+            format!("stack-{}", name),
+            format!("⛁ {}", name),
+            true,
+            None::<&str>,
+        )?);
+    }
+
+    menu_builder = menu_builder.separator()
         .item(
             // submenu
             &SubmenuBuilder::new(handle, "More")
@@ -47,7 +55,7 @@ fn create_menu(handle: &tauri::AppHandle<tauri::Wry>) -> tauri::Result<Menu<taur
                 .item(&MenuItem::with_id(
                     handle,
                     "trust_certificate",
-                    "Trust Certificate",
+                    "Trust Certificate 🔒",
                     true,
                     None::<&str>,
                 )?)
@@ -68,9 +76,9 @@ fn create_menu(handle: &tauri::AppHandle<tauri::Wry>) -> tauri::Result<Menu<taur
         //     true,
         //     Some("cmd+q"),
         // )?)
-        .build()?;
+        ;
 
-    return Ok(menu);
+    return Ok(menu_builder.build()?);
 }
 
 pub fn create_tray(app: &tauri::AppHandle<tauri::Wry>) -> tauri::Result<()> {
@@ -165,6 +173,29 @@ pub fn create_tray(app: &tauri::AppHandle<tauri::Wry>) -> tauri::Result<()> {
                         updater::update(app_handle).await.unwrap();
                     });
                 }
+                _ => {
+                    debug!("Menu event: {:?}", event.id);
+
+                    let id_string = event.id.as_ref().to_string();
+                    let stack_name = id_string.strip_prefix("stack-").unwrap();
+                    let stack_url = format!("https://{}.stack.localhost", stack_name);
+
+                    let shell = app.app_handle().shell();
+                    let output = tauri::async_runtime::block_on(async move {
+                        shell
+                            .command("open")
+                            .args([stack_url])
+                            .output()
+                            .await
+                            .unwrap()
+                    });
+
+                    if output.status.success() {
+                        info!("Result: {:?}", String::from_utf8(output.stdout));
+                    } else {
+                        error!("Exit with code: {}", output.status.code().unwrap());
+                    }
+                }
                 // "quit" => {
                 //     info!("Quit!");
                 //     app.exit(0);
@@ -220,6 +251,21 @@ pub fn create_tray(app: &tauri::AppHandle<tauri::Wry>) -> tauri::Result<()> {
             }
         })
         .build(app);
+
+    // Create a background task to refresh the menu
+    let app_handle = handle.clone();
+    tauri::async_runtime::spawn(async move {
+        let mut interval = interval(Duration::from_secs(2));
+        loop {
+            interval.tick().await;
+            debug!("Refreshing menu");
+            if let Some(tray) = app_handle.tray_by_id("tray-1") {
+                if let Ok(new_menu) = create_menu(&app_handle) {
+                    let _ = tray.set_menu(Some(new_menu));
+                }
+            }
+        }
+    });
 
     Ok(())
 }
