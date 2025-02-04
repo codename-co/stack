@@ -1,6 +1,6 @@
 services:
   webtop:
-    image: linuxserver/webtop:version-${WEBTOP_VERSION:-fccb91ce}
+    image: linuxserver/webtop:version-${WEBTOP_VERSION:-5777fe0a}
     restart: unless-stopped
     # ports:
     #   - 3000:3000

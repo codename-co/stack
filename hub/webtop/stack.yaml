@@ -3,8 +3,8 @@ slug: webtop
 name: Webtop
 icon: Ⓦ
 flavor: DockerCompose
-version: "fccb91ce"
-updated_at: 2025-01-14
+version: "5777fe0a"
+updated_at: 2025-02-04
 description: Linux in a web browser supporting popular desktop environments
 author: LinuxServer.io
 license: GPL-3.0
@@ -18,3 +18,17 @@ alternativeTo:
   - vnc
 readme: |
   Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.
+
+  ![preview](https://www.linuxserver.io/user/pages/content/images/2021/05/base-desktop.png)
+
+  <hr>
+
+  ### Features
+
+  - 🖥️ **Linux Desktop**: Lightweight Linux-based container with a Full Desktop Environment running in the Browser
+  - 🪟 **Window System**: Basic window manager
+  - 📱 **Resolution**: Pixel-perfect resolution for rendering
+  - 🔊 **Audio**: Audio support
+  - 📋 **Clipboard**: Clipboard support
+  - ⌨️ **Input**: On-screen keyboard support
+  - 📁 **File System**: Remote file management for uploads/downloads
