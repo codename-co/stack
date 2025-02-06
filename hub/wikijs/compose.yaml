@@ -24,7 +24,7 @@ services:
       DB_NAME: wiki
     restart: unless-stopped
     labels:
-      traefik.enable: true
+      dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.wikijs.rule: Host(`$PROJECT.$DOMAIN`)
       traefik.http.services.wikijs.loadbalancer.server.port: 3000
 
