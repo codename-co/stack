@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: wikijs
+name: Wiki.js
+icon: wikidotjs
+flavor: DockerCompose
+version: "2.5.306"
+updated_at: 2025-02-03
+description: A modern and powerful wiki app
+author: Requarks.io
+license: AGPL-3.0
+homepage: https://js.wiki
+repository: https://github.com/Requarks/wiki
+stars: 25500
+tags:
+  - wiki
+alternativeTo:
+  - confluence
+readme: |
+  Make documentation a joy to write using Wiki.js's beautiful and intuitive interface!
+
+  ![preview](https://js.wiki/img/wiki-screenshot-2x.830b799c.png)
+
+  <hr>
+
+  ### Features
+
+  - **Install anywhere** 🌐 - Works on virtually any platform and is compatible with either PostgreSQL, MySQL, MariaDB, MS SQL Server or SQLite!
+  - **Administration** 🔧 - Manage all aspects of your wiki using the extensive and intuitive admin area.
+  - **Performance** ⚡ - Running on the blazing fast Node.js engine, Wiki.js is built with performance in mind.
+  - **Customizable** 🎨 - Fully customize the appearance of your wiki, including a light and dark mode.
+  - **Protected** 🔒 - Make your wiki public, completely private or a mix of both.
+  - **Scalable** 📈 - Whether it's on a tiny Raspberry Pi or on a high performance VM in the cloud, Wiki.js intelligently makes use of the available resources.
