@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: bookstack
+name: BookStack
+flavor: DockerCompose
+version: "24.12.1"
+updated_at: 2025-02-03
+description: A platform to create documentation/wiki content
+author: Dan Brown
+license: MIT
+homepage: https://www.bookstackapp.com
+repository: https://github.com/BookStackApp/BookStack
+stars: 16000
+tags:
+  - wiki
+alternativeTo:
+  - confluence
+readme: |
+  A platform for storing and organising information and documentation.
+
+  BookStack is an opinionated documentation platform that provides a pleasant and simple out-of-the-box experience. New users to an instance should find the experience intuitive and only basic word-processing skills should be required to get involved in creating content on BookStack. The platform should provide advanced power features to those that desire it, but they should not interfere with the core simple user experience.
+
+  ![preview](https://www.bookstackapp.com/images/bookstack-hero-screenshot.webp)
+
+  <hr>
+
+  ### Features
+
+  - 🆓 **Free & Open Source** - MIT licensed, available on GitHub with no cost to install
+  - 🎯 **Simple Interface** - WYSIWYG editor with Books, Chapters, and Pages structure
+  - 🔍 **Search & Connect** - Full content search with direct paragraph linking
+  - ⚙️ **Configurable** - Customizable name, logo, registration, and visibility settings
+  - 💻 **Requirements** - Runs on PHP, Laravel, and MySQL
+  - ✏️ **Diagrams.net** - Built-in diagram creation capabilities
+  - 🌐 **Multi-Lingual** - User language preferences with many translations
+  - 📝 **Markdown Support** - Optional markdown editor with live preview
+  - 🔐 **Authentication** - Multiple login options including social, SAML2, and LDAP
+  - ⚡ **Advanced Features** - Cross-book sorting, revisions, and image management
+  - 🔒 **Multi-Factor Auth** - Built-in MFA with TOTP and backup codes
+  - 🌓 **Theme Options** - Dark and light mode user interface themes

@@ -1,0 +1,30 @@
+services:
+  bookstack:
+    image: linuxserver/bookstack:${BOOKSTACK_VERSION:-24.12.1}
+    env_file: .env
+    volumes:
+      - config:/config
+    restart: unless-stopped
+    depends_on:
+      - bookstack-db
+    labels:
+      traefik.enable: true
+      traefik.http.routers.bookstack.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.bookstack.loadbalancer.server.port: 80
+
+  bookstack-db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_RANDOM_ROOT_PASSWORD: ${MYSQL_RANDOM_ROOT_PASSWORD}
+    volumes:
+      # - ./dev/docker/init.db:/docker-entrypoint-initdb.d
+      - db:/var/lib/mysql
+
+volumes:
+  config:
+    driver: local
+  db:
+    driver: local
