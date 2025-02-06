@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: outline
+name: Outline
+flavor: DockerCompose
+version: "0.81.1"
+updated_at: 2024-11-20
+description: The fastest knowledge base for growing teams
+author: General Outline, Inc.
+license: BSL-1.1
+homepage: https://www.getoutline.com
+repository: https://github.com/outline/outline
+stars: 29700
+tags:
+  - wiki
+alternativeTo:
+  - confluence
+readme: |
+  A fast, collaborative, knowledge base for your team built using React and Node.js.
+
+  ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+  <hr>
+
+  ### Features
+
+  - **Fast Search** 🔍 - Full-text search with typeahead suggestions
+  - **Markdown Support** ✏️ - Write in markdown with a rich text editor
+  - **Realtime Collaboration** 🤝 - Multiple people can edit a document at the same time
+  - **Slack Integration** 💬 - Get notifications in Slack when documents are updated
+  - **API** 🌐 - Full JSON API to integrate with other tools
+  - **Authentication** 🔐 - SAML, Google OAuth, Slack, and more
+  - **Dark Mode** 🌓 - Toggle between light and dark mode
+  - **Customization** 🎨 - Customize the appearance with your own logo and colors

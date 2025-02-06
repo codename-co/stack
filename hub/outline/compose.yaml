@@ -1,0 +1,33 @@
+services:
+  outline:
+    image: outlinewiki/outline:${OUTLINE_VERSION:-0.81.1}
+    env_file: .env
+    volumes:
+      - outline:/var/lib/outline/data
+    depends_on:
+      - outline-redis
+      - outline-postgres
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.outline.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.outline.loadbalancer.server.port: 3000
+
+  outline-redis:
+    image: redis
+    # ports:
+    #   - "127.0.0.1:6379:6379"
+    # user: "redis:redis"
+
+  outline-postgres:
+    image: postgres:17-alpine
+    # ports:
+    #   - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: outline
+    # user: "postgres:postgres"
+
+volumes:
+  outline:
+    driver: local
