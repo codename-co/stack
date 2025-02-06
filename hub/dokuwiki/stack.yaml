@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: dokuwiki
+name: DokuWiki
+icon: Ⓓ
+flavor: DockerCompose
+version: "2024-02-06b"
+updated_at: 2025-01-31
+description: A simple to use and highly versatile open-source wiki software
+author: Andreas Gohr
+license: GPL-2.0
+homepage: https://www.dokuwiki.org
+repository: https://github.com/dokuwiki/dokuwiki
+stars: 4200
+tags:
+  - wiki
+alternativeTo:
+  - confluence
+readme: |
+  DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn't require a database. It is loved by users for its clean and readable syntax. The ease of maintenance, backup and integration makes it an administrator's favorite. Built in access controls and authentication connectors make DokuWiki especially useful in the enterprise context and the large number of plugins contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.
+
+  <hr>
+
+  ### Features
+
+  - Simple syntax
+  - Unlimited page revisions
+  - Recent changes
+  - Colored side by side diff support
+  - Uploading and embedding of images and other media
+  - Customizable Interwiki links
+  - Optional CamelCase support
+  - Content can be categorized in namespaces, easily browsable through an automatic index
+  - Straightforward configuration
