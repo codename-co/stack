@@ -180,3 +180,5 @@ tags:
     name: PDF
   - slug: url-shortener
     name: URL shortener
+  - slug: wiki
+    name: Wiki

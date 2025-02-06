@@ -50,6 +50,9 @@ alternatives:
     name: ChatGPT
     icon: openai
     description: AI chatbot
+  - slug: confluence
+    name: Confluence
+    description: Collaboration software
   - slug: datagrip
     name: DataGrip
     description: Database management tool
