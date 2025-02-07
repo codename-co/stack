@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: redpanda
+name: Redpanda
+icon: 🐼
+flavor: DockerCompose
+version: "24.3.5"
+updated_at: 2025-02-04
+description: Streaming data platform for developers
+author: Redpanda Data Inc.
+license: BSL
+homepage: https://www.redpanda.com
+repository: https://github.com/redpanda-data/redpanda
+stars: 10000
+tags: [streaming, data]
+alternativeTo: [kafka]
+readme: |
+  Redpanda is the most complete, Apache Kafka®-compatible streaming data platform, designed from the ground up to be lighter, faster, and simpler to operate. Free from ZooKeeper™ and JVMs, it prioritizes an end-to-end developer experience with a huge ecosystem of connectors, configurable tiered storage, and more.
+
+  <video controls width="100%">
+    <source src="https://user-images.githubusercontent.com/23424570/220130537-7b0b8596-0a06-4132-90a5-1be3c169e4f4.mp4">
+    ⚠️ Your browser does not support the video tag.
+  </video>

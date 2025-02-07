@@ -136,6 +136,10 @@ alternatives:
   - slug: jira
     name: Jira
     description: Project management tool
+  - slug: kafka
+    name: Kafka
+    icon: apachekafka
+    description: Distributed streaming platform
   - slug: keycloak
     name: Keycloak
     description: Identity and access management
