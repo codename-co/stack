@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: infisical
+name: Infisical
+icon: ♾️
+flavor: DockerCompose
+version: "0.110.0"
+updated_at: 2025-02-07
+description: Open-source secret management platform
+author: Infisical Inc.
+license: MIT expat
+homepage: https://infisical.com
+repository: https://github.com/Infisical/infisical
+stars: 16700
+tags: [security, secrets]
+alternativeTo: [delinea]
+readme: |
+  The open-source secret management platform: Sync secrets/configs across your team/infrastructure and prevent secret leaks.
+
+  ![preview](https://github.com/Infisical/infisical/raw/main/img/infisical_github_repo2.png)
+
+  <hr>
+
+  ### Features
+
+  - **Dashboard:** Manage secrets across projects and environments (e.g. development, production, etc.) through a user-friendly interface.
+  - **Native Integrations:** Sync secrets to platforms like GitHub, Vercel, AWS, and use tools like Terraform, Ansible, and more.
+  - **Secret versioning and Point-in-Time Recovery:** Keep track of every secret and project state; roll back when needed.
+  - **Secret Rotation:** Rotate secrets at regular intervals for services like PostgreSQL, MySQL, AWS IAM, and more.
+  - **Dynamic Secrets:** Generate ephemeral secrets on-demand for services like PostgreSQL, MySQL, RabbitMQ, and more.
+  - **Secret Scanning and Leak Prevention:** Prevent secrets from leaking to git.
+  - **Infisical Kubernetes Operator:** Deliver secrets to your Kubernetes workloads and automatically reload deployments.
+  - **Infisical Agent:** Inject secrets into applications without modifying any code logic.

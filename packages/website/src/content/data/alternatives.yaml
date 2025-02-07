@@ -59,6 +59,10 @@ alternatives:
   - slug: datagrip
     name: DataGrip
     description: Database management tool
+  - slug: delinea
+    name: Delinea
+    icon: Ⓓ
+    description: Privileged Access Management and Identity Security
   - slug: dialogflow-cx
     name: Dialogflow CX
     icon: dialogflow

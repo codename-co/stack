@@ -184,3 +184,5 @@ tags:
     name: Wiki
   - slug: music
     name: Music
+  - slug: secrets
+    name: Secrets
