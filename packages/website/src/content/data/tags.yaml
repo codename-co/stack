@@ -182,3 +182,5 @@ tags:
     name: URL shortener
   - slug: wiki
     name: Wiki
+  - slug: music
+    name: Music

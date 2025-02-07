@@ -209,6 +209,9 @@ alternatives:
   - slug: splunk
     name: Splunk
     description: Data analytics tool
+  - slug: spotify
+    name: Spotify
+    description: Music streaming platform
   - slug: tableau
     name: Tableau
     description: Business intelligence tool
