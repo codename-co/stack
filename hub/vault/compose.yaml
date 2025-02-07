@@ -1,0 +1,19 @@
+services:
+  vault:
+    image: hashicorp/vault:${VAULT_VERSION:-1.18}
+    restart: on-failure:5
+    env_file: .env
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - vault-volume:/data
+    healthcheck:
+      retries: 5
+    command: server -dev -dev-root-token-id="$VAULT_DEV_ROOT_TOKEN_ID"
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.vault.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.vault.loadbalancer.server.port: 8201
+
+volumes:
+  vault-volume:
