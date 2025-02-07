@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: spotube
+name: Spotube
+icon: 🎧
+flavor: DockerCompose
+version: "3.9.0"
+updated_at: 2025-02-07
+description: Open source Spotify client that doesn't require Premium
+author: Spotube
+license: BSD-4-Clause
+homepage: https://spotube.krtirtho.dev
+repository: https://github.com/KRTirtho/spotube
+stars: 34900
+tags:
+  - music
+alternativeTo:
+  - spotify
+readme: |
+  An open source, cross-platform Spotify client compatible across multiple platforms utilizing Spotify's data API and YouTube, Piped.video or JioSaavn as an audio source, eliminating the need for Spotify Premium
+
+  ![preview](https://github.com/KRTirtho/spotube/raw/master/assets/spotube-screenshot.png)
+
+  <hr>
+
+  ### Features
+
+  - 🚫 No ads, thanks to the use of public & free Spotify and YT Music APIs
+  - ⬇️ Freely downloadable tracks
+  - 🖥️ 📱 Cross-platform support
+  - 🪶 Small size & less data usage
+  - 🕵️ Anonymous/guest login
+  - 🕒 Time synced lyrics
+  - ✋ No telemetry, diagnostics or user data collection
+  - 🚀 Native performance
+  - 📖 Open source/libre software
+  - 🔉 Playback control is done locally, not on the server
