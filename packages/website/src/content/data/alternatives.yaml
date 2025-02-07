@@ -53,6 +53,9 @@ alternatives:
   - slug: confluence
     name: Confluence
     description: Collaboration software
+  - slug: datadog
+    name: Datadog
+    description: Monitoring and analytics platform
   - slug: datagrip
     name: DataGrip
     description: Database management tool
@@ -167,6 +170,9 @@ alternatives:
   - slug: netlify
     name: Netlify
     description: Web hosting service
+  - slug: newrelic
+    name: New Relic
+    description: Application performance monitoring tool
   - slug: notion
     name: Notion
     description: Note-taking app
