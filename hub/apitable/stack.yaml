@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: apitable
+name: APITable
+icon: Ⓐ
+flavor: DockerCompose
+version: "latest"
+updated_at: 2024-12-30
+description: Low-code platform for building collaborative apps
+author: APITable Ltd.
+license: AGPL-3.0
+homepage: https://aitable.ai
+repository: https://github.com/apitable/apitable
+stars: 13800
+tags:
+  - database
+  - api
+  - spreadsheet
+alternativeTo:
+  - airtable
+readme: |
+  APITable, an API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives.
+
+  ![preview](https://github.com/apitable/apitable/raw/develop/docs/static/feature-realtime.gif)
