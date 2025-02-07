@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: signoz
+name: SigNoz
+icon: Ⓢ
+flavor: DockerCompose
+version: "0.71.0"
+updated_at: 2025-02-05
+description: OpenTelemetry observability platform with logs, traces and metrics
+author: SigNoz, Inc.
+license: MIT Expat
+homepage: https://signoz.io
+repository: https://github.com/SigNoz/signoz
+stars: 20500
+tags:
+  - monitoring
+  - observability
+alternativeTo:
+  - datadog
+  - newrelic
+readme: |
+  All your logs, metrics, and traces in one place. Monitor your application, spot issues before they occur and troubleshoot downtime quickly with rich context. SigNoz is a cost-effective open-source alternative to Datadog and New Relic.
+
+  ![preview](https://github.com/user-attachments/assets/fa5c0396-0854-4c8b-b972-9b62fd2a70d2)
+
+  <hr>
+
+  ### Features
+
+  - Single tool for observability(logs, metrics, and traces)
+  - Built on top of OpenTelemetry, the open-source standard which frees you from any type of vendor lock-in
+  - Correlated logs, metrics and traces for much richer context while debugging
+  - Uses ClickHouse (used by likes of Uber & Cloudflare) as datastore - an extremely fast and highly optimized storage for observability data
+  - DIY Query builder, PromQL, and ClickHouse queries to fulfill all your use-cases around querying observability data
+  - Open-Source - you can use open-source, our cloud service or a mix of both based on your use case
