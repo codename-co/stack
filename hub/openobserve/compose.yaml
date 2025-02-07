@@ -1,0 +1,14 @@
+services:
+  openobserve:
+    image: openobserve/openobserve:v${OPENOBSERVE_VERSION:-0.14.2}
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - data:/data
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.openobserve.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.openobserve.loadbalancer.server.port: 5080
+
+volumes:
+  data:

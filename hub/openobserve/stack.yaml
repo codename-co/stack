@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: openobserve
+name: OpenObserve
+icon: Ⓞ
+flavor: DockerCompose
+version: "0.14.2"
+updated_at: 2025-01-17
+description: Logs, Metrics, Traces and more in one platform
+author: OpenObserve Inc.
+license: AGPL-3.0
+homepage: https://openobserve.ai
+repository: https://github.com/openobserve/openobserve
+stars: 14300
+tags:
+  - monitoring
+  - observability
+alternativeTo:
+  - datadog
+  - newrelic
+readme: |
+  OpenObserve (O2 for short) is a cloud-native observability platform built specifically for logs, metrics, traces, analytics, RUM (Real User Monitoring - Performance, Errors, Session Replay) designed to work at petabyte scale.
+
+  ![preview](https://github.com/openobserve/openobserve/raw/main/screenshots/logs.png)
+
+  <hr>
+
+  - **Logs, Metrics, Traces**: Comprehensive support for various data types.
+  - **OpenTelemetry Support**: Full compatibility with OTLP for logs, metrics, and traces.
+  - **Real User Monitoring (RUM)**: Includes performance tracking, error logging, and session replay.
+  - **Dashboards, Reports, Alerts**: Features over 18 different chart types for comprehensive data visualization for on-the-fly analysis and reporting along with alerting.
+  - **Pipelines**: Enrich, redact, reduce, normalize data on the fly. Stream processing for logs to metrics and more.
+  - **Advanced Embedded GUI**: Intuitive and user-friendly interface.
+  - **SQL and PromQL Support**: Query logs and traces with SQL, and metrics with SQL and PromQL.
+  - **Single Binary or HA Installation**: Install using a single binary for small deployments or in HA mode for large deployments.
+  - **Versatile Storage Options**: Supports local disk, S3, MinIO, GCS, Azure Blob Storage.
+  - **High Availability and Clustering**: Ensures reliable and scalable performance.
+  - **Dynamic Schema**: Adapts to your data structure seamlessly.
+  - **Built-in Authentication**: Secure and ready to use.
+  - **Ease of Operation**: Designed for simplicity and efficiency.
+  - **Seamless Upgrades**: Hassle-free updates.
+  - **Multilingual UI**: Supports 11 languages, including English, Spanish, German, French, Chinese, and more.
