@@ -1,0 +1,24 @@
+services:
+  shelf:
+    image: ghcr.io/shelf-nu/shelf.nu:latest
+    env_file: .env
+    restart: unless-stopped
+    depends_on:
+      - shelf-db
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.shelf.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.shelf.loadbalancer.server.port: 8080
+
+  shelf-db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${USER}
+      POSTGRES_PASSWORD: ${PASSWORD}
+    logging:
+      driver: none
+    restart: unless-stopped
+
+volumes:
+  db-data:
