@@ -1,0 +1,14 @@
+services:
+  baserow:
+    image: baserow/baserow:${BASEROW_VERSION:-1.31.0}
+    environment:
+      BASEROW_PUBLIC_URL: https://$PROJECT.$DOMAIN
+    volumes:
+      - baserow_data:/baserow/data
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.baserow.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.baserow.loadbalancer.server.port: 80
+
+volumes:
+  baserow_data:
