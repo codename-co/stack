@@ -1,0 +1,7 @@
+services:
+  jsoncrack:
+    image: shokohsc/jsoncrack:${JSONCRACK_VERSION:-latest}
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.jsoncrack.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.jsoncrack.loadbalancer.server.port: 80
