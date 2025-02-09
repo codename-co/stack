@@ -12,3 +12,4 @@ export * from "./dotenv";
 export * from "./format";
 export * from "./repo";
 export * from "./stackApi";
+export * from "./string";

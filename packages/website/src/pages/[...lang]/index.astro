@@ -6,7 +6,13 @@ import Tag from "~/components/tag.html";
 import { getStacks } from "~/content/collections/stacks";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
-import { formatStars, getAlternativeMetadata, timeago } from "~/helpers";
+import {
+  formatStars,
+  getAlternativeMetadata,
+  isCircledLetter,
+  isEmoji,
+  timeago,
+} from "~/helpers";
 
 export const getStaticPaths = () => {
   return langs.map((lang) => ({ params: { lang } }));
@@ -17,6 +23,7 @@ const t = useTranslations(lang);
 const url = useUrl(lang);
 
 const stacks = getStacks(lang);
+const promoted = await getCollection("promoted");
 
 const alternatives = await getCollection("alternatives");
 
@@ -99,6 +106,62 @@ const description = t(
         { url: url("/alternativesto") }
       )}
     />
+
+    <div
+      class="hidden lg:block lg:-mx-24 2xl:mx-0 mt-12 p-6 bg-slate-100 border border-slate-200 rounded-3xl overflow-x-hidden"
+    >
+      <div class="grid gap-4 grid-flow-col">
+        {
+          promoted
+            .map(({ data }) =>
+              stacks.find((stack) => stack.data.slug === data.slug)
+            )
+            .map(({ data }) => [
+              data,
+              getAlternativeMetadata(data.alternativeTo?.[0] ?? ""),
+            ])
+            .reduce((acc, [stack, alternative]) => {
+              // only keep unique alternatives
+              if (!acc.find(([_, alt]) => alt.slug === alternative.slug)) {
+                acc.push([stack, alternative]);
+              }
+              return acc;
+            }, [])
+            .slice(0, 10)
+            .map(([data, alternative]) => (
+              <span style="writing-mode: vertical-rl; text-orientation: upright;">
+                <a
+                  href={url(`/alternativesto/${alternative.slug}`)}
+                  aria-label={`Alternatives to ${alternative.name}`}
+                  data-title-disabled={alternative.name}
+                  style="font-size: 2.8em; white-space: nowrap; writing-mode: horizontal-tb; text-align: center;"
+                >
+                  <Logo slug={alternative.slug} />
+                  <p style="font-size: 0.4em">{alternative.name}</p>
+                  {/* {alternative.name} */}
+                </a>
+                <span class="subtle" style="font-size: 1.4em">
+                  ↓
+                </span>
+                <a
+                  href={url(`/${data.slug}`)}
+                  aria-label={data.name}
+                  data-title-disabled={data.name}
+                  style="font-size: 2.8em; white-space: nowrap; writing-mode: horizontal-tb; text-align: center;"
+                >
+                  <Logo slug={data.slug} />
+                  <p
+                    style="font-size: 0.4em"
+                    transition:name={`title-${data.name}`}
+                  >
+                    {data.name}
+                  </p>
+                </a>
+              </span>
+            ))
+        }
+      </div>
+    </div>
   </div>
 
   <div class="section relative">

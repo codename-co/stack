@@ -90,11 +90,11 @@ summary {
     padding: 0 1em 0 0;
   }
 }
-@media (min-width: 1600px) {
+@media (min-width: 96rem) {
   [role="main"] {
-    max-width: 1920px;
+    max-width: 115.2rem;
     display: grid;
-    grid-template-columns: 22em 1fr 22em;
+    grid-template-columns: 21em 1fr 21em;
     grid-template-areas:
       "navbar navbar navbar"
       "left content right"

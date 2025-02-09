@@ -1,5 +1,16 @@
 promoted:
+  - slug: affine
   - slug: openwebui
-  - slug: dify
-  # - slug: tooljet
-  # - slug: webstudio
+  - slug: immich
+  - slug: nextcloud
+  # - slug: nocodb
+  # - slug: penpot
+  - slug: outline
+  # - slug: plane
+  # - slug: dify
+  - slug: n8n
+  - slug: meilisearch
+  - slug: directus
+  # - slug: spotube
+  # - slug: jitsi
+  # - slug: joplin

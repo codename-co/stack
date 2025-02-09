@@ -6,15 +6,15 @@ const _stacks = await getCollection("stacks");
 export const getStacks = (lang: string) =>
   _stacks
     .sort((a, b) => {
-      const aPromoted = promoted.some(({ data }) => data.slug === a.data.slug);
-      const bPromoted = promoted.some(({ data }) => data.slug === b.data.slug);
+      // const aPromoted = promoted.some(({ data }) => data.slug === a.data.slug);
+      // const bPromoted = promoted.some(({ data }) => data.slug === b.data.slug);
 
-      if (aPromoted && !bPromoted) {
-        return -1;
-      }
-      if (!aPromoted && bPromoted) {
-        return 1;
-      }
+      // if (aPromoted && !bPromoted) {
+      //   return -1;
+      // }
+      // if (!aPromoted && bPromoted) {
+      //   return 1;
+      // }
 
       const aRank = a.data.rank ?? 0;
       const bRank = b.data.rank ?? 0;
