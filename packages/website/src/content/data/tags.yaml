@@ -188,3 +188,5 @@ tags:
     name: Secrets
   - slug: ldap
     name: LDAP
+  - slug: docker
+    name: Docker

@@ -143,6 +143,9 @@ alternatives:
     name: Kafka
     icon: apachekafka
     description: Distributed streaming platform
+  - slug: kubernetes
+    name: Kubernetes
+    description: Container orchestration platform
   - slug: lastpass
     name: LastPass
     description: Password manager

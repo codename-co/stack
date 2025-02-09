@@ -1,0 +1,14 @@
+services:
+  portainer:
+    image: portainer/portainer-ce:${PORTAINER_VERSION:-2.26.1}-alpine
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: on-failure:3
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.portainer.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.portainer.loadbalancer.server.port: 9000
+
+volumes:
+  data:

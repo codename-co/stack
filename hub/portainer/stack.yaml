@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: portainer
+name: Portainer
+flavor: DockerCompose
+version: "2.26.1"
+updated_at: 2025-01-21
+description: Making Docker and Kubernetes management easy
+author: Oliver Klemenz
+license: Unlicense
+homepage: https://princejs.com
+repository: https://github.com/portainer/portainer
+stars: 31900
+tags: [docker]
+alternativeTo: [kubernetes]
+readme: |
+  Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. It is designed to be as simple to deploy as it is to use. The application allows you to manage all your orchestrator resources (containers, images, volumes, networks and more) through a ‘smart’ GUI and/or an extensive API.
+
+  ![preview](https://4731999.fs1.hubspotusercontent-na1.net/hub/4731999/hubfs/Portainer%20-%20Lowfi%20Laptop%20(1).png?width=2000&name=Portainer%20-%20Lowfi%20Laptop%20(1).png)
