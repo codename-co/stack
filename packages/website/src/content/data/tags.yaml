@@ -186,3 +186,5 @@ tags:
     name: Music
   - slug: secrets
     name: Secrets
+  - slug: ldap
+    name: LDAP

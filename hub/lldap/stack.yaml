@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: lldap
+name: LLDAP
+icon: Ⓛ
+flavor: DockerCompose
+version: "0.6"
+updated_at: 2024-11-22
+description: Light LDAP implementation
+author: LLDAP
+license: GPL-3.0
+repository: https://github.com/lldap/lldap
+stars: 4700
+tags: [ldap]
+alternativeTo: []
+readme: |
+  This project is a lightweight authentication server that provides an opinionated, simplified LDAP interface for authentication. It integrates with many backends, from KeyCloak to Authelia to Nextcloud and more!
+
+  ![preview](https://raw.githubusercontent.com/lldap/lldap/master/screenshot.png)
+
+  <hr>
+
+  ### Features
+
+  It comes with a frontend that makes user management easy, and allows users to edit their own details or reset their password by email.
+
+  The goal is not to provide a full LDAP server; if you're interested in that, check out OpenLDAP. This server is a user management system that is:
+
+  simple to setup (no messing around with slapd),
+  simple to manage (friendly web UI),
+  low resources,
+  opinionated with basic defaults so you don't have to understand the subtleties of LDAP.
+  It mostly targets self-hosting servers, with open-source components like Nextcloud, Airsonic and so on that only support LDAP as a source of external authentication.
+
+  For more features (OAuth/OpenID support, reverse proxy, ...) you can install other components (KeyCloak, Authelia, ...) using this server as the source of truth for users, via LDAP.
+
+  By default, the data is stored in SQLite, but you can swap the backend with MySQL/MariaDB or PostgreSQL.
