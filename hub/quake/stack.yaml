@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: quake
+name: Quake
+icon: 🎮
+flavor: DockerCompose
+version: "latest"
+updated_at: 2022-07-18
+description: Playable Quake DOS game
+author: ""
+license: ""
+repository: https://github.com/magicalyak/docker-scorch
+stars: 7
+tags: [game]
+alternativeTo: []
+readme: |
+  Docker image of DOS game running on js-dos
