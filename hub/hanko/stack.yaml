@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: hanko
+name: Hanko
+icon: 🔐
+flavor: DockerCompose
+version: "1.3.3"
+updated_at: 2025-01-31
+description: The Complete Authentication and User Management Solution for the Passkey Era
+author: Hanko GmbH
+license: AGPLv3, MIT
+homepage: https://www.hanko.io
+repository: https://github.com/teamhanko/hanko
+stars: 7527
+tags: [security, identity-management]
+alternativeTo: [auth0, clerk]
+readme: |
+  Hanko is an open-source authentication and user management solution with a focus on moving the login beyond passwords while being 100% deployable today.
+
+  <hr>
+
+  ### Features
+
+  - ✅	Email / username identifiers
+  - ✅	Passwords, passcodes, passkeys
+  - ✅	Hanko Elements web components
+  - ✅	OAuth SSO (Sign in with Apple/Google/GitHub etc.)
+  - ✅	i18n & custom translations
+  - ✅	SAML Enterprise SSO
+  - ✅	Webhooks
+  - ✅	Server-side sessions & remote session revocation
+  - ✅	MFA (TOTP, security keys)
+  - ⚙️	Custom Social SSO connections (OIDC/OAuth2)
+  - ⚙️	Privileged sessions & step-up authentication
