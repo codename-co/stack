@@ -1,0 +1,7 @@
+services:
+  quake:
+    image: magicalyak/docker-games:quake
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.quake.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.quake.loadbalancer.server.port: 8000
