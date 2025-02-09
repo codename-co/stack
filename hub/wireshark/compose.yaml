@@ -1,0 +1,22 @@
+services:
+  wireshark:
+    image: linuxserver/wireshark:${WIRESHARK_VERSION:-4.4.2}
+    cap_add:
+      - NET_ADMIN
+    security_opt:
+      - seccomp:unconfined #optional
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    # volumes:
+    #   - /path/to/wireshark/config:/config
+    # ports:
+    #   - 3000:3000 #optional
+    #   - 3001:3001 #optional
+    restart: on-failure:3
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.wireshark.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.wireshark.loadbalancer.server.port: 3000
