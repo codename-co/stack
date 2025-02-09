@@ -78,6 +78,33 @@ const description = t(
     </div>
   </div>
 
+  <div slot="right" class="section h-full">
+    <!-- <p class="my-12" set:html={t("Browse *by category*")} /> -->
+    <ol
+      class="light columns-2 lg:columns-3 2xl:columns-1 text-sm 2xl:mt-[670px]"
+    >
+      {
+        tags
+          .map(({ data }) => [
+            data,
+            stacks
+              .map(({ data }) => data)
+              .filter(({ tags }) => tags?.includes(data.slug)) ?? [],
+          ])
+          .filter(([, stacks]) => Array.isArray(stacks) && stacks.length > 0)
+          .sort(([, a], [, b]) => (b as any[]).length - (a as any[]).length)
+          .map(([tag, stacks]: any[]) => (
+            <li class="mb-1 ">
+              <a href={url(`/?q=%23${tag.slug}`)} class="opacity-80">
+                {tag.title ? `${tag.title} (${tag.name})` : tag.name}
+                {stacks.length > 1 && <Tag>{stacks.length}</Tag>}
+              </a>
+            </li>
+          ))
+      }
+    </ol>
+  </div>
+
   <div class="section">
     <h2>
       {t("Simply the best")}
@@ -290,7 +317,7 @@ const description = t(
   <script is:inline>
     const applySearch = () => {
       const q = new URL(location).searchParams.get("q");
-      const handleSearch = (q) => {
+      const handleSearch = (e, q) => {
         stacks
           .querySelectorAll("li")
           .forEach(
@@ -299,13 +326,20 @@ const description = t(
                 !li.dataset.search.toLowerCase().includes(q.toLowerCase()) &&
                 !li.textContent.toLowerCase().includes(q.toLowerCase()))
           );
+        // scroll to the input
+        if (!e) {
+          document.getElementById("search").scrollIntoView({
+            behavior: "instant",
+            block: "start",
+          });
+        }
       };
       if (q) {
         search.value = q;
-        handleSearch(q);
+        handleSearch(undefined, q);
       }
-      search.addEventListener("input", () => {
-        handleSearch(search.value);
+      search.addEventListener("input", (e) => {
+        handleSearch(e, search.value);
       });
     };
 
