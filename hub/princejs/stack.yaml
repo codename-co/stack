@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
 slug: princejs
 name: Prince of Persia
-icon: 🤴
+icon: 🎮
 flavor: DockerCompose
 version: "latest"
 updated_at: 2022-08-26
-description: Prince of Persia reimplementation
+description: Playable Prince of Persia reimplementation
 author: Oliver Klemenz
 license: Unlicense
 homepage: https://princejs.com
