@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
 slug: traefik
-name: Traefik proxy
+name: Traefik
 icon: traefikproxy
 flavor: DockerCompose
 version: "3.2"
