@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: keycloak
+name: Keycloak
+flavor: DockerCompose
+version: "26.1"
+updated_at: 2025-02-05
+description: Open Source Identity and Access Management
+author: Keycloak Authors
+license: Apache-2.0
+homepage: https://www.keycloak.org
+repository: https://github.com/keycloak/keycloak
+stars: 25200
+tags: [security, identity-management]
+alternativeTo: [auth0]
+readme: |
+  Add authentication to applications and secure services with minimum effort. No need to deal with storing users or authenticating users.
+
+  Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.

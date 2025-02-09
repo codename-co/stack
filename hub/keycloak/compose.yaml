@@ -1,0 +1,24 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:${KEYCLOAK_VERSION:-26.1}
+    command: start-dev
+    env_file: .env
+    restart: on-failure:5
+    depends_on:
+      - keycloak-db
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.keycloak.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.keycloak.loadbalancer.server.port: 8080
+
+  keycloak-db:
+    image: postgres:15-alpine
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${KC_DB_NAME}
+      POSTGRES_USER: ${KC_DB_USERNAME}
+      POSTGRES_PASSWORD: ${KC_DB_PASSWORD}
+
+volumes:
+  db-data:
