@@ -1,0 +1,27 @@
+services:
+  logto:
+    image: svhd/logto:${TAG-latest}
+    entrypoint: ["sh", "-c", "npm run cli db seed -- --swe && npm start"]
+    # ports:
+    #   - 3001:3001
+    #   - 3002:3002
+    env_file: .env
+    depends_on:
+      logto-postgres:
+        condition: service_healthy
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.logto.rule: Host(`$PROJECT.$DOMAIN`) || Host(`$PROJECT-web.$DOMAIN`)
+      traefik.http.services.logto.loadbalancer.server.port: 3001
+
+  logto-postgres:
+    image: postgres:17-alpine
+    user: postgres
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 2s
+      timeout: 1s
+      retries: 5
