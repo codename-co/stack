@@ -2,14 +2,14 @@
 slug: directus
 name: Directus
 flavor: DockerCompose
-version: "11.3"
-updated_at: 2024-12-18
+version: "11.4"
+updated_at: 2025-02-04
 description: An open-source headless CMS
 author: Monospace, Inc
 license: BSL
 homepage: https://directus.io
 repository: https://github.com/directus/directus
-stars: 28913
+stars: 29000
 tags: [cms, database, data]
 alternativeTo: [wordpress]
 readme: |

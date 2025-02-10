@@ -12,9 +12,9 @@ services:
     healthcheck:
       test: ["CMD", "pg_isready", "--host=localhost", "--username=directus"]
       interval: 10s
-      timeout: 5s
+      timeout: 1s
       retries: 5
-      start_interval: 5s
+      start_interval: 2s
       start_period: 30s
     labels:
       dash.name: Directus database
@@ -26,13 +26,14 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "[ $$(redis-cli ping) = 'PONG' ]"]
       interval: 10s
-      timeout: 5s
+      timeout: 1s
       retries: 5
-      start_interval: 5s
+      start_interval: 2s
       start_period: 30s
 
   directus:
-    image: directus/directus:${DIRECTUS_VERSION:-11.3}
+    image: directus/directus:${DIRECTUS_VERSION:-11.4}
+    platform: linux/amd64
     # ports:
     #   - :8055
     volumes:
@@ -62,6 +63,11 @@ services:
       ADMIN_PASSWORD: "d1r3ctu5"
 
       PUBLIC_URL: "https://$PROJECT.$DOMAIN"
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8055/server/health || exit 1
+      interval: 2s
+      timeout: 1s
+      retries: 1
     labels:
       dash.name: Directus
       dash.url: https://$PROJECT.$DOMAIN
