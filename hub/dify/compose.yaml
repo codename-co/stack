@@ -280,7 +280,7 @@
 services:
   # API service
   dify-api:
-    image: langgenius/dify-api:${DIFY_VERSION:-0.15.2}
+    image: langgenius/dify-api:${DIFY_VERSION:-0.15.3}
     # restart: always
     env_file: .env
     environment:
@@ -306,7 +306,7 @@ services:
   # worker service
   # The Celery worker for processing the queue.
   dify-worker:
-    image: langgenius/dify-api:${DIFY_VERSION:-0.15.2}
+    image: langgenius/dify-api:${DIFY_VERSION:-0.15.3}
     # restart: always
     env_file: .env
     environment:
@@ -331,7 +331,7 @@ services:
 
   # Frontend web application.
   dify-web:
-    image: langgenius/dify-web:${DIFY_VERSION:-0.15.2}
+    image: langgenius/dify-web:${DIFY_VERSION:-0.15.3}
     # restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}
