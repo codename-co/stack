@@ -1,6 +1,6 @@
 services:
   meilisearch:
-    image: getmeili/meilisearch:v${MEILI_VERSION:-1.11}
+    image: getmeili/meilisearch:v${MEILI_VERSION:-1.12.8}
     volumes:
       - data:/meili_data
     env_file: .env
