@@ -1,6 +1,6 @@
 services:
   lobe-chat:
-    image: lobehub/lobe-chat:v${LOBECHAT_VERSION:-1.49.4}
+    image: lobehub/lobe-chat:v${LOBECHAT_VERSION:-1.52.15}
     restart: always
     # ports:
     #   - 3210:3210
