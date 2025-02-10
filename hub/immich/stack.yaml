@@ -1,14 +1,14 @@
 slug: immich
 name: Immich
 flavor: DockerCompose
-version: 1.124.2
-updated_at: 2025-01-08
+version: "1.126.1"
+updated_at: 2025-02-10
 description: High performance self-hosted photo and video management solution
 author: FUTO
 license: AGPL-3.0
 homepage: https://immich.app
 repository: https://github.com/immich-app/immich
-stars: 57452
+stars: 57900
 tags:
   - photo-management
 alternativeTo:
@@ -54,7 +54,8 @@ readme: |
   - Folder View
 i18n:
   es:
-    description: Solución autogestionada de alto rendimiento para la administración
+    description:
+      Solución autogestionada de alto rendimiento para la administración
       de fotos y videos
     readme: |-
       Haga copias de seguridad, organice y gestione sus fotos fácilmente en su propio servidor. Immich le ayuda a navegar, buscar y organizar sus fotos y videos con facilidad, sin sacrificar su privacidad.
