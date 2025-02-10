@@ -2,7 +2,7 @@ services:
   # <http://openwebui.localhost>
   openwebui:
     # image: ghcr.io/open-webui/open-webui:main-ollama
-    image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.5.7}
+    image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.5.10}
     pull_policy: always
     env_file: .env
     # ports:
