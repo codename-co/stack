@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: marreta
+name: Marreta
+icon: Ⓜ
+flavor: DockerCompose
+version: "2.0"
+updated_at: 2025-02-09
+description: Break access barriers and elements that hinder reading
+author: Renan Altendorf
+license: GPL-3.0
+homepage: https://marreta.pcdomanual.com
+repository: https://github.com/manualdousuario/marreta
+stars: 737
+tags: [http-proxy, paywall]
+alternativeTo: []
+readme: |
+  Marreta is a tool that breaks access barriers and elements that hinder reading!
+
+  ![preview](https://github.com/manualdousuario/marreta/raw/main/screen.png?raw=true)
+
+  <hr>
+
+  ### Features
+
+  - Automatically cleans and corrects URLs
+  - Removes annoying tracking parameters
+  - Forces HTTPS to keep everything secure
+  - Changes user agent to avoid blocking
+  - Leaves HTML clean and optimized
+  - Fixes relative URLs on its own
+  - Allows you to add your own styles and scripts
+  - Removes unwanted elements
+  - Caching, caching!
+  - Blocks domains you don't want
+  - Allows configuring headers and cookies your way
+  - PHP-FPM and OPcache

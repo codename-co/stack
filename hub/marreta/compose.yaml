@@ -1,0 +1,8 @@
+services:
+  marreta:
+    image: ghcr.io/manualdousuario/marreta:${MARRETA_VERSION:-2.0}
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.marreta.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.marreta.loadbalancer.server.port: 80
