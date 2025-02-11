@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  composio:
+    image: composio/composio:${COMPOSIO_VERSION:-0.7.0}
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.composio.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.composio.loadbalancer.server.port: 8000

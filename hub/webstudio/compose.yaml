@@ -52,7 +52,7 @@ services:
   bootstrap:
     build:
       dockerfile: Dockerfile.dev
-    env_file: ./.env
+    env_file: .env
     depends_on:
       webstudiodb:
         condition: service_healthy
@@ -63,7 +63,7 @@ services:
   webstudio:
     build:
       dockerfile: Dockerfile.dev
-    env_file: ./.env
+    env_file: .env
     # ports:
     #   - :5173
     labels:

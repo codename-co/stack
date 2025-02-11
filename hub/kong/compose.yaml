@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 x-kong-config: &kong-env
   KONG_DATABASE: ${KONG_DATABASE:-off}
   KONG_PG_DATABASE: ${KONG_PG_DATABASE:-kong}

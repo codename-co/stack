@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   pgadmin:
     image: dpage/pgadmin4:${PGADMIN_VERSION:-8}

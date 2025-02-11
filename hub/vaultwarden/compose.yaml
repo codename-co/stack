@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   vaultwarden:
     image: vaultwarden/server:${VAULTWARDEN_VERSION:-1.32.7}-alpine

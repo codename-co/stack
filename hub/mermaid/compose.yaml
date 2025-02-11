@@ -1,4 +1,5 @@
-# docker run --platform linux/amd64 --publish 8000:8080 ghcr.io/mermaid-js/mermaid-live-editor
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
 
 services:
   mermaid:

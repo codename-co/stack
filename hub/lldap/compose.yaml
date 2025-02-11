@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   lldap:
     image: lldap/lldap:v${LLDAP_VERSION:-0.6}

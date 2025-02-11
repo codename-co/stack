@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 # Original: <https://github.com/supabase/supabase/blob/d9a1a615f5e19f57ee7e8f829fb278d971409e17/docker/docker-compose.yml>
 
 services:

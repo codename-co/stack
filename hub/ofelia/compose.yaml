@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   ofelia:
     image: mcuadros/ofelia:${OFELIA_VERSION:-0.3.15}

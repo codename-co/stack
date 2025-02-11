@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   server:
     image: codeberg.org/forgejo/forgejo:${FORGEJO_VERSION:-10}

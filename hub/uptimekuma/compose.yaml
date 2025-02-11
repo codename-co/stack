@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   uptimekuma:
     image: louislam/uptime-kuma:${VERSION:-1.23.16}-alpine

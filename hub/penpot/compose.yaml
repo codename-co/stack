@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 # Original: <https://github.com/penpot/penpot/blob/5e9f533624d5c2cdffa9c2cb01aa32012f11e6a6/docker/images/docker-compose.yaml>
 
 ## Common flags:

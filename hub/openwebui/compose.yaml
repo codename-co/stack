@@ -1,7 +1,8 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
-  # <http://openwebui.localhost>
   openwebui:
-    # image: ghcr.io/open-webui/open-webui:main-ollama
     image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.5.10}
     pull_policy: always
     env_file: .env
@@ -27,7 +28,6 @@ services:
       - host.docker.internal:host-gateway
     stop_grace_period: 0s
 
-  # <http://searxng.openwebui.localhost>
   openwebui-searxng:
     image: searxng/searxng
     # container_name: searxng
@@ -52,7 +52,6 @@ services:
       - internet
     stop_grace_period: 0s
 
-  # <http://pipelines.webui.localhost>
   openwebui-pipelines:
     # docker run --add-host=host.docker.internal:host-gateway
     image: ghcr.io/open-webui/pipelines:main-minimum

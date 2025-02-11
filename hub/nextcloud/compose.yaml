@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   nextcloud:
     image: nextcloud:${NEXTCLOUD_VERSION:-30.0.3}-fpm-alpine

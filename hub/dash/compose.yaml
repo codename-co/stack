@@ -1,15 +1,17 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   # Docker compose dashboard with services auto-discovery
-  # <http://localhost>
   dashboard:
     image: codename/dash:v${DASH_VERSION:-0.7.6}
-    env_file: ./.env
+    env_file: .env
     # ports:
     #   - :80
     labels:
       dash.name: Dashboard
       dash.desc: Overview of all local Docker-running services
-      dash.url: http://$DOMAIN
+      dash.url: https://$DOMAIN
       traefik.http.routers.admin.rule: Host(`$DOMAIN`)
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   lobe-chat:
     image: lobehub/lobe-chat:v${LOBECHAT_VERSION:-1.52.15}

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   dokuwiki:
     image: linuxserver/dokuwiki:version-${DOKUWIKI_VERSION:-2024-02-06b}

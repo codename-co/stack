@@ -1,8 +1,11 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   bolt:
     build:
       dockerfile: Dockerfile.dev
-    env_file: ./.env
+    env_file: .env
     labels:
       dash.name: Bolt
       dash.icon: stackblitz

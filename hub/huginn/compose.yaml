@@ -1,4 +1,6 @@
-# docker run -it -p 3000:3000 ghcr.io/huginn/huginn
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   huginn:
     image: ghcr.io/huginn/huginn:${HUGINN_VERSION:-latest}
