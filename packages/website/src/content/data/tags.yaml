@@ -101,6 +101,8 @@ tags:
     name: API gateway
   - slug: reverse-proxy
     name: Reverse proxy
+  - slug: http-proxy
+    name: HTTP proxy
   - slug: design
     name: Design
   - slug: automation
@@ -190,3 +192,5 @@ tags:
     name: LDAP
   - slug: docker
     name: Docker
+  - slug: paywall
+    name: Paywall
