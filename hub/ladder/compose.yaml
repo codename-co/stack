@@ -1,0 +1,10 @@
+services:
+  ladder:
+    image: ghcr.io/everywall/ladder:v${LADDER_VERSION:-0.0.21}
+    # volumes:
+    #   - ./ruleset.yaml:/app/ruleset.yaml
+    #   - ./handlers/form.html:/app/form.html
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.ladder.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.ladder.loadbalancer.server.port: 8080

@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+slug: ladder
+name: Ladder
+icon: 🪜
+flavor: DockerCompose
+version: "0.0.21"
+updated_at: 2023-12-07
+description: Bypass paywalls with a proxy ladder
+author: mms-gianni
+license: GPL-3.0
+repository: https://github.com/everywall/ladder
+stars: 4700
+tags: [http-proxy, paywall]
+alternativeTo: []
+readme: |
+  Ladder is a http web proxy. This is a selfhosted version of 1ft.io and 12ft.io. It is inspired by 13ft.
+
+  Freedom of information is an essential pillar of democracy and informed decision-making. While media organizations have legitimate financial interests, it is crucial to strike a balance between profitability and the public's right to access information. The proliferation of paywalls raises concerns about the erosion of this fundamental freedom, and it is imperative for society to find innovative ways to preserve access to vital information without compromising the sustainability of journalism. In a world where knowledge should be shared and not commodified, paywalls should be critically examined to ensure that they do not undermine the principles of an open and informed society.
