@@ -2,25 +2,8 @@
 # This is a https://stack.lol docker compose file.
 
 services:
-  # dns:
-  #   image: dockurr/dnsmasq:2.90
-  #   command: --no-daemon --log-queries --log-facility=-
-  #   ports:
-  #     - 53:53/udp
-  #   cap_add:
-  #     - NET_ADMIN
-  #   configs:
-  #     - source: dnsmasq_conf
-  #       target: /etc/dnsmasq.conf
-  #   labels:
-  #     dash.name: DNS
-  #     dash.desc: DNS server
-  #     dash.url: https://dns.$DOMAIN
-  #     traefik.http.routers.dns.rule: Host(`dns.$DOMAIN`)
-  #     traefik.http.services.dns.loadbalancer.server.port: 53
-
   traefik:
-    image: traefik:v3.2
+    image: traefik:v${TRAEFIK_VERSION:-3.3.3}
     command:
       - --providers.docker=true
       - --entrypoints.https.address=:443
@@ -64,37 +47,6 @@ services:
 #       address=/router/10.1.1.1
 #       address=/server/10.1.1.2
 #       addres
-
-# services:
-#   # HTTP reverse proxy
-#   # <https://proxy.localhost/dashboard/#/http/routers>
-#   traefik:
-#     image: traefik:v3.2
-#     command:
-#       - --providers.docker=true
-#       - "--certificatesresolvers.default.tlschallenge=false" # Disable automatic cert generation
-#     ports:
-#       - ${HTTP_PORT:-80}:80
-#       - ${HTTPS_PORT:-443}:443
-#       # - 8080
-#     environment:
-#       - SSL_CERT_FILE=/certs/server.cer # Add these
-#       - SSL_KEY_FILE=/certs/server.key # environment variables
-#     volumes:
-#       - /var/run/docker.sock:/var/run/docker.sock:ro
-#       - ./config:/etc/traefik:ro
-#       - ./certs:/certs:ro
-#     # configs:
-#     #   - source: traefik_conf
-#     #     target: /etc/traefik/traefik.yml
-#     stop_grace_period: 0s
-#     labels:
-#       dash.name: Reverse proxy
-#       dash.icon: traefikproxy
-#       dash.desc: HTTP reverse proxy
-#       dash.url: https://proxy.$DOMAIN/dashboard/#/http/routers
-#       traefik.http.routers.traefik.rule: Host(`proxy.$DOMAIN`)
-#       traefik.http.services.traefik.loadbalancer.server.port: 8080
 
 configs:
   traefik_conf:
