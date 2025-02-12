@@ -112,6 +112,10 @@ alternatives:
     icon: googlephotos
     name: Google Photos
     description: Photo management tool
+  - slug: google-sheets
+    icon: googlesheets
+    name: Google Sheets
+    description: Spreadsheet software
   - slug: guacamole
     name: Guacamole
     icon: apacheguacamole
