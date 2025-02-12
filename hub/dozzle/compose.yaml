@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  dozzle:
+    image: amir20/dozzle:v${DOZZLE_VERSION:-8.10.7}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.dozzle.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.dozzle.loadbalancer.server.port: 8080

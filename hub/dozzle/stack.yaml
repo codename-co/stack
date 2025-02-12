@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: dozzle
+name: Dozzle
+icon: Ⓓ
+flavor: DockerCompose
+version: "8.10.7"
+updated_at: 2025-02-09
+description: Realtime log viewer for docker containers
+author: Amir Raminfar
+license: MIT
+homepage: https://dozzle.dev
+repository: https://github.com/amir20/dozzle
+stars: 7600
+tags: [docker, log-management, monitoring]
+alternativeTo: []
+readme: |
+  Dozzle is a small lightweight application with a web based interface to monitor Docker logs. It doesn’t store any log files. It is for live monitoring of your container logs only.
+
+  <video controls width="100%">
+    <source src="https://github.com/user-attachments/assets/66a7b4b2-d6c9-4fca-ab04-aef6cd7c0c31">
+    ⚠️ Your browser does not support the video tag.
+  </video>
+
+  <hr>
+
+  ### Features
+
+  - Intelligent fuzzy search for container names 🤖
+  - Search logs using regex 🔦
+  - Search logs using [SQL queries](https://dozzle.dev/guide/sql-engine) 📊
+  - Small memory footprint 🏎
+  - Split screen for viewing multiple logs
+  - Live stats with memory and CPU usage
+  - Multi-user [authentication](https://dozzle.dev/guide/authentication) with support for proxy forward authorization 🚨
+  - [Swarm](https://dozzle.dev/guide/swarm-mode) mode support 🐳
+  - [Agent](https://dozzle.dev/guide/agent) mode for monitoring multiple Docker hosts 🕵️‍♂️
+  - Dark mode 🌙
