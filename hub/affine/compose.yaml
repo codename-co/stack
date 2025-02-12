@@ -17,9 +17,9 @@ services:
         condition: service_healthy
     volumes:
       # custom configurations
-      - config:/root/.affine/config
+      - ${VOLUME_PATH}config:/root/.affine/config
       # blob storage
-      - storage:/root/.affine/storage
+      - ${VOLUME_PATH}storage:/root/.affine/storage
     logging:
       driver: json-file
       options:
@@ -48,7 +48,7 @@ services:
     # container_name: affine_redis
     restart: unless-stopped
     volumes:
-      - redis:/data
+      - ${VOLUME_PATH}redis:/data
     healthcheck:
       test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
       interval: 10s
@@ -60,7 +60,7 @@ services:
     # container_name: affine_postgres
     restart: unless-stopped
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - ${VOLUME_PATH}postgres:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U affine"]
       interval: 10s

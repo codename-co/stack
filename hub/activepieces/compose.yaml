@@ -10,7 +10,7 @@ services:
       - redis
     env_file: .env
     volumes:
-      - cache:/usr/src/app/cache
+      - ${VOLUME_PATH}cache:/usr/src/app/cache
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.activepieces.rule: Host(`$PROJECT.$DOMAIN`)
@@ -24,15 +24,15 @@ services:
       - "POSTGRES_PASSWORD=${AP_POSTGRES_PASSWORD}"
       - "POSTGRES_USER=${AP_POSTGRES_USERNAME}"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ${VOLUME_PATH}postgres:/var/lib/postgresql/data
 
   redis:
     image: redis:7.0.7
     restart: unless-stopped
     volumes:
-      - redis_data:/data
+      - ${VOLUME_PATH}redis:/data
 
 volumes:
   cache:
-  postgres_data:
-  redis_data:
+  postgres:
+  redis:
