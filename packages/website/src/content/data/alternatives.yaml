@@ -163,6 +163,9 @@ alternatives:
     name: Lucidchart
     icon: lucid
     description: Diagramming tool
+  - slug: mailchimp
+    name: Mailchimp
+    description: Email marketing platform
   - slug: make
     name: Make
     description: Automation platform
@@ -237,6 +240,9 @@ alternatives:
   - slug: spotify
     name: Spotify
     description: Music streaming platform
+  - slug: substack
+    name: Substack
+    description: Newsletter platform
   - slug: tableau
     name: Tableau
     description: Business intelligence tool

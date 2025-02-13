@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  # listmonk app
+  app:
+    image: listmonk/listmonk:v${LISTMONK_VERSION:-4.1.0}
+    restart: unless-stopped
+    hostname: $PROJECT.$DOMAIN
+    depends_on:
+      - db
+    command:
+      [
+        sh,
+        -c,
+        "./listmonk --install --idempotent --yes --config '' && ./listmonk --upgrade --yes --config '' && ./listmonk --config ''",
+      ]
+    env_file: .env
+    volumes:
+      - uploads:/listmonk/uploads:rw
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.listmonk.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.listmonk.loadbalancer.server.port: 9000
+
+  # Postgres database
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    env_file: .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U listmonk"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:
+  uploads:

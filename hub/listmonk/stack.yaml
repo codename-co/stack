@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: listmonk
+name: Listmonk
+flavor: DockerCompose
+version: "4.1.0"
+updated_at: 2024-11-12
+description: Newsletter and mailing list manager
+author: Kailash Nadh
+license: AGPL-3.0
+homepage: https://listmonk.app
+repository: https://github.com/knadh/listmonk
+stars: 16000
+tags: [newsletter, mailing-list]
+alternativeTo: [substack, mailchimp]
+readme: |
+  Listmonk is a standalone, self-hosted, newsletter and mailing list manager. It is fast, feature-rich, and packed into a single binary. It uses a PostgreSQL (⩾ 12) database as its data store.
+
+  ![preview](https://user-images.githubusercontent.com/547147/134939475-e0391111-f762-44cb-b056-6cb0857755e3.png)

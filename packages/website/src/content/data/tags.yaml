@@ -198,3 +198,7 @@ tags:
     name: Web server
   - slug: health
     name: Health
+  - slug: newsletter
+    name: Newsletter
+  - slug: mailing-list
+    name: Mailing list
