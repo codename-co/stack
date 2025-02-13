@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: formbricks
+name: Formbricks
+icon: Ⓕ
+flavor: DockerCompose
+version: "3.1.5"
+updated_at: 2025-02-12
+description: Open Source Survey Platform
+author: Formbricks GmbH
+license: AGPL-3.0
+homepage: https://formbricks.com
+repository: https://github.com/formbricks/formbricks
+stars: 10000
+tags: [survey, feedback]
+alternativeTo: [typeform, surveymonkey]
+readme: |
+  Formbricks provides a free and open source surveying platform. Gather feedback at every point in the user journey with beautiful in-app, website, link and email surveys. Build on top of Formbricks or leverage prebuilt data analysis capabilities.
+
+  ![preview](https://github-production-user-asset-6210df.s3.amazonaws.com/675065/249441967-ccb89ea3-82b4-4bf2-8d2c-528721ec313b.png)
+
+  <hr>
+
+  ### Features
+
+  - 📲 Create **conversion-optimized surveys** with our no-code editor with several question types.
+  - 📚 Choose from a variety of best-practice **templates**.
+  - 👩🏻 Launch and **target your surveys to specific user groups** without changing your application code.
+  - 🔗 Create shareable **link surveys**.
+  - 👨‍👩‍👦 Invite your organization members to **collaborate** on your surveys.
+  - 🔌 Integrate Formbricks with **Slack, Notion, Zapier, n8n and more**.
+  - 🔒 All **open source**, transparent and self-hostable.

@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  postgres:
+    restart: on-failure:1
+    image: pgvector/pgvector:pg17
+    env_file: .env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  formbricks:
+    restart: on-failure:1
+    image: ghcr.io/formbricks/formbricks:v${FORMBRICKS_VERSION:-3.1.5}
+    env_file: .env
+    depends_on:
+      - postgres
+    volumes:
+      - uploads:/home/nextjs/apps/web/uploads/
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.formbricks.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.formbricks.loadbalancer.server.port: 3000
+
+volumes:
+  postgres:
+    driver: local
+  uploads:

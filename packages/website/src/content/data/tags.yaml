@@ -202,3 +202,7 @@ tags:
     name: Newsletter
   - slug: mailing-list
     name: Mailing list
+  - slug: survey
+    name: Survey
+  - slug: feedback
+    name: Feedback

@@ -243,6 +243,9 @@ alternatives:
   - slug: substack
     name: Substack
     description: Newsletter platform
+  - slug: surveymonkey
+    name: SurveyMonkey
+    description: Survey platform
   - slug: tableau
     name: Tableau
     description: Business intelligence tool
@@ -260,6 +263,9 @@ alternatives:
     name: Twitter
     icon: x
     description: Social media platform
+  - slug: typeform
+    name: Typeform
+    description: Online form builder
   - slug: uptimerobot
     name: UptimeRobot
     icon: 🤖
