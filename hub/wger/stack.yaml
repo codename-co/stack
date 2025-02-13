@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: wger
+name: wger
+icon: Ⓦ
+flavor: DockerCompose
+version: "2.3-dev"
+updated_at: 2025-02-07
+description: Manage your personal workouts
+author: wger.de
+license: AGPL-3.0
+homepage: https://wger.de
+repository: https://github.com/wger-project/wger
+stars: 3800
+tags: [health]
+alternativeTo: []
+readme: |
+  wger (ˈvɛɡɐ) Workout Manager is a free, open source web application that helps you manage your personal workouts, weight and diet plans and can also be used as a simple gym management utility. It offers a REST API as well, for easy integration with other projects and tools.
+
+  ![preview](https://raw.githubusercontent.com/wger-project/wger/master/wger/software/static/images/screens-3.png)

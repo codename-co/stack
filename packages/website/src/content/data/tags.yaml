@@ -196,3 +196,5 @@ tags:
     name: Paywall
   - slug: web-server
     name: Web server
+  - slug: health
+    name: Health
