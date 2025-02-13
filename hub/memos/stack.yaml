@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: memos
+name: Memos
+icon: Ⓜ
+flavor: DockerCompose
+version: "0.24.0"
+updated_at: 2025-02-06
+description: Lightweight note-taking solution
+author: ""
+license: MIT
+homepage: https://www.usememos.com
+repository: https://github.com/usememos/memos
+stars: 37000
+tags: [note-taking]
+alternativeTo: [evernote]
+readme: |
+  An open-source, self-hosted note-taking solution designed for seamless deployment and multi-platform access. Experience effortless plain text writing with pain-free, complemented by robust Markdown syntax support for enhanced formatting.
+
+  ![preview](https://www.usememos.com/demo.png)
+
+  <hr>
+
+  ### Features
+
+  - **Privacy First** 🏠: Take control of your data. All runtime data is securely stored in your local database.
+  - **Create at Speed** ✍️: Save content as plain text for quick access, with Markdown support for fast formatting and easy sharing.
+  - **Lightweight but Powerful** 🤲: Built with Go, React.js, and a compact architecture, our application delivers powerful performance in a lightweight package.
+  - **Customizable** 🧩: Easily customize your server name, icon, description, system style, and execution scripts to make it uniquely yours.
+  - **Open Source** 🦦: Memos embraces the future of open source, with all code available on GitHub for transparency and collaboration.
+  - **Free to Use** 💸: Enjoy all features completely free, with no charges ever for any content.

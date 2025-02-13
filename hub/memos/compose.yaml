@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  memos:
+    image: neosmemo/memos:${MEMOS_VERSION:-0.24.0}
+    volumes:
+      - memos:/var/opt/memos
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.memos.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.memos.loadbalancer.server.port: 5230
+
+volumes:
+  memos:
