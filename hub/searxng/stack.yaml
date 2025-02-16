@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: searxng
+name: SearXNG
+flavor: DockerCompose
+version: "latest"
+updated_at: 2025-02-15
+description: Free internet metasearch engine
+author: SearXNG team
+license: AGPL-3.0
+homepage: https://docs.searxng.org
+repository: https://github.com/searxng/searxng
+stars: 16200
+tags: [search-engine]
+alternativeTo: [google, duckduckgo]
+readme: |
+  Privacy-respecting, hackable metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.

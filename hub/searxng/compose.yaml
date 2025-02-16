@@ -1,0 +1,53 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  searxng:
+    image: searxng/searxng:${SEARXNG_VERSION:-latest}
+    restart: on-failure:1
+    env_file: .env
+    configs:
+      - source: searxng-settings.yml
+        target: /etc/searxng/settings.yml
+    volumes:
+      - ./config/limiter.toml:/etc/searxng/limiter.toml:ro
+      - ./config/uwsgi.ini:/etc/searxng/uwsgi.ini:ro
+    labels:
+      dash.name: SearxNG
+      # dash.icon: searxng
+      dash.desc: Internet metasearch engine
+      dash.url: http://$PROJECT.$DOMAIN
+      traefik.http.routers.searxng.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.searxng.loadbalancer.server.port: 8080
+    networks:
+      - internet
+    stop_grace_period: 0s
+
+configs:
+  searxng-settings.yml:
+    content: |
+      # see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
+      use_default_settings:
+        engines:
+          keep_only:
+            - duckduckgo
+            - wikidata
+            - wikipedia
+
+      server:
+        secret_key: "$SECRET_KEY"
+
+      ui:
+        static_use_hash: true
+
+      search:
+        safe_search: 0
+        autocomplete: duckduckgo
+        default_lang: ""
+        formats:
+          - html
+          - json
+
+networks:
+  internet:
+    driver: bridge
