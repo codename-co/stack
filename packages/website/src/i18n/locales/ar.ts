@@ -73,6 +73,11 @@ export const ar: I18n = {
   "{name} {version} is live.": "{name} {version} مباشر.",
   "Access it in fullscreen": "الوصول إليه بشاشة كاملة",
 
+  /** Page /recipes/<recipe> */
+  "*Recipe*: {name}": "*وصفة*: {name}",
+  "Recipe ingredients": "مكونات الوصفة",
+  "Last update": "آخر تحديث",
+
   /** Component Debug */
   "Service is running…": "الخدمة قيد التشغيل…",
 } as const;

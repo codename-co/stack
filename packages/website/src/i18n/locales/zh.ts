@@ -72,6 +72,11 @@ export const zh: I18n = {
   "{name} {version} is live.": "{name} {version} 已上线。",
   "Access it in fullscreen": "全屏访问",
 
+  /** Page /recipes/<recipe> */
+  "*Recipe*: {name}": "*食谱*：{name}",
+  "Recipe ingredients": "食谱成分",
+  "Last update": "最后更新",
+
   /** Component Debug */
   "Service is running…": "服务正在运行…",
 } as const;

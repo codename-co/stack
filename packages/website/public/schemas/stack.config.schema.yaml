@@ -1,4 +1,5 @@
-$schema: http://json-schema.org/draft-07/schema#
+# yaml-language-server: $schema=https://json-schema.org/draft-07/schema#
+$schema: https://json-schema.org/draft-07/schema#
 title: Stack Configuration Schema
 description: Schema for validating stack.yaml configuration files
 type: object
@@ -11,6 +12,11 @@ required:
   - author
   - license
 properties:
+  type:
+    type: string
+    description: Type of the stack configuration
+    enum: ["stack", "recipe"]
+
   slug:
     type: string
     description: Slug of the stack application
@@ -79,6 +85,26 @@ properties:
       type: string
     description: List of alternative software to the stack
 
+  dependencies:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the dependency
+        icon:
+          type: string
+          description: Icon reference for the dependency
+        role:
+          type: string
+          description: Role of the dependency in the stack
+        custom:
+          type: boolean
+          description: Custom dependency flag
+      required:
+        - name
+
   readme:
     type: string
     description: Detailed description of the stack
@@ -90,11 +116,20 @@ properties:
       "^[a-z]{2}$":
         type: object
         properties:
+          name:
+            type: string
+            description: Translated name of the stack
           description:
             type: string
             description: Translated description of the stack
           readme:
             type: string
             description: Translated readme content
+          dependencies:
+            type: object
+            properties:
+              role:
+                type: string
+                description: Translated role of the dependency
 
 additionalProperties: false

@@ -75,6 +75,11 @@ export const es: I18n = {
   "{name} {version} is live.": "{name} {version} está en vivo.",
   "Access it in fullscreen": "Acceder a pantalla completa",
 
+  /** Page /recipes/<recipe> */
+  "*Recipe*: {name}": "*Receta*: {name}",
+  "Recipe ingredients": "Ingredientes de la receta",
+  "Last update": "Última actualización",
+
   /** Component Debug */
   "Service is running…": "El servicio está en ejecución…",
 } as const;

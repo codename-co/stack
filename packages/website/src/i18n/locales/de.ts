@@ -74,6 +74,11 @@ export const de: I18n = {
   "{name} {version} is live.": "{name} {version} ist live.",
   "Access it in fullscreen": "Greifen Sie darauf im Vollbildmodus zu",
 
+  /** Page /recipes/<recipe> */
+  "*Recipe*: {name}": "*Rezept*: {name}",
+  "Recipe ingredients": "Rezeptzutaten",
+  "Last update": "Letztes Update",
+
   /** Component Debug */
   "Service is running…": "Dienst wird ausgeführt…",
 } as const;

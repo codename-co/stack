@@ -32,6 +32,17 @@ type Stack = {
   lang?: string;
 };
 
+type Recipe = Stack & {
+  dependencies?: Array<{
+    name: string;
+    icon?: string;
+    role?: string;
+    custom?: boolean;
+  }>;
+};
+
+// 1. Stacks
+
 console.debug("Preparing stacks…");
 
 const stackConfigs: Record<string, Record<string, Stack>> = import.meta.glob(
@@ -128,3 +139,58 @@ for (const stack of stacks) {
 }
 
 console.debug(`${stacks.length} stacks prepared.`);
+
+// 2. Recipes
+
+console.debug("Preparing recipes…");
+
+const recipeConfigs: Record<string, Record<string, Recipe>> = import.meta.glob(
+  "~~/../recipes/*/stack.yaml",
+  {
+    eager: true,
+  },
+);
+const recipeEnvs: Record<string, Record<string, string>> = import.meta.glob(
+  "~~/../recipes/*/.env",
+  {
+    eager: true,
+    query: "?raw",
+  },
+);
+
+const recipesBase = await Promise.all(
+  Object.entries<{
+    [s: string]: Recipe;
+  }>(recipeConfigs).map(async ([path, recipeConfig]) => {
+    const recipeMetadata = recipeConfig.default;
+    delete recipeMetadata.$schema;
+    recipeMetadata.env = parseDotEnv(
+      recipeEnvs[path.replace("stack.yaml", ".env")]?.default,
+    );
+    recipeMetadata.rank =
+      (recipeMetadata.stars ?? 0) /
+      Math.pow(
+        (Date.now() - (recipeMetadata.updated_at?.getTime() ?? Date.now())) /
+          1000 /
+          60 /
+          60 +
+          2,
+        0.5,
+      );
+    return recipeMetadata;
+  }),
+);
+
+const recipes = recipesBase.map((recipe) => ({
+  ...recipe,
+}));
+
+// Write the collection to the file system
+for (const recipe of recipes) {
+  writeFileSync(
+    `src/content/data/recipes/${recipe.slug}.json`,
+    JSON.stringify(recipe, null, 2),
+  );
+}
+
+console.debug(`${recipes.length} recipes prepared.`);

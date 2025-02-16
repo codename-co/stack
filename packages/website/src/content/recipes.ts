@@ -7,8 +7,8 @@ import { languages } from "~/i18n";
 
 const langCodes = Object.keys(languages);
 
-export const stacks = defineCollection({
-  loader: glob({ pattern: "stacks/*.json", base: "src/content/data" }),
+export const recipes = defineCollection({
+  loader: glob({ pattern: "recipes/*.json", base: "src/content/data" }),
   schema: z.object({
     slug: z.string(),
     name: z.string(),
@@ -26,6 +26,16 @@ export const stacks = defineCollection({
     repository: z.string().optional(),
     tags: z.array(z.string()).optional(),
     alternativeTo: z.array(z.string()).optional(),
+    dependencies: z
+      .array(
+        z.object({
+          name: z.string(),
+          icon: z.string().optional(),
+          role: z.string().optional(),
+          custom: z.boolean().optional(),
+        }),
+      )
+      .optional(),
     readme: z.string().optional(),
     env: z.record(z.any()).optional(),
     size: z.number().optional(),
@@ -36,6 +46,7 @@ export const stacks = defineCollection({
         z.enum(langCodes as [string, ...string[]]),
         z.object({
           slug: z.string().optional(),
+          name: z.string().optional(),
           description: z.string().optional(),
           readme: z.string().optional(),
         }),

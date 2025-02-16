@@ -60,6 +60,11 @@ export const en = [
   "{name} {version} is live.",
   "Access it in fullscreen",
 
+  /** Page /recipes/<recipe> */
+  "*Recipe*: {name}",
+  "Recipe ingredients",
+  "Last update",
+
   /** Component Debug */
   "Service is running…",
 ] as const;

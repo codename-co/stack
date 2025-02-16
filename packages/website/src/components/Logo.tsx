@@ -4,7 +4,7 @@ import { type SimpleIcon } from "simple-icons";
 import * as SimpleIcons from "simple-icons";
 
 type LogoProps = {
-  slug: string;
+  slug?: string;
   className?: string;
   style?: React.CSSProperties;
 };

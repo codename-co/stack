@@ -1,10 +1,10 @@
 import { getCollection } from "astro:content";
 
 // const promoted = await getCollection("promoted");
-const _stacks = await getCollection("stacks");
+const _recipes = await getCollection("recipes");
 
-export const getStacks = (lang: string) =>
-  _stacks
+export const getRecipes = (lang: string) =>
+  _recipes
     .sort((a, b) => {
       // const aPromoted = promoted.some(({ data }) => data.slug === a.data.slug);
       // const bPromoted = promoted.some(({ data }) => data.slug === b.data.slug);
@@ -21,12 +21,13 @@ export const getStacks = (lang: string) =>
 
       return aRank > bRank ? -1 : aRank < bRank ? 1 : 0;
     })
-    .map((stack) => ({
-      ...stack,
+    .map((recipe) => ({
+      ...recipe,
       data: {
-        ...stack.data,
+        ...recipe.data,
+        name: recipe.data.i18n?.[lang]?.name ?? recipe.data.name,
         description:
-          stack.data.i18n?.[lang]?.description ?? stack.data.description,
-        readme: stack.data.i18n?.[lang]?.readme ?? stack.data.readme,
+          recipe.data.i18n?.[lang]?.description ?? recipe.data.description,
+        readme: recipe.data.i18n?.[lang]?.readme ?? recipe.data.readme,
       },
     }));
