@@ -7,7 +7,7 @@ services:
     # Required when running on platform other than amd64, like Apple M1/M2:
     # platform: linux/amd64
     volumes:
-      - directus_data:/var/lib/postgresql/data
+      - ${VOLUME_DATA:-${VOLUME_PATH}directus_data}:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: "directus"
       POSTGRES_PASSWORD: "directus"
@@ -33,44 +33,28 @@ services:
       retries: 5
       start_interval: 2s
       start_period: 30s
+    labels:
+      dash.name: Redis
+      dash.desc: Cache for Directus
 
   directus:
     image: directus/directus:${DIRECTUS_VERSION:-11.4}
-    platform: linux/amd64
     # ports:
     #   - :8055
     volumes:
-      - directus_uploads:/directus/uploads
-      # - ./extensions:/directus/extensions
+      - ${VOLUME_UPLOADS:-${VOLUME_PATH}directus_uploads}:/directus/uploads
+      - ${VOLUME_EXTENSIONS:-${VOLUME_PATH}directus_extensions}:/directus/extensions
     depends_on:
       database:
         condition: service_healthy
       cache:
         condition: service_healthy
-    environment:
-      SECRET: "replace-with-secure-random-value"
-
-      DB_CLIENT: "pg"
-      DB_HOST: "database"
-      DB_PORT: "5432"
-      DB_DATABASE: "directus"
-      DB_USER: "directus"
-      DB_PASSWORD: "directus"
-
-      CACHE_ENABLED: "true"
-      CACHE_AUTO_PURGE: "true"
-      CACHE_STORE: "redis"
-      REDIS: "redis://cache:6379"
-
-      ADMIN_EMAIL: "admin@example.com"
-      ADMIN_PASSWORD: "d1r3ctu5"
-
-      PUBLIC_URL: "https://$PROJECT.$DOMAIN"
-    healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:8055/server/health || exit 1
-      interval: 2s
-      timeout: 1s
-      retries: 1
+    env_file: .env
+    # healthcheck:
+    #   test: wget --no-verbose --tries=1 --spider http://localhost:8055/server/health || exit 1
+    #   interval: 2s
+    #   timeout: 1s
+    #   retries: 1
     labels:
       dash.name: Directus
       dash.url: https://$PROJECT.$DOMAIN
@@ -80,3 +64,4 @@ services:
 volumes:
   directus_data:
   directus_uploads:
+  directus_extensions:
