@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+# This docker compose file is a recipe to set up a status monitoring system to monitor your services.
+# It uses Uptime Kuma as the status monitoring system and Directus as the headless CMS to manage the status pages, users, and notifications.
+# It also uses Traefik as a reverse proxy to expose the services on a subdomain.
+# SQLite is used as the database to store both the monitoring and the heartbeat data.
+
+include:
+  # Reference the stack configuration for Uptime Kuma
+  - ../../hub/uptimekuma/compose.yaml
+  # Reference the stack configuration for Directus
+  - ../../hub/directus/compose.yaml

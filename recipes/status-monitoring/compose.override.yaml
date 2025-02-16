@@ -1,0 +1,50 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+# This docker compose file is a recipe to set up a status monitoring system to monitor your services.
+# It uses Uptime Kuma as the status monitoring system and Directus as the headless CMS to manage the status pages, users, and notifications.
+# It also uses Traefik as a reverse proxy to expose the services on a subdomain.
+# SQLite is used as the database to store both the monitoring and the heartbeat data.
+
+services:
+  uptimekuma:
+    # mount important volumes locally
+    volumes:
+      - ./volumes/uptimekuma-data:/app/data
+
+    labels:
+      dash.desc: A status monitoring system to monitor your services
+
+  directus:
+    # mount important volumes locally
+    volumes:
+      - ./volumes/directus-uploads:/directus/uploads
+      - ./volumes/directus-extensions:/directus/extensions
+      - ./volumes/uptimekuma-data:/db
+
+    # replace the "database" service dependency with a "uptimekuma" service dependency
+    depends_on: !reset
+      uptimekuma:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+
+    environment:
+      # connect to the uptimekuma database
+      DB_CLIENT: sqlite3
+      DB_FILENAME: /db/kuma.db
+
+      # configure the Directus credentials
+      SECRET: ${DIRECTUS_SECRET}
+      ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
+
+    # expose on a subdomain
+    labels:
+      dash.url: https://$PROJECT-admin.$DOMAIN
+      dash.desc: A headless CMS to manage the status pages, users, and notifications
+      traefik.http.routers.directus.rule: Host(`$PROJECT-admin.$DOMAIN`)
+
+  # disqble the default database service
+  database: !reset
+    profiles: ["disabled"]

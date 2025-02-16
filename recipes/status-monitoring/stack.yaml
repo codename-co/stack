@@ -1,0 +1,73 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+type: recipe
+slug: status-monitoring
+name: Status monitoring system
+flavor: DockerCompose
+version: latest
+updated_at: 2025-02-15
+description: Status monitoring system to monitor your services
+author: ""
+license: ""
+repository: https://github.com/codename-co/stack/tree/main/recipes/status-monitoring
+stars: 7
+tags: [monitoring, status-page]
+alternativeTo: [uptimerobot, statuspage]
+dependencies:
+  - name: uptimekuma
+    role: A status monitoring system to monitor your services.
+  - name: directus
+    role: A headless CMS to manage the status pages, users, and notifications.
+  - name: traefik
+    role: A reverse proxy to expose the services on a subdomain.
+  - name: SQLite
+    role: A database to store both the monitoring and the heartbeat data.
+    custom: true
+  - name: Redis
+    role: A cache to store for Directus.
+    custom: true
+  - name: GraphQL
+    role: An API to interact with the status monitoring system.
+    custom: true
+  - name: REST API
+    icon: swagger
+    role: An API to interact with the status monitoring system.
+    custom: true
+  - name: React
+    role: A frontend to display the status monitoring system.
+    custom: true
+readme: |
+  ### Use case
+
+  - Set up a status monitoring system in order to monitor the status of multiple services.
+  - Provide status pages for each service and let users subscribe to alerts.
+
+  ### Features
+
+  - **Dashboard**: A dashboard to manage services monitoring.
+    - **Notifications**: Receive alerts when a service goes down.
+    - **Uptime**: Track the uptime of your services.
+    - **History**: View the history of your services status.
+  - **Manage**: Manage your services monitoring.
+  - **Status Pages**: Generate static pages for each service status.
+  - **API**: An API to interact with the status monitoring system.
+i18n:
+  fr:
+    name: Système de surveillance de services
+    description: Système de surveillance du statut de vos services
+    readme: |
+      ### Cas d'usage
+
+      - Mettre en place un système de surveillance du statut de plusieurs services.
+      - Mettre à disposition des pages de statut pour chaque service et permettre aux utilisateurs de s'abonner aux alertes.
+
+      ### Fonctionnalités
+
+      - **Tableau de bord** : Un tableau de bord pour gérer la surveillance des services.
+        - **Notifications** : Recevez des alertes lorsqu'un service tombe en panne.
+        - **Temps de fonctionnement** : Suivez le temps de fonctionnement de vos services.
+        - **Historique** : Consultez l'historique de l'état de vos services.
+      - **Gérer**: Gérez la surveillance de vos services.
+      - **Pages de statut** : Générer des pages statiques pour chaque état de service.
+      - **API** : Une API pour interagir avec le système de surveillance du statut.
