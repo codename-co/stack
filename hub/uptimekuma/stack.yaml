@@ -13,7 +13,7 @@ homepage: https://uptime.kuma.pet
 repository: https://github.com/louislam/uptime-kuma
 stars: 63600
 tags: [monitoring, status-page]
-alternativeTo: [uptimerobot]
+alternativeTo: [uptimerobot, statuspage]
 readme: |
   A fancy self-hosted monitoring tool
 

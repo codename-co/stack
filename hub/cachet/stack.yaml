@@ -17,6 +17,7 @@ tags:
   - status-page
 alternativeTo:
   - uptimerobot
+  - statuspage
 readme: |
   Cachet 3.x Announcement
 
