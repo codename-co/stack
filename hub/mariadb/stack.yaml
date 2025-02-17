@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: mariadb
+name: MariaDB
+flavor: DockerCompose
+version: "11.7.2"
+updated_at: 2025-02-15
+description: Community-developed open SQL server
+author: MariaDB Foundation
+license: GPL-2.0
+homepage: https://mariadb.org
+repository: https://github.com/MariaDB/server
+stars: 5900
+tags: [database]
+alternativeTo: [oracle]
+readme: |
+  MariaDB was designed as a drop-in replacement of MySQL(R) with more features, new storage engines, fewer bugs, and better performance.

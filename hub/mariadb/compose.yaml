@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  mariadb:
+    image: mariadb:${MARIADB_VERSION:-11.7.2}
+    restart: always
+    env_file: .env
+    volumes:
+      - ${VOLUME_DATA:-${VOLUME_PATH}mariadb_data}:/var/lib/mysql:Z
+
+volumes:
+  mariadb_data:

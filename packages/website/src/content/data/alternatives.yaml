@@ -195,6 +195,10 @@ alternatives:
   - slug: notion
     name: Notion
     description: Note-taking app
+  - slug: oracle
+    name: Oracle
+    icon: Ⓞ
+    description: Database management system
   - slug: peertube
     name: PeerTube
     description: Decentralized video platform
