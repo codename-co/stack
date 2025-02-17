@@ -127,7 +127,11 @@ const similar = Array.from(
         <Logo slug={slug} />&nbsp;{name}
       </h1>
       <p>{description}</p>
-      {stars && <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>}
+      {
+        stars && (
+          <span class="subtle text-sm">★&nbsp;{formatStars(stars, lang)}</span>
+        )
+      }
       {
         _tags
           ?.map((tag) => {
