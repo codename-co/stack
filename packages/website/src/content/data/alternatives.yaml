@@ -79,6 +79,9 @@ alternatives:
   - slug: dropbox
     name: Dropbox
     description: File hosting service
+  - slug: duckduckgo
+    name: DuckDuckGo
+    description: Search engine
   - slug: evernote
     name: Evernote
     description: Note-taking app
@@ -101,6 +104,9 @@ alternatives:
     icon: githubcopilot
     name: GitHub Copilot
     description: AI pair programmer
+  - slug: google
+    name: Google
+    description: Search engine
   - slug: google-analytics
     name: Google Analytics
     icon: googleanalytics
