@@ -1,0 +1,38 @@
+services:
+  umami:
+    image: ghcr.io/umami-software/umami:postgresql-v${UMAMI_VERSION:-2.15.1}
+    environment:
+      DATABASE_TYPE: postgresql
+      DATABASE_URL: $DATABASE_URL
+      APP_SECRET: ${APP_SECRET:-$(openssl rand -hex 32)}
+    depends_on:
+      umami-db:
+        condition: service_healthy
+    init: true
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "curl http://localhost:3000/api/heartbeat"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    labels:
+      dash.name: Umami
+      dash.desc: Simple, fast, and privacy-focused website analytics
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.umami.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.umami.loadbalancer.server.port: 3000
+
+  umami-db:
+    image: postgres:15-alpine
+    env_file: .env
+    volumes:
+      - umami-db-data:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  umami-db-data:

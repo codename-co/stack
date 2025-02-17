@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: umami
+name: Umami
+flavor: DockerCompose
+version: "2.15.1"
+updated_at: 2024-12-15
+description: Simple, fast, privacy-focused alternative to Google Analytics
+author: Umami Software, Inc
+license: MIT
+homepage: https://umami.is
+repository: https://github.com/umami-software/umami
+stars: 24600
+tags: [analytics]
+alternativeTo: [google-analytics]
+readme: |
+  Umami makes it easy to collect, analyze, and understand your website data — so you can focus on growth
+
+  ![preview](https://umami.is/images/app.jpg)
+
+  <hr>
+
+  ### Features
+
+  - **Traffic analysis:**
+    Get insights into your traffic so you optimize for growth. Easily see all your metrics at a glance.
+
+  - **Visitor analysis:**
+    Get detailed breakdowns about your visitors including where they are located and what device they used.
+
+  - **Custom events:**
+    Track more than just pageviews. Capture any event on your website like button clicks and form entries.
+
+  - **Powerful filters:**
+    Dive deeper into your data using easy to apply filters. Segment your users by any metric such as browser, OS, and country.
+
+  - **Realtime data:**
+    Get a realtime view of your current website traffic. See the exact pages where your visitors are landing.
+
+  - **Trend detection:**
+    Compare date periods to discover key trends in your traffic. Easily measure the success of your campaigns.

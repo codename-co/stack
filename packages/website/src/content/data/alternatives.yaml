@@ -101,6 +101,10 @@ alternatives:
     icon: githubcopilot
     name: GitHub Copilot
     description: AI pair programmer
+  - slug: google-analytics
+    name: Google Analytics
+    icon: googleanalytics
+    description: Web analytics service
   - slug: googledrive
     name: Google Drive
     description: File hosting service
