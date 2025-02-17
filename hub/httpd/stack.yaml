@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: httpd
+name: Apache (httpd)
+icon: apache
+flavor: DockerCompose
+version: "2024.11.0"
+updated_at: 2025-02-15
+description: Apache HTTP Server
+author: Apache Software Foundation
+license: Apache-2.0
+homepage: https://httpd.apache.org
+repository: https://github.com/apache/httpd
+stars: 3600
+tags: [web-server]
+alternativeTo: []
+readme: |
+  The Apache HTTP Server is a powerful and flexible HTTP/1.1 compliant web server. Originally designed as a replacement for the NCSA HTTP Server, it has grown to be the most popular web server on the Internet. As a project of the Apache Software Foundation, the developers aim to collaboratively develop and maintain a robust, commercial-grade, standards-based server with freely available source code.

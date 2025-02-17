@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  httpd:
+    image: httpd:${HTTPD_VERSION:-2.4.63}-alpine
+    volumes:
+      - ${VOLUME_HTDOCS:-${VOLUME_PATH}httpd_data}:/usr/local/apache2/htdocs
+    labels:
+      dash.name: Apache HTTP Server
+      # dash.icon: apache
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.httpd.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.httpd.loadbalancer.server.port: 80
+
+volumes:
+  httpd_data:
