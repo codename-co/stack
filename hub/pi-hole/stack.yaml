@@ -1,0 +1,79 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: pi-hole
+name: Pi-hole
+icon: pihole
+flavor: DockerCompose
+version: "latest"
+updated_at: 2025-02-22
+description: A black hole for Internet advertisements
+author: Pi-hole LLC
+license: EUPL-1.2
+homepage: https://pi-hole.net
+repository: https://github.com/pi-hole/pi-hole
+stars: 50500
+tags: [dns, network]
+alternativeTo: []
+readme: |
+  The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.
+
+  ![preview](https://wp-cdn.pi-hole.net/wp-content/uploads/2020/04/Dashboard.png)
+
+  <hr>
+
+  ### Features
+
+  - **Easy-to-install:**
+    our dialogs walk you through the simple installation process in less than ten minutes
+  - **Resolute:**
+    content is blocked in non-browser locations, such as ad-laden mobile apps and smart TVs
+  - **Responsive:**
+    seamlessly speeds up the feel of everyday browsing by caching DNS queries
+  - **Lightweight:**
+    runs smoothly with minimal hardware and software requirements
+  - **Robust:**
+    a command-line interface that is quality assured for interoperability
+  - **Insightful:**
+    a beautiful responsive Web Interface dashboard to view and control your Pi-hole
+  - **Versatile:**
+    can optionally function as a DHCP server, ensuring all your devices are protected automatically
+  - **Scalable:**
+    capable of handling hundreds of millions of queries when installed on server-grade hardware
+  - **Modern:**
+    blocks ads over both IPv4 and IPv6
+  - **Free:**
+    open source software that helps ensure you are the sole person in control of your privacy
+i18n:
+  fr:
+    name: Pi-hole
+    description: Un trou noir pour les publicités Internet
+    readme: |
+      Le Pi-hole® est un trou noir DNS qui protège vos appareils contre les contenus indésirables sans installer de logiciel côté client.
+
+      ![preview](https://wp-cdn.pi-hole.net/wp-content/uploads/2020/04/Dashboard.png)
+
+      <hr>
+
+      ### Caractéristiques
+
+      - **Facile à installer :**
+        nos dialogues vous guident à travers le processus d'installation simple en moins de dix minutes
+      - **Résolu :**
+        le contenu est bloqué dans des emplacements non liés au navigateur, tels que les applications mobiles remplies de publicités et les téléviseurs intelligents
+      - **Réactif :**
+        accélère de manière transparente la sensation de navigation quotidienne en mettant en cache les requêtes DNS
+      - **Léger :**
+        fonctionne en douceur avec des exigences matérielles et logicielles minimales
+      - **Robuste :**
+        une interface en ligne de commande qui est garantie de qualité pour l'interopérabilité
+      - **Instructif :**
+        un beau tableau de bord de l'interface Web réactive pour visualiser et contrôler votre Pi-hole
+      - **Polyvalent :**
+        peut fonctionner en option comme serveur DHCP, garantissant que tous vos appareils sont protégés automatiquement
+      - **Évolutif :**
+        capable de gérer des centaines de millions de requêtes lorsqu'il est installé sur du matériel de qualité serveur
+      - **Moderne :**
+        bloque les publicités sur les deux IPv4 et IPv6
+      - **Gratuit :**
+        logiciel open source qui aide à garantir que vous êtes la seule personne à contrôler votre vie privée
