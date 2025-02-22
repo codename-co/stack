@@ -1,0 +1,32 @@
+services:
+  dns-server:
+    image: technitium/dns-server:${DNS_SERVER_VERSION:-13.4.2}
+    # For DHCP deployments, use "host" network mode and remove all the port mappings, including the ports array by commenting them
+    # network_mode: "host"
+    ports:
+      # - "5380:5380/tcp" #DNS web console (HTTP)
+      # - "53443:53443/tcp" #DNS web console (HTTPS)
+      - "53:53/udp" #DNS service
+      - "53:53/tcp" #DNS service
+      # - "853:853/udp" #DNS-over-QUIC service
+      # - "853:853/tcp" #DNS-over-TLS service
+      # - "443:443/udp" #DNS-over-HTTPS service (HTTP/3)
+      # - "443:443/tcp" #DNS-over-HTTPS service (HTTP/1.1, HTTP/2)
+      # - "80:80/tcp" #DNS-over-HTTP service (use with reverse proxy or certbot certificate renewal)
+      # - "8053:8053/tcp" #DNS-over-HTTP service (use with reverse proxy)
+      # - "67:67/udp" #DHCP service
+    env_file: .env
+    volumes:
+      - config:/etc/dns
+    restart: on-failure:2
+    sysctls:
+      - net.ipv4.ip_local_port_range=1024 65000
+    labels:
+      dash.name: Technitium DNS
+      dash.desc: Technitium DNS
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.dns-server.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.dns-server.loadbalancer.server.port: 5380
+
+volumes:
+  config:

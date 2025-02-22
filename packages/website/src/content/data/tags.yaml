@@ -206,3 +206,5 @@ tags:
     name: Survey
   - slug: feedback
     name: Feedback
+  - slug: dns
+    name: DNS
