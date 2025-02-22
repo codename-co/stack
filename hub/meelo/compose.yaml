@@ -1,0 +1,171 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  server:
+    image: arthichaud/meelo-server:v${MEELO_VERSION:-3.1.0}
+    restart: on-failure
+    depends_on:
+      db:
+        condition: service_healthy
+      meilisearch:
+        condition: service_healthy
+      mq:
+        condition: service_healthy
+    volumes:
+      - ${DATA_DIR}:${INTERNAL_DATA_DIR}
+      - ${CONFIG_DIR}:${INTERNAL_CONFIG_DIR}
+    env_file: .env
+    environment:
+      - TRANSCODER_URL=http://transcoder:7666
+      - MEILI_HOST=http://meilisearch:7700
+      - RABBITMQ_URL=amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@mq:5672
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}?schema=public
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- localhost:4000"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    labels:
+      dash.name: Meelo Server
+      traefik.http.routers.server.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/api`)
+      traefik.http.services.server.loadbalancer.server.port: 4000
+      traefik.http.middlewares.strip-prefix-api.stripprefix.prefixes: /api
+      traefik.http.routers.server.middlewares: strip-prefix-api
+
+  scanner:
+    image: arthichaud/meelo-scanner:v${MEELO_VERSION:-3.1.0}
+    depends_on:
+      server:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- localhost:8133"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    environment:
+      - API_URL=http://server:4000
+      - INTERNAL_CONFIG_DIR=${INTERNAL_CONFIG_DIR}
+      - INTERNAL_DATA_DIR=${INTERNAL_DATA_DIR}
+      - API_KEYS=${API_KEYS}
+    volumes:
+      - ${DATA_DIR}:${INTERNAL_DATA_DIR}:ro
+      # - ${CONFIG_DIR}:${INTERNAL_CONFIG_DIR}:ro
+      - ./settings.json:${INTERNAL_CONFIG_DIR}/settings.json:ro
+    labels:
+      dash.name: Meelo Scanner
+      traefik.http.routers.scanner.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/scanner`)
+      traefik.http.services.scanner.loadbalancer.server.port: 8133
+      traefik.http.middlewares.strip-prefix-scanner.stripprefix.prefixes: /scanner
+      traefik.http.routers.server.middlewares: strip-prefix-scanner
+
+  front:
+    image: arthichaud/meelo-front:v${MEELO_VERSION:-3.1.0}
+    depends_on:
+      server:
+        condition: service_healthy
+      # scanner:
+      #   condition: service_healthy
+    environment:
+      - PUBLIC_SERVER_URL=${PUBLIC_URL}/api
+      - SSR_SERVER_URL=http://server:4000
+      - PUBLIC_SCANNER_URL=${PUBLIC_URL}/scanner
+      - SSR_SCANNER_URL=http://scanner:8133
+    labels:
+      dash.name: Meelo
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.front.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.front.loadbalancer.server.port: 3000
+
+  matcher:
+    image: arthichaud/meelo-matcher:v${MEELO_VERSION:-3.1.0}
+    restart: on-failure
+    depends_on:
+      server:
+        condition: service_healthy
+      mq:
+        condition: service_healthy
+    environment:
+      - API_URL=http://server:4000
+      - INTERNAL_CONFIG_DIR=${INTERNAL_CONFIG_DIR}
+      - API_KEYS=${API_KEYS}
+      - RABBITMQ_URL=amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@mq:5672
+    volumes:
+      # - ${CONFIG_DIR}:${INTERNAL_CONFIG_DIR}:ro
+      - ./settings.json:${INTERNAL_CONFIG_DIR}/settings.json:ro
+
+  db:
+    image: postgres:alpine3.14
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    env_file: .env
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.5
+    restart: on-failure
+    expose:
+      - 7700
+    volumes:
+      - search:/meili_data
+    environment:
+      - MEILI_ENV=production
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+      - MEILI_LOG_LEVEL=WARN
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--spider",
+          "http://0.0.0.0:7700/health",
+        ]
+      timeout: 5s
+      retries: 5
+
+  transcoder:
+    image: ghcr.io/zoriya/kyoo_transcoder:master
+    restart: on-failure
+    cpus: 1
+    # expose:
+    #   - 7666
+    environment:
+      - GOCODER_SAFE_PATH=${INTERNAL_DATA_DIR}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_SCHEMA=gocoder
+      - POSTGRES_SERVER=db
+    volumes:
+      - ${DATA_DIR}:${INTERNAL_DATA_DIR}:ro
+      - transcoder_cache:/cache
+    depends_on:
+      db:
+        condition: service_healthy
+
+  mq:
+    image: rabbitmq:4.0-alpine
+    environment:
+      - RABBITMQ_NODENAME=meelo
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASSWORD}
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+volumes:
+  db:
+  config:
+  data:
+  search:
+  transcoder_cache:
+  rabbitmq_data:
