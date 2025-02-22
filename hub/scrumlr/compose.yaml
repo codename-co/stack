@@ -6,7 +6,7 @@
 services:
   scrumlr-backend:
     restart: always
-    image: ghcr.io/inovex/scrumlr.io/scrumlr-server:${SCRUMRLR_VERSION:-3.10.0}
+    image: ghcr.io/inovex/scrumlr.io/scrumlr-server:${SCRUMRLR_VERSION:-3.10.3}
     command:
       - "/app/main"
       - "-disable-check-origin"
@@ -50,7 +50,7 @@ services:
 
   scrumlr-frontend:
     restart: always
-    image: ghcr.io/inovex/scrumlr.io/scrumlr-frontend:${SCRUMRLR_VERSION:-3.10.0}
+    image: ghcr.io/inovex/scrumlr.io/scrumlr-frontend:${SCRUMRLR_VERSION:-3.10.3}
     environment:
       SCRUMLR_SERVER_URL: "${SCRUMLR_SERVER_URL}"
       SCRUMLR_WEBSOCKET_URL: "${SCRUMLR_WEBSOCKET_URL}"
@@ -96,14 +96,14 @@ services:
   #   profiles:
   #     - oidc
 
-  caddy:
-    image: caddy
-    restart: always
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-    # ports:
-    #   - "80:80"
-    #   - "443:443"
+  # caddy:
+  #   image: caddy
+  #   restart: always
+  #   volumes:
+  #     - ./Caddyfile:/etc/caddy/Caddyfile
+  #   # ports:
+  #   #   - "80:80"
+  #   #   - "443:443"
 
 volumes:
   postgres_data:
