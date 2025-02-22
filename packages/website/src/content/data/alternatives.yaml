@@ -284,7 +284,7 @@ alternatives:
     name: Twitch
     description: Video streaming platform
   - slug: twitter
-    name: Twitter
+    name: X (Twitter)
     icon: x
     description: Social media platform
   - slug: typeform
