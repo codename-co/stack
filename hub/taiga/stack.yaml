@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: taiga
+name: Taiga
+icon: Ⓣ
+flavor: DockerCompose
+version: "6.8.1"
+updated_at: 2024-07-23
+description: Project management tool
+author: Kaleidos Inc.
+license: Multiplaform
+homepage: https://taiga.io
+repository: https://github.com/taigaio/taiga-docker
+stars: 1400
+tags: [project-management]
+alternativeTo: [jira, trello]
+readme: |
+  Agile project management made easy, intuitive and effective.
+
+  ![preview](https://github.com/taigaio/taiga-docker/raw/main/imgs/taiga.jpg)
+
+  <hr>
+
+  ### Features
+
+  - **Get organized:**
+    Define deliverables involving your full team to capture all team´s knowledge and secure buy in. Regularly align and (re)prioritize deliverables with the end user, to allow for timely pivots and assure the highest priority ones are completed in time.
+  - **Communicate effectively:**
+    Have daily stand-ups with the whole team. Share progress on agreed end products and discuss bottlenecks for a timely delivery. Promote risk-taking from team members to benefit both the individual and the team.
+  - **Stay on track:**
+    Provide visibility of ongoing activities & completed deliverables to the end user. Greater transparency into current resource & time allocation gives the end user a better understanding of state of- and effort needed for each deliverable & potential changes.
+  - **Start easy and evolve:**
+    Reflect and improve with the team on performance and ways of working. When needed, change workflows and activate more features. Intuitive user interface for cross-functional teams. No training and complex set up required.
+  - **100% Open source**
+    Taiga on-premise hosting option is ideal for larger teams or multiple small teams that need to have all data on their own servers and/or want to customize Taiga.

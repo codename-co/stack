@@ -277,6 +277,9 @@ alternatives:
     name: TinyURL
     icon: 🔗
     description: URL shortening service
+  - slug: trello
+    name: Trello
+    description: Project management tool
   - slug: twitch
     name: Twitch
     description: Video streaming platform
