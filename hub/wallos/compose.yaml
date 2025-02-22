@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  wallos:
+    image: bellamy/wallos:${WALLOS_VERSION:-2.45.2}
+    env_file: .env
+    volumes:
+      - db:/var/www/html/db
+      - logos:/var/www/html/images/uploads/logos
+    restart: unless-stopped
+    labels:
+      dash.name: Wallos
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.wallos.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.wallos.loadbalancer.server.port: 80
+
+volumes:
+  db:
+  logos:
