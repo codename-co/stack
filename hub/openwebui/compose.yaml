@@ -3,7 +3,7 @@
 
 services:
   openwebui:
-    image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.5.10}
+    image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.5.16}
     pull_policy: always
     env_file: .env
     # ports:
@@ -27,6 +27,13 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     stop_grace_period: 0s
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 1s
+      retries: 5
+      start_period: 15s
+      start_interval: 5s
 
   openwebui-searxng:
     image: searxng/searxng
