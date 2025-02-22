@@ -163,6 +163,10 @@ alternatives:
   - slug: kubernetes
     name: Kubernetes
     description: Container orchestration platform
+  - slug: langsmith
+    name: Langsmith
+    icon: 𓅱🛠
+    description: AI text generation and search
   - slug: lastpass
     name: LastPass
     description: Password manager
