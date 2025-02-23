@@ -131,8 +131,6 @@ tags:
     name: Video
   - slug: resume
     name: Resume
-  - slug: product-analytics
-    name: Product analytics
   - slug: feature-flagging
     name: Feature flagging
   - slug: a-b-testing
