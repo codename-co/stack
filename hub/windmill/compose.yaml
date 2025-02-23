@@ -1,0 +1,179 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "${LOG_MAX_SIZE:-20m}"
+    max-file: "${LOG_MAX_FILE:-10}"
+    compress: "true"
+
+services:
+  db:
+    deploy:
+      # To use an external database, set replicas to 0 and set DATABASE_URL to the external database url in the .env file
+      replicas: 1
+    image: postgres:16
+    shm_size: 1g
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    logging: *default-logging
+
+  windmill_server:
+    image: ghcr.io/windmill-labs/windmill:${WM_VERSION:-1.467.1}
+    deploy:
+      replicas: 1
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - MODE=server
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - worker_logs:/tmp/windmill/logs
+    logging: *default-logging
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      dash.name: Windmill
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.windmill.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.windmill.loadbalancer.server.port: 8000
+
+  windmill_worker:
+    image: ghcr.io/windmill-labs/windmill:${WM_VERSION:-1.467.1}
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "1"
+          memory: 2048M
+          # for GB, use syntax '2Gi'
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - MODE=worker
+      - WORKER_GROUP=default
+    depends_on:
+      db:
+        condition: service_healthy
+    # to mount the worker folder to debug, KEEP_JOB_DIR=true and mount /tmp/windmill
+    volumes:
+      # mount the docker socket to allow to run docker containers from within the workers
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - worker_dependency_cache:/tmp/windmill/cache
+      - worker_logs:/tmp/windmill/logs
+    logging: *default-logging
+
+  ## This worker is specialized for "native" jobs. Native jobs run in-process and thus are much more lightweight than other jobs
+  windmill_worker_native:
+    # Use ghcr.io/windmill-labs/windmill-ee:main for the ee
+    image: ghcr.io/windmill-labs/windmill:${WM_VERSION:-1.467.1}
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: "1"
+          memory: 2048M
+          # for GB, use syntax '2Gi'
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - MODE=worker
+      - WORKER_GROUP=native
+      - NUM_WORKERS=8
+      - SLEEP_QUEUE=200
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - worker_logs:/tmp/windmill/logs
+    logging: *default-logging
+  # This worker is specialized for reports or scraping jobs. It is assigned the "reports" worker group which has an init script that installs chromium and can be targeted by using the "chromium" worker tag.
+  # windmill_worker_reports:
+  #   image: ghcr.io/windmill-labs/windmill:${WM_VERSION:-1.467.1}
+  #   deploy:
+  #     replicas: 1
+  #     resources:
+  #       limits:
+  #         cpus: "1"
+  #         memory: 2048M
+  #         # for GB, use syntax '2Gi'
+  #   restart: unless-stopped
+  #   environment:
+  #     - DATABASE_URL=${DATABASE_URL}
+  #     - MODE=worker
+  #     - WORKER_GROUP=reports
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
+  #   # to mount the worker folder to debug, KEEP_JOB_DIR=true and mount /tmp/windmill
+  #   volumes:
+  #     # mount the docker socket to allow to run docker containers from within the workers
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #     - worker_dependency_cache:/tmp/windmill/cache
+  #     - worker_logs:/tmp/windmill/logs
+
+  # The indexer powers full-text job and log search, an EE feature.
+  windmill_indexer:
+    image: ghcr.io/windmill-labs/windmill:${WM_VERSION:-1.467.1}
+    deploy:
+      replicas: 0 # set to 1 to enable full-text job and log search
+    restart: unless-stopped
+    # expose:
+    #   - 8001
+    environment:
+      - PORT=8001
+      - DATABASE_URL=${DATABASE_URL}
+      - MODE=indexer
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - windmill_index:/tmp/windmill/search
+      - worker_logs:/tmp/windmill/logs
+    logging: *default-logging
+
+  lsp:
+    image: ghcr.io/windmill-labs/windmill-lsp:${WM_VERSION:-1.467.1}
+    restart: unless-stopped
+    volumes:
+      - lsp_cache:/pyls/.cache
+    logging: *default-logging
+    labels:
+      dash.name: Windmill LSP
+      dash.desc: Windmill Language Server Protocol
+      dash.url: https://$PROJECT.$DOMAIN/ws/
+      traefik.http.routers.windmill-lsp.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/ws/`)
+      traefik.http.services.windmill-lsp.loadbalancer.server.port: 3001
+
+  # multiplayer:
+  #   image: ghcr.io/windmill-labs/windmill-multiplayer:main
+  #   deploy:
+  #     replicas: 0 # Set to 1 to enable multiplayer, only available on Enterprise Edition
+  #   restart: unless-stopped
+  #   logging: *default-logging
+  #   labels:
+  #     dash.name: Windmill Multiplayer
+  #     traefik.http.routers.windmill-multiplayer.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/ws/`)
+  #     traefik.http.services.windmill-multiplayer.loadbalancer.server.port: 3002
+
+volumes:
+  db_data:
+  worker_dependency_cache:
+  worker_logs:
+  windmill_index:
+  lsp_cache:

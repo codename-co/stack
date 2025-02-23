@@ -219,6 +219,9 @@ alternatives:
   - slug: perplexity
     name: Perplexity
     description: AI text generation and search
+  - slug: pipedreams
+    name: Pipedreams
+    description: Automation platform
   - slug: postman
     name: Postman
     description: API development platform
@@ -264,6 +267,9 @@ alternatives:
   - slug: substack
     name: Substack
     description: Newsletter platform
+  - slug: superblocks
+    name: Superblocks
+    description: Automation platform
   - slug: surveymonkey
     name: SurveyMonkey
     description: Survey platform
@@ -273,6 +279,9 @@ alternatives:
   - slug: teamviewer
     name: TeamViewer
     description: Remote desktop software
+  - slug: temporal
+    name: Temporal
+    description: Workflow orchestration platform
   - slug: tinyurl
     name: TinyURL
     icon: 🔗
