@@ -10,6 +10,11 @@ services:
     depends_on:
       - outline-redis
       - outline-postgres
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/_health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.outline.rule: Host(`$PROJECT.$DOMAIN`)
