@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: docmost
+name: Docmost
+icon: Ⓓ
+flavor: DockerCompose
+version: "0.8.3"
+updated_at: 2025-02-22
+description: Collaborative wiki and documentation software
+author: Docmost
+license: AGPL-3.0
+homepage: https://docmost.com
+repository: https://github.com/docmost/docmost
+stars: 10000
+tags: [wiki, knowledge-base, collaboration]
+alternativeTo: [confluence, notion]
+readme: |
+
+  Open-source collaborative wiki and documentation software.
+
+  ![preview](https://docmost.com/screenshots/editor.png)
+
+  <hr>
+
+  ### Features
+
+  - Real-time collaboration
+  - Diagrams (Draw.io, Excalidraw and Mermaid)
+  - Spaces
+  - Permissions management
+  - Groups
+  - Comments
+  - Page history
+  - Search
+  - File attachment
