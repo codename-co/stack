@@ -3,7 +3,7 @@
 
 services:
   appflowy:
-    image: appflowyio/appflowy_client:${APPFLOWY_VERSION:-0.7.8}
+    image: appflowyio/appflowy_client:${APPFLOWY_VERSION:-0.8.4}
     platform: linux/amd64
     environment:
       - DISPLAY=${HOSTNAME}:0
@@ -13,8 +13,6 @@ services:
       - $HOME/.Xauthority:/root/.Xauthority:rw
       - /dev/dri:/dev/dri # for hardware acceleration
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
-    # ports:
-    #   - 8080:8080
     labels:
       traefik.http.routers.appflowy.rule: Host(`$PROJECT.$DOMAIN`)
       traefik.http.services.appflowy.loadbalancer.server.port: 8080
