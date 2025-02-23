@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: flowise
+name: Flowise
+icon: Ⓕ
+flavor: DockerCompose
+version: "2.2.5"
+updated_at: 2025-02-04
+description: Drag & drop UI to build your customized LLM flow
+author: FlowiseAI Inc
+license: Apache-2.0
+homepage: https://flowiseai.com
+repository: https://github.com/FlowiseAI/Flowise
+stars: 35500
+tags: [llm, ai, rag, chatbot]
+alternativeTo: [dialogflow-cx, rasa]
+readme: |
+
+  Drag & drop UI to build your customized LLM flow
+
+  ![preview](https://github.com/FlowiseAI/Flowise/raw/main/images/flowise.gif?raw=true)
+
+  <hr>
+
+  ### Features
+
+  - **LLM Orchestration:**
+    Connect LLMs with memory, data loaders, cache, moderation and many more:
+    Langchain, LlamaIndex, 100+ integrations
+  - **Agents & Assistants:**
+    Create autonomous agent that can uses tools to execute different tasks:
+    Custom Tools, OpenAI Assistant, Function Agent
+  - **API, SDK, Embed:**
+    Extend and integrate to your applications using APIs, SDK and Embedded Chat:
+    APIs, Embedded Widget, React SDK
+  - **Open source LLMs:**
+    Run in air-gapped environment with local LLMs, embeddings and vector databases:
+    HuggingFace, Ollama, LocalAI, Replicate, Llama2, Mistral, Vicuna, Orca, Llava, Self host on AWS, Azure, GCP

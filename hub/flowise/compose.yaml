@@ -1,0 +1,16 @@
+services:
+  flowise:
+    image: flowiseai/flowise:${FLOWISE_VERSION:-2.2.5}
+    restart: always
+    env_file: .env
+    volumes:
+      - flowise:/root/.flowise
+    entrypoint: /bin/sh -c "sleep 3; flowise start"
+    labels:
+      dash.name: Flowise
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.flowise.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.flowise.loadbalancer.server.port: 3000
+
+volumes:
+  flowise:
