@@ -4,14 +4,14 @@
 slug: affine
 name: Affine
 flavor: DockerCompose
-version: "0.19.4"
-updated_at: 2024-12-31
+version: "0.19.6"
+updated_at: 2025-01-15
 description: Collaborative workspace for your knowledge base
 author: TOEVERYTHING PTE
 license: MIT
 homepage: https://affine.pro
 repository: https://github.com/toeverything/AFFiNE
-stars: 45274
+stars: 45900
 tags:
   - knowledge-base
   - note-taking
