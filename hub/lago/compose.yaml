@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  lago:
+    image: getlago/lago:v${LAGO_VERSION:-1.21.0}
+    env_file: .env
+    stop_grace_period: 0s
+    depends_on:
+      lago-api:
+        condition: service_started
+    healthcheck:
+      test: curl -f http://localhost:80 || exit 1
+      interval: 5s
+      start_period: 10s
+      timeout: 1s
+      start_interval: 2s
+    labels:
+      dash.name: Lago
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.lago.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.lago.loadbalancer.server.port: 80
+
+  lago-api:
+    image: getlago/lago:v${LAGO_VERSION:-1.21.0}
+    env_file: .env
+    stop_grace_period: 0s
+    healthcheck:
+      test: curl -f http://localhost:3000/health || exit 1
+      interval: 5s
+      start_period: 10s
+      timeout: 1s
+      start_interval: 2s
+    labels:
+      dash.name: Lago
+      dash.icon: graphql
+      dash.url: https://$PROJECT.$DOMAIN/graphql
+      traefik.http.routers.lago-api.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/graphql`)
+      traefik.http.services.lago-api.loadbalancer.server.port: 3000

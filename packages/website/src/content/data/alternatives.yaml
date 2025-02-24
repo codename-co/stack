@@ -49,6 +49,9 @@ alternatives:
   - slug: calendly
     name: Calendly
     description: Scheduling software
+  - slug: chargebee
+    name: Chargebee
+    description: Subscription billing platform
   - slug: chatgpt
     name: ChatGPT
     icon: openai
@@ -239,6 +242,9 @@ alternatives:
   - slug: rasa
     name: Rasa
     description: Conversational AI platform
+  - slug: recurly
+    name: Recurly
+    description: Subscription billing platform
   - slug: retool
     name: Retool
     description: Low-code app development tool
@@ -264,6 +270,9 @@ alternatives:
   - slug: statuspage
     name: Statuspage
     description: Website monitoring tool
+  - slug: stripe
+    name: Stripe
+    description: Payment processing platform
   - slug: substack
     name: Substack
     description: Newsletter platform

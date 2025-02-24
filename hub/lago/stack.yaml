@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: lago
+name: Lago
+icon: Ⓛ
+flavor: DockerCompose
+version: "1.21.0"
+updated_at: 2025-02-12
+description: Open Source Metering & Usage-Based Billing
+author: Lago
+license: AGPL-3.0
+homepage: https://www.getlago.com
+repository: https://github.com/getlago/lago
+stars: 7400
+tags: [metering, billing, usage-based]
+alternativeTo: [stripe, chargebee, recurly]
+readme: |
+
+  Open Source Metering & Usage-Based Billing
+  The best alternative to Chargebee, Recurly or Stripe Billing.
+  For usage-based, subscription-based, and all the nuances of pricing in between.
+
+  ![preview](https://uploads-ssl.webflow.com/635119506e36baf5c267fecd/635b6df0ee8effaa54c1fa42_banner-open-graph.jpg)
+
+  <hr>
+
+  ### Features
+
+  - **Usage metering:**
+    Lago's event-based architecture provides a solid foundation for building a fair pricing model that scales with your business.
+  - **Price plans:**
+    Lago supports all pricing models. Create pay-as-you-go and hybrid plans in no time with our intuitive user interface or API.
+  - **Coupons:**
+    Create engaging marketing campaigns and increase conversion with coupons that customers can redeem to get a discount.
+  - **Add-ons:**
+    Why wait until the end of the billing cycle to get paid? Lago allows you to create one-time charges that are invoiced on the fly.
+  - **Invoicing:**
+    Depending on the configuration of your plans, Lago automatically calculates what each customer owes you and generates invoices.
+  - **Prepaid credits:**
+    Unlock recurring revenue opportunities for pay-as-you-go pricing models with Lago’s prepaid credit features.
