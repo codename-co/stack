@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: budibase
+name: Budibase
+flavor: DockerCompose
+version: "3.4.16"
+updated_at: 2025-02-21
+description: Create business apps and automate workflows in minutes
+author: Budibase
+license: GPL-3.0
+homepage: https://budibase.com
+repository: https://github.com/Budibase/budibase
+stars: 23500
+tags: [internal-tool, low-code, no-code]
+alternativeTo: [retool, airtable]
+readme: |
+
+  Budibase is an open-source low-code platform that saves engineers 100s of hours building forms, portals, and approval apps, securely.
+
+  ![preview](https://res.cloudinary.com/daog6scxm/image/upload/v1680181644/ui/homepage-design-ui_sizp7b.png)
+
+  <hr>
+
+  ### Features
+
+  - **Build and ship real software:**
+    Unlike other platforms, with Budibase you build and ship single page applications. Budibase applications have performance baked in and can be designed responsively, providing users with a great experience.
+  - **Open source and extensible:**
+    Budibase is open-source - licensed as GPL v3. This should fill you with confidence that Budibase will always be around. You can also code against Budibase or fork it and make changes as you please, providing a developer-friendly experience.
+  - **Load data or start from scratch:**
+    Budibase pulls data from multiple sources, including MongoDB, CouchDB, PostgreSQL, MariaDB, MySQL, Airtable, S3, DynamoDB, or a REST API. And unlike other platforms, with Budibase you can start from scratch and create business apps with no data sources. [Request new datasources](https://github.com/Budibase/budibase/discussions?discussions_q=category%3AIdeas).
+  - **Design and build apps with powerful pre-made components:**
+    Budibase **comes out of the box with beautifully designed, powerful components which you can use like building blocks to build your UI. We also expose many of your favourite CSS styling options so you can go that extra creative mile. [Request new component](https://github.com/Budibase/budibase/discussions?discussions_q=category%3AIdeas).
+  - **Automate processes, integrate with other tools and connect to webhooks:**
+    Save time by automating manual processes and workflows. From connecting to webhooks to automating emails, simply tell Budibase what to do and let it work for you. You can easily [create new automations for Budibase here](https://github.com/Budibase/automations) or [Request new automation](https://github.com/Budibase/budibase/discussions?discussions_q=category%3AIdeas).
+  - **Integrate with your favorite tools:**
+    Budibase integrates with a number of popular tools allowing you to build apps that perfectly fit your stack.
+  - **Deploy with confidence and security:**
+    Budibase is made to scale. With Budibase, you can self-host on your own infrastructure and globally manage users, onboarding, SMTP, apps, groups, theming and more. You can also provide users/groups with an app portal and disseminate user management to the group manager.
