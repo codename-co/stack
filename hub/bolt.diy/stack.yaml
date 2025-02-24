@@ -3,18 +3,20 @@
 # This is a https://stack.lol stack metadata file.
 slug: bolt.diy
 name: Bolt.diy
+icon: stackblitz
 flavor: DockerCompose
-version: "0.0.3"
-updated_at: 2024-12-18
+version: "0.0.6"
+updated_at: 2025-01-22
 description: Prompt, run, edit, and deploy full-stack web applications
 author: StackBlitz
 license: MIT
 homepage: https://bolt.diy
 repository: https://github.com/stackblitz-labs/bolt.diy
-stars: 6900
+stars: 12600
 tags: [chatbot, ai, webdev]
-alternativeTo: [bolt]
+alternativeTo: []
 readme: |
+
   Bolt.diy is an AI-powered web development agent that allows you to prompt, run, edit, and deploy full-stack applications directly from your browser—no local setup required. If you're here to build your own AI-powered web dev agent using the Bolt open source codebase, click here to get started!
 
   <hr>

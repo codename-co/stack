@@ -3,13 +3,11 @@
 
 services:
   bold-diy:
-    image: bolt-ai:production
-    # ports:
-    #   - 5173:5173
+    image: ghcr.io/stackblitz-labs/bolt.diy:stable
+    platform: linux/amd64
     env_file: .env
     environment:
-      - NODE_ENV=production
-      - COMPOSE_PROFILES=production
+      # - NODE_ENV=production
       # No strictly needed but serving as hints for Coolify
       - PORT=5173
       - GROQ_API_KEY=${GROQ_API_KEY}
@@ -26,7 +24,9 @@ services:
       - RUNNING_IN_DOCKER=true
     extra_hosts:
       - host.docker.internal:host-gateway
-    command: pnpm run dockerstart
+    # command: pnpm run dockerstart
+    volumes:
+      - ./.env:/app/.env.local
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.bolt-diy.rule: Host(`$PROJECT.$DOMAIN`)
