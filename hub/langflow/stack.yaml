@@ -5,7 +5,7 @@ slug: langflow
 name: Langflow
 flavor: DockerCompose
 version: 1.1.4
-updated_at: 2024-11-25
+updated_at: 2025-02-04
 description: Low-code app builder for RAG and multi-agent AI applications
 author: Langflow
 license: MIT
