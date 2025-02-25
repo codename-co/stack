@@ -276,13 +276,14 @@ pub fn stop(bundle: &str) {
     stop_stack(&extract_dir, flavor);
 }
 
-fn load_stack_manifest(path: &Path) -> serde_yaml::Value {
-    let config_path = path.join("stack.yaml");
+fn load_stack_manifest(config_path: &Path) -> serde_yaml::Value {
     if config_path.exists() {
         let config_file = File::open(config_path).expect("Failed to open config file");
         let config: serde_yaml::Value =
             serde_yaml::from_reader(config_file).expect("Failed to parse config file");
         return config;
+    } else {
+        error!("No stack configuration file found in: {:?}", config_path);
     }
     serde_yaml::Value::Null
 }
