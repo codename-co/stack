@@ -2,7 +2,7 @@
 # This is a https://stack.lol docker compose file.
 
 services:
-  bold-diy:
+  bolt-diy:
     image: ghcr.io/stackblitz-labs/bolt.diy:stable
     platform: linux/amd64
     env_file: .env
