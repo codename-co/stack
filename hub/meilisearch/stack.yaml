@@ -21,7 +21,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   - **Hybrid search:** Combine the best of both [semantic](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) & full-text search to get the most relevant results
   - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience

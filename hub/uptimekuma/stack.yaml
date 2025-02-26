@@ -21,7 +21,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   - Monitoring uptime for HTTP(s) / TCP / HTTP(s) Keyword / HTTP(s) Json Query / Ping / DNS Record / Push / Steam Game Server / Docker Containers
   - Fancy, Reactive, Fast UI/UX

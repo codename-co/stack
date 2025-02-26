@@ -34,7 +34,7 @@ readme: >
   <hr>
 
 
-  ## Features
+  ### Features
 
 
   - 🚀 **Effortless Setup**: Install seamlessly using Docker or Kubernetes
@@ -136,7 +136,7 @@ i18n:
 
       <hr>
 
-      ## Fonctionnalités
+      ### Fonctionnalités
 
       - 🚀 **Installation Facile**: Installation simplifiée via Docker ou Kubernetes (kubectl, kustomize ou helm) pour une expérience sans tracas avec prise en charge des images tagguées `:ollama` et `:cuda`.
       - 🤝 **Intégration Ollama/OpenAI API**: Intégrez facilement les API compatibles OpenAI pour des conversations polyvalentes aux côtés des modèles Ollama. Personnalisez l'URL de l'API OpenAI pour vous connecter à **LMStudio, GroqCloud, Mistral, OpenRouter, et plus encore**.
@@ -167,7 +167,7 @@ i18n:
 
       <hr>
 
-      ## 功能特点
+      ### 功能特点
 
       - 🚀 **简便设置**：使用 Docker 或 Kubernetes（kubectl、kustomize 或 helm）无缝安装，支持`:ollama`和`:cuda`标签镜像，提供无忧体验。
       - 🤝 **Ollama/OpenAI API 集成**：轻松集成兼容 OpenAI 的 API，实现与 Ollama 模型的多功能对话。可自定义 OpenAI API URL 以连接 **LMStudio、GroqCloud、Mistral、OpenRouter 等**。
@@ -190,7 +190,7 @@ i18n:
 
       <hr>
 
-      ## Características
+      ### Características
 
       - 🚀 **Configuración sin esfuerzo**: Instalación perfecta usando Docker o Kubernetes (kubectl, kustomize o helm) para una experiencia sin complicaciones con soporte para imágenes etiquetadas `:ollama` y `:cuda`.
       - 🤝 **Integración con API de Ollama/OpenAI**: Integra sin esfuerzo APIs compatibles con OpenAI para conversaciones versátiles junto con modelos de Ollama. Personaliza la URL de la API de OpenAI para conectar con **LMStudio, GroqCloud, Mistral, OpenRouter y más**.
@@ -213,7 +213,7 @@ i18n:
 
       <hr>
 
-      ## المميزات
+      ### المميزات
 
       - 🚀 **إعداد سهل**: تثبيت سلس باستخدام Docker أو Kubernetes (kubectl, kustomize أو helm) لتجربة خالية من المتاعب مع دعم للصور الموسومة بـ `:ollama` و `:cuda`.
       - 🤝 **تكامل Ollama/OpenAI API**: دمج سلس لواجهات برمجة التطبيقات المتوافقة مع OpenAI للمحادثات المتنوعة جنبًا إلى جنب مع نماذج Ollama. خصص عنوان URL لواجهة برمجة OpenAI للربط مع **LMStudio وGroqCloud وMistral وOpenRouter والمزيد**.
@@ -232,7 +232,7 @@ i18n:
 
       <hr>
 
-      ## Funktionen
+      ### Funktionen
 
       - 🚀 **Mühelose Einrichtung**: Installieren Sie nahtlos mit Docker oder Kubernetes (kubectl, kustomize oder helm) für eine problemlose Erfahrung mit Unterstützung für sowohl `:ollama` als auch `:cuda` markierte Images.
       - 🤝 **Ollama/OpenAI API Integration**: Integrieren Sie mühelos OpenAI-kompatible APIs für vielseitige Konversationen neben Ollama-Modellen. Passen Sie die OpenAI API URL an, um sich mit **LMStudio, GroqCloud, Mistral, OpenRouter und mehr** zu verbinden.
@@ -254,7 +254,7 @@ i18n:
 
       <hr>
 
-      ## Funzionalità
+      ### Funzionalità
 
       - 🚀 **Configurazione Semplice**: Installazione fluida utilizzando Docker o Kubernetes (kubectl, kustomize o helm) per un'esperienza senza problemi con supporto per immagini taggate sia `:ollama` che `:cuda`.
       - 🤝 **Integrazione API Ollama/OpenAI**: Integra facilmente API compatibili con OpenAI per conversazioni versatili insieme ai modelli Ollama. Personalizza l'URL dell'API OpenAI per collegarti con **LMStudio, GroqCloud, Mistral, OpenRouter e altri**.
@@ -277,7 +277,7 @@ i18n:
 
       <hr>
 
-      ## 機能
+      ### 機能
 
       - 🚀 **簡単セットアップ**: `:ollama`と`:cuda`タグ付きイメージをサポートし、DockerやKubernetes（kubectl、kustomizeまたはhelm）を使用して手間なくインストール可能。
       - 🤝 **Ollama/OpenAI API連携**: Ollamaモデルと共に、OpenAI互換APIを簡単に統合して多様な会話が可能。OpenAI APIのURLをカスタマイズして、**LMStudio、GroqCloud、Mistral、OpenRouterなど**と連携可能。
@@ -299,7 +299,7 @@ i18n:
 
       <hr>
 
-      ## 기능
+      ### 기능
 
       - 🚀 **간편한 설치**: Docker 또는 Kubernetes(kubectl, kustomize 또는 helm)를 사용하여 `:ollama` 및 `:cuda` 태그 이미지를 지원하는 번거로움 없는 경험을 위해 원활하게 설치하세요.
       - 🤝 **Ollama/OpenAI API 통합**: Ollama 모델과 함께 다목적 대화를 위해 OpenAI 호환 API를 손쉽게 통합하세요. OpenAI API URL을 사용자 지정하여 **LMStudio, GroqCloud, Mistral, OpenRouter 등**과 연결하세요.
@@ -319,7 +319,7 @@ i18n:
 
       <hr>
 
-      ## Recursos
+      ### Recursos
 
       - 🚀 **Configuração Simples**: Instale facilmente usando Docker ou Kubernetes (kubectl, kustomize ou helm) para uma experiência sem complicações com suporte para imagens marcadas com `:ollama` e `:cuda`.
       - 🤝 **Integração com API Ollama/OpenAI**: Integre facilmente APIs compatíveis com OpenAI para conversas versáteis junto com modelos Ollama. Personalize a URL da API OpenAI para conectar com **LMStudio, GroqCloud, Mistral, OpenRouter e outros**.
@@ -342,7 +342,7 @@ i18n:
 
       <hr>
 
-      ## Возможности
+      ### Возможности
 
       - 🚀 **Простая установка**: Удобная установка с использованием Docker или Kubernetes (kubectl, kustomize или helm) с поддержкой образов с тегами `:ollama` и `:cuda`.
       - 🤝 **Интеграция Ollama/OpenAI API**: Легкая интеграция API, совместимых с OpenAI, для разносторонних диалогов наряду с моделями Ollama. Настройка URL OpenAI API для подключения к **LMStudio, GroqCloud, Mistral, OpenRouter и другим**.
@@ -368,7 +368,7 @@ i18n:
 
       <hr>
 
-      ## विशेषताएं
+      ### विशेषताएं
 
       - 🚀 **सरल सेटअप**: `:ollama` और `:cuda` टैग की गई छवियों के समर्थन के साथ परेशानी मुक्त अनुभव के लिए Docker या Kubernetes (kubectl, kustomize या helm) का उपयोग करके आसानी से स्थापित करें।
       - 🤝 **Ollama/OpenAI API एकीकरण**: Ollama मॉडल के साथ बहुमुखी वार्तालाप के लिए OpenAI-संगत APIs को आसानी से एकीकृत करें। **LMStudio, GroqCloud, Mistral, OpenRouter, और अधिक** से जुड़ने के लिए OpenAI API URL को कस्टमाइज़ करें।

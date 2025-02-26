@@ -25,7 +25,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   - Translate inputs to provider's `completion`, `embedding`, and `image_generation` endpoints
   - [Consistent output](https://docs.litellm.ai/docs/completion/output), text responses will always be available at `['choices'][0]['message']['content']`
@@ -41,7 +41,7 @@ i18n:
 
       <hr>
 
-      ## Características
+      ### Características
 
       - Traduce entradas a los endpoints de `completion`, `embedding` y `image_generation` del proveedor
       - [Salida consistente](https://docs.litellm.ai/docs/completion/output), las respuestas de texto siempre estarán disponibles en `['choices'][0]['message']['content']`
@@ -56,7 +56,7 @@ i18n:
 
       <hr>
 
-      ## Fonctionnalités
+      ### Fonctionnalités
 
       - Traduisez les entrées vers les endpoints `completion`, `embedding` et `image_generation` du fournisseur
       - [Sortie cohérente](https://docs.litellm.ai/docs/completion/output), les réponses textuelles seront toujours disponibles à `['choices'][0]['message']['content']`
@@ -71,7 +71,7 @@ i18n:
 
       <hr>
 
-      ## Funktionen
+      ### Funktionen
 
       - Übersetzt Eingaben in die `completion`, `embedding` und `image_generation` Endpunkte des Anbieters
       - [Konsistente Ausgabe](https://docs.litellm.ai/docs/completion/output), Textantworten sind immer unter `['choices'][0]['message']['content']` verfügbar
@@ -86,7 +86,7 @@ i18n:
 
       <hr>
 
-      ## Caratteristiche
+      ### Caratteristiche
 
       - Traduce gli input negli endpoint `completion`, `embedding` e `image_generation` del provider
       - [Output consistente](https://docs.litellm.ai/docs/completion/output), le risposte testuali saranno sempre disponibili in `['choices'][0]['message']['content']`
@@ -101,7 +101,7 @@ i18n:
 
       <hr>
 
-      ## Funcionalidades
+      ### Funcionalidades
 
       - Traduz entradas para endpoints de `completion`, `embedding` e `image_generation` do provedor
       - [Saída consistente](https://docs.litellm.ai/docs/completion/output), respostas de texto estarão sempre disponíveis em `['choices'][0]['message']['content']`
@@ -116,7 +116,7 @@ i18n:
 
       <hr>
 
-      ## Возможности
+      ### Возможности
 
       - Преобразование входных данных для конечных точек провайдера `completion`, `embedding` и `image_generation`
       - [Согласованный вывод](https://docs.litellm.ai/docs/completion/output), текстовые ответы всегда будут доступны по пути `['choices'][0]['message']['content']`
@@ -131,7 +131,7 @@ i18n:
 
       <hr>
 
-      ## المميزات
+      ### المميزات
 
       - ترجمة المدخلات إلى نقاط نهاية `completion` و`embedding` و`image_generation` الخاصة بالمزود
       - [مخرجات متناسقة](https://docs.litellm.ai/docs/completion/output)، ستكون الاستجابات النصية متاحة دائمًا في `['choices'][0]['message']['content']`
@@ -146,7 +146,7 @@ i18n:
 
       <hr>
 
-      ## 功能特点
+      ### 功能特点
 
       - 将输入转换到提供商的`completion`、`embedding`和`image_generation`端点
       - [一致的输出](https://docs.litellm.ai/docs/completion/output)，文本响应将始终位于`['choices'][0]['message']['content']`
@@ -161,7 +161,7 @@ i18n:
 
       <hr>
 
-      ## विशेषताएं
+      ### विशेषताएं
 
       - प्रदाता के `completion`, `embedding`, और `image_generation` एंडपॉइंट्स के लिए इनपुट का अनुवाद करें
       - [निरंतर आउटपुट](https://docs.litellm.ai/docs/completion/output), टेक्स्ट प्रतिक्रियाएं हमेशा `['choices'][0]['message']['content']` पर उपलब्ध होंगी
@@ -174,7 +174,7 @@ i18n:
 
       <hr>
 
-      ## 기능
+      ### 기능
 
       - 제공자의 `completion`, `embedding`, `image_generation` 엔드포인트로 입력을 변환
       - [일관된 출력](https://docs.litellm.ai/docs/completion/output), 텍스트 응답은 항상 `['choices'][0]['message']['content']`에서 사용 가능
@@ -189,7 +189,7 @@ i18n:
 
       <hr>
 
-      ## 機能
+      ### 機能
 
       - プロバイダーの`completion`、`embedding`、`image_generation`エンドポイントへの入力を変換
       - [一貫した出力](https://docs.litellm.ai/docs/completion/output)、テキスト応答は常に`['choices'][0]['message']['content']`で利用可能

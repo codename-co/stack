@@ -22,7 +22,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   * **Cloud native registry**: With support for both container images and [Helm](https://helm.sh) charts, Harbor serves as registry for cloud native environments like container runtimes and orchestration platforms.
   * **Role based access control**: Users access different repositories through 'projects' and a user can have different permission for images or Helm charts under a project.

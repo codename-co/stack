@@ -27,7 +27,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   1. **Python-based** and agnostic to models, APIs, data sources, or databases.
   2. **Visual IDE** for drag-and-drop building and testing of workflows.
@@ -53,7 +53,7 @@ i18n:
 
       <hr>
 
-      ## Funktionen
+      ### Funktionen
 
       1. **Python-basiert** und unabhängig von Modellen, APIs, Datenquellen oder Datenbanken.
       2. **Visuelle IDE** zum Drag-and-Drop-Erstellen und Testen von Workflows.
@@ -66,7 +66,7 @@ i18n:
       9. **Workflows anpassen** oder Flows komplett mit Python erstellen.
       10. **Ökosystem-Integrationen** als wiederverwendbare Komponenten für jedes Modell, API oder Datenbank.
 
-      ## Integrationen
+      ### Integrationen
 
       ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   es:
@@ -80,7 +80,7 @@ i18n:
 
       <hr>
 
-      ## Características
+      ### Características
 
       1. **Basado en Python** y agnóstico a modelos, APIs, fuentes de datos o bases de datos.
       2. **IDE Visual** para construir y probar flujos de trabajo con arrastrar y soltar.
@@ -93,7 +93,7 @@ i18n:
       9. **Personalizar flujos de trabajo** o crear flujos completamente usando solo Python.
       10. **Integraciones del ecosistema** como componentes reutilizables para cualquier modelo, API o base de datos.
 
-      ## Integraciones
+      ### Integraciones
 
       ![Integraciones](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   fr:
@@ -107,7 +107,7 @@ i18n:
 
       <hr>
 
-      ## Fonctionnalités
+      ### Fonctionnalités
 
       1. **Basé sur Python** et agnostique aux modèles, APIs, sources de données ou bases de données.
       2. **IDE visuel** pour la construction et le test de flux de travail par glisser-déposer.
@@ -120,7 +120,7 @@ i18n:
       9. **Personnalisation des flux de travail** ou création de flux entièrement en Python.
       10. **Intégrations écosystème** comme composants réutilisables pour tout modèle, API ou base de données.
 
-      ## Intégrations
+      ### Intégrations
 
       ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   pt:
@@ -132,7 +132,7 @@ i18n:
 
       <hr>
 
-      ## Recursos
+      ### Recursos
 
       1. **Baseado em Python** e agnóstico a modelos, APIs, fontes de dados ou bancos de dados.
       2. **IDE Visual** para construção e teste de fluxos de trabalho com arrastar e soltar.
@@ -145,7 +145,7 @@ i18n:
       9. **Personalização de fluxos de trabalho** ou criação de fluxos inteiramente usando Python.
       10. **Integrações do ecossistema** como componentes reutilizáveis para qualquer modelo, API ou banco de dados.
 
-      ## Integrações
+      ### Integrações
 
       ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   ru:
@@ -158,7 +158,7 @@ i18n:
 
       <hr>
 
-      ## Возможности
+      ### Возможности
 
       1. **Основан на Python** и агностичен к моделям, API, источникам данных или базам данных.
       2. **Визуальная IDE** для создания и тестирования рабочих процессов путем перетаскивания.
@@ -171,7 +171,7 @@ i18n:
       9. **Настройка рабочих процессов** или создание потоков полностью с использованием Python.
       10. **Интеграции экосистемы** как многоразовые компоненты для любой модели, API или базы данных.
 
-      ## Интеграции
+      ### Интеграции
 
       ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   ko:
@@ -183,7 +183,7 @@ i18n:
 
       <hr>
 
-      ## 특징
+      ### 특징
 
       1. **Python 기반**이며 모델, API, 데이터 소스 또는 데이터베이스에 구애받지 않습니다.
       2. 드래그 앤 드롭 방식의 워크플로우 구축 및 테스트를 위한 **시각적 IDE**.
@@ -196,7 +196,7 @@ i18n:
       9. Python만 사용하여 워크플로우를 **사용자 정의**하거나 완전히 새로 만들 수 있습니다.
       10. 모든 모델, API 또는 데이터베이스를 위한 재사용 가능한 구성 요소로서의 **생태계 통합**.
 
-      ## 통합
+      ### 통합
 
       ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   it:
@@ -210,7 +210,7 @@ i18n:
 
       <hr>
 
-      ## Caratteristiche
+      ### Caratteristiche
 
       1. **Basato su Python** e agnostico rispetto a modelli, API, fonti dati o database.
       2. **IDE visuale** per la creazione e il test dei flussi di lavoro con drag-and-drop.
@@ -223,7 +223,7 @@ i18n:
       9. **Personalizzazione dei flussi di lavoro** o creazione di flussi interamente usando Python.
       10. **Integrazioni ecosistema** come componenti riutilizzabili per qualsiasi modello, API o database.
 
-      ## Integrazioni
+      ### Integrazioni
 
       ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   ar:
@@ -237,7 +237,7 @@ i18n:
 
       <hr>
 
-      ## المميزات
+      ### المميزات
 
       1. **يعتمد على بايثون** ومحايد للنماذج وواجهات برمجة التطبيقات ومصادر البيانات وقواعد البيانات.
       2. **بيئة تطوير مرئية** لبناء واختبار مسارات العمل بالسحب والإفلات.
@@ -250,7 +250,7 @@ i18n:
       9. **تخصيص مسارات العمل** أو إنشاء التدفقات باستخدام بايثون فقط.
       10. **تكاملات النظام البيئي** كمكونات قابلة لإعادة الاستخدام لأي نموذج أو واجهة برمجة تطبيقات أو قاعدة بيانات.
 
-      ## التكاملات
+      ### التكاملات
 
       ![التكاملات](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   zh:
@@ -262,7 +262,7 @@ i18n:
 
       <hr>
 
-      ## 功能特点
+      ### 功能特点
 
       1. **基于 Python**，对模型、API、数据源或数据库保持中立。
       2. **可视化 IDE**，用于拖放式构建和测试工作流。
@@ -275,7 +275,7 @@ i18n:
       9. **自定义工作流**或仅使用 Python 完全创建流程。
       10. **生态系统集成**作为任何模型、API 或数据库的可重用组件。
 
-      ## 集成
+      ### 集成
 
       ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   hi:
@@ -287,7 +287,7 @@ i18n:
 
       <hr>
 
-      ## विशेषताएं
+      ### विशेषताएं
 
       1. **पायथन-आधारित** और मॉडल, API, डेटा स्रोतों, या डेटाबेस के लिए तटस्थ।
       2. वर्कफ्लो के ड्रैग-एंड-ड्रॉप निर्माण और परीक्षण के लिए **विजुअल IDE**।
@@ -300,7 +300,7 @@ i18n:
       9. **वर्कफ्लो को कस्टमाइज करें** या केवल पायथन का उपयोग करके पूरी तरह से फ्लो बनाएं।
       10. किसी भी मॉडल, API या डेटाबेस के लिए पुन: प्रयोज्य घटकों के रूप में **इकोसिस्टम एकीकरण**।
 
-      ## एकीकरण
+      ### एकीकरण
 
       ![एकीकरण](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)
   ja:
@@ -312,7 +312,7 @@ i18n:
 
       <hr>
 
-      ## 機能
+      ### 機能
 
       1. **Pythonベース**で、モデル、API、データソース、データベースに依存しません。
       2. ドラッグ＆ドロップでワークフローを構築・テストできる**ビジュアルIDE**。
@@ -325,6 +325,6 @@ i18n:
       9. Pythonだけを使用してワークフローのカスタマイズや完全なフロー作成が可能。
       10. あらゆるモデル、API、データベース向けの再利用可能なコンポーネントとしての**エコシステム統合**。
 
-      ## 統合
+      ### 統合
 
       ![Integrations](https://github.com/langflow-ai/langflow/raw/main/docs/static/img/integrations.png)

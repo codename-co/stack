@@ -24,7 +24,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   By centralizing common API functionality across all your organization's services, the Kong API Gateway creates more freedom for engineering teams to focus on the challenges that matter most.
 

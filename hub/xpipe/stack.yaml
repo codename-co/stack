@@ -25,7 +25,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   XPipe fully integrates with your tools such as your favourite text/code editors, terminals, shells, command-line tools and more. The platform is designed to be extensible, allowing anyone to add easily support for more tools or to implement custom functionality through a modular extension system.
 

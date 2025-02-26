@@ -28,7 +28,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   - **Issues**: Quickly create issues and add details using a powerful rich text editor that supports file uploads. Add sub-properties and references to problems for better organization and tracking.
   - **Cycles**:
@@ -48,7 +48,7 @@ i18n:
 
       <hr>
 
-      ## Funktionen
+      ### Funktionen
 
       - **Issues**: Erstellen Sie schnell Issues und fügen Sie Details mit einem leistungsstarken Rich-Text-Editor hinzu, der Datei-Uploads unterstützt. Fügen Sie Untereigenschaften und Referenzen zu Problemen für bessere Organisation und Nachverfolgung hinzu.
       - **Zyklen**:
@@ -67,7 +67,7 @@ i18n:
 
       <hr>
 
-      ## Fonctionnalités
+      ### Fonctionnalités
 
       - **Problèmes** : Créez rapidement des problèmes et ajoutez des détails grâce à un puissant éditeur de texte enrichi qui prend en charge le téléchargement de fichiers. Ajoutez des sous-propriétés et des références aux problèmes pour une meilleure organisation et un meilleur suivi.
       - **Cycles** :
@@ -86,7 +86,7 @@ i18n:
 
       <hr>
 
-      ## Funzionalità
+      ### Funzionalità
 
       - **Issues**: Crea rapidamente segnalazioni e aggiungi dettagli utilizzando un potente editor di testo che supporta il caricamento di file. Aggiungi sotto-proprietà e riferimenti ai problemi per una migliore organizzazione e monitoraggio.
       - **Cicli**:
@@ -105,7 +105,7 @@ i18n:
 
       <hr>
 
-      ## Características
+      ### Características
 
       - **Problemas**: Crea rápidamente problemas y agrega detalles usando un potente editor de texto enriquecido que admite carga de archivos. Agrega subpropiedades y referencias a los problemas para una mejor organización y seguimiento.
       - **Ciclos**:
@@ -124,7 +124,7 @@ i18n:
 
       <hr>
 
-      ## Funcionalidades
+      ### Funcionalidades
 
       - **Issues**: Crie rapidamente issues e adicione detalhes usando um poderoso editor de texto rico que suporta upload de arquivos. Adicione subpropriedades e referências aos problemas para melhor organização e acompanhamento.
       - **Ciclos**: Mantenha o ritmo da sua equipe com Ciclos. Obtenha insights sobre o progresso do seu projeto com gráficos burndown e outros recursos valiosos.
@@ -142,7 +142,7 @@ i18n:
 
       <hr>
 
-      ## Возможности
+      ### Возможности
 
       - **Задачи**: Быстро создавайте задачи и добавляйте детали с помощью мощного текстового редактора, поддерживающего загрузку файлов. Добавляйте подсвойства и ссылки на проблемы для лучшей организации и отслеживания.
       - **Циклы**:
@@ -161,7 +161,7 @@ i18n:
 
       <hr>
 
-      ## المميزات
+      ### المميزات
 
       - **المشكلات**: إنشاء المشكلات بسرعة وإضافة التفاصيل باستخدام محرر نصوص غني وقوي يدعم تحميل الملفات. أضف خصائص فرعية ومراجع للمشكلات للتنظيم والتتبع بشكل أفضل.
       - **الدورات**:
@@ -180,7 +180,7 @@ i18n:
 
       <hr>
 
-      ## विशेषताएं
+      ### विशेषताएं
 
       - **मुद्दे**: एक शक्तिशाली रिच टेक्स्ट एडिटर का उपयोग करके तेजी से मुद्दे बनाएं और विवरण जोड़ें जो फ़ाइल अपलोड का समर्थन करता है। बेहतर संगठन और ट्रैकिंग के लिए समस्याओं में उप-गुण और संदर्भ जोड़ें।
       - **चक्र**:
@@ -199,7 +199,7 @@ i18n:
 
       <hr>
 
-      ## 功能特点
+      ### 功能特点
 
       - **问题追踪**：使用支持文件上传的强大富文本编辑器快速创建问题并添加详细信息。为问题添加子属性和引用，以实现更好的组织和跟踪。
       - **周期管理**：
@@ -218,7 +218,7 @@ i18n:
 
       <hr>
 
-      ## 기능
+      ### 기능
 
       - **이슈**: 파일 업로드를 지원하는 강력한 리치 텍스트 에디터를 사용하여 신속하게 이슈를 생성하고 세부 정보를 추가할 수 있습니다. 더 나은 구성과 추적을 위해 문제에 하위 속성과 참조를 추가하세요.
       - **주기**:
@@ -237,7 +237,7 @@ i18n:
 
       <hr>
 
-      ## 機能
+      ### 機能
 
       - **課題**: ファイルのアップロードをサポートする強力なリッチテキストエディタを使用して、素早く課題を作成し詳細を追加できます。より良い整理と追跡のために、問題にサブプロパティと参照を追加できます。
       - **サイクル**:

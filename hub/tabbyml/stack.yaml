@@ -25,7 +25,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   - Self-contained, with no need for a DBMS or cloud service.
   - OpenAPI interface, easy to integrate with existing infrastructure (e.g Cloud IDE).

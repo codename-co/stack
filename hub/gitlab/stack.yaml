@@ -25,7 +25,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   - Manage Git repositories with fine grained access controls that keep your code secure
   - Perform code reviews and enhance collaboration with merge requests
@@ -43,7 +43,7 @@ i18n:
 
       <hr>
 
-      ## Funktionen
+      ### Funktionen
 
       - Verwalten Sie Git-Repositories mit feingranularen Zugriffskontrollen, die Ihren Code sicher halten
       - Führen Sie Code-Reviews durch und verbessern Sie die Zusammenarbeit mit Merge Requests
@@ -60,7 +60,7 @@ i18n:
 
       <hr>
 
-      ## Características
+      ### Características
 
       - Gestione repositorios Git con controles de acceso detallados que mantienen su código seguro
       - Realice revisiones de código y mejore la colaboración con solicitudes de fusión
@@ -94,7 +94,7 @@ i18n:
 
       <hr>
 
-      ## Fonctionnalités
+      ### Fonctionnalités
 
       - Gérez les dépôts Git avec des contrôles d'accès précis qui garantissent la sécurité de votre code
       - Effectuez des revues de code et améliorez la collaboration avec les demandes de fusion
@@ -111,7 +111,7 @@ i18n:
 
       <hr>
 
-      ## Recursos
+      ### Recursos
 
       - Gerencie repositórios Git com controles de acesso refinados que mantêm seu código seguro
       - Realize revisões de código e melhore a colaboração com solicitações de merge
@@ -129,7 +129,7 @@ i18n:
 
       <hr>
 
-      ## Возможности
+      ### Возможности
 
       - Управление Git-репозиториями с детальным контролем доступа для обеспечения безопасности кода
       - Выполнение проверки кода и улучшение совместной работы с помощью запросов на слияние
@@ -146,7 +146,7 @@ i18n:
 
       <hr>
 
-      ## विशेषताएं
+      ### विशेषताएं
 
       - अपने कोड को सुरक्षित रखने के लिए बारीक नियंत्रण के साथ Git रिपॉजिटरी का प्रबंधन करें
       - मर्ज रिक्वेस्ट के साथ कोड रिव्यू करें और सहयोग बढ़ाएं
@@ -163,7 +163,7 @@ i18n:
 
       <hr>
 
-      ## 功能特点
+      ### 功能特点
 
       - 通过细粒度的访问控制管理Git仓库，确保代码安全
       - 通过合并请求进行代码审查并加强协作
@@ -180,7 +180,7 @@ i18n:
 
       <hr>
 
-      ## Caratteristiche
+      ### Caratteristiche
 
       - Gestisci repository Git con controlli di accesso granulari che mantengono sicuro il tuo codice
       - Esegui revisioni del codice e migliora la collaborazione con le richieste di unione
@@ -197,7 +197,7 @@ i18n:
 
       <hr>
 
-      ## 특징
+      ### 특징
 
       - 세분화된 접근 제어로 Git 저장소를 관리하여 코드를 안전하게 보호
       - 병합 요청을 통한 코드 리뷰 수행 및 협업 강화
@@ -214,7 +214,7 @@ i18n:
 
       <hr>
 
-      ## 機能
+      ### 機能
 
       - きめ細かなアクセス制御でコードを安全に保ちながら Git リポジトリを管理
       - マージリクエストによるコードレビューとコラボレーションの強化

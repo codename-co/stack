@@ -51,7 +51,7 @@ i18n:
 
       <hr>
 
-      ## Anwendungsfälle
+      ### Anwendungsfälle
 
       - Verfolgen Sie das Wetter und erhalten Sie eine E-Mail, wenn es morgen regnen (oder schneien) wird ("Vergessen Sie Ihren Regenschirm nicht!")
       - Erstellen Sie eine Liste mit Begriffen, die Sie interessieren, und erhalten Sie eine E-Mail, wenn sich deren Vorkommen auf Twitter ändert. (Sie möchten zum Beispiel wissen, wenn in der Welt des maschinellen Lernens etwas Interessantes passiert ist? Huginn überwacht den Begriff "machine learning" auf Twitter und informiert Sie, wenn die Diskussionen darüber zunehmen.)
@@ -74,7 +74,7 @@ i18n:
 
       <hr>
 
-      ## Casos de uso
+      ### Casos de uso
 
       - Monitorear el clima y recibir un correo cuando vaya a llover (o nevar) mañana ("¡No olvides tu paraguas!")
       - Listar términos que te interesan y recibir correos cuando su frecuencia en Twitter cambie. (Por ejemplo, ¿quieres saber cuándo ha sucedido algo interesante en el mundo del Aprendizaje Automático? Huginn vigilará el término "machine learning" en Twitter y te avisará cuando haya un pico en las discusiones.)
@@ -97,7 +97,7 @@ i18n:
 
       <hr>
 
-      ## उपयोग के मामले
+      ### उपयोग के मामले
 
       - मौसम पर नज़र रखें और कल जब बारिश (या बर्फ) होने वाली हो तो ईमेल प्राप्त करें ("अपनी छतरी मत भूलना!")
       - उन शब्दों को सूचीबद्ध करें जिनकी आप परवाह करते हैं और ट्विटर पर उनकी उपस्थिति में बदलाव होने पर ईमेल प्राप्त करें। (उदाहरण के लिए, क्या आप जानना चाहते हैं कि मशीन लर्निंग की दुनिया में कुछ दिलचस्प हुआ है? हुगिन ट्विटर पर "मशीन लर्निंग" शब्द पर नज़र रखेगा और जब चर्चा में वृद्धि होगी तो आपको बताएगा।)
@@ -117,7 +117,7 @@ i18n:
 
       <hr>
 
-      ## 使用场景
+      ### 使用场景
 
       - 跟踪天气，在明天要下雨（或下雪）时收到电子邮件（"别忘了带伞！"）
       - 列出您关心的术语，当它们在 Twitter 上的出现频率发生变化时收到电子邮件。（例如，想知道机器学习领域发生了什么有趣的事情？Huginn 会在 Twitter 上监控"机器学习"一词，并在讨论出现激增时通知您。）
@@ -140,7 +140,7 @@ i18n:
 
       <hr>
 
-      ## Casi d'uso
+      ### Casi d'uso
 
       - Monitora il meteo e ricevi un'email quando domani pioverà (o nevicherà) ("Non dimenticare l'ombrello!")
       - Elenca i termini che ti interessano e ricevi email quando la loro occorrenza su Twitter cambia. (Per esempio, vuoi sapere quando è successo qualcosa di interessante nel mondo del Machine Learning? Huginn monitorerà il termine "machine learning" su Twitter e ti dirà quando c'è un picco nella discussione.)
@@ -163,7 +163,7 @@ i18n:
 
       <hr>
 
-      ## 사용 사례
+      ### 사용 사례
 
       - 날씨를 추적하고 내일 비(또는 눈)가 올 예정일 때 이메일 받기 ("우산 잊지 마세요!")
       - 관심 있는 용어를 나열하고 트위터에서 해당 용어의 발생 빈도가 변경될 때 이메일 받기 (예: 머신 러닝 분야에서 흥미로운 일이 발생했는지 알고 싶으신가요? Huginn이 트위터에서 "machine learning" 용어를 감시하고 논의가 급증할 때 알려드립니다.)
@@ -186,7 +186,7 @@ i18n:
 
       <hr>
 
-      ## Casos de uso
+      ### Casos de uso
 
       - Acompanhe o clima e receba um e-mail quando for chover (ou nevar) amanhã ("Não se esqueça do seu guarda-chuva!")
       - Liste termos que você se importa e receba e-mail quando sua ocorrência no Twitter muda. (Por exemplo, quer saber quando algo interessante aconteceu no mundo do Machine Learning? Huginn irá observar o termo "machine learning" no Twitter e informar quando houver um pico nas discussões.)
@@ -209,7 +209,7 @@ i18n:
 
       <hr>
 
-      ## حالات الاستخدام
+      ### حالات الاستخدام
 
       - تتبع حالة الطقس والحصول على بريد إلكتروني عندما يتوقع هطول المطر (أو الثلج) غداً ("لا تنس مظلتك!")
       - قم بإدراج المصطلحات التي تهتم بها واستلم بريداً إلكترونياً عندما يتغير ظهورها على تويتر. (على سبيل المثال، هل تريد أن تعرف متى حدث شيء مثير للاهتمام في عالم التعلم الآلي؟ سيراقب هوجن مصطلح "التعلم الآلي" على تويتر ويخبرك عندما يكون هناك ارتفاع في النقاش.)
@@ -232,7 +232,7 @@ i18n:
 
       <hr>
 
-      ## ユースケース
+      ### ユースケース
 
       - 天気を追跡し、明日雨（または雪）が降る際にメールを受け取る（「傘を忘れずに！」）
       - 関心のある用語をリストアップし、Twitterでの出現頻度に変化があった際にメールを受け取る（例：機械学習の世界で興味深いことが起きたことを知りたい場合、HuginnはTwitterで「machine learning」という用語を監視し、議論が急増した際に通知します）
@@ -255,7 +255,7 @@ i18n:
 
       <hr>
 
-      ## Cas d'utilisation
+      ### Cas d'utilisation
 
       - Suivre la météo et recevoir un email quand il va pleuvoir (ou neiger) demain ("N'oubliez pas votre parapluie !")
       - Répertorier les termes qui vous intéressent et recevoir un email lorsque leur fréquence sur Twitter change. (Par exemple, vous voulez savoir quand quelque chose d'intéressant s'est produit dans le monde du Machine Learning ? Huginn surveillera le terme "machine learning" sur Twitter et vous préviendra quand il y a un pic de discussion.)
@@ -278,7 +278,7 @@ i18n:
 
       <hr>
 
-      ## Варианты использования
+      ### Варианты использования
 
       - Отслеживайте погоду и получайте email, когда завтра будет дождь (или снег) ("Не забудьте зонтик!")
       - Составьте список интересующих вас терминов и получайте уведомления, когда меняется частота их упоминания в Twitter. (Например, хотите узнать, когда произошло что-то интересное в мире машинного обучения? Huginn будет следить за термином "machine learning" в Twitter и сообщит вам, когда возникнет всплеск обсуждений.)

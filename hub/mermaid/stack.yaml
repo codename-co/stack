@@ -26,7 +26,7 @@ readme: >
   <hr>
 
 
-  ## Features
+  ### Features
 
 
   - Edit and preview flowcharts, sequence diagrams, gantt diagrams in real time.
@@ -47,7 +47,7 @@ i18n:
 
       <hr>
 
-      ## Fonctionnalités
+      ### Fonctionnalités
 
       - Éditez et prévisualisez des organigrammes, des diagrammes de séquence, des diagrammes de Gantt en temps réel.
       - Sauvegardez le résultat en svg
@@ -62,7 +62,7 @@ i18n:
 
       <hr>
 
-      ## Funzionalità
+      ### Funzionalità
 
       - Modifica e anteprima in tempo reale di diagrammi di flusso, diagrammi di sequenza, diagrammi di Gantt.
       - Salvataggio del risultato come svg
@@ -77,7 +77,7 @@ i18n:
 
       <hr>
 
-      ## Funktionen
+      ### Funktionen
 
       - Bearbeiten und Vorschau von Flussdiagrammen, Sequenzdiagrammen und Gantt-Diagrammen in Echtzeit.
       - Speichern des Ergebnisses als SVG
@@ -92,7 +92,7 @@ i18n:
 
       <hr>
 
-      ## Recursos
+      ### Recursos
 
       - Edite e visualize fluxogramas, diagramas de sequência, diagramas de gantt em tempo real.
       - Salve o resultado como svg
@@ -107,7 +107,7 @@ i18n:
 
       <hr>
 
-      ## 功能特点
+      ### 功能特点
 
       - 实时编辑和预览流程图、时序图、甘特图
       - 将结果保存为svg格式
@@ -122,7 +122,7 @@ i18n:
 
       <hr>
 
-      ## 기능
+      ### 기능
 
       - 실시간으로 순서도, 시퀀스 다이어그램, 간트 차트를 편집하고 미리볼 수 있습니다.
       - 결과물을 svg로 저장
@@ -137,7 +137,7 @@ i18n:
 
       <hr>
 
-      ## Возможности
+      ### Возможности
 
       - Редактируйте и просматривайте блок-схемы, диаграммы последовательностей, диаграммы Ганта в реальном времени.
       - Сохраняйте результат как svg
@@ -152,7 +152,7 @@ i18n:
 
       <hr>
 
-      ## المميزات
+      ### المميزات
 
       - تحرير ومعاينة مخططات التدفق، مخططات التسلسل، مخططات غانت في الوقت الفعلي.
       - حفظ النتيجة كملف svg
@@ -167,7 +167,7 @@ i18n:
 
       <hr>
 
-      ## विशेषताएं
+      ### विशेषताएं
 
       - फ्लोचार्ट, सीक्वेंस डायग्राम, गैंट डायग्राम को वास्तविक समय में संपादित और पूर्वावलोकन करें।
       - परिणाम को एसवीजी के रूप में सहेजें
@@ -182,7 +182,7 @@ i18n:
 
       <hr>
 
-      ## Características
+      ### Características
 
       - Edita y previsualiza diagramas de flujo, diagramas de secuencia, diagramas de gantt en tiempo real.
       - Guarda el resultado como svg
@@ -197,7 +197,7 @@ i18n:
 
       <hr>
 
-      ## 機能
+      ### 機能
 
       - フローチャート、シーケンス図、ガントチャートをリアルタイムで編集・プレビュー
       - SVG形式で保存

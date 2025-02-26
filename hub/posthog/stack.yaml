@@ -21,7 +21,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   - Specify events manually, or use autocapture to get started quickly
   - Analyze data with ready-made visualizations, or do it yourself with SQL

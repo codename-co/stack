@@ -25,7 +25,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   - [Set up in five minutes](https://www.metabase.com/docs/latest/setting-up-metabase.html) (we're not kidding).
   - Let anyone on your team [ask questions](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) without knowing SQL.
@@ -51,7 +51,7 @@ i18n:
 
       <hr>
 
-      ## المميزات
+      ### المميزات
 
       - [إعداد في خمس دقائق](https://www.metabase.com/docs/latest/setting-up-metabase.html) (نحن لا نمزح).
       - دع أي شخص في فريقك [يطرح الأسئلة](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) دون معرفة SQL.
@@ -63,7 +63,7 @@ i18n:
       - إعداد [تنبيهات](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) ليقوم ميتابيس بإخطارك عند تغير بياناتك.
       - [تضمين المخططات ولوحات المعلومات](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) في تطبيقك، أو حتى [ميتابيس بالكامل](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
 
-      ## قواعد البيانات المدعومة
+      ### قواعد البيانات المدعومة
 
       - [قواعد البيانات المدعومة رسمياً](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [برامج تشغيل الشركاء والمجتمع](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
@@ -76,7 +76,7 @@ i18n:
 
       <hr>
 
-      ## 功能特点
+      ### 功能特点
 
       - [五分钟内完成设置](https://www.metabase.com/docs/latest/setting-up-metabase.html)（我们不是开玩笑）。
       - 让团队中的任何人都能[提出问题](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html)，无需了解SQL。
@@ -88,7 +88,7 @@ i18n:
       - 设置[警报](https://www.metabase.com/docs/latest/users-guide/15-alerts.html)，当数据发生变化时Metabase会通知您。
       - 在您的应用中[嵌入图表和仪表板](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html)，甚至可以[嵌入整个Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html)。
 
-      ## 支持的数据库
+      ### 支持的数据库
 
       - [官方支持的数据库](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [合作伙伴和社区驱动程序](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
@@ -101,7 +101,7 @@ i18n:
 
       <hr>
 
-      ## Características
+      ### Características
 
       - [Configura en cinco minutos](https://www.metabase.com/docs/latest/setting-up-metabase.html) (no es broma).
       - Permite que cualquiera en tu equipo [haga preguntas](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) sin saber SQL.
@@ -113,7 +113,7 @@ i18n:
       - Configura [alertas](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) para que Metabase te notifique cuando tus datos cambien.
       - [Incrusta gráficos y tableros](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) en tu aplicación, o incluso [tu Metabase completo](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
 
-      ## Bases de datos soportadas
+      ### Bases de datos soportadas
 
       - [Bases de datos oficialmente soportadas](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [Controladores de socios y comunidad](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
@@ -126,7 +126,7 @@ i18n:
 
       <hr>
 
-      ## Fonctionnalités
+      ### Fonctionnalités
 
       - [Installation en cinq minutes](https://www.metabase.com/docs/latest/setting-up-metabase.html) (nous ne plaisantons pas).
       - Permettez à n'importe qui dans votre équipe de [poser des questions](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) sans connaître SQL.
@@ -138,7 +138,7 @@ i18n:
       - Configurez des [alertes](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) pour que Metabase vous notifie lorsque vos données changent.
       - [Intégrez des graphiques et tableaux de bord](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) dans votre application, ou même [votre Metabase complet](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
 
-      ## Bases de données prises en charge
+      ### Bases de données prises en charge
 
       - [Bases de données officiellement supportées](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [Pilotes partenaires et communautaires](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
@@ -151,7 +151,7 @@ i18n:
 
       <hr>
 
-      ## Caratteristiche
+      ### Caratteristiche
 
       - [Configurazione in cinque minuti](https://www.metabase.com/docs/latest/setting-up-metabase.html) (non stiamo scherzando).
       - Permetti a chiunque nel tuo team di [fare domande](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) senza conoscere SQL.
@@ -163,7 +163,7 @@ i18n:
       - Imposta [avvisi](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) per fare in modo che Metabase ti notifichi quando i tuoi dati cambiano.
       - [Incorpora grafici e dashboard](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) nella tua app, o persino [il tuo intero Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
 
-      ## Database supportati
+      ### Database supportati
 
       - [Database ufficialmente supportati](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [Driver partner e della comunità](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
@@ -176,7 +176,7 @@ i18n:
 
       <hr>
 
-      ## 機能
+      ### 機能
 
       - [5分でセットアップ](https://www.metabase.com/docs/latest/setting-up-metabase.html)（冗談ではありません）。
       - チームの誰でもSQLを知らなくても[質問できます](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html)。
@@ -188,7 +188,7 @@ i18n:
       - [アラート](https://www.metabase.com/docs/latest/users-guide/15-alerts.html)を設定してデータが変更された時に通知を受け取る。
       - アプリにチャートやダッシュボードを[埋め込む](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html)か、[Metabase全体](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html)を埋め込む。
 
-      ## 対応データベース
+      ### 対応データベース
 
       - [公式対応データベース](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [パートナーおよびコミュニティドライバー](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
@@ -201,7 +201,7 @@ i18n:
 
       <hr>
 
-      ## Funcionalidades
+      ### Funcionalidades
 
       - [Configure em cinco minutos](https://www.metabase.com/docs/latest/setting-up-metabase.html) (não estamos brincando).
       - Permita que qualquer pessoa em sua equipe [faça perguntas](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) sem saber SQL.
@@ -213,7 +213,7 @@ i18n:
       - Configure [alertas](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) para que o Metabase notifique você quando seus dados mudarem.
       - [Incorpore gráficos e painéis](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) em seu aplicativo, ou até mesmo [seu Metabase inteiro](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
 
-      ## Bancos de dados suportados
+      ### Bancos de dados suportados
 
       - [Bancos de dados oficialmente suportados](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [Drivers de parceiros e da comunidade](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
@@ -226,7 +226,7 @@ i18n:
 
       <hr>
 
-      ## Funktionen
+      ### Funktionen
 
       - [In fünf Minuten einrichten](https://www.metabase.com/docs/latest/setting-up-metabase.html) (wir machen keine Witze).
       - Lassen Sie jeden in Ihrem Team [Fragen stellen](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) ohne SQL zu kennen.
@@ -238,7 +238,7 @@ i18n:
       - Richten Sie [Benachrichtigungen](https://www.metabase.com/docs/latest/users-guide/15-alerts.html) ein, damit Metabase Sie über Datenänderungen informiert.
       - [Betten Sie Diagramme und Dashboards](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) in Ihre App ein, oder sogar [Ihre gesamte Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
 
-      ## Unterstützte Datenbanken
+      ### Unterstützte Datenbanken
 
       - [Offiziell unterstützte Datenbanken](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [Partner- und Community-Treiber](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
@@ -251,7 +251,7 @@ i18n:
 
       <hr>
 
-      ## 기능
+      ### 기능
 
       - [5분 안에 설치](https://www.metabase.com/docs/latest/setting-up-metabase.html) (농담이 아닙니다).
       - SQL을 모르더라도 팀원 누구나 [질문할 수 있습니다](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html).
@@ -263,7 +263,7 @@ i18n:
       - [알림](https://www.metabase.com/docs/latest/users-guide/15-alerts.html)을 설정하여 데이터가 변경될 때 Metabase가 알려주도록 하세요.
       - 앱에 차트와 대시보드를 [임베드](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html)하거나, [전체 Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html)를 임베드할 수 있습니다.
 
-      ## 지원되는 데이터베이스
+      ### 지원되는 데이터베이스
 
       - [공식 지원 데이터베이스](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [파트너 및 커뮤니티 드라이버](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)
@@ -276,7 +276,7 @@ i18n:
 
       <hr>
 
-      ## Возможности
+      ### Возможности
 
       - [Настройка за пять минут](https://www.metabase.com/docs/latest/setting-up-metabase.html) (мы не шутим).
       - Позвольте любому члену вашей команды [задавать вопросы](https://www.metabase.com/docs/latest/users-guide/04-asking-questions.html) без знания SQL.
@@ -288,7 +288,7 @@ i18n:
       - Настраивайте [оповещения](https://www.metabase.com/docs/latest/users-guide/15-alerts.html), чтобы Metabase уведомлял вас об изменениях в данных.
       - [Встраивайте графики и дашборды](https://www.metabase.com/docs/latest/administration-guide/13-embedding.html) в ваше приложение или даже [весь ваш Metabase](https://www.metabase.com/docs/latest/enterprise-guide/full-app-embedding.html).
 
-      ## Поддерживаемые базы данных
+      ### Поддерживаемые базы данных
 
       - [Официально поддерживаемые базы данных](https://github.com/metabase/metabase/tree/master/docs/databases/connecting.md#connecting-to-supported-databases)
       - [Партнерские и общественные драйверы](https://github.com/metabase/metabase/tree/master/docs/developers-guide/partner-and-community-drivers.md)

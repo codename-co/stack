@@ -26,7 +26,7 @@ readme: |
 
   <hr>
 
-  ## Features
+  ### Features
 
   - Continuously updates its configuration (No restarts!)
   - Supports multiple load balancing algorithms
@@ -79,7 +79,7 @@ i18n:
 
       <hr>
 
-      ## Funktionen
+      ### Funktionen
 
       - Aktualisiert seine Konfiguration kontinuierlich (Keine Neustarts!)
       - Unterstützt mehrere Lastenausgleich-Algorithmen
@@ -93,7 +93,7 @@ i18n:
       - Bietet eine Rest-API
       - Als einzelne Binärdatei gepackt (mit ❤️ in Go erstellt) und als offizielle Docker-Image verfügbar
 
-      ## Diagramm
+      ### Diagramm
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
   fr:
@@ -105,7 +105,7 @@ i18n:
 
       <hr>
 
-      ## Fonctionnalités
+      ### Fonctionnalités
 
       - Met à jour sa configuration en continu (Pas de redémarrages !)
       - Prend en charge plusieurs algorithmes d'équilibrage de charge
@@ -119,7 +119,7 @@ i18n:
       - Expose une API Rest
       - Distribué comme un fichier binaire unique (créé avec ❤️ en go) et disponible en tant qu'image docker officielle
 
-      ## Schéma
+      ### Schéma
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
   zh:
@@ -131,7 +131,7 @@ i18n:
 
       <hr>
 
-      ## 特性
+      ### 特性
 
       - 持续更新配置（无需重启！）
       - 支持多种负载均衡算法
@@ -145,7 +145,7 @@ i18n:
       - 提供Rest API
       - 打包为单个二进制文件（使用go语言开发，充满❤️）并提供官方docker镜像
 
-      ## 架构图
+      ### 架构图
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
   es:
@@ -157,7 +157,7 @@ i18n:
 
       <hr>
 
-      ## Características
+      ### Características
 
       - Actualiza su configuración continuamente (¡Sin reinicios!)
       - Soporta múltiples algoritmos de balanceo de carga
@@ -171,7 +171,7 @@ i18n:
       - Expone una API Rest
       - Empaquetado como un único archivo binario (hecho con ❤️ con go) y disponible como imagen oficial de docker
 
-      ## Diagrama
+      ### Diagrama
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
   it:
@@ -183,7 +183,7 @@ i18n:
 
       <hr>
 
-      ## Caratteristiche
+      ### Caratteristiche
 
       - Aggiorna continuamente la sua configurazione (Nessun riavvio!)
       - Supporta molteplici algoritmi di bilanciamento del carico
@@ -197,7 +197,7 @@ i18n:
       - Espone un'API Rest
       - Distribuito come singolo file binario (realizzato con ❤️ in go) e disponibile come immagine docker ufficiale
 
-      ## Diagramma
+      ### Diagramma
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
   ja:
@@ -209,7 +209,7 @@ i18n:
 
       <hr>
 
-      ## 機能
+      ### 機能
 
       - 設定を継続的に更新（再起動不要！）
       - 複数のロードバランシングアルゴリズムをサポート
@@ -223,7 +223,7 @@ i18n:
       - Rest APIの公開
       - 単一のバイナリファイルとして配布（goで❤️を込めて作成）および公式Dockerイメージとして利用可能
 
-      ## 図解
+      ### 図解
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
   ko:
@@ -235,7 +235,7 @@ i18n:
 
       <hr>
 
-      ## 기능
+      ### 기능
 
       - 구성을 지속적으로 업데이트 (재시작 불필요!)
       - 다양한 로드 밸런싱 알고리즘 지원
@@ -249,7 +249,7 @@ i18n:
       - Rest API 제공
       - 단일 바이너리 파일로 패키징 (go로 만든 ❤️) 및 공식 도커 이미지로 제공
 
-      ## 다이어그램
+      ### 다이어그램
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
   ru:
@@ -261,7 +261,7 @@ i18n:
 
       <hr>
 
-      ## Возможности
+      ### Возможности
 
       - Непрерывно обновляет свою конфигурацию (Без перезапусков!)
       - Поддерживает множество алгоритмов балансировки нагрузки
@@ -275,7 +275,7 @@ i18n:
       - Предоставляет Rest API
       - Упакован в единый бинарный файл (создан с ❤️ на go) и доступен как официальный docker образ
 
-      ## Диаграмма
+      ### Диаграмма
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
   pt:
@@ -287,7 +287,7 @@ i18n:
 
       <hr>
 
-      ## Funcionalidades
+      ### Funcionalidades
 
       - Atualiza sua configuração continuamente (Sem reinicializações!)
       - Suporta múltiplos algoritmos de balanceamento de carga
@@ -301,7 +301,7 @@ i18n:
       - Expõe uma API Rest
       - Empacotado como um único arquivo binário (feito com ❤️ em go) e disponível como uma imagem docker oficial
 
-      ## Diagrama
+      ### Diagrama
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
   hi:
@@ -313,7 +313,7 @@ i18n:
 
       <hr>
 
-      ## विशेषताएं
+      ### विशेषताएं
 
       - लगातार अपना कॉन्फ़िगरेशन अपडेट करता है (रीस्टार्ट की आवश्यकता नहीं!)
       - कई लोड बैलेंसिंग एल्गोरिथम का समर्थन करता है
@@ -327,6 +327,6 @@ i18n:
       - एक Rest API प्रदान करता है
       - एक सिंगल बाइनरी फ़ाइल के रूप में पैकेज किया गया है (go के साथ ❤️ से बनाया गया) और एक आधिकारिक डॉकर इमेज के रूप में उपलब्ध है
 
-      ## आरेख
+      ### आरेख
 
       ![diagram](https://traefik.io/static/cae24a096347440831830b776f4362bc/0a72f/diagram%403x.webp)
