@@ -1,0 +1,77 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  postgres:
+    image: postgres:15.5-alpine
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: flagsmith
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d flagsmith -U postgres"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+      start_period: 20s
+
+  flagsmith:
+    image: flagsmith/flagsmith:${FLAGSMITH_VERSION:-2.163.0}
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/flagsmith
+      USE_POSTGRES_FOR_ANALYTICS: "true" # Store API and Flag Analytics data in Postgres
+
+      ENVIRONMENT: production # set to 'production' in production.
+      DJANGO_ALLOWED_HOSTS: "*" # Change this in production
+      ALLOW_ADMIN_INITIATION_VIA_CLI: "true" # Change this in production
+      FLAGSMITH_DOMAIN: $PROJECT.$DOMAIN # Change this in production
+      DJANGO_SECRET_KEY: secret # Change this in production
+      ENABLE_ADMIN_ACCESS_USER_PASS: "true"
+      # PREVENT_SIGNUP: 'true' # Uncomment to prevent additional signups
+      # ALLOW_REGISTRATION_WITHOUT_INVITE: 'true'
+
+      # Enable Task Processor
+      TASK_RUN_METHOD: TASK_PROCESSOR # other options are: SYNCHRONOUSLY, SEPARATE_THREAD (default)
+
+      # Uncomment if you want to enable Google OAuth. Note this does not turn Google OAuth on. You still need to use
+      # Flagsmith on Flagsmith to enable it - https://docs.flagsmith.com/deployment/#oauth_google
+      # DJANGO_SECURE_CROSS_ORIGIN_OPENER_POLICY: 'same-origin-allow-popups'
+
+      # For more info on configuring E-Mails - https://docs.flagsmith.com/deployment/locally-api#environment-variables
+      # Example SMTP:
+      # EMAIL_BACKEND: django.core.mail.backends.smtp.EmailBackend
+      # EMAIL_HOST: mail.example.com
+      # SENDER_EMAIL: flagsmith@example.com
+      # EMAIL_HOST_USER: flagsmith@example.com
+      # EMAIL_HOST_PASSWORD: smtp_account_password
+      # EMAIL_PORT: 587 # optional
+      # EMAIL_USE_TLS: 'true' # optional
+    healthcheck:
+      test: ["CMD-SHELL", "python /app/scripts/healthcheck.py"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+      start_period: 20s
+    depends_on:
+      postgres:
+        condition: service_healthy
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.flagsmith.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.flagsmith.loadbalancer.server.port: 8000
+
+  # The flagsmith_processor service is only needed if TASK_RUN_METHOD set to TASK_PROCESSOR
+  # in the application environment
+  flagsmith_processor:
+    image: flagsmith/flagsmith:${FLAGSMITH_VERSION:-2.163.0}
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/flagsmith
+      USE_POSTGRES_FOR_ANALYTICS: "true"
+    depends_on:
+      flagsmith:
+        condition: service_healthy
+    command: run-task-processor
+
+volumes:
+  pgdata:

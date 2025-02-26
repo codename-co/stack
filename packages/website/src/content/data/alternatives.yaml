@@ -173,6 +173,9 @@ alternatives:
   - slug: lastpass
     name: LastPass
     description: Password manager
+  - slug: launchdarkly
+    name: LaunchDarkly
+    description: Feature flagging platform
   - slug: linear
     name: Linear
     description: Issue tracking tool
