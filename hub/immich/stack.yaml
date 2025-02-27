@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
 slug: immich
 name: Immich
 flavor: DockerCompose
@@ -8,7 +11,7 @@ author: FUTO
 license: AGPL-3.0
 homepage: https://immich.app
 repository: https://github.com/immich-app/immich
-stars: 58600
+stars: 58990
 tags:
   - photo-management
 alternativeTo:

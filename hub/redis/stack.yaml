@@ -11,7 +11,7 @@ author: Redis Ltd
 license: RSALv2
 homepage: https://redis.io
 repository: https://github.com/redis/redis
-stars: 67873
+stars: 68130
 tags: [database, data, key-value-store]
 alternativeTo: []
 readme: |

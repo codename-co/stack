@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
 slug: chromium
 name: Chromium
 icon: googlechrome
@@ -9,7 +12,7 @@ author: The Chromium Project
 license: BSD-3-Clause
 homepage: https://www.chromium.org/Home/
 repository: https://github.com/chromium/chromium
-stars: 19755
+stars: 19974
 tags:
   - browser
 readme: >
@@ -18,7 +21,8 @@ readme: >
 i18n:
   de:
     description: Open-Source-Webbrowser
-    readme: Chromium ist ein Open-Source-Browser-Projekt, das darauf abzielt, allen
+    readme:
+      Chromium ist ein Open-Source-Browser-Projekt, das darauf abzielt, allen
       Nutzern eine sicherere, schnellere und stabilere Möglichkeit zu bieten,
       das Internet zu erleben.
   es:
@@ -28,22 +32,26 @@ i18n:
       usuarios experimenten la web.
   fr:
     description: Navigateur web open-source
-    readme: Chromium est un projet de navigateur open-source qui vise à créer une
+    readme:
+      Chromium est un projet de navigateur open-source qui vise à créer une
       expérience web plus sûre, plus rapide et plus stable pour tous les
       utilisateurs.
   ru:
     description: Веб-браузер с открытым исходным кодом
-    readme: Chromium - это проект браузера с открытым исходным кодом, цель которого
+    readme:
+      Chromium - это проект браузера с открытым исходным кодом, цель которого
       создать более безопасный, быстрый и стабильный способ для всех
       пользователей работать в интернете.
   hi:
     description: ओपन-सोर्स वेब ब्राउज़र
-    readme: क्रोमियम एक ओपन-सोर्स ब्राउज़र प्रोजेक्ट है जो सभी उपयोगकर्ताओं के लिए
+    readme:
+      क्रोमियम एक ओपन-सोर्स ब्राउज़र प्रोजेक्ट है जो सभी उपयोगकर्ताओं के लिए
       वेब का अनुभव करने के लिए एक सुरक्षित, तेज़ और अधिक स्थिर तरीका बनाने का
       लक्ष्य रखता है।
   it:
     description: Browser web open source
-    readme: Chromium è un progetto di browser open-source che mira a costruire un
+    readme:
+      Chromium è un progetto di browser open-source che mira a costruire un
       modo più sicuro, veloce e stabile per tutti gli utenti di sperimentare il
       web.
   ar:
@@ -55,12 +63,14 @@ i18n:
     readme: Chromium是一个开源浏览器项目，旨在为所有用户提供一种更安全、更快速、更稳定的网络浏览体验。
   pt:
     description: Navegador web de código aberto
-    readme: O Chromium é um projeto de navegador de código aberto que visa construir
+    readme:
+      O Chromium é um projeto de navegador de código aberto que visa construir
       uma maneira mais segura, rápida e estável para todos os usuários
       experimentarem a web.
   ko:
     description: 오픈소스 웹 브라우저
-    readme: Chromium은 모든 사용자가 더 안전하고, 빠르며, 안정적인 방식으로 웹을 경험할 수 있도록 하는 것을 목표로 하는 오픈소스
+    readme:
+      Chromium은 모든 사용자가 더 안전하고, 빠르며, 안정적인 방식으로 웹을 경험할 수 있도록 하는 것을 목표로 하는 오픈소스
       브라우저 프로젝트입니다.
   ja:
     description: オープンソースのウェブブラウザ
