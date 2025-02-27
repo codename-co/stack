@@ -273,7 +273,7 @@ const similar = Array.from(
     }
     <hr class="hr" />
 
-    <h2 set:html={t("Environment variables")} />
+    <h3 set:html={t("Environment variables")} />
     {
       Object.entries(env ?? {}).length === 0 ? (
         <p class="subtle" set:html={t("No environment variables defined.")} />

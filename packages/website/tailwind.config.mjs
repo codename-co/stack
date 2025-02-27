@@ -120,7 +120,7 @@ export default {
           width: "100%",
           marginBottom: 8,
         },
-        ".content hr": {
+        "* hr": {
           marginLeft: 64,
           marginRight: 64,
         },

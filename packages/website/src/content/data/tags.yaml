@@ -206,3 +206,7 @@ tags:
     name: Feedback
   - slug: dns
     name: DNS
+  - slug: retrospective
+    name: Retrospective
+  - slug: payment
+    name: Payment

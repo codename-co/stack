@@ -12,7 +12,7 @@ license: Apache-2.0
 homepage: https://jitsi.org/jitsi-meet
 repository: https://github.com/jitsi/jitsi-meet
 stars: 24699
-tags: [video-conferencing, web-conferencing]
+tags: [video]
 alternativeTo: [zoom, google-meet]
 readme: |
   Jitsi Meet is a set of Open Source projects which empower users to use and deploy video conferencing platforms with state-of-the-art video quality and features.

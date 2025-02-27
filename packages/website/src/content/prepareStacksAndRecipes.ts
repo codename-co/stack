@@ -92,7 +92,7 @@ const stacksBase = await Promise.all(
           60 /
           60 +
           2,
-        0.5,
+        0.4,
       );
     return stackMetadata;
   }),

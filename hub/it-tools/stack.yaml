@@ -13,10 +13,7 @@ license: GPL-3.0
 homepage: https://it-tools.tech
 repository: https://github.com/CorentinTh/it-tools
 stars: 27371
-tags:
-  - development
-  - productivity
-  - tools
+tags: [software-development]
 alternativeTo: []
 readme: |
   Useful tools for developer and people working in IT.

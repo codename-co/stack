@@ -7,12 +7,7 @@ import Logo from "~/components/Logo";
 import { getStacks } from "~/content/collections/stacks";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
-import {
-  getTagName,
-  formatStars,
-  getAlternativeMetadata,
-  getTagTitle,
-} from "~/helpers";
+import { formatStars, getAlternativeMetadata } from "~/helpers";
 
 export const getStaticPaths = async () => {
   const alternatives = await getCollection("alternatives");
@@ -37,6 +32,7 @@ if (!slug) {
 }
 
 const alternative = getAlternativeMetadata(slug);
+const tags = await getCollection("tags");
 
 const lang = Astro.params.lang;
 const t = useTranslations(lang);
@@ -94,9 +90,18 @@ const title = `${alternative.name} vs ${stacks
       {
         stacks
           .map((stack) => stack.data)
-          .map(({ slug, name, description, tags, stars, license, readme }) => (
-            <li class="mb-32">
-              {/* <div class="float-right mr-6 if-connected">
+          .map(
+            ({
+              slug,
+              name,
+              description,
+              tags: _tags,
+              stars,
+              license,
+              readme,
+            }) => (
+              <li class="mb-32">
+                {/* <div class="float-right mr-6 if-connected">
                 <a href={`/${slug}.stack`}>
                   <Button>
                     Install
@@ -106,48 +111,55 @@ const title = `${alternative.name} vs ${stacks
                   </Button>
                 </a>
               </div> */}
-              <h2
-                transition:name={`title-${name}`}
-                set:html={t("So is {logo} *[{name}]({url})*", {
-                  logo:
-                    (Logo({ slug }) as any).props.dangerouslySetInnerHTML
-                      .__html ?? "",
-                  name,
-                  url: url(`/${slug}`),
-                })}
-              />
-              <p>{description}</p>
-              {stars && (
-                <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>
-              )}
-              {tags?.map((tag) => (
-                <a href={url(`/?q=%23${tag}`)}>
-                  <Tag>
-                    <abbr title={getTagTitle(tag)}>{getTagName(tag)}</abbr>
-                  </Tag>
-                </a>
-              ))}
-              <span class="text-sm">
-                {license && <span>License: {license}</span>}
-              </span>
-              {readme ? (
-                <div
-                  class="content"
-                  set:html={marked
-                    .parse(readme)
-                    .toString()
-                    .replace(/([\s\S]*?)(?=<hr)[\s\S]*/m, "$1")}
+                <h2
+                  transition:name={`title-${name}`}
+                  set:html={t("So is {logo} *[{name}]({url})*", {
+                    logo:
+                      (Logo({ slug }) as any).props.dangerouslySetInnerHTML
+                        .__html ?? "",
+                    name,
+                    url: url(`/${slug}`),
+                  })}
                 />
-              ) : (
-                <p class="subtle">No description provided.</p>
-              )}
-              <p class="mt-12">
-                <a href={url(`/${slug}`)}>
-                  <Button set:html={t("Read more about {name}", { name })} />
-                </a>
-              </p>
-            </li>
-          ))
+                <p>{description}</p>
+                {stars && (
+                  <span class="subtle text-sm">
+                    ★&nbsp;{formatStars(stars)}
+                  </span>
+                )}
+                {_tags?.map((_tag) => {
+                  const tag = tags.find(({ data }) => data.slug === _tag)?.data;
+
+                  return (
+                    <a href={url(`/?q=%23${tag?.slug}`)}>
+                      <Tag>
+                        <abbr title={tag?.title}>{tag?.name}</abbr>
+                      </Tag>
+                    </a>
+                  );
+                })}
+                <span class="text-sm">
+                  {license && <span>License: {license}</span>}
+                </span>
+                {readme ? (
+                  <div
+                    class="content"
+                    set:html={marked
+                      .parse(readme)
+                      .toString()
+                      .replace(/([\s\S]*?)(?=<hr)[\s\S]*/m, "$1")}
+                  />
+                ) : (
+                  <p class="subtle">No description provided.</p>
+                )}
+                <p class="mt-12">
+                  <a href={url(`/${slug}`)}>
+                    <Button set:html={t("Read more about {name}", { name })} />
+                  </a>
+                </p>
+              </li>
+            )
+          )
       }
     </ol>
   </div>
