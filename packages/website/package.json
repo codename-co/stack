@@ -17,7 +17,7 @@
     "@astrojs/tailwind": "^5.1.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
-    "astro": "^5.0.0-beta.12",
+    "astro": "^5.4.0",
     "flag-icons": "^7.2.3",
     "marked": "^15.0.3",
     "react": "^19.0.0",
@@ -30,7 +30,7 @@
     "yaml": "^2.7.0"
   },
   "devDependencies": {
-    "@modyfi/vite-plugin-yaml": "^1.1.0",
+    "@modyfi/vite-plugin-yaml": "^1.1.1",
     "@types/node": "^22.10.5",
     "vite-plugin-env-parse": "^1.0.15"
   },
