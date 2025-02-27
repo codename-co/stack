@@ -210,3 +210,5 @@ tags:
     name: Retrospective
   - slug: payment
     name: Payment
+  - slug: object-storage
+    name: Object storage
