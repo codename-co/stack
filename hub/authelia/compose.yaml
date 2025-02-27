@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  authelia:
+    image: authelia/authelia:${AUTHELIA_VERSION:-4.38.19}
+    env_file: .env
+    volumes:
+      - ./config:/config
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.authelia.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.authelia.loadbalancer.server.port: 9091
+      # traefik.http.middlewares.authelia.forwardauth.address: 'http://authelia:9091/api/authz/forward-auth'  # yamllint disable-line rule:line-length
+      # traefik.http.middlewares.authelia.forwardauth.trustForwardHeader: 'true'
+      # traefik.http.middlewares.authelia.forwardauth.authResponseHeaders: 'Remote-User,Remote-Groups,Remote-Name,Remote-Email'  # yamllint disable-line rule:line-length
+    healthcheck:
+      disable: false

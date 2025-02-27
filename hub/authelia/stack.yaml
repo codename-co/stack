@@ -1,0 +1,55 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: authelia
+name: Authelia
+flavor: DockerCompose
+version: "4.38.19"
+updated_at: 2025-02-16
+description: The Single Sign-On Multi-Factor portal for web apps
+author: Authelia
+license: Apache-2.0
+homepage: https://www.authelia.com
+repository: https://github.com/authelia/authelia
+stars: 22900
+tags: [security, identity-management]
+alternativeTo: [auth0]
+readme: |
+
+  Authelia is an open-source authentication and authorization server providing two-factor authentication and single sign-on (SSO) for your applications via a web portal. It acts as a companion for reverse proxies by allowing, denying, or redirecting requests.
+
+  ![preview](https://www.authelia.com/images/archi.png)
+
+  <hr>
+
+  ### Features
+
+  * Several second factor methods:
+    * **[Security Keys](https://www.authelia.com/overview/authentication/security-key/)** that support
+      [FIDO2]&nbsp;[WebAuthn] with devices like a [YubiKey].
+    * **[Time-based One-Time password](https://www.authelia.com/overview/authentication/one-time-password/)**
+      with compatible authenticator applications.
+    * **[Mobile Push Notifications](https://www.authelia.com/overview/authentication/push-notification/)**
+      with [Duo](https://duo.com/).
+  * Password reset with identity verification using email confirmation.
+  * Access restriction after too many invalid authentication attempts.
+  * Fine-grained access control using rules which match criteria like subdomain, user, user group membership, request uri,
+  request method, and network.
+  * Choice between one-factor and two-factor policies per-rule.
+  * Support of basic authentication for endpoints protected by the one-factor policy.
+  * Highly available using a remote database and Redis as a highly available KV store.
+  * Compatible with [Traefik](https://doc.traefik.io/traefik) out of the box using the
+    [ForwardAuth](https://doc.traefik.io/traefik/middlewares/http/forwardauth/) middleware.
+  * Curated configuration from [LinuxServer](https://www.linuxserver.io/) via their
+    [SWAG](https://docs.linuxserver.io/general/swag) container as well as a
+    [guide](https://blog.linuxserver.io/2020/08/26/setting-up-authelia/).
+  * Compatible with [Caddy] using the [forward_auth](https://caddyserver.com/docs/caddyfile/directives/forward_auth)
+    directive.
+  * Kubernetes Support:
+    * Compatible with several Kubernetes ingress controllers:
+      * [ingress-nginx](https://www.authelia.com/integration/kubernetes/nginx-ingress/)
+      * [Traefik Kubernetes CRD](https://www.authelia.com/integration/kubernetes/traefik-ingress/#ingressroute)
+      * [Traefik Kubernetes Ingress](https://www.authelia.com/integration/kubernetes/traefik-ingress/#ingress)
+      * [Istio](https://www.authelia.com/integration/kubernetes/istio/)
+    * Beta support for installing via Helm using our [Charts](https://charts.authelia.com).
+  * Beta support for [OAuth 2.0 and OpenID Connect 1.0](https://www.authelia.com/roadmap/active/openid-connect/).
