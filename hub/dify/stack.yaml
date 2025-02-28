@@ -5,14 +5,14 @@ slug: dify
 name: Dify
 icon: 🤖
 flavor: DockerCompose
-version: "0.15.3"
-updated_at: 2025-02-07
+version: "1.0.0"
+updated_at: 2025-02-28
 description: Platform for building apps with AI
 author: LangGenius, Inc
 license: Apache-2.0, with a twist
 homepage: https://dify.ai/
 repository: https://github.com/langgenius/dify
-stars: 74609
+stars: 75300
 tags:
   - llm
   - ai
