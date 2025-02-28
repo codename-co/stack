@@ -29,6 +29,8 @@ export const zh: I18n = {
     "社区已经为热门软件创建了许多高质量的开源替代方案。在下面发现我们精选的令人惊叹的替代方案列表。",
   "Kinda *popular software* and their open counterparts":
     "有点 *热门软件* 及其开源对应品",
+  "Recognize these *popular software*?": "认识这些 *热门软件* 吗？",
+  "You'll love these *open source counterparts*": "您会喜欢这些 *开源对应品*",
   "Browse *by category*": "按 *类别* 浏览",
 
   /** Page /alternativesto/<app> */

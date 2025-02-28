@@ -31,6 +31,10 @@ export const de: I18n = {
     "Die Community hat zahlreiche hochwertige, Open-Source-Alternativen zu beliebten Software erstellt. Entdecken Sie unsere kuratierte Liste erstaunlicher Alternativen unten.",
   "Kinda *popular software* and their open counterparts":
     "Irgendwie *beliebte Software* und ihre offenen Gegenst ücke",
+  "Recognize these *popular software*?":
+    "Erkennen Sie diese *beliebte Software*?",
+  "You'll love these *open source counterparts*":
+    "Sie werden diese *Open-Source-Gegenstücke* lieben",
   "Browse *by category*": "Durchsuchen *nach Kategorie*",
 
   /** Page /alternativesto/<app> */

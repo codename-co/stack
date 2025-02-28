@@ -31,6 +31,10 @@ export const ja: I18n = {
     "コミュニティは、人気のあるソフトウェアの高品質でオープンソースの代替を多数作成しています。以下の素晴らしい代替のキュレーションリストをご覧ください。",
   "Kinda *popular software* and their open counterparts":
     "ある種の*人気ソフトウェア*とそのオープンな対応",
+  "Recognize these *popular software*?":
+    "これらの*人気ソフトウェア*を認識しますか？",
+  "You'll love these *open source counterparts*":
+    "これらの*オープンソースの対応*が気に入るでしょう",
   "Browse *by category*": "*カテゴリー別*で閲覧",
 
   /** Page /alternativesto/<app> */

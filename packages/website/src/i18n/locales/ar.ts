@@ -30,6 +30,9 @@ export const ar: I18n = {
     "قامت المجتمع بإنشاء العديد من البدائل عالية الجودة ومفتوحة المصدر للبرمجيات الشهيرة. اكتشف قائمتنا المرتبة من البدائل المذهلة أدناه.",
   "Kinda *popular software* and their open counterparts":
     "نوعًا ما *برمجيات شهيرة* ونظرائها المفتوحة",
+  "Recognize these *popular software*?": "هل تعرف هذه *البرمجيات الشهيرة*؟",
+  "You'll love these *open source counterparts*":
+    "ستحب هذه *البدائل مفتوحة المصدر*",
   "Browse *by category*": "تصفح *حسب الفئة*",
 
   /** Page /alternativesto/<app> */

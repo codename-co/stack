@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Logo from "~/components/Logo";
 import Tag from "~/components/tag.html";
+import { WallOfTags } from "~/components/WallOfTags";
 import { getStacks } from '~/content/collections/stacks';
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
@@ -53,6 +54,34 @@ const title = t("Alternatives to popular software");
         ))
       }
     </dl>
+  </div>
+
+  <div class="section">
+    <h2 class="my-12" set:html={t("Recognize these *popular software*?")} />
+
+    <div class="expand-beyond-main" style="position: absolute; left: 0; right: 0; margin: 0;">
+      <WallOfTags
+        items={alternatives.map((alt) => ({
+          ...alt.data,
+          url: url(`/alternativesto/${alt.data.slug}`),
+        }))}
+      />
+    </div>
+    <div style="height: 280px;"></div>
+  </div>
+
+  <div class="section">
+    <h2 class="my-12" set:html={t("You'll love these *open source counterparts*")} />
+
+    <div class="expand-beyond-main" style="position: absolute; left: 0; right: 0; margin: 0;">
+      <WallOfTags
+        items={stacks.map((alt) => ({
+          ...alt.data,
+          url: url(`/${alt.data.slug}`),
+        }))}
+      />
+    </div>
+    <div style="height: 280px;"></div>
   </div>
 
   <div class="section">
