@@ -145,9 +145,6 @@ alternatives:
   - slug: heroku
     name: Heroku
     description: Cloud platform as a service
-  - slug: homepage
-    name: Homepage
-    description: Website builder
   - slug: ifttt
     name: IFTTT
     description: Automation platform

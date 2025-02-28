@@ -12,10 +12,8 @@ author: Codename
 license: MIT
 repository: https://github.com/codename-co/dash
 stars: 3
-tags:
-  - dashboard
-alternativeTo:
-  - homepage
+tags: [dashboard]
+alternativeTo: []
 readme: |
   Drop-in minimalist Docker landing page with services auto-discovery.
 
