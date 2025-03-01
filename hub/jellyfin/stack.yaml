@@ -1,0 +1,46 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: jellyfin
+name: Jellyfin
+flavor: DockerCompose
+version: "10.10.6"
+updated_at: 2025-02-16
+description: Free Software Media System
+author: Jellyfin
+license: GPL-2.0
+homepage: https://jellyfin.org
+repository: https://github.com/jellyfin/jellyfin
+stars: 37500
+tags: [media-server, media-player]
+alternativeTo: [plex, emby]
+readme: |
+  Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media.
+  It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.
+
+  ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+  <hr>
+
+  ### Features
+
+  - **Movies:**
+    Enjoy your entire movie collection, easy to browse and with beautiful artwork.
+
+  - **TV Shows:**
+    Watch your favorite shows, automatically sorted by season and ready to binge.
+
+  - **Music:**
+    Listen to music, your artists and your playlists, at home or on the go.
+
+  - **Live TV & DVR:**
+    Watch TV and set automatic recordings to expand your library.
+
+  - **Books:**
+    Read your books, comics, and magazines.
+
+  - **Photos:**
+    Organize your photos and share memories with your friends and family.
+
+  - **SyncPlay:**
+    Sharing a movie night remotely has never been so easy.

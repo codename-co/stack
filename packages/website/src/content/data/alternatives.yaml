@@ -88,6 +88,9 @@ alternatives:
   - slug: duckduckgo
     name: DuckDuckGo
     description: Search engine
+  - slug: emby
+    name: Emby
+    description: Media server
   - slug: evernote
     name: Evernote
     description: Note-taking app
@@ -231,6 +234,9 @@ alternatives:
   - slug: pipedreams
     name: Pipedreams
     description: Automation platform
+  - slug: plex
+    name: Plex
+    description: Media server
   - slug: postman
     name: Postman
     description: API development platform

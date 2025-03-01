@@ -212,3 +212,7 @@ tags:
     name: Payment
   - slug: object-storage
     name: Object storage
+  - slug: media-server
+    name: Media server
+  - slug: media-player
+    name: Media player
