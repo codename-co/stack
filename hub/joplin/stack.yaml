@@ -4,8 +4,8 @@
 slug: joplin
 name: Joplin server
 flavor: DockerCompose
-version: "3.0.1-beta"
-updated_at: 2024-07-25
+version: "3.3.3-beta"
+updated_at: 2025-02-23
 description: Privacy-focused note taking app with sync capabilities
 author: Laurent Cozic
 license: AGPL-3.0
