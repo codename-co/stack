@@ -15,7 +15,7 @@
   color: var(--color-primary);
   background-color: #f6f6f6;
 
-  scrollbar-gutter: stable both-edges;
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
 }
 
@@ -61,6 +61,9 @@ summary {
     margin: 1.5em auto;
     padding: 0 1.5em;
   }
+  .expand-beyond-main {
+    margin: 0 calc(400px - 50vw - 0.75em);
+  }
 }
 
 #navbar {
@@ -89,6 +92,9 @@ summary {
   [role="main"] {
     padding: 0 1em 0 0;
   }
+  .expand-beyond-main {
+    margin: 0 -0.5em 0 0;
+  }
 }
 @media (min-width: 96rem) {
   [role="main"] {
@@ -100,6 +106,9 @@ summary {
       "left content right"
       "footer footer footer";
     grid-gap: 0 2em;
+  }
+  .expand-beyond-main {
+    margin: 0 calc(57.6rem - 50vw);
   }
 }
 
