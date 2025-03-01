@@ -3,11 +3,17 @@
 
 services:
   baserow:
-    image: baserow/baserow:${BASEROW_VERSION:-1.31.0}
+    image: baserow/baserow:${BASEROW_VERSION:-1.31.1}
     environment:
       BASEROW_PUBLIC_URL: https://$PROJECT.$DOMAIN
     volumes:
       - baserow_data:/baserow/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/api/_health"]
+      interval: 30s
+      timeout: 1s
+      retries: 5
+      start_period: 30s
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.baserow.rule: Host(`$PROJECT.$DOMAIN`)

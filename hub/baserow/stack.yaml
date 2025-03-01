@@ -4,8 +4,8 @@
 slug: baserow
 name: Baserow
 flavor: DockerCompose
-version: "1.31.0"
-updated_at: 2025-02-06
+version: "1.31.1"
+updated_at: 2025-02-11
 description: No-code database tool and Airtable alternative
 author: Baserow B.V.
 license: MIT
