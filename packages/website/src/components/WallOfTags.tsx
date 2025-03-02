@@ -1,30 +1,5 @@
 import Logo from "./Logo";
 
-const keyframes = `
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-`;
-
-const styles = `
-  ${keyframes}
-
-  .animate-scroll {
-    animation: scroll 90s linear alternate infinite;
-  }
-  .animate-scroll:hover {
-    animation-play-state: paused;
-  }
-  .animate-scroll-reverse {
-    animation-direction: alternate-reverse;
-  }
-`;
-
 export const WallOfTags: React.FC<{
   items: { slug: string; name: string; url: string }[];
 }> = ({ items }) => {
@@ -48,13 +23,13 @@ export const WallOfTags: React.FC<{
           )
           .map((stacks, i) => (
             <div
-              className={`animate-scroll mt-4 ${
+              className={`animate-scroll ${
                 i % 2 === 0 ? "animate-scroll-reverse" : ""
               }`}
             >
               {stacks.map(({ slug, name, url }) => (
                 <a href={url} aria-label={name} className="inline-block">
-                  <span className="inline-flex items-center rounded-3xl bg-gray-50 mx-2 px-5 py-3 text-xl font-medium text-gray-600 ring-1 ring-inset ring-gray-500/20 align-bottom">
+                  <span className="tag inline-flex items-center rounded-3xl bg-gray-50 mx-2 px-5 py-3 text-xl font-medium text-gray-600 ring-1 ring-inset ring-gray-500/20 align-bottom">
                     <Logo slug={slug} />
                     <span className="subtle ml-3">{name}</span>
                   </span>
@@ -66,3 +41,41 @@ export const WallOfTags: React.FC<{
     </>
   );
 };
+
+const speed = 300; // seconds
+
+const styles = /* CSS */ `
+  .animate-scroll {
+    animation: scroll ${speed}s linear alternate infinite;
+    transition: opacity 0.15s;
+  }
+  .animate-scroll-reverse {
+    animation-direction: alternate-reverse;
+  }
+  .wall-of-tags {
+    display: grid;
+    gap: 1rem;
+    max-width: 0;
+  }
+  .wall-of-tags:hover .animate-scroll {
+    animation-play-state: paused;
+    opacity: 0.4;
+  }
+  .wall-of-tags:hover .animate-scroll:hover {
+    opacity: 1;
+  }
+  .tag {
+    transition: scale 0.15s;
+  }
+  .tag:hover {
+    scale: 1.05;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+`;

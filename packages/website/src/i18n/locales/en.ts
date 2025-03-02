@@ -23,7 +23,7 @@ export const en = [
   "The community has created numerous high-quality, open source alternatives to popular software. Discover our curated list of amazing alternatives below.",
   "Kinda *popular software* and their open counterparts",
   "Recognize these *popular software*?",
-  "You'll love these *open source counterparts*",
+  "You'll love their *open source counterparts*",
   "Browse *by category*",
 
   /** Page /alternativesto/<app> */

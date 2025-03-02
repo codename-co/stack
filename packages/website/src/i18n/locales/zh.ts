@@ -30,7 +30,7 @@ export const zh: I18n = {
   "Kinda *popular software* and their open counterparts":
     "有点 *热门软件* 及其开源对应品",
   "Recognize these *popular software*?": "认识这些 *热门软件* 吗？",
-  "You'll love these *open source counterparts*": "您会喜欢这些 *开源对应品*",
+  "You'll love their *open source counterparts*": "您会喜欢他们的 *开源对应品*",
   "Browse *by category*": "按 *类别* 浏览",
 
   /** Page /alternativesto/<app> */

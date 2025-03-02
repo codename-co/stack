@@ -33,8 +33,8 @@ export const ja: I18n = {
     "ある種の*人気ソフトウェア*とそのオープンな対応",
   "Recognize these *popular software*?":
     "これらの*人気ソフトウェア*を認識しますか？",
-  "You'll love these *open source counterparts*":
-    "これらの*オープンソースの対応*が気に入るでしょう",
+  "You'll love their *open source counterparts*":
+    "彼らの*オープンソースの対応*が好きになるでしょう",
   "Browse *by category*": "*カテゴリー別*で閲覧",
 
   /** Page /alternativesto/<app> */

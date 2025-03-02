@@ -32,8 +32,8 @@ export const ko: I18n = {
     "종류 *인기 있는 소프트웨어* 및 그들의 오픈 대안",
   "Recognize these *popular software*?":
     "이 *인기 있는 소프트웨어*를 인식하십니까?",
-  "You'll love these *open source counterparts*":
-    "이 *오픈 소스 대안*을 좋아할 것입니다",
+  "You'll love their *open source counterparts*":
+    "당신은 그들의 *오픈 소스 대안*을 좋아할 것입니다",
   "Browse *by category*": "*카테고리별*로 찾아보기",
 
   /** Page /alternativesto/<app> */

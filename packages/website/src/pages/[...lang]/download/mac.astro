@@ -16,16 +16,18 @@ const redirectUrl = "/releases/Stack_0.2.0_aarch64.dmg";
   <meta http-equiv="refresh" content={`1;url=${redirectUrl}`} />
 
   <div class="section">
-    <h1 set:html={t("Downloading Stack for {os}…", { os: "mac" })} />
+    <div class="container">
+      <h1 set:html={t("Downloading Stack for {os}…", { os: "mac" })} />
 
-    <h2 set:html={t("Once the download is complete")} />
-    <ol>
-      <li
-        set:html={t(
-          "Install the Stack app by double-clicking the downloaded file. Then drag it to your Applications folder."
-        )}
-      />
-      <li set:html={t("Run the Stack app from your Applications folder.")} />
-    </ol>
+      <h2 set:html={t("Once the download is complete")} />
+      <ol>
+        <li
+          set:html={t(
+            "Install the Stack app by double-clicking the downloaded file. Then drag it to your Applications folder."
+          )}
+        />
+        <li set:html={t("Run the Stack app from your Applications folder.")} />
+      </ol>
+    </div>
   </div>
 </Layout>

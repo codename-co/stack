@@ -2,7 +2,21 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        borderMove: {
+          "0%, 100%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+        },
+      },
+      animation: {
+        border: "borderMove 4s ease infinite",
+      },
+    },
   },
   plugins: [
     function ({ addComponents, theme }) {
@@ -94,13 +108,25 @@ export default {
         ".subtle": {
           color: theme("colors.gray.400"),
         },
-        input: {
+        "input[type=text], input[type=search]": {
           borderWidth: theme("borderWidth.DEFAULT"),
           borderColor: theme("colors.gray.300"),
           borderRadius: theme("borderRadius.md"),
+          padding: theme("spacing.3"),
+          backgroundColor: theme("colors.white"),
+          marginTop: 1,
+          marginBottom: 1,
+          "&:hover": {
+            borderColor: theme("colors.slate.400"),
+            backgroundColor: theme("colors.gray.100"),
+          },
           "&:focus": {
             outline: "none",
             borderColor: theme("colors.slate.500"),
+            borderWidth: theme("borderWidth.2"),
+            backgroundColor: theme("colors.white"),
+            marginTop: 0,
+            marginBottom: 0,
           },
         },
         "svg[role=img]": {
@@ -113,6 +139,9 @@ export default {
           // marginLeft: "1em",
           // marginRight: "1em",
         },
+        ".section > .container": {
+          justifySelf: "center",
+        },
         ".section + .section": {
           marginTop: "-40px",
         },
@@ -123,6 +152,56 @@ export default {
         "* hr": {
           marginLeft: 64,
           marginRight: 64,
+        },
+        ".highlight::before": {
+          content: "''",
+          position: "absolute",
+          inset: "-5px",
+          borderRadius: "inherit",
+          padding: "5px",
+          background: "linear-gradient(45deg, #12c2e9, #c471ed, #f64f59)",
+          backgroundSize: "200% 200%",
+          animation: "borderMove 4s ease infinite",
+          WebkitMask:
+            "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+          WebkitMaskComposite: "xor",
+          maskComposite: "exclude",
+        },
+        ".box": {
+          // bg-slate-100 border border-slate-200 rounded-3xl
+          padding: theme("spacing.8"),
+          borderRadius: theme("borderRadius.3xl"),
+          backgroundColor: theme("colors.gray.200"),
+          borderWidth: theme("borderWidth.DEFAULT"),
+          borderColor: theme("colors.gray.200"),
+          position: "relative",
+        },
+        ".box + .box": {
+          marginTop: 32,
+        },
+        ".box p": {
+          marginTop: 8,
+          marginBottom: 8,
+        },
+        ".box h2": {
+          marginTop: 0,
+          marginBottom: 32,
+        },
+        ".box h3": {
+          marginTop: 0,
+          marginBottom: 8,
+        },
+        ".box ul": {
+          listStyleType: "disc",
+          paddingLeft: 16,
+        },
+        ".box ol": {
+          listStyleType: "decimal",
+          paddingLeft: 16,
+        },
+        ".box ol:not(.light)": {
+          listStyleType: "decimal",
+          paddingLeft: 32,
         },
       });
     },

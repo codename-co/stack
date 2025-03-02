@@ -33,8 +33,8 @@ export const fr: I18n = {
     "Des *logiciels populaires* et leurs alternatives open source",
   "Recognize these *popular software*?":
     "Reconnaissez-vous ces *logiciels populaires* ?",
-  "You'll love these *open source counterparts*":
-    "Vous allez adorer ces *alternatives open source*",
+  "You'll love their *open source counterparts*":
+    "Vous allez adorer leurs *alternatives open source*",
   "Browse *by category*": "Parcourir *par catégorie*",
 
   /** Page /alternativesto/<app> */

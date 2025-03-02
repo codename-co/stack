@@ -4,15 +4,12 @@ alternatives:
     description: A password manager that keeps you safe online
   - slug: adobe-acrobat
     name: Adobe Acrobat
-    icon: Ⓐ
     description: PDF viewer and editor
   - slug: adobe-xd
     name: Adobe XD
-    icon: Ⓐ
     description: Design and prototyping tool
   - slug: after-effects
     name: After Effects
-    icon: Ⓐ
     description: Motion graphics and visual effects software
   - slug: airtable
     name: Airtable
@@ -73,7 +70,6 @@ alternatives:
     description: Database management tool
   - slug: delinea
     name: Delinea
-    icon: Ⓓ
     description: Privileged Access Management and Identity Security
   - slug: dialogflow-cx
     name: Dialogflow CX
@@ -103,6 +99,9 @@ alternatives:
   - slug: figma
     name: Figma
     description: Design and prototyping tool
+  - slug: finary
+    name: Finary
+    description: Personal finance tool
   - slug: firebase
     name: Firebase
     description: App development platform
@@ -197,11 +196,9 @@ alternatives:
     description: Automation platform
   - slug: midjourney
     name: Midjourney
-    # icon: ⛵
     description: Picture generation with AI
   - slug: mint
     name: Mint
-    icon: Ⓜ
     description: Personal finance tool
   - slug: miro
     name: Miro
@@ -223,7 +220,6 @@ alternatives:
     description: Note-taking app
   - slug: oracle
     name: Oracle
-    icon: Ⓞ
     description: Database management system
   - slug: peertube
     name: PeerTube
@@ -242,11 +238,9 @@ alternatives:
     description: API development platform
   - slug: powerapps
     name: PowerApps
-    icon: Ⓟ
     description: Low-code app development platform
   - slug: powerbi
     name: PowerBI
-    icon: Ⓟ
     description: Business intelligence tool
   - slug: prometheus
     name: Prometheus
@@ -262,7 +256,6 @@ alternatives:
     description: Low-code app development tool
   - slug: retrotool
     name: RetroTool
-    icon: Ⓡ
     description: Retrospective tool
   - slug: sketch
     name: Sketch
@@ -339,6 +332,9 @@ alternatives:
   - slug: wordpress
     name: WordPress
     description: Web content management system
+  - slug: ynab
+    name: You Need A Budget
+    description: Personal finance tool
   - slug: youtube
     name: YouTube
     description: Video sharing platform

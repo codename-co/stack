@@ -57,7 +57,7 @@ summary {
 
 @media screen {
   [role="main"] {
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: 1.5em auto;
     padding: 0 1.5em;
   }
@@ -89,9 +89,6 @@ summary {
 }
 
 @media (max-width: 600px) {
-  [role="main"] {
-    padding: 0 1em 0 0;
-  }
   .expand-beyond-main {
     margin: 0 -0.5em 0 0;
   }

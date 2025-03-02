@@ -67,8 +67,9 @@ console.log(name, description, version, redirectUrl);
   <input type="hidden" id="redirectUrl" value={redirectUrl} />
 
   <div slot="left" class="section h-full">
-    <div class="sticky top-12">
-      <!-- <div
+    <div class="container">
+      <div class="sticky top-12">
+        <!-- <div
       class="hidden float-right md:flex md:flex-grow language-none w-full flex-1 items-center justify-between rounded-lg border border-neutral-200 font-mono font-medium text-neutral-600 focus:border-neutral-200 focus:ring-0 focus:ring-transparent md:max-w-xs"
     >
       <input
@@ -108,98 +109,103 @@ console.log(name, description, version, redirectUrl);
       };
     </script> -->
 
-      <!-- <a href={`stack://${slug}`}> -->
+        <!-- <a href={`stack://${slug}`}> -->
 
-      <h1 transition:name={`title-${name}`}>
-        <Logo slug={slug} />&nbsp;{name}
-      </h1>
-      <p>{description}</p>
-      {stars && <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>}
-      {
-        _tags
-          ?.map((tag) => {
-            const t = tags.find(({ data }) => data.slug === tag)?.data;
-            if (!t) return null;
-
-            return (
-              <a href={url(`/?q=%23${tag}`)}>
-                <Tag>
-                  <abbr title={t.title}>{t.name}</abbr>
-                </Tag>
-              </a>
-            );
-          })
-          .filter(Boolean)
-      }
-      {
-        (homepage || repository) && (
-          <p class="text-sm">
-            {homepage && <a href={homepage}>Homepage</a>}
-            {homepage && repository && " · "}
-            {repository && <a href={repository}>Source code</a>}
-          </p>
-        )
-      }
-      <span class="text-sm">
-        {author && <span>Author: {author}</span>}
+        <h1 transition:name={`title-${name}`}>
+          <Logo slug={slug} />&nbsp;{name}
+        </h1>
+        <p>{description}</p>
         {
-          license && (
-            <span>
-              {author && " · "}License: {license}
-            </span>
+          stars && (
+            <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>
           )
         }
-      </span>
-      <p class="text-sm">
-        Version: {version}
         {
-          updated_at && (
-            <span class="text-sm subtle">
-              ·
-              <time
-                datetime={updated_at.toISOString()}
-                title={new Intl.DateTimeFormat(lang, {
-                  dateStyle: "full",
-                  timeStyle: undefined,
-                }).format(updated_at)}
+          _tags
+            ?.map((tag) => {
+              const t = tags.find(({ data }) => data.slug === tag)?.data;
+              if (!t) return null;
+
+              return (
+                <a href={url(`/?q=%23${tag}`)}>
+                  <Tag>
+                    <abbr title={t.title}>{t.name}</abbr>
+                  </Tag>
+                </a>
+              );
+            })
+            .filter(Boolean)
+        }
+        {
+          (homepage || repository) && (
+            <p class="text-sm">
+              {homepage && <a href={homepage}>Homepage</a>}
+              {homepage && repository && " · "}
+              {repository && <a href={repository}>Source code</a>}
+            </p>
+          )
+        }
+        <span class="text-sm">
+          {author && <span>Author: {author}</span>}
+          {
+            license && (
+              <span>
+                {author && " · "}License: {license}
+              </span>
+            )
+          }
+        </span>
+        <p class="text-sm">
+          Version: {version}
+          {
+            updated_at && (
+              <span class="text-sm subtle">
+                ·
+                <time
+                  datetime={updated_at.toISOString()}
+                  title={new Intl.DateTimeFormat(lang, {
+                    dateStyle: "full",
+                    timeStyle: undefined,
+                  }).format(updated_at)}
+                >
+                  {timeago(updated_at, lang)}
+                </time>
+              </span>
+            )
+          }
+        </p>
+        <div class="pt-4">
+          <a href={url(`/${slug}`)} rel="nofollow">
+            <DownloadBase>
+              <svg
+                class="fill-current w-4 h-4 m-1 inline"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="4 4 16 16"
               >
-                {timeago(updated_at, lang)}
-              </time>
-            </span>
-          )
-        }
-      </p>
-      <div class="pt-4">
-        <a href={url(`/${slug}`)} rel="nofollow">
-          <DownloadBase>
-            <svg
-              class="fill-current w-4 h-4 m-1 inline"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="4 4 16 16"
-            >
-              <!-- left chevron -->
-              <path d="M11 16L6 11L11 6"></path>
-            </svg>
-            <span set:html={t("Back")} />
-            <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
-          </DownloadBase>
-        </a>
-        <a
-          href={`/downloads/${slug}.stack`}
-          rel="nofollow"
-          data-title={t("Download the stack file")}
-        >
-          <DownloadBase>
-            <svg
-              class="fill-current w-4 h-4 m-1 inline"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 17 17"
-            >
-              <path d="M12 8V2H8v6H2l8 8 8-8"></path>
-            </svg>
-            <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
-          </DownloadBase>
-        </a>
+                <!-- left chevron -->
+                <path d="M11 16L6 11L11 6"></path>
+              </svg>
+              <span set:html={t("Back")} />
+              <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
+            </DownloadBase>
+          </a>
+          <a
+            href={`/downloads/${slug}.stack`}
+            rel="nofollow"
+            data-title={t("Download the stack file")}
+          >
+            <DownloadBase>
+              <svg
+                class="fill-current w-4 h-4 m-1 inline"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 17 17"
+              >
+                <path d="M12 8V2H8v6H2l8 8 8-8"></path>
+              </svg>
+              <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
+            </DownloadBase>
+          </a>
+        </div>
       </div>
     </div>
   </div>
