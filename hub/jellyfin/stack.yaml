@@ -11,10 +11,11 @@ author: Jellyfin
 license: GPL-2.0
 homepage: https://jellyfin.org
 repository: https://github.com/jellyfin/jellyfin
-stars: 37500
+stars: 37600
 tags: [media-server, media-player]
 alternativeTo: [plex, emby]
 readme: |
+
   Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media.
   It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.
 
@@ -44,3 +45,38 @@ readme: |
 
   - **SyncPlay:**
     Sharing a movie night remotely has never been so easy.
+
+i18n:
+  fr:
+    description: Système multimédia logiciel
+    readme: |
+
+      Jellyfin est un système multimédia logiciel libre qui vous permet de gérer et de diffuser vos médias.
+      Il s'agit d'une alternative aux logiciels propriétaires Emby et Plex, pour fournir des médias à partir d'un serveur dédié vers des appareils d'utilisateurs finaux via plusieurs applications.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Caractéristiques
+
+      - **Films :**
+        Profitez de toute votre collection de films, facile à parcourir et avec de belles œuvres d'art.
+
+      - **Séries TV :**
+        Regardez vos émissions préférées, automatiquement triées par saison et prêtes à être visionnées.
+
+      - **Musique :**
+        Écoutez de la musique, vos artistes et vos listes de lecture, à la maison ou en déplacement.
+
+      - **TV en direct et DVR :**
+        Regardez la télévision et programmez des enregistrements automatiques pour étendre votre bibliothèque.
+
+      - **Livres :**
+        Lisez vos livres, bandes dessinées et magazines.
+
+      - **Photos :**
+        Organisez vos photos et partagez des souvenirs avec vos amis et votre famille.
+
+      - **SyncPlay :**
+        Partager une soirée cinéma à distance n'a jamais été aussi facile.
