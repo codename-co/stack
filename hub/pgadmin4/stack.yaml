@@ -5,8 +5,8 @@ slug: pgadmin4
 name: pgAdmin 4
 icon: 🐘
 flavor: DockerCompose
-version: "8"
-updated_at: 2024-12-12
+version: "9.1.0"
+updated_at: 2025-02-28
 description: Web-based administration tool for PostgreSQL
 author: pgAdmin Development Team
 license: PostgreSQL

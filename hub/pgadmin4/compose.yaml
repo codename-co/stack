@@ -3,7 +3,7 @@
 
 services:
   pgadmin:
-    image: dpage/pgadmin4:${PGADMIN_VERSION:-8}
+    image: dpage/pgadmin4:${PGADMIN_VERSION:-9.1.0}
     restart: unless-stopped
     volumes:
       - pgadmin:/var/lib/pgadmin
