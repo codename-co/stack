@@ -3,7 +3,7 @@
 
 x-shared: &shared
   restart: always
-  image: n8nio/n8n:${N8N_VERSION:-1.77.3}
+  image: n8nio/n8n:${N8N_VERSION:-1.80.5}
   env_file: .env
   links:
     - n8n-postgres
@@ -28,7 +28,7 @@ services:
       - POSTGRES_NON_ROOT_PASSWORD
     volumes:
       - db_storage:/var/lib/postgresql/data
-      - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
+      # - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
     healthcheck:
       test:
         [
@@ -53,6 +53,8 @@ services:
   n8n:
     <<: *shared
     env_file: .env
+    extra_hosts:
+      - host.docker.internal:host-gateway
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.n8n.rule: Host(`$PROJECT.$DOMAIN`)
