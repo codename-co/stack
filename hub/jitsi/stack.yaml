@@ -4,8 +4,8 @@
 slug: jitsi
 name: Jitsi Meet
 flavor: DockerCompose
-version: unstable
-updated_at: 2024-12-29
+version: stable
+updated_at: 2025-02-28
 description: Secure, Simple and Scalable Video Conferences
 author: 8x8, Inc
 license: Apache-2.0
