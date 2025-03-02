@@ -6,7 +6,7 @@
 services:
   plane-web:
     # container_name: web
-    image: makeplane/plane-frontend:v${PLANE_VERSION:-0.24.1}
+    image: makeplane/plane-frontend:v${PLANE_VERSION:-0.25.0}
     restart: always
     command: node web/server.js web
     depends_on:
@@ -19,7 +19,7 @@ services:
 
   plane-admin:
     # container_name: admin
-    image: makeplane/plane-admin:v${PLANE_VERSION:-0.24.1}
+    image: makeplane/plane-admin:v${PLANE_VERSION:-0.25.0}
     restart: always
     command: node admin/server.js admin
     depends_on:
@@ -35,7 +35,7 @@ services:
 
   plane-space:
     # container_name: space
-    image: makeplane/plane-space:v${PLANE_VERSION:-0.24.1}
+    image: makeplane/plane-space:v${PLANE_VERSION:-0.25.0}
     restart: always
     command: node space/server.js space
     depends_on:
@@ -51,7 +51,7 @@ services:
 
   plane-api:
     # container_name: api
-    image: makeplane/plane-backend:v${PLANE_VERSION:-0.24.1}
+    image: makeplane/plane-backend:v${PLANE_VERSION:-0.25.0}
     restart: always
     command: ./bin/docker-entrypoint-api.sh
     env_file: .apiserver.env
@@ -79,7 +79,7 @@ services:
 
   plane-beat-worker:
     # container_name: beatworker
-    image: makeplane/plane-backend:v${PLANE_VERSION:-0.24.1}
+    image: makeplane/plane-backend:v${PLANE_VERSION:-0.25.0}
     restart: always
     command: ./bin/docker-entrypoint-beat.sh
     env_file: .apiserver.env
@@ -90,7 +90,7 @@ services:
 
   plane-migrator:
     # container_name: plane-migrator
-    image: makeplane/plane-backend:v${PLANE_VERSION:-0.24.1}
+    image: makeplane/plane-backend:v${PLANE_VERSION:-0.25.0}
     restart: no
     command: ./bin/docker-entrypoint-migrator.sh
     env_file: .apiserver.env
@@ -100,7 +100,7 @@ services:
 
   plane-live:
     # container_name: plane-live
-    image: makeplane/plane-live:v${PLANE_VERSION:-0.24.1}
+    image: makeplane/plane-live:v${PLANE_VERSION:-0.25.0}
     restart: always
     command: node live/dist/server.js
     labels:
@@ -167,7 +167,7 @@ services:
   # Comment this if you already have a reverse proxy running
   plane-proxy:
     # container_name: proxy
-    image: makeplane/plane-proxy:v${PLANE_VERSION:-0.24.1}
+    image: makeplane/plane-proxy:v${PLANE_VERSION:-0.25.0}
     restart: always
     # ports:
     #   - ${NGINX_PORT}:80

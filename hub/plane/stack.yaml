@@ -5,8 +5,8 @@ slug: plane
 name: Plane
 icon: ✈️
 flavor: DockerCompose
-version: "0.24.1"
-updated_at: 2024-12-10
+version: "0.25.0"
+updated_at: 2025-02-24
 description: Issue tracking and project management
 author: Plane
 license: AGPL-3.0
