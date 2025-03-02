@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: actualbudget
+name: ActualBudget
+flavor: DockerCompose
+version: "25.3.0"
+updated_at: 2025-03-01
+description: Personal finance management tool
+author: Actual Budget
+license: MIT
+homepage: https://actualbudget.org
+repository: https://github.com/actualbudget/actual
+stars: 17600
+tags: [finance]
+alternativeTo: [mint, ynab]
+readme: |
+
+  Actual is a local-first personal finance tool. It is 100% free and open-source, written in NodeJS, it has a synchronization element so that all your changes can move between devices without any heavy lifting.
+
+  ![preview](https://github.com/actualbudget/actual/raw/master/demo.png)
