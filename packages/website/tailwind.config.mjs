@@ -171,13 +171,16 @@ export default {
           // bg-slate-100 border border-slate-200 rounded-3xl
           padding: theme("spacing.8"),
           borderRadius: theme("borderRadius.3xl"),
-          backgroundColor: theme("colors.gray.200"),
+          backgroundColor: theme("colors.slate.200"),
           borderWidth: theme("borderWidth.DEFAULT"),
-          borderColor: theme("colors.gray.200"),
+          borderColor: theme("colors.slate.200"),
           position: "relative",
         },
         ".box + .box": {
           marginTop: 32,
+        },
+        ".box a": {
+          fontWeight: theme("fontWeight.semibold"),
         },
         ".box p": {
           marginTop: 8,
