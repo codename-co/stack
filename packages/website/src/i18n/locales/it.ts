@@ -12,7 +12,9 @@ export const it: Partial<I18n> = {
   "popular software": "software popolare",
   "Remix your own.": "",
   "Available for macOS": "Disponibile per macOS",
-  "Simply the best": "Semplicemente il migliore",
+  "★ {starCount} cumulative stars": "★ {starCount} stelle cumulative",
+  "Then install software in one-click ↓":
+    "Poi installa il software in un clic ↓",
   "Search software": "Cerca software",
 
   /** Page /<stack> */

@@ -14,11 +14,13 @@ export const ar: I18n = {
   "popular software": "برمجيات شهيرة",
   "Remix your own.": "",
   "Available for macOS": "متاح لنظام التشغيل macOS",
-  "Simply the best": "ببساطة الأفضل",
+  "★ {starCount} cumulative stars": "★ {starCount} نجوم تراكمية",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "الوصول إلى أكثر من {count} حزمة برمجيات مفتوحة المصدر مرتبة، جاهزة للتثبيت بنقرة واحدة.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "بدائل مجانية وآمنة ومركزة على الخصوصية لـ [التطبيقات الشهيرة]({url}).",
+  "Then install software in one-click ↓":
+    "ثم قم بتثبيت البرمجيات بنقرة واحدة ↓",
   "Search software": "البحث عن برامج",
   "a smart alternative to {apps}": "بديل ذكي لـ {apps}",
 
@@ -47,7 +49,7 @@ export const ar: I18n = {
   "Read more about {name}": "اقرأ المزيد عن {name}",
 
   /** Page /download */
-  "Download Stack Desktop": "تحميل Stack Desktop",
+  "Download Stack": "تحميل Stack",
   "Give your desktop *superpowers*.<br />Make it run any open source quality software in a snap.":
     "منح سطح المكتب الخاص بك *قوى خارقة*.<br />جعله يشغل أي برمجية مفتوحة المصدر بجودة في لمح البصر.",
   "Download for {os}": "تحميل لـ {os}",

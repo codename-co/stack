@@ -20,7 +20,7 @@ const t = useTranslations(lang);
 const url = useUrl(lang);
 
 const stacks = getStacks(lang);
-const promoted = await getCollection("promoted");
+// const promoted = await getCollection("promoted");
 
 const alternatives = await getCollection("alternatives");
 
@@ -74,7 +74,7 @@ const description = t(
         >. {t("Remix your own.")}
       </p>
       <div class="sticky top-8">
-        <a href={url("/download")} aria-label={t("Download Stack Desktop")}>
+        <a href={url("/download")} aria-label={t("Download Stack")}>
           <Download>{t("Download")}</Download>
         </a>
         <p class="subtle my-3">
@@ -118,22 +118,20 @@ const description = t(
   <div class="section">
     <div class="container">
       <div class="box" style="overflow-x: hidden">
-        <h2>
-          {t("Simply the best")}
-          <span
-            class="subtle text-sm"
-            data-title--DISABLED={`Cumulative community likes across all stacks: ${totalStars}`}
-          >
-            ★&nbsp;{formatStars(totalStars, lang)}
-          </span>
-        </h2>
+        <span
+          class="suptitle"
+          set:html={t("★ {starCount} cumulative stars", {
+            starCount: formatStars(totalStars, lang),
+          })}
+        />
 
-        <p
+        <h2
           set:html={t(
             "Access {count}+ curated open source software packages, ready to install with one click.",
             { count: Math.floor(stacks.length / 10) * 10 }
           )}
         />
+
         <p
           set:html={t(
             "Free, secure, and privacy-focused alternatives to [popular apps]({url}).",
@@ -209,6 +207,21 @@ const description = t(
           }
         </div>
       </div> -->
+
+      <div class="box bg-slate-50 text-slate-500">
+        <div class="columns items-center">
+          <div class="column">
+            <a href={url("/download")} aria-label={t("Download Stack")}>
+              <Download>{t("Download Stack")}</Download>
+            </a>
+          </div>
+          <div class="column text-end">
+            <a href="#search">
+              {t("Then install software in one-click ↓")}
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

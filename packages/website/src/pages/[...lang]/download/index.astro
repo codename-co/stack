@@ -12,7 +12,7 @@ const lang = Astro.params.lang;
 const t = useTranslations(lang);
 const url = useUrl(lang);
 
-const title = t("Download Stack Desktop");
+const title = t("Download Stack");
 ---
 
 <Layout lang={lang} title={title} leftTransition="fade">
@@ -55,7 +55,7 @@ const title = t("Download Stack Desktop");
 
   <div class="section">
     <div class="container">
-      <h2 set:html={t("Download Stack Desktop")} />
+      <h2 set:html={t("Download Stack")} />
       <p
         class="subtle mb-8"
         set:html={t(

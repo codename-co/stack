@@ -12,7 +12,9 @@ export const ru: Partial<I18n> = {
   "popular software": "популярные программы",
   "Remix your own.": "",
   "Available for macOS": "Доступно для macOS",
-  "Simply the best": "Просто лучшие",
+  "★ {starCount} cumulative stars": "★ {starCount} накопленных звёзд",
+  "Then install software in one-click ↓":
+    "Затем установите программу в один клик ↓",
   "Search software": "Поиск программ",
 
   /** Page /<stack> */

@@ -66,10 +66,13 @@ console.log(name, description, version, redirectUrl);
   <input type="hidden" id="url" value={`https://${slug}.stack.localhost`} />
   <input type="hidden" id="redirectUrl" value={redirectUrl} />
 
-  <div slot="left" class="section h-full">
+  <div slot="left" class="hidden 2xl:block section h-full">
     <div class="container">
-      <div class="sticky top-12">
-        <!-- <div
+      <div
+        class="sticky top-12 flex flex-col lg:flex-row 2xl:flex-col justify-between items-start"
+      >
+        <div>
+          <!-- <div
       class="hidden float-right md:flex md:flex-grow language-none w-full flex-1 items-center justify-between rounded-lg border border-neutral-200 font-mono font-medium text-neutral-600 focus:border-neutral-200 focus:ring-0 focus:ring-transparent md:max-w-xs"
     >
       <input
@@ -109,72 +112,74 @@ console.log(name, description, version, redirectUrl);
       };
     </script> -->
 
-        <!-- <a href={`stack://${slug}`}> -->
+          <!-- <a href={`stack://${slug}`}> -->
 
-        <h1 transition:name={`title-${name}`}>
-          <Logo slug={slug} />&nbsp;{name}
-        </h1>
-        <p>{description}</p>
-        {
-          stars && (
-            <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>
-          )
-        }
-        {
-          _tags
-            ?.map((tag) => {
-              const t = tags.find(({ data }) => data.slug === tag)?.data;
-              if (!t) return null;
-
-              return (
-                <a href={url(`/?q=%23${tag}`)}>
-                  <Tag>
-                    <abbr title={t.title}>{t.name}</abbr>
-                  </Tag>
-                </a>
-              );
-            })
-            .filter(Boolean)
-        }
-        {
-          (homepage || repository) && (
-            <p class="text-sm">
-              {homepage && <a href={homepage}>Homepage</a>}
-              {homepage && repository && " · "}
-              {repository && <a href={repository}>Source code</a>}
-            </p>
-          )
-        }
-        <span class="text-sm">
-          {author && <span>Author: {author}</span>}
+          <h1 transition:name={`title-${name}`}>
+            <Logo slug={slug} />&nbsp;{name}
+          </h1>
+          <p>{description}</p>
           {
-            license && (
-              <span>
-                {author && " · "}License: {license}
-              </span>
+            stars && (
+              <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>
             )
           }
-        </span>
-        <p class="text-sm">
-          Version: {version}
           {
-            updated_at && (
-              <span class="text-sm subtle">
-                ·
-                <time
-                  datetime={updated_at.toISOString()}
-                  title={new Intl.DateTimeFormat(lang, {
-                    dateStyle: "full",
-                    timeStyle: undefined,
-                  }).format(updated_at)}
-                >
-                  {timeago(updated_at, lang)}
-                </time>
-              </span>
+            _tags
+              ?.map((tag) => {
+                const t = tags.find(({ data }) => data.slug === tag)?.data;
+                if (!t) return null;
+
+                return (
+                  <a href={url(`/?q=%23${tag}`)}>
+                    <Tag>
+                      <abbr title={t.title}>{t.name}</abbr>
+                    </Tag>
+                  </a>
+                );
+              })
+              .filter(Boolean)
+          }
+          {
+            (homepage || repository) && (
+              <p class="text-sm">
+                {homepage && <a href={homepage}>Homepage</a>}
+                {homepage && repository && " · "}
+                {repository && <a href={repository}>Source code</a>}
+              </p>
             )
           }
-        </p>
-        <div class="pt-4">
+          <span class="text-sm">
+            {author && <span>Author: {author}</span>}
+            {
+              license && (
+                <span>
+                  {author && " · "}License: {license}
+                </span>
+              )
+            }
+          </span>
+          <p class="text-sm">
+            Version: {version}
+            {
+              updated_at && (
+                <span class="text-sm subtle">
+                  ·
+                  <time
+                    datetime={updated_at.toISOString()}
+                    title={new Intl.DateTimeFormat(lang, {
+                      dateStyle: "full",
+                      timeStyle: undefined,
+                    }).format(updated_at)}
+                  >
+                    {timeago(updated_at, lang)}
+                  </time>
+                </span>
+              )
+            }
+          </p>
+        </div>
+
+        <div class="pt-4 flex flex-row gap-3">
           <a href={url(`/${slug}`)} rel="nofollow">
             <DownloadBase>
               <svg
@@ -209,14 +214,15 @@ console.log(name, description, version, redirectUrl);
       </div>
     </div>
   </div>
-
-  <iframe
-    id="render"
-    class="!section w-full h-0 transition-all"
-    style="margin:0 !important"></iframe>
   <div class="section">
-    <div id="info">
-      <h2 set:html={t("{name} {version} is starting…", { name, version })} />
+    <div class="container">
+      <iframe
+        id="render"
+        class="!section w-full h-0 transition-all"
+        style="margin:0 !important"></iframe>
+      <div id="info">
+        <h2 set:html={t("{name} {version} is starting…", { name, version })} />
+      </div>
     </div>
   </div>
 

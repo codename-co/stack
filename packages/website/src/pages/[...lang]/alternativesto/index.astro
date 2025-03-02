@@ -1,9 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import Logo from "~/components/Logo";
 import Tag from "~/components/tag.html";
 import { WallOfTags } from "~/components/WallOfTags";
-import { getStacks } from '~/content/collections/stacks';
+import { getStacks } from "~/content/collections/stacks";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
 
@@ -19,7 +19,9 @@ const stacks = getStacks(lang);
 
 const alternatives = await getCollection("alternatives");
 
-const tags = (await getCollection('tags')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const tags = (await getCollection("tags")).sort((a, b) =>
+  a.data.name.localeCompare(b.data.name)
+);
 
 const title = t("Alternatives to popular software");
 ---
@@ -28,7 +30,12 @@ const title = t("Alternatives to popular software");
   <div slot="left" class="section">
     <div class="container">
       <h1 set:html={t("The open source ecosystem is *awe-inspiring*.")} />
-      <p class="subtle" set:html={t("The community has created numerous high-quality, open source alternatives to popular software. Discover our curated list of amazing alternatives below.")} />
+      <p
+        class="subtle"
+        set:html={t(
+          "The community has created numerous high-quality, open source alternatives to popular software. Discover our curated list of amazing alternatives below."
+        )}
+      />
     </div>
   </div>
 
@@ -46,9 +53,13 @@ const title = t("Alternatives to popular software");
       </div>
 
       <div class="box" style="overflow-x: hidden">
-        <h2 class="my-12" set:html={t("You'll love their *open source counterparts*")} />
+        <h2
+          class="my-12"
+          set:html={t("You'll love their *open source counterparts*")}
+        />
 
         <WallOfTags
+          rowCount={5}
           items={stacks.map((alt) => ({
             ...alt.data,
             url: url(`/${alt.data.slug}`),
@@ -60,27 +71,40 @@ const title = t("Alternatives to popular software");
 
   <div class="section">
     <div class="container">
-      <h2 class="my-12" set:html={t("Kinda *popular software* and their open counterparts")} />
+      <h2
+        class="my-12"
+        set:html={t("Kinda *popular software* and their open counterparts")}
+      />
       <div class="sm:columns-2 md:columns-3">
         {
-          alternatives.sort().map(({ data }) => data).map(({ slug, name }) => (
-            <div class="mb-4">
-              <a href={url(`/alternativesto/${slug}`)}>
-                <Logo slug={slug} />&nbsp;{name}
-              </a>
-            </div>
-            <div class="mb-4 ml-2 border-l-2 pl-4 border-dotted border-gray-300">
-              {stacks.map(({ data }) => data).filter(({ alternativeTo }) => alternativeTo?.includes(slug))
-              .map(({ slug, name }) => (
-              <div class="mb-2">
-                <a href={url(`/${slug}`)}>
-                  <Logo slug={slug} />&nbsp;{name}
-                </a>
-              </div>
-              ))
-              }
-            </div>
-          ))
+          alternatives
+            .sort()
+            .map(({ data }) => data)
+            .map(({ slug, name }) => (
+              <>
+                <div class="mb-4">
+                  <a href={url(`/alternativesto/${slug}`)}>
+                    <Logo slug={slug} />
+                    &nbsp;{name}
+                  </a>
+                </div>
+                <div class="mb-4 ml-2 border-l-2 pl-4 border-dotted border-gray-300">
+                  {stacks
+                    .map(({ data }) => data)
+                    .filter(({ alternativeTo }) =>
+                      alternativeTo?.includes(slug)
+                    )
+                    .map(({ slug, name }) => (
+                      <div class="mb-2">
+                        <a href={url(`/${slug}`)}>
+                          <Logo slug={slug} />
+                          &nbsp;{name}
+                        </a>
+                      </div>
+                    ))}
+                </div>
+              </>
+            ))
         }
       </div>
     </div>
@@ -91,12 +115,18 @@ const title = t("Alternatives to popular software");
       <h2 class="my-12" set:html={t("Browse *by category*")} />
       <ol class="light sm:columns-2 md:columns-2 lg:columns-3">
         {
-          tags.map(({data: { slug, name, title }}) => (
+          tags.map(({ data: { slug, name, title } }) => (
             <li class="mb-2">
               <a href={url(`/?q=%23${slug}`)}>
                 {title ? `${title} (${name})` : name}
               </a>
-              <Tag>{stacks.map(({ data }) => data).filter(({ tags }) => tags?.includes(slug)).length}</Tag>
+              <Tag>
+                {
+                  stacks
+                    .map(({ data }) => data)
+                    .filter(({ tags }) => tags?.includes(slug)).length
+                }
+              </Tag>
             </li>
           ))
         }

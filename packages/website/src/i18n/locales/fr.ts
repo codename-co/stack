@@ -15,11 +15,13 @@ export const fr: I18n = {
   "popular software": "logiciels populaires",
   "Remix your own.": "",
   "Available for macOS": "Disponible sur macOS",
-  "Simply the best": "Le meilleur, tout simplement",
+  "★ {starCount} cumulative stars": "★ {starCount} étoiles cumulées",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "Accédez à une sélection de plus de {count} solutions open source prêtes à l'installation en un clic.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
-    "Des alternatives aux [logiciels populaires]({url}) gratuites, sécurisées et respectueuses de la vie privée.",
+    "Des alternatives aux [logiciels populaires]({url}). Qualitatives, gratuites, sécurisées et respectueuses de la vie privée.",
+  "Then install software in one-click ↓":
+    "Puis installez des logiciels en un clic ↓",
   "Search software": "Rechercher des logiciels",
   "a smart alternative to {apps}": "une alternative à {apps}",
 
@@ -50,7 +52,7 @@ export const fr: I18n = {
   "Read more about {name}": "Plus d'infos sur {name}",
 
   /** Page /download */
-  "Download Stack Desktop": "Télécharger Stack Desktop",
+  "Download Stack": "Télécharger Stack",
   "Give your desktop *superpowers*.<br />Make it run any open source quality software in a snap.":
     "Donnez à votre ordinateur *des superpouvoirs*.<br />Faites-lui démarrer de nombreux logiciels open source de qualité en un clin d'œil.",
   "Download for {os}": "Télécharger pour {os}",

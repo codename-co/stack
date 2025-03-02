@@ -14,11 +14,13 @@ export const ko: I18n = {
   "popular software": "인기 있는 소프트웨어",
   "Remix your own.": "",
   "Available for macOS": "macOS용으로 사용 가능",
-  "Simply the best": "간단히 최고",
+  "★ {starCount} cumulative stars": "★ {starCount} 누적 별",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "{count}개 이상의 선별된 오픈 소스 소프트웨어 패키지에 액세스하여 한 번의 클릭으로 설치할 수 있습니다.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "[인기 있는]({url}) 앱에 대한 무료, 안전하고 개인 정보 보호에 중점을 둔 대안.",
+  "Then install software in one-click ↓":
+    "그런 다음 소프트웨어를 한 번의 클릭으로 설치 ↓",
   "Search software": "소프트웨어 검색",
   "a smart alternative to {apps}": "{apps}에 대한 스마트한 대안",
 
@@ -48,7 +50,7 @@ export const ko: I18n = {
   "Read more about {name}": "{name}에 대해 자세히 알아보기",
 
   /** Page /download */
-  "Download Stack Desktop": "Stack Desktop 다운로드",
+  "Download Stack": "Stack 다운로드",
   "Give your desktop *superpowers*.<br />Make it run any open source quality software in a snap.":
     "데스크톱에 *슈퍼파워*를 부여하십시오.<br /> 한 번의 클릭으로 어떤 오픈 소스 품질 소프트웨어든 실행하십시오.",
   "Download for {os}": "{os}용 다운로드",

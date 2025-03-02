@@ -15,11 +15,13 @@ export const ja: I18n = {
   "popular software": "人気のあるソフトウェア",
   "Remix your own.": "",
   "Available for macOS": "macOS用",
-  "Simply the best": "単に最高",
+  "★ {starCount} cumulative stars": "★ {starCount} 累積スター",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "{count}以上のキュレーションされたオープンソースソフトウェアパッケージにアクセスし、ワンクリックでインストールできます。",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "[人気のアプリ]({url})の無料で安全でプライバシーに配慮した代替。",
+  "Then install software in one-click ↓":
+    "次に、ソフトウェアをワンクリックでインストール ↓",
   "Search software": "ソフトウェアを検索",
   "a smart alternative to {apps}": "{apps}のスマートな代替",
 
@@ -50,7 +52,7 @@ export const ja: I18n = {
   "Read more about {name}": "{name}について詳しく",
 
   /** Page /download */
-  "Download Stack Desktop": "Stack Desktopをダウンロード",
+  "Download Stack": "Stackをダウンロード",
   "Give your desktop *superpowers*.<br />Make it run any open source quality software in a snap.":
     "デスクトップに*スーパーパワー*を与えます。<br />オープンソースの高品質ソフトウェアを瞬時に実行できます。",
   "Download for {os}": "{os}用にダウンロード",

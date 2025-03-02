@@ -33,6 +33,15 @@ export default {
             color: theme("colors.slate.700"),
           },
         },
+        img: {
+          borderRadius: theme("borderRadius.md"),
+        },
+        video: {
+          borderRadius: theme("borderRadius.md"),
+        },
+        "div:not(.class) > h1": {
+          marginTop: 0,
+        },
         h1: {
           fontSize: theme("fontSize.3xl"),
           "@screen sm": {
@@ -157,7 +166,8 @@ export default {
           content: "''",
           position: "absolute",
           inset: "-5px",
-          borderRadius: "inherit",
+          // borderRadius: "inherit",
+          borderRadius: theme("borderRadius.xl"),
           padding: "5px",
           background: "linear-gradient(45deg, #12c2e9, #c471ed, #f64f59)",
           backgroundSize: "200% 200%",
@@ -166,6 +176,11 @@ export default {
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           WebkitMaskComposite: "xor",
           maskComposite: "exclude",
+        },
+        ".suptitle": {
+          color: theme("colors.gray.400"),
+          fontSize: theme("fontSize.sm"),
+          textTransform: "uppercase",
         },
         ".box": {
           // bg-slate-100 border border-slate-200 rounded-3xl
@@ -199,12 +214,13 @@ export default {
           paddingLeft: 16,
         },
         ".box ol": {
-          listStyleType: "decimal",
-          paddingLeft: 16,
+          listStyleType: "none",
+          paddingLeft: 0,
         },
-        ".box ol:not(.light)": {
-          listStyleType: "decimal",
-          paddingLeft: 32,
+        ".columns": {
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(0, 1fr))",
+          gap: theme("spacing.8"),
         },
       });
     },

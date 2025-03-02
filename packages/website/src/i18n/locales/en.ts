@@ -11,9 +11,10 @@ export const en = [
   "popular software",
   "Remix your own.",
   "Available for macOS",
-  "Simply the best",
+  "★ {starCount} cumulative stars",
   "Access {count}+ curated open source software packages, ready to install with one click.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).",
+  "Then install software in one-click ↓",
   "Search software",
   "a smart alternative to {apps}",
 
@@ -36,7 +37,7 @@ export const en = [
   "Read more about {name}",
 
   /** Page /download */
-  "Download Stack Desktop",
+  "Download Stack",
   "Give your desktop *superpowers*.<br />Make it run any open source quality software in a snap.",
   "Download for {os}",
   "Requires {os} {version} or later",

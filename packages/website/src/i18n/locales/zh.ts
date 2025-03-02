@@ -14,11 +14,12 @@ export const zh: I18n = {
   "popular software": "热门软件",
   "Remix your own.": "",
   "Available for macOS": "适用于 macOS",
-  "Simply the best": "简直是最好的",
+  "★ {starCount} cumulative stars": "★ {starCount} 累积星星",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "访问 {count}+ 精选的开源软件包，一键安装。",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "免费、安全、关注隐私的替代方案 [流行应用]({url})。",
+  "Then install software in one-click ↓": "然后在一键安装软件 ↓",
   "Search software": "搜索软件",
   "a smart alternative to {apps}": "对 {apps} 的智能替代方案",
 
@@ -45,7 +46,7 @@ export const zh: I18n = {
   "Read more about {name}": "了解更多关于 {name}",
 
   /** Page /download */
-  "Download Stack Desktop": "下载 Stack Desktop",
+  "Download Stack": "下载 Stack",
   "Give your desktop *superpowers*.<br />Make it run any open source quality software in a snap.":
     "赋予您的桌面 *超能力*。<br />让它在瞬间运行任何开源优质软件。",
   "Download for {os}": "下载 {os}",

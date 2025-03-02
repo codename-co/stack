@@ -2,7 +2,8 @@ import Logo from "./Logo";
 
 export const WallOfTags: React.FC<{
   items: { slug: string; name: string; url: string }[];
-}> = ({ items }) => {
+  rowCount?: number;
+}> = ({ items, rowCount = 3 }) => {
   return (
     <>
       <style>{styles}</style>
@@ -12,7 +13,7 @@ export const WallOfTags: React.FC<{
           .sort(() => Math.random() - 0.5)
           .reduce(
             (acc, stack, i) => {
-              const row = i % 4;
+              const row = i % rowCount;
               if (!acc[row]) {
                 acc[row] = [];
               }
@@ -60,6 +61,9 @@ const styles = /* CSS */ `
   .wall-of-tags:hover .animate-scroll {
     animation-play-state: paused;
     opacity: 0.4;
+  }
+  .wall-of-tags:hover .animate-scroll:hover .tag:not(:hover) {
+    opacity: 0.6;
   }
   .wall-of-tags:hover .animate-scroll:hover {
     opacity: 1;
