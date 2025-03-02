@@ -2,7 +2,8 @@ promoted:
   - slug: affine
   - slug: openwebui
   - slug: immich
-  - slug: nextcloud
+  # - slug: nextcloud
+  - slug: jellyfin
   # - slug: nocodb
   # - slug: penpot
   - slug: outline
