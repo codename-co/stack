@@ -4,7 +4,7 @@ import Download from "~/components/download-base.html";
 import Logo from "~/components/Logo";
 import Tag from "~/components/tag.html";
 import { getStacks } from "~/content/collections/stacks";
-import { langs, useTranslations, useUrl } from "~/i18n";
+import { langs, textDirection, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
 import { formatStars, getAlternativeMetadata, timeago } from "~/helpers";
 import { WallOfTags } from "~components/WallOfTags";
@@ -141,6 +141,7 @@ const description = t(
         <br />
 
         <WallOfTags
+          rtl={textDirection(lang) === "rtl"}
           items={stacks.map((alt) => ({
             ...alt.data,
             url: url(`/${alt.data.slug}`),

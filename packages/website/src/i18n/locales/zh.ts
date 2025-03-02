@@ -3,7 +3,10 @@ import type { I18n } from "~/i18n/locales";
 export const zh: I18n = {
   /** Generic */
   Download: "下载",
+  Recipes: "食谱",
+  Search: "搜索",
   Back: "返回",
+  "No description provided.": "未提供描述。",
 
   /** Page / */
   "The best of free software, accessible": "最好的免费软件，易于访问",
@@ -75,10 +78,14 @@ export const zh: I18n = {
   "{name} {version} is live.": "{name} {version} 已上线。",
   "Access it in fullscreen": "全屏访问",
 
+  /** Page /recipes */
+  Recipe: "食谱",
+
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*食谱*：{name}",
   "Recipe ingredients": "食谱成分",
   "Last update": "最后更新",
+  "Related recipes": "相关食谱",
 
   /** Component Debug */
   "Service is running…": "服务正在运行…",

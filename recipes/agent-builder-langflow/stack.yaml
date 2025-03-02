@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+type: recipe
+slug: agent-builder-langflow
+name: AI Agent Builder with Langflow
+icon: 🤖
+flavor: DockerCompose
+version: latest
+updated_at: 2025-02-28
+description: Generative AI stack
+author: ""
+license: ""
+repository: https://github.com/codename-co/stack/tree/main/recipes/agent-builder-langflow
+tags: [ai, llm, rag, chatbot]
+alternativeTo: [chatgpt, perplexity]
+dependencies:
+  - name: langflow
+    role: A conversational AI agent builder.
+  - name: langfuse
+    role: Observability and monitoring for the AI agents.
+  # - name: searxng
+  # - name: litellm
+  - name: LLM
+    role: A large language model to generate text.
+    custom: true
+
+i18n:
+  fr:
+    name: Constructeur d'agent IA avec Langflow
+    description: L'IA générative avec Langflow

@@ -176,7 +176,7 @@ export default {
           WebkitMaskComposite: "xor",
           maskComposite: "exclude",
         },
-        ".highlight:hover::before": {
+        ".highlight[href]:hover::before": {
           animation: "highlightMove .4s ease forwards",
         },
         ".suptitle": {

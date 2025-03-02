@@ -1,13 +1,15 @@
+import { textDirection } from "~i18n";
 import Logo from "./Logo";
 
 export const WallOfTags: React.FC<{
   items: { slug: string; name: string; url: string }[];
   rowCount?: number;
-}> = ({ items, rowCount = 3 }) => {
+  rtl?: boolean;
+}> = ({ items, rowCount = 3, rtl = false }) => {
   return (
     <>
       <style>{styles}</style>
-      <div className="wall-of-tags whitespace-nowrap">
+      <span className="wall-of-tags whitespace-nowrap [writing-mode:horizontal-tb]">
         {/* Rest of your component code remains the same */}
         {items
           // Weird sorting to make the list look more random
@@ -26,22 +28,22 @@ export const WallOfTags: React.FC<{
             [] as (typeof items)[],
           )
           .map((stacks, i) => (
-            <div
-              className={`animate-scroll ${
+            <span
+              className={`animate-scroll ${rtl && "animate-scroll-rtl"} ${
                 i % 2 === 0 ? "animate-scroll-reverse" : ""
               }`}
             >
               {stacks.map(({ slug, name, url }) => (
                 <a href={url} aria-label={name} className="inline-flex">
-                  <span className="tag inline-flex items-center rounded-3xl bg-gray-50 mx-2 px-5 py-3 text-xl font-medium text-gray-600 ring-1 ring-inset ring-gray-500/20 align-bottom">
+                  <span className="tag inline-flex items-center gap-2 rounded-3xl bg-gray-50 mx-2 px-4 py-2 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/20 align-bottom">
                     <Logo slug={slug} />
-                    <span className="subtle ml-3">{name}</span>
+                    <span className="subtle">{name}</span>
                   </span>
                 </a>
               ))}
-            </div>
+            </span>
           ))}
-      </div>
+      </span>
     </>
   );
 };
@@ -52,6 +54,9 @@ const styles = /* CSS */ `
   .animate-scroll {
     animation: scroll ${speed}s linear alternate infinite;
     transition: opacity 0.15s;
+  }
+  .animate-scroll-rtl {
+    animation-name: scroll-rtl;
   }
   .animate-scroll-reverse {
     animation-direction: alternate-reverse;
@@ -77,12 +82,23 @@ const styles = /* CSS */ `
   .tag:hover {
     scale: 1.05;
   }
+  .tag:hover .subtle {
+    color: #333;
+  }
   @keyframes scroll {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+  @keyframes scroll-rtl {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(50%);
     }
   }
 `;

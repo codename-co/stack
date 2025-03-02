@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+# This docker compose file is a recipe to set up a status monitoring system to monitor your services.
+# It uses Uptime Kuma as the status monitoring system and Directus as the headless CMS to manage the status pages, users, and notifications.
+# It also uses Traefik as a reverse proxy to expose the services on a subdomain.
+# SQLite is used as the database to store both the monitoring and the heartbeat data.
+
+services:
+  langflow:
+    environment:
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY}
+      LANGFUSE_HOST: ${LANGFUSE_HOST:-http://langfuse-web:3000}
+    links:
+      - langfuse-web
+    depends_on:
+      langfuse-web:
+        condition: service_started
+
+  langfuse-web:
+    # expose on a subdomain
+    labels:
+      dash.url: https://$PROJECT-langfuse.$DOMAIN
+      traefik.http.routers.langfuse-web.rule: Host(`$PROJECT-langfuse.$DOMAIN`)

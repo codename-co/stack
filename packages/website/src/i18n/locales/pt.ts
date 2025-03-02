@@ -3,6 +3,10 @@ import type { I18n } from "~/i18n/locales";
 export const pt: Partial<I18n> = {
   /** Generic */
   Download: "Baixar",
+  Recipes: "Receitas",
+  Search: "Pesquisar",
+  Back: "Voltar",
+  "No description provided.": "Nenhuma descrição fornecida.",
 
   /** Page / */
   "The *best free software* made&nbsp;*accessible*.":

@@ -10,6 +10,7 @@ export const graphData = () => ({
       type: "stack",
       id: `stack-${node.data.slug}`,
       name: node.data.name,
+      path: `/${node.data.slug}`,
       val: (node.data.stars ?? 0) / 500,
       license: node.data.license,
       date: node.data.updated_at,
@@ -18,11 +19,13 @@ export const graphData = () => ({
       type: "alt",
       id: `alt-${node.data.slug}`,
       name: node.data.name,
+      path: `/alternatives/${node.data.slug}`,
     })),
     ...tags.map((node) => ({
       type: "tag",
       id: `tag-${node.data.slug}`,
       name: node.data.name,
+      path: `/?q=${encodeURIComponent(node.data.slug)}`,
     })),
   ],
   links: [

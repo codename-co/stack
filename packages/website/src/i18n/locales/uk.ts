@@ -3,7 +3,10 @@ import type { I18n } from "~/i18n/locales";
 export const uk: I18n = {
   /** Generic */
   Download: "Завантажити",
+  Recipes: "Рецепти",
+  Search: "Пошук",
   Back: "Назад",
+  "No description provided.": "Опис відсутній.",
 
   /** Page / */
   "The best of free software, accessible":
@@ -81,10 +84,14 @@ export const uk: I18n = {
   "{name} {version} is live.": "{name} {version} працює.",
   "Access it in fullscreen": "Отримати доступ у повноекранному режимі",
 
+  /** Page /recipes */
+  Recipe: "Рецепт",
+
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*Рецепт*: {name}",
   "Recipe ingredients": "Інгредієнти рецепту",
   "Last update": "Останнє оновлення",
+  "Related recipes": "Пов'язані рецепти",
 
   /** Component Debug */
   "Service is running…": "Сервіс працює…",

@@ -1,7 +1,10 @@
 export const en = [
   /** Generic */
   "Download",
+  "Recipes",
+  "Search",
   "Back",
+  "No description provided.",
 
   /** Page / */
   "The best of free software, accessible",
@@ -63,10 +66,15 @@ export const en = [
   "{name} {version} is live.",
   "Access it in fullscreen",
 
+  /** Page /recipes */
+  "Recipe",
+  "*Curated Recipes* of powerful stack combinations.",
+
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}",
   "Recipe ingredients",
   "Last update",
+  "Related recipes",
 
   /** Component Debug */
   "Service is running…",

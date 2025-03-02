@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+type: recipe
+slug: xampp
+name: XAMPP stack
+flavor: DockerCompose
+version: latest
+updated_at: 2025-02-16
+description: Multiplaform Apache MariaDB PHP Perl
+author: ""
+license: ""
+repository: https://github.com/codename-co/stack/tree/main/recipes/xampp
+tags: [webdev, web-server, database]
+alternativeTo: []
+dependencies:
+  - name: httpd
+    role: Web server
+  - name: mariadb
+    role: Database
+  - name: PHP
+    role: Server-side scripting language
+    custom: true
+  - name: Perl
+    role: Server-side scripting language
+    custom: true
+
+i18n:
+  fr:
+    name: Stack XAMPP
+    description: Multiplaforme Apache MariaDB PHP Perl

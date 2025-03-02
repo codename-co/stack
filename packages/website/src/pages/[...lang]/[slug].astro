@@ -281,7 +281,7 @@ const similar = Array.from(
         readme ? (
           <div class="content" set:html={marked.parse(readme)} />
         ) : (
-          <p class="subtle">No description provided.</p>
+          <p class="subtle">{t("No description provided.")}</p>
         )
       }
       <hr class="hr" />

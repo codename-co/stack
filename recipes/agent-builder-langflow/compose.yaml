@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+include:
+  - ../../hub/langflow/compose.yaml
+  - ../../hub/langfuse/compose.yaml
+  # - ../../hub/litellm/compose.yaml

@@ -3,7 +3,10 @@ import type { I18n } from "~/i18n/locales";
 export const ja: I18n = {
   /** Generic */
   Download: "ダウンロード",
+  Recipes: "レシピ",
+  Search: "検索",
   Back: "戻る",
+  "No description provided.": "説明がありません。",
 
   /** Page / */
   "The best of free software, accessible":
@@ -81,10 +84,14 @@ export const ja: I18n = {
   "{name} {version} is live.": "{name} {version} が起動しました。",
   "Access it in fullscreen": "フルスクリーンでアクセス",
 
+  /** Page /recipes */
+  Recipe: "レシピ",
+
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*レシピ*：{name}",
   "Recipe ingredients": "レシピの材料",
   "Last update": "最終更新",
+  "Related recipes": "関連レシピ",
 
   /** Component Debug */
   "Service is running…": "サービスが実行中…",

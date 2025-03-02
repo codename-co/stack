@@ -3,7 +3,10 @@ import type { I18n } from "~/i18n/locales";
 export const ko: I18n = {
   /** Generic */
   Download: "다운로드",
+  Recipes: "레시피",
+  Search: "검색",
   Back: "뒤로",
+  "No description provided.": "설명이 제공되지 않았습니다.",
 
   /** Page / */
   "The best of free software, accessible": "최고의 무료 소프트웨어, 접근 가능",
@@ -79,10 +82,14 @@ export const ko: I18n = {
   "{name} {version} is live.": "{name} {version}이 활성화되었습니다.",
   "Access it in fullscreen": "전체 화면에서 액세스",
 
+  /** Page /recipes */
+  Recipe: "레시피",
+
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*레시피*: {name}",
   "Recipe ingredients": "레시피 재료",
   "Last update": "마지막 업데이트",
+  "Related recipes": "관련 레시피",
 
   /** Component Debug */
   "Service is running…": "서비스가 실행 중입니다...",

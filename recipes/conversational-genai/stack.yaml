@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+type: recipe
+slug: conversational-genai
+name: Conversational generative AI
+icon: 💬
+flavor: DockerCompose
+version: latest
+updated_at: 2025-02-16
+description: Generative AI stack
+author: ""
+license: ""
+repository: https://github.com/codename-co/stack/tree/main/recipes/conversational-genai
+tags: [ai, llm, rag, chatbot]
+alternativeTo: [chatgpt, perplexity]
+dependencies:
+  - name: openwebui
+    role: A web interface to interact with the AI models.
+  - name: ollama
+    role: A generative AI model to generate text.
+  - name: searxng
+    role: A search engine to find information.
+  - name: dify
+    role: A text diff tool to compare the generated text.
+  - name: litellm
+    role: A proxy server to the LLM endpoints.
+  - name: LLM
+    role: A large language model to generate text.
+    custom: true
+
+i18n:
+  fr:
+    name: IA générative conversationnelle
+    description: L'IA générative au service d'une interface conversationnelle

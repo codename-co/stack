@@ -1,22 +1,32 @@
 ---
-import { getLangFromUrl } from "~/i18n";
+import { getLangFromUrl, useTranslations, useUrl } from "~/i18n";
 import { siGithub } from "simple-icons";
 import LanguagePicker from "./LanguagePicker.astro";
 
 const currentLang = getLangFromUrl(Astro.url);
+
+const t = useTranslations(currentLang);
+const url = useUrl(currentLang);
 ---
 
 <nav
   id="navbar"
-  class="flex items-center justify-between flex-wrap w-full mx-auto"
+  class="flex items-center justify-between flex-wrap w-full mx-auto select-none"
 >
-  <a
-    class="flex items-center flex-shrink-0 mr-6"
-    href={`/${currentLang === "en" ? "" : currentLang}`}
-  >
-    <img src="/128x128.png" alt="" width="32" height="32" class="mr-2" />
-    <span class="font-semibold text-xl tracking-tight text-black">Stack</span>
-  </a>
+  <div class="flex gap-8 items-center flex-shrink-0">
+    <a class="flex items-center" href={url("/")}>
+      <img src="/128x128.png" alt="" width="32" height="32" class="mr-2" />
+      <span class="font-semibold text-xl tracking-tight text-black">Stack</span>
+    </a>
+
+    <div class="flex gap-6 font-medium">
+      <a href={url("/download")}>{t("Download")}</a>
+      <a href={url("/#search")}>{t("Search")}</a>
+      <a href={url("/recipes")}>{t("Recipes")}</a>
+      <!-- <a href={"/graph"}> 👓 </a> -->
+    </div>
+  </div>
+
   <div class="h-10 grid grid-flow-col text-base">
     <a
       href="https://github.com/codename-co/stack"
@@ -29,18 +39,4 @@ const currentLang = getLangFromUrl(Astro.url);
 
     <LanguagePicker />
   </div>
-  <!-- <div class="block lg:hidden">
-    <button
-      class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
-    >
-      <svg
-        class="fill-current h-3 w-3"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <title>Menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-      </svg>
-    </button>
-  </div> -->
 </nav>

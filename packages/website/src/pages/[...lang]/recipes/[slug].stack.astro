@@ -3,15 +3,17 @@ import { getCollection } from "astro:content";
 import DownloadBase from "~/components/download-base.html";
 import Logo from "~/components/Logo";
 import Tag from "~/components/tag.html";
-import { getStacks } from "~/content/collections/stacks";
 import { formatStars, timeago } from "~/helpers";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
+import { getRecipes } from "~content/collections/recipes";
 
-export const getStaticPaths = () => {
+export const getStaticPaths = async () => {
   return langs
     .map((lang) =>
-      getStacks(lang).map(({ data }) => ({ params: { lang, slug: data.slug } }))
+      getRecipes(lang).map(({ data }) => ({
+        params: { lang, slug: data.slug },
+      }))
     )
     .flat();
 };
@@ -23,8 +25,10 @@ if (!slug) {
   return new Response("Missing parameter", { status: 404 });
 }
 const lang = Astro.params.lang;
-const stack = getStacks(lang).find((stack) => stack.data.slug === slug)?.data;
-if (!stack) {
+const recipe = getRecipes(lang).find(
+  (recipe) => recipe.data.slug === slug
+)?.data;
+if (!recipe) {
   Astro.response.status = 404;
   Astro.response.statusText = "Not found";
   return new Response("Not found", { status: 404 });
@@ -38,7 +42,7 @@ const url = useUrl(lang);
 
 // const redirectUrl = `stack://${slug}`;
 // TODO:
-const redirectUrl = `/downloads/${slug}.stack`;
+const redirectUrl = `/downloads/recipes/${slug}.stack`;
 
 const tags = await getCollection("tags");
 
@@ -53,7 +57,7 @@ const {
   stars,
   license,
   author,
-} = stack;
+} = recipe;
 
 console.log(name, description, version, redirectUrl);
 ---
@@ -195,7 +199,7 @@ console.log(name, description, version, redirectUrl);
             </DownloadBase>
           </a>
           <a
-            href={`/downloads/${slug}.stack`}
+            href={`/downloads/recipes/${slug}.stack`}
             rel="nofollow"
             data-title={t("Download the stack file")}
           >

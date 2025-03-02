@@ -3,7 +3,10 @@ import type { I18n } from "~/i18n/locales";
 export const ar: I18n = {
   /** Generic */
   Download: "تحميل",
+  Recipes: "وصفات",
+  Search: "بحث",
   Back: "رجوع",
+  "No description provided.": "لم يتم توفير وصف.",
 
   /** Page / */
   "The best of free software, accessible": "أفضل البرمجيات المجانية، متاحة",
@@ -78,10 +81,14 @@ export const ar: I18n = {
   "{name} {version} is live.": "{name} {version} مباشر.",
   "Access it in fullscreen": "الوصول إليه بشاشة كاملة",
 
+  /** Page /recipes */
+  Recipe: "وصفة",
+
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*وصفة*: {name}",
   "Recipe ingredients": "مكونات الوصفة",
   "Last update": "آخر تحديث",
+  "Related recipes": "وصفات ذات صلة",
 
   /** Component Debug */
   "Service is running…": "الخدمة قيد التشغيل…",

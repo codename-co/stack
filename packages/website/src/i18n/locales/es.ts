@@ -3,7 +3,10 @@ import type { I18n } from "~/i18n/locales";
 export const es: I18n = {
   /** Generic */
   Download: "Descargar",
+  Recipes: "Recetas",
+  Search: "Buscar",
   Back: "Atrás",
+  "No description provided.": "No se ha proporcionado descripción.",
 
   /** Page / */
   "The best of free software, accessible":
@@ -80,10 +83,14 @@ export const es: I18n = {
   "{name} {version} is live.": "{name} {version} está en vivo.",
   "Access it in fullscreen": "Acceder a pantalla completa",
 
+  /** Page /recipes */
+  Recipe: "Receta",
+
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*Receta*: {name}",
   "Recipe ingredients": "Ingredientes de la receta",
   "Last update": "Última actualización",
+  "Related recipes": "Recetas relacionadas",
 
   /** Component Debug */
   "Service is running…": "El servicio está en ejecución…",

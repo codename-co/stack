@@ -4,6 +4,7 @@
 type: recipe
 slug: status-monitoring
 name: Status monitoring system
+icon: 🕵️
 flavor: DockerCompose
 version: latest
 updated_at: 2025-02-15
@@ -11,7 +12,6 @@ description: Status monitoring system to monitor your services
 author: ""
 license: ""
 repository: https://github.com/codename-co/stack/tree/main/recipes/status-monitoring
-stars: 7
 tags: [monitoring, status-page]
 alternativeTo: [uptimerobot, statuspage]
 dependencies:
@@ -21,23 +21,20 @@ dependencies:
     role: A headless CMS to manage the status pages, users, and notifications.
   - name: traefik
     role: A reverse proxy to expose the services on a subdomain.
+  - name: redis
+    role: A cache to store for Directus.
   - name: SQLite
     role: A database to store both the monitoring and the heartbeat data.
-    custom: true
-  - name: Redis
-    role: A cache to store for Directus.
     custom: true
   - name: GraphQL
     role: An API to interact with the status monitoring system.
     custom: true
   - name: REST API
-    icon: swagger
+    icon: openapiinitiative
     role: An API to interact with the status monitoring system.
     custom: true
-  - name: React
-    role: A frontend to display the status monitoring system.
-    custom: true
 readme: |
+
   ### Use case
 
   - Set up a status monitoring system in order to monitor the status of multiple services.
@@ -52,11 +49,13 @@ readme: |
   - **Manage**: Manage your services monitoring.
   - **Status Pages**: Generate static pages for each service status.
   - **API**: An API to interact with the status monitoring system.
+
 i18n:
   fr:
     name: Système de surveillance de services
     description: Système de surveillance du statut de vos services
     readme: |
+
       ### Cas d'usage
 
       - Mettre en place un système de surveillance du statut de plusieurs services.
