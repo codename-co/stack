@@ -19,3 +19,12 @@ readme: |
   Actual is a local-first personal finance tool. It is 100% free and open-source, written in NodeJS, it has a synchronization element so that all your changes can move between devices without any heavy lifting.
 
   ![preview](https://github.com/actualbudget/actual/raw/master/demo.png)
+
+i18n:
+  fr:
+    description: Outil de gestion de finances personnelles
+    readme: |
+
+      Actual est un outil de gestion de finances personnelles local. Il est 100% gratuit et open-source, écrit en NodeJS, il a un élément de synchronisation pour que tous vos changements puissent passer entre les appareils sans aucun effort supplémentaire.
+
+      ![preview](https://github.com/actualbudget/actual/raw/master/demo.png)

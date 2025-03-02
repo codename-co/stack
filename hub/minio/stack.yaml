@@ -16,3 +16,9 @@ tags: [object-storage]
 alternativeTo: [amazons3, googlecloudstorage]
 readme: |
   MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0. It is API compatible with Amazon S3 cloud storage service. Use MinIO to build high performance infrastructure for machine learning, analytics and application data workloads.
+
+i18n:
+  fr:
+    description: Stockage d'objets haute performance compatible S3
+    readme: |
+      MinIO est un stockage d'objets haute performance publié sous la licence publique générale GNU Affero v3.0. Il est compatible avec l'API du service de stockage cloud Amazon S3. Utilisez MinIO pour construire une infrastructure haute performance pour les charges de travail de machine learning, d'analyse et de données d'application.

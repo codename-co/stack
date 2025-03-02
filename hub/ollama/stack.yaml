@@ -175,7 +175,7 @@ i18n:
       - 高速で信頼性が高い
       - 無料で利用可能
   fr:
-    description: La façon la plus simple de démarrer avec les grands modèles de langage
+    description: Démarrer simplement avec les grands modèles de langage
     readme: |-
       Ollama est une plateforme qui permet de démarrer et d'utiliser facilement des modèles de langage de grande envergure. Elle fournit une API simple pour interagir avec les modèles, et vous pouvez l'utiliser pour générer du texte, répondre à des questions, et plus encore.
 

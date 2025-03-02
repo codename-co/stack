@@ -16,6 +16,16 @@ stars: 41900
 tags: [finance]
 alternativeTo: [mint, ynab, finary]
 readme: |
+
   Maybe: The OS for your personal finances
 
   ![preview](https://github.com/maybe-finance/maybe/assets/35243/a7763d0e-a942-42db-bde7-eb8d28106917)
+
+i18n:
+  fr:
+    description: Le gestionnaire de vos finances personnelles
+    readme: |
+
+      Maybe: Le gestionnaire de vos finances personnelles
+
+      ![preview](https://github.com/maybe-finance/maybe/assets/35243/a7763d0e-a942-42db-bde7-eb8d28106917)

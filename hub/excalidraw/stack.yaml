@@ -47,7 +47,7 @@ readme: |
   - 🔍&nbsp;Zoom and panning support.
 i18n:
   fr:
-    description: Tableau blanc pour dessiner des diagrammes à main levée
+    description: Tableau blanc pour dessiner des diagrammes
     readme: |-
       Un tableau blanc virtuel open source avec un style dessiné à la main.
       Collaboratif et chiffré de bout en bout.

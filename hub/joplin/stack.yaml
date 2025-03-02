@@ -30,3 +30,24 @@ readme: |
   Full text search is available on all platforms to quickly find the information you need. The app can be customised using plugins and themes, and you can also easily create your own.
 
   The application is available for Windows, Linux, macOS, Android and iOS. A Web Clipper, to save web pages and screenshots from your browser, is also available for Firefox and Chrome.
+
+i18n:
+  fr:
+    description: La prise de notes, confidentielle
+    readme: |
+
+      Joplin est une application de prise de notes et de tâches gratuite et open source, qui peut gérer un grand nombre de notes organisées en carnets. Les notes sont recherchables, peuvent être copiées, étiquetées et modifiées directement depuis les applications ou depuis votre propre éditeur de texte. Les notes sont au format Markdown.
+
+      ![preview](https://raw.githubusercontent.com/laurent22/joplin/dev/Assets/WebsiteAssets/images/home-top-img.png)
+
+      <hr>
+
+      Importez des notes d'Evernote dans Joplin, y compris le contenu formaté (qui est converti en Markdown), les ressources (images, pièces jointes, etc.) et les métadonnées complètes (géolocalisation, heure de mise à jour, heure de création, etc.). Les fichiers Markdown simples peuvent également être importés.
+
+      Joplin est "hors ligne d'abord", ce qui signifie que vous avez toujours toutes vos données sur votre téléphone ou votre ordinateur. Cela garantit que vos notes sont toujours accessibles, que vous ayez une connexion Internet ou non.
+
+      Les notes peuvent être synchronisées de manière sécurisée en utilisant le chiffrement de bout en bout avec divers services cloud, y compris Nextcloud, Dropbox, OneDrive et Joplin Cloud.
+
+      La recherche de texte intégral est disponible sur toutes les plateformes pour trouver rapidement les informations dont vous avez besoin. L'application peut être personnalisée à l'aide de plugins et de thèmes, et vous pouvez également facilement créer les vôtres.
+
+      L'application est disponible pour Windows, Linux, macOS, Android et iOS. Un Web Clipper, pour enregistrer des pages Web et des captures d'écran depuis votre navigateur, est également disponible pour Firefox et Chrome.
