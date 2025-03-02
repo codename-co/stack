@@ -361,7 +361,7 @@ const similar = Array.from(
                           ★&nbsp;{formatStars(stars)}
                         </span>
                       )}
-                      {_tags?.map((_tag) => {
+                      {_tags?.map((_tag: any) => {
                         const tag = tags.find(
                           ({ data }) => data.slug === _tag
                         )?.data;
