@@ -85,6 +85,8 @@ export const es: I18n = {
 
   /** Page /recipes */
   Recipe: "Receta",
+  "*Curated Recipes* of powerful stack combinations.":
+    "*Recetas seleccionadas* de potentes combinaciones de pilas.",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*Receta*: {name}",

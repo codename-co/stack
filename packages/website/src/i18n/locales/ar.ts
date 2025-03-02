@@ -83,6 +83,8 @@ export const ar: I18n = {
 
   /** Page /recipes */
   Recipe: "وصفة",
+  "*Curated Recipes* of powerful stack combinations.":
+    "*وصفات مرتبة* من تراكيب الكومة القوية.",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*وصفة*: {name}",

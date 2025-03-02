@@ -86,6 +86,8 @@ export const ja: I18n = {
 
   /** Page /recipes */
   Recipe: "レシピ",
+  "*Curated Recipes* of powerful stack combinations.":
+    "強力なスタックの組み合わせの*キュレーションされたレシピ*。",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*レシピ*：{name}",

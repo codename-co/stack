@@ -86,6 +86,8 @@ export const uk: I18n = {
 
   /** Page /recipes */
   Recipe: "Рецепт",
+  "*Curated Recipes* of powerful stack combinations.":
+    "*Відібрані рецепти* потужних комбінацій стеку.",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*Рецепт*: {name}",

@@ -80,6 +80,8 @@ export const zh: I18n = {
 
   /** Page /recipes */
   Recipe: "食谱",
+  "*Curated Recipes* of powerful stack combinations.":
+    "*精选食谱*，强大的堆栈组合。",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*食谱*：{name}",
