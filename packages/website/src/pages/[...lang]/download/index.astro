@@ -62,7 +62,10 @@ const title = t("Download Stack");
           "Give your desktop *superpowers*.<br />Make it run any open source quality software in a snap."
         )}
       />
-      <a href={url("/download/mac")}>
+      <a
+        href={url("/download/mac")}
+        class="inline-flex highlight hover:animate-highlight"
+      >
         <Download set:html={t("Download for {os}", { os: "macOS" })} />
       </a>
       <p class="subtle my-3" style="max-width: 24em">

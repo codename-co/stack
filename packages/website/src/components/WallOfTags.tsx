@@ -10,7 +10,10 @@ export const WallOfTags: React.FC<{
       <div className="wall-of-tags whitespace-nowrap">
         {/* Rest of your component code remains the same */}
         {items
-          .sort(() => Math.random() - 0.5)
+          // Weird sorting to make the list look more random
+          .sort((a, b) =>
+            a.name.split("").reverse().join("").localeCompare(b.name),
+          )
           .reduce(
             (acc, stack, i) => {
               const row = i % rowCount;
@@ -29,7 +32,7 @@ export const WallOfTags: React.FC<{
               }`}
             >
               {stacks.map(({ slug, name, url }) => (
-                <a href={url} aria-label={name} className="inline-block">
+                <a href={url} aria-label={name} className="inline-flex">
                   <span className="tag inline-flex items-center rounded-3xl bg-gray-50 mx-2 px-5 py-3 text-xl font-medium text-gray-600 ring-1 ring-inset ring-gray-500/20 align-bottom">
                     <Logo slug={slug} />
                     <span className="subtle ml-3">{name}</span>

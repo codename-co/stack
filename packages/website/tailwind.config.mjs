@@ -4,17 +4,17 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        borderMove: {
-          "0%, 100%": {
+        highlightMove: {
+          "0%": {
             backgroundPosition: "0% 50%",
           },
-          "50%": {
+          "100%": {
             backgroundPosition: "100% 50%",
           },
         },
       },
       animation: {
-        border: "borderMove 4s ease infinite",
+        highlight: "highlightMove .4s ease forwards",
       },
     },
   },
@@ -171,11 +171,13 @@ export default {
           padding: "5px",
           background: "linear-gradient(45deg, #12c2e9, #c471ed, #f64f59)",
           backgroundSize: "200% 200%",
-          animation: "borderMove 4s ease infinite",
           WebkitMask:
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           WebkitMaskComposite: "xor",
           maskComposite: "exclude",
+        },
+        ".highlight:hover::before": {
+          animation: "highlightMove .4s ease forwards",
         },
         ".suptitle": {
           color: theme("colors.gray.400"),

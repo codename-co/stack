@@ -342,34 +342,38 @@ const similar = Array.from(
               <ol>
                 {similar
                   .map((e) => e as any)
-                  .map(({ slug, name, description, tags, stars }) => (
+                  .map(({ slug, name, description, tags: _tags, stars }) => (
                     <li class="mb-8">
                       {/* <div class="float-right mr-6 if-connected">
                   <a href={`/${slug}.stack`}>
                     <Button>Install</Button>
                   </a>
                 </div> */}
-                      <h3 transition:name={`title-${name}`}>
+                      <p transition:name={`title-${name}`}>
                         <a href={url(`/${slug}`)}>
                           <Logo slug={slug} />
                           &nbsp;{name}
                         </a>
-                      </h3>
+                      </p>
                       <p>{description}</p>
                       {stars && (
                         <span class="subtle text-sm">
                           ★&nbsp;{formatStars(stars)}
                         </span>
                       )}
-                      {tags?.map((tag: any) => (
-                        <a href={url(`/?q=%23${tag}`)}>
-                          <Tag>
-                            <abbr title={getTagTitle(tag)}>
-                              {getTagName(tag)}
-                            </abbr>
-                          </Tag>
-                        </a>
-                      ))}
+                      {_tags?.map((_tag) => {
+                        const tag = tags.find(
+                          ({ data }) => data.slug === _tag
+                        )?.data;
+
+                        return (
+                          <a href={url(`/?q=%23${tag?.slug}`)}>
+                            <Tag>
+                              <abbr title={tag?.title}>{tag?.name}</abbr>
+                            </Tag>
+                          </a>
+                        );
+                      })}
                     </li>
                   ))}
               </ol>

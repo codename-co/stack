@@ -50,6 +50,8 @@ export const countryCode = (lang: Lang): Lang | string => {
       return "jp";
     case "ar":
       return "sa";
+    case "uk":
+      return "ua";
     default:
       return lang;
   }

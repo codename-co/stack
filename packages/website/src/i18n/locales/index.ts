@@ -9,4 +9,6 @@ export * from "./ja";
 export * from "./ko";
 export * from "./pt";
 export * from "./ru";
+export * from "./tr";
+export * from "./uk";
 export * from "./zh";
