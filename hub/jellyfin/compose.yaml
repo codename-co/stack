@@ -20,6 +20,18 @@ services:
         source: ${MEDIA_PATH_3}
         target: /media3
         read_only: true
+      - type: bind
+        source: ${MEDIA_PATH_4}
+        target: /media4
+        read_only: true
+      - type: bind
+        source: ${MEDIA_PATH_5}
+        target: /media5
+        read_only: true
+      - type: bind
+        source: ${MEDIA_PATH_6}
+        target: /media6
+        read_only: true
     environment:
       - JELLYFIN_PublishedServerUrl=${JELLYFIN_PublishedServerUrl}
     extra_hosts:
