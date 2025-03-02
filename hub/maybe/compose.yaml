@@ -5,7 +5,7 @@
 
 services:
   maybe-app:
-    image: ghcr.io/maybe-finance/maybe:latest
+    image: ghcr.io/maybe-finance/maybe:${MAYBE_VERSION:-0.4.3}
     volumes:
       - app-storage:/rails/storage
     # ports:
@@ -24,6 +24,11 @@ services:
     depends_on:
       maybe-postgres:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/up || exit 1"]
+      interval: 5s
+      timeout: 1s
+      retries: 5
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.maybe.rule: Host(`$PROJECT.$DOMAIN`)
