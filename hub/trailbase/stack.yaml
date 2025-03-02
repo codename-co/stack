@@ -5,8 +5,8 @@ slug: trailbase
 name: TrailBase
 icon: 🐿️
 flavor: DockerCompose
-version: "0.3.2"
-updated_at: 2024-12-19
+version: "0.6.4"
+updated_at: 2025-03-01
 description: Blazingly fast open-source application server
 author: TrailBase
 license: OSL-3.0
