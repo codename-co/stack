@@ -3,7 +3,7 @@
 
 services:
   marreta:
-    image: ghcr.io/manualdousuario/marreta:${MARRETA_VERSION:-2.0}
+    image: ghcr.io/manualdousuario/marreta:${MARRETA_VERSION:-2.1.0}
     env_file: .env
     labels:
       dash.url: https://$PROJECT.$DOMAIN
