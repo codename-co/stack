@@ -4,9 +4,9 @@
 slug: meilisearch
 name: Meilisearch
 flavor: DockerCompose
-version: "1.12.8"
-updated_at: 2025-01-30
-description: Lightning-fast search API for your apps, websites & workflow
+version: "1.13.2"
+updated_at: 2025-02-27
+description: Lightning-fast search API
 author: Meilisearch
 license: MIT
 homepage: https://www.meilisearch.com
@@ -15,6 +15,7 @@ stars: 49468
 tags: [search-engine]
 alternativeTo: [algolia]
 readme: |
+
   A lightning-fast search engine that fits effortlessly into your apps, websites, and workflow.
 
   ![preview](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
@@ -36,3 +37,30 @@ readme: |
   - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets
   - **[RESTful API](https://www.meilisearch.com/docs/reference/api/overview?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** integrate Meilisearch in your technical stack with our plugins and SDKs
   - **Easy to install, deploy, and maintain**
+
+i18n:
+  fr:
+    description: Moteur de recherche ultra-rapide
+    readme: |
+
+      Un moteur de recherche ultra-rapide qui s'intègre sans effort dans vos applications, sites web et flux de travail.
+
+      ![preview](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Fonctionnalités
+
+      - **Recherche hybride :** combinez le meilleur de la [recherche sémantique](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) et de la recherche plein texte pour obtenir les résultats les plus pertinents
+      - **Recherche à mesure que vous tapez :** trouvez et affichez des résultats en moins de 50 millisecondes pour offrir une expérience intuitive
+      - **[Tolérance aux fautes de frappe](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** obtenez des correspondances pertinentes même lorsque les requêtes contiennent des fautes de frappe et des erreurs d'orthographe
+      - **[Filtrage](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) et [recherche facettée](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** améliorez l'expérience de recherche de vos utilisateurs avec des filtres personnalisés et créez une interface de recherche facettée en quelques lignes de code
+      - **[Tri](https://www.meilisearch.com/docs/learn/fine_tuning_results/sorting?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** triez les résultats en fonction du prix, de la date ou de pratiquement tout ce dont vos utilisateurs ont besoin
+      - **[Support des synonymes](https://www.meilisearch.com/docs/learn/relevancy/synonyms?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** configurez des synonymes pour inclure plus de contenu pertinent dans vos résultats de recherche
+      - **[Recherche géographique](https://www.meilisearch.com/docs/learn/fine_tuning_results/geosearch?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** filtrez et triez les documents en fonction de données géographiques
+      - **[Support linguistique étendu](https://www.meilisearch.com/docs/learn/what_is_meilisearch/language?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** recherchez des ensembles de données dans n'importe quelle langue, avec un support optimisé pour le chinois, le japonais, l'hébreu et les langues utilisant l'alphabet latin
+      - **[Gestion de la sécurité](https://www.meilisearch.com/docs/learn/security/master_api_keys?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** contrôlez quels utilisateurs peuvent accéder à quelles données avec des clés API qui permettent une gestion des autorisations fine
+      - **[Multi-Tenancy](https://www.meilisearch.com/docs/learn/security/multitenancy_tenant_tokens?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** personnalisez les résultats de recherche pour un nombre quelconque de locataires d'application
+      - **Hautement personnalisable :** personnalisez Meilisearch selon vos besoins spécifiques ou utilisez nos préréglages prêts à l'emploi et sans tracas
+      - **[API RESTful](https://www.meilisearch.com/docs/reference/api/overview?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** intégrez Meilisearch dans votre pile technique avec nos plugins et SDK
+      - **Facile à installer, déployer et maintenir**
