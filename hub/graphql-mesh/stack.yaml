@@ -18,6 +18,8 @@ alternativeTo: [apollo-server]
 readme: |
   GraphQL Mesh is a GraphQL Federation framework and gateway for both GraphQL Federation and non-GraphQL Federation subgraphs, non-GraphQL services, such as REST and gRPC, and also databases such as MongoDB, MySQL, and PostgreSQL.
 
+  ![preview](https://repository-images.githubusercontent.com/233597517/1cf09300-6d24-11ea-836b-8938fb746a92)
+
   <hr>
 
   GraphQL Mesh allows you to use GraphQL query language to access data in remote APIs that don't run GraphQL (and also ones that do run GraphQL). It can be used as a gateway to other services or run as a local GraphQL schema that aggregates data from remote APIs.

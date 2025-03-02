@@ -58,7 +58,7 @@ readme: |
     All of Dify's offerings come with corresponding APIs, so you could effortlessly integrate Dify into your own business logic.
 i18n:
   fr:
-    description: Plateforme pour créer des applications avec l'IA
+    description: Plateforme de création d'applications avec IA
     readme: |-
       Dify est une plateforme open-source de développement d'applications LLM. Son interface intuitive combine un flux de travail IA, un pipeline RAG, des capacités d'agent, la gestion des modèles, des fonctionnalités d'observabilité et plus encore, vous permettant de passer rapidement du prototype à la production.
 
