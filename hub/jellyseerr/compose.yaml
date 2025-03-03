@@ -1,0 +1,14 @@
+services:
+  jellyseerr:
+    image: fallenbagel/jellyseerr:${JELLYSEERR_VERSION:-2.3.0}
+    env_file: .env
+    volumes:
+      - appconfig:/app/config
+    restart: unless-stopped
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.jellyseerr.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.jellyseerr.loadbalancer.server.port: 5055
+
+volumes:
+  appconfig:

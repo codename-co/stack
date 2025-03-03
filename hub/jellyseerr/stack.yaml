@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: jellyseerr
+name: Jellyseerr
+icon: 🐙
+flavor: DockerCompose
+version: "2.3.0"
+updated_at: 2025-01-16
+description: Media request and discovery manager
+author: Jellyseerr
+license: MIT
+homepage: https://docs.jellyseerr.dev
+repository: https://github.com/fallenbagel/jellyseerr
+stars: 4600
+tags: [media-server]
+alternativeTo: []
+readme: |
+
+  Jellyseerr is a free and open source software application for managing requests for your media library. It integrates with the media server of your choice: Jellyfin, Plex, and Emby. In addition, it integrates with your existing services, such as Sonarr, Radarr.
+
+  ![preview](https://github.com/fallenbagel/jellyseerr/raw/develop/public/preview.jpg)
+
+  <hr>
+
+  ### Features
+
+  - Full Jellyfin/Emby/Plex integration including authentication with user import & management.
+  - Support for PostgreSQL and SQLite databases.
+  - Supports Movies, Shows and Mixed Libraries.
+  - Ability to change email addresses for SMTP purposes.
+  - Easy integration with your existing services. Currently, Jellyseerr supports Sonarr and Radarr. More to come!
+  - Jellyfin/Emby/Plex library scan, to keep track of the titles which are already available.
+  - Customizable request system, which allows users to request individual seasons or movies in a friendly, easy-to-use interface.
+  - Incredibly simple request management UI. Don't dig through the app to simply approve recent requests!
+  - Granular permission system.
+  - Support for various notification agents.
+  - Mobile-friendly design, for when you need to approve requests on the go!
+  - Support for watchlisting & blacklisting media.
