@@ -20,7 +20,7 @@ export const fr: I18n = {
   "Available for macOS": "Disponible sur macOS",
   "★ {starCount} cumulative stars": "★ {starCount} étoiles cumulées",
   "Access {count}+ curated open source software packages, ready to install with one click.":
-    "Accédez à une sélection de plus de {count} solutions open source prêtes à l'installation en un clic.",
+    "Accédez à une sélection de plus de {count} solutions open source prêtes à installer en 1 clic.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "Des alternatives aux [logiciels populaires]({url}). Qualitatives, gratuites, sécurisées et respectueuses de la vie privée.",
   "Then install software in one-click ↓":

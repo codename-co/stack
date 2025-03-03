@@ -7,6 +7,8 @@ export const languages = {
   fr: "Français",
   it: "Italiano",
   pt: "Português",
+  ro: "Română",
+  nl: "Nederlands",
   tr: "Türkçe",
   ar: "العربية",
   uk: "Українська",

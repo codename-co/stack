@@ -143,10 +143,12 @@ export default {
           marginBottom: "2px",
         },
         ".section": {
-          marginTop: "110px",
-          marginBottom: "110px",
-          // marginLeft: "1em",
-          // marginRight: "1em",
+          marginTop: "80px",
+          marginBottom: "80px",
+          "@screen lg": {
+            marginTop: "110px",
+            marginBottom: "110px",
+          },
         },
         ".section > .container": {
           justifySelf: "center",
@@ -175,6 +177,7 @@ export default {
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           WebkitMaskComposite: "xor",
           maskComposite: "exclude",
+          transition: "padding 0.5s ease, inset 0.5s ease",
         },
         ".highlight[href]:hover::before": {
           animation: "highlightMove .4s ease forwards",

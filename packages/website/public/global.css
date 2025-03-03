@@ -201,6 +201,11 @@ body:not([data-connected="true"]) .if-connected {
   display: none;
 }
 
+body:not([data-connected="true"]) .highlight-if-connected::before {
+  padding: 0;
+  inset: 0;
+}
+
 input[type="checkbox"]:not(:checked) + [role="menu"] {
   display: none;
 }

@@ -247,31 +247,6 @@ const similar = Array.from(
     </div>
   </div>
 
-  <div slot="left" class="section h-full">
-    <div class="container">
-      <div class="sticky top-12">
-        <div class="pt-4">
-          <!-- <a href={`stack://${slug}`}> -->
-          <!-- <a
-          href={`/downloads/${slug}.stack`}
-          rel="nofollow"
-          data-title={t("Download the stack file")}
-        >
-          <DownloadBase>
-            <svg
-              class="fill-current w-4 h-4 m-1 inline"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 17 17"
-            >
-              <path d="M12 8V2H8v6H2l8 8 8-8"></path>
-            </svg>
-          </DownloadBase>
-        </a> -->
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="section">
     <div class="container">
       <h2 set:html={t("About *{name}*", { name })} />
@@ -358,69 +333,67 @@ const similar = Array.from(
     </div>
   </div>
 
-  <div slot="right">
-    <div class="section">
-      <div class="container">
-        {
-          Boolean(alternativeTo?.length) && (
-            <div class="box 2xl:bg-slate-50">
-              <h2 set:html={t("An alternative to")} />
-              <ol class="light">
-                {alternativeTo?.map((slug) => (
-                  <li class="mb-4">
-                    <a href={url(`/alternativesto/${slug}`)}>
-                      <Logo slug={slug} />
-                      &nbsp;{getAlternativeMetadata(slug)?.name}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )
-        }
+  <div slot="right" class="section">
+    <div class="container">
+      {
+        Boolean(alternativeTo?.length) && (
+          <div class="box 2xl:bg-slate-50">
+            <h2 set:html={t("An alternative to")} />
+            <ol class="light">
+              {alternativeTo?.map((slug) => (
+                <li class="mb-4">
+                  <a href={url(`/alternativesto/${slug}`)}>
+                    <Logo slug={slug} />
+                    &nbsp;{getAlternativeMetadata(slug)?.name}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )
+      }
 
-        {
-          similar && similar.length > 0 && (
-            <div class="box 2xl:bg-slate-50">
-              <h2 set:html={t("Related recipes")} />
-              <ol class="light">
-                {similar
-                  .map((e) => e as any)
-                  .map(({ slug, name, description, tags, stars, icon }) => (
-                    <li class="mb-8">
-                      {/* <div class="float-right mr-6 if-connected">
+      {
+        similar && similar.length > 0 && (
+          <div class="box 2xl:bg-slate-50">
+            <h2 set:html={t("Related recipes")} />
+            <ol class="light">
+              {similar
+                .map((e) => e as any)
+                .map(({ slug, name, description, tags, stars, icon }) => (
+                  <li class="mb-8">
+                    {/* <div class="float-right mr-6 if-connected">
                   <a href={`/${slug}.stack`}>
                     <Button>Install</Button>
                   </a>
                 </div> */}
-                      <p transition:name={`title-${name}`}>
-                        <a href={url(`/recipes/${slug}`)}>
-                          <Logo slug={slug} icon={icon} />
-                          &nbsp;{name}
-                        </a>
-                      </p>
-                      <p>{description}</p>
-                      {stars && (
-                        <span class="subtle text-sm">
-                          ★&nbsp;{formatStars(stars)}
-                        </span>
-                      )}
-                      {tags?.map((tag: any) => (
-                        <a href={url(`/?q=%23${tag}`)}>
-                          <Tag>
-                            <abbr title={getTagTitle(tag)}>
-                              {getTagName(tag)}
-                            </abbr>
-                          </Tag>
-                        </a>
-                      ))}
-                    </li>
-                  ))}
-              </ol>
-            </div>
-          )
-        }
-      </div>
+                    <p transition:name={`title-${name}`}>
+                      <a href={url(`/recipes/${slug}`)}>
+                        <Logo slug={slug} icon={icon} />
+                        &nbsp;{name}
+                      </a>
+                    </p>
+                    <p>{description}</p>
+                    {stars && (
+                      <span class="subtle text-sm">
+                        ★&nbsp;{formatStars(stars)}
+                      </span>
+                    )}
+                    {tags?.map((tag: any) => (
+                      <a href={url(`/?q=%23${tag}`)}>
+                        <Tag>
+                          <abbr title={getTagTitle(tag)}>
+                            {getTagName(tag)}
+                          </abbr>
+                        </Tag>
+                      </a>
+                    ))}
+                  </li>
+                ))}
+            </ol>
+          </div>
+        )
+      }
     </div>
   </div>
 </Layout>

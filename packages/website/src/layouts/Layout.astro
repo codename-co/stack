@@ -63,5 +63,33 @@ const { lang = "en", title, description, leftTransition } = Astro.props;
         <span slot="year">{new Date().getFullYear()}</span>
       </Footer>
     </main>
+
+    <script>
+      // If the user preferred language is not english, redirect to the translated page.
+      import { languages } from "~i18n/locales";
+
+      const handleUserLanguage = () => {
+        const lang = navigator.language.split("-")[0];
+        const visited = localStorage.getItem("lang");
+        if (visited) {
+          return;
+        }
+        localStorage.setItem("lang", "1");
+        if (lang === "en") {
+          return;
+        }
+        const langAvailable = Object.keys(languages).includes(lang);
+        if (!langAvailable) {
+          return;
+        }
+        location.pathname =
+          `/${lang}/${location.pathname.replace(/^\/[a-z]{2}[\/$]/, "")}`.replaceAll(
+            "//",
+            "/"
+          );
+      };
+
+      handleUserLanguage();
+    </script>
   </body>
 </html>
