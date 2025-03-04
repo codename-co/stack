@@ -5,7 +5,7 @@ export const es: I18n = {
   Download: "Descargar",
   Recipes: "Recetas",
   Catalog: "Catálogo",
-  Back: "Atrás",
+  Back: "Volver",
   "No description provided.": "No se ha proporcionado descripción.",
 
   /** Page / */

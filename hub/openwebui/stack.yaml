@@ -3,7 +3,6 @@
 # This is a https://stack.lol stack metadata file.
 slug: openwebui
 name: Open WebUI
-icon: ollama
 flavor: DockerCompose
 version: "0.5.16"
 updated_at: 2025-02-05
@@ -12,7 +11,7 @@ author: Open WebUI
 license: MIT
 homepage: https://openwebui.com
 repository: https://github.com/open-webui/open-webui
-stars: 79445
+stars: 80700
 tags:
   - llm
   - ai

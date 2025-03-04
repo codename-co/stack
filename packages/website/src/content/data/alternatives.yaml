@@ -4,9 +4,11 @@ alternatives:
     description: A password manager that keeps you safe online
   - slug: adobe-acrobat
     name: Adobe Acrobat
+    icon: adobe
     description: PDF viewer and editor
   - slug: adobe-xd
     name: Adobe XD
+    icon: adobe
     description: Design and prototyping tool
   - slug: after-effects
     name: After Effects
@@ -199,6 +201,7 @@ alternatives:
     description: Automation platform
   - slug: microsoft-office
     name: Microsoft Office
+    icon: microsoft
     description: Office suite
   - slug: midjourney
     name: Midjourney

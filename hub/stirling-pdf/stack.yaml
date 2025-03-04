@@ -1,6 +1,5 @@
 slug: stirling-pdf
 name: Stirling PDF
-icon: 📃
 flavor: DockerCompose
 version: 0.36.6
 updated_at: 2025-01-02
