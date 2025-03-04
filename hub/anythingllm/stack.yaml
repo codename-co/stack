@@ -5,14 +5,14 @@ slug: anythingllm
 name: AnythingLLM
 icon: 🤖
 flavor: DockerCompose
-version: "1.3"
-updated_at: 2024-11-26
+version: "1.7.4"
+updated_at: 2025-02-18
 description: The all-in-one AI app you were looking for
 author: Mintplex Labs Inc
 license: MIT
 homepage: https://anythingllm.com
 repository: https://github.com/Mintplex-Labs/anything-llm
-stars: 39241
+stars: 39900
 tags:
   - llm
   - ai
