@@ -181,6 +181,9 @@ alternatives:
   - slug: launchdarkly
     name: LaunchDarkly
     description: Feature flagging platform
+  - slug: libreoffice
+    name: LibreOffice
+    description: Office suite
   - slug: linear
     name: Linear
     description: Issue tracking tool
@@ -194,6 +197,9 @@ alternatives:
   - slug: make
     name: Make
     description: Automation platform
+  - slug: microsoft-office
+    name: Microsoft Office
+    description: Office suite
   - slug: midjourney
     name: Midjourney
     description: Picture generation with AI
@@ -218,6 +224,9 @@ alternatives:
   - slug: notion
     name: Notion
     description: Note-taking app
+  - slug: onlyoffice
+    name: ONLYOFFICE
+    description: Office suite
   - slug: oracle
     name: Oracle
     description: Database management system

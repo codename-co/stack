@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  wps-office:
+    image: lscr.io/linuxserver/wps-office${WPS_OFFICE_VERSION:-:11.1.0}
+    platform: linux/amd64
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.wps-office.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.wps-office.loadbalancer.server.port: 3000

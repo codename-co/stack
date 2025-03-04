@@ -216,3 +216,7 @@ tags:
     name: Media server
   - slug: media-player
     name: Media player
+  - slug: office-suite
+    name: Office suite
+  - slug: productivity
+    name: Productivity
