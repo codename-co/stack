@@ -11,6 +11,8 @@ services:
     depends_on:
       - hbbr
     restart: unless-stopped
+    labels:
+      dash.icon: rustdesk
 
   hbbr:
     image: rustdesk/rustdesk-server:${RUSTDESK_VERSION:-1}
@@ -19,6 +21,8 @@ services:
       - data:/root
     network_mode: host
     restart: unless-stopped
+    labels:
+      dash.icon: rustdesk
 
 volumes:
   data:

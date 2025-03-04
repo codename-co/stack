@@ -4,14 +4,14 @@
 slug: rustdesk
 name: Rustdesk
 flavor: DockerCompose
-version: "1"
-updated_at: 2024-10-07
+version: "1.3.8"
+updated_at: 2025-02-22
 description: Remote desktop application
 author: Purslane
 license: AGPL-3.0
 homepage: https://rustdesk.com
 repository: https://github.com/rustdesk/rustdesk
-stars: 83083
+stars: 83300
 tags: [desktop]
 alternativeTo: [teamviewer]
 readme: |
