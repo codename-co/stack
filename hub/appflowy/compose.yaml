@@ -3,7 +3,7 @@
 
 services:
   appflowy:
-    image: appflowyio/appflowy_client:${APPFLOWY_VERSION:-0.8.4}
+    image: appflowyio/appflowy_client:${APPFLOWY_VERSION:-0.8.5}
     platform: linux/amd64
     environment:
       - DISPLAY=${HOSTNAME}:0

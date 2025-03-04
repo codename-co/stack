@@ -5,14 +5,14 @@ slug: appflowy
 name: Appflowy
 icon: Ⓐ
 flavor: DockerCompose
-version: "0.8.4"
-updated_at: 2025-02-18
+version: "0.8.5"
+updated_at: 2025-03-04
 description: Collaborative workspace (Linux only)
 author: AppFlowy
 license: AGPL-3.0
 homepage: https://appflowy.io/
 repository: https://github.com/AppFlowy-IO/appflowy
-stars: 60964
+stars: 61100
 tags:
   - knowledge-base
   - note-taking
