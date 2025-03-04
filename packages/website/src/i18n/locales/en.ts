@@ -2,7 +2,7 @@ export const en = [
   /** Generic */
   "Download",
   "Recipes",
-  "Search",
+  "Catalog",
   "Back",
   "No description provided.",
 

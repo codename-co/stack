@@ -4,7 +4,7 @@ export const ja: I18n = {
   /** Generic */
   Download: "ダウンロード",
   Recipes: "レシピ",
-  Search: "検索",
+  Catalog: "カタログ",
   Back: "戻る",
   "No description provided.": "説明がありません。",
 

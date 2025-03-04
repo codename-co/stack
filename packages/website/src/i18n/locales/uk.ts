@@ -4,7 +4,7 @@ export const uk: I18n = {
   /** Generic */
   Download: "Завантажити",
   Recipes: "Рецепти",
-  Search: "Пошук",
+  Catalog: "Каталог",
   Back: "Назад",
   "No description provided.": "Опис відсутній.",
 

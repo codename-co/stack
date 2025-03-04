@@ -4,7 +4,7 @@ export const ar: I18n = {
   /** Generic */
   Download: "تحميل",
   Recipes: "وصفات",
-  Search: "بحث",
+  Catalog: "الكتالوج",
   Back: "رجوع",
   "No description provided.": "لم يتم توفير وصف.",
 

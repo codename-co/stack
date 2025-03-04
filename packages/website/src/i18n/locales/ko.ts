@@ -4,7 +4,7 @@ export const ko: I18n = {
   /** Generic */
   Download: "다운로드",
   Recipes: "레시피",
-  Search: "검색",
+  Catalog: "카탈로그",
   Back: "뒤로",
   "No description provided.": "설명이 제공되지 않았습니다.",
 

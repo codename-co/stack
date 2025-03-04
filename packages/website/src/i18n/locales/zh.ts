@@ -4,7 +4,7 @@ export const zh: I18n = {
   /** Generic */
   Download: "下载",
   Recipes: "食谱",
-  Search: "搜索",
+  Catalog: "软件目录",
   Back: "返回",
   "No description provided.": "未提供描述。",
 

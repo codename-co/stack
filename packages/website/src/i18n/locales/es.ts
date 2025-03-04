@@ -4,7 +4,7 @@ export const es: I18n = {
   /** Generic */
   Download: "Descargar",
   Recipes: "Recetas",
-  Search: "Buscar",
+  Catalog: "Catálogo",
   Back: "Atrás",
   "No description provided.": "No se ha proporcionado descripción.",
 
