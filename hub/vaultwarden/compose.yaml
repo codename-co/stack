@@ -3,14 +3,13 @@
 
 services:
   vaultwarden:
-    image: vaultwarden/server:${VAULTWARDEN_VERSION:-1.32.7}-alpine
+    image: vaultwarden/server:${VAULTWARDEN_VERSION:-1.33.2}-alpine
     restart: unless-stopped
+    env_file: .env
     environment:
       DOMAIN: https://$PROJECT.$DOMAIN
     volumes:
-      - data/:/data/
-    # ports:
-    #   - 80:80
+      - data:/data/
     labels:
       dash.name: Vaultwarden
       dash.url: https://$PROJECT.$DOMAIN

@@ -4,13 +4,13 @@
 slug: vaultwarden
 name: Vaultwarden
 flavor: DockerCompose
-version: "1.32.7"
-updated_at: 2024-12-20
+version: "1.33.2"
+updated_at: 2025-02-09
 description: Bitwarden compatible server written in Rust
 author: Vaultwarden
 license: AGPL-3.0
 repository: https://github.com/dani-garcia/vaultwarden
-stars: 42130
+stars: 42300
 tags:
   - security
 alternativeTo: [1password, lastpass]
