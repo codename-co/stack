@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: clickhouse
+name: ClickHouse
+flavor: DockerCompose
+version: "25.1.5"
+updated_at: 2025-02-21
+description: Real-time analytics database management system
+author: ClickHouse, Inc
+license: Apache-2.0
+homepage: https://clickhouse.com
+repository: https://github.com/ClickHouse/ClickHouse
+stars: 39300
+tags: [database, analytics, data]
+alternativeTo: []
+readme: |
+
+  ClickHouse® is an open-source column-oriented database management system that allows generating analytical data reports in real-time.
+
+  ![preview](https://clickhouse.com/_next/image?url=%2Fimages%2Fhomepage%2Fhome-hero-product-ui.png&w=3840&q=75)
+
+  <hr>
+
+  ### Features
+
+  - **Blazing fast:**
+    Ultimate query performance that your mission-critical and time-sensitive applications can depend on.
+  - **Developer friendly:**
+    Built to ensure that even the most sophisticated data analysis can be done intuitively, using simple SQL.
+  - **Cost effective:**
+    Best-in-class compression ratios that reduce storage and accelerate performance.

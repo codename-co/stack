@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  clickhouse:
+    image: clickhouse:${CLICKHOUSE_VERSION:-25.1.5}
+    env_file: .env
+    # ports:
+    #   - 8123:8123
+    #   - 9000:9000
+    labels:
+      dash.url: https://${CLICKHOUSE_USER}:${CLICKHOUSE_PASSWORD}@$PROJECT.$DOMAIN/?query=SELECT%201
+      traefik.http.routers.clickhouse.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.clickhouse.loadbalancer.server.port: 8123
