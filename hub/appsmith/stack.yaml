@@ -4,14 +4,14 @@
 slug: appsmith
 name: Appsmith
 flavor: DockerCompose
-version: "1.54"
-updated_at: 2024-12-25
+version: "1.62"
+updated_at: 2025-02-19
 description: Internal tool builder
 author: Appsmith, Inc
 license: Apache-2.0
 homepage: https://www.appsmith.com
 repository: https://github.com/appsmithorg/appsmith
-stars: 35785
+stars: 35900
 tags:
   - internal-tool
   - low-code
