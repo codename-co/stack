@@ -3,7 +3,7 @@
 
 services:
   app-service:
-    image: budibase/apps:${BUDIBASE_VERSION:-3.4.16}
+    image: budibase/apps:${BUDIBASE_VERSION:-3.4.24}
     restart: unless-stopped
     env_file: .env
     depends_on:
@@ -13,7 +13,7 @@ services:
       - plugins:/plugins
 
   worker-service:
-    image: budibase/worker:${BUDIBASE_VERSION:-3.4.16}
+    image: budibase/worker:${BUDIBASE_VERSION:-3.4.24}
     restart: unless-stopped
     container_name: bbworker
     environment:
@@ -54,7 +54,7 @@ services:
       retries: 3
 
   proxy-service:
-    image: budibase/proxy:${BUDIBASE_VERSION:-3.4.16}
+    image: budibase/proxy:${BUDIBASE_VERSION:-3.4.24}
     restart: unless-stopped
     environment:
       - PROXY_RATE_LIMIT_WEBHOOKS_PER_SECOND=10
