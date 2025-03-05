@@ -320,7 +320,7 @@ const similar = Array.from(
       <div class="container">
         {
           Boolean(alternativeTo?.length) && (
-            <div class="box 2xl:bg-slate-50">
+            <div class="box 2xl:bg-slate-50 dark:2xl:bg-slate-800">
               <h2 set:html={t("An alternative to")} />
               <ol>
                 {alternativeTo?.map((slug) => (
@@ -337,7 +337,7 @@ const similar = Array.from(
         }
         {
           similar && similar.length > 0 && (
-            <div class="box 2xl:bg-slate-50">
+            <div class="box 2xl:bg-slate-50 dark:2xl:bg-slate-800">
               <h2 set:html={t("Related")} />
               <ol>
                 {similar

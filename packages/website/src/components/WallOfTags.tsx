@@ -80,10 +80,7 @@ const styles = /* CSS */ `
     transition: scale 0.15s;
   }
   .tag:hover {
-    scale: 1.05;
-  }
-  .tag:hover .subtle {
-    color: #333;
+    scale: 1.1;
   }
   @keyframes scroll {
     0% {

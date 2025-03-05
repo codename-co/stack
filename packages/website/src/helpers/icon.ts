@@ -7,7 +7,24 @@ let icons = Object.values(SimpleIcons as any as SimpleIcon[]).map((icon) => ({
   hex: `#${icon.hex}`,
 }));
 
+const overrideIconWithCurrentColor = (slug: string) => {
+  const icon = icons.find((icon) => icon.slug === slug);
+  if (!icon) return {};
+  icon.hex = "currentColor";
+
+  return icon;
+};
+
 icons = [
+  {
+    ...overrideIconWithCurrentColor("coder"),
+    ...overrideIconWithCurrentColor("budibase"),
+    ...overrideIconWithCurrentColor("json"),
+    ...overrideIconWithCurrentColor("notion"),
+    ...overrideIconWithCurrentColor("ollama"),
+    ...overrideIconWithCurrentColor("reactiveresume"),
+  },
+
   ...icons,
 
   // Custom icons

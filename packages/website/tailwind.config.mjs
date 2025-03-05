@@ -18,6 +18,7 @@ export default {
       },
     },
   },
+  darkMode: "media",
   plugins: [
     function ({ addComponents, theme }) {
       addComponents({
@@ -25,12 +26,23 @@ export default {
           // fontSize: theme("fontSize.xl"),
           // lineHeight: theme("lineHeight.6"),
           overflowX: "hidden",
+          backgroundColor: theme("colors.white"),
+          [darkMode]: {
+            backgroundColor: theme("colors.slate.900"),
+            color: theme("colors.gray.100"),
+          },
         },
         "a[href]": {
           color: theme("colors.slate.500"),
           textDecoration: "none",
           "&:hover": {
             color: theme("colors.slate.700"),
+          },
+          [darkMode]: {
+            color: theme("colors.slate.300"),
+            "&:hover": {
+              color: theme("colors.slate.200"),
+            },
           },
         },
         img: {
@@ -57,6 +69,19 @@ export default {
           },
           marginTop: theme("spacing.8"),
           marginBottom: theme("spacing.6"),
+        },
+        "h1, h2": {
+          em: {
+            background: "linear-gradient(0deg, #fce04199 50%, transparent 50%)",
+            borderRadius: "0.1em",
+            padding: "0 3px",
+            margin: "0 -3px",
+            fontStyle: "normal",
+            [darkMode]: {
+              background:
+                "linear-gradient(0deg, #fce04155 50%, transparent 50%)",
+            },
+          },
         },
         h3: {
           fontWeight: theme("fontWeight.semibold"),
@@ -116,6 +141,9 @@ export default {
         },
         ".subtle": {
           color: theme("colors.gray.400"),
+          [darkMode]: {
+            color: theme("colors.gray.400"),
+          },
         },
         "input[type=text], input[type=search]": {
           borderWidth: theme("borderWidth.DEFAULT"),
@@ -141,6 +169,13 @@ export default {
         "svg[role=img]": {
           fill: "currentColor",
           marginBottom: "2px",
+        },
+        ".tag": {
+          [darkMode]: {
+            backgroundColor: theme("colors.slate.800") + "!important",
+            color: theme("colors.slate.300") + "!important",
+            boxShadow: `0 0 3px 0 ${theme("colors.slate.700")} inset`,
+          },
         },
         ".section": {
           marginTop: "80px",
@@ -178,6 +213,7 @@ export default {
           WebkitMaskComposite: "xor",
           maskComposite: "exclude",
           transition: "padding 0.5s ease, inset 0.5s ease",
+          pointerEvents: "none",
         },
         ".highlight[href]:hover::before": {
           animation: "highlightMove .4s ease forwards",
@@ -195,6 +231,12 @@ export default {
           borderWidth: theme("borderWidth.DEFAULT"),
           borderColor: theme("colors.slate.200"),
           position: "relative",
+          boxShadow: `0 0 3px 0 ${theme("colors.slate.300")} inset`,
+          [darkMode]: {
+            backgroundColor: theme("colors.slate.800"),
+            borderColor: theme("colors.slate.800"),
+            boxShadow: `0 0 3px 0 ${theme("colors.slate.700")} inset`,
+          },
         },
         ".box + .box": {
           marginTop: 32,
@@ -231,3 +273,5 @@ export default {
     },
   ],
 };
+
+const darkMode = "@media (prefers-color-scheme: dark)";

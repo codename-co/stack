@@ -216,10 +216,12 @@ console.log(name, description, version, redirectUrl);
   </div>
   <div class="section">
     <div class="container">
-      <iframe
-        id="render"
-        class="!section w-full h-0 transition-all"
-        style="margin:0 !important"></iframe>
+      <div class="relative highlight highlight-if-connected">
+        <iframe
+          id="render"
+          class="!section w-full h-0 transition-all rounded-lg"
+          style="margin:0 !important"></iframe>
+      </div>
       <div id="info">
         <h2 set:html={t("{name} {version} is starting…", { name, version })} />
       </div>

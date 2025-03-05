@@ -3,24 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #0f0f0f;
-  --color-secondary: #f0f0f0;
-
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   /* font-size: 14px;
   line-height: 24px; */
   font-weight: 400;
 
-  color: var(--color-primary);
-  background-color: #f6f6f6;
-
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
 }
 
 a {
-  color: var(--color-primary);
   position: relative;
 }
 
@@ -109,15 +102,6 @@ summary {
   }
 }
 
-h1 em,
-h2 em {
-  background: linear-gradient(0deg, #fce04199 50%, transparent 50%);
-  border-radius: 0.1em;
-  padding: 0 3px;
-  margin: 0 -3px;
-  font-style: normal;
-}
-
 ol {
   /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -140,12 +124,17 @@ article {
 }
 
 li a article {
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e422;
   /* background-color: #f0f0f0; */
 }
 
 li a:hover article {
   background-color: #f0f0f0;
+}
+@media (prefers-color-scheme: dark) {
+  li a:hover article {
+    background-color: #33333366;
+  }
 }
 
 /* article img {

@@ -21,7 +21,7 @@ const LANGUAGE_SELECTOR_ID = "language-selector";
 <div class="relative text-base font-medium select-none">
   <label
     for={LANGUAGE_SELECTOR_ID}
-    class="inline-flex items-center justify-center w-full rounded-md border border-transparent hover:border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer gap-2"
+    class="inline-flex items-center justify-center w-full rounded-md border border-transparent hover:border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer gap-2 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
   >
     <!-- <span class={`fi fis fi-${countryCode(currentLang)} rounded-full`}></span> -->
     <span class="truncate">{languages[currentLang]}</span>
@@ -42,7 +42,7 @@ const LANGUAGE_SELECTOR_ID = "language-selector";
   <input type="checkbox" id={LANGUAGE_SELECTOR_ID} class="hidden" />
 
   <div
-    class="origin-top-right absolute end-0 mt-2 w-48 sm:w-96 rounded-md shadow-md bg-white ring-1 ring-black ring-opacity-5 z-10"
+    class="origin-top-right absolute end-0 mt-2 w-48 sm:w-96 rounded-md shadow-md bg-white ring-1 ring-black ring-opacity-5 z-10 dark:bg-gray-800 dark:ring-gray-700"
     role="menu"
     aria-orientation="vertical"
     aria-labelledby={LANGUAGE_SELECTOR_ID}
@@ -54,9 +54,9 @@ const LANGUAGE_SELECTOR_ID = "language-selector";
             href={`${lang === defaultLang ? "" : `/${lang}`}${path}`}
             class={`${
               lang === currentLang
-                ? "bg-gray-100 text-gray-900"
+                ? "bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-gray-300"
                 : "text-gray-700"
-            } px-4 py-2 text-start items-center inline-flex hover:bg-gray-100 gap-2 ${index % 2 === 0 ? "rounded-r" : "rounded-l"}`}
+            } px-4 py-2 text-start items-center inline-flex hover:bg-gray-100 gap-2 ${index % 2 === 0 ? "rounded-r" : "rounded-l"} dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-gray-100`}
             role="menuitem"
           >
             <span

@@ -209,7 +209,9 @@ const description = t(
         </div>
       </div> -->
 
-      <div class="box bg-slate-50 text-slate-500">
+      <div
+        class="box bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-200"
+      >
         <div class="columns items-center">
           <div class="column">
             <a href={url("/download")} aria-label={t("Download Stack")}>
@@ -229,15 +231,14 @@ const description = t(
   <div class="section relative">
     <div class="container">
       <div
-        class="sticky top-8 h-13 z-20 outline outline-8"
-        style="outline-width: 2em; background: #f6f6f6; outline-color: #f6f6f6"
+        class="sticky top-8 h-13 z-20 outline outline-[2em] dark:bg-slate-900 dark:text-slate-200 dark:outline-slate-900"
       >
         <input
           id="search"
           type="search"
           list="autocomplete"
           placeholder={t("Search software")}
-          class="w-full p-2 bg-white"
+          class="w-full p-2 bg-white dark:!bg-slate-900 dark:focus:!bg-slate-950"
         />
       </div>
       <datalist id="autocomplete">

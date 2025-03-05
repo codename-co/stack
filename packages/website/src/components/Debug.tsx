@@ -27,21 +27,6 @@ export const Debug: React.FC<{ children?: any; lang: Lang }> = ({
   }, []);
 
   const debugStyle: CSSProperties = {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    width: "100%",
-    zIndex: 99,
-    userSelect: "none",
-    color: "#fff",
-    maxWidth: 720,
-    margin: "0 auto",
-    padding: ".25em 2em",
-    fontSize: "82.5%",
-    fontWeight: 500,
-    borderBottomLeftRadius: "0.5em",
-    borderBottomRightRadius: "0.5em",
     transform: `translateY(${connected ? "0" : "-100%"})`,
     transition: "all 0.3s ease-in-out",
     background:
@@ -61,7 +46,11 @@ export const Debug: React.FC<{ children?: any; lang: Lang }> = ({
         `}
       </style>
       {children}
-      <div id="debug" style={debugStyle}>
+      <div
+        id="debug"
+        style={debugStyle}
+        className="fixed top-0 left-0 right-0 w-full z-50 user-select-none text-white max-w-96 mx-auto my-0 px-6 py-1 text-sm font-semibold rounded-bl-lg rounded-br-lg"
+      >
         <span>
           ▶{" "}
           <span
