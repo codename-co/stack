@@ -5,14 +5,14 @@ slug: bolt.diy
 name: Bolt.diy
 icon: stackblitz
 flavor: DockerCompose
-version: "0.0.6"
-updated_at: 2025-01-22
+version: "0.0.7"
+updated_at: 2025-02-28
 description: Prompt, run, edit, and deploy full-stack web applications
 author: StackBlitz
 license: MIT
 homepage: https://bolt.diy
 repository: https://github.com/stackblitz-labs/bolt.diy
-stars: 12714
+stars: 13000
 tags: [chatbot, ai, webdev]
 alternativeTo: []
 readme: |
