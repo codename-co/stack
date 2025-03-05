@@ -3,7 +3,7 @@
 
 services:
   bookstack:
-    image: linuxserver/bookstack:${BOOKSTACK_VERSION:-24.12.1}
+    image: linuxserver/bookstack:version-v${BOOKSTACK_VERSION:-25.02}
     env_file: .env
     volumes:
       - config:/config
