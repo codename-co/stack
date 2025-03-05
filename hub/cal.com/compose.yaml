@@ -14,13 +14,11 @@ services:
       - stack
 
   calcom:
-    image: calcom.docker.scarf.sh/calcom/cal.com:v${CALCOM_VERSION:-4.7.8}
+    image: calcom.docker.scarf.sh/calcom/cal.com:v${CALCOM_VERSION:-5.0.12}
     platform: linux/amd64
     restart: always
     networks:
       - stack
-    # ports:
-    #   - 3000:3000
     env_file: .env
     environment:
       - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}/${POSTGRES_DB}
@@ -34,13 +32,11 @@ services:
 
   # Optional use of Prisma Studio. In production, comment out or remove the section below to prevent unwanted access to your database.
   calcom-studio:
-    image: calcom.docker.scarf.sh/calcom/cal.com:v${CALCOM_VERSION:-4.7.8}
+    image: calcom.docker.scarf.sh/calcom/cal.com:v${CALCOM_VERSION:-5.0.12}
     platform: linux/amd64
     restart: always
     networks:
       - stack
-    # ports:
-    #   - 5555:5555
     env_file: .env
     environment:
       - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}/${POSTGRES_DB}
@@ -55,7 +51,7 @@ services:
       dash.url: https://$PROJECT.$DOMAIN/api/v2
       traefik.http.routers.calcom-studio.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/api/`)
       traefik.http.services.calcom-studio.loadbalancer.server.port: 5555
-# END SECTION: Optional use of Prisma Studio.
+  # END SECTION: Optional use of Prisma Studio.
 
 networks:
   stack:

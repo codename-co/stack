@@ -5,17 +5,18 @@ slug: cal.com
 name: cal.com
 icon: caldotcom
 flavor: DockerCompose
-version: "4.7.8"
-updated_at: 2024-11-22
+version: "5.0.12"
+updated_at: 2025-03-05
 description: Scheduling infrastructure
 author: Cal.com, Inc
 license: AGPL-3.0
 homepage: https://cal.com
 repository: https://github.com/calcom/cal.com
-stars: 34241
+stars: 34300
 tags: [calendar, scheduling]
 alternativeTo: [calendly]
 readme: |
+
   Schedule appointments for business meetings, seminars, yoga classes, or calls with families.
 
-  ![booking-screen](https://github.com/calcom/cal.com/assets/8019099/407e727e-ff19-4ca4-bcae-049dca05cf02)
+  ![preview](https://github.com/calcom/cal.com/assets/8019099/407e727e-ff19-4ca4-bcae-049dca05cf02)
