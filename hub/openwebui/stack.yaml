@@ -4,14 +4,14 @@
 slug: openwebui
 name: Open WebUI
 flavor: DockerCompose
-version: "0.5.16"
-updated_at: 2025-02-05
+version: "0.5.20"
+updated_at: 2025-03-05
 description: A user-friendly interface for AI chat
 author: Open WebUI
 license: MIT
 homepage: https://openwebui.com
 repository: https://github.com/open-webui/open-webui
-stars: 80700
+stars: 81400
 tags:
   - llm
   - ai

@@ -3,7 +3,7 @@
 
 services:
   openwebui:
-    image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.5.16}
+    image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.5.20}
     pull_policy: always
     env_file: .env
     # ports:
