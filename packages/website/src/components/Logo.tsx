@@ -28,7 +28,7 @@ const Logo: React.FC<LogoProps> = ({ slug, className, icon, style }) => {
     <span
       title={name}
       dangerouslySetInnerHTML={{ __html: icon ?? _icon?.svg ?? ic ?? "" }}
-      className={className}
+      className={`${className} dark:!text-white`}
       style={{ color: _icon?.hex, ...style }}
     />
   );

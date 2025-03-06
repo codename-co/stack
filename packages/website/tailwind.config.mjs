@@ -1,3 +1,5 @@
+const darkMode = ".dark &"; // "@media (prefers-color-scheme: dark)";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -18,7 +20,7 @@ export default {
       },
     },
   },
-  darkMode: "media",
+  darkMode: "class",
   plugins: [
     function ({ addComponents, theme }) {
       addComponents({
@@ -28,7 +30,7 @@ export default {
           overflowX: "hidden",
           backgroundColor: theme("colors.white"),
           [darkMode]: {
-            backgroundColor: theme("colors.slate.900"),
+            backgroundColor: theme("colors.slate.950"),
             color: theme("colors.gray.100"),
           },
         },
@@ -170,6 +172,44 @@ export default {
           fill: "currentColor",
           marginBottom: "2px",
         },
+        article: {
+          padding: "1em 2em 1em",
+          marginLeft: "-2em",
+          marginRight: "-2em",
+          borderRadius: theme("borderRadius.md"),
+          borderWidth: theme("borderWidth.DEFAULT"),
+          borderColor: "transparent",
+        },
+        "li a article": {
+          [darkMode]: {
+            borderBottomColor: theme("colors.slate.700"),
+          },
+        },
+        "li a:hover article": {
+          backgroundColor: theme("colors.slate.200"),
+          [darkMode]: {
+            backgroundColor: theme("colors.slate.800"),
+          },
+        },
+
+        // article {
+        //   padding: 1em 2em 1em;
+        //   margin-left: -2em;
+        //   margin-right: -2em;
+        //   /* padding: 0 1em;
+        //   border: 1.2px solid #ddd;
+        //   border-radius: 0.25em; */
+        // }
+
+        // li a:hover article {
+        //   background-color: #f0f0f0;
+        // }
+        // @media (prefers-color-scheme: dark) {
+        //   li a:hover article {
+        //     background-color: #33333366;
+        //   }
+        // }
+
         ".tag": {
           [darkMode]: {
             backgroundColor: theme("colors.slate.800") + "!important",
@@ -273,5 +313,3 @@ export default {
     },
   ],
 };
-
-const darkMode = "@media (prefers-color-scheme: dark)";

@@ -34,10 +34,14 @@ export const WallOfTags: React.FC<{
               }`}
             >
               {stacks.map(({ slug, name, url }) => (
-                <a href={url} aria-label={name} className="inline-flex">
+                <a
+                  href={url}
+                  aria-label={name}
+                  className="inline-flex align-top"
+                >
                   <span className="tag inline-flex items-center gap-2 rounded-3xl bg-gray-50 mx-2 px-4 py-2 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/20 align-bottom">
                     <Logo slug={slug} />
-                    <span className="subtle">{name}</span>
+                    <span>{name}</span>
                   </span>
                 </a>
               ))}

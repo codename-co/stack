@@ -1,7 +1,8 @@
 ---
 import { getLangFromUrl, useTranslations, useUrl } from "~/i18n";
-import { siGithub } from "simple-icons";
 import LanguagePicker from "./LanguagePicker.astro";
+import { DarkModeSwitcher } from "./DarkModeSwitcher";
+import { iconOf } from "~helpers";
 
 const currentLang = getLangFromUrl(Astro.url);
 
@@ -31,14 +32,16 @@ const url = useUrl(currentLang);
     </div>
   </div>
 
-  <div class="h-10 grid grid-flow-col text-base">
+  <div class="h-10 grid grid-flow-col text-base gap-2">
+    <DarkModeSwitcher client:only="react" />
+
     <a
       href="https://github.com/codename-co/stack"
       class="flex items-center hover:text-gray-600 px-4 py-3"
       target="_blank"
       rel="noopener noreferrer"
       title="GitHub"
-      set:html={siGithub.svg}
+      set:html={iconOf("github")?.svg}
     />
 
     <LanguagePicker />

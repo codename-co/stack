@@ -114,45 +114,6 @@ ol > li {
   break-inside: avoid;
 }
 
-article {
-  padding: 1em 2em 1em;
-  margin-left: -2em;
-  margin-right: -2em;
-  /* padding: 0 1em;
-  border: 1.2px solid #ddd;
-  border-radius: 0.25em; */
-}
-
-li a article {
-  border-bottom: 1px solid #e4e4e422;
-  /* background-color: #f0f0f0; */
-}
-
-li a:hover article {
-  background-color: #f0f0f0;
-}
-@media (prefers-color-scheme: dark) {
-  li a:hover article {
-    background-color: #33333366;
-  }
-}
-
-/* article img {
-  float: left;
-  display: inline-block;
-  flex-shrink: 0;
-  width: 1.5em;
-  height: 1.5em;
-  margin-right: 0.5em;
-  margin-top: -0.15em;
-} */
-
-/* article p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  height: 2em;
-} */
-
 svg[role="img"] {
   /* float: right;
   width: 1.5em;
