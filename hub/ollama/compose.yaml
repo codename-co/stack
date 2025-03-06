@@ -3,7 +3,7 @@
 
 services:
   ollama:
-    image: ollama/ollama:${OLLAMA_VERSION:-0.5.12}
+    image: ollama/ollama:${OLLAMA_VERSION:-0.5.13}
     restart: unless-stopped
     # deploy:
     #   resources:

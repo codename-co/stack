@@ -4,8 +4,8 @@
 slug: ollama
 name: Ollama
 flavor: DockerCompose
-version: "0.5.12"
-updated_at: 2025-02-14
+version: "0.5.13"
+updated_at: 2025-03-04
 description: The easiest way to get up and running with large language models
 author: Ollama
 license: BSD-3-Clause
