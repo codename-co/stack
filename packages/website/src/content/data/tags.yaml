@@ -37,9 +37,9 @@ tags:
     name: Scheduling
   - slug: project-management
     name: Project management
-  # - slug: crm
-  #   name: CRM
-  #   title: Customer Relationship Management
+  - slug: crm
+    name: CRM
+    title: Customer Relationship Management
   - slug: ai
     name: AI
     title: Artificial Intelligence
@@ -220,3 +220,8 @@ tags:
     name: Office suite
   - slug: productivity
     name: Productivity
+  - slug: erp
+    name: ERP
+    title: Enterprise Resource Planning
+  - slug: accounting
+    name: Accounting

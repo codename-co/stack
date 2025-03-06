@@ -1,0 +1,27 @@
+services:
+  odoo:
+    image: odoo:${ODOO_VERSION:-18.0}
+    depends_on:
+      - odoo-database
+    environment:
+      - HOST=${ODOO_HOST}
+      - USER=${ODOO_USER}
+      - PASSWORD=${ODOO_PASSWORD}
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      # - ./config:/etc/odoo
+      # - ./addons:/mnt/extra-addons
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.odoo.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.odoo.loadbalancer.server.port: 8069
+
+  odoo-database:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+volumes:
+  odoo-web-data:

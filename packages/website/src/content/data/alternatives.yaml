@@ -269,6 +269,12 @@ alternatives:
   - slug: retrotool
     name: RetroTool
     description: Retrospective tool
+  - slug: salesforce
+    name: Salesforce
+    description: CRM platform
+  - slug: sap
+    name: SAP
+    description: Enterprise software
   - slug: sketch
     name: Sketch
     description: Design tool

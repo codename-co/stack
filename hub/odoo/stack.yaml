@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: odoo
+name: Odoo
+flavor: DockerCompose
+version: "18.0"
+updated_at: 2025-02-19
+description: Open Source Apps To Grow Your Business
+author: Odoo S.A.
+license: LGPLv3
+homepage: https://www.odoo.com
+repository: https://github.com/odoo/odoo
+stars: 41100
+tags: [erp, crm, accounting]
+alternativeTo: [sap, salesforce]
+readme: |
+  Odoo is a suite of web based open source business apps.
+
+  The main Odoo Apps include an Open Source CRM, Website Builder, eCommerce, Warehouse Management, Project Management, Billing & Accounting, Point of Sale, Human Resources, Marketing, Manufacturing, ...
+
+  ![preview](https://odoocdn.com/openerp_website/static/src/img/apps/crm/hero_image.webp)
