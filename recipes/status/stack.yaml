@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
 # This is a https://stack.lol stack metadata file.
 type: recipe
-slug: status-monitoring
+slug: status
 name: Status monitoring system
 icon: 🕵️
 flavor: DockerCompose
