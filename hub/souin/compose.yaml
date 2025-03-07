@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  souin:
+    image: darkweak/souin:v${SOUIN_VERSION:-1.7.5}
+    configs:
+      - source: souin_config
+        target: /configuration/configuration.yml
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.souin.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.souin.loadbalancer.server.port: 80
+    networks:
+      - internet
+
+configs:
+  souin_config:
+    content: |
+      api:
+        basepath: /souin-api
+        prometheus: {}
+        souin: {}
+      default_cache:
+        headers:
+          - Authorization
+        port:
+          web: 80
+          tls: 443
+        regex:
+          exclude: 'ARegexHere'
+        ttl: ${DEFAULT_TTL}
+      log_level: ${LOG_LEVEL}
+      reverse_proxy_url: '${REVERSE_PROXY_URL}'
+      ssl_providers:
+        - traefik
+
+networks:
+  internet:
+    driver: bridge

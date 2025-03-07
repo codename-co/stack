@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: souin
+name: Souin
+icon: 🔀
+flavor: DockerCompose
+version: "1.7.5"
+updated_at: 2024-11-06
+description: An RFC-compliant HTTP cache system
+author: Souin
+license: MIT
+homepage: https://docs.souin.io
+repository: https://github.com/darkweak/souin
+stars: 765
+tags: [cache, reverse-proxy]
+alternativeTo: []
+readme: |
+
+  Souin is a new HTTP cache system suitable for every reverse-proxy. It can be either placed on top of your current reverse-proxy whether it's Apache, Nginx or as plugin in your favorite reverse-proxy like Træfik, Caddy or Tyk.
+
+  <hr>
+
+  ### Features
+
+  - **RFC-compliant**: Souin is RFC-compliant and supports Vary, request coalescing, stale cache-control, and other specifications related to the RFC-7234.
+  - **HTTP cache groups**: Souin supports the newly written RFCs (currently in draft) http-cache-groups and http-invalidation.
+  - **Cache-Status HTTP response header**: Souin supports the Cache-Status HTTP response header, the YKey group such as Varnish, the Targeted HTTP Cache Control RFC.
+  - **ESI tags**: Souin supports the ESI tags, thanks to the go-esi package.
+  - **Docker integration**: Souin is written in Go and can be deployed on any server. Thanks to the Docker integration, it will be easy to install on top of a Swarm or a Kubernetes instance.
+  - **Reverse-proxy compatibility**: Souin can be placed on top of your current reverse-proxy whether it's Apache, Nginx, or as a plugin in your favorite reverse-proxy like Træfik, Caddy, or Tyk.
+  - **Open-source**: Souin is an open-source project released under the MIT license.
