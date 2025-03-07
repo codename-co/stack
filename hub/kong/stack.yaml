@@ -4,23 +4,24 @@
 slug: kong
 name: Kong
 flavor: DockerCompose
-version: "3.9"
+version: "3.9.0"
 updated_at: 2024-12-21
 description: The Cloud-Native API Gateway and AI Gateway
 author: Kong Inc.
 license: Apache-2.0
 homepage: https://konghq.com
 repository: https://github.com/Kong/kong
-stars: 40229
+stars: 40300
 tags:
   - api-gateway
 alternativeTo:
   - apigee
   - amazonapigateway
 readme: |
+
   Kong (or Kong API Gateway) is a cloud-native, platform-agnostic, scalable API Gateway distinguished for its high performance and extensibility via plugins. It also provides advanced AI capabilities with multi-LLM support.
 
-  ![](https://konghq.com/wp-content/uploads/2018/05/kong-benefits-github-readme.png)
+  ![preview](https://konghq.com/wp-content/uploads/2018/05/kong-benefits-github-readme.png)
 
   <hr>
 

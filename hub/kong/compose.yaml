@@ -10,7 +10,7 @@ x-kong-config: &kong-env
 
 services:
   kong-migrations:
-    image: kong:${KONG_VERSION:-3.9}
+    image: kong:${KONG_VERSION:-3.9.0}
     command: kong migrations bootstrap
     depends_on:
       - kong-db
@@ -19,7 +19,7 @@ services:
     restart: on-failure
 
   kong-migrations-up:
-    image: kong:${KONG_VERSION:-3.9}
+    image: kong:${KONG_VERSION:-3.9.0}
     command: kong migrations up && kong migrations finish
     depends_on:
       - kong-db
@@ -28,7 +28,7 @@ services:
     restart: on-failure
 
   kong:
-    image: kong:${KONG_VERSION:-3.9}
+    image: kong:${KONG_VERSION:-3.9.0}
     user: "${KONG_USER:-kong}"
     environment:
       <<: *kong-env
