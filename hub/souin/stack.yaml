@@ -3,7 +3,6 @@
 # This is a https://stack.lol stack metadata file.
 slug: souin
 name: Souin
-icon: 🔀
 flavor: DockerCompose
 version: "1.7.5"
 updated_at: 2024-11-06
