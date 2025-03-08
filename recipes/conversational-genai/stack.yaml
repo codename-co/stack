@@ -8,7 +8,7 @@ icon: 💬
 flavor: DockerCompose
 version: latest
 updated_at: 2025-02-16
-description: Generative AI stack
+description: A comprehensive stack for building conversational AI applications with generative models, featuring a web interface, LLM integration, search capabilities, and text processing tools.
 author: ""
 license: ""
 repository: https://github.com/codename-co/stack/tree/main/recipes/conversational-genai
@@ -32,4 +32,4 @@ dependencies:
 i18n:
   fr:
     name: IA générative conversationnelle
-    description: L'IA générative au service d'une interface conversationnelle
+    description: Une stack complète pour construire des applications d'IA conversationnelle avec des modèles génératifs, comprenant une interface web, une intégration LLM, des capacités de recherche, et des outils de traitement de texte.

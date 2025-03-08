@@ -7,7 +7,7 @@ name: XAMPP stack
 flavor: DockerCompose
 version: latest
 updated_at: 2025-02-16
-description: Multiplaform Apache MariaDB PHP Perl
+description: Cross-platform development environment featuring Apache web server, MariaDB database, and PHP/Perl scripting languages.
 author: ""
 license: ""
 repository: https://github.com/codename-co/stack/tree/main/recipes/xampp
@@ -28,4 +28,4 @@ dependencies:
 i18n:
   fr:
     name: Stack XAMPP
-    description: Multiplaforme Apache MariaDB PHP Perl
+    description: Environnement de développement multiplateforme avec serveur web Apache, base de données MariaDB, et langages de script PHP/Perl.

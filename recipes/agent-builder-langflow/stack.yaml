@@ -8,7 +8,7 @@ icon: 🤖
 flavor: DockerCompose
 version: latest
 updated_at: 2025-02-28
-description: Generative AI stack
+description: A powerful stack for building and deploying custom AI agents using Langflow's visual interface, with built-in monitoring and LLM integration.
 author: ""
 license: ""
 repository: https://github.com/codename-co/stack/tree/main/recipes/agent-builder-langflow
@@ -28,4 +28,4 @@ dependencies:
 i18n:
   fr:
     name: Constructeur d'agent IA avec Langflow
-    description: L'IA générative avec Langflow
+    description: Une stack puissante pour construire et déployer des agents IA personnalisés en utilisant l'interface visuelle de Langflow, avec surveillance intégrée et intégration LLM.

@@ -8,7 +8,7 @@ icon: 🕵️
 flavor: DockerCompose
 version: latest
 updated_at: 2025-02-15
-description: Status monitoring system to monitor your services
+description: A complete system to monitor the status of your web services, with dashboards and notifications.
 author: ""
 license: ""
 repository: https://github.com/codename-co/stack/tree/main/recipes/status-monitoring
@@ -52,8 +52,8 @@ readme: |
 
 i18n:
   fr:
-    name: Système de surveillance de services
-    description: Système de surveillance du statut de vos services
+    name: Système de surveillance de services web
+    description: Système complet de surveillance et de monitoring de l'état de vos services web, avec tableaux de bord et notifications.
     readme: |
 
       ### Cas d'usage
