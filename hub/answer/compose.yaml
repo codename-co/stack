@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  answer:
+    image: apache/answer:${ANSWER_VERSION:-1.4.2}
+    restart: on-failure
+    volumes:
+      - answer-data:/data
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.answer.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.answer.loadbalancer.server.port: 80
+
+volumes:
+  answer-data:

@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: answer
+name: Answer
+flavor: DockerCompose
+version: "1.4.2"
+updated_at: 2025-02-06
+description: Q&A platform software for teams
+author: Apache
+license: Apache-2.0
+homepage: https://answer.apache.org
+repository: https://github.com/apache/answer
+stars: 14000
+tags: [q&a, forum]
+alternativeTo: [slack, discord]
+readme: |
+
+  A Q&A platform software for teams at any scales. Whether it’s a community forum, help center, or knowledge management platform, you can always count on Answer.
+
+  ![preview](https://github.com/apache/answer/raw/main/docs/img/screenshot.png)
+
+  <hr>
+
+  ### Features
+
+  - **Q&A Platform**: Ask questions, provide answers, and grow with the community. Users can contribute answers, comment, and vote to maintain up-to-date knowledge sharing.
+  - **Organization**: Efficiently find content using an intuitive tagging system for easy categorization and quick content discovery.
+  - **Integrations**: Extend functionality through plugins, connect with other tools, and streamline workflows to enhance productivity.
+  - **Gamification**: Build reputation and earn badges based on expertise and community participation. Engage users through rewards while fostering community growth.
