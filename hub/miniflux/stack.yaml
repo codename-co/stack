@@ -1,0 +1,91 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: miniflux
+name: Miniflux
+icon: Ⓜ
+flavor: DockerCompose
+version: "2.2.6"
+updated_at: 2025-02-23
+description: Minimalist and opinionated feed reader
+author: Frédéric Guillot
+license: Apache-2.0
+homepage: https://miniflux.app
+repository: https://github.com/miniflux/v2
+stars: 7300
+tags: [rss]
+alternativeTo: [feedly, inoreader]
+readme: |
+
+  Miniflux is a minimalist and opinionated feed reader.
+
+  ![preview](https://miniflux.app/images/overview.png)
+
+  <hr>
+
+  ### Features
+
+  - **Reader**
+    - Supported feed formats: Atom 0.3/1.0, RSS 1.0/2.0, RDF, and JSON.
+    - OPML file import/export and URL import.
+    - Supports multiple enclosures/attachments (Podcasts, videos, music, and images).
+    - Plays videos from YouTube channels directly inside Miniflux.
+    - Categories and bookmarks.
+    - Fetches website icons (favicons).
+    - Saves articles to third-party services.
+    - Provides full-text search (Thanks to Postgres).
+    - Available in Portuguese (Brazilian), Chinese (Simplified and Traditional), Dutch, English (US), Finnish, French, German, Greek, Hindi, Indonesian, Italian, Japanese, Polish, Russian, Taiwanese POJ, Ukrainian, Spanish, and Turkish.
+  - **Privacy**
+    - Remove pixel trackers
+    - Fetch original links when the feed is coming from FeedBurner
+    - Open external links with the attributes rel="noopener noreferrer" referrerpolicy="no-referrer"
+    - Use the HTTP header Referrer-Policy: no-referrer
+    - Image proxy to avoid mixed content warnings with HTTPS
+    - Play Youtube videos by using the domain youtube-nocookie.com
+    - Supports alternative YouTube video players like Invidious
+    - Block external Javascript code to avoid tracking
+  - **Content Manipulation**
+    - Fetch original article and returns only relevant contents (Readability parser)
+    - Custom scraper rules based on CSS selectors
+    - Custom rewriting rules
+    - Regex filter to allow or block articles
+    - Override default user agent to bypass websites restrictions
+    - Option to allow self-signed or invalid certificates (disabled by default)
+    - Scrape YouTube’s website
+  - **User Interface**
+    - Stylesheet optimized for readability
+    - Responsive design (works on desktop, tablet, and mobile devices)
+    - No fancy user interface
+    - Doesn’t require to download an application from Apple/Google Store
+    - You could add Miniflux to the home screen
+    - Keyboard shortcuts
+    - Touch events on mobile devices
+    - Themes: Light (Sans-Serif), Light (Serif), Dark (Sans-Serif), Dark (Serif), System (Sans-Serif), System (Serif)
+  - **Integration**
+    - 25+ integrations with third-party services: Apprise, Betula, Cubox, Discord, Espial, Instapaper, LinkAce, Linkding, LinkWarden, Matrix, Notion, Ntfy, Nunux Keeper, Pinboard, Pocket, Pushover, RainDrop, Readeck, Readwise Reader, RssBridge, Shaarli, Shiori, Slack, Telegram, Wallabag, etc.
+    - Bookmarklet to subscribe to a website directly from any web browser
+    - Webhooks
+    - Use existing mobile applications to read your feeds by using the Fever or Google Reader API
+    - REST API with clients written in Go and Python
+  - **Authentication**
+    - Username/password
+    - Google (OAuth2)
+    - OpenID Connect
+  - **Technical Stuff**
+    - Self-hosted
+    - Written in Go (Golang)
+    - Compatible only with Postgresql
+    - There is no dependency, only a static binary
+    - All static files are bundled into the application binary using Golang embed package
+    - Supports Systemd sd_notify protocol
+    - Automatic HTTPS configuration with Let’s Encrypt
+    - Use your own SSL certificate
+    - Supports HTTP/2 if TLS is configured
+    - Feeds are updated in the background by an internal scheduler
+    - External content is sanitized before being displayed
+    - Uses a Content Security Policy that allows only application Javascript and block inline code and styles
+    - Support native lazy loading for images and iframes
+    - Works only in modern browsers
+    - Follows the Twelve-Factor App principle
+    - Official Debian/RPM packages and pre-built binaries
+    - Docker image is published automatically to Docker Hub and GitHub Registry (supports ARM architectures)
