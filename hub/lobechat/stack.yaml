@@ -26,7 +26,7 @@ readme: |
 
   <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-  <video controls width="100%">
+  <video controls width="100%" muted autoplay loop>
     <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
     ⚠️ Your browser does not support the video tag.
   </video>
@@ -56,7 +56,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ Tu navegador no soporta la etiqueta de video.
       </video>
@@ -85,7 +85,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ Seu navegador não suporta a tag de vídeo.
       </video>
@@ -114,7 +114,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ आपका ब्राउज़र वीडियो टैग को सपोर्ट नहीं करता है।
       </video>
@@ -143,7 +143,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ Ihr Browser unterstützt das Video-Tag nicht.
       </video>
@@ -172,7 +172,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ Il tuo browser non supporta il tag video.
       </video>
@@ -201,7 +201,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ Votre navigateur ne prend pas en charge la balise vidéo.
       </video>
@@ -230,7 +230,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ متصفحك لا يدعم وسم الفيديو.
       </video>
@@ -259,7 +259,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ Ваш браузер не поддерживает тег video.
       </video>
@@ -288,7 +288,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ 您的浏览器不支持视频标签。
       </video>
@@ -317,7 +317,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ 브라우저가 비디오 태그를 지원하지 않습니다.
       </video>
@@ -346,7 +346,7 @@ i18n:
 
       <!-- ![preview](https://github.com/lobehub/lobe-chat/assets/28616219/9f155dff-4737-429f-9cad-a70a1a860c5f) -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://hub-apac-1.lobeobjects.space/landing/0.webm">
         ⚠️ お使いのブラウザはビデオタグをサポートしていません。
       </video>

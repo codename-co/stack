@@ -25,7 +25,7 @@ alternativeTo:
 readme: |
   Dify is an open-source LLM app development platform. Its intuitive interface combines agentic AI workflow, RAG pipeline, agent capabilities, model management, observability features and more, letting you quickly go from prototype to production.
 
-  <video controls width="100%">
+  <video controls width="100%" muted autoplay loop>
     <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
     ⚠️ Your browser does not support the video tag.
   </video>
@@ -62,7 +62,7 @@ i18n:
     readme: |-
       Dify est une plateforme open-source de développement d'applications LLM. Son interface intuitive combine un flux de travail IA, un pipeline RAG, des capacités d'agent, la gestion des modèles, des fonctionnalités d'observabilité et plus encore, vous permettant de passer rapidement du prototype à la production.
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ Votre navigateur ne prend pas en charge la balise vidéo.
       </video>
@@ -98,7 +98,7 @@ i18n:
     readme: |-
       Dify هي منصة مفتوحة المصدر لتطوير تطبيقات LLM. تجمع واجهتها السهلة بين سير عمل الذكاء الاصطناعي، وخط أنابيب RAG، وقدرات الوكيل، وإدارة النماذج، وميزات المراقبة والمزيد، مما يتيح لك الانتقال سريعاً من النموذج الأولي إلى الإنتاج.
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ متصفحك لا يدعم علامة الفيديو.
       </video>
@@ -131,7 +131,7 @@ i18n:
     readme: |-
       Dify es una plataforma de desarrollo de aplicaciones LLM de código abierto. Su interfaz intuitiva combina flujo de trabajo de IA agéntica, pipeline RAG, capacidades de agente, gestión de modelos, características de observabilidad y más, permitiéndote pasar rápidamente del prototipo a la producción.
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ Tu navegador no soporta la etiqueta de video.
       </video>
@@ -167,7 +167,7 @@ i18n:
     readme: |-
       Dify 是一个开源的 LLM 应用开发平台。其直观的界面集成了智能 AI 工作流、RAG 管道、智能代理功能、模型管理、可观测性等特性，让您能够快速从原型转向生产环境。
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ 您的浏览器不支持视频标签。
       </video>
@@ -203,7 +203,7 @@ i18n:
     readme: |-
       Dify ist eine Open-Source-Plattform zur Entwicklung von LLM-Anwendungen. Die intuitive Benutzeroberfläche kombiniert agentische KI-Workflows, RAG-Pipeline, Agentenfähigkeiten, Modellverwaltung, Beobachtbarkeitsfunktionen und mehr, sodass Sie schnell von der Prototypenphase zur Produktion übergehen können.
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ Ihr Browser unterstützt das Video-Tag nicht.
       </video>
@@ -239,7 +239,7 @@ i18n:
     readme: |-
       Dify è una piattaforma open-source per lo sviluppo di applicazioni LLM. La sua interfaccia intuitiva combina workflow AI agentico, pipeline RAG, capacità di agenti, gestione dei modelli, funzionalità di osservabilità e altro ancora, permettendoti di passare rapidamente dal prototipo alla produzione.
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ Il tuo browser non supporta il tag video.
       </video>
@@ -275,7 +275,7 @@ i18n:
     readme: |-
       DifyはオープンソースのLLMアプリ開発プラットフォームです。直感的なインターフェースにはエージェントAIワークフロー、RAGパイプライン、エージェント機能、モデル管理、可観測性機能などが統合されており、プロトタイプから本番環境まで素早く移行できます。
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ お使いのブラウザはビデオタグをサポートしていません。
       </video>
@@ -311,7 +311,7 @@ i18n:
     readme: |-
       Dify는 오픈소스 LLM 앱 개발 플랫폼입니다. 직관적인 인터페이스는 에이전트 AI 워크플로우, RAG 파이프라인, 에이전트 기능, 모델 관리, 관찰 가능성 기능 등을 결합하여 프로토타입에서 프로덕션까지 신속하게 진행할 수 있게 해줍니다.
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ 브라우저가 비디오 태그를 지원하지 않습니다.
       </video>
@@ -347,7 +347,7 @@ i18n:
     readme: |-
       Dify - это платформа с открытым исходным кодом для разработки LLM-приложений. Её интуитивный интерфейс объединяет агентный рабочий процесс ИИ, конвейер RAG, возможности агентов, управление моделями, функции наблюдаемости и многое другое, позволяя быстро пройти путь от прототипа к продакшену.
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ Ваш браузер не поддерживает тег video.
       </video>
@@ -383,7 +383,7 @@ i18n:
     readme: |-
       O Dify é uma plataforma de código aberto para desenvolvimento de aplicações LLM. Sua interface intuitiva combina fluxo de trabalho de IA agêntica, pipeline RAG, capacidades de agente, gerenciamento de modelos, recursos de observabilidade e mais, permitindo que você passe rapidamente do protótipo à produção.
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ Seu navegador não suporta a tag de vídeo.
       </video>
@@ -419,7 +419,7 @@ i18n:
     readme: |-
       Dify एक ओपन-सोर्स LLM ऐप डेवलपमेंट प्लेटफॉर्म है। इसका सहज इंटरफ़ेस एजेंटिक AI वर्कफ़्लो, RAG पाइपलाइन, एजेंट क्षमताएं, मॉडल प्रबंधन, अवलोकन सुविधाएं और बहुत कुछ को जोड़ता है, जो आपको प्रोटोटाइप से प्रोडक्शन तक जल्दी पहुंचने में मदद करता है।
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/langgenius/dify/assets/13230914/356df23e-1604-483d-80a6-9517ece318aa">
         ⚠️ आपका ब्राउज़र वीडियो टैग को सपोर्ट नहीं करता है।
       </video>

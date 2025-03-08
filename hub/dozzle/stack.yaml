@@ -18,7 +18,7 @@ alternativeTo: []
 readme: |
   Dozzle is a small lightweight application with a web based interface to monitor Docker logs. It doesn’t store any log files. It is for live monitoring of your container logs only.
 
-  <video controls width="100%">
+  <video controls width="100%" muted autoplay loop>
     <source src="https://github.com/user-attachments/assets/66a7b4b2-d6c9-4fca-ab04-aef6cd7c0c31">
     ⚠️ Your browser does not support the video tag.
   </video>

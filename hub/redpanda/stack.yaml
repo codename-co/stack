@@ -18,7 +18,7 @@ alternativeTo: [kafka]
 readme: |
   Redpanda is the most complete, Apache Kafka®-compatible streaming data platform, designed from the ground up to be lighter, faster, and simpler to operate. Free from ZooKeeper™ and JVMs, it prioritizes an end-to-end developer experience with a huge ecosystem of connectors, configurable tiered storage, and more.
 
-  <video controls width="100%">
+  <video controls width="100%" muted autoplay loop>
     <source src="https://user-images.githubusercontent.com/23424570/220130537-7b0b8596-0a06-4132-90a5-1be3c169e4f4.mp4">
     ⚠️ Your browser does not support the video tag.
   </video>

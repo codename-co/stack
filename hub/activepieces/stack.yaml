@@ -19,7 +19,7 @@ readme: |
 
   Your friendliest open source all-in-one automation tool, designed to be extensible through a type-safe pieces framework written in Typescript.
 
-  <video controls width="100%">
+  <video controls width="100%" muted autoplay loop>
     <source src="https://www.activepieces.com/activepieces-quick-demo.mp4">
     ⚠️ Your browser does not support the video tag.
   </video>

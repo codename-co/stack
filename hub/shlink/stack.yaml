@@ -15,7 +15,7 @@ alternativeTo: [bitly, tinyurl]
 readme: |
   A PHP-based self-hosted URL shortener that can be used to serve shortened URLs under your own domain.
 
-  <video controls width="100%">
+  <video controls width="100%" muted autoplay loop>
     <source src="https://shlink.io/videos/shlink-web-client.webm">
     ⚠️ Your browser does not support the video tag.
   </video>

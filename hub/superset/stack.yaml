@@ -29,7 +29,7 @@ readme: >
   <!-- File hosted here
   https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-  <video controls width="100%">
+  <video controls width="100%" muted autoplay loop>
     <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
     ⚠️ Your browser does not support the video tag.
   </video>
@@ -73,7 +73,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ Ihr Browser unterstützt das Video-Tag nicht.
       </video>
@@ -122,7 +122,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ Il tuo browser non supporta il tag video.
       </video>
@@ -166,7 +166,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ Seu navegador não suporta a tag de vídeo.
       </video>
@@ -212,7 +212,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ Ваш браузер не поддерживает тег video.
       </video>
@@ -257,7 +257,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ Tu navegador no soporta la etiqueta de video.
       </video>
@@ -302,7 +302,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ Votre navigateur ne prend pas en charge la balise vidéo.
       </video>
@@ -347,7 +347,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ 您的浏览器不支持视频标签。
       </video>
@@ -387,7 +387,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ متصفحك لا يدعم علامة الفيديو.
       </video>
@@ -430,7 +430,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ आपका ब्राउज़र वीडियो टैग का समर्थन नहीं करता है।
       </video>
@@ -472,7 +472,7 @@ i18n:
       <!-- File hosted here
       https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
 
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ 브라우저가 비디오 태그를 지원하지 않습니다.
       </video>
@@ -507,7 +507,7 @@ i18n:
       Supersetは、現代のデータ探索およびデータ可視化プラットフォームです。Supersetは多くのチームにとって、独自のビジネスインテリジェンスツールの代替または補完となることができます。Supersetは様々なデータソースとうまく連携します。
 
       <!-- File hosted here https://github.com/apache/superset-site/raw/lfs/superset-video-4k.mp4 -->
-      <video controls width="100%">
+      <video controls width="100%" muted autoplay loop>
         <source src="https://github.com/apache/superset/assets/812905/da036bc2-150c-4ee7-80f9-75e63210ff76">
         ⚠️ お使いのブラウザはビデオタグをサポートしていません。
       </video>
