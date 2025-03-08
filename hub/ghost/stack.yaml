@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: ghost
+name: Ghost
+flavor: DockerCompose
+version: "5.111.0"
+updated_at: 2025-03-07
+description: Headless CMS for professional publishing
+author: Ghost Foundation
+license: MIT
+homepage: https://ghost.org
+repository: https://github.com/TryGhost/Ghost
+stars: 48600
+tags: [cms, blog, publishing]
+alternativeTo: [wordpress]
+readme: |
+
+  Ghost is the most popular open sourcem headless Node.js CMS which already works with all the tools you know and love.
+
+  <video controls width="100%" muted autoplay loop>
+    <source src="https://ghost.org/videos/dashboard.mp4">
+    ⚠️ Your browser does not support the video tag.
+  </video>
+
+  <hr>
+
+  ### Features
+
+  - **Editor**: A powerful editor to create and manage your content.
+    - **Rich Media**: Embed images, videos, and more.
+    - **Dynamic Cards**: Add rich media cards to your content.
+  - **Newsletters**: Send newsletters to your audience.
+    - **Built-in**: Deliver posts by email newsletter.
+    - **Grow**: Transform clicks into contacts.
+  - **Audiences**: Manage your memberships.
+    - **Native Analytics**: Understand what's working.
+    - **Offers & Promotions**: Entice new subscribers.
+  - **Integrations**: Works with everything.
+    - **Social**: Share your content.
+    - **Analytics**: Understand what's working.
+    - **APIs**: Connect your tools.
+  - **Businesses**: Content marketing you can measure.
+    - **Turn clicks into contacts**: Native lead gen & analytics.
