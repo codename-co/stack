@@ -1,0 +1,169 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  plausible:
+    image: ghcr.io/plausible/community-edition:v${PLAUSIBLE_VERSION:-2.1.5}
+    restart: always
+    command: sh -c "/entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh run"
+    depends_on:
+      plausible_db:
+        condition: service_healthy
+      plausible_events_db:
+        condition: service_healthy
+    volumes:
+      - plausible-data:/var/lib/plausible
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    environment:
+      - TMPDIR=/var/lib/plausible/tmp
+      # required: https://github.com/plausible/community-edition/wiki/configuration#required
+      - BASE_URL=${BASE_URL}
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      # optional: https://github.com/plausible/community-edition/wiki/configuration#optional
+      # registration: https://github.com/plausible/community-edition/wiki/configuration#registration
+      - TOTP_VAULT_KEY
+      - DISABLE_REGISTRATION
+      - ENABLE_EMAIL_VERIFICATION
+      # databases: https://github.com/plausible/community-edition/wiki/configuration#database
+      - DATABASE_URL
+      - CLICKHOUSE_DATABASE_URL
+      # Google: https://github.com/plausible/community-edition/wiki/configuration#google
+      - GOOGLE_CLIENT_ID
+      - GOOGLE_CLIENT_SECRET
+      # geolocation: https://github.com/plausible/community-edition/wiki/configuration#ip-geolocation
+      - IP_GEOLOCATION_DB
+      - GEONAMES_SOURCE_FILE
+      - MAXMIND_LICENSE_KEY
+      - MAXMIND_EDITION
+      # email: https://github.com/plausible/community-edition/wiki/configuration#email
+      - MAILER_ADAPTER
+      - MAILER_EMAIL
+      - MAILER_NAME
+      - SMTP_HOST_ADDR
+      - SMTP_HOST_PORT
+      - SMTP_USER_NAME
+      - SMTP_USER_PWD
+      - SMTP_HOST_SSL_ENABLED
+      - POSTMARK_API_KEY
+      - MAILGUN_API_KEY
+      - MAILGUN_DOMAIN
+      - MAILGUN_BASE_URI
+      - MANDRILL_API_KEY
+      - SENDGRID_API_KEY
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.plausible.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.plausible.loadbalancer.server.port: 8000
+
+  plausible_db:
+    image: postgres:16-alpine
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      start_period: 1m
+
+  plausible_events_db:
+    image: clickhouse/clickhouse-server:24.3.3.102-alpine
+    restart: always
+    volumes:
+      - event-data:/var/lib/clickhouse
+      - event-logs:/var/log/clickhouse-server
+    configs:
+      - source: clickhouse_logs
+        target: /etc/clickhouse-server/config.d/logs.xml
+      - source: clickhouse_ipv4_only
+        target: /etc/clickhouse-server/config.d/ipv4-only.xml
+      - source: clickhouse_low_resources
+        target: /etc/clickhouse-server/config.d/low-resources.xml
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget --no-verbose --tries=1 -O - http://127.0.0.1:8123/ping || exit 1",
+        ]
+      start_period: 1m
+
+configs:
+  clickhouse_logs:
+    content: |
+      <clickhouse>
+          <logger>
+              <level>warning</level>
+              <console>true</console>
+          </logger>
+
+          <query_log replace="1">
+              <database>system</database>
+              <table>query_log</table>
+              <flush_interval_milliseconds>7500</flush_interval_milliseconds>
+              <engine>
+                  ENGINE = MergeTree
+                  PARTITION BY event_date
+                  ORDER BY (event_time)
+                  TTL event_date + interval 30 day
+                  SETTINGS ttl_only_drop_parts=1
+              </engine>
+          </query_log>
+
+          <!-- Stops unnecessary logging -->
+          <metric_log remove="remove" />
+          <asynchronous_metric_log remove="remove" />
+          <query_thread_log remove="remove" />
+          <text_log remove="remove" />
+          <trace_log remove="remove" />
+          <session_log remove="remove" />
+          <part_log remove="remove" />
+      </clickhouse>
+
+  # This makes ClickHouse bind to IPv4 only, since Docker doesn't enable IPv6 in bridge networks by default.
+  # Fixes "Listen [::]:9000 failed: Address family for hostname not supported" warnings.
+  clickhouse_ipv4_only:
+    content: |
+      <clickhouse>
+          <listen_host>0.0.0.0</listen_host>
+      </clickhouse>
+
+  # This makes ClickHouse consume less resources, which is useful for small setups.
+  # https://clickhouse.com/docs/en/operations/tips#using-less-than-16gb-of-ram
+  clickhouse_low_resources:
+    content: |
+      <!-- https://clickhouse.com/docs/en/operations/tips#using-less-than-16gb-of-ram -->
+      <clickhouse>
+          <!--
+          https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#mark_cache_size -->
+          <mark_cache_size>524288000</mark_cache_size>
+
+          <profile>
+              <default>
+                  <!-- https://clickhouse.com/docs/en/operations/settings/settings#max_threads -->
+                  <max_threads>1</max_threads>
+                  <!-- https://clickhouse.com/docs/en/operations/settings/settings#max_block_size -->
+                  <max_block_size>8192</max_block_size>
+                  <!-- https://clickhouse.com/docs/en/operations/settings/settings#max_download_threads -->
+                  <max_download_threads>1</max_download_threads>
+                  <!--
+                  https://clickhouse.com/docs/en/operations/settings/settings#input_format_parallel_parsing -->
+                  <input_format_parallel_parsing>0</input_format_parallel_parsing>
+                  <!--
+                  https://clickhouse.com/docs/en/operations/settings/settings#output_format_parallel_formatting -->
+                  <output_format_parallel_formatting>0</output_format_parallel_formatting>
+              </default>
+          </profile>
+      </clickhouse>
+
+volumes:
+  db-data:
+  event-data:
+  event-logs:
+  plausible-data:

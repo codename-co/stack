@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: plausible
+name: Plausible
+icon: plausibleanalytics
+flavor: DockerCompose
+version: "2.1.5"
+updated_at: 2025-02-03
+description: Simple & privacy-friendly web analytics
+author: Plausible
+license: AGPL-3.0
+homepage: https://plausible.io
+repository: https://github.com/plausible/analytics
+stars: 21700
+tags: [analytics]
+alternativeTo: [google-analytics]
+readme: |
+
+  Plausible Analytics is an easy to use, lightweight, open source and privacy-friendly alternative to Google Analytics. It doesn’t use cookies and is fully compliant with GDPR, CCPA and PECR.
+
+  ![preview](https://hubfi.fr/wp-content/uploads/2024/07/plausible-1160x680.jpg)
+
+  <hr>
+
+  ### Features
+
+  - **Clutter Free**: Simple web analytics that cuts through the noise. All important insights on one page with no complex menus or training needed.
+  - **Privacy Compliant**: Fully GDPR/CCPA/PECR compliant. No personal data or IP storage, no cookies or persistent identifiers.
+  - **Lightweight**: Small script that loads quickly. Direct events API support available.
+  - **Team Features**: Private or public stats sharing, team member invites with roles, email/Slack reports.
+  - **Goal Tracking**: Custom events and dimensions for conversion tracking. Ecommerce, outbound links, and funnel analysis.
+  - **Search Integration**: Google Search Console integration for keyword analytics.
+  - **Modern Framework Support**: Works with SPA and hash-based routing.
+  - **Easy Migration**: Smooth transition from Google Analytics with similar features and historical data import.
