@@ -15,24 +15,24 @@
 
 ## Motivation
 
-The best free software is often hard to find, hard to install, and hard to use.
-Stack aims to solve this problem by providing a one-click software installer for your computer.
+Finding, installing, and using the best free software shouldn't be a challenge. Stack simplifies this process by offering a seamless, one-click installation experience for carefully selected software applications.
 
 ## About
 
-The software is divided into three parts:
+Stack consists of three core components:
 
-| Desktop app                                       | Hub                                | Website                                   |
-| ------------------------------------------------- | ---------------------------------- | ----------------------------------------- |
-| One-click software installs on your computer.     | Our curated 140+ software catalog. | A central place for Stack information.    |
-| [↓ Download the app](https://stack.lol/download/) | [👀 Browse the hub](/hub/)         | [→ Access the website](https://stack.lol) |
+| Component          | Description                                        | Action                                        |
+| ------------------ | -------------------------------------------------- | --------------------------------------------- |
+| 🖥️ **Desktop App** | Install software with one click                    | [↓ Download Now](https://stack.lol/download/) |
+| 📚 **Hub**         | Browse our curated collection of 140+ applications | [👀 Explore Hub](/hub/)                       |
+| 🌐 **Website**     | Access documentation and resources                 | [→ Visit Website](https://stack.lol)          |
 
 ## Contributing
 
-See the [CONTRIBUTING.md](./CONTRIBUTING.md) file for more information.
+We welcome contributions! Check our [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## License
 
-This repository is licensed under the [MIT License](./LICENSE_MIT) ; excepted for the following subfolders:
+This repository is available under the [MIT License](./LICENSE_MIT), with the following exception:
 
-- [packages/app](packages/app) which is covered by its own proprietary license.
+- The [packages/app](packages/app) directory is protected under a proprietary license.
