@@ -53,6 +53,16 @@ const title = `${alternative.name} vs ${stacks
   <div slot="left" class="section h-full">
     <div class="container">
       <div class="sticky top-12">
+        <span
+          class="absolute right-0 opacity-15 pointer-events-none user-select-none mt-1 2xl:top-4 2xl:left-0"
+          style={{
+            zoom: 16,
+            zIndex: -1,
+          }}
+        >
+          <Logo slug={slug} />
+        </span>
+
         <h1
           set:html={t("Sure, {logo} {name} is *awesome*.", {
             logo:

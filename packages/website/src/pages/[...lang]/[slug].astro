@@ -126,6 +126,16 @@ const similar = Array.from(
       <div
         class="sticky top-12 flex flex-col lg:flex-row 2xl:flex-col justify-between items-start"
       >
+        <span
+          class="absolute right-0 opacity-15 pointer-events-none user-select-none mt-1 2xl:top-4 2xl:left-0"
+          style={{
+            zoom: 16,
+            zIndex: -1,
+          }}
+        >
+          <Logo slug={slug} />
+        </span>
+
         <div>
           <h1 transition:name={`title-${name}`}>
             <Logo slug={slug} />&nbsp;{name}
@@ -194,7 +204,7 @@ const similar = Array.from(
           </p>
         </div>
 
-        <div class="pt-4 flex flex-row gap-4">
+        <div class="pt-4 flex flex-row gap-4 sticky top-8">
           <!-- <div
       class="hidden float-right md:flex md:flex-grow language-none w-full flex-1 items-center justify-between rounded-lg border border-neutral-200 font-mono font-medium text-neutral-600 focus:border-neutral-200 focus:ring-0 focus:ring-transparent md:max-w-xs"
     >
