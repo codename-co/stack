@@ -98,6 +98,9 @@ alternatives:
   - slug: fast.com
     name: Fast.com
     description: Internet speed test tool
+  - slug: feedly
+    name: Feedly
+    description: RSS news aggregator
   - slug: figma
     name: Figma
     description: Design and prototyping tool
@@ -152,6 +155,9 @@ alternatives:
   - slug: ifttt
     name: IFTTT
     description: Automation platform
+  - slug: inoreader
+    name: Inoreader
+    description: RSS news aggregator
   - slug: invision
     name: InVision
     description: Design collaboration tool

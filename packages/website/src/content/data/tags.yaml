@@ -227,3 +227,5 @@ tags:
     name: Accounting
   - slug: cache
     name: Cache
+  - slug: rss
+    name: RSS

@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: freshrss
+name: FreshRSS
+icon: Ⓕ
+flavor: DockerCompose
+version: "1.26.0"
+updated_at: 2025-02-23
+description: RSS news aggregator
+author: GitHub
+license: AGPL-3.0
+homepage: https://freshrss.org
+repository: https://github.com/FreshRSS/FreshRSS
+stars: 11000
+tags: [rss]
+alternativeTo: [feedly, inoreader]
+readme: |
+
+  ### Summary
+
+  FreshRSS is a self-hosted RSS feed aggregator that is lightweight, easy to work with, powerful, and customizable.
+
+  ![preview](https://github.com/FreshRSS/FreshRSS/blob/edge/docs/img/FreshRSS-screenshot.png?raw=true)
+
+  <hr>
+
+  ### Features
+
+  - **RSS/Atom feeds**: Subscribe to your favorite websites.
+  - **WebSub**: Receive instant push notifications from compatible sources.
+  - **Web scraping**: Extract content from websites not providing any RSS / Atom feed.
+  - **Reshare**: Share selections of articles by HTML, RSS, and OPML.
+  - **Custom tags**: Organize your feeds.
+  - **API**: Access your feeds from (mobile) clients.
+  - **Extensions**: Customize FreshRSS to your needs.

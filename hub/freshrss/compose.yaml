@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  freshrss:
+    image: freshrss/freshrss:${FRESHRSS_VERSION:-1.26.0}
+    restart: unless-stopped
+    logging:
+      options:
+        max-size: 10m
+    volumes:
+      - data:/var/www/FreshRSS/data
+      - extensions:/var/www/FreshRSS/extensions
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.freshrss.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.freshrss.loadbalancer.server.port: 80
+
+volumes:
+  data:
+  extensions:
