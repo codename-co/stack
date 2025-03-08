@@ -3,7 +3,7 @@ import { ClientRouter } from "astro:transitions";
 import { Debug } from "~/components/Debug";
 import Footer from "~/components/footer.html";
 import Navbar from "~/components/Navbar.astro";
-import { langs, textDirection } from "~/i18n";
+import { langs, languages, textDirection } from "~/i18n";
 import "/public/global.css";
 
 const { lang = "en", title, description, leftTransition } = Astro.props;
@@ -27,6 +27,17 @@ const { lang = "en", title, description, leftTransition } = Astro.props;
           rel="alternate"
           hreflang={lang || "en"}
           href={`https://stack.lol/${lang}`}
+        />
+      ))
+    }
+    {
+      langs.map((lang) => (
+        <link
+          rel="alternate"
+          hreflang={lang || "en"}
+          type="application/rss+xml"
+          title={`Stack RSS Feed (${languages[lang || "en"]})`}
+          href={new URL(`${lang}/rss`, Astro.site)}
         />
       ))
     }
