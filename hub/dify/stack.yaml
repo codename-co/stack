@@ -3,7 +3,6 @@
 # This is a https://stack.lol stack metadata file.
 slug: dify
 name: Dify
-icon: 🤖
 flavor: DockerCompose
 version: "1.0.0"
 updated_at: 2025-02-28
@@ -12,7 +11,7 @@ author: LangGenius, Inc
 license: Apache-2.0, with a twist
 homepage: https://dify.ai/
 repository: https://github.com/langgenius/dify
-stars: 75700
+stars: 80000
 tags:
   - llm
   - ai

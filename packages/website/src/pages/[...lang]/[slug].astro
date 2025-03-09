@@ -74,12 +74,12 @@ const similar = Array.from(
             candidate.data.alternativeTo?.includes(slug)
           )
       ),
-      // ...stacks.filter(
-      //   (candidate) =>
-      //     candidate.data.slug !== slug &&
-      //     // ensure both tags and candidate.tags have an intersection
-      //     (tags || []).some((tag) => candidate.data.tags?.includes(tag.id))
-      // ),
+      ...stacks.filter(
+        (candidate) =>
+          candidate.data.slug !== slug &&
+          // ensure both tags and candidate.tags have an intersection
+          (_tags || []).some((tag) => candidate.data.tags?.includes(tag))
+      ),
     ].map((entry) => entry.data.slug)
   )
 )

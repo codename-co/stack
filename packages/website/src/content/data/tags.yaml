@@ -240,3 +240,5 @@ tags:
     name: ETL
   - slug: testing
     name: Testing
+  - slug: blog
+    name: Blog

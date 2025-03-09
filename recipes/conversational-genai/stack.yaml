@@ -22,7 +22,7 @@ dependencies:
   - name: searxng
     role: A search engine to find information.
   - name: dify
-    role: A text diff tool to compare the generated text.
+    role: Workflow & AI agent builder.
   - name: litellm
     role: A proxy server to the LLM endpoints.
   - name: LLM

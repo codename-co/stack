@@ -33,6 +33,11 @@ icons = [
     hex: "#8427e0",
   },
   {
+    slug: "dify",
+    svg: /* svg */ `<svg role="img" viewBox="0 0 24 24" stroke="currentcolor" xmlns="http://www.w3.org/2000/svg"><title>Dify</title><clipPath id="lobe-icons-dify-fill"><path d="M1 0h10.286c6.627 0 12 5.373 12 12s-5.373 12-12 12H1V0z"></path></clipPath><foreignObject clip-path="url(#lobe-icons-dify-fill)" height="24" style="background:conic-gradient(from 180deg at 50% 50%, currentColor, #FFFFFF66)" width="24"></foreignObject></svg>`,
+    hex: "#155aef",
+  },
+  {
     slug: "huginn",
     svg: /* svg */ `<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 	<circle fill="#ffb74d" cx="256" cy="256" r="256"/>
