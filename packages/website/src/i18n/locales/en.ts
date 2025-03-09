@@ -1,5 +1,7 @@
 export const en = [
   /** Generic */
+  "Stack",
+  "Stacks",
   "Download",
   "Recipes",
   "Catalog",

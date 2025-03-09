@@ -1,14 +1,14 @@
 import * as localesIndex from "./locales/index";
 
 export const languages = {
-  en: "English",
   de: "Deutsch",
+  en: "English",
   es: "Español",
   fr: "Français",
   it: "Italiano",
+  nl: "Nederlands",
   pt: "Português",
   ro: "Română",
-  nl: "Nederlands",
   tr: "Türkçe",
   ar: "العربية",
   uk: "Українська",

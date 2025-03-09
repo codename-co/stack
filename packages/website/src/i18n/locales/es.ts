@@ -2,6 +2,8 @@ import type { I18n } from "~/i18n/locales";
 
 export const es: I18n = {
   /** Generic */
+  Stack: "Stack",
+  Stacks: "Stacks",
   Download: "Descargar",
   Recipes: "Recetas",
   Catalog: "Catálogo",

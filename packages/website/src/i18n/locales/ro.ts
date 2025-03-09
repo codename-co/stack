@@ -2,6 +2,8 @@ import type { I18n } from "~/i18n/locales";
 
 export const ro: Partial<I18n> = {
   /** Generic */
+  Stack: "Stack",
+  Stacks: "Stacks",
   Download: "Descarca",
   Recipes: "Retete",
   Catalog: "Catalog",

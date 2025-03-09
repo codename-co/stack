@@ -2,6 +2,8 @@ import type { I18n } from "~/i18n/locales";
 
 export const ko: I18n = {
   /** Generic */
+  Stack: "Stack",
+  Stacks: "Stacks",
   Download: "다운로드",
   Recipes: "레시피",
   Catalog: "카탈로그",

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import { iconOf } from "~helpers/icon";
 
 export const DarkModeSwitcher: React.FC<{ children?: any }> = ({

@@ -2,6 +2,8 @@ import type { I18n } from "~/i18n/locales";
 
 export const zh: I18n = {
   /** Generic */
+  Stack: "Stack",
+  Stacks: "Stacks",
   Download: "下载",
   Recipes: "食谱",
   Catalog: "软件目录",
