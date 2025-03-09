@@ -169,7 +169,7 @@ configs:
                 #Cross-Origin-Embedder-Policy: "unsafe-none"
                 #Cross-Origin-Opener-Policy: "same-origin"
                 #Cross-Origin-Resource-Policy: "same-site"
-                X-Frames-Options: "" # Deactivate X-Frame-Options
+                X-Frame-Options: "" # Deactivate X-Frame-Options
                 Content-Security-Policy: "" # Deactivate CSP
               sslProxyHeaders:
                 X-Forwarded-Proto: "https"
