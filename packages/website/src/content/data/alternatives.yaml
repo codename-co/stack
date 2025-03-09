@@ -162,6 +162,9 @@ alternatives:
   - slug: inoreader
     name: Inoreader
     description: RSS news aggregator
+  - slug: insomnia
+    name: Insomnia
+    description: API development platform
   - slug: invision
     name: InVision
     description: Design collaboration tool

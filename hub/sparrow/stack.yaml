@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: sparrow
+name: Sparrow
+icon: Ⓢ
+flavor: DockerCompose
+version: "1"
+updated_at: 2025-02-17
+description: Next-gen API testing
+author: Techdome
+license: AGPL-3.0
+homepage: https://sparrowapp.dev
+repository: https://github.com/sparrowapp-dev/sparrow-app
+stars: 450
+tags: [api, testing]
+alternativeTo: [postman, insomnia]
+readme: |
+
+  Sparrow is your next go-to API development buddy which can help you test, debug, and distribute better APIs while collaborating with your colleagues and making you a better programmer.
+
+  ![preview](https://sparrowapp.dev/_app/immutable/assets/hero-main.c7797ed4.png)
+
+  <hr>
+
+  ### Features
+
+  - **API Testing**: Test your APIs with ease: REST, WebSocket, Socket.IO, or GraphQL.
+  - **Test Flows**: Run multiple endpoint tests simultaneously for comprehensive insight.
+  - **Workspaces**: Collaborate effortlessly with organized workspaces, keeping projects and collections accessible and structured for your whole team.
+  - **Transform Your API Workflow**: Sparrow equips your team with everything needed for seamless API testing, from precise request handling to efficient collaboration and automated test flows.

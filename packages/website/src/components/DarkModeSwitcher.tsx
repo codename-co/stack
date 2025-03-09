@@ -2,7 +2,9 @@
 import { useState, useEffect } from "react";
 import { iconOf } from "~helpers/icon";
 
-export const DarkModeSwitcher: React.FC = () => {
+export const DarkModeSwitcher: React.FC<{ children?: any }> = ({
+  children,
+}) => {
   const [activeTheme, setActiveTheme] = useState<string>("system");
 
   useEffect(() => {
@@ -47,7 +49,9 @@ export const DarkModeSwitcher: React.FC = () => {
     }
   };
 
-  const switchTheme = () => {
+  const switchTheme = (e: MouseEvent) => {
+    e.preventDefault();
+
     if (activeTheme === "light") {
       handleThemeChange("dark");
     } else {
@@ -57,7 +61,7 @@ export const DarkModeSwitcher: React.FC = () => {
 
   const applySystemTheme = () => {
     const systemPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
+      "(prefers-color-scheme: dark)"
     ).matches;
     if (systemPrefersDark) {
       document.documentElement.classList.add("dark");
@@ -67,10 +71,9 @@ export const DarkModeSwitcher: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center text-lg">
-      <button onClick={() => switchTheme()}>
-        {activeTheme === "light" ? "☼" : "☾"}
-      </button>
-    </div>
+    <a href="" onClick={(e) => switchTheme(e)}>
+      {activeTheme === "light" ? "☼" : "☾"}
+      {children}
+    </a>
   );
 };

@@ -234,3 +234,9 @@ tags:
     title: Questions & Answers
   - slug: container
     name: Container
+  - slug: data-pipeline
+    name: Data pipeline
+  - slug: etl
+    name: ETL
+  - slug: testing
+    name: Testing

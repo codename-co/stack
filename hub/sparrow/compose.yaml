@@ -1,0 +1,59 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  sparrow-web:
+    image: sparrowapi/sparrow-web:v${SPARROW_VERSION:-1}
+    depends_on:
+      - sparrow-proxy
+      - sparrow-api
+      - sparrow-auth
+      - mongo
+      - kafka
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.sparrow-web.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.sparrow-web.loadbalancer.server.port: 80
+
+  sparrow-auth:
+    image: sparrowapi/sparrow-auth:v${SPARROW_VERSION:-1}
+    depends_on:
+      - sparrow-api
+      - mongo
+      - kafka
+    env_file: .env
+    labels:
+      traefik.http.routers.sparrow-auth.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/auth`)
+      traefik.http.services.sparrow-auth.loadbalancer.server.port: 3000
+
+  sparrow-proxy:
+    image: sparrowapi/sparrow-proxy-service:v${SPARROW_VERSION:-1}
+    platform: linux/amd64
+    labels:
+      traefik.http.routers.sparrow-proxy.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/proxy`)
+      traefik.http.services.sparrow-proxy.loadbalancer.server.port: 3000
+
+  sparrow-api:
+    image: sparrowapi/sparrow-api:v${SPARROW_VERSION:-1}
+    depends_on:
+      - mongo
+      - kafka
+    env_file: .env
+    labels:
+      traefik.http.routers.sparrow-api.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/api`)
+      traefik.http.services.sparrow-api.loadbalancer.server.port: 9000
+
+  mongo:
+    image: mongo:7.0
+    env_file: .env
+
+  kafka:
+    image: bitnami/kafka:3.4.1
+    hostname: kafka
+    volumes:
+      - kafka_data:/bitnami
+    env_file: .env
+
+volumes:
+  kafka_data:
+    driver: local
