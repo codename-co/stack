@@ -16,3 +16,5 @@ tags: [search-engine]
 alternativeTo: [google, duckduckgo]
 readme: |
   Privacy-respecting, hackable metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.
+
+  ![preview](https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/SearXNG_Homepage_Screenshot.png/1200px-SearXNG_Homepage_Screenshot.png)

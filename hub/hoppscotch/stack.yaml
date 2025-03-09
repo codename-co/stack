@@ -14,8 +14,10 @@ repository: https://github.com/hoppscotch/hoppscotch
 stars: 68496
 tags:
   - api
+  - testing
 alternativeTo:
   - postman
+  - insomnia
 readme: |
   Hoppscotch is a lightweight, web-based API development suite.
 

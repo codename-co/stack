@@ -4,10 +4,7 @@
 services:
   openwebui:
     image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.5.20}
-    pull_policy: always
     env_file: .env
-    # ports:
-    #   - :8080
     volumes:
       - open-webui:/app/backend/data:rw
       # - ./static/favicon.png:/app/build/static/favicon.png:ro
@@ -37,9 +34,6 @@ services:
 
   openwebui-searxng:
     image: searxng/searxng
-    # container_name: searxng
-    # ports:
-    #   - :8080
     configs:
       - source: searxng-limiter.toml
         target: /etc/searxng/searxng-limiter.toml
@@ -50,20 +44,16 @@ services:
     restart: unless-stopped
     labels:
       dash.name: SearxNG
-      # dash.icon: searxng
       dash.desc: Internet metasearch engine
-      dash.url: http://searxng.$PROJECT.$DOMAIN
-      traefik.http.routers.openwebui-searxng.rule: Host(`searxng.$PROJECT.$DOMAIN`)
+      dash.url: https://$PROJECT-searxng.$DOMAIN
+      traefik.http.routers.openwebui-searxng.rule: Host(`$PROJECT-searxng.$DOMAIN`)
       traefik.http.services.openwebui-searxng.loadbalancer.server.port: 8080
     networks:
       - internet
     stop_grace_period: 0s
 
   openwebui-pipelines:
-    # docker run --add-host=host.docker.internal:host-gateway
     image: ghcr.io/open-webui/pipelines:main-minimum
-    # ports:
-    #   - :9099
     volumes:
       - pipelines:/app/pipelines:rw
     restart: unless-stopped
@@ -71,8 +61,8 @@ services:
       dash.name: Pipelines
       dash.icon: pipelines
       dash.desc: AI Pipelines
-      dash.url: http://pipelines.$PROJECT.$DOMAIN
-      traefik.http.routers.openwebui-pipelines.rule: Host(`pipelines.$PROJECT.$DOMAIN`)
+      dash.url: https://$PROJECT-pipelines.$DOMAIN
+      traefik.http.routers.openwebui-pipelines.rule: Host(`$PROJECT-pipelines.$DOMAIN`)
       traefik.http.services.openwebui-pipelines.loadbalancer.server.port: 9099
     extra_hosts:
       - host.docker.internal:host-gateway

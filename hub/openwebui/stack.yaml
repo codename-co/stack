@@ -20,21 +20,16 @@ tags:
 alternativeTo:
   - chatgpt
   - perplexity
-readme: >
+readme: |
   An extensible, feature-rich, and user-friendly self-hosted WebUI designed to
   operate entirely offline. It supports various LLM runners, including Ollama
   and OpenAI-compatible APIs.
 
-
-  ![Open WebUI
-  Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
-
+  ![Open WebUI Demo](https://github.com/open-webui/open-webui/blob/main/demo.gif?raw=true)
 
   <hr>
 
-
   ### Features
-
 
   - 🚀 **Effortless Setup**: Install seamlessly using Docker or Kubernetes
   (kubectl, kustomize or helm) for a hassle-free experience with support for
