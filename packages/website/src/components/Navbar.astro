@@ -1,8 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations, useUrl } from "~/i18n";
-import LanguagePicker from "./LanguagePicker.astro";
-import { DarkModeSwitcher } from "./DarkModeSwitcher";
-import { iconOf } from "~helpers";
+import { LanguagePicker } from "./LanguagePicker";
 
 const currentLang = getLangFromUrl(Astro.url);
 
@@ -25,25 +23,19 @@ const url = useUrl(currentLang);
     </a>
 
     <div class="hidden gap-6 font-medium sm:flex">
-      <a href={url("/download")}>{t("Download")}</a>
-      <a href={url("/#search")}>{t("Catalog")}</a>
+      <!-- <a href={url("/download")}>
+        <span title={t("Download")}> ↓ </span>
+      </a> -->
+      <!-- <a href={url("/#search")}>
+        <span title={t("Search")}> 🔍 </span>
+      </a> -->
+      <a href={url("/alternativesto")}>{t("Catalog")}</a>
       <a href={url("/recipes")}>{t("Recipes")}</a>
       <!-- <a href={"/graph"}> 👓 </a> -->
     </div>
   </div>
 
   <div class="h-10 grid grid-flow-col text-base gap-2">
-    <DarkModeSwitcher client:only="react" />
-
-    <a
-      href="https://github.com/codename-co/stack"
-      class="flex items-center hover:text-gray-600 px-4 py-3"
-      target="_blank"
-      rel="noopener noreferrer"
-      title="GitHub"
-      set:html={iconOf("github")?.svg}
-    />
-
-    <LanguagePicker />
+    <LanguagePicker client:only="react" currentUrl={Astro.url} />
   </div>
 </nav>

@@ -20,7 +20,7 @@ dependencies:
   - name: directus
     role: A headless CMS to manage the status pages, users, and notifications.
   - name: traefik
-    role: A reverse proxy to expose the services on a subdomain.
+    role: A reverse proxy to expose the services on a custom domain.
   - name: redis
     role: A cache to store for Directus.
   - name: SQLite
@@ -34,6 +34,8 @@ dependencies:
     role: An API to interact with the status monitoring system.
     custom: true
 readme: |
+
+  ![preview](https://user-images.githubusercontent.com/1336778/212262296-e6205815-ad62-488c-83ec-a5b0d0689f7c.jpg)
 
   ### Use case
 
@@ -55,6 +57,8 @@ i18n:
     name: Système de surveillance de services web
     description: Système complet de surveillance et de monitoring de l'état de vos services web, avec tableaux de bord et notifications.
     readme: |
+
+      ![preview](https://user-images.githubusercontent.com/1336778/212262296-e6205815-ad62-488c-83ec-a5b0d0689f7c.jpg)
 
       ### Cas d'usage
 

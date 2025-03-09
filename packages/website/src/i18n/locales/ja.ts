@@ -88,6 +88,8 @@ export const ja: I18n = {
   Recipe: "レシピ",
   "*Curated Recipes* of powerful stack combinations.":
     "強力なスタックの組み合わせの*キュレーションされたレシピ*。",
+  "Recipes are curated stack combinations. Each recipe is a collection of stacks that work well together.":
+    "レシピはキュレーションされたスタックの組み合わせです。各レシピは、うまく機能するスタックのコレクショ ンです。",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*レシピ*：{name}",

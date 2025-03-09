@@ -85,6 +85,8 @@ export const ar: I18n = {
   Recipe: "وصفة",
   "*Curated Recipes* of powerful stack combinations.":
     "*وصفات مرتبة* من تراكيب الكومة القوية.",
+  "Recipes are curated stack combinations. Each recipe is a collection of stacks that work well together.":
+    "الوصفات هي تراكيب الكومة المرتبة. كل وصفة هي مجموعة من الكومات التي تعمل بشكل جيد معًا.",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*وصفة*: {name}",

@@ -37,8 +37,14 @@ recipes.forEach((recipe) => {
 <Layout lang={lang} title={title}>
   <div slot="left" class="section">
     <div class="container">
-      <span class="suptitle">{t("Recipes")}</span>
+      <!-- <span class="suptitle">{t("Recipes")}</span> -->
       <h1 set:html={t("*Curated Recipes* of powerful stack combinations.")} />
+      <p
+        class="subtle mb-8"
+        set:html={t(
+          "Recipes are curated stack combinations. Each recipe is a collection of stacks that work well together."
+        )}
+      />
     </div>
   </div>
 

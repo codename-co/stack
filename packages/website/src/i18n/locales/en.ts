@@ -69,6 +69,7 @@ export const en = [
   /** Page /recipes */
   "Recipe",
   "*Curated Recipes* of powerful stack combinations.",
+  "Recipes are curated stack combinations. Each recipe is a collection of stacks that work well together.",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}",

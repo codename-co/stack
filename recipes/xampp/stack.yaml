@@ -24,8 +24,30 @@ dependencies:
   - name: Perl
     role: Server-side scripting language
     custom: true
+readme: |
+
+  ### Use case
+
+  Develop and serve web applications using a cross-platform environment with Apache, MariaDB, and PHP/Perl.
+
+  ### Features
+
+  - **Apache**: A powerful web server to host your web applications.
+  - **MariaDB**: A relational database to store and manage your data.
+  - **PHP/Perl**: Server-side scripting languages to write dynamic web applications.
 
 i18n:
   fr:
     name: Stack XAMPP
     description: Environnement de développement multiplateforme avec serveur web Apache, base de données MariaDB, et langages de script PHP/Perl.
+    readme: |
+
+      ### Cas d'usage
+
+      Développez et servez des applications web en utilisant un environnement multiplateforme avec Apache, MariaDB, et PHP/Perl.
+
+      ### Fonctionnalités
+
+      - **Apache**: Un serveur web puissant pour héberger vos applications web.
+      - **MariaDB**: Une base de données relationnelle pour stocker et gérer vos données.
+      - **PHP/Perl**: Langages de script côté serveur pour écrire des applications web dynamiques.

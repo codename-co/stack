@@ -82,6 +82,8 @@ export const zh: I18n = {
   Recipe: "食谱",
   "*Curated Recipes* of powerful stack combinations.":
     "*精选食谱*，强大的堆栈组合。",
+  "Recipes are curated stack combinations. Each recipe is a collection of stacks that work well together.":
+    "食谱是经过精心挑选的堆栈组合。每个食谱都是一组能够很好地配合使用的堆栈。",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*食谱*：{name}",

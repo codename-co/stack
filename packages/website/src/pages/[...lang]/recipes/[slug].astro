@@ -53,6 +53,7 @@ const {
   name,
   description,
   // version,
+  icon,
   updated_at,
   tags: _tags,
   readme,
@@ -67,7 +68,7 @@ const {
 } = recipe;
 
 const associatedStacks =
-  recipe.dependencies?.map(({ name, icon, role, custom }) => ({
+  dependencies?.map(({ name, icon, role, custom }) => ({
     custom,
     role,
     ...(custom && {
@@ -143,6 +144,16 @@ const similar = Array.from(
       <div
         class="sticky top-12 flex flex-col lg:flex-row 2xl:flex-col justify-between items-start"
       >
+        <span
+          class="absolute right-0 opacity-10 pointer-events-none user-select-none mt-1 2xl:top-4 2xl:left-0"
+          style={{
+            zoom: 16,
+            zIndex: -1,
+          }}
+        >
+          <Logo slug={slug} icon={icon} />
+        </span>
+
         <div>
           <h1
             transition:name={`title-${name}`}
@@ -255,16 +266,7 @@ const similar = Array.from(
       <table class="border-separate border-spacing-4 -mx-4">
         {
           associatedStacks?.map(
-            ({
-              custom,
-              name,
-              description,
-              slug,
-              icon,
-              stars,
-              license,
-              role,
-            }) => (
+            ({ custom, name, slug, stars, license, role }) => (
               <tr class="mb-4 gap-4 border-spacing-4">
                 <td class="flex items-center gap-4 w-full  border-spacing-4">
                   <h4>

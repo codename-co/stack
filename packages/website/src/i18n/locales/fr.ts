@@ -89,6 +89,8 @@ export const fr: I18n = {
   Recipe: "Recette",
   "*Curated Recipes* of powerful stack combinations.":
     "*Compositions de stacks* prêtes à déguster.",
+  "Recipes are curated stack combinations. Each recipe is a collection of stacks that work well together.":
+    "Les recettes sont des combinaisons de stacks prêtes à l'emploi. Chaque recette est une collection de stacks qui fonctionnent bien ensemble.",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*Recette*&nbsp;: {name}",

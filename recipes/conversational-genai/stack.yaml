@@ -18,7 +18,7 @@ dependencies:
   - name: openwebui
     role: A web interface to interact with the AI models.
   - name: ollama
-    role: A generative AI model to generate text.
+    role: Local language models for text generation.
   - name: searxng
     role: A search engine to find information.
   - name: dify

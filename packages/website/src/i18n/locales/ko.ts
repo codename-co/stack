@@ -86,6 +86,8 @@ export const ko: I18n = {
   Recipe: "레시피",
   "*Curated Recipes* of powerful stack combinations.":
     "강력한 스택 조합의 *선별된 레시피*.",
+  "Recipes are curated stack combinations. Each recipe is a collection of stacks that work well together.":
+    "레시피는 선별된 스택 조합입니다. 각 레시피는 서로 잘 작동하는 스택의 모음입니다.",
 
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*레시피*: {name}",

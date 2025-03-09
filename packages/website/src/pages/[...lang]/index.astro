@@ -379,7 +379,7 @@ const description = t(
         search.value = q;
         handleSearch(undefined, q);
       }
-      search.addEventListener("input", (e) => {
+      globalThis.search?.addEventListener("input", (e) => {
         handleSearch(e, search.value);
       });
     };

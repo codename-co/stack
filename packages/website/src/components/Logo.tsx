@@ -16,18 +16,18 @@ const Logo: React.FC<LogoProps> = ({ slug, className, icon, style }) => {
   if (!slug && !icon) return null;
 
   const alternative = alternatives.find(
-    (alternative) => alternative.data.slug === slug,
+    (alternative) => alternative.data.slug === slug
   );
   const stack = stacks.find((stack) => stack.data.slug === slug);
 
   const name = alternative?.data.name ?? stack?.data.name;
   const ic = alternative?.data.icon ?? stack?.data.icon;
-  const _icon = iconOf(ic) ?? iconOf(slug);
+  const _icon = iconOf(ic) ?? iconOf(slug) ?? iconOf(icon);
 
   return (
     <span
       title={name}
-      dangerouslySetInnerHTML={{ __html: icon ?? _icon?.svg ?? ic ?? "" }}
+      dangerouslySetInnerHTML={{ __html: _icon?.svg ?? icon ?? ic ?? "" }}
       className={`${className} dark:!text-white`}
       style={{ color: _icon?.hex, ...style }}
     />

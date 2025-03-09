@@ -1,12 +1,22 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import { Debug } from "~/components/Debug";
-import Footer from "~/components/footer.html";
 import Navbar from "~/components/Navbar.astro";
-import { langs, languages, textDirection } from "~/i18n";
+import {
+  langs,
+  languages,
+  textDirection,
+  useTranslations,
+  useUrl,
+} from "~/i18n";
 import "/public/global.css";
+import Logo from "~components/Logo";
+import { DarkModeSwitcher } from "~components/DarkModeSwitcher";
 
 const { lang = "en", title, description, leftTransition } = Astro.props;
+
+const t = useTranslations(lang);
+const url = useUrl(lang);
 ---
 
 <html lang={lang} dir={textDirection(lang)}>
@@ -70,9 +80,55 @@ const { lang = "en", title, description, leftTransition } = Astro.props;
           style="opacity: 20%; user-select: none; pointer-events: none;"
         />
       </center> -->
-      <Footer transition:persist>
-        <span slot="year">{new Date().getFullYear()}</span>
-      </Footer>
+      <footer id="footer" class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column flex flex-col">
+              <a href={url("/")}>
+                <h3 class="flex mt-0">
+                  <img
+                    src="/128x128.png"
+                    alt=""
+                    width="32"
+                    height="32"
+                    class="mr-2"
+                  />
+                  <span
+                    class="font-semibold text-xl tracking-tight text-black dark:text-white"
+                  >
+                    Stack
+                  </span>
+                </h3>
+              </a>
+              <small class="subtle">
+                © {new Date().getFullYear()} Codename
+              </small>
+            </div>
+            <nav class="column flex flex-col gap-2">
+              <h4>{t("Stack")}</h4>
+              <a href={url("/")}>{t("Stacks")}</a>
+              <a href={url("/alternativesto")}>{t("Catalog")}</a>
+              <a href={url("/recipes")}>{t("Recipes")}</a>
+            </nav>
+            <nav class="column flex flex-col gap-2">
+              <h4>{t("Stack.lol")}</h4>
+              <a
+                href="https://github.com/codename-co/stack"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+              >
+                <Logo slug="github" /> GitHub
+              </a>
+              <div>
+                <DarkModeSwitcher client:only="react">
+                  Dark mode
+                </DarkModeSwitcher>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </footer>
     </main>
 
     <script>
