@@ -111,7 +111,7 @@ const url = useUrl(lang);
               <a href={url("/recipes")}>{t("Recipes")}</a>
             </nav>
             <nav class="column flex flex-col gap-2">
-              <h4>{t("Stack.lol")}</h4>
+              <h4>Stack.lol</h4>
               <a
                 href="https://github.com/codename-co/stack"
                 target="_blank"
@@ -119,6 +119,9 @@ const url = useUrl(lang);
                 title="GitHub"
               >
                 <Logo slug="github" /> GitHub
+              </a>
+              <a href={url("/rss")} rel="noopener noreferrer">
+                <Logo slug="rss" /> RSS feed
               </a>
               <div>
                 <DarkModeSwitcher client:only="react">
