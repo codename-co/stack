@@ -74,6 +74,26 @@ icons = [
     hex: "#000000",
   },
   {
+    slug: "quay",
+    svg: /* svg */ `
+      <svg role="img" xmlns:svg="http://www.w3.org/2000/svg" viewBox="4 4 32 32">
+        <defs>
+          <mask id="logo-mask">
+            <polygon points="59.608,49.99 74.668,81.859 61.838,81.859 46.789,49.99 61.838,18.14 74.668,18.14" fill="#FFFD" />
+            <polygon points="74.668,81.859 89.718,49.99 74.668,18.14 68.258,31.7 76.898,49.99 68.258,68.291" fill="#FFFA" />
+            <polygon points="33.239,49.99 48.299,81.859 35.469,81.859 20.419,49.99 35.469,18.14 48.299,18.14" fill="#FFFD" />
+            <polygon points="48.659,46.04 55.069,32.47 48.299,18.14 41.879,31.71" fill="#FFFA" />
+            <polygon points="41.879,68.291 48.299,81.859 55.069,67.529 48.659,53.961" fill="#FFFA" />
+          </mask>
+        </defs>
+        <g transform="matrix(0.39457959,0,0,0.39457959,1.0823681,0.10489944)" mask="url(#logo-mask)">
+        <circle r="50" cy="50" cx="55.069" />
+        </g>
+      </svg>
+    `,
+    hex: "#D71E00",
+  },
+  {
     slug: "souin",
     svg: /* svg */ `<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="10 10 80 80"><path d="M34.79 77.89Q90 70 50 50T65.21 22.11" fill="none" stroke="currentcolor" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M28.85 78.74 36.21 73.64l-1.42 4.25 2.55 3.67z" fill="currentcolor" stroke="currentcolor" stroke-width="8" stroke-miterlimit="10" pointer-events="all"></path><path d="M71.15 21.26 63.79 26.36 65.21 22.11l-2.55-3.67z" fill="currentcolor" stroke="currentcolor" stroke-width="8" stroke-miterlimit="10"></path></svg>`,
     hex: "#000000",

@@ -80,6 +80,10 @@ alternatives:
   - slug: discord
     name: Discord
     description: Chat platform
+  - slug: dockerhub
+    name: Docker Hub
+    icon: docker
+    description: Container registry
   - slug: dropbox
     name: Dropbox
     description: File hosting service

@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: quay
+name: Quay
+flavor: DockerCompose
+version: "3.13.4"
+updated_at: 2025-03-04
+description: Applications and containers Registry
+author: Red Hat
+license: Apache-2.0
+homepage: https://quay.io
+repository: https://github.com/quay/quay
+stars: 2600
+tags: [container, registry, security]
+alternativeTo: [dockerhub, jfrog-artifactory]
+readme: |
+
+  Project Quay builds, stores, and distributes your container images.
+
+  ### Features
+
+  - **Store your containers securely**:
+    Ensure your apps are stored privately, with access that you control. Quay is teamwork optimized, with powerful access controls.
+  - **Build & deploy new containers easily**:
+    Use Quay to automate your container builds, with integration to GitHub, Bitbucket, and more. Robot accounts allow you to lock down automated access and audit each deployment.
+  - **Automatic Security Scanning**:
+    Quay continually scans your containers for vulnerabilities, giving you complete visibility into known issues and how to fix them.

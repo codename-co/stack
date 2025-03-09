@@ -1,0 +1,206 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  quay:
+    image: quay.io/projectquay/quay:${QUAY_VERSION:-3.13.4}
+    user: ${DOCKER_USER:-nobody:0}
+    volumes:
+      - registry:/quay-registry
+    configs:
+      - source: quay-config.yaml
+        target: /quay-registry/conf/stack/config.yaml
+    environment:
+      QUAY_VERSION: local-dev
+      QUAY_HOTRELOAD: "true"
+      DEBUGLOG: "true"
+      IGNORE_VALIDATION: "true"
+      QUAYRUN: /tmp
+      WORKER_COUNT_UNSUPPORTED_MINIMUM: "1"
+      WORKER_COUNT: "1"
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.quay.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.quay.loadbalancer.server.port: 8080
+
+  quay-db:
+    image: postgres:12.1
+    user: postgres
+    environment:
+      POSTGRES_USER: ${QUAY_DB_USER}
+      POSTGRES_PASSWORD: ${QUAY_DB_PASSWORD}
+      POSTGRES_DB: ${QUAY_DB_NAME:-quay}
+    volumes:
+      - quay-db-data:/var/lib/postgresql/data
+    configs:
+      - source: pg_bootstrap.sql
+        target: /docker-entrypoint-initdb.d/pg_bootstrap.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quay -d quay"]
+      interval: 10s
+      timeout: 9s
+      retries: 3
+      start_period: 10s
+
+  clair-db:
+    image: postgres:12.1
+    user: postgres
+    command: -c 'max_connections=300'
+    environment:
+      POSTGRES_USER: ${CLAIR_DB_USER}
+      POSTGRES_DB: ${CLAIR_DB_NAME:-clair}
+    volumes:
+      - clair-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clair -d clair"]
+      interval: 10s
+      timeout: 9s
+      retries: 3
+      start_period: 10s
+    cpus: 2
+
+  quay-redis:
+    image: redis:latest
+    user: nobody
+
+  # clair is configured to share its network namespace with quay.
+  # this allows quay to serve layers to clair over localhost.
+  clair:
+    image: quay.io/projectquay/clair:4.7.2
+    user: ${DOCKER_USER:-nobody:0}
+    configs:
+      - source: clair-config.yaml
+        target: /src/clair/config.yaml
+    environment:
+      CLAIR_CONF: "/src/clair/config.yaml"
+      CLAIR_MODE: "combo"
+    network_mode: "service:quay"
+    cpus: 2
+    command: ["bash", "-c", "cd /src/clair/cmd/clair; go run -mod vendor ."]
+
+configs:
+  pg_bootstrap.sql:
+    content: |
+      CREATE EXTENSION pg_trgm;
+
+  quay-config.yaml:
+    content: |
+      SUPER_USERS:
+      - admin
+      - user1
+      AUTHENTICATION_TYPE: Database
+      BITTORRENT_FILENAME_PEPPER: 0ee18f90-5b6d-42d2-ab5e-ec9fcd846272
+      BUILDLOGS_REDIS:
+        host: quay-redis
+        port: 6379
+      DB_URI: postgresql://$QUAY_DB_USER:$QUAY_DB_PASSWORD@quay-db/$QUAY_DB_NAME
+      DATABASE_SECRET_KEY: '30060361640793187613697366923211113205676925445650250274752125083971638376224'
+      DEFAULT_TAG_EXPIRATION: 2w
+      DISTRIBUTED_STORAGE_CONFIG:
+        default:
+        - LocalStorage
+        - storage_path: /datastorage/registry
+      DISTRIBUTED_STORAGE_DEFAULT_LOCATIONS: []
+      DISTRIBUTED_STORAGE_PREFERENCE:
+      - default
+      ENTERPRISE_LOGO_URL: /static/img/quay-horizontal-color.svg
+      EXTERNAL_TLS_TERMINATION: true
+      FEATURE_ANONYMOUS_ACCESS: true
+      FEATURE_APP_REGISTRY: false
+      FEATURE_APP_SPECIFIC_TOKENS: true
+      FEATURE_BUILD_SUPPORT: false
+      FEATURE_CHANGE_TAG_EXPIRATION: true
+      FEATURE_DIRECT_LOGIN: true
+      FEATURE_GARBAGE_COLLECTION: false
+      FEATURE_MAILING: false
+      FEATURE_PARTIAL_USER_AUTOCOMPLETE: true
+      FEATURE_REPO_MIRROR: false
+      FEATURE_REQUIRE_TEAM_INVITE: true
+      FEATURE_RESTRICTED_V1_PUSH: false
+      FEATURE_SECURITY_NOTIFICATIONS: false
+      FEATURE_SECURITY_SCANNER: true
+      FEATURE_USERNAME_CONFIRMATION: true
+      FEATURE_USER_CREATION: true
+      FEATURE_USER_LOG_ACCESS: false
+      FEATURE_PROXY_CACHE: true
+      GITHUB_LOGIN_CONFIG: {}
+      GITHUB_TRIGGER_CONFIG: {}
+      GITLAB_TRIGGER_KIND: {}
+      LOG_ARCHIVE_LOCATION: default
+      MAIL_DEFAULT_SENDER: admin@example.com
+      MAIL_PORT: 587
+      MAIL_USE_TLS: true
+      PREFERRED_URL_SCHEME: http
+      REGISTRY_TITLE: Red Hat Quay
+      REGISTRY_TITLE_SHORT: Red Hat Quay
+      REPO_MIRROR_SERVER_HOSTNAME: null
+      REPO_MIRROR_TLS_VERIFY: false
+      SECURITY_SCANNER_V4_ENDPOINT: http://localhost:6000
+      SECURITY_SCANNER_V4_NAMESPACE_WHITELIST:
+        - "clairv4-org"
+      SECURITY_SCANNER_ISSUER_NAME: security_scanner
+      SERVER_HOSTNAME: localhost:8080
+      SETUP_COMPLETE: true
+      SIGNING_ENGINE: gpg2
+      TAG_EXPIRATION_OPTIONS:
+      - 0s
+      - 1d
+      - 1w
+      - 2w
+      - 4w
+      TEAM_RESYNC_STALE_TIME: 60m
+      TESTING: false
+      USERFILES_LOCATION: default
+      USERFILES_PATH: userfiles/
+      USER_EVENTS_REDIS:
+        host: quay-redis
+        port: 6379
+      USE_CDN: false
+      FEATURE_QUOTA_MANAGEMENT: false
+      BROWSER_API_CALLS_XHR_ONLY: False
+      CORS_ORIGIN:
+        - "https://$PROJECT.$DOMAIN"
+        - "http://localhost:9000""
+      FEATURE_UI_V2: True
+      FEATURE_USER_METADATA: True
+      #RHSSO_LOGIN_CONFIG:
+      #  CLIENT_ID: stage.quay.io
+      #  CLIENT_SECRET: SECRET
+      #  OIDC_SERVER: https://sso.stage.redhat.com/auth/realms/redhat-external/
+      #  SERVICE_NAME: Red Hat
+      #  SERVICE_ICON: /static/img/RedHat.svg
+      #  VERIFIED_EMAIL_CLAIM_NAME: email
+      #  PREFERRED_USERNAME_CLAIM_NAME: preferred_username
+      #  LOGIN_SCOPES: ['openid']
+
+  clair-config.yaml:
+    content: |
+      ---
+      log_level: debug-color
+      introspection_addr: ""
+      http_listen_addr: ":6000"
+      updaters: {}
+      indexer:
+        connstring: host=clair-db port=5432 user=$CLAIR_DB_USER dbname=$CLAIR_DB_NAME sslmode=disable
+        scanlock_retry: 10
+        layer_scan_concurrency: 5
+        migrations: true
+      matcher:
+        connstring: host=clair-db port=5432 user=$CLAIR_DB_USER dbname=$CLAIR_DB_NAME sslmode=disable
+        max_conn_pool: 100
+        migrations: true
+      notifier:
+        connstring: host=clair-db port=5432 user=$CLAIR_DB_USER dbname=$CLAIR_DB_NAME sslmode=disable
+        migrations: true
+        delivery_interval: 5s
+        poll_interval: 15s
+        webhook:
+          target: "http://localhost:8080/secscan/notification"
+          callback: "http://localhost:6000/notifier/api/v1/notification"
+      metrics:
+        name: "prometheus"
+
+volumes:
+  quay-db-data:
+  clair-db-data:
+  registry:
