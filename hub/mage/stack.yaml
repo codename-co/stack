@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: mage
+name: Mage
+icon: 🧙
+flavor: DockerCompose
+version: "0.9.75"
+updated_at: 2024-11-28
+description: Data pipelines for integrating and transforming data
+author: Mage Technologies, Inc.
+license: Apache-2.0
+homepage: https://www.mage.ai
+repository: https://github.com/mage-ai/mage-ai
+stars: 8200
+tags: [data, data-pipeline, etl]
+alternativeTo: [airflow, prefect]
+readme: |
+
+  Open-source data pipeline tool for transforming and integrating data. The modern replacement for Airflow. - Integrate and synchronize data from 3rd party sources - Build real-time and batch pipelines to transform data using Python, SQL, and R - Run, monitor, and orchestrate thousands of pipelines without losing sleep.
+
+  <video controls width="100%" muted autoplay loop>
+    <source src="https://framerusercontent.com/assets/Pqoujjhx4mW7D5IkTMZ9Pe9A.mp4">
+    ⚠️ Your browser does not support the video tag.
+  </video>
+
+  <hr>
+
+  ### Features
+
+  Mage is a hybrid framework for transforming and integrating data. It combines the best of both worlds: the flexibility of notebooks with the rigor of modular code.
+
+  - **Extract** and synchronize data from 3rd party sources.
+  - **Transform** data with real-time and batch pipelines using Python, SQL, and R.
+  - **Load** data into your data warehouse or data lake using our pre-built connectors.
+  - **Run**, monitor, and orchestrate thousands of pipelines without losing sleep.

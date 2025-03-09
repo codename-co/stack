@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  mage:
+    image: mageai/mageai:${MAGE_VERSION:-0.9.75}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6789"]
+      interval: 10s
+      timeout: 1s
+      retries: 3
+      start_interval: 1s
+      start_period: 10s
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.mage.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.mage.loadbalancer.server.port: 6789
