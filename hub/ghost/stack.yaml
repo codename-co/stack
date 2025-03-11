@@ -42,3 +42,32 @@ readme: |
     - **APIs**: Connect your tools.
   - **Businesses**: Content marketing you can measure.
     - **Turn clicks into contacts**: Native lead gen & analytics.
+
+i18n:
+  fr:
+    name: Ghost
+    description: CMS headless pour la publication professionnelle
+    readme: |
+      Ghost est le CMS Node.js headless open source le plus populaire qui fonctionne déjà avec tous les outils que vous connaissez et aimez.
+
+      ![preview](https://user-images.githubusercontent.com/1336778/212262296-e6205815-ad62-488c-83ec-a5b0d0689f7c.jpg)
+
+      <hr>
+
+      ### Fonctionnalités
+
+      - **Éditeur**: Un éditeur puissant pour créer et gérer votre contenu.
+        - **Médias riches**: Intégrez des images
+        - **Cartes dynamiques**: Ajoutez des cartes de médias riches à votre contenu.
+      - **Newsletters**: Envoyez des newsletters à votre public.
+        - **Intégré**: Partagez des articles par newsletter.
+        - **Croissance**: Transformez les clics en contacts.
+      - **Audiences**: Gérez vos adhésions.
+        - **Analytiques natives**: Comprendre ce qui fonctionne.
+        - **Offres et promotions**: Attirez de nouveaux abonnés.
+      - **Intégrations**: Fonctionne avec tout.
+        - **Social**: Partagez votre contenu.
+        - **Analytiques**: Comprendre ce qui fonctionne.
+        - **APIs**: Connectez vos outils.
+      - **Entreprises**: Marketing de contenu que vous pouvez mesurer.
+        - **Transformez les clics en contacts**: Génération de leads et analytiques natives.
