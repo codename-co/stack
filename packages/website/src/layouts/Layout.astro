@@ -134,6 +134,14 @@ const url = useUrl(lang);
       </footer>
     </main>
 
+    <script is:inline>
+      // Preserve dark mode on page transitions
+      document.addEventListener("astro:before-swap", (event) => {
+        event.newDocument.getRootNode().children[0].className =
+          globalThis.document.getRootNode().children[0].className;
+      });
+    </script>
+
     <script>
       // If the user preferred language is not english, redirect to the translated page.
       import { languages } from "~i18n/locales";
