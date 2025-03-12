@@ -24,13 +24,19 @@ export default {
   plugins: [
     function ({ addComponents, theme }) {
       addComponents({
+        ":root": {
+          backgroundColor: theme("colors.white"),
+          "&.dark": {
+            backgroundColor: theme("colors.slate.950"),
+          },
+        },
         body: {
           // fontSize: theme("fontSize.xl"),
           // lineHeight: theme("lineHeight.6"),
           overflowX: "hidden",
-          backgroundColor: theme("colors.white"),
+          backgroundColor: "inherit",
           [darkMode]: {
-            backgroundColor: theme("colors.slate.950"),
+            backgroundColor: "inherit",
             color: theme("colors.gray.100"),
           },
         },
