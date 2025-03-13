@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: postgres
+name: PostgreSQL
+icon: postgresql
+flavor: DockerCompose
+version: "17.4"
+updated_at: 2025-03-01
+description: Database Management System
+author: Postgres
+license: PostgreSQL Global Development Group
+homepage: https://www.postgresql.org
+repository: https://github.com/postgres/postgres
+stars: 17000
+tags: [database]
+alternativeTo: [oracle]
+readme: |
+
+  PostgreSQL is an advanced object-relational database management system that supports an extended subset of the SQL standard, including transactions, foreign keys, subqueries, triggers, user-defined types and functions. This distribution also contains C language bindings.
