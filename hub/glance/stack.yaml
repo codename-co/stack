@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: glance
+name: Glance
+icon: Ⓖ
+flavor: DockerCompose
+version: "0.7.5"
+updated_at: 2025-03-12
+description: Self-hosted dashboard
+author: Svilen Markov
+license: AGPL-3.0
+repository: https://github.com/glanceapp/glance
+stars: 12000
+tags: [dashboard]
+alternativeTo: []
+readme: |
+
+  Glance is a self-hosted dashboard that puts all your feeds in one place. It's a simple yet powerful tool that allows you to keep an eye on your favorite websites, social media, and more.
+
+  ![preview](https://github.com/glanceapp/glance/raw/main/docs/images/themes-example.png)
+
+  <hr>
+
+  ### Features
+
+  - 🧩 **Various widgets**: RSS feeds, subreddit posts, Hacker News posts, weather forecasts, YouTube channel uploads, Twitch channels, market prices, Docker containers status, server stats, custom widgets, and many more.
+  - ⚡ **Fast and lightweight**: Low memory usage, few dependencies, minimal vanilla JS, single <20mb binary available for multiple OSs & architectures, and just as small Docker container.
+  - 🔧 **Tons of customizability**: Different layouts, as many pages/tabs as you need, numerous configuration options for each widget, multiple styles for some widgets, custom CSS, optimized for mobile devices.
+  - 💄 **Themeable**: Easily create your own theme by tweaking a few numbers or choose from one of the already available themes.

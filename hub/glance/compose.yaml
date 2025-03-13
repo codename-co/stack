@@ -1,0 +1,120 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  glance:
+    image: glanceapp/glance:v${GLANCE_VERSION:-0.7.4}
+    configs:
+      - source: glance-config
+        target: /app/config/glance.yml
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.glance.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.glance.loadbalancer.server.port: 8080
+
+configs:
+  glance-config:
+    content: |
+      pages:
+        - name: Home
+          # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+          # hide-desktop-navigation: true
+          columns:
+            - size: small
+              widgets:
+                - type: calendar
+                  first-day-of-week: monday
+
+                - type: rss
+                  limit: 10
+                  collapse-after: 3
+                  cache: 12h
+                  feeds:
+                    - url: https://stack.lol/rss
+                      title: stack.lol
+                    - url: https://selfh.st/rss/
+                      title: selfh.st
+                      limit: 4
+
+                - type: twitch-channels
+                  channels:
+                    - theprimeagen
+                    - j_blow
+                    - piratesoftware
+                    - cohhcarnage
+                    - christitustech
+                    - EJ_SA
+
+            - size: full
+              widgets:
+                - type: group
+                  widgets:
+                    - type: hacker-news
+                    - type: lobsters
+
+                - type: videos
+                  channels:
+                    - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
+                    - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+                    - UCsBjURrPoezykLs9EqgamOA # Fireship
+                    - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
+                    - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+
+                - type: group
+                  widgets:
+                    - type: reddit
+                      subreddit: technology
+                      show-thumbnails: true
+                    - type: reddit
+                      subreddit: selfhosted
+                      show-thumbnails: true
+
+            - size: small
+              widgets:
+                - type: weather
+                  location: Paris, France
+                  units: metric # alternatively "imperial"
+                  hour-format: 24h # alternatively "12h"
+                  # Optionally hide the location from being displayed in the widget
+                  # hide-location: true
+
+                - type: markets
+                  # The link to go to when clicking on the symbol in the UI,
+                  # {SYMBOL} will be substituded with the symbol for each market
+                  symbol-link-template: https://www.tradingview.com/symbols/{SYMBOL}/news
+                  markets:
+                    - symbol: SPY
+                      name: S&P 500
+                    - symbol: BTC-USD
+                      name: Bitcoin
+                    - symbol: NVDA
+                      name: NVIDIA
+                    - symbol: AAPL
+                      name: Apple
+                    - symbol: MSFT
+                      name: Microsoft
+
+                - type: releases
+                  cache: 1d
+                  # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+                  # read-only token from your Github account settings and use it here to increase the limit.
+                  # token: ...
+                  repositories:
+                    - codename-co/stack
+                    - codename-co/dash
+                    - glanceapp/glance
+
+        # Add more pages here:
+        # - name: Your page name
+        #   columns:
+        #     - size: small
+        #       widgets:
+        #         # Add widgets here
+
+        #     - size: full
+        #       widgets:
+        #         # Add widgets here
+
+        #     - size: small
+        #       widgets:
+        #         # Add widgets here
