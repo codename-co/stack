@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: homepage
+name: Homepage
+flavor: DockerCompose
+version: "0.10.9"
+updated_at: 2025-01-06
+description: A highly customizable homepage
+author: Homepage Team
+license: GPL-3.0
+homepage: https://gethomepage.dev
+repository: https://github.com/gethomepage/homepage
+stars: 22200
+tags: [dashboard]
+alternativeTo: []
+readme: |
+
+  A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.
+
+  ![preview](https://github.com/gethomepage/homepage/raw/dev/images/1.png?v=2)
+
+  <hr>
+
+  ### Features
+
+  - **Fast**: The site is statically generated at build time for instant load times.
+  - **Secure**: All API requests to backend services are proxied, keeping your API keys hidden. Constantly reviewed for security by the community.
+  - **For Everyone**: Images built for AMD64, ARM64.
+  - **Full i18n**: Support for over 40 languages.
+  - **Service & Web Bookmarks**: Add custom links to the homepage.
+  - **Docker Integration**: Container status and stats. Automatic service discovery via labels.
+  - **Service Integration**: Over 100 service integrations, including popular starr and self-hosted apps.
+  - **Information & Utility Widgets**: Weather, time, date, search, and more.
+  - And much more…

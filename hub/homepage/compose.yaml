@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:v${HOMEPAGE_VERSION:-0.10.9}
+    volumes:
+      - homepage_config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.homepage.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.homepage.loadbalancer.server.port: 3000
+
+volumes:
+  homepage_config:
