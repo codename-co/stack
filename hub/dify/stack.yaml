@@ -18,7 +18,7 @@ tags:
   - rag
   - chatbot
 alternativeTo:
-  - dialogflow-cx
+  - conversational-agents
   - rasa
   - midjourney
 readme: |

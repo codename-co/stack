@@ -40,6 +40,9 @@ export default {
             color: theme("colors.gray.100"),
           },
         },
+        "[hidden]": {
+          display: "none !important",
+        },
         "a[href]": {
           color: theme("colors.slate.500"),
           textDecoration: "none",

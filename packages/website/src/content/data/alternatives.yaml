@@ -73,8 +73,8 @@ alternatives:
   - slug: delinea
     name: Delinea
     description: Privileged Access Management and Identity Security
-  - slug: dialogflow-cx
-    name: Dialogflow CX
+  - slug: conversational-agents
+    name: Conversational Agents
     icon: dialogflow
     description: Conversational AI platform
   - slug: discord

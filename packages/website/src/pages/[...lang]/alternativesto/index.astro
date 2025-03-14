@@ -88,7 +88,7 @@ const title = t("Alternatives to popular software");
                     &nbsp;{name}
                   </a>
                 </div>
-                <div class="mb-4 ml-2 border-l-2 pl-4 border-dotted border-gray-300">
+                <div class="mb-4 ml-2 border-l-2 pl-4 border-dotted border-gray-300 rtl:ml-0 rtl:mr-2 rtl:pl-0 rtl:pr-4 rtl:border-l-0 rtl:border-r-2">
                   {stacks
                     .map(({ data }) => data)
                     .filter(({ alternativeTo }) =>
@@ -96,7 +96,10 @@ const title = t("Alternatives to popular software");
                     )
                     .map(({ slug, name }) => (
                       <div class="mb-2">
-                        <a href={url(`/${slug}`)}>
+                        <a
+                          href={url(`/${slug}`)}
+                          class="flex rtl:flex-direction-row-reverse"
+                        >
                           <Logo slug={slug} />
                           &nbsp;{name}
                         </a>

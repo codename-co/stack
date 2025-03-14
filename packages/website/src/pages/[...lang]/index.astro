@@ -268,14 +268,14 @@ const description = t(
                 alternativeTo,
               }) => (
                 <li
-                  class="relative"
+                  class="grid relative"
                   data-search={`${_tags?.map((tag) => `#${tag}`).join(",")},${alternativeTo
                     ?.map((slug) => getAlternativeMetadata(slug)?.name)
                     .join(",")}`}
                 >
                   {(alternativeTo?.length ?? 0) > 0 && (
                     <a
-                      class="absolute end-0 top-6 grid gap-2 grid-flow-col opacity-0 z-10 text-base select-none pointer-events-none transition-opacity"
+                      class="absolute end-0 top-6 grid gap-2 grid-flow-col opacity-0 z-10 text-base select-none pointer-events-none transition-opacity "
                       href={url(`/${slug}.stack`)}
                       tabindex="-1"
                       set:html={t("a smart alternative to {apps}", {
@@ -359,6 +359,7 @@ const description = t(
     const applySearch = () => {
       const q = new URL(location).searchParams.get("q");
       const handleSearch = (e, q) => {
+        console.debug("search", q);
         stacks
           .querySelectorAll("li")
           .forEach(
@@ -389,8 +390,10 @@ const description = t(
   </script>
 
   <style>
-    li:hover .absolute {
-      opacity: 1;
+    @media (width >= 40rem) {
+      li:hover .absolute {
+        opacity: 1;
+      }
     }
   </style>
 </Layout>

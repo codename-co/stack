@@ -14,7 +14,7 @@ homepage: https://flowiseai.com
 repository: https://github.com/FlowiseAI/Flowise
 stars: 35700
 tags: [llm, ai, rag, chatbot]
-alternativeTo: [dialogflow-cx, rasa]
+alternativeTo: [conversational-agents, rasa]
 readme: |
 
   Drag & drop UI to build your customized LLM flow
