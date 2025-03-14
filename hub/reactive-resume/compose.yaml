@@ -48,7 +48,7 @@ services:
     labels:
       dash.icon: googlechrome
 
-  app:
+  reactive-resume:
     image: amruthpillai/reactive-resume:v${REACTIVE_RESUME_VERSION:-4.1.8}
     restart: unless-stopped
     # ports:
