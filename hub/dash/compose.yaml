@@ -2,16 +2,18 @@
 # This is a https://stack.lol docker compose file.
 
 services:
-  # Docker compose dashboard with services auto-discovery
-  dashboard:
+  dash:
     image: codename/dash:v${DASH_VERSION:-0.7.6}
     env_file: .env
-    # ports:
-    #   - :80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost/health"]
+    #   interval: 30s
+    #   timeout: 1s
+    #   retries: 5
     labels:
       dash.name: Dashboard
       dash.desc: Overview of all local Docker-running services
-      dash.url: https://$DOMAIN
-      traefik.http.routers.admin.rule: Host(`$DOMAIN`)
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.dash.rule: Host(`$PROJECT.$DOMAIN`)
