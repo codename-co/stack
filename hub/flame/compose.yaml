@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  flame:
+    image: pawelmalak/flame:${FLAME_VERSION:-2.3.1}
+    volumes:
+      - flame_data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - PASSWORD=${FLAME_PASSWORD}
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.flame.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.flame.loadbalancer.server.port: 5005
+
+volumes:
+  flame_data:

@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: flame
+name: Flame
+icon: Ⓕ
+flavor: DockerCompose
+version: "2.3.1"
+updated_at: 2023-07-23
+description: Self-hosted startpage for your server
+author: Pawel Malak
+license: MIT
+repository: https://github.com/pawelmalak/flame
+stars: 5600
+tags: [dashboard]
+alternativeTo: []
+readme: |
+
+  Flame is self-hosted startpage for your server. Its design is inspired (heavily) by SUI. Flame is very easy to setup and use. With built-in editors, it allows you to setup your very own application hub in no time - no file editing necessary.
+
+  ![preview](https://github.com/pawelmalak/flame/raw/master/.github/home.png)
+
+  <hr>
+
+  ### Features
+
+  - 📝 Create, update, delete your applications and bookmarks directly from the app using built-in GUI editors
+  - 📌 Pin your favourite items to the homescreen for quick and easy access
+  - 🔍 Integrated search bar with local filtering, 11 web search providers and ability to add your own
+  - 🔑 Authentication system to protect your settings, apps and bookmarks
+  - 🔨 Dozens of options to customize Flame interface to your needs, including support for custom CSS, 15 built-in color themes and custom theme builder
+  - ☀️ Weather widget with current temperature, cloud coverage and animated weather status
+  - 🐳 Docker integration to automatically pick and add apps based on their labels
