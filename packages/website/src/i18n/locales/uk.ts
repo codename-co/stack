@@ -85,6 +85,7 @@ export const uk: I18n = {
   "{name} {version} is starting…": "{name} {version} запускається…",
   "{name} {version} is live.": "{name} {version} працює.",
   "Access it in fullscreen": "Отримати доступ у повноекранному режимі",
+  "Execution logs": "Журнали виконання",
 
   /** Page /recipes */
   Recipe: "Рецепт",

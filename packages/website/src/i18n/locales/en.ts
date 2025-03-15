@@ -67,6 +67,7 @@ export const en = [
   "{name} {version} is starting…",
   "{name} {version} is live.",
   "Access it in fullscreen",
+  "Execution logs",
 
   /** Page /recipes */
   "Recipe",

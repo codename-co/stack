@@ -79,6 +79,7 @@ export const zh: I18n = {
   "{name} {version} is starting…": "{name} {version} 正在启动…",
   "{name} {version} is live.": "{name} {version} 已上线。",
   "Access it in fullscreen": "全屏访问",
+  "Execution logs": "执行日志",
 
   /** Page /recipes */
   Recipe: "食谱",

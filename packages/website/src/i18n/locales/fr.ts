@@ -86,6 +86,7 @@ export const fr: I18n = {
   "{name} {version} is starting…": "{name} {version} démarre…",
   "{name} {version} is live.": "{name} {version} est démarré.",
   "Access it in fullscreen": "Accéder en plein écran",
+  "Execution logs": "Journaux",
 
   /** Page /recipes */
   Recipe: "Recette",

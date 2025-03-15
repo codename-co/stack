@@ -85,6 +85,7 @@ export const ja: I18n = {
   "{name} {version} is starting…": "{name} {version} が起動中…",
   "{name} {version} is live.": "{name} {version} が起動しました。",
   "Access it in fullscreen": "フルスクリーンでアクセス",
+  "Execution logs": "実行ログ",
 
   /** Page /recipes */
   Recipe: "レシピ",

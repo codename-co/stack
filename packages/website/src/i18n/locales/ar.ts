@@ -82,6 +82,7 @@ export const ar: I18n = {
   "{name} {version} is starting…": "{name} {version} يبدأ…",
   "{name} {version} is live.": "{name} {version} مباشر.",
   "Access it in fullscreen": "الوصول إليه بشاشة كاملة",
+  "Execution logs": "سجلات التنفيذ",
 
   /** Page /recipes */
   Recipe: "وصفة",

@@ -83,6 +83,7 @@ export const ko: I18n = {
   "{name} {version} is starting…": "{name} {version} 시작 중...",
   "{name} {version} is live.": "{name} {version}이 활성화되었습니다.",
   "Access it in fullscreen": "전체 화면에서 액세스",
+  "Execution logs": "실행 로그",
 
   /** Page /recipes */
   Recipe: "레시피",

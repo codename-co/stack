@@ -223,7 +223,14 @@ console.log(name, description, version, redirectUrl);
           style="margin:0 !important"></iframe>
       </div>
       <div id="info">
-        <h2 set:html={t("{name} {version} is starting…", { name, version })} />
+        <h2
+          id="status"
+          set:html={t("{name} {version} is starting…", { name, version })}
+        />
+        <details open>
+          <summary>{t("Execution logs")}</summary>
+          <pre id="logs"></pre>
+        </details>
       </div>
     </div>
   </div>
@@ -254,25 +261,67 @@ console.log(name, description, version, redirectUrl);
       return response.text();
     };
 
+    const streamableFetcher = async (endpoint, init, onEvent, onComplete) => {
+      const response = await fetch(`${STACK_API_ORIGIN}${endpoint}`, init);
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      const stream = response.body;
+      // Get the reader from the stream
+      const reader = stream.getReader();
+      // Define a function to read each chunk
+      const readChunk = () => {
+        // Read a chunk from the reader
+        reader
+          .read()
+          .then(({ value, done }) => {
+            // Check if the stream is done
+            if (done) {
+              // Log a message
+              onComplete();
+              // Return from the function
+              return;
+            }
+            // Convert the chunk value to a string
+            const chunkString = new TextDecoder().decode(value);
+            // Log the chunk string
+            onEvent(chunkString);
+            // Read the next chunk
+            readChunk();
+          })
+          .catch((error) => {
+            // Log the error
+            console.error(error);
+          });
+      };
+      // Start reading the first chunk
+      readChunk();
+    };
+
     export const isApiAccessible = async () => {
       return (await fetcher("/health")) === "OK";
     };
 
-    export const runStack = async (slug) => {
-      return fetcher(`/run`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+    export const runStack = async (slug, onEvent, onComplete) => {
+      return streamableFetcher(
+        `/run`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ slug }),
         },
-        body: JSON.stringify({ slug }),
-      });
+        onEvent,
+        onComplete
+      );
     };
 
     isApiAccessible()
       .catch(() => {
         console.log(`Redirecting to ${redirectUrl}`);
       })
-      .then((isAccessible) => {
+      .then(async (isAccessible) => {
         console.log(
           isAccessible ? "API is accessible" : "API is not accessible"
         );
@@ -287,25 +336,32 @@ console.log(name, description, version, redirectUrl);
           window.location.origin + redirectUrl
         ).toString();
         console.log(stackFullUrl);
-        runStack(stackFullUrl)
-          .catch(() => {
-            console.log(`Redirecting to ${redirectUrl}`);
-          })
-          .then(() => {
-            console.log("Stack is running");
 
-            window.render.src = url;
-            window.render.onload = () => {
-              window.render.style.height = "60vh";
-              window.render.style.margin = "unset";
-            };
-            window.info.innerHTML = `
-            <h2>${title}</h2>
-            <p>
-              <a href="${url}">${fullscreen}</a>
-            </p>
-          `;
-          });
+        const response = await runStack(
+          stackFullUrl,
+          (chunk) => {
+            const logs = document.querySelector("#logs");
+            logs.textContent += chunk;
+          },
+          () => {
+            document.querySelector("details").open = false;
+          }
+        );
+        console.log({ response });
+
+        console.log("Stack is running");
+
+        const render = document.querySelector("#render");
+        const status = document.querySelector("#status");
+        render.src = url;
+        render.onload = () => {
+          render.style.height = "60vh";
+          render.style.margin = "unset";
+        };
+        status.innerHTML = title;
+        // <p>
+        //   <a href="${url}">${fullscreen}</a>
+        // </p>
       });
   </script>
 </Layout>
