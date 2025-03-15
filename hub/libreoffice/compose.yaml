@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  libreoffice:
+    image: linuxserver/libreoffice:${LIBREOFFICE_VERSION:-7.6.7}
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - libreoffice_config:/config
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.libreoffice.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.libreoffice.loadbalancer.server.port: 3000
+
+volumes:
+  libreoffice_config:

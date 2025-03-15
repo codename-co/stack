@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: libreoffice
+name: LibreOffice
+flavor: DockerCompose
+version: "7.6.7"
+updated_at: 2025-03-11
+description: Office suite
+author: The Document Foundation
+license: MPL-2.0
+homepage: https://www.libreoffice.org
+repository: https://github.com/LibreOffice/core
+stars: 3000
+tags: [office]
+alternativeTo: [microsoft-office]
+readme: |
+
+  LibreOffice is an integrated office suite based on copyleft licenses and compatible with most document formats and standards. Libreoffice is backed by The Document Foundation, which represents a large independent community of enterprises, developers and other volunteers moved by the common goal of bringing to the market the best software for personal productivity. LibreOffice is open source, and free to download, use and distribute.
