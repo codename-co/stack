@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: beszel
+name: Beszel
+icon: Ⓑ
+flavor: DockerCompose
+version: "0.10.2"
+updated_at: 2025-03-15
+description: Server monitoring hub
+author: henrygd
+license: MIT
+homepage: https://beszel.dev
+repository: https://github.com/henrygd/beszel
+stars: 9900
+tags: [monitoring]
+alternativeTo: []
+readme: |
+
+  Beszel is a lightweight server monitoring platform that includes Docker statistics, historical data, and alert functions.
+
+  It has a friendly web interface, simple configuration, and is ready to use out of the box. It supports automatic backup, multi-user, OAuth authentication, and API access.
+
+  <hr>
+
+  ![preview](https://henrygd-assets.b-cdn.net/beszel/screenshot-new.png)
+
+  ### Features
+
+  - **Lightweight**: Smaller and less resource-intensive than leading solutions.
+  - **Simple**: Easy setup, no need for public internet exposure.
+  - **Docker stats**: Tracks CPU, memory, and network usage history for each container.
+  - **Alerts**: Configurable alerts for CPU, memory, disk, bandwidth, temperature, and status.
+  - **Multi-user**: Users manage their own systems. Admins can share systems across users.
+  - **OAuth / OIDC**: Supports many OAuth2 providers. Password auth can be disabled.
+  - **Automatic backups**: Save and restore data from disk or S3-compatible storage.
+  - **REST API**: Use or update your data in your own scripts and applications.

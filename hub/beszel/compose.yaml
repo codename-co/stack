@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  beszel:
+    image: henrygd/beszel:${BESZEL_VERSION:-0.10.2}
+    volumes:
+      - beszel_data:/beszel_data
+      - beszel_socket:/beszel_socket
+    environment:
+      - DISABLE_PASSWORD_AUTH=${DISABLE_PASSWORD_AUTH}
+      - SHARE_ALL_SYSTEMS=${SHARE_ALL_SYSTEMS}
+      - USER_CREATION=${USER_CREATION}
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.beszel.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.beszel.loadbalancer.server.port: 8090
+
+  beszel-agent:
+    image: henrygd/beszel-agent:${BESZEL_VERSION:-0.10.2}
+    network_mode: host
+    volumes:
+      - beszel_socket:/beszel_socket
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      LISTEN: /beszel_socket/beszel.sock
+      # Do not remove quotes around the key
+      KEY: 'UPDATE WITH YOUR PUBLIC KEY (copy from "Add system" dialog)'
+
+volumes:
+  beszel_data:
+  beszel_socket:
