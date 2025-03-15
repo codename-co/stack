@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  krita:
+    image: linuxserver/krita:${KRITA_VERSION:-5.2.6}
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - krita_config:/config
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.krita.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.krita.loadbalancer.server.port: 3000
+
+volumes:
+  krita_config:

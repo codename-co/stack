@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: krita
+name: Krita
+flavor: DockerCompose
+version: "5.2.6"
+updated_at: 2025-03-14
+description: Create digital art files from scratch
+author: Krita Foundation
+license: GPL-3.0
+homepage: https://krita.org
+repository: https://github.com/KDE/krita
+stars: 7900
+tags: [design]
+alternativeTo: [illustrator, photoshop]
+readme: |
+
+  Krita is a free and open source digital painting application. It is for artists who want to create professional work from start to end. Krita is used by comic book artists, illustrators, concept artists, matte and texture painters and in the digital VFX industry.
+
+  ![preview](https://krita.org/images/hero-image-50.webp)

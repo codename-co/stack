@@ -159,6 +159,10 @@ alternatives:
   - slug: ifttt
     name: IFTTT
     description: Automation platform
+  - slug: illustrator
+    name: Illustrator
+    icon: adobe
+    description: Vector graphics editor
   - slug: inoreader
     name: Inoreader
     description: RSS news aggregator
@@ -252,6 +256,9 @@ alternatives:
   - slug: perplexity
     name: Perplexity
     description: AI text generation and search
+  - slug: photoshop
+    name: Photoshop
+    description: Image editing software
   - slug: pipedreams
     name: Pipedreams
     description: Automation platform
