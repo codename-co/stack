@@ -42,10 +42,27 @@ fn extract_projects(containers: &[ContainerSummary]) -> HashSet<String> {
 }
 
 #[command]
-pub async fn list_stacks() -> Result<Vec<String>, String> {
+pub async fn list_stacks(include_inactive: bool) -> Result<Vec<String>, String> {
     let docker = get_docker().await?;
     let containers = get_containers(&docker).await?;
-    let mut stacks: Vec<String> = extract_projects(&containers).into_iter().collect();
+
+    let mut stacks: Vec<String> = if include_inactive {
+        extract_projects(&containers).into_iter().collect()
+    } else {
+        containers
+            .iter()
+            .filter(|container| container.state == Some(String::from("running")))
+            .filter_map(|container| {
+                container
+                    .labels
+                    .as_ref()
+                    .and_then(|labels| labels.get("com.docker.compose.project").cloned())
+            })
+            .collect::<HashSet<String>>()
+            .into_iter()
+            .collect()
+    };
+
     stacks.sort();
     Ok(stacks)
 }
