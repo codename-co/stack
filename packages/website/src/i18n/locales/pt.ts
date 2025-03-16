@@ -28,6 +28,10 @@ export const pt: Partial<I18n> = {
   "Then install software in one-click ↓":
     "Em seguida, instale o software em um clique ↓",
   "Search software": "Pesquisar software",
+  "Staff picks": "Escolhas da equipe",
+  "Youʼll enjoy these": "Você vai gostar destes",
+  "Come get some": "Venha pegar alguns",
+  "All the stacks": "Todos os stacks",
 
   /** Page /download */
   "Download Stack": "Baixar Stack",

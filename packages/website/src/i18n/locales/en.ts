@@ -22,6 +22,10 @@ export const en = [
   "Then install software in one-click ↓",
   "Search software",
   "a smart alternative to {apps}",
+  "Staff picks",
+  "Youʼll enjoy these",
+  "Come get some",
+  "All the stacks",
 
   /** Page /alternativesto */
   "Alternatives to popular software",

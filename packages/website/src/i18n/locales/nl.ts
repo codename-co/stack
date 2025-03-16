@@ -29,6 +29,10 @@ export const nl: Partial<I18n> = {
     "Installeer vervolgens software in één klik ↓",
   "Search software": "Zoek software",
   "a smart alternative to {apps}": "een slim alternatief voor {apps}",
+  "Staff picks": "Keuze van het personeel",
+  "Youʼll enjoy these": "Je zult deze leuk vinden",
+  "Come get some": "Kom er een paar halen",
+  "All the stacks": "Alle stacks",
 
   /** Page /download */
   "Download Stack": "Download Stack",

@@ -28,6 +28,10 @@ export const tr: Partial<I18n> = {
   "Then install software in one-click ↓":
     "Sonra yazılımı tek tıklamayla yükleyin ↓",
   "Search software": "Yazılım ara",
+  "Staff picks": "Personel seçimleri",
+  "Youʼll enjoy these": "Bunlardan keyif alacaksınız",
+  "Come get some": "Gel ve al",
+  "All the stacks": "Tüm yığınlar",
 
   /** Page /download */
   "Download Stack": "Yığını İndir",

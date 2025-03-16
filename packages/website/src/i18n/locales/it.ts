@@ -29,6 +29,10 @@ export const it: Partial<I18n> = {
     "Poi installa il software in un clic ↓",
   "Search software": "Cerca software",
   "a smart alternative to {apps}": "un'alternativa intelligente a {apps}",
+  "Staff picks": "Scelte dello staff",
+  "Youʼll enjoy these": "Ti piaceranno",
+  "Come get some": "Vieni a prenderne un po'",
+  "All the stacks": "Tutti gli stack",
 
   /** Page /download */
   "Download Stack": "Scarica Stack",

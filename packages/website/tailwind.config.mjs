@@ -74,6 +74,7 @@ export default {
           marginBottom: theme("spacing.8"),
         },
         h2: {
+          fontWeight: theme("fontWeight.semibold"),
           fontSize: theme("fontSize.2xl"),
           "@screen sm": {
             fontSize: theme("fontSize.24px"),
@@ -248,6 +249,10 @@ export default {
           marginLeft: 64,
           marginRight: 64,
         },
+        ".scrollbar-subtle": {
+          scrollbarWidth: "thin",
+          scrollbarColor: `transparent transparent`,
+        },
         ".highlight::before": {
           content: "''",
           position: "absolute",
@@ -271,6 +276,9 @@ export default {
           color: theme("colors.gray.400"),
           fontSize: theme("fontSize.sm"),
           textTransform: "uppercase",
+        },
+        ".suptitle + h2": {
+          marginTop: 0,
         },
         ".box": {
           // bg-slate-100 border border-slate-200 rounded-3xl

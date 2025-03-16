@@ -7,7 +7,10 @@ import { getStacks } from "~/content/collections/stacks";
 import { langs, textDirection, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
 import { formatStars, getAlternativeMetadata, timeago } from "~/helpers";
+import { iconOf } from "~helpers/icon";
 import { WallOfTags } from "~components/WallOfTags";
+import Card from "~components/Card";
+import Cards from "~components/Cards";
 // import { Graph } from "~/components/Graph";
 // import { graphData } from "~/helpers";
 
@@ -20,7 +23,22 @@ const t = useTranslations(lang);
 const url = useUrl(lang);
 
 const stacks = getStacks(lang);
-// const promoted = await getCollection("promoted");
+const promoted = await getCollection("promoted");
+const staffPick = promoted
+  .map(({ data }) => stacks.find((stack) => stack.data.slug === data.slug))
+  .filter(Boolean)
+  .map((stack) => [
+    stack?.data,
+    getAlternativeMetadata(stack?.data.alternativeTo?.[0] ?? ""),
+  ])
+  .reduce((acc, [stack, alternative]) => {
+    // only keep unique alternatives
+    if (!acc.find(([_, alt]) => alt.slug === alternative?.slug)) {
+      acc.push([stack, alternative]);
+    }
+    return acc;
+  }, [] as any[])
+  .slice(0, 10);
 
 const alternatives = await getCollection("alternatives");
 
@@ -38,7 +56,12 @@ const description = t(
 );
 ---
 
-<Layout lang={lang} title={title} description={description}>
+<Layout
+  lang={lang}
+  title={title}
+  description={description}
+  mainClass="left-only"
+>
   <div slot="left" class="section h-full">
     <div class="container">
       <h1 set:html={t("The *best free software* made&nbsp;*accessible*.")} />
@@ -229,7 +252,34 @@ const description = t(
   </div>
 
   <div class="section relative">
+    <div class="container is-fluid">
+      <span class="suptitle">{t("Staff picks")}</span>
+      <h2 set:html={t("Youʼll enjoy these")} />
+      <Cards className="flex flex-nowrap overflow-x-auto scrollbar-subtle">
+        {
+          staffPick.map(([data, alternative]) => {
+            const icon = iconOf(data.slug) ?? iconOf(data.icon);
+
+            return (
+              <li class="pt-2">
+                <Card
+                  lang={lang}
+                  slug={data.slug}
+                  name={data.name}
+                  description={data.description}
+                  url={url(`/${data.slug}`)}
+                  {...(icon && { icon: data.icon })}
+                />
+              </li>
+            );
+          })
+        }
+      </Cards>
+    </div>
+
     <div class="container">
+      <span class="suptitle">{t("Come get some")}</span>
+      <h2 set:html={t("All the stacks")} />
       <div
         class="sticky top-8 h-13 z-20 outline outline-[2em] outline-white dark:bg-slate-900 dark:text-slate-200 dark:outline-slate-950"
       >
@@ -253,7 +303,10 @@ const description = t(
       </datalist>
       <br />
       <br />
-      <ol id="stacks" class="light">
+      <Cards
+        id="stacks"
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3"
+      >
         {
           stacks
             .map(({ data }) => data)
@@ -262,96 +315,63 @@ const description = t(
                 slug,
                 name,
                 description,
+                icon,
                 updated_at,
                 tags: _tags,
                 stars,
                 alternativeTo,
               }) => (
                 <li
-                  class="grid relative"
+                  class="inline-flex pt-2"
                   data-search={`${_tags?.map((tag) => `#${tag}`).join(",")},${alternativeTo
                     ?.map((slug) => getAlternativeMetadata(slug)?.name)
                     .join(",")}`}
                 >
-                  {(alternativeTo?.length ?? 0) > 0 && (
-                    <a
-                      class="absolute end-0 top-6 grid gap-2 grid-flow-col opacity-0 z-10 text-base select-none pointer-events-none transition-opacity "
-                      href={url(`/${slug}.stack`)}
-                      tabindex="-1"
-                      set:html={t("a smart alternative to {apps}", {
-                        apps: alternativeTo
-                          ?.map((slug) => [slug, Logo({ slug }) as any])
-                          .map(
-                            ([slug, { props }]) =>
-                              (props.dangerouslySetInnerHTML.__html
-                                ? `<span style="color: ${props.style.color}">${props.dangerouslySetInnerHTML.__html}</span>`
-                                : "") +
-                              alternatives.find(
-                                ({ data }) => data.slug === slug
-                              )?.data.name
-                          )
-                          .join(", "),
-                      })}
-                    />
-                    // <a
-                    //   class="absolute right-0 top-5 grid gap-3 grid-flow-col opacity-0"
-                    //   href={url(`/${slug}.stack`)}
-                    // >
-                    //   A smart alternative to
-                    //   {alternativeTo?.map((slug) => (
-                    //     <Logo slug={slug} />
-                    //   ))}
-                    // </a>
-                  )}
-                  <a href={url(`/${slug}`)} aria-label={name}>
-                    <article>
-                      <h4>
-                        <Logo slug={slug} />
-                        &nbsp;{name}
-                      </h4>
-                      <div class="text-base mt-2 mb-1">{description}</div>
-                      {/* <span class="subtle text-sm">{rank}</span> */}
-                      {stars && (
-                        <span class="subtle text-sm">
-                          ★&nbsp;{formatStars(stars)}
-                        </span>
-                      )}
-                      {_tags?.map((_tag) => {
-                        const tag = tags.find(
-                          ({ data }) => data.slug === _tag
-                        )?.data;
-
-                        return (
-                          <span
-                            onclick={`event.preventDefault(); search.value = "${`#${_tag}`}"; search.dispatchEvent(new Event("input"))`}
-                            aria-label={`Browse #${_tag} software`}
-                          >
-                            <Tag>
-                              <abbr title={tag?.title}>{tag?.name}</abbr>
-                            </Tag>
-                          </span>
-                        );
-                      })}
-                      {updated_at && (
-                        <span class="text-sm absolute end-0 bottom-6 subtle">
-                          <time
-                            datetime={updated_at.toISOString()}
-                            title={new Intl.DateTimeFormat(lang, {
-                              dateStyle: "full",
-                              timeStyle: undefined,
-                            }).format(updated_at)}
-                          >
-                            {timeago(updated_at, lang)}
-                          </time>
-                        </span>
-                      )}
-                    </article>
-                  </a>
+                  <Card
+                    lang={lang}
+                    slug={slug}
+                    name={name}
+                    description={description}
+                    url={url(`/${slug}`)}
+                    icon={icon}
+                    stars={stars}
+                    updated_at={updated_at}
+                  >
+                    {(alternativeTo?.length ?? 0) > 0 && (
+                      <span
+                        class="absolute end-0 top-6 pr-4 pl-36 block gap-2 opacity-0 z-10 text-sm select-none pointer-events-none transition-opacity "
+                        tabindex="-1"
+                        set:html={t("a smart alternative to {apps}", {
+                          apps: alternativeTo
+                            ?.map((slug) => [slug, Logo({ slug }) as any])
+                            .map(
+                              ([slug, { props }]) =>
+                                (props.dangerouslySetInnerHTML.__html
+                                  ? `<span>${props.dangerouslySetInnerHTML.__html}</span> `
+                                  : "") +
+                                alternatives.find(
+                                  ({ data }) => data.slug === slug
+                                )?.data.name
+                            )
+                            .join(", "),
+                        })}
+                      />
+                      // <a
+                      //   class="absolute right-0 top-5 grid gap-3 grid-flow-col opacity-0"
+                      //   href={url(`/${slug}.stack`)}
+                      // >
+                      //   A smart alternative to
+                      //   {alternativeTo?.map((slug) => (
+                      //     <Logo slug={slug} />
+                      //   ))}
+                      // </a>
+                    )}
+                  </Card>
                 </li>
               )
             )
         }
-      </ol>
+      </Cards>
     </div>
   </div>
 
@@ -392,7 +412,7 @@ const description = t(
   <style>
     @media (width >= 40rem) {
       li:hover .absolute {
-        opacity: 1;
+        opacity: 0.6;
       }
     }
   </style>

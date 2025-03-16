@@ -63,7 +63,7 @@ console.log(name, description, version, redirectUrl);
 ---
 
 <!-- <meta http-equiv="refresh" id="redirecter" content={`1;url=${redirectUrl}`} /> -->
-<Layout lang={lang} leftTransition="fade">
+<Layout lang={lang} leftTransition="fade" mainClass="left-only">
   <input type="hidden" id="name" value={name} />
   <input type="hidden" id="slug" value={slug} />
   <input type="hidden" id="version" value={version} />
@@ -359,6 +359,7 @@ console.log(name, description, version, redirectUrl);
         render.onload = () => {
           render.style.height = "60vh";
           render.style.margin = "unset";
+          render.contentWindow.focus();
         };
         status.innerHTML = title;
         // <p>

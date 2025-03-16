@@ -28,6 +28,10 @@ export const ro: Partial<I18n> = {
   "Then install software in one-click ↓":
     "Apoi instaleaza software-ul cu un singur clic ↓",
   "Search software": "Cauta software",
+  "Staff picks": "Alegerile echipei",
+  "Youʼll enjoy these": "O sa te bucuri de acestea",
+  "Come get some": "Vino si ia",
+  "All the stacks": "Toate stack-urile",
 
   /** Page /download */
   "Download Stack": "Descarca Stack",

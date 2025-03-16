@@ -28,6 +28,10 @@ export const ru: Partial<I18n> = {
   "Then install software in one-click ↓":
     "Затем установите программу в один клик ↓",
   "Search software": "Поиск программ",
+  "Staff picks": "Выбор сотрудников",
+  "Youʼll enjoy these": "Вам понравятся",
+  "Come get some": "Приходите за ними",
+  "All the stacks": "Все стеки",
 
   /** Page /download */
   "Download Stack": "Скачать Stack",

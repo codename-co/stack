@@ -29,6 +29,10 @@ export const ja: I18n = {
     "次に、ソフトウェアをワンクリックでインストール ↓",
   "Search software": "ソフトウェアを検索",
   "a smart alternative to {apps}": "{apps}のスマートな代替",
+  "Staff picks": "スタッフおすすめ",
+  "Youʼll enjoy these": "これらを楽しむ",
+  "Come get some": "手に入れよう",
+  "All the stacks": "すべてのスタック",
 
   /** Page /alternativesto */
   "Alternatives to popular software": "人気ソフトウェアの代替",

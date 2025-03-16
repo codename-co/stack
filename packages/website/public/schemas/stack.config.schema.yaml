@@ -34,7 +34,7 @@ properties:
   flavor:
     type: string
     description: Type of deployment configuration
-    enum: ["DockerCompose", "DockerService"]
+    enum: ["DockerCompose", "DockerService", "StaticWebsite"]
 
   version:
     type: string

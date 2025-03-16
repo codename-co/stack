@@ -28,6 +28,10 @@ export const ar: I18n = {
     "ثم قم بتثبيت البرمجيات بنقرة واحدة ↓",
   "Search software": "البحث عن برامج",
   "a smart alternative to {apps}": "بديل ذكي لـ {apps}",
+  "Staff picks": "اختيارات الموظفين",
+  "Youʼll enjoy these": "ستستمتع بهذه",
+  "Come get some": "تعال واحصل على بعض",
+  "All the stacks": "جميع الكومات",
 
   /** Page /alternativesto */
   "Alternatives to popular software": "بدائل لبرمجيات شهيرة",

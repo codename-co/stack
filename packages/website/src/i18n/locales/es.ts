@@ -29,6 +29,10 @@ export const es: I18n = {
     "Luego instale el software en un clic ↓",
   "Search software": "Buscar software",
   "a smart alternative to {apps}": "una alternativa a {apps}",
+  "Staff picks": "Selección del personal",
+  "Youʼll enjoy these": "Disfrutarás de estos",
+  "Come get some": "Ven a por ellos",
+  "All the stacks": "Todos los stacks",
 
   /** Page /alternativesto */
   "Alternatives to popular software": "Alternativas al software popular",

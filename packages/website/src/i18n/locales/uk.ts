@@ -29,6 +29,10 @@ export const uk: I18n = {
     "Потім встановіть програмне забезпечення в один клік ↓",
   "Search software": "Пошук програмного забезпечення",
   "a smart alternative to {apps}": "розумна альтернатива для {apps}",
+  "Staff picks": "Вибір редакції",
+  "Youʼll enjoy these": "Вам сподобаються",
+  "Come get some": "Приходьте за ними",
+  "All the stacks": "Всі стеки",
 
   /** Page /alternativesto */
   "Alternatives to popular software":

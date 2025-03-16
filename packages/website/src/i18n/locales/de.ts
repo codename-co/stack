@@ -29,6 +29,10 @@ export const de: I18n = {
     "Dann Software in einem Klick installieren ↓",
   "Search software": "Software suchen",
   "a smart alternative to {apps}": "eine intelligente alternative zu {apps}",
+  "Staff picks": "Mitarbeiterauswahl",
+  "Youʼll enjoy these": "Sie werden diese genießen",
+  "Come get some": "Komm und hol dir etwas",
+  "All the stacks": "Alle Stacks",
 
   /** Page /alternativesto */
   "Alternatives to popular software": "Alternativen zu beliebten Software",

@@ -14,6 +14,8 @@ import {
   getTagTitle,
   timeago,
 } from "~/helpers";
+import Card from "~components/Card";
+import Cards from "~components/Cards";
 
 export const getStaticPaths = async () => {
   return langs
@@ -330,64 +332,54 @@ const similar = Array.from(
       <div class="container">
         {
           Boolean(alternativeTo?.length) && (
-            <div class="box 2xl:bg-slate-50 dark:2xl:bg-slate-800">
+            <>
               <h2 set:html={t("An alternative to")} />
-              <ol>
-                {alternativeTo?.map((slug) => (
-                  <li class="mb-4">
-                    <a href={url(`/alternativesto/${slug}`)}>
-                      <Logo slug={slug} />
-                      &nbsp;{getAlternativeMetadata(slug)?.name}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </div>
+              <Cards>
+                {alternativeTo?.map((slug) => {
+                  const alt = getAlternativeMetadata(slug);
+
+                  return (
+                    <li class="mb-4">
+                      <Card
+                        small
+                        lang={lang}
+                        slug={alt.slug}
+                        name={alt.name}
+                        description={alt.description}
+                        url={url(`/alternativesto/${alt.slug}`)}
+                      />
+                    </li>
+                  );
+                })}
+              </Cards>
+            </>
           )
         }
         {
           similar && similar.length > 0 && (
-            <div class="box 2xl:bg-slate-50 dark:2xl:bg-slate-800">
+            <>
               <h2 set:html={t("Related")} />
-              <ol>
+              <Cards>
                 {similar
                   .map((e) => e as any)
-                  .map(({ slug, name, description, tags: _tags, stars }) => (
-                    <li class="mb-8">
-                      {/* <div class="float-right mr-6 if-connected">
-                  <a href={`/${slug}.stack`}>
-                    <Button>Install</Button>
-                  </a>
-                </div> */}
-                      <p transition:name={`title-${name}`}>
-                        <a href={url(`/${slug}`)}>
-                          <Logo slug={slug} />
-                          &nbsp;{name}
-                        </a>
-                      </p>
-                      <p>{description}</p>
-                      {stars && (
-                        <span class="subtle text-sm">
-                          ★&nbsp;{formatStars(stars)}
-                        </span>
-                      )}
-                      {_tags?.map((_tag: any) => {
-                        const tag = tags.find(
-                          ({ data }) => data.slug === _tag
-                        )?.data;
-
-                        return (
-                          <a href={url(`/?q=%23${tag?.slug}`)}>
-                            <Tag>
-                              <abbr title={tag?.title}>{tag?.name}</abbr>
-                            </Tag>
-                          </a>
-                        );
-                      })}
-                    </li>
-                  ))}
-              </ol>
-            </div>
+                  .map(
+                    ({ slug, name, icon, description, tags: _tags, stars }) => (
+                      <li class="pt-2 mb-8">
+                        <Card
+                          small
+                          lang={lang}
+                          slug={slug}
+                          name={name}
+                          description={description}
+                          url={url(`/${slug}`)}
+                          icon={icon}
+                          stars={stars}
+                        />
+                      </li>
+                    )
+                  )}
+              </Cards>
+            </>
           )
         }
       </div>

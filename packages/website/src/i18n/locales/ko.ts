@@ -28,6 +28,10 @@ export const ko: I18n = {
     "그런 다음 소프트웨어를 한 번의 클릭으로 설치 ↓",
   "Search software": "소프트웨어 검색",
   "a smart alternative to {apps}": "{apps}에 대한 스마트한 대안",
+  "Staff picks": "스태프 추천",
+  "Youʼll enjoy these": "이것들을 즐기실 겁니다",
+  "Come get some": "들어오세요",
+  "All the stacks": "모든 스택",
 
   /** Page /alternativesto */
   "Alternatives to popular software": "인기 있는 소프트웨어의 대안",

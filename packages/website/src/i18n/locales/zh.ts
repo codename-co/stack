@@ -27,6 +27,10 @@ export const zh: I18n = {
   "Then install software in one-click ↓": "然后在一键安装软件 ↓",
   "Search software": "搜索软件",
   "a smart alternative to {apps}": "对 {apps} 的智能替代方案",
+  "Staff picks": "员工精选",
+  "Youʼll enjoy these": "您会喜欢这些",
+  "Come get some": "来拿一些",
+  "All the stacks": "所有堆栈",
 
   /** Page /alternativesto */
   "Alternatives to popular software": "热门软件的替代方案",

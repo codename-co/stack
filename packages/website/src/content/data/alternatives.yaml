@@ -13,6 +13,10 @@ alternatives:
   - slug: after-effects
     name: After Effects
     description: Motion graphics and visual effects software
+  - slug: airflow
+    name: Airflow
+    icon: apacheairflow
+    description: Data pipeline orchestration tool
   - slug: airtable
     name: Airtable
     description: A spreadsheet-database hybrid

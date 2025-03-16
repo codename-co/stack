@@ -29,6 +29,10 @@ export const hi: Partial<I18n> = {
     "फिर सॉफ्टवेयर एक क्लिक में इंस्टॉल करें ↓",
   "Search software": "सॉफ्टवेयर खोजें",
   "a smart alternative to {apps}": "{apps} के लिए एक स्मार्ट विकल्प",
+  "Staff picks": "कर्मचारी चुनाव",
+  "Youʼll enjoy these": "आप इन्हें आनंद लेंगे",
+  "Come get some": "आइए कुछ प्राप्त करें",
+  "All the stacks": "सभी स्टैक्स",
 
   /** Page /download */
   "Download Stack": "स्टैक डाउनलोड करें",

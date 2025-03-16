@@ -13,7 +13,13 @@ import "/public/global.css";
 import Logo from "~components/Logo";
 import { DarkModeSwitcher } from "~components/DarkModeSwitcher";
 
-const { lang = "en", title, description, leftTransition } = Astro.props;
+const {
+  lang = "en",
+  title,
+  description,
+  leftTransition,
+  mainClass,
+} = Astro.props;
 
 const t = useTranslations(lang);
 const url = useUrl(lang);
@@ -54,7 +60,7 @@ const url = useUrl(lang);
     <slot name="head" />
   </head>
   <body class="rtl:*">
-    <main role="main" class="flex-grow w-full">
+    <main role="main" class={`flex-grow w-full ${mainClass ?? ""}`}>
       <Debug
         client:only="react"
         transition:persist
