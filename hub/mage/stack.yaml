@@ -14,7 +14,7 @@ homepage: https://www.mage.ai
 repository: https://github.com/mage-ai/mage-ai
 stars: 8200
 tags: [data, data-pipeline, etl]
-alternativeTo: [airflow, prefect]
+alternativeTo: [airflow]
 readme: |
 
   Open-source data pipeline tool for transforming and integrating data. The modern replacement for Airflow. - Integrate and synchronize data from 3rd party sources - Build real-time and batch pipelines to transform data using Python, SQL, and R - Run, monitor, and orchestrate thousands of pipelines without losing sleep.
@@ -34,3 +34,48 @@ readme: |
   - **Transform** data with real-time and batch pipelines using Python, SQL, and R.
   - **Load** data into your data warehouse or data lake using our pre-built connectors.
   - **Run**, monitor, and orchestrate thousands of pipelines without losing sleep.
+
+i18n:
+  fr:
+    description: Pipelines de données pour l'intégration et la transformation des données
+    readme: |
+
+      Outil de pipeline de données open-source pour transformer et intégrer des données. Le remplacement moderne d'Airflow. - Intégrez et synchronisez des données à partir de sources tierces - Construisez des pipelines en temps réel et par lots pour transformer les données en utilisant Python, SQL et R - Exécutez, surveillez et orchestrez des milliers de pipelines sans perdre le sommeil.
+
+      <video controls width="100%" muted autoplay loop>
+        <source src="https://framerusercontent.com/assets/Pqoujjhx4mW7D5IkTMZ9Pe9A.mp4">
+        ⚠️ Votre navigateur ne prend pas en charge la balise vidéo.
+      </video>
+
+      <hr>
+
+      ### Caractéristiques
+
+      Mage est un framework hybride pour transformer et intégrer des données. Il combine le meilleur des deux mondes : la flexibilité des notebooks avec la rigueur du code modulaire.
+
+      - **Extraire** et synchroniser des données à partir de sources tierces.
+      - **Transformer** les données avec des pipelines en temps réel et par lots en utilisant Python, SQL et R.
+      - **Charger** des données dans votre entrepôt de données ou votre lac de données en utilisant nos connecteurs pré-construits.
+      - **Exécutez**, surveillez et orchestrez des milliers de pipelines sans perdre le sommeil.
+
+  de:
+    description: Datenpipelines zur Integration und Transformation von Daten
+    readme: |
+
+      Open-Source-Datenpipeline-Tool zur Transformation und Integration von Daten. Der moderne Ersatz für Airflow. - Integrieren und synchronisieren Sie Daten aus Drittanbieterquellen - Erstellen Sie Echtzeit- und Batch-Pipelines zur Transformation von Daten mit Python, SQL und R - Führen, überwachen und orchestrieren Sie Tausende von Pipelines, ohne Schlaf zu verlieren.
+
+      <video controls width="100%" muted autoplay loop>
+        <source src="https://framerusercontent.com/assets/Pqoujjhx4mW7D5IkTMZ9Pe9A.mp4">
+        ⚠️ Ihr Browser unterstützt das Video-Tag nicht.
+      </video>
+
+      <hr>
+
+      ### Eigenschaften
+
+      Mage ist ein hybrides Framework zur Transformation und Integration von Daten. Es kombiniert das Beste aus beiden Welten: die Flexibilität von Notebooks mit der Strenge modularer Code.
+
+      - **Extrahieren** und synchronisieren Sie Daten aus Drittanbieterquellen.
+      - **Transformieren** Sie Daten mit Echtzeit- und Batch-Pipelines mit Python, SQL und R.
+      - **Laden** Sie Daten in Ihr Data Warehouse oder Ihren Data Lake mit unseren vorinstallierten Connectors.
+      - **Führen**, überwachen und orchestrieren Sie Tausende von Pipelines, ohne Schlaf zu verlieren.
