@@ -36,3 +36,11 @@ We welcome contributions! Check our [CONTRIBUTING.md](./CONTRIBUTING.md) for gui
 This repository is available under the [MIT License](./LICENSE_MIT), with the following exception:
 
 - The [packages/app](packages/app) directory is protected under a proprietary license.
+
+## Credits
+
+Stack is led by [arnaud](https://github.com/arnaud), who develops this project openly with support from the community.
+
+<p align="center">
+  <img alt="Europe loves Open source" src="./docs/assets/europe_opensource.png" width="50%"/>
+</p>
