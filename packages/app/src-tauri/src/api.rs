@@ -28,15 +28,34 @@ struct RunInput {
 }
 
 #[post("/run")]
-async fn run(input: web::Json<RunInput>) -> Result<String> {
+async fn run(input: web::Json<RunInput>) -> HttpResponse {
     let slug = input.slug.clone();
     log::info!("Opening stack file: {:#?}", slug);
     println!("Running {}!", slug);
 
-    let result = cli::run(&slug).await;
-    log::info!("{:?}", result);
+    // Create a channel for streaming output
+    let (tx, mut rx) = tokio::sync::mpsc::channel(100);
 
-    Ok(format!("Running {} asynchronously", input.slug))
+    // Spawn the CLI command in a separate task
+    tokio::spawn(async move {
+        let output_callback = Box::new(move |line: String| {
+            let tx = tx.clone();
+            tokio::spawn(async move {
+                let _ = tx.send(line).await;
+            });
+        });
+
+        cli::run_with_callback(&slug, output_callback).await;
+    });
+
+    // Create a streaming response
+    HttpResponse::Ok()
+        .content_type("text/event-stream")
+        .streaming(Box::pin(async_stream::stream! {
+          while let Some(line) = rx.recv().await {
+            yield Ok::<_, actix_web::Error>(web::Bytes::from(format!("{}\n", line)));
+          }
+        }))
 }
 
 #[actix_web::main]

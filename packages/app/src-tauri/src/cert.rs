@@ -20,7 +20,7 @@ pub fn trust_certificate(app: &tauri::AppHandle) -> Result<(), String> {
     log::info!("Adding certificate to keychain");
     log::debug!("Executing script: {:?}", script_path);
 
-    let output = app
+    app
         .opener()
         .open_path(
             script_path.to_string_lossy().to_string(),

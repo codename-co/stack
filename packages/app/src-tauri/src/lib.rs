@@ -15,6 +15,7 @@ mod init;
 mod tray;
 mod types;
 mod updater;
+mod utils;
 
 // static MAIN_WINDOW: Lazy<Mutex<Option<WebviewWindow>>> = Lazy::new(|| Mutex::new(None));
 // static APP: Lazy<Mutex<Option<tauri::AppHandle>>> = Lazy::new(|| Mutex::new(None));

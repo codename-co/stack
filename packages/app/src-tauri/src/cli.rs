@@ -1,10 +1,12 @@
 use crate::types::Flavor;
+use crate::utils::download_file;
 use flate2::{read::MultiGzDecoder, Compression, GzBuilder};
 use ignore::WalkBuilder;
 use log::{debug, error, info, warn};
 use reqwest;
 use std::env;
 use std::fs::{self, File};
+use std::io::BufRead;
 use std::path::Path;
 use std::path::PathBuf;
 use std::process::Command;
@@ -122,36 +124,6 @@ pub fn pack(source: &str) {
     }
 }
 
-/// Downloads a file from a URI and saves it to a temporary location.
-///
-/// # Arguments
-///
-/// * `uri` - A string slice that holds the URI of the file.
-///
-/// # Returns
-///
-/// * `PathBuf` - The path to the downloaded file.
-async fn download_file(uri: &str) -> std::io::Result<PathBuf> {
-    let response = reqwest::get(uri).await.expect("Failed to download file");
-    let temp_file = tempfile::NamedTempFile::new()?;
-    let temp_path = temp_file.path().to_owned();
-    let mut file = File::create(&temp_path)?;
-    let bytes = response.bytes().await.expect("Failed to read response");
-    std::io::copy(&mut bytes.as_ref(), &mut file)?;
-
-    // Get a random filename in the temp directory using timestamp
-    let temp_dir = std::env::temp_dir();
-    let filename = temp_path
-        .file_name()
-        .and_then(|s| s.to_str())
-        .unwrap_or("stack");
-    let final_path = temp_dir.join(filename);
-
-    // Persist the file to the new location
-    temp_file.persist(&final_path)?;
-    Ok(final_path)
-}
-
 /// Runs a software stack from a stack bundle.
 ///
 /// # Arguments
@@ -189,10 +161,10 @@ pub async fn run(bundle: &str) {
 
     debug!("Reading stack file: {:?}", file);
     let gz = MultiGzDecoder::new(file);
-    let temp_dir = tempdir().expect("Failed to create temp dir");
+    let temp_dir = tempdir().expect("Failed to create temp dir").into_path();
 
     // Use a subdirectory to keep things cleaner
-    let extract_dir = temp_dir.path().join("bundle_extract");
+    let extract_dir = temp_dir.join("bundle_extract");
     debug!("Extracting to: {:?}", extract_dir);
     if let Err(e) = fs::create_dir_all(&extract_dir) {
         error!("Failed to create extract directory: {:?}", e);
@@ -235,7 +207,106 @@ pub async fn run(bundle: &str) {
     };
     debug!("Detected flavor: {:?}", flavor);
 
-    run_stack(&bundle_name, &extract_dir, flavor);
+    run_stack(&bundle_name, &extract_dir, flavor, |line| {
+        println!("{}", line);
+    });
+
+    // fs::remove_dir_all(temp_dir).expect("Failed to remove temp dir");
+}
+
+/// Runs a software stack from a stack bundle.
+///
+/// # Arguments
+///
+/// * `bundle` - A string slice that holds the path to the stack bundle file.
+/// * `callback` - A callback function that receives output lines.
+pub async fn run_with_callback(bundle: &str, callback: impl Fn(String)) {
+    callback("Initializing stack…".to_string());
+
+    let bundle_path = if bundle.starts_with("http://")
+        || bundle.starts_with("https://")
+        || bundle.starts_with("file://")
+    {
+        debug!("Downloading bundle: {}", bundle);
+        callback("Downloading…".to_string());
+
+        download_file(bundle)
+            .await
+            .expect("Failed to download bundle file")
+    } else {
+        PathBuf::from(bundle)
+    };
+
+    debug!("bundle_path: {:?}", bundle_path);
+
+    // Check if file exists before proceeding
+    if !bundle_path.exists() {
+        error!("Bundle file not found: {:?}", bundle_path);
+        return;
+    }
+
+    let file = match File::open(&bundle_path) {
+        Ok(f) => f,
+        Err(e) => {
+            error!("Failed to open bundle file: {}", e);
+            return;
+        }
+    };
+
+    debug!("Reading stack file: {:?}", file);
+    let gz = MultiGzDecoder::new(file);
+    let temp_dir = tempdir().expect("Failed to create temp dir").into_path();
+
+    // Use a subdirectory to keep things cleaner
+    let extract_dir = temp_dir.join("bundle_extract");
+    debug!("Extracting to: {:?}", extract_dir);
+    callback("Extracting…".to_string());
+    if let Err(e) = fs::create_dir_all(&extract_dir) {
+        error!("Failed to create extract directory: {:?}", e);
+        return;
+    }
+
+    let mut archive = Archive::new(gz);
+    if let Err(e) = archive.unpack(&extract_dir) {
+        error!("Failed to unpack bundle: {:?}", e);
+        return;
+    }
+    debug!("Extraction complete: {:?}", extract_dir);
+    callback("Extraction complete".to_string());
+
+    // Now we can access the metadata file
+    let config_path = extract_dir.join("stack.yaml");
+    debug!("Loading stack metadata from: {:?}", config_path);
+    let config = load_stack_manifest(config_path.as_path());
+
+    debug!("Stack metadata: {:?}", config);
+
+    // Get the stack name from the original filename without .stack extension
+    let bundle_name = config["slug"]
+        .as_str()
+        .unwrap_or(bundle.split('.').next().unwrap().split('/').last().unwrap());
+
+    // must consist only of lowercase alphanumeric characters, hyphens, and underscores as well as start with a letter or number
+    let bundle_name: String = bundle_name
+        .chars()
+        .filter(|c| c.is_alphanumeric() || *c == '-' || *c == '_')
+        .collect::<String>()
+        .to_lowercase();
+
+    debug!("bundle_name: {:?}", bundle_name);
+
+    let flavor = if let Some(flavor) = guess_flavor(&extract_dir) {
+        flavor
+    } else {
+        error!("Failed to determine the flavor of the software stack.");
+        return;
+    };
+    debug!("Detected flavor: {:?}", flavor);
+    callback("Detected flavor: ".to_string() + &format!("{:?}", flavor));
+
+    run_stack(&bundle_name, &extract_dir, flavor, callback);
+
+    // fs::remove_dir_all(temp_dir).expect("Failed to remove temp dir");
 }
 
 /// Stops a software stack from a stack bundle.
@@ -252,10 +323,10 @@ pub fn stop(bundle: &str) {
 
     let file = File::open(bundle).expect("Failed to open bundle file");
     let gz = flate2::read::GzDecoder::new(file);
-    let temp_dir = tempdir().expect("Failed to create temp dir");
+    let temp_dir = tempdir().expect("Failed to create temp dir").into_path();
 
     // Create a named subdirectory
-    let extract_dir = temp_dir.path().join(bundle_name);
+    let extract_dir = temp_dir.join(bundle_name);
     fs::create_dir(&extract_dir).expect("Failed to create extract directory");
 
     debug!("Extracting to: {:?}", extract_dir);
@@ -406,7 +477,8 @@ fn list_root_files(path: &std::path::Path) -> Vec<std::path::PathBuf> {
 /// * `name` - The name of the software stack.
 /// * `path` - A reference to the path of the extracted bundle directory.
 /// * `flavor` - The flavor of the software stack.
-fn run_stack(name: &str, path: &Path, flavor: Flavor) {
+/// * `callback` - A function to receive progress updates.
+fn run_stack(name: &str, path: &Path, flavor: Flavor, callback: impl Fn(String)) {
     info!("Running flavor: {:?} in path: {:?}", flavor, path);
 
     // Collect environment variables
@@ -417,41 +489,65 @@ fn run_stack(name: &str, path: &Path, flavor: Flavor) {
             let mut cmd = Command::new("docker");
             cmd.args([
                 "compose",
-                // "--progress",
-                // "json",
                 "--project-name",
                 &name,
                 "up",
                 "-d",
+                "--wait",
                 "--remove-orphans",
             ])
             .current_dir(path)
-            .envs(env_vars);
+            .envs(env_vars)
+            .stdout(std::process::Stdio::piped())
+            .stderr(std::process::Stdio::piped());
             debug!("> {:?}", cmd);
+            callback(format!("Running command: {:?}", cmd));
 
-            match cmd.output() {
-                Ok(output) => {
-                    if !output.status.success() {
-                        error!(
-                            "Docker compose failed: {}",
-                            String::from_utf8_lossy(&output.stderr)
-                        );
-                    } else {
-                        debug!(
-                            "Docker compose output: {}",
-                            String::from_utf8_lossy(&output.stdout)
-                        );
+            match cmd.spawn() {
+                Ok(mut child) => {
+                    let stdout = child.stdout.take().unwrap();
+                    let stderr = child.stderr.take().unwrap();
+
+                    // Stream stdout
+                    let stdout_reader = std::io::BufReader::new(stdout);
+                    for line in stdout_reader.lines() {
+                        if let Ok(line) = line {
+                            debug!("out: {}", line);
+                            callback(format!("| {}", line));
+                        }
+                    }
+
+                    // Stream stderr
+                    let stderr_reader = std::io::BufReader::new(stderr);
+                    for line in stderr_reader.lines() {
+                        if let Ok(line) = line {
+                            error!("err: {}", line);
+                            callback(format!("| {}", line));
+                        }
+                    }
+
+                    // Wait for completion
+                    match child.wait() {
+                        Ok(status) => {
+                            if !status.success() {
+                                error!("Docker compose failed with status: {}", status);
+                                callback(format!("Docker compose failed with status: {}", status));
+                            } else {
+                                debug!("Docker compose completed successfully");
+                                callback("Docker compose completed successfully".to_string());
+                            }
+                        }
+                        Err(e) => {
+                            error!("Failed to wait for docker compose: {}", e);
+                            callback(format!("Failed to wait for docker compose: {}", e));
+                        }
                     }
                 }
                 Err(e) => {
                     error!("Failed to execute docker compose command: {}", e);
+                    callback(format!("Failed to execute docker compose command: {}", e));
                 }
             }
-            // debug!("< {:?}", status);
-
-            // if !status.success() {
-            //     error!("docker compose command failed with status: {}", status);
-            // }
         }
 
         Flavor::DockerService => {
@@ -522,52 +618,66 @@ fn run_stack(name: &str, path: &Path, flavor: Flavor) {
 
         Flavor::StaticWebsite => {
             // Prepare
-            let mut clean_cmd = Command::new("docker");
-            clean_cmd
-                .arg("rm")
-                .arg("-f")
-                .arg(&format!("static-{}", name))
-                .current_dir(path);
-            debug!("> {:?}", clean_cmd);
+            // let mut clean_cmd = Command::new("docker");
+            // clean_cmd
+            //     .arg("rm")
+            //     .arg("-f")
+            //     .arg(&format!("static-{}", name))
+            //     .current_dir(path);
+            // debug!("> {:?}", clean_cmd);
 
-            let status = clean_cmd
-                .status()
-                .expect("Failed to execute docker build command");
-            debug!("< {:?}", status);
+            // let status = clean_cmd
+            //     .status()
+            //     .expect("Failed to execute docker build command");
+            // debug!("< {:?}", status);
 
-            if !status.success() {
-                error!("docker build command failed with status: {}", status);
-                return;
-            }
+            // if !status.success() {
+            //     error!("docker build command failed with status: {}", status);
+            //     return;
+            // }
 
-            debug!("> {:?}", clean_cmd);
+            // debug!("> {:?}", clean_cmd);
 
+            let assets_destination_path = path;
             // Copy static files into ~/.stacks/static-<name>
-            let assets_destination_path =
-                shellexpand::tilde(&format!("~/.stack/{}/", name)).to_string();
-            let mut copy_cmd = Command::new("mkdir");
-            copy_cmd
-                .args([&format!(
-                    "-p {} && cp -R {} {}",
-                    assets_destination_path,
-                    path.display(),
-                    assets_destination_path,
-                )
-                .as_str()])
-                .current_dir(path)
-                .envs(env_vars.clone());
-            debug!("> {:?}", copy_cmd);
+            // let assets_destination_path =
+            //     shellexpand::tilde(&format!("~/.stack/{}/", name)).to_string();
+            // let mut copy_cmd = Command::new("mkdir");
+            // copy_cmd
+            //     .args([&format!(
+            //         "-p {} && cp -R {} {}",
+            //         assets_destination_path,
+            //         path.display(),
+            //         assets_destination_path,
+            //     )
+            //     .as_str()])
+            //     .current_dir(path)
+            //     .envs(env_vars.clone());
+            // debug!("> {:?}", copy_cmd);
 
             // Run
             let mut run_cmd = Command::new("docker");
+            let host = format!("{}.stack.localhost", name);
             run_cmd
                 .arg("run")
                 .arg("-d")
                 .args(["--name", &format!("static-{}", name)])
-                .args(["-p", ":80"])
+                // .args(["-p", ":80"])
+                .args(["--label", &format!("dash.name={}", name)])
+                .args(["--label", "dash.icon=html5"])
+                .args(["--label", &format!("dash.url=https://{}", host)])
+                .args([
+                    "--label",
+                    &format!("traefik.http.routers.{}.rule=Host(`{}`)", name, host),
+                ])
+                // .args(["--label", "traefik.http.services." + name + ".loadbalancer.server.port=80"])
                 .args([
                     "-v",
-                    &format!("{}:/usr/share/nginx/html:ro", assets_destination_path).as_str(),
+                    &format!(
+                        "{}:/usr/share/nginx/html:ro",
+                        assets_destination_path.display()
+                    )
+                    .as_str(),
                 ])
                 .arg("nginx:stable-alpine")
                 .current_dir(path)
