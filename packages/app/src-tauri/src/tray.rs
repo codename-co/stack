@@ -27,17 +27,20 @@ fn create_menu(handle: &tauri::AppHandle<tauri::Wry>) -> tauri::Result<Menu<taur
         )?)
         .separator();
 
-    let stacks: Result<Vec<String>, String> = tauri::async_runtime::block_on(docker::list_stacks());
+    let stacks: Result<Vec<String>, String> =
+        tauri::async_runtime::block_on(docker::list_stacks(false));
 
-    for stack in stacks {
-        let name = &stack[0];
-        menu_builder = menu_builder.item(&MenuItem::with_id(
-            handle,
-            format!("stack-{}", name),
-            format!("⛁ {}", name),
-            true,
-            None::<&str>,
-        )?);
+    if let Ok(stack_list) = stacks {
+        for stack in stack_list {
+            let name = &stack;
+            menu_builder = menu_builder.item(&MenuItem::with_id(
+                handle,
+                format!("stack-{}", name),
+                format!("⛁ {}", name),
+                true,
+                None::<&str>,
+            )?);
+        }
     }
 
     menu_builder = menu_builder.separator()
