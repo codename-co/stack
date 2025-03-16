@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: astray
+name: Astray
+icon: 🎮
+flavor: StaticWebsite
+version: "382b5ef"
+updated_at: 2012-07-15
+description: WebGL maze game
+author: Rye Terrell
+license: Unlicense
+repository: https://github.com/wwwtyro/Astray
+stars: 536
+tags: [game]
+alternativeTo: []
+readme: >
+
+  A WebGL maze game built with Three.js and Box2dWeb.
