@@ -5,13 +5,13 @@ slug: excalidraw
 name: Excalidraw
 flavor: DockerCompose
 version: latest
-updated_at: 2025-02-13
+updated_at: 2025-03-11
 description: Whiteboard for sketching hand-drawn like diagrams
 author: Excalidraw
 license: MIT
 homepage: https://excalidraw.com
 repository: https://github.com/excalidraw/excalidraw
-stars: 94400
+stars: 94600
 tags:
   - diagram
   - whiteboard
