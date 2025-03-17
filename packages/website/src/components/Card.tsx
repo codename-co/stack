@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className={`relative w-full lg:min-w-96 hover:scale-105 transition-transform ${
+      className={`relative w-full min-w-56 md:min-w-72 lg:min-w-96 hover:scale-105 transition-transform ${
         className ?? ""
       }`}
       style={style}
@@ -74,7 +74,7 @@ const Card: React.FC<CardProps> = ({
                 small ? "small" : ""
               } border dark:border-white ${small ? "w-12 h-12" : "w-24 h-24"} ${
                 small ? "p-2" : "p-4"
-              } pointer-events-none absolute -top-4 rounded-2xl object-cover shadow-xl bg-white/30 dark:!text-white`}
+              } pointer-events-none absolute -top-4 text-center rounded-2xl object-cover shadow-xl bg-white/30 dark:!text-white`}
               style={{
                 color: `${logo.hex}99`,
                 borderColor: `${logo.hex}33`,

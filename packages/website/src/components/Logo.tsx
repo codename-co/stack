@@ -38,7 +38,7 @@ export const logoFromIcon = ({ slug, icon }: LogoProps) => {
     iconOf(icon) ??
     (icon && {
       slug,
-      svg: /* html */ `<span class="p-2 custom-icon">${icon}</span>`,
+      svg: /* html */ `<span class="custom-icon">${icon}</span>`,
       hex: hexFromSlug(slug) ?? "#000000",
     });
 

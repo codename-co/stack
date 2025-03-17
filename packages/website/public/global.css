@@ -11,6 +11,8 @@
 
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
+
+  --main-max-width: 115.2rem;
 }
 
 a {
@@ -87,9 +89,10 @@ summary {
     margin: 0 -0.5em 0 0;
   }
 }
+/* The layout goes multi-column as soon as width reaches 96rem wide */
 @media (min-width: 96rem) {
   [role="main"] {
-    max-width: 115.2rem;
+    max-width: var(--main-max-width);
     display: grid;
     grid-template-columns: 21em 1fr 21em;
     grid-template-areas:
@@ -187,32 +190,12 @@ input[type="checkbox"]:not(:checked) + [role="menu"] {
 
 [role="main"].left-only {
   .container {
-    @media (min-width: 640px) {
-      max-width: calc(640px);
+    @media (min-width: 1536px), (min-width: 1636px), (min-width: 1736px) {
+      max-width: calc(100vw - 28em);
     }
 
-    @media (min-width: 768px) {
-      max-width: 100%;
-    }
-
-    @media (min-width: 1024px) {
-      max-width: 100%;
-    }
-
-    @media (min-width: 1280px) {
-      max-width: 100%;
-    }
-
-    @media (min-width: 1536px) {
-      max-width: calc(1536px - 21em - 100px);
-    }
-
-    @media (min-width: 1636px) {
-      max-width: calc(1636px - 21em);
-    }
-
-    @media (min-width: 1736px) {
-      max-width: calc(1736px - 21em);
+    @media (min-width: 115.2rem) {
+      max-width: calc(100vw - 28em - (100vw - 115.2rem));
     }
   }
 }
