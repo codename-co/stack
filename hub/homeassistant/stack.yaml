@@ -4,14 +4,14 @@
 slug: homeassistant
 name: Home Assistant
 flavor: DockerCompose
-version: "2025.2"
-updated_at: 2025-02-21
+version: "2025.3"
+updated_at: 2025-03-14
 description: Home automation platform
 author: Nabu Casa
 license: Apache-2.0
 homepage: https://www.home-assistant.io
 repository: https://github.com/home-assistant/core
-stars: 77100
+stars: 77200
 tags:
   - home-automation
 alternativeTo: []
