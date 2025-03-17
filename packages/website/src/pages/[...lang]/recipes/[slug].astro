@@ -8,13 +8,9 @@ import { getRecipes } from "~/content/collections/recipes";
 import { getStacks } from "~/content/collections/stacks";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
-import {
-  getTagName,
-  formatStars,
-  getAlternativeMetadata,
-  getTagTitle,
-  timeago,
-} from "~/helpers";
+import { formatStars, getAlternativeMetadata, timeago } from "~/helpers";
+import Cards from "~components/Cards";
+import Card from "~components/Card";
 
 export const getStaticPaths = async () => {
   return langs
@@ -339,61 +335,49 @@ const similar = Array.from(
     <div class="container">
       {
         Boolean(alternativeTo?.length) && (
-          <div class="box 2xl:bg-slate-50 dark:2xl:bg-slate-800">
+          <>
             <h2 set:html={t("An alternative to")} />
-            <ol class="light">
+            <Cards>
               {alternativeTo?.map((slug) => (
                 <li class="mb-4">
-                  <a href={url(`/alternativesto/${slug}`)}>
-                    <Logo slug={slug} />
-                    &nbsp;{getAlternativeMetadata(slug)?.name}
-                  </a>
+                  <Card
+                    small
+                    lang={lang}
+                    slug={slug}
+                    name={getAlternativeMetadata(slug)?.name}
+                    description={getAlternativeMetadata(slug)?.description}
+                    url={url(`/alternativesto/${slug}`)}
+                  />
                 </li>
               ))}
-            </ol>
-          </div>
+            </Cards>
+          </>
         )
       }
 
       {
         similar && similar.length > 0 && (
-          <div class="box 2xl:bg-slate-50 dark:2xl:bg-slate-800">
+          <>
             <h2 set:html={t("Related recipes")} />
-            <ol class="light">
+            <Cards>
               {similar
                 .map((e) => e as any)
                 .map(({ slug, name, description, tags, stars, icon }) => (
-                  <li class="mb-8">
-                    {/* <div class="float-right mr-6 if-connected">
-                  <a href={`/${slug}.stack`}>
-                    <Button>Install</Button>
-                  </a>
-                </div> */}
-                    <p transition:name={`title-${name}`}>
-                      <a href={url(`/recipes/${slug}`)}>
-                        <Logo slug={slug} icon={icon} />
-                        &nbsp;{name}
-                      </a>
-                    </p>
-                    <p>{description}</p>
-                    {stars && (
-                      <span class="subtle text-sm">
-                        ★&nbsp;{formatStars(stars)}
-                      </span>
-                    )}
-                    {tags?.map((tag: any) => (
-                      <a href={url(`/?q=%23${tag}`)}>
-                        <Tag>
-                          <abbr title={getTagTitle(tag)}>
-                            {getTagName(tag)}
-                          </abbr>
-                        </Tag>
-                      </a>
-                    ))}
+                  <li class="pt-2 mb-8">
+                    <Card
+                      small
+                      lang={lang}
+                      slug={slug}
+                      name={name}
+                      description={description}
+                      url={url(`/recipes/${slug}`)}
+                      icon={icon}
+                      stars={stars}
+                    />
                   </li>
                 ))}
-            </ol>
-          </div>
+            </Cards>
+          </>
         )
       }
     </div>

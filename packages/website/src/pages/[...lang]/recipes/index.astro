@@ -3,9 +3,10 @@ import Logo from "~/components/Logo";
 import Tag from "~/components/tag.html";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
+import Card from "~components/Card";
+import Cards from "~components/Cards";
 import { getRecipes } from "~content/collections/recipes";
 import { getStacks } from "~content/collections/stacks";
-import { timeago } from "~helpers";
 
 export const getStaticPaths = () => {
   return langs.map((lang) => ({ params: { lang } }));
@@ -50,63 +51,48 @@ recipes.forEach((recipe) => {
 
   <div class="section">
     <div class="container">
-      {
-        recipes
-          .sort((a: any, b: any) => b.data.updated_at - a.data.updated_at)
-          .map(
-            ({
-              data: { slug, name, icon, updated_at, description, dependencies },
-            }) => (
-              <>
-                <a class="box flex" href={url(`/recipes/${slug}`)}>
-                  <div class="relative w-full flex flex-col">
-                    <div class="flex flex-row gap-7 items-start">
-                      <Logo
-                        slug={slug}
-                        icon={icon}
-                        className="align-right"
-                        style={{ zoom: 3 }}
-                      />
-
-                      <div class="flex flex-col">
-                        <span class="suptitle hidden md:flex">
-                          {t("Recipe")}
-                        </span>
-
-                        <h4 set:html={name} />
-
-                        <p class="subtle">{description}</p>
-                        {updated_at && (
-                          <span class="text-sm absolute end-0 bottom-0 subtle">
-                            <time
-                              datetime={updated_at.toISOString()}
-                              title={new Intl.DateTimeFormat(lang, {
-                                dateStyle: "full",
-                                timeStyle: undefined,
-                              }).format(updated_at)}
-                            >
-                              {timeago(updated_at, lang)}
-                            </time>
-                          </span>
-                        )}
-
-                        <span class="hidden md:flex flex-row gap-2">
-                          {dependencies?.map((dep: any) => (
-                            <Tag>
-                              <Logo slug={dep.slug} />
-                              &nbsp;
-                              {dep.name}
-                            </Tag>
-                          ))}
-                        </span>
-                      </div>
+      <Cards>
+        {
+          recipes
+            .sort((a: any, b: any) => b.data.updated_at - a.data.updated_at)
+            .map(
+              ({
+                data: {
+                  slug,
+                  name,
+                  icon,
+                  updated_at,
+                  description,
+                  dependencies,
+                },
+              }) => (
+                <li class="pb-8">
+                  <Card
+                    lang={lang}
+                    slug={slug}
+                    name={name}
+                    description={description}
+                    updated_at={updated_at}
+                    url={url(`/recipes/${slug}`)}
+                    {...(icon && { icon })}
+                  >
+                    <div class="absolute end-0 top-6 pr-4 pl-36 block gap-2 z-10 text-sm select-none pointer-events-none transition-opacity ">
+                      <span class="hidden md:flex flex-row gap-2">
+                        {dependencies?.map((dep: any) => (
+                          <Tag>
+                            <Logo slug={dep.slug} />
+                            &nbsp;
+                            {dep.name}
+                          </Tag>
+                        ))}
+                      </span>
                     </div>
-                  </div>
-                </a>
-              </>
+                  </Card>
+                </li>
+              )
             )
-          )
-      }
+        }
+      </Cards>
     </div>
   </div>
 </Layout>

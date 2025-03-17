@@ -114,6 +114,9 @@ export default {
         hr: {
           marginTop: theme("spacing.6"),
           marginBottom: theme("spacing.6"),
+          [darkMode]: {
+            borderColor: theme("colors.slate.700"),
+          },
         },
         dt: {
           fontSize: theme("fontSize.sm"),
