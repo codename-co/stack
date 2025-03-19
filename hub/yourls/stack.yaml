@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: yourls
+name: YOURLS
+icon: Ⓨ
+flavor: DockerCompose
+version: "1.9.2"
+updated_at: 2025-03-19
+description: URL Shortener
+author: YOURLS community
+license: MIT
+homepage: https://yourls.org
+repository: https://github.com/YOURLS/YOURLS
+stars: 11100
+tags: [url-shortener]
+alternativeTo: [bitly, tinyurl]
+readme: |
+
+  YOURLS is a set of PHP scripts that will allow you to run Your Own URL Shortener, on your server. You'll have full control over your data, detailed stats, analytics, plugins, and more. It's free and open-source.

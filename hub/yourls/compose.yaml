@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  yourls:
+    image: yourls:${YOURLS_VERSION:-1.9.2}
+    environment:
+      - YOURLS_DB_HOST
+      - YOURLS_DB_PASS
+      - YOURLS_SITE
+      - YOURLS_USER
+      - YOURLS_PASS
+    volumes:
+      - yourls:/var/www/html
+    depends_on:
+      - yourls-database
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN/admin
+      traefik.http.routers.yourls.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.yourls.loadbalancer.server.port: 80
+
+  yourls-database:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE
+
+volumes:
+  yourls:
