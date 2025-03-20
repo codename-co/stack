@@ -242,3 +242,5 @@ tags:
     name: Testing
   - slug: blog
     name: Blog
+  - slug: web-monitoring
+    name: Web monitoring

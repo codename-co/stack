@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: changedetection
+name: Changedetection
+flavor: DockerCompose
+version: "0.49.4"
+updated_at: 2025-03-13
+description: Web page change detection
+author: dgtlmoon
+license: Apache-2.0
+homepage: https://changedetection.io
+repository: https://github.com/dgtlmoon/changedetection.io
+stars: 22700
+tags: [web-monitoring]
+alternativeTo: [distill, visualping]
+readme: |
+
+  Detect website content changes and perform meaningful actions - trigger notifications via Discord, Email, Slack, Telegram, API calls and many more.
+
+  ![preview](https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/docs/screenshot.png)
+
+  <hr>
+
+  ### Features
+
+  - 🔍 **Monitor web pages** for changes - watch prices and get restock notifications, with deep inspection including PDF text support, JSON and XML monitoring and extensive text triggers.
+  - 📢 **Get notifications** when a website updates with unlimited email notifications based on your Chrome browser setup.
+  - 🎯 **Target specific elements** by easily selecting what you need to monitor.
+  - 🤖 **Browser automation** capabilities - perform searches, login with credentials, add to cart, interact with fields and buttons.
+  - 🏪 **Re-stock monitoring** for out-of-stock products with alerts via Discord, Slack, email and other platforms - perfect for getting those hard-to-find items like limited edition shoes or RaspberryPi boards!

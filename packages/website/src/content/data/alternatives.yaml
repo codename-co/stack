@@ -84,6 +84,9 @@ alternatives:
   - slug: discord
     name: Discord
     description: Chat platform
+  - slug: distill
+    name: Distill
+    description: Web page change detection
   - slug: dockerhub
     name: Docker Hub
     icon: docker
@@ -365,6 +368,9 @@ alternatives:
   - slug: visio
     name: Visio
     description: Diagramming tool
+  - slug: visualping
+    name: Visualping
+    description: Website monitoring tool
   - slug: vnc
     name: VNC
     description: Remote desktop software
