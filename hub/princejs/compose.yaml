@@ -7,4 +7,4 @@ services:
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.princejs.rule: Host(`$PROJECT.$DOMAIN`)
-      traefik.http.services.princejs.loadbalancer.server.port: 80
+      traefik.http.services.princejs.loadbalancer.server.port: 3000

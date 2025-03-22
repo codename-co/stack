@@ -20,6 +20,9 @@ services:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.actualbudget.rule: Host(`$PROJECT.$DOMAIN`)
       traefik.http.services.actualbudget.loadbalancer.server.port: 5006
+      # traefik.http.routers.actualbudget.middlewares: actualbudget-headers
+      # traefik.http.middlewares.actualbudget-headers.headers.customresponseheaders.Cross-Origin-Embedder-Policy: require-corp
+      # traefik.http.middlewares.actualbudget-headers.headers.customresponseheaders.Cross-Origin-Opener-Policy: same-origin
 
 volumes:
   actual-data:

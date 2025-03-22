@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  wordpress:
+    image: wordpress:${WORDPRESS_VERSION:-6.7.2}
+    volumes:
+      - wp_data:/var/www/html
+    environment:
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_NAME=wordpress
+    depends_on:
+      - wordpress-db
+    links:
+      - wordpress-db:db
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.wordpress.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.wordpress.loadbalancer.server.port: 80
+
+  wordpress-db:
+    # image: mariadb:11.4.5-ubi
+    image: mariadb:10.6.4-focal
+    command: "--default-authentication-plugin=mysql_native_password"
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=somewordpress
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=WORDPRESS_DB_NAME
+volumes:
+  db_data:
+  wp_data:

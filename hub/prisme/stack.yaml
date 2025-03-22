@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: broken
+slug: prisme
+name: Prisme
+icon: Ⓟ
+flavor: DockerCompose
+version: "25.02.251410"
+updated_at: 2025-02-25
+description: Build products and features together
+author: Prisme.ai
+license: GPL-3.0
+homepage: https://www.prisme.ai
+repository: https://gitlab.com/prisme.ai/prisme.ai
+stars: 3
+tags: [ai]
+alternativeTo: []
+readme: |
+
+  Connect Product Builders & Low-coder & Developers to work on the same plateform to build new products or/and features.
+
+  ![preview](https://docs.eda.prisme.ai/en/assets/illustration.png)

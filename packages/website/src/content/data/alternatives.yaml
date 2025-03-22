@@ -94,6 +94,9 @@ alternatives:
   - slug: dropbox
     name: Dropbox
     description: File hosting service
+  - slug: drupal
+    name: Drupal
+    description: Content management system
   - slug: duckduckgo
     name: DuckDuckGo
     description: Search engine
@@ -190,6 +193,9 @@ alternatives:
   - slug: jira
     name: Jira
     description: Project management tool
+  - slug: joomla
+    name: Joomla
+    description: Content management system
   - slug: kafka
     name: Kafka
     icon: apachekafka

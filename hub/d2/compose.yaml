@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  # d2:
+  #   image: terrastruct/d2:v${D2_VERSION:-0.6.9}
+  #   command: diagram.d2
+  #   configs:
+  #     - source: diagram.d2
+  #       target: ~/src/diagram.d2
+  #   # labels:
+  #   #   dash.url: http://$PROJECT.$DOMAIN
+  #   #   traefik.http.routers.d2.rule: Host(`$PROJECT.$DOMAIN`)
+  #   #   traefik.http.services.d2.loadbalancer.server.port: 8080
+
+  d2:
+    build:
+      context: .
+    labels:
+      dash.url: http://$PROJECT.$DOMAIN
+      traefik.http.routers.d2.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.d2.loadbalancer.server.port: 9090
+# configs:
+#   diagram.d2:
+#     content: |
+#       x -> y

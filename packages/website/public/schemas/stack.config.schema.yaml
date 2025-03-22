@@ -12,6 +12,11 @@ required:
   - author
   - license
 properties:
+  status:
+    type: string
+    description: Status of the stack configuration
+    enum: ["untested", "broken", "starting", "working"]
+
   type:
     type: string
     description: Type of the stack configuration

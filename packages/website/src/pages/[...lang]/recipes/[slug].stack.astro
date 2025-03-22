@@ -6,6 +6,7 @@ import Tag from "~/components/tag.html";
 import { formatStars, timeago } from "~/helpers";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
+import EnvironmentVars from "~components/EnvironmentVars";
 import { getRecipes } from "~content/collections/recipes";
 
 export const getStaticPaths = async () => {
@@ -37,6 +38,8 @@ if (!recipe) {
 const t = useTranslations(lang);
 const url = useUrl(lang);
 
+const webUrl = `https://${slug}.stack.localhost`;
+
 // Astro.response.status = 301;
 // Astro.response.headers.set("Location", `stack://${slug}`);
 
@@ -57,6 +60,7 @@ const {
   stars,
   license,
   author,
+  env,
 } = recipe;
 
 console.log(name, description, version, redirectUrl);
@@ -67,7 +71,7 @@ console.log(name, description, version, redirectUrl);
   <input type="hidden" id="name" value={name} />
   <input type="hidden" id="slug" value={slug} />
   <input type="hidden" id="version" value={version} />
-  <input type="hidden" id="url" value={`https://${slug}.stack.localhost`} />
+  <input type="hidden" id="url" value={webUrl} />
   <input type="hidden" id="redirectUrl" value={redirectUrl} />
 
   <div slot="left" class="hidden 2xl:block section h-full">
@@ -220,15 +224,38 @@ console.log(name, description, version, redirectUrl);
   </div>
   <div class="section">
     <div class="container">
-      <iframe
-        id="render"
-        class="!section w-full h-0 transition-all"
-        style="margin:0 !important"></iframe>
+      <div class="relative highlight highlight-if-connected">
+        <span
+          class="absolute -z-10 -top-10 right-0 p-2 text-sm text-neutral-500"
+        >
+          <a href={webUrl}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48 48"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="inline-block w-4 h-4 mr-1 align-middle"
+            >
+              <path d="M33 6H42V15"></path>
+              <path d="M42 33V42H33"></path>
+              <path d="M15 42H6V33"></path>
+              <path d="M6 15V6H15"></path>
+            </svg>
+            {t("Access it in fullscreen")}
+          </a>
+        </span>
+        <iframe
+          id="render"
+          class="!section w-full h-0 transition-all rounded-lg"
+          style="margin:0 !important"
+          allow="full`screen"></iframe>
+      </div>
       <div id="info">
         <h2
           id="status"
           set:html={t("{name} {version} is starting…", { name, version })}
         />
+        <EnvironmentVars lang={lang} env={env} />
         <details open>
           <summary>{t("Execution logs")}</summary>
           <pre id="logs"></pre>

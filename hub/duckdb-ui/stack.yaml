@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: broken
+slug: duckdb-ui
+name: DuckDB UI
+icon: duckdb
+flavor: DockerCompose
+version: latest
+updated_at: 2025-03-11
+description: Analytical database with a web-based user interface
+author: DuckDB Foundation
+license: MIT
+homepage: https://duckdb.org/
+repository: https://github.com/duckdb/duckdb-ui
+stars: 213
+tags: [database, analytics]
+alternativeTo: []
+readme: |
+
+  A user interface for DuckDB, allowing you to interact with DuckDB through a web-based interface.

@@ -3,7 +3,6 @@
 # This is a https://stack.lol stack metadata file.
 slug: langfuse
 name: Langfuse
-icon: 🪢
 flavor: DockerCompose
 version: "3.29.0"
 updated_at: 2025-02-21

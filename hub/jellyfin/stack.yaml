@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT
 # yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
 # This is a https://stack.lol stack metadata file.
+status: working
 slug: jellyfin
 name: Jellyfin
 flavor: DockerCompose

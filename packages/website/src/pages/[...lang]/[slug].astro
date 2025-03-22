@@ -16,6 +16,7 @@ import {
 } from "~/helpers";
 import Card from "~components/Card";
 import Cards from "~components/Cards";
+import EnvironmentVars from "~components/EnvironmentVars";
 
 export const getStaticPaths = async () => {
   return langs
@@ -299,31 +300,7 @@ const similar = Array.from(
       <hr class="hr" />
 
       <h3 set:html={t("Environment variables")} />
-      {
-        Object.entries(env ?? {}).length === 0 ? (
-          <p class="subtle" set:html={t("No environment variables defined.")} />
-        ) : (
-          <details>
-            <summary
-              class="subtle"
-              set:html={t("View environment variables")}
-            />
-            <dl class="max-h-96 overflow-y-auto">
-              {Object.entries(env ?? {}).map(([key, value]) => (
-                <>
-                  <dt>{key}</dt>
-                  <dd>
-                    <span style="user-select: none; -webkit-user-select: none;">
-                      &nbsp;
-                    </span>
-                    {value}
-                  </dd>
-                </>
-              ))}
-            </dl>
-          </details>
-        )
-      }
+      <EnvironmentVars lang={lang} env={env} />
     </div>
   </div>
 

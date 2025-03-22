@@ -1,0 +1,202 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  console:
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-console:latest
+    entrypoint: npm start --prefix services/studio
+    restart: on-failure
+    depends_on:
+      - api-gateway
+    environment:
+      API_URL: "${API_URL}"
+      CONSOLE_URL: "${CONSOLE_URL}"
+      PAGES_HOST: "${PAGES_HOST}"
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.console.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.console.loadbalancer.server.port: 3000
+
+  api-gateway:
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-api-gateway:latest
+    entrypoint: npm start --prefix services/api-gateway
+    restart: on-failure
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      PORT: 80
+      NODE_ENV: development
+      OPENAPI_FILEPATH: /www/specifications/swagger.yml
+      USERS_STORAGE_HOST: "mongodb://mongo/users"
+      SESSIONS_STORAGE_HOST: "redis://redis/2"
+      BROKER_HOST: "redis://redis/10"
+      PERMISSIONS_STORAGE_HOST: "mongodb://mongo/permissions"
+      CONSOLE_URL: "${CONSOLE_URL}"
+      # API_URL: "${API_URL}"
+      API_URL: "http://$PROJECT.$DOMAIN/v2"
+      # API_URL: "http://localhost:3001/v2"
+      PAGES_HOST: "${PAGES_HOST}"
+      ACCOUNT_VALIDATION_METHOD: auto
+      # ACCOUNT_VALIDATION_METHOD: manual
+    configs:
+      - source: authProviders.config.yml
+        target: /www/services/api-gateway/authProviders.config.yml
+    extra_hosts:
+      - $PROJECT.$DOMAIN:127.0.0.1
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.api-gateway.rule: Host(`$PROJECT.$DOMAIN`) && (PathPrefix(`/v2/`) || PathPrefix(`/sys/`) || PathPrefix(`/oidc/`))
+      traefik.http.services.api-gateway.loadbalancer.server.port: 80
+
+  pages:
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-pages:latest
+    entrypoint: npm start --prefix services/studio
+    restart: on-failure
+    environment:
+      API_URL: "${API_URL}"
+      CONSOLE_URL: "${CONSOLE_URL}"
+      PAGES_HOST: "${PAGES_HOST}"
+    labels:
+      dash.url: https://$PROJECT-pages.$DOMAIN
+      traefik.http.routers.pages.rule: Host(`$PROJECT-pages.$DOMAIN`)
+      traefik.http.services.pages.loadbalancer.server.port: 3100
+
+  events:
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-events:latest
+    entrypoint: node --abort-on-uncaught-exception services/events/dist/index.js
+    restart: on-failure
+    depends_on:
+      redis:
+        condition: service_started
+      elastic:
+        condition: service_healthy
+    environment:
+      PORT: 3004
+      NODE_ENV: development
+      BROKER_HOST: "redis://redis/10"
+      OPENAPI_FILEPATH: /www/specifications/swagger.yml
+      EVENTS_STORAGE_ES_HOST: "http://elastic:9200"
+      PERMISSIONS_STORAGE_HOST: "mongodb://mongo/permissions"
+
+  runtime:
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-runtime:latest
+    entrypoint: node --abort-on-uncaught-exception services/runtime/dist/index.js
+    restart: on-failure
+    volumes:
+      - models:/www/models
+    depends_on:
+      - redis
+    environment:
+      PORT: 3003
+      NODE_ENV: development
+      BROKER_HOST: "redis://redis/10"
+      CONTEXTS_CACHE_HOST: "redis://redis/0"
+      OPENAPI_FILEPATH: /www/specifications/swagger.yml
+      WORKSPACES_STORAGE_TYPE: FILESYSTEM
+      WORKSPACES_STORAGE_FILESYSTEM_DIRPATH: /www/models
+      PERMISSIONS_STORAGE_HOST: "mongodb://mongo/permissions"
+      API_URL: "${API_URL}"
+
+  workspaces:
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-workspaces:latest
+    entrypoint: node --abort-on-uncaught-exception services/workspaces/dist/index.js
+    restart: on-failure
+    volumes:
+      - models:/www/models
+    depends_on:
+      - redis
+    environment:
+      PORT: 3002
+      NODE_ENV: development
+      BROKER_HOST: "redis://redis/10"
+      OPENAPI_FILEPATH: /www/specifications/swagger.yml
+      WORKSPACES_STORAGE_TYPE: FILESYSTEM
+      WORKSPACES_STORAGE_FILESYSTEM_DIRPATH: /www/models
+      PERMISSIONS_STORAGE_HOST: "mongodb://mongo/permissions"
+      GATEWAY_API_HOST: "http://api-gateway/v2"
+
+  mongo:
+    image: mongo:4.0
+    restart: always
+    volumes:
+      - mongo:/data/db
+
+  redis:
+    image: redis
+    container_name: redis_api
+    restart: always
+    volumes:
+      - redis:/data
+
+  elastic:
+    image: elasticsearch:7.14.0
+    restart: always
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms750m -Xmx750m
+      - http.host=0.0.0.0
+      - transport.host=0.0.0.0
+      - network.host=0.0.0.0
+      - node.name=elastic
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - "-f"
+        - "http://localhost:9200"
+      interval: 20s
+      retries: 6
+      timeout: 5s
+    volumes:
+      - es01:/usr/share/elasticsearch/data
+    configs:
+      - source: elasticsearch01.yml
+        target: /usr/share/elasticsearch/config/elasticsearch.yml
+
+  kibana:
+    image: kibana:7.14.0
+    depends_on:
+      elastic:
+        condition: service_healthy
+    volumes:
+      - kibana:/usr/share/kibana/data
+    environment:
+      - SERVERNAME=kibana
+      - ELASTICSEARCH_HOSTS=http://elastic:9200
+      - ELASTICSEARCH_USERNAME=elastic
+
+configs:
+  elasticsearch01.yml:
+    content: |
+      node.name: elastic
+      # cluster.name: "docker-cluster"
+      network.host: 0.0.0.0
+      path.data: /usr/share/elasticsearch/data
+      path.logs: /usr/share/elasticsearch/logs
+      cluster.routing.allocation.disk.threshold_enabled: false
+      reindex.ssl.verification_mode: none
+
+  authProviders.config.yml:
+    content: |
+      providers:
+        myProvider:
+          type: oidc
+          config:
+            client_id: "your client id"
+            client_secret: "your client secret"
+            authorization_endpoint: "idp authorization_endpoint"
+            token_endpoint: "idp token_endpoint"
+            jwks_uri: "idp public certificates endpoint"
+            scopes: "openid email profile"
+
+volumes:
+  mongo:
+  redis:
+  es01:
+  kibana:
+  models:

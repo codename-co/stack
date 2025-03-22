@@ -1,7 +1,9 @@
 # SPDX-License-Identifier: MIT
 # yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
 # This is a https://stack.lol stack metadata file.
+status: working
 slug: changedetection
+icon: 📄
 name: Changedetection
 flavor: DockerCompose
 version: "0.49.4"

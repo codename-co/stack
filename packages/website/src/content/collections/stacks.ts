@@ -1,7 +1,13 @@
 import { getCollection } from "astro:content";
 
 // const promoted = await getCollection("promoted");
-const _stacks = await getCollection("stacks");
+const _stacks = await getCollection(
+  "stacks",
+  ({ data }) =>
+    // import.meta.env.PROD ?
+    ["working", "starting", undefined].includes(data.status)
+  // : true
+);
 
 export const getStacks = (lang: string) =>
   _stacks

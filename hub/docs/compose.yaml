@@ -1,0 +1,299 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  postgresql:
+    image: postgres:16
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 1s
+      timeout: 2s
+      retries: 300
+    env_file: .env
+
+  redis:
+    image: redis:5
+
+  mailcatcher:
+    image: sj26/mailcatcher:latest
+
+  minio:
+    user: ${DOCKER_USER:-1000}
+    image: minio/minio
+    environment:
+      - MINIO_ROOT_USER=impress
+      - MINIO_ROOT_PASSWORD=password
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 1s
+      timeout: 20s
+      retries: 300
+    entrypoint: ""
+    command: minio server --console-address :9001 /data
+    volumes:
+      - minio:/data
+
+  createbuckets:
+    image: minio/mc
+    depends_on:
+      minio:
+        condition: service_healthy
+        restart: true
+    entrypoint: >
+      sh -c "
+      /usr/bin/mc alias set impress http://minio:9000 impress password && \
+      /usr/bin/mc mb impress/impress-media-storage && \
+      /usr/bin/mc version enable impress/impress-media-storage && \
+      exit 0;"
+
+  app:
+    build:
+      context: .
+      target: backend-production
+      args:
+        DOCKER_USER: ${DOCKER_USER:-1000}
+    user: ${DOCKER_USER:-1000}
+    image: impress:backend-production
+    environment:
+      - DJANGO_CONFIGURATION=Demo
+    env_file:
+      - env.d/development/common
+      - env.d/development/postgresql
+    depends_on:
+      postgresql:
+        condition: service_healthy
+        restart: true
+      redis:
+        condition: service_started
+      minio:
+        condition: service_started
+
+  celery:
+    user: ${DOCKER_USER:-1000}
+    image: impress:backend-production
+    command: ["celery", "-A", "impress.celery_app", "worker", "-l", "INFO"]
+    environment:
+      - DJANGO_CONFIGURATION=Demo
+    env_file:
+      - env.d/development/common
+      - env.d/development/postgresql
+    depends_on:
+      - app
+
+  nginx:
+    image: nginx:1.25
+    ports:
+      - "8083:8083"
+    configs:
+      - source: nginx.conf
+        target: /etc/nginx/conf.d/default.conf
+    volumes:
+      - ./docker/files/etc/nginx/conf.d:/etc/nginx/conf.d:ro
+    depends_on:
+      app-dev:
+        condition: service_started
+      y-provider:
+        condition: service_started
+      keycloak:
+        condition: service_healthy
+        restart: true
+
+  frontend:
+    user: "${DOCKER_USER:-1000}"
+    build:
+      context: .
+      dockerfile: ./src/frontend/Dockerfile
+      target: frontend-production
+      args:
+        API_ORIGIN: "http://localhost:8071"
+        Y_PROVIDER_URL: "ws://localhost:4444"
+        MEDIA_URL: "http://localhost:8083"
+        SW_DEACTIVATED: "true"
+    image: impress:frontend-development
+    ports:
+      - "3000:3000"
+
+  crowdin:
+    image: crowdin/cli:3.16.0
+    volumes:
+      - ".:/app"
+    env_file:
+      - env.d/development/crowdin
+    user: "${DOCKER_USER:-1000}"
+    working_dir: /app
+
+  node:
+    image: node:18
+    user: "${DOCKER_USER:-1000}"
+    environment:
+      HOME: /tmp
+    volumes:
+      - ".:/app"
+
+  y-provider:
+    user: ${DOCKER_USER:-1000}
+    build:
+      context: .
+      dockerfile: ./src/frontend/servers/y-provider/Dockerfile
+      target: y-provider
+    restart: unless-stopped
+    env_file:
+      - env.d/development/common
+    ports:
+      - "4444:4444"
+
+  kc_postgresql:
+    image: postgres:14.3
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 1s
+      timeout: 2s
+      retries: 300
+    ports:
+      - "5433:5432"
+    env_file:
+      - env.d/development/kc_postgresql
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:20.0.1
+    volumes:
+      - ./docker/auth/realm.json:/opt/keycloak/data/import/realm.json
+    command:
+      - start-dev
+      - --features=preview
+      - --import-realm
+      - --proxy=edge
+      - --hostname-url=http://localhost:8083
+      - --hostname-admin-url=http://localhost:8083/
+      - --hostname-strict=false
+      - --hostname-strict-https=false
+      - --health-enabled=true
+      - --metrics-enabled=true
+    healthcheck:
+      test:
+        ["CMD", "curl", "--head", "-fsS", "http://localhost:8080/health/ready"]
+      interval: 1s
+      timeout: 2s
+      retries: 300
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL_HOST: kc_postgresql
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_PASSWORD: pass
+      KC_DB_USERNAME: impress
+      KC_DB_SCHEMA: public
+      PROXY_ADDRESS_FORWARDING: "true"
+    ports:
+      - "8080:8080"
+    depends_on:
+      kc_postgresql:
+        condition: service_healthy
+        restart: true
+
+configs:
+  nginx.conf:
+    content: |
+      server {
+          listen 8083;
+          server_name localhost;
+          charset utf-8;
+
+          # Proxy auth for collaboration server
+          location /collaboration/ws/ {
+              # Collaboration Auth request configuration
+              auth_request /collaboration-auth;
+              auth_request_set $$authHeader $$upstream_http_authorization;
+              auth_request_set $$canEdit $$upstream_http_x_can_edit;
+              auth_request_set $$userId $$upstream_http_x_user_id;
+
+              # Pass specific headers from the auth response
+              proxy_set_header Authorization $$authHeader;
+              proxy_set_header X-Can-Edit $$canEdit;
+              proxy_set_header X-User-Id $$userId;
+
+              # Ensure WebSocket upgrade
+              proxy_http_version 1.1;
+              proxy_set_header Upgrade $$http_upgrade;
+              proxy_set_header Connection "Upgrade";
+
+              # Collaboration server
+              proxy_pass http://y-provider:4444;
+
+              # Set appropriate timeout for WebSocket
+              proxy_read_timeout 86400;
+              proxy_send_timeout 86400;
+
+              # Preserve original host and additional headers
+              proxy_set_header Host $$host;
+          }
+
+          location /collaboration-auth {
+              proxy_pass http://app-dev:8000/api/v1.0/documents/collaboration-auth/;
+              proxy_set_header Host $$host;
+              proxy_set_header X-Real-IP $$remote_addr;
+              proxy_set_header X-Forwarded-For $$proxy_add_x_forwarded_for;
+              proxy_set_header X-Original-URL $$request_uri;
+
+              # Prevent the body from being passed
+              proxy_pass_request_body off;
+              proxy_set_header Content-Length "";
+              proxy_set_header X-Original-Method $$request_method;
+          }
+
+          location  /collaboration/api/ {
+              # Collaboration server
+              proxy_pass http://y-provider:4444;
+              proxy_set_header Host $$host;
+          }
+
+          # Proxy auth for media
+          location /media/ {
+              # Auth request configuration
+              auth_request /media-auth;
+              auth_request_set $$authHeader $$upstream_http_authorization;
+              auth_request_set $$authDate $$upstream_http_x_amz_date;
+              auth_request_set $$authContentSha256 $$upstream_http_x_amz_content_sha256;
+
+              # Pass specific headers from the auth response
+              proxy_set_header Authorization $$authHeader;
+              proxy_set_header X-Amz-Date $$authDate;
+              proxy_set_header X-Amz-Content-SHA256 $$authContentSha256;
+
+              # Get resource from Minio
+              proxy_pass http://minio:9000/impress-media-storage/;
+              proxy_set_header Host minio:9000;
+
+              add_header Content-Security-Policy "default-src 'none'" always;
+          }
+
+          location /media-auth {
+              proxy_pass http://app-dev:8000/api/v1.0/documents/media-auth/;
+              proxy_set_header Host $$host;
+              proxy_set_header X-Real-IP $$remote_addr;
+              proxy_set_header X-Forwarded-For $$proxy_add_x_forwarded_for;
+              proxy_set_header X-Original-URL $$request_uri;
+
+              # Prevent the body from being passed
+              proxy_pass_request_body off;
+              proxy_set_header Content-Length "";
+              proxy_set_header X-Original-Method $$request_method;
+          }
+
+          location / {
+              proxy_pass http://keycloak:8080;
+              proxy_set_header Host $$host;
+              proxy_set_header X-Real-IP $$remote_addr;
+              proxy_set_header X-Forwarded-For $$proxy_add_x_forwarded_for;
+
+              # Increase proxy buffer size to allow keycloak to send large
+              # header responses when a user is created.
+              proxy_buffer_size 128k;
+              proxy_buffers 4 256k;
+              proxy_busy_buffers_size 256k;
+          }
+      }
+
+volumes:
+  minio:

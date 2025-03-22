@@ -3,7 +3,7 @@
 # This is a https://stack.lol stack metadata file.
 slug: lobechat
 name: LobeChat
-icon: 🤯
+icon: lobehub
 flavor: DockerCompose
 version: "1.52.15"
 updated_at: 2025-01-28

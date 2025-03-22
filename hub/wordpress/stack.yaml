@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: broken
+slug: wordpress
+name: Wordpress
+flavor: DockerCompose
+version: "6.7.2"
+updated_at: 2025-03-19
+description: Open-source content management system
+author: Wordpress community
+license: GPL-2.0
+homepage: https://wordpress.org
+repository: https://github.com/WordPress/wordpress-develop
+stars: 2700
+tags: [cms]
+alternativeTo: [joomla, drupal]
+readme: |
+
+  The open source publishing platform of choice for millions of websites worldwide—from creators and small businesses to enterprises.
+
+  <hr>
+
+  ### Features
+
+  - **Block Editor**: Create any website with flexible design tools and the power of blocks. Start with a blank canvas or choose a theme. Customize every detail—no code needed.
+  - **Build**: See how your site will look in real time, even as you add, edit, and rearrange content—with intuitive editing and integrated features to manage it all.
+  - **Extend**: Make your site do whatever you need it to. Add a store, analytics, newsletter, social media integration; you’re in control with an extensive library of plugins.

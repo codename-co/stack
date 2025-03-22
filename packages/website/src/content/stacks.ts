@@ -10,6 +10,7 @@ const langCodes = Object.keys(languages);
 export const stacks = defineCollection({
   loader: glob({ pattern: "stacks/*.json", base: "src/content/data" }),
   schema: z.object({
+    status: z.enum(["untested", "broken", "starting", "working"]).optional(),
     slug: z.string(),
     name: z.string(),
     icon: z.string().optional(),
@@ -38,7 +39,7 @@ export const stacks = defineCollection({
           slug: z.string().optional(),
           description: z.string().optional(),
           readme: z.string().optional(),
-        }),
+        })
       )
       .optional(),
   }),

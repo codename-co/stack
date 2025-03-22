@@ -1,6 +1,7 @@
 import { getCollection } from "astro:content";
+import { getStacks } from "~content/collections/stacks";
 
-const stacks = await getCollection("stacks");
+const stacks = getStacks("en");
 const alternatives = await getCollection("alternatives");
 const tags = await getCollection("tags");
 
@@ -36,7 +37,7 @@ export const graphData = () => ({
         node.data.tags?.map((tag) => ({
           source: `stack-${node.data.slug}`,
           target: `tag-${tag}`,
-        })),
+        }))
       )
       .flat()
       .filter(Boolean),
@@ -45,7 +46,7 @@ export const graphData = () => ({
         node.data.alternativeTo?.map((alternative) => ({
           source: `stack-${node.data.slug}`,
           target: `alt-${alternative}`,
-        })),
+        }))
       )
       .flat()
       .filter(Boolean),

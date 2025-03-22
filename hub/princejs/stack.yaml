@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT
 # yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
 # This is a https://stack.lol stack metadata file.
+status: working
 slug: princejs
 name: Prince of Persia
 icon: 🎮
@@ -12,7 +13,7 @@ author: Oliver Klemenz
 license: Unlicense
 homepage: https://princejs.com
 repository: https://github.com/oklemenz/PrinceJS
-stars: 955
+stars: 954
 tags: [game]
 alternativeTo: []
 readme: |

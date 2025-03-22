@@ -1,5 +1,6 @@
 import { getCollection } from "astro:content";
 import React from "react";
+import { getStacks } from "~content/collections/stacks";
 import { iconOf } from "~helpers";
 
 type LogoProps = {
@@ -10,7 +11,7 @@ type LogoProps = {
 };
 
 const alternatives = await getCollection("alternatives");
-const stacks = await getCollection("stacks");
+const stacks = getStacks("en");
 
 const hexFromSlug = (s?: string) => {
   if (!s) return null;

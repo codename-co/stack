@@ -4,8 +4,6 @@
 services:
   stirling-pdf:
     image: stirlingtools/stirling-pdf:${STIRLINGPDF_VERSION:-0.36.6}
-    # ports:
-    #   - 8080:8080
     # volumes:
     #   - ./StirlingPDF/trainingData:/usr/share/tessdata # Required for extra OCR languages
     #   - ./StirlingPDF/extraConfigs:/configs
