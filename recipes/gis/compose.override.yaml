@@ -2,19 +2,6 @@
 # This is a https://stack.lol docker compose file.
 
 services:
-  pg_featureserv:
-    image: pramsey/pg_featureserv:${PG_FEATURESERV_VERSION:-20250128}
-    restart: on-failure:3
-    environment:
-      - DATABASE_URL=${DATABASE_URL}
-    depends_on:
-      postgis:
-        condition: service_healthy
-    labels:
-      dash.url: https://$PROJECT-features.$DOMAIN
-      traefik.http.routers.pg_featureserv.rule: Host(`$PROJECT-features.$DOMAIN`)
-      traefik.http.services.pg_featureserv.loadbalancer.server.port: 9000
-
   pg_tileserv:
     image: pramsey/pg_tileserv:${PG_TILESERV_VERSION:-20250131}
     restart: on-failure:3
@@ -27,6 +14,16 @@ services:
       dash.url: https://$PROJECT-tiles.$DOMAIN
       traefik.http.routers.pg_tileserv.rule: Host(`$PROJECT-tiles.$DOMAIN`) || Host(`$PROJECT.$DOMAIN`)
       traefik.http.services.pg_tileserv.loadbalancer.server.port: 7800
-      traefik.http.routers.pg_tileserv.middlewares: redirect-to-map
-      traefik.http.middlewares.redirect-to-map.redirectregex.regex: ^$$
-      traefik.http.middlewares.redirect-to-map.redirectregex.replacement: $$/tiger.tabblock20.html
+
+  pg_featureserv:
+    image: pramsey/pg_featureserv:${PG_FEATURESERV_VERSION:-20250128}
+    restart: on-failure:3
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+    depends_on:
+      postgis:
+        condition: service_healthy
+    labels:
+      dash.url: https://$PROJECT-features.$DOMAIN
+      traefik.http.routers.pg_featureserv.rule: Host(`$PROJECT-features.$DOMAIN`)
+      traefik.http.services.pg_featureserv.loadbalancer.server.port: 9000
