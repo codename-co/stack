@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: working
+slug: postgis
+name: PostGIS
+icon: postgresql
+flavor: DockerCompose
+version: "17-3.5"
+updated_at: 2025-03-17
+description: A spatial database extender for PostgreSQL
+author: PostGIS PSC
+license: GPL-2.0
+homepage: https://postgis.net
+repository: https://github.com/postgis/postgis
+stars: 1800
+tags: [gis, database]
+alternativeTo: []
+readme: |
+
+  🌍 PostGIS extends PostgreSQL's capabilities by enabling storage, indexing, and querying of geospatial data.
+
+    <hr>
+
+    ### Features
+
+    - **Spatial Data Storage:** Handle points, lines, polygons, and multi-geometries in 2D and 3D formats
+    - **Spatial Indexing:** Fast location-based searches and data retrieval
+    - **Spatial Functions:** Comprehensive tools for distance calculations, area measurements, geometry intersections, and buffering
+    - **Geometry Processing:** Advanced geometry manipulation including simplification and conversion
+    - **Raster Support:** Handle elevation and weather data in raster format
+    - **Geocoding:** Built-in geocoding and reverse geocoding capabilities
+    - **Tool Integration:** Works seamlessly with QGIS, GeoServer, MapServer, ArcGIS, and Tableau

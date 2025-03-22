@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  postgis:
+    image: postgis/postgis:${POSTGRES_VERSION:-17-3.5}-alpine
+    shm_size: 128mb
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 60s
+      timeout: 1s
+      retries: 10
+      start_interval: 1s
+      start_period: 10s
+    # volumes:
+    #   - postgres-data:/var/lib/postgresql/data
+    # - ./migrations:/docker-entrypoint-initdb.d:ro
+    labels:
+      dash.icon: postgresql
+
+volumes:
+  postgres-data:

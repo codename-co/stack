@@ -244,3 +244,6 @@ tags:
     name: Blog
   - slug: web-monitoring
     name: Web monitoring
+  - slug: gis
+    name: GIS
+    title: Geographic Information System
