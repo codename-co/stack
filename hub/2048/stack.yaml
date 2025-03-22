@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: working
+slug: "2048"
+name: "2048"
+icon: 🎮
+flavor: DockerCompose
+version: "latest"
+updated_at: 2024-10-24
+description: Single-player sliding block puzzle game
+author: Gabriele Cirulli
+license: MIT
+homepage: https://play2048.co
+repository: https://github.com/gabrielecirulli/2048
+stars: 12500
+tags: [game]
+alternativeTo: []
+readme: |
+
+  A small clone of [1024](https://play.google.com/store/apps/details?id=com.veewo.a1024), based on [Saming's 2048](http://saming.fr/p/2048/) (also a clone). 2048 was indirectly inspired by [Threes](https://asherv.com/threes/).
+
+  ![preview](https://cloud.githubusercontent.com/assets/1175750/8614312/280e5dc2-26f1-11e5-9f1f-5891c3ca8b26.png)
