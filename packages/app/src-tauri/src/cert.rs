@@ -1,5 +1,4 @@
 use std::path::Path;
-use std::process::Command;
 use tauri::path::BaseDirectory;
 use tauri::Manager;
 use tauri_plugin_opener::OpenerExt;
@@ -20,8 +19,7 @@ pub fn trust_certificate(app: &tauri::AppHandle) -> Result<(), String> {
     log::info!("Adding certificate to keychain");
     log::debug!("Executing script: {:?}", script_path);
 
-    app
-        .opener()
+    app.opener()
         .open_path(
             script_path.to_string_lossy().to_string(),
             Some("Terminal.app"),

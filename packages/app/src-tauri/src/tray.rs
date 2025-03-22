@@ -1,14 +1,11 @@
 // #![cfg(all(desktop, not(test)))]
 
 use log::{debug, error, info};
-use std::sync::atomic::{AtomicBool, Ordering};
 use tauri::{
     include_image,
-    menu::{
-        AboutMetadata, CheckMenuItem, IconMenuItem, Menu, MenuBuilder, MenuItem, SubmenuBuilder,
-    },
+    menu::{AboutMetadata, Menu, MenuBuilder, MenuItem, SubmenuBuilder},
     tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent},
-    Manager, Runtime, WebviewUrl,
+    Manager,
 };
 use tauri_plugin_shell::ShellExt;
 use tokio::time::interval;
@@ -198,45 +195,43 @@ pub fn create_tray(app: &tauri::AppHandle<tauri::Wry>) -> tauri::Result<()> {
                     } else {
                         error!("Exit with code: {}", output.status.code().unwrap());
                     }
-                }
-                // "quit" => {
-                //     info!("Quit!");
-                //     app.exit(0);
-                // }
-                // "new-window" => {
-                //     let _webview = tauri::WebviewWindowBuilder::new(
-                //         app,
-                //         "new",
-                //         WebviewUrl::App("index.html".into()),
-                //     )
-                //     .title("Tauri")
-                //     .build()
-                //     .unwrap();
-                // }
-                // i @ "icon-light" | i @ "icon-dark" => {
-                //     if let Some(tray) = app.tray_by_id("tray-1") {
-                //         let icon = if i == "icon-light" {
-                //             include_image!("icons/32x32-black.png")
-                //         } else {
-                //             include_image!("icons/32x32-white.png")
-                //         };
-                //         let _ = tray.set_icon(Some(icon));
-                //     }
-                // }
-                // "switch-menu" => {
-                //     let flag = is_menu1.load(Ordering::Relaxed);
-                //     let (menu, tooltip) = if flag {
-                //         (menu2.clone(), "Menu 2")
-                //     } else {
-                //         (menu.clone(), "Tauri")
-                //     };
-                //     if let Some(tray) = app.tray_by_id("tray-1") {
-                //         let _ = tray.set_menu(Some(menu));
-                //         let _ = tray.set_tooltip(Some(tooltip));
-                //     }
-                //     is_menu1.store(!flag, Ordering::Relaxed);
-                // }
-                _ => {}
+                } // "quit" => {
+                  //     info!("Quit!");
+                  //     app.exit(0);
+                  // }
+                  // "new-window" => {
+                  //     let _webview = tauri::WebviewWindowBuilder::new(
+                  //         app,
+                  //         "new",
+                  //         WebviewUrl::App("index.html".into()),
+                  //     )
+                  //     .title("Tauri")
+                  //     .build()
+                  //     .unwrap();
+                  // }
+                  // i @ "icon-light" | i @ "icon-dark" => {
+                  //     if let Some(tray) = app.tray_by_id("tray-1") {
+                  //         let icon = if i == "icon-light" {
+                  //             include_image!("icons/32x32-black.png")
+                  //         } else {
+                  //             include_image!("icons/32x32-white.png")
+                  //         };
+                  //         let _ = tray.set_icon(Some(icon));
+                  //     }
+                  // }
+                  // "switch-menu" => {
+                  //     let flag = is_menu1.load(Ordering::Relaxed);
+                  //     let (menu, tooltip) = if flag {
+                  //         (menu2.clone(), "Menu 2")
+                  //     } else {
+                  //         (menu.clone(), "Tauri")
+                  //     };
+                  //     if let Some(tray) = app.tray_by_id("tray-1") {
+                  //         let _ = tray.set_menu(Some(menu));
+                  //         let _ = tray.set_tooltip(Some(tooltip));
+                  //     }
+                  //     is_menu1.store(!flag, Ordering::Relaxed);
+                  // }
             },
         )
         .on_tray_icon_event(|tray, event| {

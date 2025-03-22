@@ -6,6 +6,7 @@ services:
     image: postgres:${POSTGRES_VERSION:-17.4}-alpine
     shm_size: 128mb
     environment:
+      - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:

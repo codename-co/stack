@@ -1,6 +1,6 @@
 use crate::cli;
 use actix_cors::Cors;
-use actix_web::{get, post, web, App, HttpResponse, HttpServer, Result};
+use actix_web::{get, post, web, App, HttpResponse, HttpServer};
 use log::debug;
 use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
 use serde::Deserialize;
@@ -18,6 +18,7 @@ async fn health() -> String {
     format!("OK")
 }
 
+#[allow(dead_code)]
 struct AppState {
     tauri: AppHandle,
 }

@@ -3,7 +3,6 @@ use crate::utils::download_file;
 use flate2::{read::MultiGzDecoder, Compression, GzBuilder};
 use ignore::WalkBuilder;
 use log::{debug, error, info, warn};
-use reqwest;
 use std::env;
 use std::fs::{self, File};
 use std::io::BufRead;
@@ -314,38 +313,38 @@ pub async fn run_with_callback(bundle: &str, callback: impl Fn(String)) {
 /// # Arguments
 ///
 /// * `bundle` - A string slice that holds the path to the stack bundle file.
-pub fn stop(bundle: &str) {
-    let bundle_path = PathBuf::from(bundle);
-    let bundle_name = bundle_path
-        .file_stem()
-        .and_then(|s| s.to_str())
-        .unwrap_or("stack");
+// pub fn stop(bundle: &str) {
+//     let bundle_path = PathBuf::from(bundle);
+//     let bundle_name = bundle_path
+//         .file_stem()
+//         .and_then(|s| s.to_str())
+//         .unwrap_or("stack");
 
-    let file = File::open(bundle).expect("Failed to open bundle file");
-    let gz = flate2::read::GzDecoder::new(file);
-    let temp_dir = tempdir().expect("Failed to create temp dir").into_path();
+//     let file = File::open(bundle).expect("Failed to open bundle file");
+//     let gz = flate2::read::GzDecoder::new(file);
+//     let temp_dir = tempdir().expect("Failed to create temp dir").into_path();
 
-    // Create a named subdirectory
-    let extract_dir = temp_dir.join(bundle_name);
-    fs::create_dir(&extract_dir).expect("Failed to create extract directory");
+//     // Create a named subdirectory
+//     let extract_dir = temp_dir.join(bundle_name);
+//     fs::create_dir(&extract_dir).expect("Failed to create extract directory");
 
-    debug!("Extracting to: {:?}", extract_dir);
+//     debug!("Extracting to: {:?}", extract_dir);
 
-    let mut archive = Archive::new(gz);
-    archive
-        .unpack(&extract_dir)
-        .expect("Failed to unpack bundle");
+//     let mut archive = Archive::new(gz);
+//     archive
+//         .unpack(&extract_dir)
+//         .expect("Failed to unpack bundle");
 
-    let flavor = if let Some(flavor) = guess_flavor(&extract_dir) {
-        flavor
-    } else {
-        error!("Failed to determine the flavor of the software stack.");
-        return;
-    };
-    debug!("Detected flavor: {:?}", flavor);
+//     let flavor = if let Some(flavor) = guess_flavor(&extract_dir) {
+//         flavor
+//     } else {
+//         error!("Failed to determine the flavor of the software stack.");
+//         return;
+//     };
+//     debug!("Detected flavor: {:?}", flavor);
 
-    stop_stack(&extract_dir, flavor);
-}
+//     stop_stack(&extract_dir, flavor);
+// }
 
 fn load_stack_manifest(config_path: &Path) -> serde_yaml::Value {
     if config_path.exists() {
@@ -364,44 +363,44 @@ fn load_stack_manifest(config_path: &Path) -> serde_yaml::Value {
 /// # Arguments
 ///
 /// * `bundle` - A string slice that holds the path to the stack bundle file.
-pub fn inspect(bundle: &str) {
-    let file = File::open(bundle).expect("Failed to open bundle file");
-    let gz = flate2::read::GzDecoder::new(file);
-    let dir = tempdir().expect("Failed to create temp dir");
-    let mut archive = Archive::new(gz);
-    archive.unpack(dir.path()).expect("Failed to unpack bundle");
+// pub fn inspect(bundle: &str) {
+//     let file = File::open(bundle).expect("Failed to open bundle file");
+//     let gz = flate2::read::GzDecoder::new(file);
+//     let dir = tempdir().expect("Failed to create temp dir");
+//     let mut archive = Archive::new(gz);
+//     archive.unpack(dir.path()).expect("Failed to unpack bundle");
 
-    let guessed_flavor =
-        guess_flavor(dir.path()).expect("Failed to determine the flavor of the software stack");
-    debug!("Stack flavor: {:?}", guessed_flavor);
+//     let guessed_flavor =
+//         guess_flavor(dir.path()).expect("Failed to determine the flavor of the software stack");
+//     debug!("Stack flavor: {:?}", guessed_flavor);
 
-    let config_path = dir.path().join("stack.yaml");
-    if config_path.exists() {
-        let config = load_stack_manifest(config_path.as_path());
+//     let config_path = dir.path().join("stack.yaml");
+//     if config_path.exists() {
+//         let config = load_stack_manifest(config_path.as_path());
 
-        debug!("Stack metadata: {:?}", config);
+//         debug!("Stack metadata: {:?}", config);
 
-        info!("Stack metadata:");
-        info!("  Slug: {}", config["slug"].as_str().unwrap_or("N/A"));
-        info!("  Name: {}", config["name"].as_str().unwrap_or("N/A"));
-        info!("  Flavor: {:?}", config["flavor"].as_str().unwrap_or("N/A"));
-        info!("  Version: {}", config["version"].as_str().unwrap_or("N/A"));
-        info!(
-            "  Description: {}",
-            config["description"].as_str().unwrap_or("N/A")
-        );
-        // info!("  Icon: {}", config["icon"].as_str().unwrap_or("N/A"));
-        info!("  Author: {}", config["author"].as_str().unwrap_or("N/A"));
-        info!("  License: {}", config["license"].as_str().unwrap_or("N/A"));
-    } else {
-        debug!("No stack configuration file found");
-    }
+//         info!("Stack metadata:");
+//         info!("  Slug: {}", config["slug"].as_str().unwrap_or("N/A"));
+//         info!("  Name: {}", config["name"].as_str().unwrap_or("N/A"));
+//         info!("  Flavor: {:?}", config["flavor"].as_str().unwrap_or("N/A"));
+//         info!("  Version: {}", config["version"].as_str().unwrap_or("N/A"));
+//         info!(
+//             "  Description: {}",
+//             config["description"].as_str().unwrap_or("N/A")
+//         );
+//         // info!("  Icon: {}", config["icon"].as_str().unwrap_or("N/A"));
+//         info!("  Author: {}", config["author"].as_str().unwrap_or("N/A"));
+//         info!("  License: {}", config["license"].as_str().unwrap_or("N/A"));
+//     } else {
+//         debug!("No stack configuration file found");
+//     }
 
-    info!(
-        "\nStack is ready to be run:\n\x1b[4mstack run {}\x1b[0m",
-        bundle
-    );
-}
+//     info!(
+//         "\nStack is ready to be run:\n\x1b[4mstack run {}\x1b[0m",
+//         bundle
+//     );
+// }
 
 /// Guesses the flavor of the software stack by scanning the files available.
 ///
@@ -667,7 +666,7 @@ fn run_stack(name: &str, path: &Path, flavor: Flavor, callback: impl Fn(String))
             run_cmd
                 .arg("run")
                 .arg("-d")
-                .args(["--name", &format!("static-{}", name)])
+                .args(["--name", name])
                 // .args(["-p", ":80"])
                 .args(["--label", &format!("dash.name={}", name)])
                 .args(["--label", "dash.icon=html5"])
@@ -708,37 +707,37 @@ fn run_stack(name: &str, path: &Path, flavor: Flavor, callback: impl Fn(String))
     info!("✅ Stack {} is running.", name);
 }
 
-/// Stops a software stack from a stack bundle based on its flavor.
-///
-/// # Arguments
-///
-/// * `path` - A reference to the path of the extracted bundle directory.
-/// * `flavor` - The flavor of the software stack.
-fn stop_stack(path: &Path, flavor: Flavor) {
-    info!("Stopping flavor: {:?} in path: {:?}", flavor, path);
+// Stops a software stack from a stack bundle based on its flavor.
+//
+// # Arguments
+//
+// * `path` - A reference to the path of the extracted bundle directory.
+// * `flavor` - The flavor of the software stack.
+// fn stop_stack(path: &Path, flavor: Flavor) {
+//     info!("Stopping flavor: {:?} in path: {:?}", flavor, path);
 
-    // Collect environment variables
-    let env_vars = get_docker_env_vars();
+//     // Collect environment variables
+//     let env_vars = get_docker_env_vars();
 
-    match flavor {
-        Flavor::DockerCompose => {
-            let mut cmd = Command::new("docker");
-            cmd.arg("compose")
-                .arg("down")
-                .current_dir(path)
-                .envs(env_vars);
+//     match flavor {
+//         Flavor::DockerCompose => {
+//             let mut cmd = Command::new("docker");
+//             cmd.arg("compose")
+//                 .arg("down")
+//                 .current_dir(path)
+//                 .envs(env_vars);
 
-            let status = cmd
-                .status()
-                .expect("Failed to execute docker compose command");
+//             let status = cmd
+//                 .status()
+//                 .expect("Failed to execute docker compose command");
 
-            if !status.success() {
-                error!("docker compose command failed with status: {}", status);
-            }
-        }
+//             if !status.success() {
+//                 error!("docker compose command failed with status: {}", status);
+//             }
+//         }
 
-        _ => {
-            info!("Stopping flavor {:?} is not supported yet.", flavor);
-        }
-    }
-}
+//         _ => {
+//             info!("Stopping flavor {:?} is not supported yet.", flavor);
+//         }
+//     }
+// }

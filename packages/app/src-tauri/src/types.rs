@@ -5,6 +5,6 @@ pub enum Flavor {
     DockerCompose,
     DockerService,
     NodePackage,
-    GoPackage,
+    // GoPackage,
     StaticWebsite,
 }
