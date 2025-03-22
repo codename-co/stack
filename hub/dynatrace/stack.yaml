@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: broken
+slug: dynatrace
+name: Dynatrace
+flavor: DockerCompose
+version: "1.96.1000"
+updated_at: 2025-01-20
+description: Software intelligence for the enterprise cloud
+author: Dynatrace LLC
+license: Apache-2.0
+homepage: https://www.dynatrace.com
+tags: [monitoring]
+alternativeTo: [newrelic, datadog]
+readme: |
+
+  Dynatrace OneAgent, in combination with Dynatrace code modules, is responsible for collecting all observability signals within your monitored cloud-native environments to enable application, infrastructure, digital experience, and security monitoring. We leverage this data in context, AI, and intelligent automation across the full stack to help you simplify cloud operations and automate DevSecOps.
+
+  ![preview](https://images.g2crowd.com/uploads/attachment/file/95743/Dashboards.jpeg)
+
+  <hr>
+
+  ### Features
+
+  - 🔍 **Complete Infrastructure Monitoring**
+    Comprehensive visibility across modern cloud and hybrid environments.
+  - 📊 **Full-Stack Application Performance**
+    Deep application monitoring, tracing, and performance analysis for all tech stacks.
+  - 👥 **User Experience Monitoring**
+    Monitor and optimize user experiences with real-time analytics and session tracking.
+  - 📝 **Advanced Log Management**
+    Unified log analytics for troubleshooting and operational intelligence.
+  - 🛡️ **Runtime Application Protection**
+    Real-time vulnerability detection and automated security response.
+  - 🔒 **Security Intelligence**
+    Comprehensive threat detection, analysis, and automated incident response.
+  - 🔄 **DevOps Integration**
+    Seamless observability and security integration for CI/CD pipelines.
+  - 📈 **Real-Time Business Insights**
+    Data-driven decision making with customizable business analytics dashboards.

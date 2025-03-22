@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  dynatrace:
+    image: dynatrace/oneagent:${ONEAGENT_VERSION:-1.96.1000}
+    restart: on-failure:1
+    read_only: true
+    pid: host
+    network_mode: host
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - DAC_READ_SEARCH
+      - FOWNER
+      - KILL
+      - NET_ADMIN
+      - NET_RAW
+      - SETFCAP
+      - SETGID
+      - SETUID
+      - SYS_ADMIN
+      - SYS_CHROOT
+      - SYS_PTRACE
+      - SYS_RESOURCE
+      - FSETID
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - /:/mnt/root:ro
+      - dynatrace:/mnt/volume_storage_mount
+    environment:
+      - ONEAGENT_ENABLE_VOLUME_STORAGE=true
+      - ONEAGENT_INSTALLER_SCRIPT_URL=${ONEAGENT_INSTALLER_SCRIPT_URL}
+      - ONEAGENT_INSTALLER_DOWNLOAD_TOKEN=${ONEAGENT_INSTALLER_DOWNLOAD_TOKEN}
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.dynatrace.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.dynatrace.loadbalancer.server.port: 80
+
+volumes:
+  dynatrace:
