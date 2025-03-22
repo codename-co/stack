@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: broken
+slug: grav
+name: Grav
+flavor: DockerCompose
+version: "1.7.48"
+updated_at: 2024-10-28
+description: Flat-file CMS
+author: Grav CMS
+license: MIT
+homepage: https://getgrav.org
+repository: https://github.com/getgrav/grav
+stars: 14800
+tags: [cms]
+alternativeTo: [wordpress, joomla, drupal]
+readme: |
+
+  Grav is a Fast, Simple, and Flexible, file-based Web-platform. There is Zero installation required. Just extract the ZIP archive, and you are already up and running. It follows similar principles to other flat-file CMS platforms, but has a different design philosophy than most. Grav comes with a powerful Package Management System to allow for simple installation and upgrading of plugins and themes, as well as simple updating of Grav itself.
+
+  ![preview](https://getgrav.org/user/pages/01.tour/_easy-to-use/001-dashboard.png)
+
+  <hr>
+
+  ### Features
+
+    - 🚀 **Fast and Simple**: Grav is designed to be simple and easy to use. It's fast, powerful, and flexible.
+    - 📁 **File-based**: Everything is a file in Grav. You can simply create a page in Markdown, or a collection of pages in folders.
+    - 📝 **Markdown Content**: Use your favorite Markdown editor to create your content online or offline.
+    - 🔌 **One-Click Installs**: The built-in Package Manager lets you find, install, and easily update extensions and themes for Grav.
+    - ⚡ **Stellar Performance**: Grav intelligently caches content to deliver great performance, regardless of hosting.
+    - 🏷️ **Powerful Content Filtering**: Create unlimited taxonomies such as tags, categories, and authors to filter and manage your content.
+    - 🔧 **Dynamic Content Types**: The flat-file nature of Grav lets you define custom fields for any of your pages, including modular content.
+    - 🌍 **Multi-Language Support**: A simple mechanism for presenting sites in multiple languages is built into Grav.
+    - 💾 **Simple Backups and Restores**: Being file-based means backing up and restoring your data is super easy, and changing hosts/servers is a breeze!
+    - 🖼️ **Image Media Processing**: Dynamic image manipulation to resize, crop, resample, and effects all with automatic caching of images.
+    - 🎨 **Easy Theme Customization**: No need to start from scratch, use Theme Inheritance and then modify the bits you need, allowing for easier update.

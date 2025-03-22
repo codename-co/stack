@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  grav:
+    image: linuxserver/grav:version-${GRAV_VERSION:-1.7.48}
+    volumes:
+      - ./volumes/website:/var/www/html:ro
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.grav.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.grav.loadbalancer.server.port: 80
