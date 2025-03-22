@@ -415,34 +415,40 @@ pub fn inspect(bundle: &str) {
 fn guess_flavor(path: &std::path::Path) -> Option<Flavor> {
     // list files
     let entries = list_root_files(path);
-    for entry in entries {
-        let file_name = entry.file_name().unwrap().to_str().unwrap();
 
-        if file_name.eq("Chart.yaml") {
-            return Some(Flavor::HelmChart);
-        } else if [
-            "compose.yaml",
-            "compose.yml",
-            "docker-compose.yaml",
-            "docker-compose.yml",
-        ]
-        .iter()
-        .any(|name: &&str| file_name.eq(*name))
-        {
-            return Some(Flavor::DockerCompose);
-        } else if file_name.eq("Dockerfile") {
-            return Some(Flavor::DockerService);
-        } else if file_name.eq("package.json") {
-            return Some(Flavor::NodePackage);
-        } else if file_name.eq("go.mod") {
-            return Some(Flavor::GoPackage);
-        } else if ["index.html", "index.htm"]
-            .iter()
-            .any(|name| file_name.eq(*name))
-        {
-            return Some(Flavor::StaticWebsite);
+    // Define flavor detection patterns
+    let flavor_patterns = [
+        (vec!["Chart.yaml"], Flavor::HelmChart),
+        (
+            vec![
+                "compose.yaml",
+                "compose.yml",
+                "docker-compose.yaml",
+                "docker-compose.yml",
+            ],
+            Flavor::DockerCompose,
+        ),
+        (vec!["Dockerfile"], Flavor::DockerService),
+        (vec!["package.json"], Flavor::NodePackage),
+        (vec!["go.mod"], Flavor::NodePackage),
+        (vec!["index.html", "index.htm"], Flavor::StaticWebsite),
+    ];
+
+    // Helper function to check if any file matches the patterns
+    let has_matching_file = |patterns: &[&str]| {
+        entries.iter().any(|entry| {
+            let file_name = entry.file_name().unwrap().to_str().unwrap();
+            patterns.contains(&file_name)
+        })
+    };
+
+    // Check each pattern set and return the corresponding flavor
+    for (patterns, flavor) in flavor_patterns {
+        if has_matching_file(&patterns) {
+            return Some(flavor);
         }
     }
+
     None
 }
 
