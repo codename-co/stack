@@ -16,7 +16,6 @@ import {
 } from "~/helpers";
 import Card from "~components/Card";
 import Cards from "~components/Cards";
-import EnvironmentVars from "~components/EnvironmentVars";
 
 export const getStaticPaths = async () => {
   return langs
@@ -297,10 +296,6 @@ const similar = Array.from(
           <p class="subtle">{t("No description provided.")}</p>
         )
       }
-      <hr class="hr" />
-
-      <h3 set:html={t("Environment variables")} />
-      <EnvironmentVars lang={lang} env={env} />
     </div>
   </div>
 

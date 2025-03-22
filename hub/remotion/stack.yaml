@@ -5,14 +5,14 @@ slug: remotion
 name: Remotion
 icon: 🎥
 flavor: DockerService
-version: "4.0.0"
-updated_at: 2024-12-06
+version: "4.0.279"
+updated_at: 2025-03-20
 description: Create videos programmatically in React
 author: remotion
 license: https://github.com/remotion-dev/remotion?tab=License-1-ov-file#readme
 homepage: https://www.remotion.dev
 repository: https://github.com/remotion-dev/remotion
-stars: 21619
+stars: 21800
 tags: [video]
 alternativeTo: [after-effects]
 readme: |
