@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+type: recipe
+slug: gis
+name: Geographic Information System
+icon: 🗺
+flavor: DockerCompose
+version: latest
+updated_at: 2025-03-22
+description: A Geographic Information System stack to build applications for visualizing, analyzing, and interpreting data related to locations on Earth.
+author: ""
+license: ""
+repository: https://github.com/codename-co/stack/tree/main/recipes/gis
+tags: [gis]
+alternativeTo: []
+dependencies:
+  - name: postgis
+    role: A spatial database extender for PostgreSQL
+  - name: pg_featureserv
+    role: A server for serving geospatial feature data
+    custom: true
+  - name: pg_tileserv
+    role: A server for serving map tiles
+    custom: true
