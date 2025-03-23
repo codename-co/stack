@@ -15,7 +15,9 @@
 
 ## Motivation
 
-Finding, installing, and using the best free software shouldn't be a challenge. Stack simplifies this process by offering a seamless, one-click installation experience for carefully selected software applications.
+**Everyone deserves great software without friction.** Stack transforms the often complex process of discovering, installing, and managing quality free software into a delightful experience. With our carefully curated collection and one-click installation, we're eliminating barriers between people and the tools they need.
+
+Our mission: make exceptional software accessible to all.
 
 ## About
 
@@ -23,9 +25,32 @@ Stack consists of three core components:
 
 | Component          | Description                                        | Action                                        |
 | ------------------ | -------------------------------------------------- | --------------------------------------------- |
-| 🖥️ **Desktop App** | Install software with one click                    | [↓ Download Now](https://stack.lol/download/) |
+| 🖥️ **Desktop App** | Install software with a single click               | [↓ Download Now](https://stack.lol/download/) |
 | 📚 **Hub**         | Browse our curated collection of 150+ applications | [👀 Explore Hub](/hub/)                       |
 | 🌐 **Website**     | Access documentation and resources                 | [→ Visit Website](https://stack.lol)          |
+
+## Features
+
+- [x] 📦 **Software bundles**: Download and run software stacks with `.stack` files
+- [x] 👨‍💻 **Desktop app**:  macOS
+- [x] 🚀 **One-click installation**: Install software with a single click
+- [x] 🔍 **Curated collection**: Access carefully selected free applications (and their alternatives)
+  - [x] 🐳 **Docker compose**: Run powerful multi-container applications
+  - [x] 🐳 **Containers**: Run single-container applications
+  - [x] 📄 **Static sites**: Host websites with zero configuration
+  - [ ] 🌱 **Coming soon**: Support for Helm charts, PHP, Python, Node.js, and Go applications
+- [x] 🥧 **Recipes**: Create custom application stacks by mixing and matching components
+- [ ] 🔒 **Security-focused**: Open-source software vetted against our [security checklist](./ARCHITECTURE.md#security)
+- [ ] 🛣 **Roadmap**:
+- Cross-platform support (Linux, Windows)
+- Self-contained packaging (bundled dependencies)
+- Offline installation support
+- Automatic updates
+- Proxy configuration
+
+## Architecture
+
+See the [ARCHITECTURE.md](./ARCHITECTURE.md) document for an overview of the project's architecture.
 
 ## Contributing
 
