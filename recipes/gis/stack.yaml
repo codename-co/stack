@@ -15,6 +15,8 @@ repository: https://github.com/codename-co/stack/tree/main/recipes/gis
 tags: [gis]
 alternativeTo: []
 dependencies:
+  - name: postgres
+    role: A powerful, open-source object-relational database system
   - name: postgis
     role: A spatial database extender for PostgreSQL
   - name: pg_featureserv
@@ -23,3 +25,8 @@ dependencies:
   - name: pg_tileserv
     role: A server for serving map tiles
     custom: true
+
+i18n:
+  fr:
+    name: Système d'Information Géographique
+    description: Une stack pour créer des applications de cartographie et d'analyse de données géospatiales.
