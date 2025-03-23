@@ -4,14 +4,14 @@
 slug: homepage
 name: Homepage
 flavor: DockerCompose
-version: "0.10.9"
-updated_at: 2025-01-06
+version: "1.0.4"
+updated_at: 2025-03-16
 description: A highly customizable homepage
 author: Homepage Team
 license: GPL-3.0
 homepage: https://gethomepage.dev
 repository: https://github.com/gethomepage/homepage
-stars: 22200
+stars: 22400
 tags: [dashboard]
 alternativeTo: []
 readme: |

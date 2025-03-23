@@ -3,10 +3,11 @@
 
 services:
   homepage:
-    image: ghcr.io/gethomepage/homepage:v${HOMEPAGE_VERSION:-0.10.9}
+    image: ghcr.io/gethomepage/homepage:v${HOMEPAGE_VERSION:-1.0.4}
     volumes:
       - homepage_config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
+    env_file: .env
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.homepage.rule: Host(`$PROJECT.$DOMAIN`)
