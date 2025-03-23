@@ -11,6 +11,7 @@ import { iconOf } from "~helpers/icon";
 import { WallOfTags } from "~components/WallOfTags";
 import Card from "~components/Card";
 import Cards from "~components/Cards";
+import { getRecipes } from "~content/collections/recipes";
 // import { Graph } from "~/components/Graph";
 // import { graphData } from "~/helpers";
 
@@ -23,6 +24,7 @@ const t = useTranslations(lang);
 const url = useUrl(lang);
 
 const stacks = getStacks(lang);
+const recipes = getRecipes(lang);
 const promoted = await getCollection("promoted");
 const staffPick = promoted
   .map(({ data }) => stacks.find((stack) => stack.data.slug === data.slug))
@@ -296,6 +298,7 @@ const description = t(
           [
             ...alternatives.map(({ data }) => data.name),
             ...stacks.map(({ data }) => data.name),
+            ...recipes.map(({ data }) => data.name),
           ]
             .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
             .map((name) => <option value={name} />)
@@ -308,10 +311,11 @@ const description = t(
         className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3"
       >
         {
-          stacks
+          [...stacks, ...recipes]
             .map(({ data }) => data)
             .map(
               ({
+                type,
                 slug,
                 name,
                 description,
@@ -332,7 +336,11 @@ const description = t(
                     slug={slug}
                     name={name}
                     description={description}
-                    url={url(`/${slug}`)}
+                    url={
+                      type === "recipe"
+                        ? url(`/recipes/${slug}`)
+                        : url(`/${slug}`)
+                    }
                     icon={icon}
                     stars={stars}
                     updated_at={updated_at}

@@ -31,6 +31,7 @@ export const getStacks = (lang: string) =>
       ...stack,
       data: {
         ...stack.data,
+        type: "stack",
         description:
           stack.data.i18n?.[lang]?.description ?? stack.data.description,
         readme: stack.data.i18n?.[lang]?.readme ?? stack.data.readme,

@@ -1,6 +1,6 @@
 [package]
 name = "stack"
-version = "0.2.0"
+version = "0.2.1"
 description = "Local deployment tool"
 authors = ["Codename"]
 edition = "2021"
@@ -17,42 +17,46 @@ crate-type = ["staticlib", "cdylib", "rlib"]
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
 
+[profile.dev]
+split-debuginfo = "unpacked"
+
 [dependencies]
 bollard = "0.18.0"
-dockerfile-parser = "0.9.0"
-docker-compose-types = "0.5.0"
-env_logger = "0.10"
+# dockerfile-parser = "0.9.0"
+# docker-compose-types = "0.5.0"
+# env_logger = "0.10"
 flate2 = "1.0"
-glob = "0.3"
+# glob = "0.3"
 ignore = "0.4"
 log = "0.4"
-once_cell = "1.18"
+# once_cell = "1.18"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 serde_yaml = "0.9"
-shellexpand = "3.1.0"
+# shellexpand = "3.1.0"
 tar = "0.4"
 tauri = { version = "2", features = ["tray-icon"] }
 tauri-plugin-shell = "2"
 tempfile = "3.2"
 tokio = "1"
-walkdir = "2.3"
+# walkdir = "2.3"
 tauri-plugin-log = "2"
-tauri-plugin-deep-link = "2"
+# tauri-plugin-deep-link = "2"
 actix-web = { version = "4.9.0", features = ["openssl"] }
 actix-cors = "0.7.0"
 openssl = { version = "0.10", features = ["vendored"] }
 reqwest = "0.12.9"
 tauri-plugin-notification = "2"
 tauri-plugin-opener = "2"
+async-stream = "0.3.6"
 
 [target."cfg(not(any(target_os = \"android\", target_os = \"ios\")))".dependencies]
 tauri-plugin-autostart = "2"
 tauri-plugin-cli = "2"
-tauri-plugin-positioner = { version = "2", features = ["tray-icon"] }
+# tauri-plugin-positioner = { version = "2", features = ["tray-icon"] }
 
-[target."cfg(target_os = \"macos\")".dependencies]
-cocoa = "0.25"
+# [target."cfg(target_os = \"macos\")".dependencies]
+# cocoa = "0.25"
 
 [target.'cfg(any(target_os = "macos", windows, target_os = "linux"))'.dependencies]
 tauri-plugin-updater = "2.3.0"

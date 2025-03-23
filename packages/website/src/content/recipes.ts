@@ -10,6 +10,7 @@ const langCodes = Object.keys(languages);
 export const recipes = defineCollection({
   loader: glob({ pattern: "recipes/*.json", base: "src/content/data" }),
   schema: z.object({
+    type: z.literal("recipe"),
     slug: z.string(),
     name: z.string(),
     icon: z.string().optional(),
@@ -33,7 +34,7 @@ export const recipes = defineCollection({
           icon: z.string().optional(),
           role: z.string().optional(),
           custom: z.boolean().optional(),
-        }),
+        })
       )
       .optional(),
     readme: z.string().optional(),
@@ -49,7 +50,7 @@ export const recipes = defineCollection({
           name: z.string().optional(),
           description: z.string().optional(),
           readme: z.string().optional(),
-        }),
+        })
       )
       .optional(),
   }),

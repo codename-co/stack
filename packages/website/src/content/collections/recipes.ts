@@ -25,6 +25,7 @@ export const getRecipes = (lang: string) =>
       ...recipe,
       data: {
         ...recipe.data,
+        type: recipe.data.type ?? "recipe",
         name: recipe.data.i18n?.[lang]?.name ?? recipe.data.name,
         description:
           recipe.data.i18n?.[lang]?.description ?? recipe.data.description,
