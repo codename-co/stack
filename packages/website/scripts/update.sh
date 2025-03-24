@@ -45,19 +45,25 @@ get_repo_version() {
 update_stars() {
   file=$1
   stars=$2
+  # round to nearest hundred only if greater than 1000
+  if [ "$stars" -ge 1000 ]; then
+    stars=$(( stars / 100 * 100 ))
+  fi
   sed -i '' "s/^stars: .*/stars: $stars/" $file
 }
 
 # get_latest_repo_info "https://github.com/langgenius/dify"
 
 # for each stack in the hub/* directories, read and parse their stack.yaml and display the name and version
-for stack in hub/*/stack.yaml; do
-  slug=$(grep '^slug:' $stack | awk -F': ' '{print $2}')
-  version=$(grep '^version:' $stack | awk -F': ' '{print $2}')
-  repository=$(grep '^repository:' $stack | awk -F': ' '{print $2}')
-  current_stars=$(grep '^stars:' $stack | awk -F': ' '{print $2}')
-  latest_version=$(get_repo_version $repository)
-  stars=$(get_latest_repo_info $repository | jq -r '.stargazerCount')
+# Function to process a single stack
+process_stack() {
+  local stack=$1
+  local slug=$(grep '^slug:' $stack | awk -F': ' '{print $2}')
+  local version=$(grep '^version:' $stack | awk -F': ' '{print $2}')
+  local repository=$(grep '^repository:' $stack | awk -F': ' '{print $2}')
+  local current_stars=$(grep '^stars:' $stack | awk -F': ' '{print $2}')
+  local latest_version=$(get_repo_version $repository)
+  local stars=$(get_latest_repo_info $repository | jq -r '.stargazerCount')
 
   if [ "$mode" == "version" ]; then
     if [ "$version" != "$latest_version" ]; then
@@ -74,7 +80,24 @@ for stack in hub/*/stack.yaml; do
       fi
     fi
   fi
+}
 
-  # echo "$slug: $version ($repository)"
-  # echo $(get_repo_version $repository)
+# Maximum number of parallel jobs
+MAX_JOBS=5
+count=0
+
+# Process all stacks in parallel with a limit on concurrency
+for stack in hub/*/stack.yaml; do
+  process_stack "$stack" &
+
+  # Limit the number of concurrent jobs
+  ((count=count+1))
+  if [ $count -ge $MAX_JOBS ]; then
+    wait -n  # Wait for any child to finish
+    ((count=count-1))
+  fi
+done
+
+# Wait for remaining jobs to finish
+wait
 done

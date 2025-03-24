@@ -14,27 +14,26 @@ export const WallOfTags: React.FC<{
         {items
           // Weird sorting to make the list look more random
           .sort((a, b) =>
-            a.name.split("").reverse().join("").localeCompare(b.name),
+            a.name.split("").reverse().join("").localeCompare(b.name)
           )
-          .reduce(
-            (acc, stack, i) => {
-              const row = i % rowCount;
-              if (!acc[row]) {
-                acc[row] = [];
-              }
-              acc[row].push(stack);
-              return acc;
-            },
-            [] as (typeof items)[],
-          )
+          .reduce((acc, stack, i) => {
+            const row = i % rowCount;
+            if (!acc[row]) {
+              acc[row] = [];
+            }
+            acc[row].push(stack);
+            return acc;
+          }, [] as (typeof items)[])
           .map((stacks, i) => (
             <span
+              key={i}
               className={`animate-scroll ${rtl && "animate-scroll-rtl"} ${
                 i % 2 === 0 ? "animate-scroll-reverse" : ""
               }`}
             >
               {stacks.map(({ slug, name, url }) => (
                 <a
+                  key={slug}
                   href={url}
                   aria-label={name}
                   className="inline-flex align-top"
