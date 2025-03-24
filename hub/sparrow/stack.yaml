@@ -12,7 +12,7 @@ author: Techdome
 license: AGPL-3.0
 homepage: https://sparrowapp.dev
 repository: https://github.com/sparrowapp-dev/sparrow-app
-stars: 450
+stars: 452
 tags: [api, testing]
 alternativeTo: [postman, insomnia]
 readme: |

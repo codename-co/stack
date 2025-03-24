@@ -11,7 +11,7 @@ description: Bypass paywalls with a proxy ladder
 author: mms-gianni
 license: GPL-3.0
 repository: https://github.com/everywall/ladder
-stars: 4702
+stars: 4700
 tags: [http-proxy, paywall]
 alternativeTo: []
 readme: |

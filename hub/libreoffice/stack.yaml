@@ -13,7 +13,7 @@ homepage: https://www.libreoffice.org
 repository: https://github.com/LibreOffice/core
 stars: 3000
 tags: [office-suite]
-alternativeTo: [microsoft-office]
+alternativeTo: [microsoft-office, visio]
 readme: |
 
   LibreOffice is an integrated office suite based on copyleft licenses and compatible with most document formats and standards. Libreoffice is backed by The Document Foundation, which represents a large independent community of enterprises, developers and other volunteers moved by the common goal of bringing to the market the best software for personal productivity. LibreOffice is open source, and free to download, use and distribute.

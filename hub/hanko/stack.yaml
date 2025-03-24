@@ -12,7 +12,7 @@ author: Hanko GmbH
 license: AGPLv3, MIT
 homepage: https://www.hanko.io
 repository: https://github.com/teamhanko/hanko
-stars: 7694
+stars: 7700
 tags: [security, identity-management]
 alternativeTo: [auth0, clerk]
 readme: |
