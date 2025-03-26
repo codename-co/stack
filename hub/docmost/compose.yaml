@@ -3,7 +3,7 @@
 
 services:
   docmost:
-    image: docmost/docmost:${DOCMOST_VERSION:-0.8.4}
+    image: docmost/docmost:${DOCMOST_VERSION:-0.9.0}
     depends_on:
       - db
       - redis

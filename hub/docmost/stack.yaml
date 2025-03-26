@@ -5,8 +5,8 @@ slug: docmost
 name: Docmost
 icon: Ⓓ
 flavor: DockerCompose
-version: "0.8.4"
-updated_at: 2025-02-27
+version: "0.9.0"
+updated_at: 2025-03-24
 description: Collaborative wiki and documentation software
 author: Docmost
 license: AGPL-3.0
