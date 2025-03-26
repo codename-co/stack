@@ -6,8 +6,8 @@ slug: activepieces
 name: Activepieces
 icon: Ⓐ
 flavor: DockerCompose
-version: "0.46.4"
-updated_at: 2025-03-05
+version: "0.48.7"
+updated_at: 2025-03-24
 description: Workflow automation tool
 author: Activepieces Inc.
 license: MIT Expat

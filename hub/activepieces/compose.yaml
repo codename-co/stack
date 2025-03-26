@@ -3,7 +3,7 @@
 
 services:
   activepieces:
-    image: ghcr.io/activepieces/activepieces:${AP_VERSION:-0.42.0}
+    image: ghcr.io/activepieces/activepieces:${AP_VERSION:-0.48.7}
     restart: unless-stopped
     depends_on:
       - postgres
