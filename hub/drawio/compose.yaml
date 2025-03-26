@@ -3,10 +3,7 @@
 
 services:
   drawio:
-    image: jgraph/drawio:${DRAWIO_VERSION:-26.0.3}
-    # ports:
-    #   - 8080:8080
-    #   - 8443:8443
+    image: jgraph/drawio:${DRAWIO_VERSION:-26.1.1}
     environment:
       PUBLIC_DNS: https://$PROJECT.$DOMAIN
       ORGANISATION_UNIT: unit

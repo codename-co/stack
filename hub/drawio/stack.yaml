@@ -6,8 +6,8 @@ slug: drawio
 name: Draw.io
 icon: diagramsdotnet
 flavor: DockerCompose
-version: "26.0.3"
-updated_at: 2024-10-01
+version: "26.1.1"
+updated_at: 2025-03-24
 description: JavaScript, client-side editor for general diagramming
 author: JGraph Ltd
 license: Apache-2.0
