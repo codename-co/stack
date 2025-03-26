@@ -4,8 +4,8 @@
 slug: langfuse
 name: Langfuse
 flavor: DockerCompose
-version: "3.29.0"
-updated_at: 2025-02-21
+version: "3.45.2"
+updated_at: 2025-03-26
 description: Open source LLM engineering platform
 author: Langfuse GmbH
 license: MIT Expat

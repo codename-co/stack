@@ -58,7 +58,7 @@ services:
       traefik.http.services.langfuse-worker.loadbalancer.server.port: 3030
 
   langfuse-web:
-    image: langfuse/langfuse:${LANGFUSE_VERSION:-3.29.0}
+    image: langfuse/langfuse:${LANGFUSE_VERSION:-3.45.2}
     restart: always
     depends_on: *langfuse-depends-on
     environment:
