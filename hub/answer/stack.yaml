@@ -5,8 +5,8 @@ status: working
 slug: answer
 name: Answer
 flavor: DockerCompose
-version: "1.4.2"
-updated_at: 2025-02-06
+version: "1.4.5"
+updated_at: 2025-03-24
 description: Q&A platform software for teams
 author: Apache
 license: Apache-2.0

@@ -3,7 +3,7 @@
 
 services:
   answer:
-    image: apache/answer:${ANSWER_VERSION:-1.4.2}
+    image: apache/answer:${ANSWER_VERSION:-1.4.5}
     restart: on-failure
     volumes:
       - answer-data:/data
