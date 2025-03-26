@@ -5,8 +5,8 @@ status: working
 slug: affine
 name: Affine
 flavor: DockerCompose
-version: "0.20.4"
-updated_at: 2025-03-03
+version: "0.20.5"
+updated_at: 2025-03-10
 description: Collaborative workspace for your knowledge base
 author: TOEVERYTHING PTE
 license: MIT
