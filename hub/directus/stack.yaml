@@ -5,8 +5,8 @@ status: working
 slug: directus
 name: Directus
 flavor: DockerCompose
-version: "11.5.1"
-updated_at: 2025-02-28
+version: "11.6.0"
+updated_at: 2025-03-25
 description: An open-source headless CMS
 author: Monospace, Inc
 license: BSL
