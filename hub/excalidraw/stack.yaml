@@ -5,7 +5,7 @@ status: working
 slug: excalidraw
 name: Excalidraw
 flavor: DockerCompose
-version: latest
+version: "0.18.0"
 updated_at: 2025-03-11
 description: Whiteboard for sketching hand-drawn like diagrams
 author: Excalidraw
