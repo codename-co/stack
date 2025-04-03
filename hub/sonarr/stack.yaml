@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: sonarr
+name: Sonarr
+flavor: DockerCompose
+version: "4.0.14"
+updated_at: 2025-03-29
+description: Personal Video Recorder
+author: Sonarr
+license: GPL-3.0
+homepage: https://sonarr.tv
+repository: https://github.com/Sonarr/Sonarr
+stars: 11600
+tags: [pvr, downloader, usenet, bittorrent]
+alternativeTo: []
+readme: |
+
+  Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
+
+  ![preview](https://sonarr.tv/img/slider/seriesdetails.png)
+
+  <hr>
+
+  ### Features
+
+  - **🖥️ Multi-platform support:** Runs on Windows, Linux, macOS, Raspberry Pi, and more
+  - **🔍 Smart episode detection:** Automatically finds and grabs new episodes as they release
+  - **📚 Library management:** Scans existing collections and fills in missing episodes
+  - **⬆️ Quality upgrades:** Automatically replaces lower quality files when better versions become available
+  - **🔄 Resilient downloading:** Handles failed downloads by trying alternative sources
+  - **🔎 Advanced search:** Find specific releases or troubleshoot automatic download issues
+  - **✏️ Customizable naming:** Fully configurable file and folder naming conventions
+  - **🔌 Download client integration:** Seamless connection with SABnzbd, NZBGet, and torrent clients
+  - **🎬 Media server compatibility:** Works with Plex, Kodi, and others for library updates and notifications
+  - **🌟 Special handling:** Complete support for special episodes and multi-episode releases
+  - **🎨 Intuitive interface:** Modern, responsive UI for easy management

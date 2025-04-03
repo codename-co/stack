@@ -251,3 +251,8 @@ tags:
     name: Downloader
   - slug: bittorrent
     name: BitTorrent
+  - slug: usenet
+    name: Usenet
+  - slug: pvr
+    name: PVR
+    title: Personal Video Recorder

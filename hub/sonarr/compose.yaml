@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  sonarr:
+    image: linuxserver/sonarr:${SONARR_VERSION:-4.0.14}
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - config:/config
+      - downloads:/downloads
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.sonarr.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.sonarr.loadbalancer.server.port: 8989
+
+volumes:
+  config:
+  downloads:
