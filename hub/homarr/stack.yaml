@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: homarr
+name: Homarr
+flavor: DockerCompose
+version: "1.13.1"
+updated_at: 2025-03-28
+description: Modern and easy to use dashboard
+author: Homarr
+license: Apache-2.0
+homepage: https://homarr.dev
+repository: https://github.com/homarr-labs/homarr
+stars: 517
+tags: [dashboard]
+alternativeTo: []
+readme: |
+
+  A sleek modern dashboard that puts all of your apps and services at your fingertips.
+
+  <video controls width="100%" muted autoplay loop>
+    <source src="https://homarr.dev/assets/medias/showcase-dark-ca7ce6e39178680ce15c0ca23a3c380b.mp4">
+    ⚠️ Your browser does not support the video tag.
+  </video>
+
+  <hr>
+
+  ### Features
+
+  - 🖌️ Highly customizable with an extensive drag and drop grid system
+  - ✨ Integrates seamlessly with your favorite self-hosted applications
+  - 📌 Easy and fast app management - no YAML involved
+  - 👤 Detailed and easy to use user management with permissions and groups
+  - 👥 Support for single sign on via OIDC / LDAP
+  - 🙊 Safe encryption using BCrypt and AES-256-CBC for your valuable data
+  - 🕔 Realtime widget updates using WebSockets, tRPC and Redis
+  - 🔍 Search through thousands of data points in supported integrations or your data in Homarr using the fast built-in search
+  - 🦞 Icon picker with over 11K icons
+  - 🚀 Compatible with any major consumer hardware (x86, Raspberry Pi, old laptops, ...) and most OS (Windows, Linux, TrueNAS, Unraid)
+  - 🖥️ Extensive Kubernetes support with Helm for efficient scaling & high reliability

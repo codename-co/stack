@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  homarr:
+    image: ghcr.io/homarr-labs/homarr:v${HOMARR_VERSION:-1.13.1}
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - appdata:/appdata
+    environment:
+      - SECRET_ENCRYPTION_KEY=${SECRET_ENCRYPTION_KEY}
+    ports:
+      - "7575:7575"
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.homarr.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.homarr.loadbalancer.server.port: 7575
+
+volumes:
+  appdata:
