@@ -12,7 +12,7 @@ author: Kaleidos Inc.
 license: Multiplaform
 homepage: https://taiga.io
 repository: https://github.com/taigaio/taiga-docker
-stars: 1400
+stars: 1500
 tags: [project-management]
 alternativeTo: [jira, trello]
 readme: |
