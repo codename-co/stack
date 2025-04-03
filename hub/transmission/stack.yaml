@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: transmission
+name: Transmission
+flavor: DockerCompose
+version: "4.0.6"
+updated_at: 2025-03-18
+description: BitTorrent client
+author: Transmission community
+license: GPL-3.0
+homepage: https://transmissionbt.com
+repository: https://github.com/transmission/transmission
+stars: 12900
+tags: [bittorrent, download]
+alternativeTo: []
+readme: |
+
+  Transmission is a fast, easy, and free BitTorrent client.
+
+  ![preview](https://transmissionbt.com/assets/images/homepage/carousel_homepage/screenshot_apple_light.png)
+
+  ### Features
+
+  - 🚀 **Intuitive Design**: Experience BitTorrent with minimal complexity - sensible defaults work right away while advanced features like watch directories, blocklists, and web interface remain just a few clicks away.
+  - 💻 **True Native Experience**: Unlike generic cross-platform apps, Transmission integrates seamlessly with your operating system for optimal performance and a polished feel.
+  - ⚡ **Remarkably Efficient**: Enjoy one of the lowest resource footprints among BitTorrent clients, making Transmission ideal for NAS devices, media servers, and low-power systems.
+  - 🔒 **Transparent & Private**: Being open source and community-driven means no hidden agendas, no revenue schemes, and a focus on protecting your privacy while torrenting.
+  - ✨ **Powerful Yet Simple**: Access essential BitTorrent functionality through a clean interface - privacy protection, tracker editing, bandwidth management, web access, and more.

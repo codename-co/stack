@@ -247,3 +247,7 @@ tags:
   - slug: gis
     name: GIS
     title: Geographic Information System
+  - slug: download
+    name: Download
+  - slug: bittorrent
+    name: BitTorrent
