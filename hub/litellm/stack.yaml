@@ -16,8 +16,7 @@ stars: 20100
 tags:
   - ai
   - llm
-alternativeTo:
-  - chatgpt
+alternativeTo: [chatgpt, claude, perplexity]
 readme: |
   Call all LLM APIs using the OpenAI format [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq etc.]
 

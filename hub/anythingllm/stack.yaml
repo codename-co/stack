@@ -19,9 +19,7 @@ tags:
   - ai
   - rag
   - chatbot
-alternativeTo:
-  - chatgpt
-  - perplexity
+alternativeTo: [chatgpt, claude, perplexity]
 readme: |
   Turn any document, resource, or piece of content into context that any LLM can use as references during chatting.
 

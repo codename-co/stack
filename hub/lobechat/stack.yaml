@@ -18,9 +18,7 @@ tags:
   - ai
   - rag
   - chatbot
-alternativeTo:
-  - chatgpt
-  - perplexity
+alternativeTo: [chatgpt, claude, perplexity]
 readme: |
   An open-source, modern-design ChatGPT/LLMs UI/Framework that supports speech-synthesis, multi-modal, and extensible (function call) plugin system.
 

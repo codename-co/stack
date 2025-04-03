@@ -61,7 +61,10 @@ alternatives:
   - slug: chatgpt
     name: ChatGPT
     icon: openai
-    description: AI chatbot
+    description: AI-powered conversational assistant
+  - slug: claude
+    name: Claude
+    description: AI-powered conversational assistant
   - slug: clerk
     name: Clerk
     description: Identity and access management

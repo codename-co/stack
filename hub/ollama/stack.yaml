@@ -16,8 +16,7 @@ stars: 135800
 tags:
   - llm
   - ai
-alternativeTo:
-  - chatgpt
+alternativeTo: [chatgpt, claude]
 readme: |
   Ollama is a platform that makes it easy to get up and running with large language models. It provides a simple API to interact with the models, and you can use it to generate text, answer questions, and more.
 
