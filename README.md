@@ -26,7 +26,7 @@ Stack consists of three core components:
 | Component          | Description                                        | Action                                        |
 | ------------------ | -------------------------------------------------- | --------------------------------------------- |
 | 🖥️ **Desktop App** | Install software with a single click               | [↓ Download Now](https://stack.lol/download/) |
-| 📚 **Hub**         | Browse our curated collection of 150+ applications | [👀 Explore Hub](/hub/)                       |
+| 📚 **Hub**         | Browse our curated collection of 160+ applications | [👀 Explore Hub](/hub/)                       |
 | 🌐 **Website**     | Access documentation and resources                 | [→ Visit Website](https://stack.lol)          |
 
 ## Features
