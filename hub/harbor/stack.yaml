@@ -11,7 +11,7 @@ author: Harbor Team
 license: Apache-2.0
 homepage: https://goharbor.io
 repository: https://github.com/goharbor/harbor
-stars: 25200
+stars: 25300
 tags: [container, registry, security]
 alternativeTo:
   - dockerhub

@@ -11,7 +11,7 @@ description: A Docker job scheduler
 author: Máximo Cuadros
 license: MIT
 repository: https://github.com/mcuadros/ofelia
-stars: 3200
+stars: 3300
 tags:
   - scheduler
   - cron
