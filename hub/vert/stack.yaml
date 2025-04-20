@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: vert
+name: Vert
+flavor: DockerCompose
+version: "main"
+updated_at: 2025-04-17
+description: File converter (images, audio, video, docs)
+author: VERT-sh
+license: AGPL-3.0
+homepage: https://vert.sh
+repository: https://github.com/VERT-sh/VERT
+stars: 1900
+tags: [conversion]
+alternativeTo: [cloudconvert]
+readme: |
+
+  The next-generation file converter. Open source, fully local and free forever.
+
+  All image and audio processing is done on your device. Videos are converted on our lightning-fast servers. No file size limit, no ads, and completely open source.
+
+  <hr>
+
+  ### Features
+
+  - 🔄 **Convert files**: Convert images, audio, and video files to different formats.
+  - 📦 **Batch processing**: Convert multiple files at once.
+  - ⚙️ **Customizable settings**: Adjust settings for each conversion, such as resolution, bitrate, and more.
+  - 🖱️ **User-friendly interface**: Easy to use, with drag-and-drop support.
+  - 🔒 **Privacy-focused**: All image and audio processing is done locally on your device, ensuring your files remain private.
+  - 📂 **Open source**: Fully open source, with the code available on GitHub.
+  - ♾️ **No file size limit**: Convert files of any size without restrictions.
+  - 🚫 **No ads**: Enjoy a clean and ad-free experience.
+  - 🆓 **Free forever**: No hidden fees or subscriptions, just a fully functional file converter.
+  - ⚡ **Fast and efficient**: Optimized for speed and performance, ensuring quick conversions.
+
+  ### Supported Formats
+
+  VERT supports a wide range of file formats for conversion, including images, audio, documents, and videos. Below is a list of the supported formats:
+  - 🖼️ **Images**: .png, .jpeg, .jpg, .webp, .gif, .heic*, .ico*, .bmp*, .cur*, .ani*, .icns*, .nef*, .cr2*, .hdr, .jpe, .dng*, .mat, .pbm, .pfm, .pgm, .pnm, .ppm, .raw*, .tif, .tiff, .jfif, .avif
+  - 🎵 **Audio**: .mp3, .wav, .flac, .ogg, .aac, .m4a, .wma, .amr, .ac3, .alac, .aiff
+  - 📄 **Documents**: .docx, .xml, .doc, .md, .html, .rtf, .csv, .tsv, .json, .rst, .epub, .odt, .docbook
+  - 🎬 **Video**: .mkv, .mp4, .webm, .avi, .wmv, .mov, .gif, .mts

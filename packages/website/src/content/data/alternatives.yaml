@@ -68,6 +68,9 @@ alternatives:
   - slug: clerk
     name: Clerk
     description: Identity and access management
+  - slug: cloudconvert
+    name: CloudConvert
+    description: File conversion service
   - slug: confluence
     name: Confluence
     description: Collaboration software

@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  vert:
+    image: ghcr.io/vert-sh/vert:main
+    platform: linux/amd64
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.vert.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.vert.loadbalancer.server.port: 80
