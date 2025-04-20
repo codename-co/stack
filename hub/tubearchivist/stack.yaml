@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: tubearchivist
+name: Tube Archivist
+icon: Ⓣ
+flavor: DockerCompose
+version: "0.5.1"
+updated_at: 2025-03-27
+description: Self-hosted YouTube media server
+author: Tube Archivist
+license: GPL-3.0
+homepage: https://www.tubearchivist.com
+repository: https://github.com/tubearchivist/tubearchivist
+stars: 5900
+tags: [media-server, youtube]
+alternativeTo: []
+readme: |
+
+  Once your YouTube video collection grows, it becomes hard to search and find a specific video. That's where Tube Archivist comes in: By indexing your video collection with metadata from YouTube, you can organize, search and enjoy your archived YouTube videos without hassle offline through a convenient web interface.
+
+  ### Features
+
+  - Subscribe to your favorite YouTube channels
+  - Download Videos using yt-dlp
+  - Index and make videos searchable
+  - Play videos
+  - Keep track of viewed and unviewed videos
