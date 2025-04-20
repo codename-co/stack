@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  caddy:
+    image: caddy:${CADDY_VERSION:-2.9.1-alpine}
+    volumes:
+      - config:/config
+      - ${CADDY_FILE:-empty}:/config/Caddyfile
+      - ${CADDY_WWW:-www}:/config/www
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK=${UMASK}
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.caddy.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.caddy.loadbalancer.server.port: 80
+
+volumes:
+  config:
+  www:
+  empty:

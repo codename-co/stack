@@ -1,0 +1,43 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: caddy
+name: Caddy
+flavor: DockerCompose
+version: "2.9.1-alpine"
+updated_at: 2025-02-16
+description: Multiplatform web server
+author: ZeroSSL
+license: Apache-2.0
+homepage: https://caddyserver.com
+repository: https://github.com/caddyserver/caddy
+stars: 63600
+tags: [web-server, reverse-proxy]
+alternativeTo: []
+readme: |
+
+  Caddy is an extensible server platform that uses TLS by default.
+
+  <hr>
+
+  ### Features
+
+  - **Easy configuration** with the [Caddyfile](https://caddyserver.com/docs/caddyfile)
+  - **Powerful configuration** with its [native JSON config](https://caddyserver.com/docs/json/)
+  - **Dynamic configuration** with the [JSON API](https://caddyserver.com/docs/api)
+  - [**Config adapters**](https://caddyserver.com/docs/config-adapters) if you don't like JSON
+  - **Automatic HTTPS** by default
+    - [ZeroSSL](https://zerossl.com) and [Let's Encrypt](https://letsencrypt.org) for public names
+    - Fully-managed local CA for internal names & IPs
+    - Can coordinate with other Caddy instances in a cluster
+    - Multi-issuer fallback
+    - Encrypted ClientHello (ECH) support
+  - **Stays up when other servers go down** due to TLS/OCSP/certificate-related issues
+  - **Production-ready** after serving trillions of requests and managing millions of TLS certificates
+  - **Scales to hundreds of thousands of sites** as proven in production
+  - **HTTP/1.1, HTTP/2, and HTTP/3** all supported by default
+  - **Highly extensible** [modular architecture](https://caddyserver.com/docs/architecture) lets Caddy do anything without bloat
+  - **Runs anywhere** with **no external dependencies** (not even libc)
+  - Written in Go, a language with higher **memory safety guarantees** than other servers
+  - Actually **fun to use**
+  - So much more to [discover](https://caddyserver.com/features)
