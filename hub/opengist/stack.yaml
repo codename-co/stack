@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: opengist
+name: Opengist
+flavor: DockerCompose
+version: "1.10.0"
+updated_at: 2025-04-07
+description: Pastebin powered by Git
+author: Thomas Miceli
+license: AGPL-3.0
+homepage: https://opengist.io
+repository: https://github.com/thomiceli/opengist
+stars: 2200
+tags: [pastebin, git]
+alternativeTo: [pastebin, gist, hastebin]
+readme: |
+
+  Opengist is a self-hosted Pastebin powered by Git. All snippets are stored in a Git repository and can be read and/or modified using standard Git commands, or with the web interface. It is similar to GitHub Gist, but open-source and could be self-hosted.
+
+  ![preview](https://opengist.io/opengist-demo.png)
+
+  <hr>
+
+  ### Features
+
+  - Create public, unlisted or private snippets
+  - Init / Clone / Pull / Push snippets via Git over HTTP or SSH
+  - Syntax highlighting ; markdown & CSV support
+  - Search code in snippets; browse users snippets, likes and forks
+  - Add topics to snippets
+  - Embed snippets in other websites
+  - Revisions history
+  - Like / Fork snippets
+  - Download raw files or as a ZIP archive
+  - OAuth2 login with GitHub, GitLab, Gitea, and OpenID Connect
+  - Restrict or unrestrict snippets visibility to anonymous users
+  - Docker support / Helm Chart

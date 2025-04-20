@@ -260,3 +260,5 @@ tags:
     name: Conversion
   - slug: bookmarks
     name: Bookmarks
+  - slug: pastebin
+    name: Pastebin
