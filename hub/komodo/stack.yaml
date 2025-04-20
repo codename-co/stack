@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: komodo
+name: Komodo
+icon: 🦎
+flavor: DockerCompose
+version: "1.17.2"
+updated_at: 2025-04-19
+description: Deploy software on many servers
+author: mogh.tech
+license: GPL-3.0
+homepage: https://komo.do
+repository: https://github.com/moghtech/komodo
+stars: 4500
+tags: [docker, paas]
+alternativeTo: [kubernetes]
+readme: |
+
+  Build and deployment system
+
+  ![preview](https://raw.githubusercontent.com/moghtech/komodo/main/screenshots/Dark-Dashboard.png)
+
+  <hr>
+
+  ### Features
+
+  - 🛠️ **Automated builds**: Build auto versioned docker images from git repos, trigger builds on git push
+  - 🚀 **Deploy docker containers**: Deploy containers, deploy docker compose, see uptime and logs across all your servers
+  - 🦀 **Powered by Rust**: The core API and periphery agent are written in Rust

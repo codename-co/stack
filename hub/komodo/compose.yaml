@@ -1,0 +1,67 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  komodo-ferretdb:
+    image: ghcr.io/ferretdb/ferretdb:1
+    labels:
+      komodo.skip: # Prevent Komodo from stopping with StopAllContainers
+    restart: unless-stopped
+    logging:
+      driver: ${COMPOSE_LOGGING_DRIVER:-local}
+    volumes:
+      - sqlite-data:/state
+    environment:
+      - FERRETDB_HANDLER=sqlite
+
+  komodo:
+    image: ghcr.io/moghtech/komodo-core:${COMPOSE_KOMODO_IMAGE_TAG:-latest}
+    restart: unless-stopped
+    depends_on:
+      - komodo-ferretdb
+    logging:
+      driver: ${COMPOSE_LOGGING_DRIVER:-local}
+    env_file: .env
+    environment:
+      KOMODO_DATABASE_ADDRESS: komodo-ferretdb
+    volumes:
+      ## Core cache for repos for latest commit hash / contents
+      - repo-cache:/repo-cache
+      ## Store sync files on server
+      # - /path/to/syncs:/syncs
+      ## Optionally mount a custom core.config.toml
+      # - /path/to/core.config.toml:/config/config.toml
+    ## Allows for systemd Periphery connection at
+    ## "http://host.docker.internal:8120"
+    # extra_hosts:
+    #   - host.docker.internal:host-gateway
+    labels:
+      komodo.skip: # Prevent Komodo from stopping with StopAllContainers
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.komodo.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.komodo.loadbalancer.server.port: 9120
+
+  komodo-periphery:
+    image: ghcr.io/moghtech/komodo-periphery:${COMPOSE_KOMODO_IMAGE_TAG:-latest}
+    restart: unless-stopped
+    logging:
+      driver: ${COMPOSE_LOGGING_DRIVER:-local}
+    env_file: .env
+    volumes:
+      ## Mount external docker socket
+      - /var/run/docker.sock:/var/run/docker.sock
+      ## Allow Periphery to see processes outside of container
+      - /proc:/proc
+      ## Specify the Periphery agent root directory.
+      ## Must be the same inside and outside the container,
+      ## or docker will get confused. See https://github.com/moghtech/komodo/discussions/180.
+      ## Default: /etc/komodo.
+      - ${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}:${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}
+    labels:
+      komodo.skip: # Prevent Komodo from stopping with StopAllContainers
+
+volumes:
+  # Sqlite
+  sqlite-data:
+  # Core
+  repo-cache:
