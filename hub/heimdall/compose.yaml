@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  heimdall:
+    image: linuxserver/heimdall:version-v${HEIMDALL_VERSION:-2.6.3}
+    env_file: .env
+    volumes:
+      - config:/config
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.heimdall.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.heimdall.loadbalancer.server.port: 80
+
+volumes:
+  config:

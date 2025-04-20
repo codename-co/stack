@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: heimdall
+name: Heimdall
+icon: Ⓗ
+flavor: DockerCompose
+version: "2.6.3"
+updated_at: 2024-11-05
+description: Application dashboard and launcher
+author: LinuxServer.io
+license: MIT
+repository: https://github.com/linuxserver/Heimdall
+stars: 8300
+tags: [dashboard]
+alternativeTo: []
+readme: |
+
+  Heimdall Application Dashboard is an elegant solution to organize all your web applications and links in one place, which can serve as your browser start page with integrated search functionality for Google, Bing or DuckDuckGo.
+
+  ![preview](https://i.imgur.com/MrC4QpN.gif)
