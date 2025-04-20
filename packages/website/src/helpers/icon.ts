@@ -41,6 +41,11 @@ icons = [
     hex: "#155aef",
   },
   {
+    slug: "dockge",
+    svg: /* svg */ `<svg role="img" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="matrix(0.95 0 0 0.95 320 325)" style="stroke: rgb(242,242,242); stroke-opacity: 0.5; stroke-width: 190;"  d="M 132 -139 C 159 -111 170 -99 203 -52 C 236 -4 264 84 187 144 C 178 152 167 159 155 166 C 70 214 -69 241 -162 174 C -268 98 -260 -69 -144 -170 C -29 -272 105 -167 132 -139 z" /></svg>`,
+    hex: "#74C2FF",
+  },
+  {
     slug: "huginn",
     svg: /* svg */ `<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 	<circle fill="#ffb74d" cx="256" cy="256" r="256"/>

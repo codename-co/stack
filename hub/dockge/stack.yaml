@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: dockge
+name: Dockge
+flavor: DockerCompose
+version: "1.5.0"
+updated_at: 2025-03-30
+description: Stack-oriented Manager
+author: Docker compose stack-oriented manager
+license: MIT
+homepage: https://dockge.kuma.pet
+repository: https://github.com/louislam/dockge
+stars: 16900
+tags: [docker, paas]
+alternativeTo: [kubernetes]
+readme: |
+
+  A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.
+
+  ![preview](https://github.com/louislam/dockge/assets/1336778/26a583e1-ecb1-4a8d-aedf-76157d714ad7)
+
+  <hr>
+
+  ### Features
+
+  - 🧑‍💼 Manage your `compose.yaml` files
+    - Create/Edit/Start/Stop/Restart/Delete
+    - Update Docker Images
+  - ⌨️ Interactive Editor for `compose.yaml`
+  - 🦦 Interactive Web Terminal
+  - 🕷️ (1.4.0 🆕) Multiple agents support - You can manage multiple stacks from different Docker hosts in one single interface
+  - 🏪 Convert `docker run ...` commands into `compose.yaml`
+  - 📙 File based structure - Dockge won't kidnap your compose files, they are stored on your drive as usual. You can interact with them using normal `docker compose` commands

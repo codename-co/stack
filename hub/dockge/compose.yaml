@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  dockge:
+    image: louislam/dockge:${DOCKGE_VERSION:-1.5.0}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - data:/app/data
+      - stacks:/opt/stacks
+    environment:
+      - DOCKGE_STACKS_DIR=/opt/stacks
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.dockge.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.dockge.loadbalancer.server.port: 5001
+
+volumes:
+  data:
+  stacks:
