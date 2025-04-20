@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  netdata:
+    image: netdata/netdata
+    environment:
+      - TZ=${TZ}
+    volumes:
+      # - netdata:/etc/netdata
+      # - /proc:/host/proc:ro
+      # - /sys:/host/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - apparmor:unconfined
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.netdata.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.netdata.loadbalancer.server.port: 19999
+
+volumes:
+  netdata:
