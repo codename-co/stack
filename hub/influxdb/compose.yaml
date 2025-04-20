@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  influxdb2:
+    image: influxdb:${INFLUXDB_VERSION:-2.7.11}-alpine
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE
+      - DOCKER_INFLUXDB_INIT_USERNAME
+      - DOCKER_INFLUXDB_INIT_PASSWORD
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN
+      - DOCKER_INFLUXDB_INIT_ORG
+      - DOCKER_INFLUXDB_INIT_BUCKET
+    volumes:
+      - influxdb2-data:/var/lib/influxdb2
+      - influxdb2-config:/etc/influxdb2
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.influxdb2.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.influxdb2.loadbalancer.server.port: 8086
+
+volumes:
+  influxdb2-data:
+  influxdb2-config:

@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: influxdb
+name: InfluxDB core
+flavor: DockerCompose
+version: "2.7.11"
+updated_at: 2025-02-15
+description: Datastore for metrics, events, and real-time analytics
+author: InfluxData Inc.
+license: MIT
+homepage: https://www.influxdata.com
+repository: https://github.com/influxdata/influxdb
+stars: 29900
+tags: [database, time-series]
+alternativeTo: []
+readme: |
+
+  InfluxDB Core is a database built to collect, process, transform, and store event and time series data. It is ideal for use cases that require real-time ingest and fast query response times to build user interfaces, monitoring, and automation solutions.
+
+  <hr>
+
+  ### Features
+
+  - Diskless architecture with object storage support (or local disk with no dependencies)
+  - Fast query response times (under 10ms for last-value queries, or 30ms for distinct metadata)
+  - Embedded Python VM for plugins and triggers
+  - Parquet file persistence
+  - Compatibility with InfluxDB 1.x and 2.x write APIs
+  - Compatability with InfluxDB 1.x query API (InfluxQL)
+  - SQL query engine with support for FlightSQL and HTTP query API
