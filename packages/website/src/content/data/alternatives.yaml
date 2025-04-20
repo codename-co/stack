@@ -284,6 +284,9 @@ alternatives:
   - slug: plex
     name: Plex
     description: Media server
+  - slug: pocket
+    name: Pocket
+    description: Read-it-later service
   - slug: postman
     name: Postman
     description: API development platform
@@ -296,6 +299,9 @@ alternatives:
   - slug: prometheus
     name: Prometheus
     description: Monitoring and alerting toolkit
+  - slug: raindrop
+    name: Raindrop
+    description: Bookmark manager
   - slug: rasa
     name: Rasa
     description: Conversational AI platform

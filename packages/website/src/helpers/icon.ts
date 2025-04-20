@@ -124,6 +124,11 @@ icons = [
     hex: "#D71E00",
   },
   {
+    slug: "raindrop",
+    svg: /* svg */ `<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 32"><defs><path id="a" d="M9.5.917a9.5 9.5 0 0 1 9.5 9.5v9.5H9.5a9.5 9.5 0 0 1 0-19z"></path><path id="c" d="M0 19.917v-9.5l.004-.27a9.5 9.5 0 1 1 9.496 9.77H0z"></path></defs><path d="M28.192 4.7c5.077 4.933 5.077 12.93 0 17.863-.17.165-.343.325-.519.479L19 31l-8.673-7.958c-.176-.154-.35-.314-.52-.479-5.076-4.932-5.076-12.93 0-17.863 5.077-4.933 13.309-4.933 18.385 0z"></path><g transform="translate(0 11.083)"><use xlink:href="#a"></use></g><g transform="translate(19 11.083)"><use xlink:href="#c"></use></g></svg>`,
+    hex: "#0b7ed0",
+  },
+  {
     slug: "souin",
     svg: /* svg */ `<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="10 10 80 80"><path d="M34.79 77.89Q90 70 50 50T65.21 22.11" fill="none" stroke="currentcolor" stroke-width="8" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M28.85 78.74 36.21 73.64l-1.42 4.25 2.55 3.67z" fill="currentcolor" stroke="currentcolor" stroke-width="8" stroke-miterlimit="10" pointer-events="all"></path><path d="M71.15 21.26 63.79 26.36 65.21 22.11l-2.55-3.67z" fill="currentcolor" stroke="currentcolor" stroke-width="8" stroke-miterlimit="10"></path></svg>`,
     hex: "#000000",
