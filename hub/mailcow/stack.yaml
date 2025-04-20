@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: broken
+slug: mailcow
+name: Mailcow
+flavor: DockerCompose
+version: "2025-03b"
+updated_at: 2025-04-07
+description: Mail server suite
+author: Mailcow contributors
+license: GPL-3.0
+homepage: https://mailcow.email
+repository: https://github.com/mailcow/mailcow-dockerized
+stars: 10100
+tags: [mail, email, server]
+alternativeTo: [postfix, dovecot]
+readme: |
+
+  Mailcow is a complete mail server suite, including a web interface for managing email accounts, domains, and settings. It is designed to be easy to set up and use, while providing powerful features for managing email.
+
+  ![preview](https://raw.githubusercontent.com/mailcow/mailcow-dockerized/master/docker/img/mailcow.png)
+
+  <hr>
+
+  ### Features
+
+  - **Easy installation**: Mailcow can be installed with just a few commands using Docker.
+  - **Web interface**: A user-friendly web interface for managing email accounts, domains, and settings.
+  - **Full-featured mail server**: Includes Postfix, Dovecot, ClamAV, SpamAssassin, and more.
+  - **Responsive design**: The web interface is responsive and works well on mobile devices.
