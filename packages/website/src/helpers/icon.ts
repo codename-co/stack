@@ -42,7 +42,7 @@ icons = [
   },
   {
     slug: "dockge",
-    svg: /* svg */ `<svg role="img" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="matrix(0.95 0 0 0.95 320 325)" style="stroke: rgb(242,242,242); stroke-opacity: 0.5; stroke-width: 190;"  d="M 132 -139 C 159 -111 170 -99 203 -52 C 236 -4 264 84 187 144 C 178 152 167 159 155 166 C 70 214 -69 241 -162 174 C -268 98 -260 -69 -144 -170 C -29 -272 105 -167 132 -139 z" /></svg>`,
+    svg: /* svg */ `<svg role="img" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg"><path transform="matrix(0.95 0 0 0.95 320 325)" style="stroke: rgb(242,242,242); stroke-opacity: 0.5; stroke-width: 190;"  d="M 132 -139 C 159 -111 170 -99 203 -52 C 236 -4 264 84 187 144 C 178 152 167 159 155 166 C 70 214 -69 241 -162 174 C -268 98 -260 -69 -144 -170 C -29 -272 105 -167 132 -139 z" /></svg>`,
     hex: "#74C2FF",
   },
   {
@@ -142,6 +142,11 @@ icons = [
     slug: "tooljet",
     svg: /* svg */ `<svg role="img" xmlns="http://www.w3.org/2000/svg" width="738" height="120" viewBox="0 0 150 120"><title>Tooljet</title><path d="M149.256 71.671L134.789 92.381L132.654 95.421L120.322 113.067V113.091L116.053 119.171H58.1367L62.4057 113.067L74.762 95.421H103.696L105.831 92.381L120.322 71.671L105.831 50.961L103.696 47.921H79.0073L91.3636 30.2748V30.251L95.6326 24.171H116.053L120.322 30.251V30.2748L132.654 47.921L134.789 50.961L149.256 71.671Z"/><path d="M62.4057 71.671L47.9386 92.381L45.8041 95.421L29.2025 119.171H0.244568L16.8462 95.421L33.4478 71.671L16.8462 47.921L0.244568 24.171H29.2025L45.8041 47.921L47.9386 50.961L62.4057 71.671Z"/></svg>`,
     hex: "#2563eb",
+  },
+  {
+    slug: "vert",
+    svg: /* svg */ `<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79 83" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(0.172257,0,0,0.172257,-160.012,-223.436)"><path d="M1082.77,1777.46L928.913,1297.11L1043.78,1297.11L1191.37,1777.46L1082.77,1777.46ZM1188.94,1620.03L1285.35,1297.11L1398.82,1297.11L1261.8,1724.91L1188.94,1620.03Z"></path></g></svg>`,
+    hex: "#ff85fb",
   },
   {
     slug: "wps-office",
