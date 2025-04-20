@@ -17,6 +17,7 @@ tags:
   - monitoring
   - observability
 alternativeTo:
+  - graphite
   - datadog
   - newrelic
 readme: |

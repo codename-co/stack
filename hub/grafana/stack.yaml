@@ -16,7 +16,7 @@ tags:
   - monitoring
   - observability
 alternativeTo:
-  - prometheus
+  - graphite
 readme: |
   Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more.
 
