@@ -12,7 +12,7 @@ author: mogh.tech
 license: GPL-3.0
 homepage: https://komo.do
 repository: https://github.com/moghtech/komodo
-stars: 4500
+stars: 4600
 tags: [docker, paas]
 alternativeTo: [kubernetes]
 readme: |
