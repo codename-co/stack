@@ -175,6 +175,9 @@ alternatives:
     icon: googlesheets
     name: Google Sheets
     description: Spreadsheet software
+  - slug: graphite
+    name: Graphite
+    description: Monitoring and graphing tool
   - slug: guacamole
     name: Guacamole
     icon: apacheguacamole

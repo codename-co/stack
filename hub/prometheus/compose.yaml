@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  prometheus:
+    image: prom/prometheus:v${PROMETHEUS_VERSION:-3.3.0}
+    volumes:
+      # - ${PROMETHEUSE_CONFIG}:/etc/prometheus
+      - prometheus:/prometheus
+    environment:
+      TZ: $TZ
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.prometheus.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.prometheus.loadbalancer.server.port: 9090
+
+volumes:
+  prometheus:

@@ -267,3 +267,5 @@ tags:
     title: Continuous Integration
   - slug: code-quality
     name: Code quality
+  - slug: time-series
+    name: Time series
