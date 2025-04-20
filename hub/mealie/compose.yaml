@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  mealie:
+    image: hkotel/mealie:v${MEALIE_VERSION:-2.8.0}
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - SECRET_KEY=changeme
+      - DB_ENGINE=sqlite
+    volumes:
+      - mealie:/app/data
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.mealie.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.mealie.loadbalancer.server.port: 9000
+
+volumes:
+  mealie:

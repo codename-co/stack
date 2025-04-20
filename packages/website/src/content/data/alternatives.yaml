@@ -285,12 +285,18 @@ alternatives:
   - slug: oracle
     name: Oracle
     description: Database management system
+  - slug: paprika
+    name: Paprika
+    description: Recipe manager
   - slug: pastebin
     name: Pastebin
     description: Text storage service
   - slug: peertube
     name: PeerTube
     description: Decentralized video platform
+  - slug: pepperplate
+    name: Pepperplate
+    description: Recipe manager
   - slug: perplexity
     name: Perplexity
     description: AI text generation and search
