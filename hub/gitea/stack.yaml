@@ -17,6 +17,7 @@ tags:
   - software-development
 alternativeTo:
   - github
+  - gitlab
   - bitbucket
 readme: |
   The goal of this project is to make the easiest, fastest, and most painless
