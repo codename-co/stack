@@ -71,6 +71,12 @@ alternatives:
   - slug: cloudconvert
     name: CloudConvert
     description: File conversion service
+  - slug: codacy
+    name: Codacy
+    description: Code quality and test coverage tool
+  - slug: codeclimate
+    name: Code Climate
+    description: Code quality and test coverage tool
   - slug: confluence
     name: Confluence
     description: Collaboration software

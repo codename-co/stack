@@ -262,3 +262,8 @@ tags:
     name: Bookmarks
   - slug: pastebin
     name: Pastebin
+  - slug: ci
+    name: CI
+    title: Continuous Integration
+  - slug: code-quality
+    name: Code quality

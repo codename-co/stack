@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: sonarqube
+name: SonarQube
+flavor: DockerCompose
+version: "9.9.8"
+updated_at: 2025-04-09
+description: Code quality Continuous Inspection
+author: SonarSource
+license: LGPL-3.0
+homepage: https://www.sonarqube.org
+repository: https://github.com/SonarSource/sonarqube
+stars: 9500
+tags: [ci, code-quality]
+alternativeTo: [codeclimate, codacy]
+readme: |
+
+  SonarQube provides the capability to not only show the health of an application but also to highlight issues newly introduced. With a Quality Gate in place, you can achieve Clean Code and therefore improve code quality systematically.
+
+  https://www.youtube.com/watch?v=xeTwG9XFFTE

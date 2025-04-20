@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  sonarqube:
+    image: sonarqube:${SONARQUBE_VERSION:-9.9.8}-community
+    environment:
+      - sonar.jdbc.username=sonar
+      - sonar.jdbc.password=sonar
+      - sonar.search.javaAdditionalOpts=-Dbootstrap.system_call_filter=false
+    volumes:
+      - logs:/opt/sonarqube/logs
+      - data:/opt/sonarqube/data
+      - extensions:/opt/sonarqube/extensions
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.sonarqube.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.sonarqube.loadbalancer.server.port: 9000
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=sonar
+      - POSTGRES_PASSWORD=sonar
+    volumes:
+      - pg_db:/var/lib/postgresql
+      - pg_data:/var/lib/postgresql/data
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+
+volumes:
+  logs:
+  data:
+  extensions:
+  pg_db:
+  pg_data:
