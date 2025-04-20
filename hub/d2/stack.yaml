@@ -19,18 +19,18 @@ readme: |
 
   A modern diagram scripting language that turns text to diagrams.
 
-    ![preview](https://victorbjorklund.com/assets/images/d2/build-diagrams-as-code-with-d2-d2lang--1592893463.svg)
+  ![preview](https://victorbjorklund.com/assets/images/d2/build-diagrams-as-code-with-d2-d2lang--1592893463.svg)
 
-    <hr>
+  <hr>
 
-    ### Features
+  ### Features
 
-    - 📝 **Text-based**: Write diagrams in plain text, no need to drag and drop.
-    - 🎨 **Beautiful themes**: Production-ready themes by professional designers.
-    - ✏️ **Sketch mode**: A beautiful, hand-drawn aesthetic.
-    - 🎬 **Animations**: Animated diagrams from text.
-    - 📐 **LaTeX**: Perfect for academic use and research papers.
-    - 🌐 **Any language**: Supports almost all languages.
-    - 💻 **Code snippets**: Syntax highlighted code right in the diagram.
-    - 📄 **Markdown**: Include longform explanations with Markdown.
-    - 📊 **Tables**: Show structured data like SQL tables.
+  - 📝 **Text-based**: Write diagrams in plain text, no need to drag and drop.
+  - 🎨 **Beautiful themes**: Production-ready themes by professional designers.
+  - ✏️ **Sketch mode**: A beautiful, hand-drawn aesthetic.
+  - 🎬 **Animations**: Animated diagrams from text.
+  - 📐 **LaTeX**: Perfect for academic use and research papers.
+  - 🌐 **Any language**: Supports almost all languages.
+  - 💻 **Code snippets**: Syntax highlighted code right in the diagram.
+  - 📄 **Markdown**: Include longform explanations with Markdown.
+  - 📊 **Tables**: Show structured data like SQL tables.
