@@ -11,7 +11,7 @@ author: PostHog, Inc
 license: MIT Expat
 homepage: https://posthog.com
 repository: https://github.com/PostHog/posthog
-stars: 25800
+stars: 25900
 tags: [analytics, feature-flagging, a-b-testing]
 alternativeTo: [mixpanel, amplitude]
 readme: |
