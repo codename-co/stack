@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: forgejo
+name: Forgejo
+flavor: DockerCompose
+version: "11.0.0"
+updated_at: 2025-04-16
+description: Software forge
+author: Forgejo community
+license: GPL-3.0
+homepage: https://forgejo.org
+repository: https://codeberg.org/forgejo/forgejo
+stars: 2200
+tags: [git]
+alternativeTo: [github, gitlab, bitbucket]
+readme: |
+
+  Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.
+
+  ![preview](https://forgejo.org/_astro/2024-04-git-grep.DGDeOHnJ_1UKQ9k.webp)
+
+  <hr>
+
+  ### Features
+
+  - 🚀 **Simple project management:**
+    Forgejo's user-friendly design boosts collaboration and productivity.
+  - 🔄 **GitHub alternative:**
+    Move from GitHub to a platform you control with a familiar interface.
+  - 🛠️ **Easy setup:**
+    Host your own forge with minimal technical knowledge required.
+  - ⚡ **Light and fast:**
+    Full-featured but uses far fewer resources than other forges.
+  - 🔓 **100% Free Software:**
+    Always Free and Open Source, built using only Free Software.
+  - 🌱 **Future-focused:**
+    Continuously innovating towards decentralized collaborative development.

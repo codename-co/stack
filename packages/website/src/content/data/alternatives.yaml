@@ -134,6 +134,9 @@ alternatives:
     name: Gist
     icon: github
     description: Code snippet hosting service
+  - slug: gitlab
+    name: GitLab
+    description: Code hosting platform
   - slug: github
     name: GitHub
     description: Code hosting platform
