@@ -3,7 +3,7 @@
 
 services:
   metabase:
-    image: metabase/metabase:v${METABASE_VERSION:-0.51.9.4}
+    image: metabase/metabase:v${METABASE_VERSION:-0.54.3}
     platform: linux/amd64
     # container_name: metabase
     # hostname: metabase

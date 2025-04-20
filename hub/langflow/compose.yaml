@@ -3,7 +3,7 @@
 
 services:
   langflow:
-    image: langflowai/langflow:${LANGFLOW_VERSION:-1.2.0}
+    image: langflowai/langflow:${LANGFLOW_VERSION:-1.3.4}
     # ports:
     #   - 7860:7860
     depends_on:

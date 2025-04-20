@@ -3,7 +3,7 @@
 
 services:
   drawio:
-    image: jgraph/drawio:${DRAWIO_VERSION:-26.1.1}
+    image: jgraph/drawio:${DRAWIO_VERSION:-26.2.2}
     environment:
       PUBLIC_DNS: https://$PROJECT.$DOMAIN
       ORGANISATION_UNIT: unit

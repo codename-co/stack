@@ -3,7 +3,7 @@
 
 services:
   openwebui:
-    image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.5.20}
+    image: ghcr.io/open-webui/open-webui:${OPEN_WEBUI_VERSION:-0.6.5}
     env_file: .env
     volumes:
       - open-webui:/app/backend/data:rw

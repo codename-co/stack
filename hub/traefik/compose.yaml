@@ -3,7 +3,7 @@
 
 services:
   traefik:
-    image: traefik:v${TRAEFIK_VERSION:-3.3.4}
+    image: traefik:v${TRAEFIK_VERSION:-3.3.6}
     command:
       - --providers.docker=true
       - --entrypoints.https.address=:443

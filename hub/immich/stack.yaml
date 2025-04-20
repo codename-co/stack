@@ -4,8 +4,8 @@
 slug: immich
 name: Immich
 flavor: DockerCompose
-version: "1.126.1"
-updated_at: 2025-02-10
+version: "1.131.3"
+updated_at: 2025-04-02
 description: High performance self-hosted photo and video management solution
 author: FUTO
 license: AGPL-3.0

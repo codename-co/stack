@@ -4,8 +4,8 @@
 slug: metabase
 name: Metabase
 flavor: DockerCompose
-version: "0.51.9.4"
-updated_at: 2024-12-21
+version: "0.54.3"
+updated_at: 2025-04-15
 description: Business Intelligence for everyone
 author: Metabase
 license: AGPL
@@ -21,7 +21,7 @@ alternativeTo:
 readme: |
   Metabase is the easy, open-source way for everyone in your company to ask questions and learn from data.
 
-  ![Metabase Product Screenshot](https://raw.githubusercontent.com/metabase/metabase/refs/heads/master/docs/images/metabase-product-screenshot.svg)
+  ![Metabase Product Screenshot](https://github.com/metabase/metabase/raw/master/docs/images/metabase-product-screenshot.png)
 
   <hr>
 
