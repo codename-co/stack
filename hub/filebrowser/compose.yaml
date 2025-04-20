@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:v${FILEBROWSER_VERSION:-2.32.0}
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      # - ${CONFIG_PATH}/filebrowser/database.db:/database.db
+      # - ${CONFIG_PATH}/filebrowser/config.json:/.filebrowser.json
+      - ${FILEBROWSER_DATA_PATH:-~}:/srv
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.filebrowser.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.filebrowser.loadbalancer.server.port: 80

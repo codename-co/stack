@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: working
+slug: filebrowser
+name: Filebrowser
+icon: 💾
+flavor: DockerCompose
+version: "2.32.0"
+updated_at: 2025-01-31
+description: Web File Browser
+author: File Browser
+license: Apache-2.0
+homepage: https://filebrowser.org
+repository: https://github.com/filebrowser/filebrowser
+stars: 28700
+tags: []
+alternativeTo: []
+readme: |
+
+  Filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory. It can be used as a standalone app.
+
+  ![preview](https://filebrowser.org/~gitbook/image?url=https%3A%2F%2F1513098801-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-M8KDxOujDoPpJyJJ5_i%252Fuploads%252Fgit-blob-9390768b0cbb83b1e7da55c0ae13ecd2d8fcb114%252F2.PNG%3Falt%3Dmedia&width=768&dpr=2&quality=100&sign=38dc1acc&sv=2)
+
+  <hr>
+
+  ### Features
+
+  - **Easy login system**: File Browser provides a simple and secure login system to manage access to your files.
+  - **Manage your files through a sleek interface**: The web interface is user-friendly and allows you to easily navigate through your files and folders.
+  - **Manage users, add permissions, set scopes**: You can create multiple users with different permissions and scopes to control access to your files.
+  - **Edit your files, of course!**: File Browser allows you to edit your files directly from the web interface.
+  - **Execute custom commands**: You can execute custom commands on your files and folders, making it a powerful tool for managing your data.
+  - **Customize your installation**: File Browser is highly customizable, allowing you to tailor it to your specific needs.
