@@ -1,0 +1,93 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  pad-postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pad-keycloak:
+    image: quay.io/keycloak/keycloak:25.0
+    command: start
+    environment:
+      KC_HOSTNAME: $PROJECT.$DOMAIN
+      KC_HOSTNAME_PORT: 8080
+      KC_HTTP_ENABLED: "true"
+      KC_HOSTNAME_STRICT_BACKCHANNEL: "false"
+      KC_HOSTNAME_STRICT_HTTPS: "true"
+      KC_HOSTNAME_URL: https://$PROJECT.$DOMAIN
+      KC_HOSTNAME_ADMIN_URL: https://$PROJECT.$DOMAIN
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_PROXY: "edge"
+      PROXY_ADDRESS_FORWARDING: "true"
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://pad-postgres:5432/${POSTGRES_DB}
+      KC_DB_USERNAME: ${POSTGRES_USER}
+      KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on:
+      - pad-postgres
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.keycloak.rule: Host(`$PROJECT.$DOMAIN`) && (PathPrefix(`/realms`) || PathPrefix(`/auth`) || PathPrefix(`/protocol`) || PathPrefix(`/admin`) || PathPrefix(`/resources`))
+      traefik.http.services.keycloak.loadbalancer.server.port: 8080
+
+  pad-coder:
+    image: ghcr.io/coder/coder:latest
+    environment:
+      # CODER_ACCESS_URL: https://$PROJECT.$DOMAIN
+      CODER_OIDC_ISSUER_URL: http://pad-keycloak:8080/realms/${OIDC_REALM}
+      CODER_OIDC_CLIENT_ID: ${OIDC_CLIENT_ID}
+      CODER_OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET}
+      CODER_OIDC_SIGN_IN_TEXT: "Sign in for pad"
+      CODER_ADDITIONAL_CSP_POLICY: ${CODER_ADDITIONAL_CSP_POLICY}
+      CODER_OAUTH2_GITHUB_DEFAULT_PROVIDER_ENABLED: "false"
+      CODER_PG_CONNECTION_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@pad=postgres:5432/${POSTGRES_DB}?sslmode=disable
+      CODER_ADDRESS: 0.0.0.0:7080
+      CODER_OIDC_IGNORE_EMAIL_VERIFIED: "true"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    depends_on:
+      - pad-keycloak
+      - pad-postgres
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.coder.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/coder`)
+      traefik.http.services.coder.loadbalancer.server.port: 7080
+
+  pad:
+    image: ghcr.io/pad-ws/pad.ws:main
+    platform: linux/amd64
+    environment:
+      - STATIC_DIR=/app/frontend/dist
+      - ASSETS_DIR=/app/frontend/dist/assets
+      - OIDC_CLIENT_ID=${OIDC_CLIENT_ID}
+      - OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET}
+      - OIDC_SERVER_URL=https://$PROJECT.$DOMAIN
+      - OIDC_REALM=${OIDC_REALM}
+      - REDIRECT_URI=https://$PROJECT.$DOMAIN/auth/callback
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST=pad-postgres
+      - POSTGRES_PORT=5432
+      - CODER_API_KEY=${CODER_API_KEY}
+      - CODER_URL=https://$PROJECT.$DOMAIN
+      - CODER_TEMPLATE_ID=${CODER_TEMPLATE_ID}
+      - CODER_DEFAULT_ORGANIZATION=${CODER_DEFAULT_ORGANIZATION}
+    depends_on:
+      - pad-keycloak
+      - pad-coder
+      - pad-postgres
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.pad.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.pad.loadbalancer.server.port: 8000
+
+volumes:
+  postgres_data:
