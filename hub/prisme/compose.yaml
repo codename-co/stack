@@ -3,7 +3,7 @@
 
 services:
   console:
-    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-console:latest
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-console:v25.04.171109
     entrypoint: npm start --prefix services/studio
     restart: on-failure
     depends_on:
@@ -18,7 +18,7 @@ services:
       traefik.http.services.console.loadbalancer.server.port: 3000
 
   api-gateway:
-    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-api-gateway:latest
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-api-gateway:v25.04.171109
     entrypoint: npm start --prefix services/api-gateway
     restart: on-failure
     depends_on:
@@ -34,7 +34,7 @@ services:
       PERMISSIONS_STORAGE_HOST: "mongodb://mongo/permissions"
       CONSOLE_URL: "${CONSOLE_URL}"
       # API_URL: "${API_URL}"
-      API_URL: "http://$PROJECT.$DOMAIN/v2"
+      API_URL: "https://$PROJECT.$DOMAIN/v2"
       # API_URL: "http://localhost:3001/v2"
       PAGES_HOST: "${PAGES_HOST}"
       ACCOUNT_VALIDATION_METHOD: auto
@@ -50,7 +50,7 @@ services:
       traefik.http.services.api-gateway.loadbalancer.server.port: 80
 
   pages:
-    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-pages:latest
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-pages:v25.04.171109
     entrypoint: npm start --prefix services/studio
     restart: on-failure
     environment:
@@ -63,7 +63,7 @@ services:
       traefik.http.services.pages.loadbalancer.server.port: 3100
 
   events:
-    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-events:latest
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-events:v25.04.171109
     entrypoint: node --abort-on-uncaught-exception services/events/dist/index.js
     restart: on-failure
     depends_on:
@@ -80,7 +80,7 @@ services:
       PERMISSIONS_STORAGE_HOST: "mongodb://mongo/permissions"
 
   runtime:
-    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-runtime:latest
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-runtime:v25.04.171109
     entrypoint: node --abort-on-uncaught-exception services/runtime/dist/index.js
     restart: on-failure
     volumes:
@@ -99,7 +99,7 @@ services:
       API_URL: "${API_URL}"
 
   workspaces:
-    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-workspaces:latest
+    image: registry.gitlab.com/prisme.ai/prisme.ai/prisme.ai-workspaces:v25.04.171109
     entrypoint: node --abort-on-uncaught-exception services/workspaces/dist/index.js
     restart: on-failure
     volumes:

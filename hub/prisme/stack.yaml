@@ -6,8 +6,8 @@ slug: prisme
 name: Prisme
 icon: Ⓟ
 flavor: DockerCompose
-version: "25.02.251410"
-updated_at: 2025-02-25
+version: "25.04.171109"
+updated_at: 2025-04-17
 description: Build products and features together
 author: Prisme.ai
 license: GPL-3.0
