@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  omnitools:
+    image: iib0011/omni-tools:${OMNITOOLS_VERSION:-0.3.0}
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.omnitools.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.omnitools.loadbalancer.server.port: 80

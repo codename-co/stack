@@ -1,0 +1,51 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: omnitools
+name: OmniTools
+icon: Ⓞ
+flavor: DockerCompose
+version: "0.3.0"
+updated_at: 2025-04-24
+description: Web tools for everyday tasks
+author: Ibrahima G. Coulibaly
+license: MIT
+homepage: https://omnitools.app
+repository: https://github.com/iib0011/omni-tools
+stars: 1400
+tags: [software-development]
+alternativeTo: []
+readme: |
+
+  OmniTools is a self-hosted web app offering a variety of online tools to simplify everyday tasks. Whether you are coding, manipulating images/videos, PDFs or crunching numbers, OmniTools has you covered.
+
+  ![preview](https://github.com/iib0011/omni-tools/raw/main/img.png)
+
+  <hr>
+
+  ### Features
+
+  - **Image/Video/Binary Tools**
+    - Image Resizer
+    - Image Converter
+    - Video Trimmer
+    - Video Reverser
+    - And more...
+  - **String/List Tools**
+    - Case Converters
+    - List Shuffler
+    - Text Formatters
+    - And more...
+  - **Date and Time Tools**
+    - Date Calculators
+    - Time Zone Converters
+    - And more...
+  - **Math Tools**
+    - Generate Prime Numbers
+    - Generate Perfect Numbers
+    - And more...
+  - **Miscellaneous Tools**
+    - JSON Tools
+    - PDF Tools
+    - CSV Tools
+    - And more...
