@@ -3,7 +3,7 @@
 
 services:
   actualbudget:
-    image: actualbudget/actual-server:${ACTUAL_VERSION:-25.3.1}-alpine
+    image: actualbudget/actual-server:${ACTUAL_VERSION:-25.4.0}-alpine
     env_file: .env
     volumes:
       # Change './actual-data' below to the path to the folder you want Actual to store its data in on your server.

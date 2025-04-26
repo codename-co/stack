@@ -5,8 +5,8 @@ status: working
 slug: actualbudget
 name: ActualBudget
 flavor: DockerCompose
-version: "25.3.1"
-updated_at: 2025-03-03
+version: "25.4.0"
+updated_at: 2025-04-05
 description: Personal finance management tool
 author: Actual Budget
 license: MIT
