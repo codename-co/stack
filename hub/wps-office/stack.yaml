@@ -12,7 +12,7 @@ author: Kingsoft Office Software
 license: GPL-3.0
 homepage: https://www.wps.com
 repository: https://github.com/linuxserver/docker-wps-office
-stars: 127
+stars: 132
 tags: [office-suite, productivity]
 alternativeTo: [microsoft-office, libreoffice, onlyoffice]
 readme: |
