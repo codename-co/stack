@@ -1,0 +1,49 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+type: recipe
+slug: psychologist
+name: Psychologist
+icon: 𝚿
+flavor: DockerCompose
+version: latest
+updated_at: 2025-04-29
+description: A psychologist ready for consultations through your browser.
+author: ""
+license: ""
+repository: https://github.com/codename-co/stack/tree/main/recipes/psychologist
+tags: []
+alternativeTo: []
+dependencies:
+  - name: openwebui
+    role: A user-friendly interface for AI chat
+  - name: ollama
+    role: Local language models for text generation.
+readme: |
+
+  ### Use case
+
+  This stack offers a self-hosted AI psychologist accessible through your web browser. It provides mental health support with complete privacy, as all processing happens on your own hardware.
+
+  ### Features
+  - **🔒 Privacy**: All data is processed locally, ensuring confidentiality.
+  - **🌐 Accessibility**: Access the psychologist from any device with a web browser.
+  - **⚙️ Customizable**: Tailor the psychologist's responses to fit your needs.
+  - **🗣️ Multi-language support**: Communicate in your own language.
+
+i18n:
+  fr:
+    name: Psychologue
+    description: Un psychologue prêt à consulter depuis votre navigateur.
+    readme: |
+
+      ### Cas d'usage
+
+      Cette stack propose un psychologue IA auto-hébergé accessible via votre navigateur web. Il offre un soutien en santé mentale avec une confidentialité totale, car tout le traitement se fait en local sur votre propre matériel.
+
+      ### Fonctionnalités
+
+      - **🔒 Confidentialité** : Toutes les données sont traitées localement, garantissant la confidentialité.
+      - **🌐 Accessibilité** : Accédez au psychologue depuis n'importe quel appareil avec un navigateur web.
+      - **⚙️ Personnalisable** : Adaptez les réponses du psychologue à vos besoins.
+      - **🗣️ Support multilingue** : Communiquez dans votre propre langue.

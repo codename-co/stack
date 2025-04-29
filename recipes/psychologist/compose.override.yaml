@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  openwebui:
+    links: !reset [ollama]
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.openwebui.rule: Host(`$PROJECT.$DOMAIN`)
+
+  # Disabling the following services as they are not needed for this recipe.
+  openwebui-searxng:
+    profiles: [disabled]
+  openwebui-pipelines:
+    profiles: [disabled]
+
+  # Update the ollama router to use an alternative subdomain.
+  ollama:
+    labels:
+      dash.url: https://$PROJECT-ollama.$DOMAIN
+      traefik.http.routers.ollama.rule: Host(`$PROJECT-ollama.$DOMAIN`)
+
+  # Initialize the Ollama container with a base model and a custom model.
+  ollama-init:
+    image: curlimages/curl:latest
+    restart: no
+    depends_on:
+      - ollama
+    command:
+      - sh
+      - -c
+      - |
+        echo "Pulling the $OLLAMA_BASE_MODEL default model…";
+        curl http://ollama:11434/api/pull -d '{"model": "$OLLAMA_BASE_MODEL"}';
+        echo "Creating the custom $OLLAMA_CUSTOM_MODEL_NAME model…";
+        curl http://ollama:11434/api/create -d '{"model": "$OLLAMA_CUSTOM_MODEL_NAME", "from": "$OLLAMA_BASE_MODEL", "system": "$OLLAMA_CUSTOM_MODEL_SYSTEM_PROMPT"}'
