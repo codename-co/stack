@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  gaseous:
+    image: gaseousgames/gaseousserver
+    restart: unless-stopped
+    depends_on:
+      - gsdb
+    volumes:
+      - gs:/root/.gaseous-server
+    environment:
+      - TZ=Etc/UTC
+      - dbhost=gsdb
+      - dbuser=root
+      - dbpass=gaseous
+      - igdbclientid=<clientid>
+      - igdbclientsecret=<clientsecret>
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.gaseous.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.gaseous.loadbalancer.server.port: 80
+
+  gsdb:
+    container_name: gsdb
+    image: mariadb
+    restart: unless-stopped
+    volumes:
+      - gsdb:/var/lib/mysql
+    environment:
+      - MARIADB_ROOT_PASSWORD=gaseous
+      - MARIADB_USER=gaseous
+      - MARIADB_PASSWORD=gaseous
+
+volumes:
+  gs:
+  gsdb:
