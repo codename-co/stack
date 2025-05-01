@@ -1,0 +1,51 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: linkwarden
+name: Linkwarden
+flavor: DockerCompose
+version: "2.10.0"
+updated_at: 2025-04-08
+description: Collaborative bookmark manager
+author: Linkwarden
+license: AGPL-3.0
+homepage: https://linkwarden.app
+repository: https://github.com/linkwarden/linkwarden
+stars: 11700
+tags: [bookmarks]
+alternativeTo: [pocket, raindrop]
+readme: |
+
+  Linkwarden is a self-hosted, open-source collaborative bookmark manager to collect, organize and archive webpages.
+
+  ![preview](https://github.com/linkwarden/linkwarden/raw/main/assets/dashboard.png)
+
+  <hr>
+
+  ### Features
+
+  - 📸 Auto capture a screenshot, PDF, single html file, and readable view of each webpage.
+  - 🏛️ Send your webpage to Wayback Machine for a snapshot. (Optional)
+  - ✨ Local AI Tagging to automatically tag your links based on their content (Optional).
+  - 📂 Organize links by collection, sub-collection, name, description and multiple tags.
+  - 👥 Collaborate on gathering links in a collection.
+  - 🎛️ Customize the permissions of each member.
+  - 🌐 Share your collected links and preserved formats with the world.
+  - 📌 Pin your favorite links to dashboard.
+  - 🔍 Full text search, filter and sort for easy retrieval.
+  - 📱 Responsive design and supports most modern browsers.
+  - 🌓 Dark/Light mode support.
+  - 🧩 Browser extension.
+  - 🔄 Browser Synchronization (using Floccus)
+  - ⬇️ Import and export your bookmarks.
+  - 🔐 SSO integration. (Enterprise and Self-hosted users only)
+  - 📦 Installable Progressive Web App (PWA).
+  - 🍎 iOS Shortcut to save Links to Linkwarden.
+  - 🔑 API keys.
+  - ✅ Bulk actions.
+  - 👥 User administration.
+  - 🌐 Support for Other Languages (i18n).
+  - 📁 Image and PDF Uploads.
+  - 🎨 Custom Icons for Links and Collections.
+  - 🔔 RSS Feed Subscription.
+  - ✨ And many more features. (Literally!)
