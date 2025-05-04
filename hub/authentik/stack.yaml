@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: authentik
+name: Authentik
+flavor: DockerCompose
+version: "2025.4.0"
+updated_at: 2025-04-30
+description: Open-source Identity Provider
+author: Authentik Security Inc
+license: MIT
+homepage: https://goauthentik.io
+repository: https://github.com/goauthentik/authentik
+stars: 16000
+tags: [security, identity-management]
+alternativeTo: [okta, auth0, ping]
+readme: |
+
+  Authentik is an open-source Identity Provider that emphasizes flexibility and versatility, with support for a wide set of protocols.
+
+  ![preview](https://docs.goauthentik.io/img/screen_admin_dark.jpg)
+
+  <hr>
+
+  ### Features
+
+  * **Self-host anywhere**: Authentik can be deployed on any cloud provider, on-premises, or even on your local machine.
+  * **Multi-Factor Authentication (MFA)**: Authentik supports various MFA methods, including TOTP, WebAuthn, and Duo Push.
+  * **Conditional Access**: Define rules for access based on user attributes, device state, and more.
+  * **Open-source/Source available**: Authentik is open-source and can be self-hosted or used as a managed service.
+  * **Application Proxy**: Securely access internal applications without exposing them to the internet.
+  * **FIPS Compliance**: Authentik is compliant with FIPS standards for cryptographic modules.
+  * **Enterprise support**: Authentik offers enterprise-grade support for businesses and organizations.
+  * **WebAuthn (Passkeys)**: Support for modern authentication methods like WebAuthn and Passkeys.
+  * **GeoIP / Impossible Travel**: Detect and prevent unauthorized access based on user location.
+  * **Remote access (RDP, VNC, SSH)**: Securely access remote desktops and servers with Authentik.
+  * **Protocols**: Authentik supports a wide range of protocols, including OAuth2, OIDC, SAML2, SCIM, LDAP, RADIUS, and SSF (Apple Business Manager).
+  * **Federation support**: Authentik can federate with other identity providers using OAuth2, OIDC, SAML2, LDAP, SCIM, and Kerberos.
+  * **Use cases**: Authentik can be used for authentication, enrollment, and self-service password resets.
