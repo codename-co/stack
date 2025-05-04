@@ -12,7 +12,7 @@ export const GET: APIRoute = (context) => {
 
   const items = [
     ...stacks.map((e) => ({
-      title: e.data.name,
+      title: `${e.data.name} · ${e.data.version}`,
       description: e.data.description,
       link: `/${e.id}`,
       pubDate: e.data.updated_at,

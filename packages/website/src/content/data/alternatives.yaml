@@ -282,6 +282,9 @@ alternatives:
   - slug: notion
     name: Notion
     description: Note-taking app
+  - slug: okta
+    name: Okta
+    description: Identity and access management
   - slug: onlyoffice
     name: ONLYOFFICE
     description: Office suite
@@ -306,6 +309,9 @@ alternatives:
   - slug: photoshop
     name: Photoshop
     description: Image editing software
+  - slug: ping
+    name: Ping
+    description: Identity and access management
   - slug: pipedreams
     name: Pipedreams
     description: Automation platform
