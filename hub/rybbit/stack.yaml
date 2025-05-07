@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: working
+slug: rybbit
+name: Rybbit
+icon: Ⓡ
+flavor: DockerCompose
+version: "latest"
+updated_at: 2025-05-07
+description: Intuitive analytics
+author: Rybbit
+license: AGPL-3.0
+homepage: https://www.rybbit.io
+repository: https://github.com/rybbit-io/rybbit
+stars: 1300
+tags: [analytics]
+alternativeTo: [google-analytics]
+readme: |
+
+  Rybbit is the modern open source and privacy friendly alternative to Google Analytics. It takes only a couple minutes to setup and is super intuitive to use.
+
+  ![preview](https://github.com/user-attachments/assets/54996620-4eff-4ecc-9135-10ce21483f6a)
+
+  <hr>
+
+  ### Features
+
+  - 📊 All key web analytics metrics including sessions, unique users, pageviews, bounce rate, session duration
+  - 🔒 No cookies or user tracking - GDPR & CCPA compliant
+  - 🎯 Customizable goals. retention, user journeys, and funnels dashboards
+  - 🔍 Advanced filtering across 15+ dimensions
+  - 🔔 Custom events
+  - 👥 Live sessions dashboard
+  - 🌎 3 level location tracking (country -> region -> city) + advanced map visualizations
+  - ⚡ Real time dashboard
+  - 🏢 Support for organizations and unlimited number of sites

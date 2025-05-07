@@ -1,0 +1,81 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  rybbit-clickhouse:
+    image: clickhouse/clickhouse-server:25.4.2
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse
+      - ./config/clickhouse:/etc/clickhouse-server/config.d
+    environment:
+      - CLICKHOUSE_DB=${CLICKHOUSE_DB:-analytics}
+      - CLICKHOUSE_USER=${CLICKHOUSE_USER:-default}
+      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD:-frog}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:8123/ping",
+        ]
+      interval: 3s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  rybbit-postgres:
+    image: postgres:17.4
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-frog}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-frog}
+      - POSTGRES_DB=${POSTGRES_DB:-analytics}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  rybbit-backend:
+    image: ghcr.io/rybbit-io/rybbit-backend:${RYBBIT_VERSION:-latest}
+    environment:
+      - NODE_ENV=production
+      - CLICKHOUSE_HOST=http://rybbit-clickhouse:8123
+      - CLICKHOUSE_DB=${CLICKHOUSE_DB:-analytics}
+      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD:-frog}
+      - POSTGRES_HOST=rybbit-postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-analytics}
+      - POSTGRES_USER=${POSTGRES_USER:-frog}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-frog}
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
+      - BASE_URL=${BASE_URL}
+      - DISABLE_SIGNUP=${DISABLE_SIGNUP}
+    depends_on:
+      rybbit-clickhouse:
+        condition: service_healthy
+      rybbit-postgres:
+        condition: service_started
+    restart: unless-stopped
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.rybbit-backend.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/api`)
+      traefik.http.services.rybbit-backend.loadbalancer.server.port: 3001
+
+  rybbit-client:
+    image: ghcr.io/rybbit-io/rybbit-client:${RYBBIT_VERSION:-latest}
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_BACKEND_URL=${BASE_URL}
+    depends_on:
+      - rybbit-backend
+    restart: unless-stopped
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.rybbit-client.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.rybbit-client.loadbalancer.server.port: 3002
+
+volumes:
+  clickhouse-data:
+  postgres-data:
