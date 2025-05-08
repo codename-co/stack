@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+type: recipe
+slug: real-estate-advisor
+name: Real Estate Advisor
+icon: 🏡
+flavor: DockerCompose
+version: latest
+updated_at: 2025-05-08
+description: A real estate advisor that helps you find the perfect home.
+author: ""
+license: ""
+repository: https://github.com/codename-co/stack/tree/main/recipes/real-estate-advisor
+tags: []
+alternativeTo: []
+dependencies:
+  - name: openwebui
+    role: A user-friendly interface for AI chat
+  - name: ollama
+    role: Local language models for text generation.
+readme: |
+
+  ### Use case
+
+  This stack offers a self-hosted AI real estate advisor accessible through your web browser. It provides real estate advice with complete privacy, as all processing happens on your own hardware.
+
+  ### Features
+  - **🔒 Privacy**: All data is processed locally, ensuring confidentiality.
+  - **🌐 Accessibility**: Access the real estate from any device with a web browser.
+  - **⚙️ Customizable**: Tailor the advisor's responses to fit your needs.
+  - **🗣️ Multi-language support**: Communicate in your own language.
+  - **🏡 Real estate specific**: Get tailored advice for your real estate needs.
