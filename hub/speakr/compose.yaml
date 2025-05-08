@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  speakr:
+    image: learnedmachine/speakr:latest
+    platform: linux/amd64
+    restart: unless-stopped
+    volumes:
+      - uploads:/data/uploads
+      - instance:/data/instance
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.speakr.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.speakr.loadbalancer.server.port: 8899
+
+volumes:
+  uploads:
+  instance:

@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: speakr
+name: Speakr
+icon: 🗣
+flavor: DockerCompose
+version: "latest"
+updated_at: 2025-05-08
+description: Transcribe audio recordings
+author: Murtaza Nasir
+license: AGPL-3.0
+repository: https://github.com/murtaza-nasir/speakr
+stars: 162
+tags: []
+alternativeTo: []
+readme: |
+
+  Speakr is a personal, self-hosted web application designed for transcribing audio recordings (like meetings), generating concise summaries and titles, and interacting with the content through a chat interface. Keep all your meeting notes and insights securely on your own server.
+
+  ![preview](https://github.com/user-attachments/assets/a1d471fa-8b52-4f9e-962d-19cbd0955a3b)
+
+  <hr>
+
+  ### Features
+
+  * **🔊 Audio Upload:** Drag-and-drop or select audio files (MP3, WAV, M4A)
+  * **⚙️ Background Processing:** Non-blocking transcription and summarization
+  * **🎙️ Transcription:** Uses OpenAI-compatible Speech-to-Text APIs (configurable)
+  * **📝 AI Summarization & Titling:** Generates concise content using configurable LLMs
+  * **💬 Interactive Chat:** Question and interact with transcription content
+  * **🔍 Search & Highlights:** Easily find and highlight important content
+  * **✏️ Metadata Editing:** Edit titles, participants, dates, summaries, and notes
+  * **🔒 Authentication:** Secure user registration and login
+  * **🗂️ Recording Gallery:** View and manage all recordings
+  * **🌓 Dark Mode:** Toggle between light and dark themes
+  * **🛠️ Admin Dashboard:** Central management at `/admin`
+  * **👥 User Management:** Add, edit, delete users and manage privileges
+  * **📊 System Statistics:** View usage data across the platform
