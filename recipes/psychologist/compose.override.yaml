@@ -8,6 +8,9 @@ services:
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.openwebui.rule: Host(`$PROJECT.$DOMAIN`)
+    depends_on:
+      ollama-init:
+        condition: service_completed_successfully
 
   # Disabling the following services as they are not needed for this recipe.
   openwebui-searxng:
@@ -31,7 +34,10 @@ services:
       - sh
       - -c
       - |
-        echo "Pulling the $OLLAMA_BASE_MODEL default model…";
-        curl http://ollama:11434/api/pull -d '{"model": "$OLLAMA_BASE_MODEL"}';
+        echo "Pulling the $OLLAMA_CUSTOM_MODEL_LLM default model…";
+        curl http://ollama:11434/api/pull -d '{"model": "$OLLAMA_CUSTOM_MODEL_LLM"}';
+
         echo "Creating the custom $OLLAMA_CUSTOM_MODEL_NAME model…";
-        curl http://ollama:11434/api/create -d '{"model": "$OLLAMA_CUSTOM_MODEL_NAME", "from": "$OLLAMA_BASE_MODEL", "system": "$OLLAMA_CUSTOM_MODEL_SYSTEM_PROMPT"}'
+        PROMPT=$$(echo "$OLLAMA_CUSTOM_MODEL_SYSTEM_PROMPT" | sed "s/'/\\\\'/g" | tr '\n' ' ')
+        echo "System prompt: $$PROMPT"
+        curl http://ollama:11434/api/create -d '{"model": "$OLLAMA_CUSTOM_MODEL_NAME", "from": "$OLLAMA_CUSTOM_MODEL_LLM", "system": "'"$$PROMPT"'"}'
