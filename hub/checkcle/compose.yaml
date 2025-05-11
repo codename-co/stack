@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  checkcle:
+    image: operacle/checkcle:${CHECKCLE_VERSION:-latest}
+    volumes:
+      - pb_data:/app/pb_data
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 8192
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.checkcle.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.checkcle.loadbalancer.server.port: 8090
+
+volumes:
+  pb_data:
