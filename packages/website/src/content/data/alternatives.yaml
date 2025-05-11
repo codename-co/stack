@@ -359,7 +359,7 @@ alternatives:
     description: Design tool
   - slug: slack
     name: Slack
-    description: Chat
+    description: Instant messaging
   - slug: speedtest
     name: Speedtest
     description: Internet speed test tool
