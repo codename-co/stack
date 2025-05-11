@@ -11,7 +11,7 @@ author: Oliver Klemenz
 license: Unlicense
 homepage: https://princejs.com
 repository: https://github.com/portainer/portainer
-stars: 32800
+stars: 32900
 tags: [docker, paas]
 alternativeTo: [kubernetes]
 readme: |

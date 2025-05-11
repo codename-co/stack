@@ -11,7 +11,7 @@ author: MinIO, Inc
 license: AGPL-3.0
 homepage: https://min.io
 repository: https://github.com/minio/minio
-stars: 52200
+stars: 52300
 tags: [object-storage]
 alternativeTo: [amazons3, googlecloudstorage]
 readme: |
