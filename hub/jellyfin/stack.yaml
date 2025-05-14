@@ -12,7 +12,7 @@ author: Jellyfin
 license: GPL-2.0
 homepage: https://jellyfin.org
 repository: https://github.com/jellyfin/jellyfin
-stars: 39400
+stars: 39500
 tags: [media-server, media-player]
 alternativeTo: [plex, emby]
 readme: |
