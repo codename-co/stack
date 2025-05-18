@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: litlyx
+name: Litlyx
+icon: Ⓛ
+flavor: DockerCompose
+version: "latest"
+updated_at: 2025-03-11
+description: Powerful analytics solution
+author: Litlyx Srl
+license: Apache-2.0
+homepage: https://litlyx.com
+repository: https://github.com/Litlyx/litlyx
+stars: 1400
+tags: [analytics]
+alternativeTo: [google-analytics]
+readme: |
+
+  Litlyx is a modern, developer-friendly, cookie-free analytics tool.
+  Setup takes less than 30 seconds! Completely self-hostable with docker.
+  Alternative to Google Analytics, Matomo, Umami, Plausible & Simple Analytics.
+
+  ![preview](https://github.com/Litlyx/litlyx/raw/main/assets/dashboard-clip.png)
+
+  <hr>
+
+  ### Features
+
+  - 🚀 **Instant Setup**: Get started in just 30 seconds
+  - 🌐 **Multiple Site Tracking**: Monitor all your websites from one dashboard
+  - 🤖 **AI Data Assistant**: Get intelligent insights about your traffic
+  - 🛡️ **GDPR-Compliant**: No cookies, no personal data, no consent banners
+  - 🔒 **Privacy-First Approach**: Protect your visitors' privacy
+  - 📊 **Custom Events**: Track any function, click or action by simply naming it
+  - 🛒 **Product Funnels**: Create conversion funnels in seconds
+  - 📈 **Customizable Reports**: Share important metrics with your team or clients
+  - 💬 **Chat With Your Data**: Ask questions in plain language
+  - 📱 **Intuitive Dashboard**: Data that just makes sense

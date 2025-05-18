@@ -1,0 +1,97 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: $MONGO_USERNAME
+      MONGO_INITDB_ROOT_PASSWORD: $MONGO_PASSWORD
+    volumes:
+      - mongo-data:/data/db
+
+  cache:
+    image: redis:alpine
+    restart: always
+    command: redis-server --save 20 1 --loglevel warning --requirepass $REDIS_PASSWORD
+
+  producer:
+    image: litlyx/litlyx-producer
+    restart: always
+    depends_on:
+      - mongo
+      - cache
+    environment:
+      PORT: "3099"
+      REDIS_URL: "redis://cache"
+      REDIS_USERNAME: $REDIS_USERNAME
+      REDIS_PASSWORD: $REDIS_PASSWORD
+      STREAM_NAME: "LITLYX"
+
+  consumer:
+    image: litlyx/litlyx-consumer
+    restart: always
+    depends_on:
+      - mongo
+      - cache
+    environment:
+      PORT: "3031"
+      # Optional - Used to send welcome and quota emails
+      # EMAIL_SERVICE: "Brevo"
+      # BREVO_API_KEY: ""
+      MONGO_CONNECTION_STRING: "mongodb://$MONGO_USERNAME:$MONGO_PASSWORD@mongo:27017/SimpleMetrics?readPreference=primaryPreferred&authSource=admin"
+      REDIS_URL: "redis://cache"
+      REDIS_USERNAME: $REDIS_USERNAME
+      REDIS_PASSWORD: $REDIS_PASSWORD
+      STREAM_NAME: "LITLYX"
+      GROUP_NAME: "DATABASE"
+
+  dashboard:
+    image: litlyx/litlyx-dashboard
+    restart: always
+    depends_on:
+      - mongo
+      - cache
+    environment:
+      NUXT_PORT: "3000"
+      NUXT_MONGO_CONNECTION_STRING: "mongodb://$MONGO_USERNAME:$MONGO_PASSWORD@mongo:27017/SimpleMetrics?readPreference=primaryPreferred&authSource=admin"
+      NUXT_REDIS_URL: "redis://cache"
+      NUXT_REDIS_USERNAME: $REDIS_USERNAME
+      NUXT_REDIS_PASSWORD: $REDIS_PASSWORD
+
+      # Optional - Used for Lit, the AI analyst
+      # NUXT_AI_ORG: 'OPEN_AI_ORGANIZATION'
+      # NUXT_AI_PROJECT: 'OPEN_AI_PROJECT'
+      # NUXT_AI_KEY: 'OPEN_AI_KEY'
+
+      # Optional - Used to send welcome and quota emails
+      # NUXT_EMAIL_SERVICE: "Brevo"
+      # NUXT_BREVO_API_KEY: ""
+
+      NUXT_AUTH_JWT_SECRET: $JWT_SECRET
+
+      # Optional - Used to register / login via google
+      # NUXT_GOOGLE_AUTH_CLIENT_ID: ""
+      # NUXT_GOOGLE_AUTH_CLIENT_SECRET: ""
+
+      NUXT_PUBLIC_AUTH_MODE: "NO_AUTH"
+
+      NUXT_NOAUTH_USER_EMAIL: $USER_EMAIL
+      NUXT_NOAUTH_USER_PASS: $USER_PASS
+
+      NUXT_SELFHOSTED: "true"
+      NUXT_PUBLIC_SELFHOSTED: "true"
+
+      NUXT_STRIPE_SECRET_TEST: $STRIPE_SECRET_TEST
+      NUXT_STRIPE_WH_SECRET_TEST: $STRIPE_WH_SECRET_TEST
+
+      NUXT_STRIPE_SECRET: $STRIPE_SECRET
+      NUXT_STRIPE_WH_SECRET: $STRIPE_WH_SECRET
+
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.litlyx.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.litlyx.loadbalancer.server.port: 3000
+
+volumes:
+  mongo-data:
