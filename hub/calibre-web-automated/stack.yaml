@@ -1,0 +1,64 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: calibre-web-automated
+name: Calibre-Web Automated
+icon: calibreweb
+flavor: DockerCompose
+version: "3.0.4"
+updated_at: 2025-02-11
+description: Self-hosted digital library solution
+author: CrocodileStick
+license: GPL-3.0
+repository: https://github.com/crocodilestick/Calibre-Web-Automated
+stars: 2500
+tags: [ebook]
+alternativeTo: []
+readme: |
+
+  CWA allows you to keep your ebook library accessible & organised and looks good while doing it 😎🦚
+
+  <hr>
+
+  ### Features
+
+  CWA supports all stock Calibre-Web features:
+
+  - 🌐 Modern & responsive Bootstrap 3 HTML5 interface
+  - 👥 Comprehensive user management with per-user permissions
+  - 📱 OPDS feed for ereader apps
+  - 📝 eBook metadata editing and deletion support
+  - 🔍 Metadata download from various sources (extensible via plugins)
+  - 🔒 eBook download restriction to logged-in users
+  - 📋 Public user registration support
+  - 📲 Send eBooks to E-Readers with a single click
+  - 🔄 Sync Kobo devices with your Calibre library
+  - 📖 In-browser eBook reading support for multiple formats
+  - 🙈 Content hiding based on categories and Custom Column content per user
+  - 🔗 "Magic Link" login for easy access on eReaders
+  - 🔐 LDAP, Google/GitHub OAuth, and proxy authentication support
+  - 🔎 Advanced search and filtering options
+  - 🌍 Multilingual user interface supporting 20+ languages
+
+  Plus these specific features on top:
+
+  - ✨ Automatic Ingest Service
+  - 🔃 Automatic Conversion Service
+  - 👀 Automatic Enforcement of Covers & Metadata
+  - 🗂️ Batch Editing & Deletion
+  - 🔒 Automated Back Up Service
+  - 🦮 Automated Setup Experience for New Users
+  - 🔨 Automatic EPUB Fixer Service
+  - 🌌 Multi-Format Conversion Service
+  - 🕵️ Library Auto-Detect
+  - 📍 Server Stats Tracking Page
+  - 📊 Server Stats Tracking
+  - 🌓 Easy Dark/Light Mode Switching
+  - 🛎️ Internal Update Notification System
+  - 🤐 Auto-Compression of Backed Up Files
+  - 🗃️ Additional Metadata Providers
+
+  ### Default Admin Login
+
+  - Username: `admin`
+  - Password: `admin123`

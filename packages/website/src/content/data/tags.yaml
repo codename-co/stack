@@ -271,3 +271,5 @@ tags:
     name: Time series
   - slug: messaging
     name: Messaging
+  - slug: ebook
+    name: eBook
