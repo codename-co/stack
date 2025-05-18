@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: booklore
+name: BookLore
+icon: Ⓑ
+flavor: DockerCompose
+version: "0.9.0"
+updated_at: 2025-05-17
+description: Hosting, manage, and explore books
+author: Aditya Chandel
+license: GPL-3.0
+repository: https://github.com/adityachandelgit/BookLore
+stars: 684
+tags: []
+alternativeTo: []
+readme: |
+
+  BookLore is a self-hosted web app for organizing and managing your personal book collection. It provides an intuitive interface to browse, read, and track your progress across PDFs and eBooks. With robust metadata management, multi-user support, and a sleek, modern UI, BookLore makes it easy to build and explore your personal library.
+
+  ![preview](https://github.com/adityachandelgit/BookLore/raw/develop/assets/demo.gif)
+
+  <hr>
+
+  ### Features
+
+  - 📚 **Organized Book Management** - Categorize books with **Libraries** and **Shelves** for easy discovery and structured organization.
+  - 🧠 **Smart Metadata Handling** - Automatically fetch book details from **Goodreads**, **Amazon**, and **Google Books**, or edit them manually with fine-grained control.
+  - 👥 **Multi-User Support** - Admins can create accounts, assign libraries, and manage permissions for metadata edits, uploads, and downloads.
+  - 📖 **Built-in PDF & ePub Reader** - A fast, feature-rich reader for PDFs and ePubs, with customizable reading settings and a clean UI.
+  - 🌐 **OPDS 1.2 Support** - Browse and download books through the **Open Publication Distribution System** – compatible with many reading apps.
+  - 🔐 **Optional OIDC Authentication** - Secure access with **OpenID Connect**, supporting both local JWT authentication and external providers like **Authentik**.
+  - 📤 **Multi-Book Uploads** - Upload multiple books at once with metadata auto-detection and file organization.
+  - 📧 **Send Books via Email** - Share books directly with others by sending them via email – quick and easy.
+  - 🚀 **Continuous Improvements** - Frequent updates with new features, performance enhancements, and UI improvements. BookLore is perfect for self-hosters who want complete control over their digital library.

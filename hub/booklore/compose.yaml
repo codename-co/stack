@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  booklore:
+    image: ghcr.io/adityachandelgit/booklore-app:v${BOOKLORE_VERSION:-0.9.0}
+    env_file: .env
+    environment:
+      - DATABASE_URL=jdbc:mariadb://mariadb:3306/${MYSQL_DATABASE}
+      - DATABASE_USERNAME=${MYSQL_USER}
+      - DATABASE_PASSWORD=${MYSQL_PASSWORD}
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    volumes:
+      - ${BOOKLORE_DATA_PATH:-booklore_data}:/app/data
+      - ${BOOKLORE_BOOKS_PATH:-books}:/books
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.booklore.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.booklore.loadbalancer.server.port: 6060
+
+  mariadb:
+    image: linuxserver/mariadb:11.4.5
+    container_name: booklore_mariadb
+    env_file:
+      - .env
+    volumes:
+      - ${MARIADB_CONFIG_PATH:-mariadb_config}:/config
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  booklore_data:
+  mariadb_config:
+  books:
