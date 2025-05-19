@@ -12,7 +12,7 @@ author: Mailcow contributors
 license: GPL-3.0
 homepage: https://mailcow.email
 repository: https://github.com/mailcow/mailcow-dockerized
-stars: 10200
+stars: 10300
 tags: [mail, email, server]
 alternativeTo: [postfix, dovecot]
 readme: |

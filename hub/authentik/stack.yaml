@@ -11,7 +11,7 @@ author: Authentik Security Inc
 license: MIT
 homepage: https://goauthentik.io
 repository: https://github.com/goauthentik/authentik
-stars: 16100
+stars: 16200
 tags: [security, identity-management]
 alternativeTo: [okta, auth0, ping]
 readme: |

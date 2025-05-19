@@ -12,7 +12,7 @@ author: Containous SAS
 license: MIT
 homepage: https://traefik.io
 repository: https://github.com/traefik/traefik
-stars: 54600
+stars: 54700
 tags:
   - api-gateway
   - reverse-proxy
