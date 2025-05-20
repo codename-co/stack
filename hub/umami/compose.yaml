@@ -1,6 +1,6 @@
 services:
   umami:
-    image: ghcr.io/umami-software/umami:postgresql-v${UMAMI_VERSION:-2.15.1}
+    image: ghcr.io/umami-software/umami:postgresql-v${UMAMI_VERSION:-2.18.1}
     environment:
       DATABASE_TYPE: postgresql
       DATABASE_URL: $DATABASE_URL

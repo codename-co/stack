@@ -4,8 +4,8 @@
 slug: umami
 name: Umami
 flavor: DockerCompose
-version: "2.15.1"
-updated_at: 2024-12-15
+version: "2.18.1"
+updated_at: 2025-05-12
 description: Simple, fast, privacy-focused analytics
 author: Umami Software, Inc
 license: MIT
