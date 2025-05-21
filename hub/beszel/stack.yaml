@@ -5,8 +5,8 @@ slug: beszel
 name: Beszel
 icon: Ⓑ
 flavor: DockerCompose
-version: "0.10.2"
-updated_at: 2025-03-15
+version: "0.11.1"
+updated_at: 2025-04-29
 description: Server monitoring hub
 author: henrygd
 license: MIT

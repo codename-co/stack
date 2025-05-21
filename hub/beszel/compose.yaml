@@ -3,7 +3,7 @@
 
 services:
   beszel:
-    image: henrygd/beszel:${BESZEL_VERSION:-0.10.2}
+    image: henrygd/beszel:${BESZEL_VERSION:-0.11.1}
     volumes:
       - beszel_data:/beszel_data
       - beszel_socket:/beszel_socket
