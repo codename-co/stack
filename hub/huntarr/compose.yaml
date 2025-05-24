@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  huntarr:
+    image: huntarr/huntarr:${HUNTARR_VERSION:-7.3.6}
+    restart: on-failure:2
+    env_file: .env
+    volumes:
+      - config:/config
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.huntarr.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.huntarr.loadbalancer.server.port: 9705
+
+volumes:
+  config:
