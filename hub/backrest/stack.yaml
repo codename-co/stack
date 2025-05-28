@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: backrest
+name: Backrest
+icon: Ⓑ
+flavor: DockerCompose
+version: "1.8.1"
+updated_at: 2025-05-06
+description: Web UI and orchestrator for restic backup
+author: Gareth George
+license: GPL-3.0
+repository: https://github.com/garethgeorge/backrest
+stars: 3000
+tags: [backup]
+alternativeTo: []
+readme: |
+
+  Backrest is a web-accessible backup solution built on top of restic. Backrest provides a WebUI which wraps the restic CLI and makes it easy to create repos, browse snapshots, and restore files. Additionally, Backrest can run in the background and take an opinionated approach to scheduling snapshots and orchestrating repo health operations.
+
+  ![preview](https://f000.backblazeb2.com/file/gshare/screenshots/2024/Screenshot+from+2024-01-04+18-30-14.png)
+
+  <hr>
+
+  ### Features
+
+  - **Web Interface**: Access locally or remotely (perfect for NAS deployments)
+  - **Multi-Platform Support**
+  - **Backup Management**:
+    - Import existing restic repositories
+    - Cron-scheduled backups and maintenance (e.g. prune, check, forget, etc)
+    - Browse and restore files from snapshots
+    - Configurable notifications (Discord, Slack, Shoutrrr, Gotify, Healthchecks)
+    - Pre/post backup command hooks to execute shell scripts
+  - **Storage Options**:
+    - Compatible with rclone remotes
+    - Supports all restic storage backends (S3, B2, Azure, GCS, local, SFTP, and [all rclone remotes](https://rclone.org/))

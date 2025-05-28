@@ -1,0 +1,21 @@
+services:
+  backrest:
+    image: garethgeorge/backrest:v${BACKREST_VERSION:-1.8.1}-scratch
+    restart: on-failure:2
+    volumes:
+      - data:/data
+      - config:/config
+      - cache:/cache
+      - /tmp:/tmp
+      # - /path/to/backup/data:/userdata # Mount local paths to backup
+      # - /path/to/local/repos:/repos # Mount local repos (optional for remote storage)
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.backrest.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.backrest.loadbalancer.server.port: 9898
+
+volumes:
+  data:
+  config:
+  cache:
