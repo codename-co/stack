@@ -2,10 +2,9 @@
 # This is a https://stack.lol docker compose file.
 
 services:
-  redis:
-    image: redis:${REDIS_VERSION:-8.0.2}-alpine
+  valkey:
+    image: valkey/valkey:${VALKEY_VERSION:-8.1.1}-alpine
     restart: on-failure:2
-    command: redis-server --save 20 1 --loglevel warning
     volumes:
       - cache:/data
 

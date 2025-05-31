@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: valkey
+name: Valkey
+flavor: DockerCompose
+version: "8.1.1"
+updated_at: 2025-04-23
+description: Distributed key-value database
+author: Valkey contributors
+license: BSD-3-Clause
+homepage: https://valkey.io
+repository: https://github.com/valkey-io/valkey
+stars: 21700
+tags: [database, data, key-value-store]
+alternativeTo: [redis]
+readme: |
+
+  Valkey is an open source (BSD) high-performance key/value datastore that supports a variety of workloads such as caching, message queues, and can act as a primary database. The project is backed by the Linux Foundation, ensuring it will remain open source forever.

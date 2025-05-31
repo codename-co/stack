@@ -4,15 +4,15 @@
 slug: redis
 name: Redis
 flavor: DockerCompose
-version: "7"
-updated_at: 2024-11-13
+version: "8.0.2"
+updated_at: 2025-05-29
 description: In-memory database that persists on disk
 author: Redis Ltd
-license: RSALv2
+license: AGPL-3.0
 homepage: https://redis.io
 repository: https://github.com/redis/redis
-stars: 69200
+stars: 69400
 tags: [database, data, key-value-store]
-alternativeTo: []
+alternativeTo: [redis]
 readme: |
   Redis is the world's fastest data platform. It provides cloud and on-prem solutions for caching, vector search, and NoSQL databases that seamlessly fit into any tech stack—making it simple for digital customers to build, scale, and deploy the fast apps our world runs on.

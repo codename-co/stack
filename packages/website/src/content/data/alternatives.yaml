@@ -342,6 +342,9 @@ alternatives:
   - slug: recurly
     name: Recurly
     description: Subscription billing platform
+  - slug: redis
+    name: Redis
+    description: In-memory database that persists on disk
   - slug: retool
     name: Retool
     description: Low-code app development tool
