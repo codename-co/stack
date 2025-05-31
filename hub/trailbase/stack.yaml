@@ -12,7 +12,7 @@ author: TrailBase
 license: OSL-3.0
 homepage: https://trailbase.io
 repository: https://github.com/trailbaseio/trailbase
-stars: 2100
+stars: 2400
 readme: |
   A blazingly fast, open-source application server with type-safe APIs, built-in JS/ES6/TS Runtime, Auth, and Admin UI built on Rust, SQLite & V8.
 

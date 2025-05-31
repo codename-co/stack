@@ -11,7 +11,7 @@ description: Simple bookmark manager
 author: Shiori contributors
 license: MIT
 repository: https://github.com/go-shiori/shiori
-stars: 10300
+stars: 10400
 tags: [bookmarks]
 alternativeTo: [pocket, raindrop]
 readme: |
