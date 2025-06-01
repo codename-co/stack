@@ -52,6 +52,9 @@ alternatives:
   - slug: bitly
     name: Bitly
     description: URL shortening service
+  - slug: blueiris
+    name: Blue Iris
+    description: Video surveillance software
   - slug: calendly
     name: Calendly
     description: Scheduling software

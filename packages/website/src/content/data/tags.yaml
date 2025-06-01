@@ -279,3 +279,6 @@ tags:
     name: Travel
   - slug: map
     name: Map
+  - slug: nvr
+    name: NVR
+    title: Network Video Recorder
