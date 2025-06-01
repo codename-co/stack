@@ -282,3 +282,5 @@ tags:
   - slug: nvr
     name: NVR
     title: Network Video Recorder
+  - slug: mail
+    name: Mail

@@ -1,0 +1,65 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: stalwart
+name: Stalwart
+icon: Ⓢ
+flavor: DockerCompose
+version: "0.12.3"
+updated_at: 2025-05-30
+description: All-in-one Mail & Collaboration server
+author: Stalwart Labs
+license: AGPL-3.0
+homepage: https://stalw.art
+repository: https://github.com/stalwartlabs/stalwart
+stars: 8400
+tags: [mail, email, collaboration, calendar]
+alternativeTo: [postfix, dovecot]
+readme: |
+
+  Stalwart is an open-source mail & collaboration server with JMAP, IMAP4, POP3, SMTP, CalDAV, CardDAV and WebDAV support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.
+
+  ![preview](https://github.com/stalwartlabs/stalwart/raw/main/img/screencast-setup.gif)
+
+  <hr>
+
+  ### Features
+
+  #### All-in-One Platform
+  - Comprehensive email and collaboration tools in a single binary
+  - Built in Rust for memory safety and performance
+  - Unified configuration across all components
+  - JMAP, IMAP, SMTP, CalDAV, CardDAV, and WebDAV support
+
+  #### Enhanced Security
+  - Encryption at rest with S/MIME and OpenPGP
+  - Strong transport security via DANE, MTA-STS, and TLS Reporting
+  - Automatic TLS certificate provisioning with ACME
+  - Granular access controls, rate limiting, and fail2ban protection
+  - Security-audited codebase
+
+  #### Advanced Spam & Phishing Protection
+  - Built-in DMARC, DKIM, SPF, and ARC authentication
+  - Statistical spam classifier with automatic training
+  - DNS Blocklists for IPs, domains, and content hashes
+  - Phishing protection against homographic and spoofing attacks
+  - Sender reputation monitoring and greylisting
+
+  #### Highly Flexible
+  - Enhanced Sieve scripting capabilities
+  - Dynamic configuration rules
+  - Full-text search across 17 languages
+  - Multiple storage and authentication backend options
+  - Web-based interface with self-service portal
+
+  #### Built to Scale
+  - Seamless load balancing and fault tolerance
+  - Node autodiscovery for easy network expansion
+  - Partition-tolerant failure detection
+  - Simplified architecture without coordinators or proxies
+
+  #### Unified Collaboration
+  - Calendar and event scheduling with free/busy support
+  - Rich contact management
+  - File storage and secure sharing
+  - Real-time syncing across devices

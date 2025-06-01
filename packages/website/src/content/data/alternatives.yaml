@@ -106,6 +106,9 @@ alternatives:
     name: Docker Hub
     icon: docker
     description: Container registry
+  - slug: dovecot
+    name: Dovecot
+    description: IMAP and POP3 server
   - slug: dropbox
     name: Dropbox
     description: File hosting service
@@ -324,6 +327,9 @@ alternatives:
   - slug: pocket
     name: Pocket
     description: Read-it-later service
+  - slug: postfix
+    name: Postfix
+    description: Mail transfer agent
   - slug: postman
     name: Postman
     description: API development platform

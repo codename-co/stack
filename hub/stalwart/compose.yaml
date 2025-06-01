@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  stalwart:
+    image: stalwartlabs/stalwart:v${STALWART_VERSION:-0.12.3}
+    restart: on-failure:2
+    ports:
+      # - "443:443"
+      # - "8080:8080"
+      - "25:25"
+      - "587:587"
+      - "465:465"
+      - "143:143"
+      - "993:993"
+      - "4190:4190"
+      - "110:110"
+      - "995:995"
+    volumes:
+      - data:/opt/stalwart
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.stalwart.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.stalwart.loadbalancer.server.port: 8080
+
+volumes:
+  data:
