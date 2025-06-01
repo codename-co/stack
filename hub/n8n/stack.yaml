@@ -5,8 +5,8 @@ status: working
 slug: n8n
 name: n8n
 flavor: DockerCompose
-version: "1.88.0"
-updated_at: 2025-04-10
+version: "1.94.1"
+updated_at: 2025-05-27
 description: Workflow automation tool
 author: n8n.io
 license: Fair Use

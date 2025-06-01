@@ -3,7 +3,7 @@
 
 x-shared: &shared
   restart: always
-  image: n8nio/n8n:${N8N_VERSION:-1.88.0}
+  image: n8nio/n8n:${N8N_VERSION:-1.94.1}
   env_file: .env
   links:
     - n8n-postgres
