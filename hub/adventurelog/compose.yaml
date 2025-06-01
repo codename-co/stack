@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  adventurelogweb:
+    image: ghcr.io/seanmorley15/adventurelog-frontend:v${ADVENTURELOG_VERSION:-0.9.0}
+    environment:
+      PUBLIC_SERVER_URL: http://adventurelogserver:8000
+      BODY_SIZE_LIMIT: ${BODY_SIZE_LIMIT}
+    labels:
+      traefik.http.routers.adventurelogweb.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.adventurelogweb.loadbalancer.server.port: 3000
+    depends_on:
+      - adventurelogserver
+
+  adventurelogserver:
+    image: ghcr.io/seanmorley15/adventurelog-backend:v${ADVENTURELOG_VERSION:-0.9.0}
+    environment:
+      PGHOST: adventurelogdb
+      PGDATABASE: ${POSTGRES_DB}
+      PGUSER: ${POSTGRES_USER}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      SECRET_KEY: ${SECRET_KEY}
+      DJANGO_ADMIN_USERNAME: ${ADMIN_USERNAME}
+      DJANGO_ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      DJANGO_ADMIN_EMAIL: ${ADMIN_EMAIL}
+      PUBLIC_URL: https://$PROJECT.$DOMAIN
+      CSRF_TRUSTED_ORIGINS: https://$PROJECT.$DOMAIN
+      DEBUG: false
+      FRONTEND_URL: https://$PROJECT.$DOMAIN
+    volumes:
+      - adventurelog-media:/code/media
+    labels:
+      traefik.http.routers.adventurelogserver.rule: Host(`$PROJECT.$DOMAIN`) && (PathPrefix(`/media`) || PathPrefix(`/admin`) || PathPrefix(`/static`) || PathPrefix(`/accounts`))
+      traefik.http.services.adventurelogserver.loadbalancer.server.port: 8000
+    depends_on:
+      - adventurelogdb
+
+  adventurelogdb:
+    image: postgis/postgis:15-3.3
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
+
+volumes:
+  postgres-data:
+  adventurelog-media:
+  traefik-letsencrypt:

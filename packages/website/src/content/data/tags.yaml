@@ -275,3 +275,7 @@ tags:
     name: eBook
   - slug: backup
     name: Backup
+  - slug: travel
+    name: Travel
+  - slug: map
+    name: Map
