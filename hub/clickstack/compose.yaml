@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  clickstack:
+    image: docker.hyperdx.io/hyperdx/hyperdx-all-in-one:${CLICKSTACK_VERSION:-latest}
+    restart: on-failure:2
+    volumes:
+      - db:/data/db
+      - ch_data:/var/lib/clickhouse
+      - ch_logs:/var/log/clickhouse-server
+    env_file: .env
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.clickstack.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.clickstack.loadbalancer.server.port: 443
+
+volumes:
+  db:
+  ch_data:
+  ch_logs:
