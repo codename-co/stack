@@ -12,7 +12,7 @@ author: Postgres
 license: PostgreSQL
 homepage: https://www.postgresql.org
 repository: https://github.com/postgres/postgres
-stars: 17600
+stars: 17700
 tags: [database]
 alternativeTo: [oracle]
 readme: |
