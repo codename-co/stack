@@ -3,7 +3,7 @@
 
 services:
   baserow:
-    image: baserow/baserow:${BASEROW_VERSION:-1.31.1}
+    image: baserow/baserow:${BASEROW_VERSION:-1.33.3}
     environment:
       BASEROW_PUBLIC_URL: https://$PROJECT.$DOMAIN
     volumes:
