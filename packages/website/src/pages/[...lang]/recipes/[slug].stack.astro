@@ -152,7 +152,9 @@ console.log(name, description, version, redirectUrl);
               <p class="text-sm">
                 {homepage && <a href={homepage}>Homepage</a>}
                 {homepage && repository && " · "}
-                {repository && <a href={repository}>Source code</a>}
+                {repository && (
+                  <a href={`${repository}?ref=stack.lol`}>Source code</a>
+                )}
               </p>
             )
           }
