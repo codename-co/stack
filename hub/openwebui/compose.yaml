@@ -18,9 +18,9 @@ services:
     links:
       - openwebui-searxng
       - openwebui-pipelines
-    networks:
-      - internet
-      - public
+    # networks:
+    #   - internet
+    #   - public
     extra_hosts:
       - host.docker.internal:host-gateway
     stop_grace_period: 0s
@@ -48,8 +48,8 @@ services:
       dash.url: https://$PROJECT-searxng.$DOMAIN
       traefik.http.routers.openwebui-searxng.rule: Host(`$PROJECT-searxng.$DOMAIN`)
       traefik.http.services.openwebui-searxng.loadbalancer.server.port: 8080
-    networks:
-      - internet
+    # networks:
+    #   - internet
     stop_grace_period: 0s
 
   openwebui-pipelines:
@@ -154,12 +154,11 @@ configs:
 volumes:
   open-webui:
   pipelines:
-
-networks:
-  default:
-    driver: bridge
-    internal: true
-  public:
-    driver: bridge
-  internet:
-    driver: bridge
+# networks:
+#   default:
+#     driver: bridge
+#     internal: true
+#   public:
+#     driver: bridge
+#   internet:
+#     driver: bridge
