@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: cryptpad
+name: CryptPad
+flavor: DockerCompose
+version: "2025.3.1"
+updated_at: 2025-06-02
+description: Collaborative office suite, end-to-end encrypted
+author: XWiki SAS
+license: AGPL-3.0
+homepage: https://cryptpad.org
+repository: https://github.com/cryptpad/cryptpad
+stars: 6500
+tags: [collaboration, office-suite, productivity]
+alternativeTo: [microsoft-office, libreoffice, onlyoffice]
+readme: |
+
+  CryptPad is a collaboration suite that is end-to-end encrypted and open-source. It is designed to facilitate collaboration by synchronizing changes to documents in real time. Since all the user data is encrypted, in the event of a breach, attackers have no way of accessing the stored content. Furthermore, if the administrators do not modify the code, they and the service also cannot access any information about the users' content.
+
+  ![preview](https://github.com/cryptpad/cryptpad/raw/main/screenshot-suite.png)
+
+  <hr>
+
+  ### Features
+
+  - **📝 Complete office suite**: CryptPad offers a comprehensive set of productivity tools including rich text editors, spreadsheets, code/markdown editors, kanban boards, presentations, whiteboards, and forms.
+  - **🔒 End-to-end encryption**: All content is encrypted directly in your browser, ensuring your data remains private. Not even the service administrators can access your documents or personal information.
+  - **👥 Secure collaboration**: Built for teamwork with features like shared drives, calendars, and document sharing. CryptPad synchronizes changes in real-time while maintaining full encryption, guaranteeing that your collaborative content stays protected and private.

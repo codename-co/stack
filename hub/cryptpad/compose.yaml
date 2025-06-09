@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  cryptpad:
+    image: cryptpad/cryptpad:version-${CRYPTPAD_VERSION:-2025.3.1}
+    env_file: .env
+    restart: on-failure:2
+    volumes:
+      - ./config/config.js:/cryptpad/config/config.js:ro
+      - blob:/cryptpad/blob
+      - block:/cryptpad/block
+      - customize:/cryptpad/customize
+      - data:/cryptpad/data
+      - datastore:/cryptpad/datastore
+      # - onlyoffice-dist:/cryptpad/www/common/onlyoffice/dist
+      # - onlyoffice-conf:/cryptpad/onlyoffice-conf
+    network_mode: host
+    ports:
+      - 3000:3000
+      - 3002:3002
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.cryptpad.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.cryptpad.loadbalancer.server.port: 3000
+
+volumes:
+  blob:
+  block:
+  customize:
+  data:
+  datastore:
+  onlyoffice-dist:
+  onlyoffice-conf:
