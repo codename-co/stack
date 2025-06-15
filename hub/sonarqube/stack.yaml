@@ -3,6 +3,7 @@
 # This is a https://stack.lol stack metadata file.
 slug: sonarqube
 name: SonarQube
+icon: sonarqubeserver
 flavor: DockerCompose
 version: "9.9.8"
 updated_at: 2025-04-09
