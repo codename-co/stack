@@ -284,3 +284,6 @@ tags:
     title: Network Video Recorder
   - slug: mail
     name: Mail
+  - slug: waf
+    name: WAF
+    title: Web Application Firewall

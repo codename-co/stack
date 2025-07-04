@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: working
+slug: bunkerweb
+name: BunkerWeb
+icon: 🛡️
+flavor: DockerCompose
+version: "1.6.2"
+updated_at: 2025-07-04
+description: Web Application Firewall (WAF)
+author: Bunkerity SAS
+license: AGPL-3.0
+homepage: https://www.bunkerweb.io
+repository: https://github.com/bunkerity/bunkerweb
+stars: 8600
+tags: [waf, security]
+alternativeTo: []
+readme: |
+
+  BunkerWeb is a next-generation, open-source Web Application Firewall (WAF).
+
+  As a comprehensive web server built on NGINX, it secures your web services with a "secure by default" approach. BunkerWeb integrates effortlessly into existing environments (Linux, Docker, Swarm, Kubernetes, etc.) as a reverse proxy and offers complete configurability through both CLI and an intuitive web UI to suit your specific needs. This makes cybersecurity simple and accessible.
+
+  BunkerWeb includes essential security features in its core and supports easy expansion through a flexible plugin system.
+
+
+  ![preview](https://github.com/bunkerity/bunkerweb/raw/v1.6.2/docs/assets/img/intro-overview.svg)
+
+  <hr>
+
+  ### Features
+
+  - HTTPS support with transparent Let's Encrypt automation
+  - State-of-the-art web security: HTTP security headers, prevent leaks, TLS hardening, ...
+  - Integrated ModSecurity WAF with the OWASP Core Rule Set
+  - Automatic ban of strange behaviors based on HTTP status codes
+  - Apply connection and request limits for clients
+  - Block bots by asking them to solve a challenge (e.g., cookie, JavaScript, captcha, hCaptcha, or reCAPTCHA)
+  - Block known bad IPs with external blacklists and DNSBL
+  - And much more...
