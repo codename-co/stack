@@ -12,7 +12,7 @@ author: Mage Technologies, Inc.
 license: Apache-2.0
 homepage: https://www.mage.ai
 repository: https://github.com/mage-ai/mage-ai
-stars: 8300
+stars: 8400
 tags: [data, data-pipeline, etl]
 alternativeTo: [airflow]
 readme: |

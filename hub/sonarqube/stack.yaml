@@ -12,7 +12,7 @@ author: SonarSource
 license: LGPL-3.0
 homepage: https://www.sonarqube.org
 repository: https://github.com/SonarSource/sonarqube
-stars: 9600
+stars: 9700
 tags: [ci, code-quality]
 alternativeTo: [codeclimate, codacy]
 readme: |

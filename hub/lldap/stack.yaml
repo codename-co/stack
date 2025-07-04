@@ -11,7 +11,7 @@ description: Light LDAP implementation
 author: LLDAP
 license: GPL-3.0
 repository: https://github.com/lldap/lldap
-stars: 5000
+stars: 5100
 tags: [ldap]
 alternativeTo: []
 readme: |

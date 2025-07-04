@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
 services:
   umami:
     image: ghcr.io/umami-software/umami:postgresql-v${UMAMI_VERSION:-2.18.1}
