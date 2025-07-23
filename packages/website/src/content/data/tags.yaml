@@ -287,3 +287,5 @@ tags:
   - slug: waf
     name: WAF
     title: Web Application Firewall
+  - slug: library
+    name: Library

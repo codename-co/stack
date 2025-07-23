@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: working
+slug: kavita
+name: Kavita
+icon: 📚
+flavor: DockerCompose
+version: "0.8.7"
+updated_at: 2025-07-05
+description: Digital library management system
+author: Kavita Team
+license: GPL-3.0
+homepage: https://www.kavitareader.com
+repository: https://github.com/Kareadita/Kavita
+stars: 8400
+tags: [media-server, library]
+alternativeTo: []
+readme: |
+
+  Kavita is a fast, feature rich, cross-platform reading server. Built with a focus for being a full solution for all your reading needs. Set up your own server and share your reading collection with your friends and family!
+
+  ![preview](https://github.com/user-attachments/assets/f016b34f-3c4c-4f07-8e72-12cd6f4e71ea)
+
+  <hr>
+
+  ### Features
+
+  - Serve up Manga/Webtoons/Comics (cbr, cbz, zip/rar/rar5, 7zip, raw images) and Books (epub, pdf)
+  - First class responsive readers that work great on any device (phone, tablet, desktop)
+  - Customizable theming support: Theme Repo and Documentation
+  - External metadata integration and scrobbling for read status, ratings, and reviews (available via Kavita+)
+  - Rich Metadata support with filtering and searching
+  - Ways to group reading material: Collections, Reading Lists (CBL Import), Want to Read
+  - Ability to manage users with rich Role-based management for age restrictions, abilities within the app, etc
+  - Rich web readers supporting webtoon, continuous reading mode (continue without leaving the reader), virtual pages (epub), etc
+  - Ability to customize your dashboard and side nav with smart filters, custom order and visibility toggles
+  - Full Localization Support
+  - Ability to download metadata (available via Kavita+)

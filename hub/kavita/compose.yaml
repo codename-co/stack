@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  kavita:
+    image: linuxserver/kavita:${KAVITA_VERSION:-0.8.7}
+    env_file: .env
+    volumes:
+      - config:/config
+      # - /path/to/data:/data #optional
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.kavita.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.kavita.loadbalancer.server.port: 5000
+
+volumes:
+  config:
