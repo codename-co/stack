@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  slink:
+    image: anirdev/slink:v${VERSION:-1.6.3}
+    env_file: .env
+    volumes:
+      - db:/app/var/data
+      # Persist the uploaded images
+      - images:/app/slink/images
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.slink.rule: Host(`$PROJECT.$DOMAIN`)
+
+volumes:
+  db:
+    driver: local
+  images:
+    driver: local

@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: slink
+name: Slink
+flavor: DockerCompose
+version: "1.6.3"
+updated_at: 2025-07-18
+description: Image hosting and link shortener
+author: Andrii Kryvoviaz
+license: AGPL-3.0
+homepage: https://docs.slinkapp.io
+repository: https://github.com/andrii-kryvoviaz/slink
+stars: 899
+tags: [file-sharing, url-shortener]
+alternativeTo: [imgur]
+readme: |
+
+  Slink is a self-hosted image sharing platform designed to give users complete control over their media sharing experience.
+  It enables seamless and secure image sharing without relying on third-party services.
+
+  <hr>
+
+  ### Features
+
+  - Image Upload: Supports PNG, JPG, WEBP, SVG, BMP, ICO, GIF, AVIF, HEIC* and TIFF*.
+  - Authentication: Users can sign up and log in to the platform.
+  - User Approval: Require user approval before they can upload images.
+  - Share Links: Users can share links to their uploaded images and customize the image size.
+  - Upload History: Provides an overview of all images uploaded by the user.
+  - Storage Providers: Support for local, SMB, AWS S3 storage providers.
+  - Explore Images: Features a listing page of public images uploaded by other users.
+  - Dark Mode: Includes support for both Dark and Light modes in the application.
+  - Dashboard: Enhanced statistics and analytics for admin users.
+  - Settings Configuration: Ability to manage users, storage, and other settings.
+  - Public API: A public API to access the platform programmatically (Still needs to be documented).

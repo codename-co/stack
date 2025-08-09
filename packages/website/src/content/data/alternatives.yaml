@@ -204,6 +204,9 @@ alternatives:
     name: Illustrator
     icon: adobe
     description: Vector graphics editor
+  - slug: imgur
+    name: Imgur
+    description: Image hosting service
   - slug: inoreader
     name: Inoreader
     description: RSS news aggregator
