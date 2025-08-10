@@ -11,7 +11,7 @@ description: Create agents that monitor and act on your behalf
 author: Huggin
 license: MIT
 repository: https://github.com/huginn/huginn
-stars: 46600
+stars: 47000
 tags:
   - automation
   - monitoring

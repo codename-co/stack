@@ -11,7 +11,7 @@ author: Docker compose stack-oriented manager
 license: MIT
 homepage: https://dockge.kuma.pet
 repository: https://github.com/louislam/dockge
-stars: 18400
+stars: 19000
 tags: [docker, paas]
 alternativeTo: [kubernetes]
 readme: |

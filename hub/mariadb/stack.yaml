@@ -11,7 +11,7 @@ author: MariaDB Foundation
 license: GPL-2.0
 homepage: https://mariadb.org
 repository: https://github.com/MariaDB/server
-stars: 6100
+stars: 6200
 tags: [database]
 alternativeTo: [oracle]
 readme: |

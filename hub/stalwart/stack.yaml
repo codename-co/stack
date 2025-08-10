@@ -12,7 +12,7 @@ author: Stalwart Labs
 license: AGPL-3.0
 homepage: https://stalw.art
 repository: https://github.com/stalwartlabs/stalwart
-stars: 8900
+stars: 9200
 tags: [mail, collaboration, calendar]
 alternativeTo: [postfix, dovecot]
 readme: |
