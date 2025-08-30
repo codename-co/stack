@@ -32,7 +32,7 @@
     "yaml": "^2.7.0"
   },
   "devDependencies": {
-    "@modyfi/vite-plugin-yaml": "^1.1.0",
+    "@modyfi/vite-plugin-yaml": "^1.1.1",
     "@types/node": "^22.10.5",
     "@types/three": "^0.174.0",
     "vite-plugin-env-parse": "^1.0.15"
