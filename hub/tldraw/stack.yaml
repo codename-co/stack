@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+status: starting
+slug: tldraw
+name: tldraw
+flavor: DockerCompose
+version: "3.15.4"
+updated_at: 2025-08-28
+description: Digital whiteboard with infinite canvas
+author: tldraw community
+license: MIT
+homepage: https://tldraw.dev
+repository: https://github.com/tldraw/tldraw
+stars: 41700
+tags: [diagram]
+alternativeTo: [miro, lucidchart, visio]
+readme: |
+
+  Tldraw is a library for creating infinite canvas experiences in React. It's the software behind the digital whiteboard tldraw.com.
+
+  <video controls width="100%" muted autoplay loop>
+    <source src="https://tldraw.dev/images/landing/make-real-video-900.mp4">
+    ⚠️ Your browser does not support the video tag.
+  </video>
+
+  <hr>
+
+  ### Features
+
+  🎨 **Feature Complete**
+
+  Tools for selection, drawing, erasing, creating geometric shapes, and perfect freehand drawing
+
+  ⚙️ **Advanced Systems**
+
+  Dozens of tightly integrated systems for layout, drag and drop, undo and redo, copy and paste, persistence, migration, embedded content, gifs, videos, rich text, and image export
+
+  🔄 **Cross-tab Synchronization**
+
+  Seamless synchronization across multiple browser tabs
+
+  ✨ **Obsessively Polished**
+
+  All the features and systems you expect from a canvas, refined to perfection
