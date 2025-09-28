@@ -11,7 +11,7 @@ author: HashiCorp
 license: MPL-2.0
 homepage: https://www.vaultproject.io
 repository: https://github.com/hashicorp/vault
-stars: 32800
+stars: 33200
 tags: [security, secrets]
 alternativeTo: [delinea]
 readme: |
