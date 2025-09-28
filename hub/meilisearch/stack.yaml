@@ -64,3 +64,316 @@ i18n:
       - **Hautement personnalisable :** personnalisez Meilisearch selon vos besoins spécifiques ou utilisez nos préréglages prêts à l'emploi et sans tracas
       - **[API RESTful](https://www.meilisearch.com/docs/reference/api/overview?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) :** intégrez Meilisearch dans votre pile technique avec nos plugins et SDK
       - **Facile à installer, déployer et maintenir**
+
+  de:
+    description: "Ultra-schnelle Suchmaschine"
+    readme: |
+
+      Eine ultra-schnelle Suchmaschine, die nahtlos in Ihre Anwendungen, Websites und Workflows integriert werden kann.
+
+      ![Vorschau](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Funktionen
+
+      - **Hybride Suche:** Kombinieren Sie das Beste aus [semantischer Suche](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) und Volltextsuche, um die relevantesten Ergebnisse zu erzielen
+      - **Suchanfragen in Echtzeit:** Finden und zeigen Sie Ergebnisse in weniger als 50 Millisekunden an, um eine intuitive Benutzererfahrung zu bieten
+      - **[Tippfehler-Toleranz](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Erhalten Sie relevante Übereinstimmungen, selbst wenn die Abfragen Tippfehler und Rechtschreibfehler enthalten
+      - **[Filterung](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) und [facettierte Suche](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Verbessern Sie die Sucherfahrung Ihrer Benutzer mit benutzerdefinierten Filtern und erstellen Sie mit nur wenigen Zeilen Code eine facettierte Suchoberfläche
+      - **[Sortierung](https://www.meilisearch.com/docs/learn/fine_tuning_results/sorting?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Sortieren Sie die Ergebnisse nach Preis, Datum oder praktisch allem, was Ihre Benutzer benötigen
+      - **[Unterstützung für Synonyme](https://www.meilisearch.com/docs/learn/relevancy/synonyms?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Konfigurieren Sie Synonyme, um mehr relevante Inhalte in Ihre Suchergebnisse einzubeziehen
+      - **[Geosuche](https://www.meilisearch.com/docs/learn/fine_tuning_results/geosearch?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Filtern und sortieren Sie Dokumente basierend auf geografischen Daten
+      - **[Erweiterte Sprachunterstützung](https://www.meilisearch.com/docs/learn/what_is_meilisearch/language?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Durchsuchen Sie Datensätze in jeder Sprache, mit optimierter Unterstützung für Chinesisch, Japanisch, Hebräisch und Sprachen, die das lateinische Alphabet verwenden
+      - **[Sicherheitsverwaltung](https://www.meilisearch.com/docs/learn/security/master_api_keys?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Steuern Sie, welche Benutzer auf welche Daten zugreifen können, mit API-Schlüsseln, die eine feingranulare Berechtigungsverwaltung ermöglichen
+      - **[Multi-Tenancy](https://www.meilisearch.com/docs/learn/security/multitenancy_tenant_tokens?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Passen Sie die Suchergebnisse für beliebig viele Anwendungsmandanten an
+      - **Hochgradig anpassbar:** Passen Sie Meilisearch an Ihre spezifischen Bedürfnisse an oder verwenden Sie unsere sofort einsatzbereiten und problemlosen Voreinstellungen
+      - **[RESTful API](https://www.meilisearch.com/docs/reference/api/overview?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Integrieren Sie Meilisearch in Ihren Tech-Stack mit unseren Plugins und SDKs
+      - **Einfach zu installieren, bereitzustellen und zu warten**
+
+  es:
+    description: "Motor de búsqueda ultrarrápido"
+    readme: |
+
+      Un motor de búsqueda ultrarrápido que se integra sin esfuerzo en tus aplicaciones, sitios web y flujo de trabajo.
+
+      ![vista previa](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Funciones
+
+      - **Búsqueda híbrida:** Combina lo mejor de la [búsqueda semántica](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) y la búsqueda de texto completo para obtener los resultados más relevantes
+      - **Consultas en tiempo real:** Encuentra y muestra resultados en menos de 50 milisegundos para ofrecer una experiencia de usuario intuitiva
+      - **[Tolerancia a errores tipográficos](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Obtén coincidencias relevantes incluso si las consultas contienen errores tipográficos y ortográficos
+      - **[Filtrado](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) y [búsqueda facetada](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Mejora la experiencia de búsqueda de tus usuarios con filtros personalizados y crea una interfaz de búsqueda facetada con solo unas pocas líneas de código
+      - **[Integraciones](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Conéctate fácilmente con otras herramientas y servicios en tu flujo de trabajo
+      - **[Escalabilidad](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Maneja grandes volúmenes de datos y tráfico sin comprometer el rendimiento
+      - **[Seguridad](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Protege tus datos y garantiza un acceso seguro a tu motor de búsqueda
+      - **[Rendimiento](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Optimiza la velocidad y eficiencia de tus consultas de búsqueda
+      - **[Personalización](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Adapta Meilisearch a tus necesidades específicas con opciones de configuración flexibles
+      - **[Documentación](https://www.meilisearch.com/docs?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Accede a guías y referencias completas para aprovechar al máximo Meilisearch
+
+  it:
+    description: "Motore di ricerca ultra-rapido"
+    readme: |
+
+      Un motore di ricerca ultra-rapido che si integra senza sforzo nelle tue applicazioni, siti web e flussi di lavoro.
+
+      ![anteprima](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Funzionalità
+
+      - **Ricerca ibrida:** Combina il meglio della [ricerca semantica](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) e della ricerca testuale per ottenere i risultati più pertinenti
+      - **Query in tempo reale:** Trova e mostra risultati in meno di 50 millisecondi per offrire un'esperienza utente intuitiva
+      - **[Tolleranza agli errori di battitura](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Ottieni corrispondenze pertinenti anche se le query contengono errori di battitura e ortografia
+      - **[Filtraggio](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) e [ricerca per faccette](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Migliora l'esperienza di ricerca dei tuoi utenti con filtri personalizzati e crea un'interfaccia di ricerca per faccette con poche righe di codice
+      - **[Integrazioni](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Collega facilmente altri strumenti e servizi nel tuo flusso di lavoro
+      - **[Scalabilità](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Gestisci grandi volumi di dati e traffico senza compromettere le prestazioni
+      - **[Sicurezza](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Proteggi i tuoi dati e garantisci un accesso sicuro al tuo motore di ricerca
+      - **[Prestazioni](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Ottimizza la velocità e l'efficienza delle tue query di ricerca
+      - **[Personalizzazione](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Adatta Meilisearch alle tue esigenze specifiche con opzioni di configurazione flessibili
+      - **[Documentazione](https://www.meilisearch.com/docs?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Accedi a guide e riferimenti completi per sfruttare al meglio Meilisearch
+
+  nl:
+    description: "Supersnelle zoekmachine"
+    readme: |
+
+      Een supersnelle zoekmachine die naadloos integreert in jouw applicaties, websites en workflows.
+
+      ![voorbeeld](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Functionaliteiten
+
+      - **Hybride zoekopdracht:** Combineert het beste van [semantische zoekopdracht](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) en tekstuele zoekopdracht om de meest relevante resultaten te krijgen
+      - **Realtime zoekopdracht:** Vindt en toont resultaten in minder dan 50 milliseconden voor een intuïtieve gebruikerservaring
+      - **[Fouttolerantie](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Krijg relevante overeenkomsten, zelfs als zoekopdrachten typfouten en spelfouten bevatten
+      - **[Filtering](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) en [facet zoekopdracht](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Verbeter de zoekervaring van jouw gebruikers met aangepaste filters en maak een faceted search interface met een paar regels code
+      - **[Integraties](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Verbind eenvoudig andere tools en services in jouw workflow
+      - **[Schaalbaarheid](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Beheer grote hoeveelheden gegevens en verkeer zonder in te boeten op prestaties
+      - **[Beveiliging](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Bescherm jouw gegevens en zorg voor veilige toegang tot jouw zoekmachine
+      - **[Prestaties](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Optimaliseer de snelheid en efficiëntie van jouw zoekopdrachten
+      - **[Aanpassing](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Pas Meilisearch aan jouw specifieke behoeften aan met flexibele configuratieopties
+      - **[Documentatie](https://www.meilisearch.com/docs?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Toegang tot uitgebreide handleidingen en referenties om het meeste uit Meilisearch te halen
+
+  pt:
+    description: "Superschnelle Suchmaschine"
+    readme: |
+
+      Eine superschnelle Suchmaschine, die nahtlos in Ihre Anwendungen, Websites und Workflows integriert ist.
+
+      ![Beispiel](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Funktionen
+
+      - **Hybride Suche:** Kombiniert das Beste aus [semantischer Suche](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) und textbasierter Suche, um die relevantesten Ergebnisse zu erzielen
+      - **Echtzeit-Suche:** Findet und zeigt Ergebnisse in weniger als 50 Millisekunden für ein intuitives Benutzererlebnis
+      - **[Fehlertoleranz](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Erhalten Sie relevante Übereinstimmungen, selbst wenn Suchanfragen Tippfehler und Rechtschreibfehler enthalten
+      - **[Filtering](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) und [facettierte Suche](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Verbessern Sie das Sucherlebnis Ihrer Benutzer mit benutzerdefinierten Filtern und erstellen Sie mit wenigen Zeilen Code eine facettierte Suchoberfläche
+      - **[Integrationen](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Verbinden Sie einfach andere Tools und Dienste in Ihren Workflow
+      - **[Skalierbarkeit](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Verwalten Sie große Datenmengen und Verkehr, ohne die Leistung zu beeinträchtigen
+      - **[Sicherheit](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Schützen Sie Ihre Daten und sorgen Sie für sicheren Zugriff auf Ihre Suchmaschine
+      - **[Leistung](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Optimieren Sie die Geschwindigkeit und Effizienz Ihrer Suchanfragen
+      - **[Anpassung](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Passen Sie Meilisearch an Ihre spezifischen Bedürfnisse mit flexiblen Konfigurationsoptionen an
+      - **[Dokumentation](https://www.meilisearch.com/docs?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Zugriff auf umfassende Anleitungen und Referenzen, um das Beste aus Meilisearch herauszuholen
+
+  ro:
+    description: "Motor de căutare super rapid"
+    readme: |
+
+      Un motor de căutare super rapid, care se integrează perfect în aplicațiile, site-urile și fluxurile de lucru.
+
+      ![Exemplu](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Funcții
+
+      - **Căutare hibridă:** Combină cele mai bune aspecte ale [căutării semantice](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) și căutării bazate pe text pentru a obține cele mai relevante rezultate
+      - **Căutare în timp real:** Găsește și afișează rezultate în mai puțin de 50 de milisecunde pentru o experiență intuitivă a utilizatorului
+      - **[Toleranță la erori](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Obțineți potriviri relevante, chiar și atunci când interogările de căutare conțin greșeli de tipar și greșeli de ortografie
+      - **[Filtrare](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) și [căutare pe fațete](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Îmbunătățiți experiența de căutare a utilizatorilor dvs. cu filtre personalizate și creați o interfață de căutare pe fațete cu câteva linii de cod
+      - **[Integrări](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Conectați cu ușurință alte instrumente și servicii în fluxul dvs. de lucru
+      - **[Scalabilitate](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Gestionați volume mari de date și trafic fără a afecta performanța
+      - **[Securitate](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Protejați-vă datele și asigurați accesul sigur la motorul dvs. de căutare
+      - **[Performanță](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Optimizați viteza și eficiența interogărilor dvs. de căutare
+      - **[Personalizare](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Personalizați Meilisearch pentru nevoile dvs. specifice cu opțiuni flexibile de configurare
+      - **[Documentație](https://www.meilisearch.com/docs?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Accesați ghiduri și referințe cuprinzătoare pentru a profita la maximum de Meilisearch
+
+  tr:
+    description: "Süper hızlı arama motoru"
+    readme: |
+
+      Uygulamalarınıza, web sitelerinize ve iş akışlarınıza sorunsuz bir şekilde entegre olan süper hızlı bir arama motoru.
+
+      ![önizleme](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Fonksiyonlar
+
+      - **Hibrit arama:** En iyi [anlamsal arama](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) ve metin tabanlı arama özelliklerini birleştirerek en alakalı sonuçları elde edin
+      - **Gerçek zamanlı arama:** Kullanıcı deneyimini geliştirmek için 50 milisaniyeden daha kısa sürede sonuçları bulun ve görüntüleyin
+      - **[Hata toleransı](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Arama sorguları yazım hataları ve imla hataları içerse bile alakalı eşleşmeler elde edin
+      - **[Filtreleme](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) ve [yüzeysel arama](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Özel filtrelerle kullanıcı arama deneyimini geliştirin ve birkaç satır kodla yüzeysel bir arama arayüzü oluşturun
+      - **[Entegrasyonlar](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Diğer araçlar ve hizmetlerle iş akışınıza kolayca bağlanın
+      - **[Ölçeklenebilirlik](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Performansı etkilemeden büyük veri ve trafik hacimlerini yönetin
+      - **[Güvenlik](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Verilerinizi koruyun ve arama motorunuza güvenli erişim sağlayın
+      - **[Performans](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Arama sorgularınızın hızını ve verimliliğini optimize edin
+      - **[Özelleştirme](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Meilisearch'i özel ihtiyaçlarınıza göre esnek yapılandırma seçenekleriyle özelleştirin
+      - **[Dokümantasyon](https://www.meilisearch.com/docs?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Meilisearch'ten en iyi şekilde yararlanmak için kapsamlı kılavuzlara ve referanslara erişin
+
+  ar:
+    description: "محرك بحث فائق السرعة"
+    readme: |
+
+      محرك بحث فائق السرعة يتكامل بسلاسة مع تطبيقاتك ومواقع الويب وسير العمل.
+
+      ![معاينة](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### الميزات
+
+      - **البحث الهجين:** احصل على أكثر النتائج صلة من خلال دمج أفضل ميزات [البحث الدلالي](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) والبحث القائم على النص
+      - **البحث في الوقت الحقيقي:** ابحث عن النتائج وعرضها في أقل من 50 مللي ثانية لتحسين تجربة المستخدم
+      - **[تحمل الأخطاء](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** احصل على تطابقات ذات صلة حتى لو كانت استعلامات البحث تحتوي على أخطاء مطبعية وإملائية
+      - **[التصفية](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) و[البحث السطحي](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** حسّن تجربة البحث للمستخدم من خلال عوامل تصفية مخصصة وأنشئ واجهة بحث سطحية ببضع أسطر من التعليمات البرمجية
+      - **[التكاملات](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** قم بتوصيل سير العمل الخاص بك بسهولة مع أدوات وخدمات أخرى
+      - **[قابلية التوسع](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** إدارة كميات كبيرة من البيانات وحركة المرور دون التأثير على الأداء
+      - **[الأمان](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** احمِ بياناتك وقدم وصولاً آمنًا إلى محرك البحث الخاص بك
+      - **[الأداء](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** تحسين سرعة وكفاءة استعلامات البحث الخاصة بك
+      - **[التخصيص](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** تخصيص Meilisearch وفقًا لاحتياجاتك الخاصة مع خيارات تكوين مرنة
+      - **[التوثيق](https://www.meilisearch.com/docs?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** الوصول إلى أدلة شاملة ومرجع للاستفادة القصوى من Meilisearch
+
+  uk:
+    description: "Швидкий пошуковий движок"
+    readme: |
+
+      Швидкий пошуковий движок, який безшовно інтегрується з вашими додатками, веб-сайтами та робочими процесами.
+
+      ![Попередній перегляд](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Особливості
+
+      - **Гібридний пошук:** Отримуйте найбільш релевантні результати, поєднуючи найкращі функції [семантичного пошуку](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) та текстового пошуку
+      - **Пошук в реальному часі:** Шукайте та відображайте результати менш ніж за 50 мілісекунд для покращення досвіду користувача
+      - **[Терпимість до помилок](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Отримуйте релевантні збіги, навіть якщо запити на пошук містять друкарські та орфографічні помилки
+      - **[Фільтрація](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) та [фасетний пошук](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Покращуйте досвід пошуку для користувачів за допомогою спеціальних фільтрів та створюйте фасетний інтерфейс пошуку всього за кілька рядків коду
+      - **[Інтеграції](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Легко підключайте свої робочі процеси до інших інструментів і служб
+      - **[Масштабованість](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Керуйте великими обсягами даних і трафіку без шкоди для продуктивності
+      - **[Безпека](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Захистіть свої дані та надайте безпечний доступ до свого пошукового движка
+      - **[Продуктивність](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Оптимізуйте швидкість і ефективність своїх запитів на пошук
+      - **[Налаштування](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Налаштуйте Meilisearch відповідно до своїх потреб за допомогою гнучких параметрів конфігурації
+
+  ru:
+    description: "Быстрый поисковый движок"
+    readme: |
+
+      Быстрый поисковый движок, который бесшовно интегрируется с вашими приложениями, веб-сайтами и рабочими процессами.
+
+      ![Предварительный просмотр](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### Особенности
+
+      - **Гибридный поиск:** Получайте наиболее релевантные результаты, сочетая лучшие функции [семантического поиска](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) и текстового поиска
+      - **Поиск в реальном времени:** Ищите и отображайте результаты менее чем за 50 миллисекунд для улучшения пользовательского опыта
+      - **[Толерантность к ошибкам](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Получайте релевантные совпадения, даже если поисковые запросы содержат опечатки и орфографические ошибки
+      - **[Фильтрация](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) и [фасетный поиск](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Улучшайте опыт поиска для пользователей с помощью специальных фильтров и создавайте фасетный интерфейс поиска всего за несколько строк кода
+      - **[Интеграции](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Легко подключайте свои рабочие процессы к другим инструментам и службам
+      - **[Масштабируемость](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Управляйте большими объемами данных и трафика без ущерба для производительности
+      - **[Безопасность](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Защитите свои данные и предоставьте безопасный доступ к своему поисковому движку
+      - **[Производительность](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Оптимизируйте скорость и эффективность своих поисковых запросов
+      - **[Настройка](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** Настройте Meilisearch в соответствии с вашими потребностями с помощью гибких параметров конфигурации
+
+  hi:
+    description: "अल्ट्रा-फास्ट सर्च इंजन"
+    readme: |
+
+      एक अल्ट्रा-फास्ट सर्च इंजन जो आपके ऐप्लिकेशन, वेबसाइट और वर्कफ़्लो में आसानी से एकीकृत हो जाता है।
+
+      ![पूर्वावलोकन](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### विशेषताएँ
+
+      - **हाइब्रिड सर्च:** सबसे प्रासंगिक परिणाम प्राप्त करें, [सेमांटिक सर्च](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) और टेक्स्ट सर्च की सर्वश्रेष्ठ विशेषताओं को मिलाकर
+      - **रीयल-टाइम सर्च:** उपयोगकर्ता अनुभव में सुधार के लिए 50 मिलीसेकंड से कम में परिणाम खोजें और प्रदर्शित करें
+      - **[टाइपो टॉलरेंस](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** प्रासंगिक मिलान प्राप्त करें, भले ही खोज क्वेरी में टाइपो और वर्तनी की गलतियाँ हों
+      - **[फिल्टरिंग](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) और [फैसेटेड सर्च](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** विशेष फ़िल्टर के साथ उपयोगकर्ता के लिए खोज अनुभव को बेहतर बनाएं और कुछ पंक्तियों के कोड में एक फैसेटेड खोज इंटरफ़ेस बनाएं
+      - **[इंटीग्रेशन](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** अपने वर्कफ़्लो को अन्य उपकरणों और सेवाओं से आसानी से कनेक्ट करें
+      - **[स्केलेबिलिटी](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** प्रदर्शन से समझौता किए बिना बड़े डेटा और ट्रैफ़िक को प्रबंधित करें
+      - **[सुरक्षा](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** अपने डेटा की सुरक्षा करें और अपने सर्च इंजन तक सुरक्षित पहुंच प्रदान करें
+      - **[प्रदर्शन](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** अपने खोज क्वेरी की गति और दक्षता को अनुकूलित करें
+      - **[कस्टमाइजेशन](https://www.meilisearch.com/docs/learn/advanced/customization?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** लचीले कॉन्फ़िगरेशन विकल्पों के साथ अपनी आवश्यकताओं के अनुसार Meilisearch को अनुकूलित करें
+
+  zh:
+    description: "超快速搜索引擎"
+    readme: |
+
+      一个超快速搜索引擎，可以轻松集成到您的应用程序、网站和工作流程中。
+
+      ![预览](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### 特性
+
+      - **混合搜索：** 通过结合 [语义搜索](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) 和文本搜索的最佳功能，获得最相关的结果
+      - **实时搜索：** 在 50 毫秒内查找和显示结果，以改善用户体验
+      - **[拼写容错](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** 即使搜索查询中有拼写错误和拼写错误，也能获得相关匹配
+      - **[过滤](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) 和 [分面搜索](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** 通过特定过滤器改善用户的搜索体验，并在几行代码中创建分面搜索界面
+      - **[集成](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** 轻松将工作流程连接到其他工具和服务
+      - **[可扩展性](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** 在不妥协性能的情况下管理大数据和流量
+      - **[安全性](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** 保护您的数据并为您的搜索引擎提供安全访问
+      - **[性能](https://www.meilisearch.com/docs/learn/advanced/performance?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** 优化搜索查询的速度和效率
+
+  ko:
+    description: "초고속 검색 엔진"
+    readme: |
+
+      초고속 검색 엔진으로, 애플리케이션, 웹사이트 및 워크플로우에 쉽게 통합할 수 있습니다.
+
+      ![미리보기](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### 기능
+
+      - **혼합 검색:** [의미 검색](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)과 텍스트 검색의 최상의 기능을 결합하여 가장 관련성 높은 결과를 얻습니다.
+      - **실시간 검색:** 50밀리초 이내에 결과를 찾아 표시하여 사용자 경험을 개선합니다.
+      - **[철자 오류 허용](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** 검색 쿼리에 철자 오류가 있더라도 관련 일치를 찾을 수 있습니다.
+      - **[필터링](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features) 및 [페이시드 검색](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** 특정 필터를 통해 사용자의 검색 경험을 개선하고 몇 줄의 코드로 페이시드 검색 인터페이스를 생성합니다.
+      - **[통합](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** 워크플로우를 다른 도구 및 서비스에 쉽게 연결합니다.
+      - **[확장성](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** 성능을 저하시키지 않고 대량의 데이터와 트래픽을 관리합니다.
+      - **[보안](https://www.meilisearch.com/docs/learn/advanced/security?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features):** 데이터를 보호하고 검색 엔진에 대한 안전한 액세스를 제공합니다.
+
+  ja:
+    description: "超高速検索エンジン"
+    readme: |
+
+      超高速検索エンジンで、アプリケーション、ウェブサイト、ワークフローに簡単に統合できます。
+
+      ![プレビュー](https://github.com/meilisearch/meilisearch/blob/main/assets/demo-light.gif?raw=true)
+
+      <hr>
+
+      ### 機能
+
+      - **混合検索：** [意味検索](https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)とテキスト検索の最良の機能を組み合わせて、最も関連性の高い結果を得ることができます。
+      - **リアルタイム検索：** 50ミリ秒以内に結果を見つけて表示し、ユーザーエクスペリエンスを向上させます。
+      - **[スペルミス許容](https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** 検索クエリにスペルミスがあっても、関連する一致を見つけることができます。
+      - **[フィルタリング](https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)と[ファセット検索](https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** 特定のフィルタを使用してユーザーの検索体験を向上させ、数行のコードでファセット検索インターフェースを作成します。
+      - **[統合](https://www.meilisearch.com/docs/learn/advanced/integrations?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** ワークフローを他のツールやサービスに簡単に接続します。
+      - **[スケーラビリティ](https://www.meilisearch.com/docs/learn/advanced/scalability?utm_campaign=oss&utm_source=github&utm_medium=meilisearch&utm_content=features)：** パフォーマンスを損なうことなく、大量のデータとトラフィックを管理します。
