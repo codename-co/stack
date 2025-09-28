@@ -1,0 +1,230 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "50m"
+    max-file: "6"
+
+services:
+  api_server:
+    image: onyxdotapp/onyx-backend:${IMAGE_TAG:-latest}
+    command: >
+      /bin/sh -c "alembic upgrade head &&
+      echo \"Starting Onyx Api Server\" &&
+      uvicorn onyx.main:app --host 0.0.0.0 --port 8080"
+    env_file: .env
+    depends_on:
+      - relational_db
+      - index
+      - cache
+      - inference_model_server
+      - minio
+    restart: unless-stopped
+    # ports:
+    #   - "8080:8080"
+    environment:
+      - AUTH_TYPE=${AUTH_TYPE:-disabled}
+      - POSTGRES_HOST=${POSTGRES_HOST:-relational_db}
+      - VESPA_HOST=${VESPA_HOST:-index}
+      - REDIS_HOST=${REDIS_HOST:-cache}
+      - MODEL_SERVER_HOST=${MODEL_SERVER_HOST:-inference_model_server}
+      - S3_ENDPOINT_URL=${S3_ENDPOINT_URL:-http://minio:9000}
+      - S3_AWS_ACCESS_KEY_ID=${S3_AWS_ACCESS_KEY_ID:-minioadmin}
+      - S3_AWS_SECRET_ACCESS_KEY=${S3_AWS_SECRET_ACCESS_KEY:-minioadmin}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - api_server_logs:/var/log/onyx
+    labels:
+      traefik.http.routers.onyx-api.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/api`)
+      traefik.http.services.onyx-api.loadbalancer.server.port: 8080
+      traefik.http.routers.onyx-api.middlewares: onyx-strip-prefix@file
+      traefik.http.middlewares.onyx-strip-prefix.stripprefix.prefixes: /api
+      traefik.http.middlewares.onyx-strip-prefix.stripprefix.replacement: /
+    logging:
+      <<: *logging
+
+  background:
+    image: onyxdotapp/onyx-backend:${IMAGE_TAG:-latest}
+    command: >
+      /bin/sh -c "
+      if [ -f /etc/ssl/certs/custom-ca.crt ]; then
+        update-ca-certificates;
+      fi &&
+      /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"
+    env_file: .env
+    depends_on:
+      - relational_db
+      - index
+      - cache
+      - inference_model_server
+      - indexing_model_server
+    restart: unless-stopped
+    environment:
+      - POSTGRES_HOST=${POSTGRES_HOST:-relational_db}
+      - VESPA_HOST=${VESPA_HOST:-index}
+      - REDIS_HOST=${REDIS_HOST:-cache}
+      - MODEL_SERVER_HOST=${MODEL_SERVER_HOST:-inference_model_server}
+      - INDEXING_MODEL_SERVER_HOST=${INDEXING_MODEL_SERVER_HOST:-indexing_model_server}
+      - S3_ENDPOINT_URL=${S3_ENDPOINT_URL:-http://minio:9000}
+      - S3_AWS_ACCESS_KEY_ID=${S3_AWS_ACCESS_KEY_ID:-minioadmin}
+      - S3_AWS_SECRET_ACCESS_KEY=${S3_AWS_SECRET_ACCESS_KEY:-minioadmin}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - background_logs:/var/log/onyx
+    logging:
+      <<: *logging
+
+  web_server:
+    image: onyxdotapp/onyx-web-server:${IMAGE_TAG:-latest}
+    env_file: .env
+    depends_on:
+      - api_server
+    restart: unless-stopped
+    environment:
+      - INTERNAL_URL=${INTERNAL_URL:-http://api_server:8080}
+    # ports:
+    #   - "3000:3000"
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      # traefik.http.routers.onyx.rule: Host(`$PROJECT.$DOMAIN`)
+      # traefik.http.services.onyx.loadbalancer.server.port: 3000
+
+  inference_model_server:
+    image: onyxdotapp/onyx-model-server:${IMAGE_TAG:-latest}
+    command: >
+      /bin/sh -c "if [ \"${DISABLE_MODEL_SERVER:-false}\" = \"true\" ]; then
+        echo 'Skipping service...';
+        exit 0;
+      else
+        exec uvicorn model_server.main:app --host 0.0.0.0 --port 9000;
+      fi"
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      - model_cache_huggingface:/app/.cache/huggingface/
+      - inference_model_server_logs:/var/log/onyx
+    logging:
+      <<: *logging
+
+  indexing_model_server:
+    image: onyxdotapp/onyx-model-server:${IMAGE_TAG:-latest}
+    command: >
+      /bin/sh -c "if [ \"${DISABLE_MODEL_SERVER:-false}\" = \"true\" ]; then
+        echo 'Skipping service...';
+        exit 0;
+      else
+        exec uvicorn model_server.main:app --host 0.0.0.0 --port 9000;
+      fi"
+    env_file: .env
+    restart: unless-stopped
+    environment:
+      - INDEXING_ONLY=true
+    volumes:
+      - indexing_huggingface_model_cache:/app/.cache/huggingface/
+      - indexing_model_server_logs:/var/log/onyx
+    logging:
+      <<: *logging
+
+  relational_db:
+    image: postgres:15.2-alpine
+    shm_size: 1g
+    command: -c 'max_connections=250'
+    env_file: .env
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+    # ports:
+    #   - "5432:5432"
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    expose:
+      - 5432
+
+  index:
+    image: vespaengine/vespa:8.526.15
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - VESPA_SKIP_UPGRADE_CHECK=${VESPA_SKIP_UPGRADE_CHECK:-true}
+    # ports:
+    #   - "19071:19071"
+    #   - "8081:8081"
+    volumes:
+      - vespa_volume:/opt/vespa/var
+    expose:
+      - 8080
+      - 19071
+    logging:
+      <<: *logging
+
+  nginx:
+    image: nginx:1.23.4-alpine
+    restart: unless-stopped
+    depends_on:
+      - api_server
+      - web_server
+    env_file: .env
+    environment:
+      - DOMAIN=localhost
+    # ports:
+    #   - "80:80"
+    #   - "3000:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    command: >
+      /bin/sh -c "dos2unix /etc/nginx/conf.d/run-nginx.sh
+      && /etc/nginx/conf.d/run-nginx.sh app.conf.template"
+    labels:
+      traefik.http.routers.onyx-nginx.rule: Host(`$PROJECT.$DOMAIN`) && PathPrefix(`/`)
+      traefik.http.services.onyx-nginx.loadbalancer.server.port: 80
+    logging:
+      <<: *logging
+
+  cache:
+    image: redis:7.4-alpine
+    restart: unless-stopped
+    # ports:
+    #   - "6379:6379"
+    command: redis-server --save "" --appendonly no
+    env_file: .env
+    expose:
+      - 6379
+
+  minio:
+    image: minio/minio:RELEASE.2025-07-23T15-54-02Z-cpuv1
+    restart: unless-stopped
+    # ports:
+    #   - "9004:9000"
+    #   - "9005:9001"
+    env_file: .env
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+      MINIO_DEFAULT_BUCKETS: ${S3_FILE_STORE_BUCKET_NAME:-onyx-file-store-bucket}
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    expose:
+      - 9000
+      - 9001
+
+volumes:
+  db_volume:
+  vespa_volume:
+  minio_data:
+  model_cache_huggingface:
+  indexing_huggingface_model_cache:
+  api_server_logs:
+  background_logs:
+  inference_model_server_logs:
+  indexing_model_server_logs:

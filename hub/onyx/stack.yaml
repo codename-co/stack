@@ -1,0 +1,328 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: onyx
+name: Onyx
+flavor: DockerCompose
+version: "1.9.0"
+updated_at: 2025-09-28
+description: "Open-source AI platform with Chat UI, RAG, Web Search, Agents, and 40+ connectors"
+author: Onyx Inc
+license: MIT
+homepage: https://www.onyx.app/
+repository: https://github.com/onyx-dot-app/onyx
+stars: 14500
+tags:
+  - ai
+  - chat
+  - rag
+  - search
+  - llm
+  - enterprise
+alternativeTo: [chatgpt, claude]
+readme: |
+  Onyx is a feature-rich, self-hostable Chat UI that works with any LLM. It is easy to deploy and can run in a completely airgapped environment.
+
+  Onyx comes loaded with advanced features like Agents, Web Search, RAG, MCP, Deep Research, Connectors to 40+ knowledge sources, and more.
+
+  ![Onyx Preview](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+  <hr>
+
+  ### Features
+
+  - 🔍 **Enterprise Search**: Connect and search across all your company's knowledge sources
+  - 🤖 **AI Assistant**: Get intelligent answers with citations and sources
+  - � **Document Processing**: Advanced PDF, Word, and text processing with OCR
+  - 🔗 **Integrations**: Connect to Slack, Confluence, SharePoint, Google Drive, and more
+  - 🛡️ **Security**: Role-based access control and data governance
+  - 🎯 **Real-time Updates**: Live syncing with your data sources
+  - 📊 **Analytics**: Usage analytics and search insights
+  - 🔧 **Admin Controls**: User management and system configuration
+
+i18n:
+  de:
+    description: "Open-Source-Enterprise-Suche und KI-Assistent mit erweiterten Abruffunktionen"
+    readme: |
+      Onyx (früher Danswer) ist eine Open-Source-Enterprise-Such- und KI-Assistenten-Plattform, die sich mit den Dokumenten, Apps und Personen Ihres Unternehmens verbindet.
+
+      ![Onyx Vorschau](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Funktionen
+
+      - 🔍 **Enterprise-Suche**: Verbinden und durchsuchen Sie alle Wissensquellen Ihres Unternehmens
+      - 🤖 **KI-Assistent**: Erhalten Sie intelligente Antworten mit Zitaten und Quellen
+      - 📄 **Dokumentenverarbeitung**: Erweiterte PDF-, Word- und Textverarbeitung mit OCR
+      - 🔗 **Integrationen**: Verbindung zu Slack, Confluence, SharePoint, Google Drive und mehr
+      - 🛡️ **Sicherheit**: Rollenbasierte Zugriffskontrolle und Daten-Governance
+      - 🎯 **Echtzeit-Updates**: Live-Synchronisation mit Ihren Datenquellen
+      - 📊 **Analytik**: Nutzungsanalysen und Such-Einblicke
+      - 🔧 **Admin-Kontrollen**: Benutzerverwaltung und Systemkonfiguration
+  es:
+    description: "Búsqueda empresarial de código abierto y asistente de IA con capacidades avanzadas de recuperación"
+    readme: |
+      Onyx (anteriormente Danswer) es una plataforma de código abierto para búsqueda empresarial y asistente de IA que se conecta con los documentos, aplicaciones y personas de su empresa.
+
+      ![Vista previa de Onyx](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Características
+
+      - 🔍 **Búsqueda Empresarial**: Conecte y busque en todas las fuentes de conocimiento de su empresa
+      - 🤖 **Asistente de IA**: Obtenga respuestas inteligentes con citas y fuentes
+      - 📄 **Procesamiento de Documentos**: Procesamiento avanzado de PDF, Word y texto con OCR
+      - 🔗 **Integraciones**: Conecte con Slack, Confluence, SharePoint, Google Drive y más
+      - 🛡️ **Seguridad**: Control de acceso basado en roles y gobernanza de datos
+      - 🎯 **Actualizaciones en Tiempo Real**: Sincronización en vivo con sus fuentes de datos
+      - 📊 **Analíticas**: Análisis de uso e insights de búsqueda
+      - 🔧 **Controles de Administración**: Gestión de usuarios y configuración del sistema
+  fr:
+    description: "Recherche d'entreprise open-source et assistant IA avec des capacités de récupération avancées"
+    readme: |
+      Onyx (anciennement Danswer) est une plateforme open-source de recherche d'entreprise et d'assistant IA qui se connecte aux documents, applications et personnes de votre entreprise.
+
+      ![Aperçu d'Onyx](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Fonctionnalités
+
+      - 🔍 **Recherche d'Entreprise**: Connectez et recherchez dans toutes les sources de connaissances de votre entreprise
+      - 🤖 **Assistant IA**: Obtenez des réponses intelligentes avec citations et sources
+      - 📄 **Traitement de Documents**: Traitement avancé de PDF, Word et texte avec OCR
+      - 🔗 **Intégrations**: Connectez-vous à Slack, Confluence, SharePoint, Google Drive et plus
+      - 🛡️ **Sécurité**: Contrôle d'accès basé sur les rôles et gouvernance des données
+      - 🎯 **Mises à Jour en Temps Réel**: Synchronisation en direct avec vos sources de données
+      - 📊 **Analytique**: Analyses d'utilisation et insights de recherche
+      - 🔧 **Contrôles d'Administration**: Gestion des utilisateurs et configuration du système
+  it:
+    description: "Ricerca aziendale open-source e assistente IA con capacità avanzate di recupero"
+    readme: |
+      Onyx (precedentemente Danswer) è una piattaforma open-source per la ricerca aziendale e assistente IA che si connette ai documenti, app e persone della vostra azienda.
+
+      ![Anteprima di Onyx](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Caratteristiche
+
+      - 🔍 **Ricerca Aziendale**: Connetti e cerca in tutte le fonti di conoscenza della tua azienda
+      - 🤖 **Assistente IA**: Ottieni risposte intelligenti con citazioni e fonti
+      - 📄 **Elaborazione Documenti**: Elaborazione avanzata di PDF, Word e testo con OCR
+      - 🔗 **Integrazioni**: Connetti a Slack, Confluence, SharePoint, Google Drive e altro
+      - 🛡️ **Sicurezza**: Controllo degli accessi basato sui ruoli e governance dei dati
+      - 🎯 **Aggiornamenti in Tempo Reale**: Sincronizzazione live con le tue fonti dati
+      - 📊 **Analitiche**: Analisi di utilizzo e insights di ricerca
+      - 🔧 **Controlli di Amministrazione**: Gestione utenti e configurazione del sistema
+  nl:
+    description: "Open-source ondernemingszoekfunctie en AI-assistent met geavanceerde ophaalmogelijkheden"
+    readme: |
+      Onyx (voorheen Danswer) is een open-source ondernemingszoek- en AI-assistentplatform dat verbinding maakt met de documenten, apps en mensen van uw bedrijf.
+
+      ![Onyx Voorbeeld](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Functies
+
+      - 🔍 **Ondernemingszoeken**: Verbind en doorzoek alle kennisbronnen van uw bedrijf
+      - 🤖 **AI-Assistent**: Krijg intelligente antwoorden met citaten en bronnen
+      - 📄 **Documentverwerking**: Geavanceerde PDF-, Word- en tekstverwerking met OCR
+      - 🔗 **Integraties**: Verbind met Slack, Confluence, SharePoint, Google Drive en meer
+      - 🛡️ **Beveiliging**: Op rollen gebaseerde toegangscontrole en datagovernance
+      - 🎯 **Real-time Updates**: Live synchronisatie met uw databronnen
+      - 📊 **Analytics**: Gebruiksanalyses en zoekinzichten
+      - 🔧 **Beheercontroles**: Gebruikersbeheer en systeemconfiguratie
+  pt:
+    description: "Busca empresarial de código aberto e assistente de IA com capacidades avançadas de recuperação"
+    readme: |
+      Onyx (anteriormente Danswer) é uma plataforma de código aberto para busca empresarial e assistente de IA que se conecta aos documentos, aplicativos e pessoas da sua empresa.
+
+      ![Prévia do Onyx](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Recursos
+
+      - 🔍 **Busca Empresarial**: Conecte e pesquise em todas as fontes de conhecimento da sua empresa
+      - 🤖 **Assistente de IA**: Obtenha respostas inteligentes com citações e fontes
+      - 📄 **Processamento de Documentos**: Processamento avançado de PDF, Word e texto com OCR
+      - 🔗 **Integrações**: Conecte com Slack, Confluence, SharePoint, Google Drive e mais
+      - 🛡️ **Segurança**: Controle de acesso baseado em funções e governança de dados
+      - 🎯 **Atualizações em Tempo Real**: Sincronização ao vivo com suas fontes de dados
+      - 📊 **Análises**: Análises de uso e insights de busca
+      - 🔧 **Controles de Administração**: Gerenciamento de usuários e configuração do sistema
+  ro:
+    description: "Căutare enterprise open-source și asistent AI cu capacități avansate de recuperare"
+    readme: |
+      Onyx (fostul Danswer) este o platformă open-source pentru căutare enterprise și asistent AI care se conectează la documentele, aplicațiile și persoanele companiei tale.
+
+      ![Previzualizare Onyx](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Caracteristici
+
+      - 🔍 **Căutare Enterprise**: Conectați și căutați în toate sursele de cunoștințe ale companiei
+      - 🤖 **Asistent AI**: Obțineți răspunsuri inteligente cu citări și surse
+      - 📄 **Procesare Documente**: Procesare avansată PDF, Word și text cu OCR
+      - 🔗 **Integrări**: Conectați cu Slack, Confluence, SharePoint, Google Drive și altele
+      - 🛡️ **Securitate**: Control de acces bazat pe roluri și guvernanța datelor
+      - 🎯 **Actualizări în Timp Real**: Sincronizare live cu sursele dvs. de date
+      - 📊 **Analize**: Analize de utilizare și perspective de căutare
+      - 🔧 **Controale de Administrare**: Gestionarea utilizatorilor și configurarea sistemului
+  tr:
+    description: "Gelişmiş geri alma yetenekleri ile açık kaynak kurumsal arama ve AI asistanı"
+    readme: |
+      Onyx (eski adıyla Danswer), şirketinizin belgelerine, uygulamalarına ve kişilerine bağlanan açık kaynak kurumsal arama ve AI asistan platformudur.
+
+      ![Onyx Önizleme](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Özellikler
+
+      - 🔍 **Kurumsal Arama**: Şirketinizin tüm bilgi kaynaklarını bağlayın ve arayın
+      - 🤖 **AI Asistanı**: Alıntılar ve kaynaklar ile akıllı yanıtlar alın
+      - 📄 **Belge İşleme**: OCR ile gelişmiş PDF, Word ve metin işleme
+      - 🔗 **Entegrasyonlar**: Slack, Confluence, SharePoint, Google Drive ve daha fazlasına bağlanın
+      - 🛡️ **Güvenlik**: Rol tabanlı erişim kontrolü ve veri yönetişimi
+      - 🎯 **Gerçek Zamanlı Güncellemeler**: Veri kaynaklarınız ile canlı senkronizasyon
+      - 📊 **Analitik**: Kullanım analitiği ve arama içgörüleri
+      - 🔧 **Yönetici Kontrolleri**: Kullanıcı yönetimi ve sistem yapılandırması
+  ar:
+    description: "بحث مؤسسي مفتوح المصدر ومساعد ذكي مع قدرات استرجاع متقدمة"
+    readme: |
+      Onyx (المعروف سابقاً باسم Danswer) هي منصة مفتوحة المصدر للبحث المؤسسي والمساعد الذكي التي تتصل بوثائق وتطبيقات وأشخاص شركتك.
+
+      ![معاينة Onyx](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### الميزات
+
+      - 🔍 **البحث المؤسسي**: اتصل وابحث في جميع مصادر المعرفة في شركتك
+      - 🤖 **المساعد الذكي**: احصل على إجابات ذكية مع الاستشهادات والمصادر
+      - 📄 **معالجة الوثائق**: معالجة متقدمة لملفات PDF و Word والنصوص مع OCR
+      - 🔗 **التكاملات**: اتصل بـ Slack و Confluence و SharePoint و Google Drive والمزيد
+      - 🛡️ **الأمان**: التحكم في الوصول المبني على الأدوار وحوكمة البيانات
+      - 🎯 **التحديثات الفورية**: المزامنة المباشرة مع مصادر البيانات الخاصة بك
+      - 📊 **التحليلات**: تحليلات الاستخدام ورؤى البحث
+      - 🔧 **ضوابط الإدارة**: إدارة المستخدمين وتكوين النظام
+  uk:
+    description: "Корпоративний пошук з відкритим кодом та ШІ-асистент з розширеними можливостями отримання"
+    readme: |
+      Onyx (раніше Danswer) - це платформа з відкритим кодом для корпоративного пошуку та ШІ-асистента, яка підключається до документів, додатків та людей вашої компанії.
+
+      ![Попередній перегляд Onyx](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Можливості
+
+      - 🔍 **Корпоративний Пошук**: Підключайте та шукайте у всіх джерелах знань вашої компанії
+      - 🤖 **ШІ-Асистент**: Отримуйте розумні відповіді з цитатами та джерелами
+      - 📄 **Обробка Документів**: Розширена обробка PDF, Word та тексту з OCR
+      - 🔗 **Інтеграції**: Підключайтеся до Slack, Confluence, SharePoint, Google Drive та інших
+      - 🛡️ **Безпека**: Контроль доступу на основі ролей та управління даними
+      - 🎯 **Оновлення в Реальному Часі**: Живе синхронізування з вашими джерелами даних
+      - 📊 **Аналітика**: Аналіз використання та інсайти пошуку
+      - 🔧 **Адміністративні Контролі**: Управління користувачами та конфігурація системи
+  ru:
+    description: "Корпоративный поиск с открытым исходным кодом и ИИ-ассистент с расширенными возможностями извлечения"
+    readme: |
+      Onyx (ранее Danswer) - это платформа с открытым исходным кодом для корпоративного поиска и ИИ-ассистента, которая подключается к документам, приложениям и людям вашей компании.
+
+      ![Предварительный просмотр Onyx](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### Возможности
+
+      - 🔍 **Корпоративный Поиск**: Подключайте и ищите во всех источниках знаний вашей компании
+      - 🤖 **ИИ-Ассистент**: Получайте умные ответы с цитатами и источниками
+      - 📄 **Обработка Документов**: Расширенная обработка PDF, Word и текста с OCR
+      - 🔗 **Интеграции**: Подключайтесь к Slack, Confluence, SharePoint, Google Drive и другим
+      - 🛡️ **Безопасность**: Контроль доступа на основе ролей и управление данными
+      - 🎯 **Обновления в Реальном Времени**: Живая синхронизация с вашими источниками данных
+      - 📊 **Аналитика**: Анализ использования и инсайты поиска
+      - 🔧 **Административные Элементы Управления**: Управление пользователями и конфигурация системы
+  hi:
+    description: "उन्नत पुनर्प्राप्ति क्षमताओं के साथ ओपन-सोर्स एंटरप्राइज़ खोज और AI सहायक"
+    readme: |
+      Onyx (पूर्व में Danswer) एक ओपन-सोर्स एंटरप्राइज़ खोज और AI सहायक प्लेटफॉर्म है जो आपकी कंपनी के दस्तावेज़ों, ऐप्स और लोगों से जुड़ता है।
+
+      ![Onyx पूर्वावलोकन](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### विशेषताएं
+
+      - 🔍 **एंटरप्राइज़ खोज**: अपनी कंपनी के सभी ज्ञान स्रोतों को कनेक्ट करें और खोजें
+      - 🤖 **AI सहायक**: उद्धरण और स्रोतों के साथ बुद्धिमान उत्तर प्राप्त करें
+      - 📄 **दस्तावेज़ प्रसंस्करण**: OCR के साथ उन्नत PDF, Word और टेक्स्ट प्रसंस्करण
+      - 🔗 **एकीकरण**: Slack, Confluence, SharePoint, Google Drive और अधिक से कनेक्ट करें
+      - 🛡️ **सुरक्षा**: भूमिका-आधारित पहुंच नियंत्रण और डेटा गवर्नेंस
+      - 🎯 **रियल-टाइम अपडेट**: आपके डेटा स्रोतों के साथ लाइव सिंकिंग
+      - 📊 **एनालिटिक्स**: उपयोग एनालिटिक्स और खोज अंतर्दृष्टि
+      - 🔧 **एडमिन नियंत्रण**: उपयोगकर्ता प्रबंधन और सिस्टम कॉन्फ़िगरेशन
+  zh:
+    description: "具有高级检索功能的开源企业搜索和AI助手"
+    readme: |
+      Onyx（前身为Danswer）是一个开源企业搜索和AI助手平台，可连接到您公司的文档、应用程序和人员。
+
+      ![Onyx预览](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### 功能特性
+
+      - 🔍 **企业搜索**：连接并搜索您公司的所有知识来源
+      - 🤖 **AI助手**：获得带有引用和来源的智能答案
+      - 📄 **文档处理**：高级PDF、Word和文本处理，支持OCR
+      - 🔗 **集成**：连接到Slack、Confluence、SharePoint、Google Drive等
+      - 🛡️ **安全性**：基于角色的访问控制和数据治理
+      - 🎯 **实时更新**：与您的数据源实时同步
+      - 📊 **分析**：使用分析和搜索洞察
+      - 🔧 **管理控制**：用户管理和系统配置
+  ko:
+    description: "고급 검색 기능을 갖춘 오픈소스 기업 검색 및 AI 어시스턴트"
+    readme: |
+      Onyx(이전 Danswer)는 회사의 문서, 앱, 사람들과 연결되는 오픈소스 기업 검색 및 AI 어시스턴트 플랫폼입니다.
+
+      ![Onyx 미리보기](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### 기능
+
+      - 🔍 **기업 검색**: 회사의 모든 지식 소스를 연결하고 검색하세요
+      - 🤖 **AI 어시스턴트**: 인용과 출처가 포함된 지능적인 답변을 받으세요
+      - 📄 **문서 처리**: OCR을 통한 고급 PDF, Word 및 텍스트 처리
+      - 🔗 **통합**: Slack, Confluence, SharePoint, Google Drive 등과 연결
+      - 🛡️ **보안**: 역할 기반 액세스 제어 및 데이터 거버넌스
+      - 🎯 **실시간 업데이트**: 데이터 소스와의 실시간 동기화
+      - 📊 **분석**: 사용 분석 및 검색 인사이트
+      - 🔧 **관리 제어**: 사용자 관리 및 시스템 구성
+  ja:
+    description: "高度な検索機能を持つオープンソースのエンタープライズ検索とAIアシスタント"
+    readme: |
+      Onyx（旧Danswer）は、会社の文書、アプリ、人々に接続するオープンソースのエンタープライズ検索とAIアシスタントプラットフォームです。
+
+      ![Onyxプレビュー](https://github.com/onyx-dot-app/onyx/releases/download/v0.21.1/OnyxChatSilentDemo.gif)
+
+      <hr>
+
+      ### 機能
+
+      - 🔍 **エンタープライズ検索**: 会社のすべての知識ソースに接続して検索
+      - 🤖 **AIアシスタント**: 引用とソース付きのインテリジェントな回答を取得
+      - 📄 **文書処理**: OCRを使用した高度なPDF、Word、テキスト処理
+      - 🔗 **統合**: Slack、Confluence、SharePoint、Google Driveなどに接続
+      - 🛡️ **セキュリティ**: ロールベースのアクセス制御とデータガバナンス
+      - 🎯 **リアルタイム更新**: データソースとのライブ同期
+      - 📊 **分析**: 使用分析と検索インサイト
+      - 🔧 **管理制御**: ユーザー管理とシステム設定
