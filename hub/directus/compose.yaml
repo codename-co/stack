@@ -38,7 +38,7 @@ services:
       dash.desc: Cache for Directus
 
   directus:
-    image: directus/directus:${DIRECTUS_VERSION:-11.7.0}
+    image: directus/directus:${DIRECTUS_VERSION:-11.12.0}
     # ports:
     #   - :8055
     volumes:
