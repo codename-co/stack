@@ -81,3 +81,465 @@ i18n:
 
       - **SyncPlay :**
         Partager une soirée cinéma à distance n'a jamais été aussi facile.
+  de:
+    description: Freie Software-Mediensystem
+    readme: |
+
+      Jellyfin ist ein freies Software-Mediensystem, das Ihnen die Kontrolle über die Verwaltung und das Streaming Ihrer Medien gibt.
+      Es ist eine Alternative zu den proprietären Systemen Emby und Plex, um Medien von einem dedizierten Server an Endbenutzergeräte über mehrere Apps zu liefern.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Funktionen
+
+      - **Filme:**
+        Genießen Sie Ihre gesamte Filmsammlung, einfach zu durchsuchen und mit schönen Grafiken.
+
+      - **TV-Sendungen:**
+        Schauen Sie Ihre Lieblingssendungen, automatisch nach Staffeln sortiert und bereit zum Binge-Watching.
+
+      - **Musik:**
+        Hören Sie Musik, Ihre Künstler und Ihre Playlists, zu Hause oder unterwegs.
+
+      - **Live-TV & DVR:**
+        Schauen Sie Fernsehen und stellen Sie automatische Aufnahmen ein, um Ihre Bibliothek zu erweitern.
+
+      - **Bücher:**
+        Lesen Sie Ihre Bücher, Comics und Magazine.
+
+      - **Fotos:**
+        Organisieren Sie Ihre Fotos und teilen Sie Erinnerungen mit Ihren Freunden und Ihrer Familie.
+
+      - **SyncPlay:**
+        Einen Filmabend aus der Ferne zu teilen war noch nie so einfach.
+  es:
+    description: Sistema de medios de software libre
+    readme: |
+
+      Jellyfin es un sistema de medios de software libre que te permite controlar la gestión y transmisión de tus medios.
+      Es una alternativa a los sistemas propietarios Emby y Plex, para proporcionar medios desde un servidor dedicado a dispositivos de usuarios finales a través de múltiples aplicaciones.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Características
+
+      - **Películas:**
+        Disfruta de toda tu colección de películas, fácil de navegar y con hermosas ilustraciones.
+
+      - **Programas de TV:**
+        Mira tus programas favoritos, automáticamente ordenados por temporada y listos para maratonear.
+
+      - **Música:**
+        Escucha música, tus artistas y tus listas de reproducción, en casa o en movimiento.
+
+      - **TV en vivo y DVR:**
+        Mira televisión y configura grabaciones automáticas para expandir tu biblioteca.
+
+      - **Libros:**
+        Lee tus libros, cómics y revistas.
+
+      - **Fotos:**
+        Organiza tus fotos y comparte recuerdos con tus amigos y familia.
+
+      - **SyncPlay:**
+        Compartir una noche de películas remotamente nunca ha sido tan fácil.
+  it:
+    description: Sistema multimediale software libero
+    readme: |
+
+      Jellyfin è un sistema multimediale software libero che ti mette in controllo della gestione e dello streaming dei tuoi media.
+      È un'alternativa ai sistemi proprietari Emby e Plex, per fornire media da un server dedicato ai dispositivi degli utenti finali tramite più applicazioni.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Caratteristiche
+
+      - **Film:**
+        Goditi tutta la tua collezione di film, facile da navigare e con belle opere d'arte.
+
+      - **Serie TV:**
+        Guarda i tuoi programmi preferiti, automaticamente ordinati per stagione e pronti per il binge-watching.
+
+      - **Musica:**
+        Ascolta musica, i tuoi artisti e le tue playlist, a casa o in movimento.
+
+      - **TV dal vivo e DVR:**
+        Guarda la televisione e imposta registrazioni automatiche per espandere la tua libreria.
+
+      - **Libri:**
+        Leggi i tuoi libri, fumetti e riviste.
+
+      - **Foto:**
+        Organizza le tue foto e condividi i ricordi con i tuoi amici e la tua famiglia.
+
+      - **SyncPlay:**
+        Condividere una serata cinematografica da remoto non è mai stato così facile.
+  nl:
+    description: Vrije software mediasysteem
+    readme: |
+
+      Jellyfin is een vrije software mediasysteem dat je controle geeft over het beheren en streamen van je media.
+      Het is een alternatief voor de propriëtaire systemen Emby en Plex, om media van een toegewijde server naar eindgebruikersapparaten te leveren via meerdere apps.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Functies
+
+      - **Films:**
+        Geniet van je hele filmcollectie, gemakkelijk te bladeren en met prachtige artwork.
+
+      - **TV-programma's:**
+        Kijk naar je favoriete programma's, automatisch gesorteerd op seizoen en klaar om te binge-watchen.
+
+      - **Muziek:**
+        Luister naar muziek, je artiesten en je afspeellijsten, thuis of onderweg.
+
+      - **Live TV & DVR:**
+        Kijk televisie en stel automatische opnames in om je bibliotheek uit te breiden.
+
+      - **Boeken:**
+        Lees je boeken, strips en tijdschriften.
+
+      - **Foto's:**
+        Organiseer je foto's en deel herinneringen met je vrienden en familie.
+
+      - **SyncPlay:**
+        Een filmavond op afstand delen is nog nooit zo gemakkelijk geweest.
+  pt:
+    description: Sistema de mídia de software livre
+    readme: |
+
+      Jellyfin é um sistema de mídia de software livre que coloca você no controle de gerenciar e transmitir sua mídia.
+      É uma alternativa aos sistemas proprietários Emby e Plex, para fornecer mídia de um servidor dedicado para dispositivos de usuários finais através de múltiplos aplicativos.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Características
+
+      - **Filmes:**
+        Aproveite toda sua coleção de filmes, fácil de navegar e com belas ilustrações.
+
+      - **Programas de TV:**
+        Assista seus programas favoritos, automaticamente organizados por temporada e prontos para maratonar.
+
+      - **Música:**
+        Ouça música, seus artistas e suas playlists, em casa ou em movimento.
+
+      - **TV ao vivo e DVR:**
+        Assista televisão e configure gravações automáticas para expandir sua biblioteca.
+
+      - **Livros:**
+        Leia seus livros, quadrinhos e revistas.
+
+      - **Fotos:**
+        Organize suas fotos e compartilhe memórias com seus amigos e família.
+
+      - **SyncPlay:**
+        Compartilhar uma noite de filme remotamente nunca foi tão fácil.
+  ro:
+    description: Sistem media software liber
+    readme: |
+
+      Jellyfin este un sistem media software liber care vă oferă controlul asupra gestionării și transmiterii media-ului dvs.
+      Este o alternativă la sistemele proprietare Emby și Plex, pentru a furniza conținut media de pe un server dedicat către dispozitivele utilizatorilor finali prin multiple aplicații.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Caracteristici
+
+      - **Filme:**
+        Bucurați-vă de întreaga colecție de filme, ușor de navigat și cu ilustrații frumoase.
+
+      - **Emisiuni TV:**
+        Urmăriți emisiunile favorite, sortate automat pe sezoane și gata pentru vizionare continuă.
+
+      - **Muzică:**
+        Ascultați muzică, artiștii și playlist-urile dvs., acasă sau în deplasare.
+
+      - **TV live și DVR:**
+        Urmăriți televiziunea și setați înregistrări automate pentru a vă extinde biblioteca.
+
+      - **Cărți:**
+        Citiți cărțile, benzile desenate și revistele dvs.
+
+      - **Fotografii:**
+        Organizați fotografiile și împărtășiți amintiri cu prietenii și familia.
+
+      - **SyncPlay:**
+        Împărtășirea unei seri de filme la distanță nu a fost niciodată atât de ușoară.
+  tr:
+    description: Ücretsiz yazılım medya sistemi
+    readme: |
+
+      Jellyfin, medyalarınızı yönetme ve akış yapma konusunda size kontrol veren ücretsiz bir yazılım medya sistemidir.
+      Özel mülkiyet yazılımları Emby ve Plex'e alternatif olarak, özel bir sunucudan son kullanıcı cihazlarına birden fazla uygulama aracılığıyla medya sağlar.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Özellikler
+
+      - **Filmler:**
+        Tüm film koleksiyonunuzun keyfini çıkarın, göz atmak kolay ve güzel sanat eserleri ile.
+
+      - **TV Programları:**
+        Favori programlarınızı izleyin, otomatik olarak sezonlara göre sıralanmış ve binge izlemeye hazır.
+
+      - **Müzik:**
+        Müzik dinleyin, sanatçılarınız ve oynatma listeleriniz, evde veya hareket halinde.
+
+      - **Canlı TV ve DVR:**
+        Televizyon izleyin ve kütüphanenizi genişletmek için otomatik kayıtlar ayarlayın.
+
+      - **Kitaplar:**
+        Kitaplarınızı, çizgi romanlarınızı ve dergilerinizi okuyun.
+
+      - **Fotoğraflar:**
+        Fotoğraflarınızı düzenleyin ve arkadaşlarınız ve ailenizle anıları paylaşın.
+
+      - **SyncPlay:**
+        Uzaktan bir film gecesi paylaşmak hiç bu kadar kolay olmamıştı.
+  ar:
+    description: نظام وسائط برمجيات حرة
+    readme: |
+
+      Jellyfin هو نظام وسائط برمجيات حرة يمنحك السيطرة على إدارة وبث وسائطك.
+      إنه بديل لأنظمة Emby و Plex المملوكة، لتوفير الوسائط من خادم مخصص إلى أجهزة المستخدمين النهائيين عبر تطبيقات متعددة.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### الميزات
+
+      - **الأفلام:**
+        استمتع بمجموعة أفلامك الكاملة، سهلة التصفح ومع أعمال فنية جميلة.
+
+      - **البرامج التلفزيونية:**
+        شاهد برامجك المفضلة، مرتبة تلقائياً حسب الموسم وجاهزة للمشاهدة المتواصلة.
+
+      - **الموسيقى:**
+        استمع للموسيقى وفنانيك وقوائم التشغيل، في المنزل أو أثناء التنقل.
+
+      - **التلفزيون المباشر و DVR:**
+        شاهد التلفزيون واضبط التسجيلات التلقائية لتوسيع مكتبتك.
+
+      - **الكتب:**
+        اقرأ كتبك وقصصك المصورة ومجلاتك.
+
+      - **الصور:**
+        نظم صورك وشارك الذكريات مع أصدقائك وعائلتك.
+
+      - **SyncPlay:**
+        مشاركة ليلة فيلم عن بُعد لم تكن أسهل من أي وقت مضى.
+  uk:
+    description: Система медіа вільного програмного забезпечення
+    readme: |
+
+      Jellyfin - це система медіа вільного програмного забезпечення, яка дає вам контроль над керуванням та трансляцією ваших медіа.
+      Це альтернатива власницьким системам Emby та Plex для надання медіа з виділеного сервера на пристрої кінцевих користувачів через кілька додатків.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Функції
+
+      - **Фільми:**
+        Насолоджуйтесь усією вашою колекцією фільмів, легко переглядайте з красивими ілюстраціями.
+
+      - **ТВ-шоу:**
+        Дивіться ваші улюблені шоу, автоматично відсортовані за сезонами та готові для безперервного перегляду.
+
+      - **Музика:**
+        Слухайте музику, ваших виконавців та плейлисти вдома чи в дорозі.
+
+      - **Пряме ТБ та DVR:**
+        Дивіться телебачення та налаштовуйте автоматичні записи для розширення вашої бібліотеки.
+
+      - **Книги:**
+        Читайте ваші книги, комікси та журнали.
+
+      - **Фото:**
+        Організовуйте ваші фото та діліться спогадами з друзями та родиною.
+
+      - **SyncPlay:**
+        Спільний перегляд фільмів на відстані ніколи не був таким простим.
+  ru:
+    description: Система медиа свободного программного обеспечения
+    readme: |
+
+      Jellyfin - это система медиа свободного программного обеспечения, которая даёт вам контроль над управлением и трансляцией ваших медиа.
+      Это альтернатива проприетарным системам Emby и Plex для предоставления медиа с выделенного сервера на устройства конечных пользователей через несколько приложений.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### Функции
+
+      - **Фильмы:**
+        Наслаждайтесь всей вашей коллекцией фильмов, легко просматривайте с красивыми иллюстрациями.
+
+      - **ТВ-шоу:**
+        Смотрите ваши любимые шоу, автоматически отсортированные по сезонам и готовые для непрерывного просмотра.
+
+      - **Музыка:**
+        Слушайте музыку, ваших исполнителей и плейлисты дома или в пути.
+
+      - **Прямое ТВ и DVR:**
+        Смотрите телевидение и настраивайте автоматические записи для расширения вашей библиотеки.
+
+      - **Книги:**
+        Читайте ваши книги, комиксы и журналы.
+
+      - **Фото:**
+        Организуйте ваши фото и делитесь воспоминаниями с друзьями и семьёй.
+
+      - **SyncPlay:**
+        Совместный просмотр фильмов на расстоянии никогда не был таким простым.
+  hi:
+    description: मुक्त सॉफ्टवेयर मीडिया सिस्टम
+    readme: |
+
+      Jellyfin एक मुक्त सॉफ्टवेयर मीडिया सिस्टम है जो आपको अपने मीडिया के प्रबंधन और स्ट्रीमिंग पर नियंत्रण देता है।
+      यह स्वामित्व वाले Emby और Plex के विकल्प के रूप में, कई ऐप्स के माध्यम से समर्पित सर्वर से अंतिम उपयोगकर्ता उपकरणों तक मीडिया प्रदान करता है।
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### विशेषताएं
+
+      - **फिल्में:**
+        अपने पूरे फिल्म संग्रह का आनंद लें, ब्राउज़ करना आसान और सुंदर आर्टवर्क के साथ।
+
+      - **TV शो:**
+        अपने पसंदीदा शो देखें, स्वचालित रूप से सीज़न के अनुसार क्रमबद्ध और बिंज देखने के लिए तैयार।
+
+      - **संगीत:**
+        संगीत सुनें, अपने कलाकार और अपनी प्लेलिस्ट, घर पर या चलते-फिरते।
+
+      - **लाइव TV और DVR:**
+        टेलीविज़न देखें और अपनी लाइब्रेरी का विस्तार करने के लिए स्वचालित रिकॉर्डिंग सेट करें।
+
+      - **पुस्तकें:**
+        अपनी किताबें, कॉमिक्स और पत्रिकाएं पढ़ें।
+
+      - **तस्वीरें:**
+        अपनी तस्वीरों को व्यवस्थित करें और अपने दोस्तों और परिवार के साथ यादें साझा करें।
+
+      - **SyncPlay:**
+        दूर से फिल्म की रात साझा करना इतना आसान कभी नहीं रहा।
+  zh:
+    description: 自由软件媒体系统
+    readme: |
+
+      Jellyfin是一个自由软件媒体系统，让您完全控制媒体的管理和流媒体传输。
+      它是专有软件Emby和Plex的替代方案，通过多个应用程序从专用服务器向最终用户设备提供媒体。
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### 功能特性
+
+      - **电影:**
+        享受您的整个电影收藏，易于浏览且配有精美的封面艺术。
+
+      - **电视节目:**
+        观看您喜爱的节目，按季节自动排序，随时准备连续观看。
+
+      - **音乐:**
+        聆听音乐、您的艺术家和播放列表，无论在家还是在路上。
+
+      - **直播电视和DVR:**
+        观看电��并设置自动录制以扩展您的媒体库。
+
+      - **图书:**
+        阅读您的书籍、漫画和杂志。
+
+      - **照片:**
+        整理您的照片并与朋友和家人分享回忆。
+
+      - **SyncPlay:**
+        远程共享电影之夜从未如此简单。
+  ko:
+    description: 자유 소프트웨어 미디어 시스템
+    readme: |
+
+      Jellyfin은 미디어 관리 및 스트리밍을 완전히 제어할 수 있는 자유 소프트웨어 미디어 시스템입니다.
+      전용 서버에서 여러 앱을 통해 최종 사용자 기기로 미디어를 제공하는 독점 소프트웨어 Emby 및 Plex의 대안입니다.
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### 기능
+
+      - **영화:**
+        아름다운 아트워크와 함께 쉽게 탐색할 수 있는 전체 영화 컬렉션을 즐기세요.
+
+      - **TV 프로그램:**
+        좋아하는 프로그램을 시청하세요. 시즌별로 자동 정렬되어 연속 시청이 가능합니다.
+
+      - **음악:**
+        집에서든 이동 중이든 음악, 아티스트, 재생목록을 들어보세요.
+
+      - **라이브 TV 및 DVR:**
+        TV를 시청하고 자동 녹화를 설정하여 라이브러리를 확장하세요.
+
+      - **도서:**
+        책, 만화, 잡지를 읽어보세요.
+
+      - **사진:**
+        사진을 정리하고 친구 및 가족과 추억을 공유하세요.
+
+      - **SyncPlay:**
+        원격으로 영화의 밤을 공유하는 것이 이보다 쉬웠던 적은 없습니다.
+  ja:
+    description: フリーソフトウェアメディアシステム
+    readme: |
+
+      Jellyfinは、メディアの管理とストリーミングを完全に制御できるフリーソフトウェアメディアシステムです。
+      専用サーバーから複数のアプリを介してエンドユーザーデバイスにメディアを提供する、プロプライエタリなEmbyやPlexの代替です。
+
+      ![preview](https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png)
+
+      <hr>
+
+      ### 機能
+
+      - **映画:**
+        美しいアートワークで、簡単にブラウズできる映画コレクション全体をお楽しみください。
+
+      - **テレビ番組:**
+        お気に入りの番組を視聴し、シーズンごとに自動的にソートされ、一気見に対応しています。
+
+      - **音楽:**
+        自宅でも外出先でも、音楽、アーティスト、プレイリストを聴くことができます。
+
+      - **ライブTV＆DVR:**
+        テレビを視聴し、ライブラリを拡張するために自動録画を設定します。
+
+      - **書籍:**
+        本、コミック、雑誌を読むことができます。
+
+      - **写真:**
+        写真を整理し、友人や家族と思い出を共有します。
+
+      - **SyncPlay:**
+        リモートで映画鑑賞を共有することがこれまでになく簡単になりました。
