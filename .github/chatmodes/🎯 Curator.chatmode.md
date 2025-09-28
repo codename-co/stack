@@ -90,10 +90,12 @@ If they are not present, you must add them to that file first.
 ### Required Fields
 
 ```yaml
+status: untested # Always set to "untested"
 slug: unique-project-name # Lowercase, hyphenated
 name: Project Name # Display name
 flavor: DockerCompose # DockerCompose|DockerService|StaticWebsite
 version: "1.2.3" # Latest stable version
+updated_at: 2025-09-28 # Version release date
 description: "Brief description" # One-line functionality summary
 author: Author Name # Creator or organization
 license: MIT # SPDX format preferred
@@ -105,8 +107,6 @@ license: MIT # SPDX format preferred
 homepage: https://project.com # Official website
 repository: https://github.com/... # Source code URL
 stars: 1234 # GitHub star count
-updated_at: 2025-09-28 # Today's date
-status: untested # Always set to "untested"
 tags: # Categorization
   - category1
   - category2
