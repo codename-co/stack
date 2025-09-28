@@ -106,4 +106,13 @@ export const uk: I18n = {
 
   /** Component Debug */
   "Service is running…": "Сервіс працює…",
+
+  /** API */
+  "Start exploring stacks programmatically.":
+    "Почніть досліджувати стеки програмно.",
+  "We got you covered with every stacks and recipes, over API.":
+    "Ми вас забезпечимо всіма стеками та рецептами через API.",
+  "API specification": "Специфікація API",
+  "API endpoints": "Кінцеві точки API",
+  "Localized endpoints": "Локалізовані кінцеві точки",
 } as const;

@@ -103,4 +103,12 @@ export const ar: I18n = {
 
   /** Component Debug */
   "Service is running…": "الخدمة قيد التشغيل…",
+
+  /** API */
+  "Start exploring stacks programmatically.": "ابدأ استكشاف الكومات برمجيًا.",
+  "We got you covered with every stacks and recipes, over API.":
+    "كل شيء مغطى مع كل الكومات والوصفات، عبر واجهة برمجة التطبيقات.",
+  "API specification": "مواصفات واجهة برمجة التطبيقات",
+  "API endpoints": "نقاط نهاية واجهة برمجة التطبيقات",
+  "Localized endpoints": "نقاط نهاية محلية",
 } as const;

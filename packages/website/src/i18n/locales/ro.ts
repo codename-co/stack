@@ -44,4 +44,13 @@ export const ro: Partial<I18n> = {
   "About *{name}*": "Despre *{name}*",
   "An alternative to": "O alternativa pentru",
   Related: "Relatate",
+
+  /** API */
+  "Start exploring stacks programmatically.":
+    "Începeți să explorați stivele programatic.",
+  "We got you covered with every stacks and recipes, over API.":
+    "Te avem acoperit cu fiecare stivă și rețetă, prin API.",
+  "API specification": "Specificația API-ului",
+  "API endpoints": "Puncte finale API",
+  "Localized endpoints": "Puncte finale localizate",
 } as const;

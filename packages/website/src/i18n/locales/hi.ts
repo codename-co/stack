@@ -46,4 +46,13 @@ export const hi: Partial<I18n> = {
   "About *{name}*": "*{name}* के बारे में",
   "An alternative to": "का एक विकल्प",
   Related: "संबंधित",
+
+  /** API */
+  "Start exploring stacks programmatically.":
+    "स्टैक्स का प्रोग्रामेटिक रूप से अन्वेषण शुरू करें।",
+  "We got you covered with every stacks and recipes, over API.":
+    "हमने आपको हर स्टैक और रेसिपी के साथ कवर किया है, एपीआई के माध्यम से।",
+  "API specification": "API विनिर्देश",
+  "API endpoints": "API एंडपॉइंट्स",
+  "Localized endpoints": "स्थानीय एंडपॉइंट्स",
 } as const;

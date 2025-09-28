@@ -106,4 +106,13 @@ export const ja: I18n = {
 
   /** Component Debug */
   "Service is running…": "サービスが実行中…",
+
+  /** API */
+  "Start exploring stacks programmatically.":
+    "スタックをプログラムで探索し始めましょう。",
+  "We got you covered with every stacks and recipes, over API.":
+    "すべてのスタックとレシピをAPI経由でカバーしています。",
+  "API specification": "API仕様",
+  "API endpoints": "APIエンドポイント",
+  "Localized endpoints": "ローカライズされたエンドポイント",
 } as const;

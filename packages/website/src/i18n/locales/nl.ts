@@ -45,4 +45,12 @@ export const nl: Partial<I18n> = {
   "About *{name}*": "Over *{name}*",
   "An alternative to": "Een alternatief voor",
   Related: "Gerelateerd",
+
+  /** API */
+  "Start exploring stacks programmatically.": "Stapel programatisch verkennen.",
+  "We got you covered with every stacks and recipes, over API.":
+    "We hebben je gedekt met elke stapel en recept, via API.",
+  "API specification": "API-specificatie",
+  "API endpoints": "API-eindpunten",
+  "Localized endpoints": "Glocalizede eindpunten",
 } as const;

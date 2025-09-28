@@ -1,0 +1,103 @@
+---
+import { langs, languages, useTranslations, useUrl } from "~/i18n";
+import Layout from "~/layouts/Layout.astro";
+
+export const getStaticPaths = () => {
+  return langs.map((lang) => ({ params: { lang } }));
+};
+
+const lang = Astro.params.lang;
+const t = useTranslations(lang);
+const url = useUrl(lang);
+
+const title = t("The best of free software, accessible");
+const description = t(
+  "Access {count}+ curated open source software packages, ready to install with one click.",
+  { count: Math.floor([].length / 10) * 10 }
+);
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={description}
+  mainClass="left-only"
+>
+  <div slot="left" class="section h-full">
+    <div class="container">
+      <h1 set:html={t("Start exploring stacks programmatically.")} />
+      <p
+        class="subtle"
+        set:html={t(
+          "We got you covered with every stacks and recipes, over API."
+        )}
+      />
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div
+        class="box bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-200"
+        style="overflow-x: hidden"
+      >
+        <h2>{t("API specification")}</h2>
+
+        <ul>
+          <li>
+            <a href="/api/stack.openapi.yaml">/api/stack.openapi.yaml</a>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="box bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-200"
+        style="overflow-x: hidden"
+      >
+        <h2>{t("API endpoints")}</h2>
+
+        <ul>
+          <li>
+            <a href={url("/api/recipes")}>/api/recipes</a>
+          </li>
+          <li>
+            <a href={url("/api/stacks")}>/api/stacks</a>
+          </li>
+        </ul>
+
+        <br />
+        <h2>{t("Localized endpoints")}</h2>
+
+        <div class="sm:columns-2 md:columns-4">
+          {
+            Object.entries(languages)
+              .map(
+                ([langCode, langName]) =>
+                  [
+                    langCode,
+                    langName,
+                    (path: string) =>
+                      url(`/api${path}`, langCode as keyof typeof languages),
+                  ] as const
+              )
+              .map(([, langName, url]) => (
+                <ol>
+                  <li>{langName}</li>
+                  <li>
+                    <ul>
+                      <li>
+                        <a href={url("/recipes")}>{url("/recipes")}</a>
+                      </li>
+                      <li>
+                        <a href={url("/stacks")}>{url("/stacks")}</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

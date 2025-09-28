@@ -44,4 +44,13 @@ export const tr: Partial<I18n> = {
   "About *{name}*": "*{name}* hakkında",
   "An alternative to": "Bir alternatif",
   Related: "İlgili",
+
+  /** API */
+  "Start exploring stacks programmatically.":
+    "Stack'leri programlı olarak keşfetmeye başlayın.",
+  "We got you covered with every stacks and recipes, over API.":
+    "Her stack ve tarif için API üzerinden sizi koruyoruz.",
+  "API specification": "API Spesifikasyonu",
+  "API endpoints": "API Uç Noktaları",
+  "Localized endpoints": "Yerelleştirilmiş Uç Noktalar",
 } as const;

@@ -104,4 +104,13 @@ export const ko: I18n = {
 
   /** Component Debug */
   "Service is running…": "서비스가 실행 중입니다...",
+
+  /** API */
+  "Start exploring stacks programmatically.":
+    "스택을 프로그래밍 방식으로 탐색하기 시작하십시오.",
+  "We got you covered with every stacks and recipes, over API.":
+    "모든 스택과 레시피를 API를 통해 지원합니다.",
+  "API specification": "API 사양",
+  "API endpoints": "API 엔드포인트",
+  "Localized endpoints": "로컬라이즈된 엔드포인트",
 } as const;

@@ -100,4 +100,12 @@ export const zh: I18n = {
 
   /** Component Debug */
   "Service is running…": "服务正在运行…",
+
+  /** API */
+  "Start exploring stacks programmatically.": "开始以编程方式探索堆栈。",
+  "We got you covered with every stacks and recipes, over API.":
+    "我们为您提供所有堆栈和食谱的 API 支持。",
+  "API specification": "API 规范",
+  "API endpoints": "API 端点",
+  "Localized endpoints": "本地化端点",
 } as const;

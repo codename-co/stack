@@ -45,4 +45,13 @@ export const it: Partial<I18n> = {
   "About *{name}*": "Informazioni su *{name}*",
   "An alternative to": "Un'alternativa a",
   Related: "Correlati",
+
+  /** API */
+  "Start exploring stacks programmatically.":
+    "Inizia a esplorare le stack in modo programmatico.",
+  "We got you covered with every stacks and recipes, over API.":
+    "Ti abbiamo coperto con tutte le stack e le ricette, tramite API.",
+  "API specification": "Specifica dell’API",
+  "API endpoints": "Endpoint dell’API",
+  "Localized endpoints": "Endpoint localizzati",
 } as const;

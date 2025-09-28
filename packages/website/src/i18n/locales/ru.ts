@@ -45,4 +45,13 @@ export const ru: Partial<I18n> = {
   "About *{name}*": "О *{name}*",
   "An alternative to": "Альтернатива для",
   Related: "Связанные",
+
+  /** API */
+  "Start exploring stacks programmatically.":
+    "Начните исследовать стеки программно.",
+  "We got you covered with every stacks and recipes, over API.":
+    "Мы вас обеспечим всеми стеками и рецептами через API.",
+  "API specification": "Спецификация API",
+  "API endpoints": "Конечные точки API",
+  "Localized endpoints": "Локализованные конечные точки",
 } as const;

@@ -86,4 +86,11 @@ export const en = [
 
   /** Component Debug */
   "Service is running…",
+
+  /** API */
+  "Start exploring stacks programmatically.",
+  "We got you covered with every stacks and recipes, over API.",
+  "API specification",
+  "API endpoints",
+  "Localized endpoints",
 ] as const;

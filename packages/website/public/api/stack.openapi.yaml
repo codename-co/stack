@@ -1,0 +1,288 @@
+openapi: 3.0.3
+info:
+  title: Stack API
+  description: API for accessing curated open source software stacks
+  version: 0.1.0
+  contact:
+    name: stack.lol
+    url: https://stack.lol
+  license:
+    name: MIT
+    url: https://github.com/codename-co/stack/blob/main/LICENSE_MIT
+servers:
+  - url: https://stack.lol/{lang}/api
+    description: Stack API
+    variables:
+      lang:
+        default: ""
+        description: Language code
+        enum:
+          - ""
+          - fr
+          - es
+          - de
+          - it
+          - pt
+          - ru
+          - zh
+          - ja
+          - ko
+paths:
+  /stacks:
+    get:
+      summary: Get all stacks
+      description: Retrieve a list of all available stacks with their metadata
+      operationId: getStacks
+      tags:
+        - stacks
+      parameters:
+        - name: lang
+          in: path
+          required: true
+          schema:
+            $ref: "#/components/schemas/Language"
+          description: Language code for localized content
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Stack"
+                required:
+                  - items
+              example:
+                items:
+                  - slug: "2048"
+                    name: "2048"
+                    version: "latest"
+                    updated_at: "2024-10-24T00:00:00.000Z"
+                    description: "Single-player sliding block puzzle game"
+                    license: "MIT"
+                    tags: ["game"]
+                    alternativeTo: []
+                    link: "/2048"
+                    stars: 13000
+                  - slug: "nextcloud"
+                    name: "Nextcloud"
+                    version: "latest"
+                    updated_at: "2024-10-20T00:00:00.000Z"
+                    description: "Self-hosted cloud storage and collaboration platform"
+                    license: "AGPL-3.0"
+                    tags: ["cloud", "storage", "collaboration"]
+                    alternativeTo: ["dropbox", "google-drive"]
+                    link: "/nextcloud"
+                    stars: 27000
+        "404":
+          description: Language not found
+          content:
+            application/html: {}
+  /recipes:
+    get:
+      summary: Get all recipes
+      description: Retrieve a list of all available recipes with their metadata
+      operationId: getRecipes
+      tags:
+        - recipes
+      parameters:
+        - name: lang
+          in: path
+          required: true
+          schema:
+            $ref: "#/components/schemas/Language"
+          description: Language code for localized content
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Recipe"
+                required:
+                  - items
+              example:
+                items:
+                  - slug: "xampp"
+                    name: "XAMPP stack"
+                    version: "latest"
+                    updated_at: "2025-02-16T00:00:00.000Z"
+                    description: "Cross-platform development environment featuring Apache web server, MariaDB database, and PHP/Perl scripting languages."
+                    license: ""
+                    tags: ["webdev", "web-server", "database"]
+                    alternativeTo: []
+                    link: "/recipes/xampp"
+                    stars: null
+                  - slug: "conversational-genai"
+                    name: "Conversational GenAI"
+                    version: "latest"
+                    updated_at: "2025-02-15T00:00:00.000Z"
+                    description: "Complete conversational AI stack with language models and chat interface"
+                    license: "MIT"
+                    tags: ["ai", "llm", "chat"]
+                    alternativeTo: ["chatgpt"]
+                    link: "/recipes/conversational-genai"
+                    stars: null
+        "404":
+          description: Language not found
+          content:
+            application/html: {}
+components:
+  schemas:
+    Language:
+      type: string
+      default: ""
+      description: Language code
+      enum:
+        - ""
+        - fr
+        - es
+        - de
+        - it
+        - pt
+        - ru
+        - zh
+        - ja
+        - ko
+    Stack:
+      type: object
+      properties:
+        slug:
+          type: string
+          description: Unique identifier for the stack
+          example: "nextcloud"
+        name:
+          type: string
+          description: Display name of the stack
+          example: "Nextcloud"
+        version:
+          type: string
+          description: Version of the stack
+          example: "latest"
+        updated_at:
+          type: string
+          format: date-time
+          description: Last update timestamp
+          example: "2024-10-24T00:00:00.000Z"
+        description:
+          type: string
+          description: Brief description of the stack
+          example: "Self-hosted cloud storage and collaboration platform"
+        license:
+          type: string
+          description: Software license
+          example: "AGPL-3.0"
+        tags:
+          type: array
+          items:
+            type: string
+          description: Categories and tags associated with the stack
+          example: ["cloud", "storage", "collaboration"]
+        alternativeTo:
+          type: array
+          items:
+            type: string
+          description: Popular software that this stack can replace
+          example: ["dropbox", "google-drive"]
+        link:
+          type: string
+          description: Relative URL to the stack's detail page
+          example: "/nextcloud"
+        stars:
+          type: integer
+          description: GitHub stars count (if applicable)
+          example: 27000
+      required:
+        - slug
+        - name
+        - version
+        - description
+        - license
+        - link
+    Recipe:
+      type: object
+      properties:
+        slug:
+          type: string
+          description: Unique identifier for the recipe
+          example: "xampp"
+        name:
+          type: string
+          description: Display name of the recipe
+          example: "XAMPP stack"
+        version:
+          type: string
+          description: Version of the recipe
+          example: "latest"
+        updated_at:
+          type: string
+          format: date-time
+          description: Last update timestamp
+          example: "2025-02-16T00:00:00.000Z"
+        description:
+          type: string
+          description: Brief description of the recipe
+          example: "Cross-platform development environment featuring Apache web server, MariaDB database, and PHP/Perl scripting languages."
+        license:
+          type: string
+          description: Software license
+          example: ""
+        tags:
+          type: array
+          items:
+            type: string
+          description: Categories and tags associated with the recipe
+          example: ["webdev", "web-server", "database"]
+        alternativeTo:
+          type: array
+          items:
+            type: string
+          description: Popular software that this recipe can replace
+          example: []
+        link:
+          type: string
+          description: Relative URL to the recipe's detail page
+          example: "/recipes/xampp"
+        stars:
+          type: integer
+          nullable: true
+          description: GitHub stars count (if applicable)
+          example: null
+      required:
+        - slug
+        - name
+        - version
+        - description
+        - license
+        - link
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: "Language not supported"
+        code:
+          type: integer
+          description: HTTP status code
+          example: 404
+      required:
+        - error
+        - code
+tags:
+  - name: stacks
+    description: Operations related to software stacks
+  - name: recipes
+    description: Operations related to software recipes (curated stack combinations)
+externalDocs:
+  description: Stack documentation
+  url: https://stack.lol

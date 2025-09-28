@@ -105,4 +105,13 @@ export const de: I18n = {
 
   /** Component Debug */
   "Service is running…": "Dienst wird ausgeführt…",
+
+  /** API */
+  "Start exploring stacks programmatically.":
+    "Erkunden Sie Stacks programmgesteuert.",
+  "We got you covered with every stacks and recipes, over API.":
+    "Alles ist über die API abgedeckt, einschließlich aller Stacks und Rezepte.",
+  "API specification": "Spezifikation der API",
+  "API endpoints": "Endpunkte der API",
+  "Localized endpoints": "Lokalisierte Endpunkte",
 } as const;
