@@ -15,6 +15,277 @@ repository: https://github.com/directus/directus
 stars: 32500
 tags: [cms, database, data]
 alternativeTo: [wordpress]
+i18n:
+  de:
+    description: Ein Open-Source Headless CMS
+    readme: |
+      Directus ist eine Echtzeit-API und App-Dashboard zur Verwaltung von SQL-Datenbankinhalten.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Funktionen
+
+      - **Open Source.** Keine künstlichen Beschränkungen, Anbieter-Lock-in oder versteckte Bezahlschranken.
+      - **REST & GraphQL API.** Legt sofort eine blitzschnelle Node.js API über jede SQL-Datenbank.
+      - **Verwaltung reiner SQL.** Funktioniert mit neuen oder bestehenden SQL-Datenbanken, keine Migration erforderlich.
+      - **Wählen Sie Ihre Datenbank.** Unterstützt PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB und MS-SQL.
+      - **On-Premises oder Cloud.** Lokal ausführen, vor Ort installieren oder unseren Self-Service-Cloud-Service nutzen.
+      - **Vollständig erweiterbar.** Entwickelt für White-Label, einfach unsere modulare Plattform anzupassen.
+      - **Ein modernes Dashboard.** Unsere No-Code Vue.js App ist sicher und intuitiv für nicht-technische Benutzer, keine Schulung erforderlich.
+  es:
+    description: Un CMS headless de código abierto
+    readme: |
+      Directus es una API en tiempo real y dashboard de aplicación para gestionar contenido de bases de datos SQL.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Características
+
+      - **Código Abierto.** Sin limitaciones artificiales, bloqueo de proveedor o muros de pago ocultos.
+      - **API REST y GraphQL.** Crea instantáneamente una API Node.js súper rápida sobre cualquier base de datos SQL.
+      - **Gestiona SQL Puro.** Funciona con bases de datos SQL nuevas o existentes, no requiere migración.
+      - **Elige tu Base de Datos.** Soporta PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB y MS-SQL.
+      - **On-Premises o Nube.** Ejecuta localmente, instala en las instalaciones o usa nuestro servicio Cloud de autoservicio.
+      - **Completamente Extensible.** Construido para marca blanca, es fácil personalizar nuestra plataforma modular.
+      - **Un Dashboard Moderno.** Nuestra aplicación Vue.js sin código es segura e intuitiva para usuarios no técnicos, no requiere entrenamiento.
+  fr:
+    description: Un CMS headless open-source
+    readme: |
+      Directus est une API en temps réel et un tableau de bord d'application pour gérer le contenu des bases de données SQL.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Fonctionnalités
+
+      - **Open Source.** Aucune limitation artificielle, verrouillage fournisseur ou murs de paiement cachés.
+      - **API REST et GraphQL.** Superpose instantanément une API Node.js ultra-rapide sur n'importe quelle base de données SQL.
+      - **Gérer du SQL Pur.** Fonctionne avec des bases de données SQL nouvelles ou existantes, aucune migration requise.
+      - **Choisissez votre Base de Données.** Supporte PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB et MS-SQL.
+      - **Sur Site ou Cloud.** Exécutez localement, installez sur site ou utilisez notre service Cloud en libre-service.
+      - **Complètement Extensible.** Conçu pour la marque blanche, il est facile de personnaliser notre plateforme modulaire.
+      - **Un Tableau de Bord Moderne.** Notre application Vue.js sans code est sûre et intuitive pour les utilisateurs non techniques, aucune formation requise.
+  it:
+    description: Un CMS headless open-source
+    readme: |
+      Directus è un'API in tempo reale e dashboard dell'applicazione per gestire contenuti di database SQL.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Caratteristiche
+
+      - **Open Source.** Nessuna limitazione artificiale, lock-in del fornitore o paywall nascosti.
+      - **API REST e GraphQL.** Sovrappone istantaneamente un'API Node.js velocissima su qualsiasi database SQL.
+      - **Gestisci SQL Puro.** Funziona con database SQL nuovi o esistenti, nessuna migrazione richiesta.
+      - **Scegli il tuo Database.** Supporta PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB e MS-SQL.
+      - **On-Premises o Cloud.** Esegui localmente, installa on-premises o usa il nostro servizio Cloud self-service.
+      - **Completamente Estensibile.** Costruito per white-label, è facile personalizzare la nostra piattaforma modulare.
+      - **Una Dashboard Moderna.** La nostra app Vue.js no-code è sicura e intuitiva per utenti non tecnici, nessun training richiesto.
+  nl:
+    description: Een open-source headless CMS
+    readme: |
+      Directus is een real-time API en App dashboard voor het beheren van SQL database-inhoud.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Functies
+
+      - **Open Source.** Geen kunstmatige beperkingen, vendor lock-in of verborgen betaalmuren.
+      - **REST & GraphQL API.** Legt direct een razendsnelle Node.js API over elke SQL-database.
+      - **Beheer Pure SQL.** Werkt met nieuwe of bestaande SQL-databases, geen migratie vereist.
+      - **Kies je Database.** Ondersteunt PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB en MS-SQL.
+      - **On-Premises of Cloud.** Draai lokaal, installeer on-premises of gebruik onze self-service Cloud service.
+      - **Volledig Uitbreidbaar.** Gebouwd voor white-label, het is gemakkelijk om ons modulaire platform aan te passen.
+      - **Een Modern Dashboard.** Onze no-code Vue.js app is veilig en intuïtief voor niet-technische gebruikers, geen training vereist.
+  pt:
+    description: Um CMS headless de código aberto
+    readme: |
+      Directus é uma API em tempo real e dashboard de aplicação para gerenciar conteúdo de banco de dados SQL.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Recursos
+
+      - **Código Aberto.** Sem limitações artificiais, aprisionamento de fornecedor ou paywalls ocultos.
+      - **API REST e GraphQL.** Sobrepõe instantaneamente uma API Node.js super rápida em qualquer banco de dados SQL.
+      - **Gerenciar SQL Puro.** Funciona com bancos de dados SQL novos ou existentes, nenhuma migração necessária.
+      - **Escolha seu Banco de Dados.** Suporta PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB e MS-SQL.
+      - **On-Premises ou Nuvem.** Execute localmente, instale no local ou use nosso serviço Cloud de autoatendimento.
+      - **Completamente Extensível.** Construído para marca branca, é fácil personalizar nossa plataforma modular.
+      - **Um Dashboard Moderno.** Nossa aplicação Vue.js sem código é segura e intuitiva para usuários não técnicos, nenhum treinamento necessário.
+  ro:
+    description: Un CMS headless open-source
+    readme: |
+      Directus este o API în timp real și dashboard de aplicație pentru gestionarea conținutului bazelor de date SQL.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Caracteristici
+
+      - **Open Source.** Fără limitări artificiale, blocare de furnizor sau bariere de plată ascunse.
+      - **API REST și GraphQL.** Suprapune instant o API Node.js ultra-rapidă peste orice bază de date SQL.
+      - **Gestionează SQL Pur.** Funcționează cu baze de date SQL noi sau existente, fără necesitatea migrării.
+      - **Alege-ți Baza de Date.** Suportă PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB și MS-SQL.
+      - **On-Premises sau Cloud.** Rulează local, instalează on-premises sau folosește serviciul nostru Cloud self-service.
+      - **Complet Extensibil.** Construit pentru white-label, este ușor să personalizezi platforma noastră modulară.
+      - **Un Dashboard Modern.** Aplicația noastră Vue.js fără cod este sigură și intuitivă pentru utilizatorii non-tehnici, fără necesitatea de formare.
+  tr:
+    description: Açık kaynaklı bir headless CMS
+    readme: |
+      Directus, SQL veritabanı içeriğini yönetmek için gerçek zamanlı bir API ve Uygulama dashboard'udur.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Özellikler
+
+      - **Açık Kaynak.** Yapay sınırlamalar, satıcı kilitlenmesi veya gizli ödeme duvarları yok.
+      - **REST ve GraphQL API.** Herhangi bir SQL veritabanının üzerine anında çok hızlı bir Node.js API katmanı ekler.
+      - **Saf SQL Yönetimi.** Yeni veya mevcut SQL veritabanlarıyla çalışır, migrasyon gerekmez.
+      - **Veritabanınızı Seçin.** PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB ve MS-SQL destekler.
+      - **Şirket İçi veya Bulut.** Yerel olarak çalıştırın, şirket içinde kurun veya self-servis Bulut hizmetimizi kullanın.
+      - **Tamamen Genişletilebilir.** White-label için oluşturulmuş, modüler platformumuzu özelleştirmek kolaydır.
+      - **Modern Bir Dashboard.** Kodsuz Vue.js uygulamamız teknik olmayan kullanıcılar için güvenli ve sezgiseldir, eğitim gerektirmez.
+  ar:
+    description: نظام إدارة محتوى بدون رأس مفتوح المصدر
+    readme: |
+      Directus هو واجهة برمجة تطبيقات فورية ولوحة تحكم التطبيق لإدارة محتوى قاعدة بيانات SQL.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### الميزات
+
+      - **مفتوح المصدر.** لا توجد قيود صناعية أو حبس مورد أو حواجز دفع مخفية.
+      - **واجهة برمجة تطبيقات REST و GraphQL.** يضع على الفور واجهة برمجة تطبيقات Node.js سريعة البرق فوق أي قاعدة بيانات SQL.
+      - **إدارة SQL النقي.** يعمل مع قواعد بيانات SQL الجديدة أو الموجودة، لا حاجة للترحيل.
+      - **اختر قاعدة بياناتك.** يدعم PostgreSQL و MySQL و SQLite و OracleDB و CockroachDB و MariaDB و MS-SQL.
+      - **محلي أو سحابي.** شغّل محلياً، أو ثبّت محلياً، أو استخدم خدمتنا السحابية ذاتية الخدمة.
+      - **قابل للتوسع بالكامل.** مبني للعلامة البيضاء، من السهل تخصيص منصتنا المعيارية.
+      - **لوحة تحكم حديثة.** تطبيق Vue.js الخالي من الكود آمن وبديهي للمستخدمين غير التقنيين، لا يتطلب تدريباً.
+  uk:
+    description: CMS без голови з відкритим кодом
+    readme: |
+      Directus — це API реального часу та панель керування додатком для управління вмістом SQL бази даних.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Особливості
+
+      - **Відкритий код.** Без штучних обмежень, прив'язки до постачальника чи прихованих платних стін.
+      - **REST і GraphQL API.** Миттєво накладає блискавично швидкий Node.js API поверх будь-якої SQL бази даних.
+      - **Керування чистим SQL.** Працює з новими або існуючими SQL базами даних, міграція не потрібна.
+      - **Оберіть свою базу даних.** Підтримує PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB та MS-SQL.
+      - **Локально чи в хмарі.** Запускайте локально, встановлюйте локально або використовуйте наш самообслуговуючий хмарний сервіс.
+      - **Повністю розширюваний.** Створений для білої етикетки, легко налаштовувати нашу модульну платформу.
+      - **Сучасна панель керування.** Наш додаток Vue.js без коду безпечний та інтуїтивний для нетехнічних користувачів, навчання не потрібне.
+  ru:
+    description: CMS без головы с открытым исходным кодом
+    readme: |
+      Directus — это API реального времени и панель управления приложением для управления содержимым SQL базы данных.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### Особенности
+
+      - **Открытый исходный код.** Никаких искусственных ограничений, привязки к поставщику или скрытых платных стен.
+      - **REST и GraphQL API.** Мгновенно накладывает молниеносно быстрый Node.js API поверх любой SQL базы данных.
+      - **Управление чистым SQL.** Работает с новыми или существующими SQL базами данных, миграция не требуется.
+      - **Выберите свою базу данных.** Поддерживает PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB и MS-SQL.
+      - **Локально или в облаке.** Запускайте локально, устанавливайте локально или используйте наш самообслуживающий облачный сервис.
+      - **Полностью расширяемый.** Создан для белой этикетки, легко настраивать нашу модульную платформу.
+      - **Современная панель управления.** Наше приложение Vue.js без кода безопасно и интуитивно для нетехнических пользователей, обучение не требуется.
+  hi:
+    description: एक ओपन-सोर्स हेडलेस CMS
+    readme: |
+      Directus SQL डेटाबेस सामग्री को प्रबंधित करने के लिए एक रियल-टाइम API और ऐप डैशबोर्ड है।
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### विशेषताएं
+
+      - **ओपन सोर्स।** कोई कृत्रिम सीमाएं, विक्रेता लॉक-इन, या छुपी हुई पेवॉल नहीं।
+      - **REST और GraphQL API।** तुरंत किसी भी SQL डेटाबेस के ऊपर एक तेज़ Node.js API लेयर करता है।
+      - **शुद्ध SQL प्रबंधित करें।** नए या मौजूदा SQL डेटाबेस के साथ काम करता है, कोई माइग्रेशन आवश्यक नहीं।
+      - **अपना डेटाबेस चुनें।** PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB, और MS-SQL का समर्थन करता है।
+      - **ऑन-प्रिमाइसेस या क्लाउड।** स्थानीय रूप से चलाएं, ऑन-प्रिमाइसेस इंस्टॉल करें, या हमारी सेल्फ-सर्विस क्लाउड सेवा का उपयोग करें।
+      - **पूरी तरह से विस्तार योग्य।** व्हाइट-लेबल के लिए बनाया गया, हमारे मॉड्यूलर प्लेटफॉर्म को कस्टमाइज़ करना आसान है।
+      - **एक आधुनिक डैशबोर्ड।** हमारा नो-कोड Vue.js ऐप गैर-तकनीकी उपयोगकर्ताओं के लिए सुरक्षित और सहज है, कोई प्रशिक्षण आवश्यक नहीं।
+  zh:
+    description: 开源无头内容管理系统
+    readme: |
+      Directus 是一个用于管理 SQL 数据库内容的实时 API 和应用程序仪表板。
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### 特性
+
+      - **开源。** 没有人为限制、供应商锁定或隐藏付费墙。
+      - **REST 和 GraphQL API。** 即时在任何 SQL 数据库上层叠超快的 Node.js API。
+      - **管理纯 SQL。** 适用于新的或现有的 SQL 数据库，无需迁移。
+      - **选择您的数据库。** 支持 PostgreSQL、MySQL、SQLite、OracleDB、CockroachDB、MariaDB 和 MS-SQL。
+      - **本地部署或云端。** 本地运行、本地安装或使用我们的自助云服务。
+      - **完全可扩展。** 为白标而构建，易于定制我们的模块化平台。
+      - **现代仪表板。** 我们的无代码 Vue.js 应用对非技术用户安全直观，无需培训。
+  ko:
+    description: 오픈소스 헤드리스 CMS
+    readme: |
+      Directus는 SQL 데이터베이스 콘텐츠를 관리하기 위한 실시간 API 및 앱 대시보드입니다.
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### 기능
+
+      - **오픈소스.** 인위적인 제한, 벤더 종속성 또는 숨겨진 유료 벽이 없습니다.
+      - **REST 및 GraphQL API.** 모든 SQL 데이터베이스 위에 즉시 초고속 Node.js API를 레이어합니다.
+      - **순수 SQL 관리.** 새로운 또는 기존 SQL 데이터베이스와 함께 작동하며 마이그레이션이 필요하지 않습니다.
+      - **데이터베이스 선택.** PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB 및 MS-SQL을 지원합니다.
+      - **온프레미스 또는 클라우드.** 로컬에서 실행하거나 온프레미스에 설치하거나 셀프서비스 클라우드 서비스를 사용하십시오.
+      - **완전히 확장 가능.** 화이트 라벨을 위해 구축되어 모듈식 플랫폼을 쉽게 사용자 정의할 수 있습니다.
+      - **현대적인 대시보드.** 코드 없는 Vue.js 앱은 비기술 사용자에게 안전하고 직관적이며 교육이 필요하지 않습니다.
+  ja:
+    description: オープンソースヘッドレスCMS
+    readme: |
+      DirectusはSQLデータベースコンテンツを管理するためのリアルタイムAPIとアプリダッシュボードです。
+
+      <video controls width="100%" autoplay loop playsinline="true" src="https://marketing.directus.app/assets/b7a8a3ce-4a13-436a-b9ee-7b37210aefea"></video>
+
+      <hr>
+
+      ### 機能
+
+      - **オープンソース。** 人為的な制限、ベンダーロックイン、隠れた有料ウォールはありません。
+      - **RESTとGraphQL API。** 任意のSQLデータベースの上に瞬時に超高速なNode.js APIをレイヤーします。
+      - **純粋なSQLの管理。** 新しいまたは既存のSQLデータベースで動作し、マイグレーション不要です。
+      - **データベースを選択。** PostgreSQL、MySQL、SQLite、OracleDB、CockroachDB、MariaDB、MS-SQLをサポートします。
+      - **オンプレミスまたはクラウド。** ローカルで実行、オンプレミスでインストール、またはセルフサービスクラウドサービスを使用します。
+      - **完全に拡張可能。** ホワイトラベル用に構築され、モジュラープラットフォームのカスタマイズが簡単です。
+      - **モダンなダッシュボード。** ノーコードVue.jsアプリは非技術ユーザーにとって安全で直感的、トレーニング不要です。
 readme: |
   Directus is a real-time API and App dashboard for managing SQL database content.
 
