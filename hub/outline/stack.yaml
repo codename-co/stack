@@ -16,6 +16,292 @@ tags:
   - wiki
 alternativeTo:
   - confluence
+i18n:
+  de:
+    description: "Die schnellste Wissensdatenbank für wachsende Teams"
+    readme: |
+      Eine schnelle, kollaborative Wissensdatenbank für Ihr Team, entwickelt mit React und Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Funktionen
+
+      - **Schnelle Suche** 🔍 - Volltextsuche mit Typeahead-Vorschlägen
+      - **Markdown-Unterstützung** ✏️ - Schreiben Sie in Markdown mit einem Rich-Text-Editor
+      - **Echtzeit-Zusammenarbeit** 🤝 - Mehrere Personen können gleichzeitig ein Dokument bearbeiten
+      - **Slack-Integration** 💬 - Erhalten Sie Benachrichtigungen in Slack, wenn Dokumente aktualisiert werden
+      - **API** 🌐 - Vollständige JSON-API zur Integration mit anderen Tools
+      - **Authentifizierung** 🔐 - SAML, Google OAuth, Slack und mehr
+      - **Dunkler Modus** 🌓 - Wechseln Sie zwischen hellem und dunklem Modus
+      - **Anpassung** 🎨 - Passen Sie das Aussehen mit Ihrem eigenen Logo und Farben an
+  es:
+    description: "La base de conocimiento más rápida para equipos en crecimiento"
+    readme: |
+      Una base de conocimiento rápida y colaborativa para tu equipo, construida con React y Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Características
+
+      - **Búsqueda Rápida** 🔍 - Búsqueda de texto completo con sugerencias predictivas
+      - **Soporte de Markdown** ✏️ - Escribe en markdown con un editor de texto enriquecido
+      - **Colaboración en Tiempo Real** 🤝 - Varias personas pueden editar un documento al mismo tiempo
+      - **Integración con Slack** 💬 - Recibe notificaciones en Slack cuando se actualicen los documentos
+      - **API** 🌐 - API JSON completa para integrar con otras herramientas
+      - **Autenticación** 🔐 - SAML, Google OAuth, Slack y más
+      - **Modo Oscuro** 🌓 - Alterna entre modo claro y oscuro
+      - **Personalización** 🎨 - Personaliza la apariencia con tu propio logo y colores
+  fr:
+    description: "La base de connaissances la plus rapide pour les équipes en croissance"
+    readme: |
+      Une base de connaissances rapide et collaborative pour votre équipe, construite avec React et Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Fonctionnalités
+
+      - **Recherche Rapide** 🔍 - Recherche en texte intégral avec suggestions de saisie automatique
+      - **Support Markdown** ✏️ - Écrivez en markdown avec un éditeur de texte enrichi
+      - **Collaboration en Temps Réel** 🤝 - Plusieurs personnes peuvent éditer un document en même temps
+      - **Intégration Slack** 💬 - Recevez des notifications dans Slack lorsque les documents sont mis à jour
+      - **API** 🌐 - API JSON complète pour s'intégrer avec d'autres outils
+      - **Authentification** 🔐 - SAML, Google OAuth, Slack et plus
+      - **Mode Sombre** 🌓 - Basculez entre le mode clair et sombre
+      - **Personnalisation** 🎨 - Personnalisez l'apparence avec votre propre logo et couleurs
+  it:
+    description: "La base di conoscenza più veloce per team in crescita"
+    readme: |
+      Una base di conoscenza veloce e collaborativa per il tuo team, costruita con React e Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Caratteristiche
+
+      - **Ricerca Veloce** 🔍 - Ricerca full-text con suggerimenti predittivi
+      - **Supporto Markdown** ✏️ - Scrivi in markdown con un editor di testo avanzato
+      - **Collaborazione in Tempo Reale** 🤝 - Più persone possono modificare un documento contemporaneamente
+      - **Integrazione Slack** 💬 - Ricevi notifiche in Slack quando i documenti vengono aggiornati
+      - **API** 🌐 - API JSON completa per integrare con altri strumenti
+      - **Autenticazione** 🔐 - SAML, Google OAuth, Slack e altro
+      - **Modalità Scura** 🌓 - Passa tra modalità chiara e scura
+      - **Personalizzazione** 🎨 - Personalizza l'aspetto con il tuo logo e colori
+  nl:
+    description: "De snelste kennisbank voor groeiende teams"
+    readme: |
+      Een snelle, collaboratieve kennisbank voor je team, gebouwd met React en Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Functies
+
+      - **Snelle Zoekfunctie** 🔍 - Volledige tekst zoekopdrachten met typeahead suggesties
+      - **Markdown Ondersteuning** ✏️ - Schrijf in markdown met een rich text editor
+      - **Realtime Samenwerking** 🤝 - Meerdere mensen kunnen tegelijkertijd een document bewerken
+      - **Slack Integratie** 💬 - Ontvang meldingen in Slack wanneer documenten worden bijgewerkt
+      - **API** 🌐 - Volledige JSON API om te integreren met andere tools
+      - **Authenticatie** 🔐 - SAML, Google OAuth, Slack en meer
+      - **Donkere Modus** 🌓 - Schakel tussen lichte en donkere modus
+      - **Aanpassing** 🎨 - Pas het uiterlijk aan met je eigen logo en kleuren
+  pt:
+    description: "A base de conhecimento mais rápida para equipes em crescimento"
+    readme: |
+      Uma base de conhecimento rápida e colaborativa para sua equipe, construída com React e Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Recursos
+
+      - **Busca Rápida** 🔍 - Busca de texto completo com sugestões preditivas
+      - **Suporte a Markdown** ✏️ - Escreva em markdown com um editor de texto rico
+      - **Colaboração em Tempo Real** 🤝 - Várias pessoas podem editar um documento ao mesmo tempo
+      - **Integração com Slack** 💬 - Receba notificações no Slack quando documentos forem atualizados
+      - **API** 🌐 - API JSON completa para integrar com outras ferramentas
+      - **Autenticação** 🔐 - SAML, Google OAuth, Slack e mais
+      - **Modo Escuro** 🌓 - Alterne entre modo claro e escuro
+      - **Personalização** 🎨 - Personalize a aparência com seu próprio logo e cores
+  ro:
+    description: "Cea mai rapidă bază de cunoștințe pentru echipele în creștere"
+    readme: |
+      O bază de cunoștințe rapidă și colaborativă pentru echipa ta, construită cu React și Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Caracteristici
+
+      - **Căutare Rapidă** 🔍 - Căutare în text complet cu sugestii predictive
+      - **Suport Markdown** ✏️ - Scrie în markdown cu un editor de text îmbogățit
+      - **Colaborare în Timp Real** 🤝 - Mai multe persoane pot edita un document în același timp
+      - **Integrare Slack** 💬 - Primește notificări în Slack când documentele sunt actualizate
+      - **API** 🌐 - API JSON completă pentru integrare cu alte instrumente
+      - **Autentificare** 🔐 - SAML, Google OAuth, Slack și mai mult
+      - **Mod Întunecat** 🌓 - Comută între modul luminos și întunecat
+      - **Personalizare** 🎨 - Personalizează aspectul cu propriul logo și culori
+  tr:
+    description: "Büyüyen ekipler için en hızlı bilgi tabanı"
+    readme: |
+      React ve Node.js ile oluşturulmuş ekibiniz için hızlı, işbirlikçi bir bilgi tabanı.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Özellikler
+
+      - **Hızlı Arama** 🔍 - Otomatik tamamlamalı tam metin arama
+      - **Markdown Desteği** ✏️ - Zengin metin editörü ile markdown ile yazın
+      - **Gerçek Zamanlı İşbirliği** 🤝 - Birden fazla kişi aynı anda bir belgede çalışabilir
+      - **Slack Entegrasyonu** 💬 - Belgeler güncellendiğinde Slack'te bildirim alın
+      - **API** 🌐 - Diğer araçlarla entegrasyon için tam JSON API
+      - **Kimlik Doğrulama** 🔐 - SAML, Google OAuth, Slack ve daha fazlası
+      - **Karanlık Mod** 🌓 - Açık ve karanlık mod arasında geçiş yapın
+      - **Özelleştirme** 🎨 - Kendi logonuz ve renklerinizle görünümü özelleştirin
+  ar:
+    description: "أسرع قاعدة معرفة للفرق النامية"
+    readme: |
+      قاعدة معرفة سريعة وتعاونية لفريقك مبنية بـ React و Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### الميزات
+
+      - **البحث السريع** 🔍 - بحث النص الكامل مع اقتراحات تلقائية
+      - **دعم Markdown** ✏️ - اكتب بـ markdown مع محرر النصوص الغني
+      - **التعاون في الوقت الفعلي** 🤝 - يمكن لعدة أشخاص تحرير وثيقة في نفس الوقت
+      - **تكامل Slack** 💬 - احصل على إشعارات في Slack عندما يتم تحديث الوثائق
+      - **واجهة برمجة التطبيقات** 🌐 - واجهة JSON كاملة للتكامل مع أدوات أخرى
+      - **المصادقة** 🔐 - SAML، Google OAuth، Slack وأكثر
+      - **الوضع المظلم** 🌓 - التبديل بين الوضع الفاتح والمظلم
+      - **التخصيص** 🎨 - خصص المظهر بشعارك وألوانك الخاصة
+  uk:
+    description: "Найшвидша база знань для зростаючих команд"
+    readme: |
+      Швидка, колаборативна база знань для вашої команди, побудована на React і Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Функції
+
+      - **Швидкий Пошук** 🔍 - Повнотекстовий пошук з автодоповненням
+      - **Підтримка Markdown** ✏️ - Пишіть у markdown з багатим текстовим редактором
+      - **Співпраця в Реальному Часі** 🤝 - Декілька людей можуть редагувати документ одночасно
+      - **Інтеграція зі Slack** 💬 - Отримуйте сповіщення в Slack коли документи оновлюються
+      - **API** 🌐 - Повний JSON API для інтеграції з іншими інструментами
+      - **Автентифікація** 🔐 - SAML, Google OAuth, Slack та інше
+      - **Темний Режим** 🌓 - Перемикайтеся між світлим і темним режимами
+      - **Налаштування** 🎨 - Налаштуйте зовнішній вигляд з власним логотипом і кольорами
+  ru:
+    description: "Самая быстрая база знаний для растущих команд"
+    readme: |
+      Быстрая, совместная база знаний для вашей команды, построенная на React и Node.js.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### Функции
+
+      - **Быстрый Поиск** 🔍 - Полнотекстовый поиск с автодополнением
+      - **Поддержка Markdown** ✏️ - Пишите на markdown с богатым текстовым редактором
+      - **Совместная Работа в Режиме Реального Времени** 🤝 - Несколько человек могут редактировать документ одновременно
+      - **Интеграция со Slack** 💬 - Получайте уведомления в Slack при обновлении документов
+      - **API** 🌐 - Полный JSON API для интеграции с другими инструментами
+      - **Аутентификация** 🔐 - SAML, Google OAuth, Slack и другие
+      - **Тёмный Режим** 🌓 - Переключайтесь между светлым и тёмным режимами
+      - **Персонализация** 🎨 - Настройте внешний вид с собственным логотипом и цветами
+  hi:
+    description: "बढ़ती टीमों के लिए सबसे तेज़ ज्ञान आधार"
+    readme: |
+      React और Node.js के साथ बनाया गया आपकी टीम के लिए एक तेज़, सहयोगी ज्ञान आधार।
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### विशेषताएं
+
+      - **तेज़ खोज** 🔍 - टाइपअहेड सुझावों के साथ पूर्ण-पाठ खोज
+      - **Markdown समर्थन** ✏️ - रिच टेक्स्ट एडिटर के साथ markdown में लिखें
+      - **रियलटाइम सहयोग** 🤝 - कई लोग एक ही समय में एक दस्तावेज़ संपादित कर सकते हैं
+      - **Slack एकीकरण** 💬 - दस्तावेज़ अपडेट होने पर Slack में सूचनाएं प्राप्त करें
+      - **API** 🌐 - अन्य उपकरणों के साथ एकीकरण के लिए पूर्ण JSON API
+      - **प्रमाणीकरण** 🔐 - SAML, Google OAuth, Slack और अधिक
+      - **डार्क मोड** 🌓 - लाइट और डार्क मोड के बीच टॉगल करें
+      - **अनुकूलन** 🎨 - अपने लोगो और रंगों के साथ दिखावट को अनुकूलित करें
+  zh:
+    description: "适用于成长团队的最快知识库"
+    readme: |
+      使用 React 和 Node.js 构建的快速、协作式团队知识库。
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### 功能特性
+
+      - **快速搜索** 🔍 - 具有预输入建议的全文搜索
+      - **Markdown 支持** ✏️ - 使用富文本编辑器编写 markdown
+      - **实时协作** 🤝 - 多人可以同时编辑一个文档
+      - **Slack 集成** 💬 - 文档更新时在 Slack 中接收通知
+      - **API** 🌐 - 完整的 JSON API 与其他工具集成
+      - **身份验证** 🔐 - SAML、Google OAuth、Slack 等
+      - **深色模式** 🌓 - 在浅色和深色模式之间切换
+      - **自定义** 🎨 - 使用您自己的徽标和颜色自定义外观
+  ko:
+    description: "성장하는 팀을 위한 가장 빠른 지식 베이스"
+    readme: |
+      React와 Node.js로 구축된 팀을 위한 빠르고 협업적인 지식 베이스입니다.
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### 기능
+
+      - **빠른 검색** 🔍 - 자동완성 제안이 있는 전체 텍스트 검색
+      - **Markdown 지원** ✏️ - 리치 텍스트 에디터로 markdown 작성
+      - **실시간 협업** 🤝 - 여러 사람이 동시에 문서를 편집할 수 있습니다
+      - **Slack 통합** 💬 - 문서가 업데이트될 때 Slack에서 알림 받기
+      - **API** 🌐 - 다른 도구와 통합을 위한 완전한 JSON API
+      - **인증** 🔐 - SAML, Google OAuth, Slack 등
+      - **다크 모드** 🌓 - 라이트 모드와 다크 모드 간 전환
+      - **커스터마이징** 🎨 - 자신만의 로고와 색상으로 외관 사용자 정의
+  ja:
+    description: "成長するチームのための最速のナレッジベース"
+    readme: |
+      ReactとNode.jsで構築された、チーム向けの高速で協調的なナレッジベース。
+
+      ![preview](https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png)
+
+      <hr>
+
+      ### 機能
+
+      - **高速検索** 🔍 - 先行入力サジェスト付きの全文検索
+      - **Markdownサポート** ✏️ - リッチテキストエディターでMarkdownを記述
+      - **リアルタイム協業** 🤝 - 複数の人が同時にドキュメントを編集可能
+      - **Slack統合** 💬 - ドキュメントが更新されたときSlackで通知を受信
+      - **API** 🌐 - 他のツールと統合するための完全なJSON API
+      - **認証** 🔐 - SAML、Google OAuth、Slackなど
+      - **ダークモード** 🌓 - ライトモードとダークモードの切り替え
+      - **カスタマイズ** 🎨 - 独自のロゴと色で外観をカスタマイズ
 readme: |
   A fast, collaborative, knowledge base for your team built using React and Node.js.
 
