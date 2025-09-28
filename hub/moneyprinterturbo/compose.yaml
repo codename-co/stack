@@ -1,0 +1,50 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  moneyprinterturbo-webui:
+    build:
+      context: https://github.com/harry0703/MoneyPrinterTurbo.git#v${MONEYPRINTERTURBO_VERSION:-1.2.6}
+      dockerfile: Dockerfile
+    container_name: moneyprinterturbo-webui
+    env_file: .env
+    restart: unless-stopped
+    # ports:
+    #   - "8501:8501"
+    command:
+      [
+        "streamlit",
+        "run",
+        "./webui/Main.py",
+        "--browser.serverAddress=0.0.0.0",
+        "--server.enableCORS=True",
+        "--browser.gatherUsageStats=False",
+      ]
+    volumes:
+      - moneyprinter_storage:/MoneyPrinterTurbo/storage
+      - moneyprinter_models:/MoneyPrinterTurbo/models
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.moneyprinter-webui.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.moneyprinter-webui.loadbalancer.server.port: 8501
+
+  moneyprinterturbo-api:
+    build:
+      context: https://github.com/harry0703/MoneyPrinterTurbo.git#v${MONEYPRINTERTURBO_VERSION:-1.2.6}
+      dockerfile: Dockerfile
+    container_name: moneyprinterturbo-api
+    env_file: .env
+    restart: unless-stopped
+    # ports:
+    #   - "8080:8080"
+    command: ["python3", "main.py"]
+    volumes:
+      - moneyprinter_storage:/MoneyPrinterTurbo/storage
+      - moneyprinter_models:/MoneyPrinterTurbo/models
+    labels:
+      traefik.http.routers.moneyprinter-api.rule: Host(`api.$PROJECT.$DOMAIN`)
+      traefik.http.services.moneyprinter-api.loadbalancer.server.port: 8080
+
+volumes:
+  moneyprinter_storage:
+  moneyprinter_models:

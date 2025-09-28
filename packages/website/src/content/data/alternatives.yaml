@@ -363,6 +363,9 @@ alternatives:
   - slug: retrotool
     name: RetroTool
     description: Retrospective tool
+  - slug: runway
+    name: Runway
+    description: AI-powered video editing and creation
   - slug: salesforce
     name: Salesforce
     description: CRM platform

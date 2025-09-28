@@ -1,0 +1,416 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: moneyprinterturbo
+name: MoneyPrinterTurbo
+icon: 🎦
+flavor: DockerCompose
+version: "1.2.6"
+updated_at: 2025-05-10
+description: "AI-powered automated short video generation with text, voice, and visual content creation"
+author: harry0703
+license: MIT
+repository: https://github.com/harry0703/MoneyPrinterTurbo
+stars: 40600
+tags:
+  - ai
+  - video
+alternativeTo: [runway]
+readme: |
+  AI-powered automated short video generation with text, voice, and visual content creation.
+
+  MoneyPrinterTurbo leverages AI large models to generate high-definition short videos with one click. Simply provide a video topic or keywords, and it will automatically generate video scripts, video materials, video subtitles, and background music, then synthesize them into a high-definition short video.
+
+  ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+  <hr>
+
+  ### Features
+
+  - 🎬 **Complete MVC Architecture:** Clean code structure with API and Web interface support
+  - 🤖 **AI Script Generation:** Automatic video script generation or custom script support
+  - 📐 **Multiple HD Video Formats:** Support for vertical (9:16, 1080x1920) and horizontal (16:9, 1920x1080) formats
+  - 🎯 **Batch Video Generation:** Generate multiple videos at once and select the best one
+  - ⏱️ **Configurable Segment Duration:** Adjust material switching frequency
+  - 🌐 **Multilingual Support:** Chinese and English video script support
+  - 🗣️ **Multiple Voice Synthesis:** Real-time voice effect preview with multiple TTS providers
+  - 📝 **Subtitle Generation:** Customizable fonts, positions, colors, sizes with outline support
+  - 🎵 **Background Music:** Random or specified music files with volume control
+  - 🎥 **High-Quality Materials:** Copyright-free HD video sources plus local material support
+  - 🔗 **Multiple AI Models:** Support for OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen and more
+
+i18n:
+  de:
+    description: "KI-gestützte automatisierte Kurzvideo-Generierung mit Text-, Sprach- und visueller Inhaltserstellung"
+    readme: |
+      KI-gestützte automatisierte Kurzvideo-Generierung mit Text-, Sprach- und visueller Inhaltserstellung.
+
+      MoneyPrinterTurbo nutzt KI-Großmodelle, um hochauflösende Kurzvideos mit einem Klick zu generieren. Geben Sie einfach ein Video-Thema oder Schlüsselwörter an, und es generiert automatisch Video-Skripte, Video-Materialien, Video-Untertitel und Hintergrundmusik und synthetisiert sie zu einem hochauflösenden Kurzvideo.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Funktionen
+
+      - 🎬 **Vollständige MVC-Architektur:** Saubere Code-Struktur mit API- und Web-Interface-Unterstützung
+      - 🤖 **KI-Skript-Generierung:** Automatische Video-Skript-Generierung oder benutzerdefinierte Skript-Unterstützung
+      - 📐 **Mehrere HD-Video-Formate:** Unterstützung für vertikale (9:16, 1080x1920) und horizontale (16:9, 1920x1080) Formate
+      - 🎯 **Batch-Video-Generierung:** Mehrere Videos auf einmal generieren und das beste auswählen
+      - ⏱️ **Konfigurierbare Segment-Dauer:** Häufigkeit des Material-Wechsels anpassen
+      - 🌐 **Mehrsprachige Unterstützung:** Chinesische und englische Video-Skript-Unterstützung
+      - 🗣️ **Mehrere Sprach-Synthese:** Echtzeit-Spracheffekt-Vorschau mit mehreren TTS-Anbietern
+      - 📝 **Untertitel-Generierung:** Anpassbare Schriften, Positionen, Farben, Größen mit Umriss-Unterstützung
+      - 🎵 **Hintergrundmusik:** Zufällige oder angegebene Musikdateien mit Lautstärke-Kontrolle
+      - 🎥 **Hochwertige Materialien:** Urheberrechtsfreie HD-Video-Quellen plus lokale Material-Unterstützung
+      - 🔗 **Mehrere KI-Modelle:** Unterstützung für OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen und mehr
+
+  es:
+    description: "Generación automatizada de videos cortos con IA con creación de contenido de texto, voz y visual"
+    readme: |
+      Generación automatizada de videos cortos con IA con creación de contenido de texto, voz y visual.
+
+      MoneyPrinterTurbo aprovecha los modelos grandes de IA para generar videos cortos de alta definición con un clic. Simplemente proporcione un tema de video o palabras clave, y generará automáticamente guiones de video, materiales de video, subtítulos de video y música de fondo, luego los sintetiza en un video corto de alta definición.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Características
+
+      - 🎬 **Arquitectura MVC Completa:** Estructura de código limpia con soporte de API e interfaz web
+      - 🤖 **Generación de Guiones con IA:** Generación automática de guiones de video o soporte de guiones personalizados
+      - 📐 **Múltiples Formatos de Video HD:** Soporte para formatos verticales (9:16, 1080x1920) y horizontales (16:9, 1920x1080)
+      - 🎯 **Generación de Videos por Lotes:** Genere múltiples videos a la vez y seleccione el mejor
+      - ⏱️ **Duración de Segmento Configurable:** Ajuste la frecuencia de cambio de material
+      - 🌐 **Soporte Multiidioma:** Soporte de guiones de video en chino e inglés
+      - 🗣️ **Múltiple Síntesis de Voz:** Vista previa de efectos de voz en tiempo real con múltiples proveedores TTS
+      - 📝 **Generación de Subtítulos:** Fuentes, posiciones, colores, tamaños personalizables con soporte de contorno
+      - 🎵 **Música de Fondo:** Archivos de música aleatorios o especificados con control de volumen
+      - 🎥 **Materiales de Alta Calidad:** Fuentes de video HD libres de derechos de autor más soporte de material local
+      - 🔗 **Múltiples Modelos de IA:** Soporte para OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen y más
+
+  fr:
+    description: "Génération automatisée de vidéos courtes alimentée par l'IA avec création de contenu textuel, vocal et visuel"
+    readme: |
+      Génération automatisée de vidéos courtes alimentée par l'IA avec création de contenu textuel, vocal et visuel.
+
+      MoneyPrinterTurbo exploite les grands modèles d'IA pour générer des vidéos courtes haute définition en un clic. Fournissez simplement un sujet vidéo ou des mots-clés, et il générera automatiquement des scripts vidéo, des matériaux vidéo, des sous-titres vidéo et de la musique de fond, puis les synthétisera en une vidéo courte haute définition.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Fonctionnalités
+
+      - 🎬 **Architecture MVC Complète:** Structure de code propre avec support API et interface web
+      - 🤖 **Génération de Scripts IA:** Génération automatique de scripts vidéo ou support de scripts personnalisés
+      - 📐 **Formats Vidéo HD Multiples:** Support pour les formats verticaux (9:16, 1080x1920) et horizontaux (16:9, 1920x1080)
+      - 🎯 **Génération de Vidéos par Lots:** Générez plusieurs vidéos à la fois et sélectionnez la meilleure
+      - ⏱️ **Durée de Segment Configurable:** Ajustez la fréquence de changement de matériau
+      - 🌐 **Support Multilingue:** Support de scripts vidéo chinois et anglais
+      - 🗣️ **Synthèse Vocale Multiple:** Aperçu d'effets vocaux en temps réel avec plusieurs fournisseurs TTS
+      - 📝 **Génération de Sous-titres:** Polices, positions, couleurs, tailles personnalisables avec support de contour
+      - 🎵 **Musique de Fond:** Fichiers musicaux aléatoires ou spécifiés avec contrôle du volume
+      - 🎥 **Matériaux de Haute Qualité:** Sources vidéo HD libres de droits plus support de matériau local
+      - 🔗 **Modèles IA Multiples:** Support pour OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen et plus
+
+  it:
+    description: "Generazione automatizzata di video brevi alimentata dall'IA con creazione di contenuti testuali, vocali e visivi"
+    readme: |
+      Generazione automatizzata di video brevi alimentata dall'IA con creazione di contenuti testuali, vocali e visivi.
+
+      MoneyPrinterTurbo sfrutta i grandi modelli di IA per generare video brevi ad alta definizione con un clic. Fornisci semplicemente un argomento video o parole chiave, e genererà automaticamente script video, materiali video, sottotitoli video e musica di sottofondo, quindi li sintetizza in un video breve ad alta definizione.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Caratteristiche
+
+      - 🎬 **Architettura MVC Completa:** Struttura del codice pulita con supporto API e interfaccia web
+      - 🤖 **Generazione Script IA:** Generazione automatica di script video o supporto per script personalizzati
+      - 📐 **Formati Video HD Multipli:** Supporto per formati verticali (9:16, 1080x1920) e orizzontali (16:9, 1920x1080)
+      - 🎯 **Generazione Video in Batch:** Genera più video contemporaneamente e seleziona il migliore
+      - ⏱️ **Durata Segmento Configurabile:** Regola la frequenza di cambio materiale
+      - 🌐 **Supporto Multilingue:** Supporto per script video cinesi e inglesi
+      - 🗣️ **Sintesi Vocale Multipla:** Anteprima effetti vocali in tempo reale con più fornitori TTS
+      - 📝 **Generazione Sottotitoli:** Font, posizioni, colori, dimensioni personalizzabili con supporto contorno
+      - 🎵 **Musica di Sottofondo:** File musicali casuali o specificati con controllo volume
+      - 🎥 **Materiali di Alta Qualità:** Fonti video HD senza copyright più supporto materiali locali
+      - 🔗 **Modelli IA Multipli:** Supporto per OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen e altri
+
+  nl:
+    description: "AI-aangedreven geautomatiseerde korte video generatie met tekst, spraak en visuele content creatie"
+    readme: |
+      AI-aangedreven geautomatiseerde korte video generatie met tekst, spraak en visuele content creatie.
+
+      MoneyPrinterTurbo benut AI grote modellen om high-definition korte video's te genereren met één klik. Geef eenvoudig een video onderwerp of trefwoorden op, en het zal automatisch video scripts, video materialen, video ondertitels en achtergrondmuziek genereren, en ze vervolgens synthetiseren tot een high-definition korte video.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Functies
+
+      - 🎬 **Complete MVC Architectuur:** Schone code structuur met API en web interface ondersteuning
+      - 🤖 **AI Script Generatie:** Automatische video script generatie of aangepaste script ondersteuning
+      - 📐 **Meerdere HD Video Formaten:** Ondersteuning voor verticale (9:16, 1080x1920) en horizontale (16:9, 1920x1080) formaten
+      - 🎯 **Batch Video Generatie:** Genereer meerdere video's tegelijk en selecteer de beste
+      - ⏱️ **Configureerbare Segment Duur:** Pas materiaal wissel frequentie aan
+      - 🌐 **Meertalige Ondersteuning:** Chinese en Engelse video script ondersteuning
+      - 🗣️ **Meerdere Spraak Synthese:** Real-time spraak effect preview met meerdere TTS providers
+      - 📝 **Ondertitel Generatie:** Aanpasbare lettertypen, posities, kleuren, groottes met omtrek ondersteuning
+      - 🎵 **Achtergrondmuziek:** Willekeurige of gespecificeerde muziekbestanden met volume controle
+      - 🎥 **Hoogwaardige Materialen:** Copyright-vrije HD video bronnen plus lokale materiaal ondersteuning
+      - 🔗 **Meerdere AI Modellen:** Ondersteuning voor OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen en meer
+
+  pt:
+    description: "Geração automatizada de vídeos curtos alimentada por IA com criação de conteúdo de texto, voz e visual"
+    readme: |
+      Geração automatizada de vídeos curtos alimentada por IA com criação de conteúdo de texto, voz e visual.
+
+      MoneyPrinterTurbo aproveita modelos grandes de IA para gerar vídeos curtos de alta definição com um clique. Simplesmente forneça um tópico de vídeo ou palavras-chave, e ele gerará automaticamente scripts de vídeo, materiais de vídeo, legendas de vídeo e música de fundo, então os sintetiza em um vídeo curto de alta definição.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Recursos
+
+      - 🎬 **Arquitetura MVC Completa:** Estrutura de código limpa com suporte a API e interface web
+      - 🤖 **Geração de Script IA:** Geração automática de script de vídeo ou suporte a script personalizado
+      - 📐 **Múltiplos Formatos de Vídeo HD:** Suporte para formatos verticais (9:16, 1080x1920) e horizontais (16:9, 1920x1080)
+      - 🎯 **Geração de Vídeo em Lote:** Gere múltiplos vídeos de uma vez e selecione o melhor
+      - ⏱️ **Duração de Segmento Configurável:** Ajuste a frequência de troca de material
+      - 🌐 **Suporte Multilíngue:** Suporte a scripts de vídeo chinês e inglês
+      - 🗣️ **Síntese de Voz Múltipla:** Prévia de efeitos de voz em tempo real com múltiplos provedores TTS
+      - 📝 **Geração de Legendas:** Fontes, posições, cores, tamanhos personalizáveis com suporte a contorno
+      - 🎵 **Música de Fundo:** Arquivos de música aleatórios ou especificados com controle de volume
+      - 🎥 **Materiais de Alta Qualidade:** Fontes de vídeo HD livres de direitos autorais mais suporte a material local
+      - 🔗 **Múltiplos Modelos de IA:** Suporte para OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen e mais
+
+  ro:
+    description: "Generare automatizată de videoclipuri scurte alimentată de AI cu crearea de conținut text, vocal și vizual"
+    readme: |
+      Generare automatizată de videoclipuri scurte alimentată de AI cu crearea de conținut text, vocal și vizual.
+
+      MoneyPrinterTurbo folosește modele mari de AI pentru a genera videoclipuri scurte de înaltă definiție cu un clic. Pur și simplu furnizați un subiect video sau cuvinte cheie, și va genera automat scripturi video, materiale video, subtitrări video și muzică de fundal, apoi le sintetizează într-un videoclip scurt de înaltă definiție.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Caracteristici
+
+      - 🎬 **Arhitectură MVC Completă:** Structură de cod curată cu suport API și interfață web
+      - 🤖 **Generare Script AI:** Generare automată de scripturi video sau suport pentru scripturi personalizate
+      - 📐 **Formate Video HD Multiple:** Suport pentru formate verticale (9:16, 1080x1920) și orizontale (16:9, 1920x1080)
+      - 🎯 **Generare Video în Lot:** Generați multiple videoclipuri deodată și selectați cel mai bun
+      - ⏱️ **Durată Segment Configurabilă:** Ajustați frecvența schimbării materialului
+      - 🌐 **Suport Multilingv:** Suport pentru scripturi video chineze și engleze
+      - 🗣️ **Sinteză Vocală Multiplă:** Previzualizare efecte vocale în timp real cu furnizori TTS multipli
+      - 📝 **Generare Subtitrări:** Fonturi, poziții, culori, dimensiuni personalizabile cu suport pentru contur
+      - 🎵 **Muzică de Fundal:** Fișiere muzicale aleatorii sau specificate cu control volum
+      - 🎥 **Materiale de Înaltă Calitate:** Surse video HD fără drepturi de autor plus suport material local
+      - 🔗 **Modele AI Multiple:** Suport pentru OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen și altele
+
+  tr:
+    description: "Metin, ses ve görsel içerik oluşturma ile AI destekli otomatik kısa video üretimi"
+    readme: |
+      Metin, ses ve görsel içerik oluşturma ile AI destekli otomatik kısa video üretimi.
+
+      MoneyPrinterTurbo, tek tıklamayla yüksek çözünürlüklü kısa videolar üretmek için AI büyük modellerini kullanır. Sadece bir video konusu veya anahtar kelimeler sağlayın, otomatik olarak video senaryoları, video malzemeleri, video altyazıları ve arka plan müziği oluşturacak, ardından bunları yüksek çözünürlüklü kısa bir videoda sentezleyecektir.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Özellikler
+
+      - 🎬 **Tam MVC Mimarisi:** API ve web arayüzü desteği ile temiz kod yapısı
+      - 🤖 **AI Senaryo Oluşturma:** Otomatik video senaryo oluşturma veya özel senaryo desteği
+      - 📐 **Çoklu HD Video Formatları:** Dikey (9:16, 1080x1920) ve yatay (16:9, 1920x1080) format desteği
+      - 🎯 **Toplu Video Oluşturma:** Aynı anda birden fazla video oluşturun ve en iyisini seçin
+      - ⏱️ **Yapılandırılabilir Segment Süresi:** Malzeme değiştirme sıklığını ayarlayın
+      - 🌐 **Çok Dil Desteği:** Çince ve İngilizce video senaryo desteği
+      - 🗣️ **Çoklu Ses Sentezi:** Birden fazla TTS sağlayıcısı ile gerçek zamanlı ses efekti önizlemesi
+      - 📝 **Altyazı Oluşturma:** Kontur desteği ile özelleştirilebilir yazı tipleri, pozisyonlar, renkler, boyutlar
+      - 🎵 **Arka Plan Müziği:** Ses kontrolü ile rastgele veya belirtilen müzik dosyaları
+      - 🎥 **Yüksek Kaliteli Malzemeler:** Telif hakkı olmayan HD video kaynakları artı yerel malzeme desteği
+      - 🔗 **Çoklu AI Modelleri:** OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen ve daha fazlası için destek
+
+  ar:
+    description: "إنتاج فيديوهات قصيرة تلقائي مدعوم بالذكاء الاصطناعي مع إنشاء محتوى نصي وصوتي ومرئي"
+    readme: |
+      إنتاج فيديوهات قصيرة تلقائي مدعوم بالذكاء الاصطناعي مع إنشاء محتوى نصي وصوتي ومرئي.
+
+      يستفيد MoneyPrinterTurbo من نماذج الذكاء الاصطناعي الكبيرة لإنتاج فيديوهات قصيرة عالية الدقة بنقرة واحدة. ما عليك سوى تقديم موضوع فيديو أو كلمات مفتاحية، وسيقوم تلقائياً بإنتاج نصوص الفيديو ومواد الفيديو وترجمات الفيديو والموسيقى الخلفية، ثم يدمجها في فيديو قصير عالي الدقة.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### الميزات
+
+      - 🎬 **بنية MVC كاملة:** هيكل كود نظيف مع دعم API وواجهة ويب
+      - 🤖 **إنتاج النصوص بالذكاء الاصطناعي:** إنتاج تلقائي لنصوص الفيديو أو دعم النصوص المخصصة
+      - 📐 **تنسيقات فيديو HD متعددة:** دعم للتنسيقات العمودية (9:16، 1080x1920) والأفقية (16:9، 1920x1080)
+      - 🎯 **إنتاج فيديوهات بالمجموعات:** أنتج فيديوهات متعددة في وقت واحد واختر الأفضل
+      - ⏱️ **مدة قطعة قابلة للتكوين:** اضبط تكرار تغيير المواد
+      - 🌐 **دعم متعدد اللغات:** دعم نصوص الفيديو الصينية والإنجليزية
+      - 🗣️ **تركيب صوتي متعدد:** معاينة تأثيرات صوتية في الوقت الفعلي مع موفري TTS متعددين
+      - 📝 **إنتاج الترجمات:** خطوط ومواقع وألوان وأحجام قابلة للتخصيص مع دعم المخطط
+      - 🎵 **موسيقى خلفية:** ملفات موسيقية عشوائية أو محددة مع تحكم في الصوت
+      - 🎥 **مواد عالية الجودة:** مصادر فيديو HD خالية من حقوق الطبع والنشر بالإضافة إلى دعم المواد المحلية
+      - 🔗 **نماذج ذكاء اصطناعي متعددة:** دعم لـ OpenAI وMoonshot وAzure وGemini وOllama وDeepSeek وQwen والمزيد
+
+  uk:
+    description: "ШІ-керована автоматизована генерація коротких відео з створенням текстового, голосового та візуального контенту"
+    readme: |
+      ШІ-керована автоматизована генерація коротких відео з створенням текстового, голосового та візуального контенту.
+
+      MoneyPrinterTurbo використовує великі моделі ШІ для генерації коротких відео високої четкості одним кліком. Просто надайте тему відео або ключові слова, і воно автоматично згенерує сценарії відео, матеріали відео, субтитри відео та фонову музику, а потім синтезує їх у коротке відео високої четкості.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Особливості
+
+      - 🎬 **Повна MVC архітектура:** Чиста структура коду з підтримкою API та веб-інтерфейсу
+      - 🤖 **Генерація сценаріїв ШІ:** Автоматична генерація сценаріїв відео або підтримка користувацьких сценаріїв
+      - 📐 **Множинні HD формати відео:** Підтримка вертикальних (9:16, 1080x1920) та горизонтальних (16:9, 1920x1080) форматів
+      - 🎯 **Пакетна генерація відео:** Генеруйте кілька відео одночасно та виберіть найкраще
+      - ⏱️ **Налаштовувана тривалість сегменту:** Регулюйте частоту зміни матеріалу
+      - 🌐 **Багатомовна підтримка:** Підтримка китайських та англійських сценаріїв відео
+      - 🗣️ **Множинний голосовий синтез:** Попередній перегляд голосових ефектів у реальному часі з кількома TTS провайдерами
+      - 📝 **Генерація субтитрів:** Налаштовувані шрифти, позиції, кольори, розміри з підтримкою контуру
+      - 🎵 **Фонова музика:** Випадкові або вказані музичні файли з контролем гучності
+      - 🎥 **Високоякісні матеріали:** HD відео джерела без авторських прав плюс підтримка локальних матеріалів
+      - 🔗 **Множинні ШІ моделі:** Підтримка OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen та інших
+
+  ru:
+    description: "ИИ-управляемая автоматизированная генерация коротких видео с созданием текстового, голосового и визуального контента"
+    readme: |
+      ИИ-управляемая автоматизированная генерация коротких видео с созданием текстового, голосового и визуального контента.
+
+      MoneyPrinterTurbo использует большие модели ИИ для генерации коротких видео высокой четкости одним кликом. Просто предоставьте тему видео или ключевые слова, и он автоматически сгенерирует сценарии видео, материалы видео, субтитры видео и фоновую музыку, затем синтезирует их в короткое видео высокой четкости.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### Особенности
+
+      - 🎬 **Полная MVC архитектура:** Чистая структура кода с поддержкой API и веб-интерфейса
+      - 🤖 **Генерация сценариев ИИ:** Автоматическая генерация сценариев видео или поддержка пользовательских сценариев
+      - 📐 **Множественные HD форматы видео:** Поддержка вертикальных (9:16, 1080x1920) и горизонтальных (16:9, 1920x1080) форматов
+      - 🎯 **Пакетная генерация видео:** Генерируйте несколько видео одновременно и выберите лучшее
+      - ⏱️ **Настраиваемая длительность сегмента:** Регулируйте частоту смены материала
+      - 🌐 **Многоязычная поддержка:** Поддержка китайских и английских сценариев видео
+      - 🗣️ **Множественный голосовой синтез:** Предварительный просмотр голосовых эффектов в реальном времени с несколькими TTS провайдерами
+      - 📝 **Генерация субтитров:** Настраиваемые шрифты, позиции, цвета, размеры с поддержкой контура
+      - 🎵 **Фоновая музыка:** Случайные или указанные музыкальные файлы с контролем громкости
+      - 🎥 **Высококачественные материалы:** HD видео источники без авторских прав плюс поддержка локальных материалов
+      - 🔗 **Множественные ИИ модели:** Поддержка OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen и других
+
+  hi:
+    description: "टेक्स्ट, आवाज़ और दृश्य सामग्री निर्माण के साथ AI-संचालित स्वचालित छोटे वीडियो जेनरेशन"
+    readme: |
+      टेक्स्ट, आवाज़ और दृश्य सामग्री निर्माण के साथ AI-संचालित स्वचालित छोटे वीडियो जेनरेशन।
+
+      MoneyPrinterTurbo एक क्लिक से उच्च-परिभाषा छोटे वीडियो उत्पन्न करने के लिए AI बड़े मॉडल का लाभ उठाता है। बस एक वीडियो विषय या कीवर्ड प्रदान करें, और यह स्वचालित रूप से वीडियो स्क्रिप्ट, वीडियो सामग्री, वीडियो उपशीर्षक और पृष्ठभूमि संगीत उत्पन्न करेगा, फिर उन्हें एक उच्च-परिभाषा छोटे वीडियो में संश्लेषित करेगा।
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### विशेषताएं
+
+      - 🎬 **पूर्ण MVC आर्किटेक्चर:** API और वेब इंटरफ़ेस सपोर्ट के साथ स्वच्छ कोड संरचना
+      - 🤖 **AI स्क्रिप्ट जेनरेशन:** स्वचालित वीडियो स्क्रिप्ट जेनरेशन या कस्टम स्क्रिप्ट सपोर्ट
+      - 📐 **मल्टिपल HD वीडियो फॉर्मेट:** वर्टिकल (9:16, 1080x1920) और हॉरिज़ॉन्टल (16:9, 1920x1080) फॉर्मेट के लिए सपोर्ट
+      - 🎯 **बैच वीडियो जेनरेशन:** एक साथ कई वीडियो जेनरेट करें और सबसे अच्छा चुनें
+      - ⏱️ **कॉन्फ़िगरेबल सेगमेंट अवधि:** सामग्री स्विचिंग आवृत्ति को समायोजित करें
+      - 🌐 **बहुभाषी सपोर्ट:** चीनी और अंग्रेजी वीडियो स्क्रिप्ट सपोर्ट
+      - 🗣️ **मल्टिपल वॉइस सिंथेसिस:** कई TTS प्रदाताओं के साथ रियल-टाइम वॉइस इफेक्ट प्रीव्यू
+      - 📝 **सबटाइटल जेनरेशन:** आउटलाइन सपोर्ट के साथ कस्टमाइज़ेबल फॉन्ट, पोज़िशन, रंग, साइज़
+      - 🎵 **बैकग्राउंड म्यूज़िक:** वॉल्यूम कंट्रोल के साथ रैंडम या स्पेसिफाइड म्यूज़िक फाइलें
+      - 🎥 **उच्च गुणवत्ता की सामग्री:** कॉपीराइट-फ्री HD वीडियो स्रोत प्लस स्थानीय सामग्री सपोर्ट
+      - 🔗 **मल्टिपल AI मॉडल:** OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen और अधिक के लिए सपोर्ट
+
+  zh:
+    description: "AI驱动的自动化短视频生成，具备文本、语音和视觉内容创作"
+    readme: |
+      AI驱动的自动化短视频生成，具备文本、语音和视觉内容创作。
+
+      MoneyPrinterTurbo利用AI大模型，一键生成高清短视频。只需提供视频主题或关键词，它将自动生成视频脚本、视频素材、视频字幕和背景音乐，然后将它们合成为高清短视频。
+
+      ![MoneyPrinterTurbo Web Interface](https://raw.githubusercontent.com/harry0703/MoneyPrinterTurbo/main/docs/webui.jpg)
+
+      <hr>
+
+      ### 功能特色
+
+      - 🎬 **完整MVC架构：** 清晰的代码结构，支持API和Web界面
+      - 🤖 **AI脚本生成：** 自动视频脚本生成或自定义脚本支持
+      - 📐 **多种高清视频格式：** 支持竖屏(9:16, 1080x1920)和横屏(16:9, 1920x1080)格式
+      - 🎯 **批量视频生成：** 一次生成多个视频并选择最佳的
+      - ⏱️ **可配置片段时长：** 调整素材切换频率
+      - 🌐 **多语言支持：** 中文和英文视频脚本支持
+      - 🗣️ **多重语音合成：** 实时语音效果预览，支持多个TTS提供商
+      - 📝 **字幕生成：** 可自定义字体、位置、颜色、大小，支持描边
+      - 🎵 **背景音乐：** 随机或指定音乐文件，支持音量控制
+      - 🎥 **高质量素材：** 无版权高清视频源加本地素材支持
+      - 🔗 **多种AI模型：** 支持OpenAI、Moonshot、Azure、Gemini、Ollama、DeepSeek、Qwen等
+
+  ko:
+    description: "텍스트, 음성 및 시각적 콘텐츠 생성이 포함된 AI 기반 자동화된 짧은 동영상 생성"
+    readme: |
+      텍스트, 음성 및 시각적 콘텐츠 생성이 포함된 AI 기반 자동화된 짧은 동영상 생성.
+
+      MoneyPrinterTurbo는 AI 대형 모델을 활용하여 한 번의 클릭으로 고화질 짧은 동영상을 생성합니다. 단순히 동영상 주제나 키워드를 제공하면, 자동으로 동영상 스크립트, 동영상 소재, 동영상 자막 및 배경 음악을 생성하여 고화질 짧은 동영상으로 합성합니다.
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### 기능
+
+      - 🎬 **완전한 MVC 아키텍처:** API 및 웹 인터페이스 지원이 포함된 깔끔한 코드 구조
+      - 🤖 **AI 스크립트 생성:** 자동 동영상 스크립트 생성 또는 사용자 정의 스크립트 지원
+      - 📐 **다중 HD 동영상 형식:** 세로형(9:16, 1080x1920) 및 가로형(16:9, 1920x1080) 형식 지원
+      - 🎯 **일괄 동영상 생성:** 여러 동영상을 한 번에 생성하고 최고의 것을 선택
+      - ⏱️ **구성 가능한 세그먼트 지속 시간:** 소재 전환 빈도 조정
+      - 🌐 **다국어 지원:** 중국어 및 영어 동영상 스크립트 지원
+      - 🗣️ **다중 음성 합성:** 여러 TTS 제공업체와 함께 실시간 음성 효과 미리보기
+      - 📝 **자막 생성:** 윤곽선 지원이 포함된 사용자 정의 가능한 글꼴, 위치, 색상, 크기
+      - 🎵 **배경 음악:** 볼륨 제어가 포함된 랜덤 또는 지정된 음악 파일
+      - 🎥 **고품질 소재:** 저작권 없는 HD 동영상 소스 및 로컬 소재 지원
+      - 🔗 **다중 AI 모델:** OpenAI, Moonshot, Azure, Gemini, Ollama, DeepSeek, Qwen 등 지원
+
+  ja:
+    description: "テキスト、音声、視覚コンテンツ作成を備えたAI駆動の自動化された短編動画生成"
+    readme: |
+      テキスト、音声、視覚コンテンツ作成を備えたAI駆動の自動化された短編動画生成。
+
+      MoneyPrinterTurboはAI大規模モデルを活用して、ワンクリックで高解像度の短編動画を生成します。単に動画のトピックやキーワードを提供するだけで、自動的に動画スクリプト、動画素材、動画字幕、背景音楽を生成し、それらを高解像度の短編動画に合成します。
+
+      ![MoneyPrinterTurbo Web Interface](https://github.com/harry0703/MoneyPrinterTurbo/raw/main/docs/webui-en.jpg)
+
+      <hr>
+
+      ### 機能
+
+      - 🎬 **完全なMVCアーキテクチャ:** APIとWebインターフェースサポートを備えたクリーンなコード構造
+      - 🤖 **AIスクリプト生成:** 自動動画スクリプト生成またはカスタムスクリプトサポート
+      - 📐 **複数のHD動画フォーマット:** 縦型（9:16, 1080x1920）および横型（16:9, 1920x1080）フォーマットサポート
+      - 🎯 **バッチ動画生成:** 複数の動画を一度に生成し、最良のものを選択
+      - ⏱️ **設定可能なセグメント時間:** 素材切り替え頻度を調整
+      - 🌐 **多言語サポート:** 中国語と英語の動画スクリプトサポート
+      - 🗣️ **複数音声合成:** 複数のTTSプロバイダーでリアルタイム音声効果プレビュー
+      - 📝 **字幕生成:** アウトラインサポート付きのカスタマイズ可能なフォント、位置、色、サイズ
+      - 🎵 **背景音楽:** 音量コントロール付きのランダムまたは指定した音楽ファイル
+      - 🎥 **高品質素材:** 著作権フリーのHD動画ソースとローカル素材サポート
+      - 🔗 **複数AIモデル:** OpenAI、Moonshot、Azure、Gemini、Ollama、DeepSeek、Qwenなどをサポート
