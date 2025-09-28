@@ -1,0 +1,106 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  database:
+    image: postgres:15.8
+    restart: unless-stopped
+    env_file: .env
+    expose:
+      - 5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: latitude_production
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    expose:
+      - 6379
+
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    expose:
+      - 8025
+      - 1025
+
+  migrations:
+    image: ghcr.io/latitude-dev/migrations:latest
+    platform: linux/amd64
+    env_file: .env
+    depends_on:
+      - database
+
+  web:
+    image: ghcr.io/latitude-dev/web:latest
+    platform: linux/amd64
+    restart: unless-stopped
+    env_file: .env
+    # ports:
+    #   - 3000:8080
+    volumes:
+      - shared_storage:/shared
+      - app_storage:/app/storage
+    depends_on:
+      database:
+        condition: service_started
+      redis:
+        condition: service_started
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.latitude-web.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.services.latitude-web.loadbalancer.server.port: 8080
+
+  gateway:
+    image: ghcr.io/latitude-dev/gateway:latest
+    platform: linux/amd64
+    restart: unless-stopped
+    env_file: .env
+    expose:
+      - 8080
+    volumes:
+      - shared_storage:/shared
+    depends_on:
+      database:
+        condition: service_started
+      redis:
+        condition: service_started
+    labels:
+      traefik.http.routers.latitude-gateway.rule: Host(`gateway.$PROJECT.$DOMAIN`)
+      traefik.http.services.latitude-gateway.loadbalancer.server.port: 8080
+
+  websockets:
+    image: ghcr.io/latitude-dev/websockets:latest
+    platform: linux/amd64
+    restart: unless-stopped
+    env_file: .env
+    expose:
+      - 8080
+    volumes:
+      - shared_storage:/shared
+    depends_on:
+      database:
+        condition: service_started
+      redis:
+        condition: service_started
+
+  workers:
+    image: ghcr.io/latitude-dev/workers:latest
+    platform: linux/amd64
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - shared_storage:/shared
+      - app_storage:/app/storage
+    depends_on:
+      database:
+        condition: service_started
+      redis:
+        condition: service_started
+
+volumes:
+  db_data:
+  shared_storage:
+  app_storage:

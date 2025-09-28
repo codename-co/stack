@@ -1,0 +1,354 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+slug: latitude-llm
+name: Latitude LLM
+flavor: DockerCompose
+version: "5.1.0"
+updated_at: 2025-09-19
+description: Open-source prompt engineering platform to build, evaluate, and refine AI prompts
+author: Latitude Inc
+license: LGPL-3.0
+homepage: https://latitude.so
+repository: https://github.com/latitude-dev/latitude-llm
+stars: 3400
+tags:
+  - ai
+  - llm
+alternativeTo: [langsmith]
+readme: |
+  Latitude is an open-source platform for AI prompt engineering, deployment, and evaluation. It helps teams build, test, and maintain reliable AI applications by providing a complete lifecycle management system for prompts.
+
+  The Open-Source Prompt Engineering Platform for building, evaluating, and refining AI prompts with comprehensive tooling.
+
+  ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+  <hr>
+
+  ### Features
+
+  - ✨ **Prompt Manager:** Create, version, and collaborate on prompts with advanced editor supporting variables, conditionals, and loops
+  - 🎮 **Interactive Playground:** Test prompts interactively with different inputs, parameters, and tool configurations
+  - 🚀 **AI Gateway:** Deploy prompts as API endpoints that stay up-to-date with published changes
+  - 📊 **Evaluations:** Assess prompt performance via LLM-as-judge, programmatic rules, or human review
+  - 📈 **Logs & Observability:** Automatically capture all interactions with prompts and models
+  - 🗃️ **Datasets:** Manage test data for batch evaluations and regression testing
+  - 🔗 **Integrations:** Seamlessly integrate with existing stack via SDKs and APIs
+  - 👥 **Team Collaboration:** Cross-functional teams can collaborate throughout AI development process
+
+i18n:
+  de:
+    description: "Open-Source-Plattform für Prompt-Engineering zum Erstellen, Bewerten und Verfeinern von KI-Prompts"
+    readme: |
+      Latitude ist eine Open-Source-Plattform für KI-Prompt-Engineering, Bereitstellung und Bewertung. Sie hilft Teams dabei, zuverlässige KI-Anwendungen zu erstellen, zu testen und zu warten, indem sie ein vollständiges Lifecycle-Management-System für Prompts bereitstellt.
+
+      Die Open-Source-Prompt-Engineering-Plattform zum Erstellen, Bewerten und Verfeinern von KI-Prompts mit umfassendem Tooling.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Funktionen
+
+      - ✨ **Prompt Manager:** Erstellen, versionieren und an Prompts mit erweitertem Editor arbeiten, der Variablen, Bedingungen und Schleifen unterstützt
+      - 🎮 **Interaktiver Playground:** Prompts interaktiv mit verschiedenen Eingaben, Parametern und Tool-Konfigurationen testen
+      - 🚀 **AI Gateway:** Prompts als API-Endpunkte bereitstellen, die mit veröffentlichten Änderungen auf dem neuesten Stand bleiben
+      - 📊 **Evaluationen:** Prompt-Leistung über LLM-as-Judge, programmatische Regeln oder menschliche Bewertung beurteilen
+      - 📈 **Logs & Observability:** Alle Interaktionen mit Prompts und Modellen automatisch erfassen
+      - 🗃️ **Datasets:** Testdaten für Batch-Evaluationen und Regressionstests verwalten
+      - 🔗 **Integrationen:** Nahtlose Integration in bestehenden Stack über SDKs und APIs
+      - 👥 **Team-Zusammenarbeit:** Funktionsübergreifende Teams können während des gesamten KI-Entwicklungsprozesses zusammenarbeiten
+  es:
+    description: "Plataforma de ingeniería de prompts de código abierto para construir, evaluar y refinar prompts de IA"
+    readme: |
+      Latitude es una plataforma de código abierto para la ingeniería, implementación y evaluación de prompts de IA. Ayuda a los equipos a construir, probar y mantener aplicaciones de IA confiables proporcionando un sistema completo de gestión del ciclo de vida para prompts.
+
+      La Plataforma de Ingeniería de Prompts de Código Abierto para construir, evaluar y refinar prompts de IA con herramientas integrales.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Características
+
+      - ✨ **Gestor de Prompts:** Crear, versionar y colaborar en prompts con editor avanzado que soporta variables, condicionales y bucles
+      - 🎮 **Playground Interactivo:** Probar prompts de forma interactiva con diferentes entradas, parámetros y configuraciones de herramientas
+      - 🚀 **AI Gateway:** Implementar prompts como endpoints de API que se mantienen actualizados con los cambios publicados
+      - 📊 **Evaluaciones:** Evaluar el rendimiento de prompts a través de LLM-as-judge, reglas programáticas o revisión humana
+      - 📈 **Logs y Observabilidad:** Capturar automáticamente todas las interacciones con prompts y modelos
+      - 🗃️ **Datasets:** Gestionar datos de prueba para evaluaciones por lotes y pruebas de regresión
+      - 🔗 **Integraciones:** Integrar perfectamente con la pila existente a través de SDKs y APIs
+      - 👥 **Colaboración en Equipo:** Los equipos multifuncionales pueden colaborar durante todo el proceso de desarrollo de IA
+  fr:
+    description: "Plateforme d'ingénierie de prompts open-source pour construire, évaluer et affiner les prompts IA"
+    readme: |
+      Latitude est une plateforme open-source pour l'ingénierie, le déploiement et l'évaluation des prompts IA. Elle aide les équipes à construire, tester et maintenir des applications IA fiables en fournissant un système complet de gestion du cycle de vie des prompts.
+
+      La Plateforme d'Ingénierie de Prompts Open-Source pour construire, évaluer et affiner les prompts IA avec des outils complets.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Fonctionnalités
+
+      - ✨ **Gestionnaire de Prompts:** Créer, versionner et collaborer sur les prompts avec un éditeur avancé supportant les variables, conditions et boucles
+      - 🎮 **Playground Interactif:** Tester les prompts de manière interactive avec différentes entrées, paramètres et configurations d'outils
+      - 🚀 **Passerelle IA:** Déployer les prompts comme endpoints API qui restent à jour avec les changements publiés
+      - 📊 **Évaluations:** Évaluer les performances des prompts via LLM-as-judge, règles programmatiques ou révision humaine
+      - 📈 **Logs et Observabilité:** Capturer automatiquement toutes les interactions avec les prompts et modèles
+      - 🗃️ **Datasets:** Gérer les données de test pour les évaluations par lots et les tests de régression
+      - 🔗 **Intégrations:** Intégrer parfaitement avec la pile existante via SDKs et APIs
+      - 👥 **Collaboration d'Équipe:** Les équipes transfonctionnelles peuvent collaborer tout au long du processus de développement IA
+  it:
+    description: "Piattaforma open-source di ingegneria dei prompt per costruire, valutare e perfezionare i prompt IA"
+    readme: |
+      Latitude è una piattaforma open-source per l'ingegneria, distribuzione e valutazione dei prompt IA. Aiuta i team a costruire, testare e mantenere applicazioni IA affidabili fornendo un sistema completo di gestione del ciclo di vita dei prompt.
+
+      La Piattaforma Open-Source di Ingegneria dei Prompt per costruire, valutare e perfezionare i prompt IA con strumenti completi.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Caratteristiche
+
+      - ✨ **Gestore di Prompt:** Creare, versionare e collaborare sui prompt con editor avanzato che supporta variabili, condizioni e cicli
+      - 🎮 **Playground Interattivo:** Testare i prompt in modo interattivo con diversi input, parametri e configurazioni di strumenti
+      - 🚀 **Gateway IA:** Distribuire i prompt come endpoint API che rimangono aggiornati con le modifiche pubblicate
+      - 📊 **Valutazioni:** Valutare le prestazioni dei prompt tramite LLM-as-judge, regole programmatiche o revisione umana
+      - 📈 **Log e Osservabilità:** Catturare automaticamente tutte le interazioni con prompt e modelli
+      - 🗃️ **Dataset:** Gestire i dati di test per valutazioni batch e test di regressione
+      - 🔗 **Integrazioni:** Integrare perfettamente con lo stack esistente tramite SDK e API
+      - 👥 **Collaborazione di Team:** I team interfunzionali possono collaborare durante tutto il processo di sviluppo IA
+  nl:
+    description: "Open-source prompt engineering platform voor het bouwen, evalueren en verfijnen van AI-prompts"
+    readme: |
+      Latitude is een open-source platform voor AI prompt engineering, implementatie en evaluatie. Het helpt teams om betrouwbare AI-toepassingen te bouwen, testen en onderhouden door een compleet lifecycle management systeem voor prompts te bieden.
+
+      Het Open-Source Prompt Engineering Platform voor het bouwen, evalueren en verfijnen van AI-prompts met uitgebreide tools.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Functies
+
+      - ✨ **Prompt Manager:** Prompts maken, versiebeheer en samenwerken met geavanceerde editor die variabelen, voorwaarden en loops ondersteunt
+      - 🎮 **Interactieve Playground:** Prompts interactief testen met verschillende inputs, parameters en tool configuraties
+      - 🚀 **AI Gateway:** Prompts implementeren als API-endpoints die up-to-date blijven met gepubliceerde wijzigingen
+      - 📊 **Evaluaties:** Prompt prestaties beoordelen via LLM-as-judge, programmatische regels of menselijke beoordeling
+      - 📈 **Logs & Observeerbaarheid:** Automatisch alle interacties met prompts en modellen vastleggen
+      - 🗃️ **Datasets:** Testgegevens beheren voor batch evaluaties en regressietesten
+      - 🔗 **Integraties:** Naadloos integreren met bestaande stack via SDK's en API's
+      - 👥 **Team Samenwerking:** Cross-functionele teams kunnen samenwerken tijdens het hele AI-ontwikkelingsproces
+  pt:
+    description: "Plataforma open-source de engenharia de prompts para construir, avaliar e refinar prompts de IA"
+    readme: |
+      Latitude é uma plataforma open-source para engenharia, implementação e avaliação de prompts de IA. Ajuda equipes a construir, testar e manter aplicações de IA confiáveis fornecendo um sistema completo de gestão do ciclo de vida para prompts.
+
+      A Plataforma Open-Source de Engenharia de Prompts para construir, avaliar e refinar prompts de IA com ferramentas abrangentes.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Recursos
+
+      - ✨ **Gestor de Prompts:** Criar, versionar e colaborar em prompts com editor avançado que suporta variáveis, condicionais e loops
+      - 🎮 **Playground Interativo:** Testar prompts interativamente com diferentes entradas, parâmetros e configurações de ferramentas
+      - 🚀 **Gateway de IA:** Implementar prompts como endpoints de API que permanecem atualizados com mudanças publicadas
+      - 📊 **Avaliações:** Avaliar performance de prompts via LLM-as-judge, regras programáticas ou revisão humana
+      - 📈 **Logs e Observabilidade:** Capturar automaticamente todas as interações com prompts e modelos
+      - 🗃️ **Datasets:** Gerenciar dados de teste para avaliações em lote e testes de regressão
+      - 🔗 **Integrações:** Integrar perfeitamente com stack existente via SDKs e APIs
+      - 👥 **Colaboração em Equipe:** Equipes multifuncionais podem colaborar durante todo o processo de desenvolvimento de IA
+  ro:
+    description: "Platformă open-source de inginerie a prompt-urilor pentru construirea, evaluarea și rafinarea prompt-urilor AI"
+    readme: |
+      Latitude este o platformă open-source pentru ingineria, implementarea și evaluarea prompt-urilor AI. Ajută echipele să construiască, testeze și mențină aplicații AI fiabile prin furnizarea unui sistem complet de gestionare a ciclului de viață pentru prompt-uri.
+
+      Platforma Open-Source de Inginerie a Prompt-urilor pentru construirea, evaluarea și rafinarea prompt-urilor AI cu instrumente cuprinzătoare.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Caracteristici
+
+      - ✨ **Manager de Prompt-uri:** Creează, versiunea și colaborează la prompt-uri cu editor avansat care suportă variabile, condiții și bucle
+      - 🎮 **Playground Interactiv:** Testează prompt-urile interactiv cu diferite intrări, parametri și configurații de instrumente
+      - 🚀 **Gateway AI:** Implementează prompt-urile ca endpoints API care rămân la zi cu modificările publicate
+      - 📊 **Evaluări:** Evaluează performanța prompt-urilor prin LLM-as-judge, reguli programatice sau revizuire umană
+      - 📈 **Log-uri și Observabilitate:** Capturează automat toate interacțiunile cu prompt-urile și modelele
+      - 🗃️ **Seturi de Date:** Gestionează datele de test pentru evaluări în loturi și teste de regresie
+      - 🔗 **Integrări:** Integrează fără probleme cu stack-ul existent prin SDK-uri și API-uri
+      - 👥 **Colaborare în Echipă:** Echipele multifuncționale pot colabora pe tot parcursul procesului de dezvoltare AI
+  tr:
+    description: "AI prompt'larını oluşturmak, değerlendirmek ve geliştirmek için açık kaynak prompt mühendisliği platformu"
+    readme: |
+      Latitude, AI prompt mühendisliği, dağıtımı ve değerlendirmesi için açık kaynak bir platformdur. Prompt'lar için eksiksiz bir yaşam döngüsü yönetim sistemi sağlayarak ekiplerin güvenilir AI uygulamaları oluşturmasına, test etmesine ve sürdürmesine yardımcı olur.
+
+      Kapsamlı araçlarla AI prompt'larını oluşturmak, değerlendirmek ve geliştirmek için Açık Kaynak Prompt Mühendisliği Platformu.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Özellikler
+
+      - ✨ **Prompt Yöneticisi:** Değişkenler, koşullar ve döngüleri destekleyen gelişmiş editör ile prompt'ları oluşturun, sürümleyin ve işbirliği yapın
+      - 🎮 **Etkileşimli Playground:** Farklı girdiler, parametreler ve araç konfigürasyonları ile prompt'ları etkileşimli olarak test edin
+      - 🚀 **AI Gateway:** Yayınlanan değişikliklerle güncel kalan API endpoint'leri olarak prompt'ları dağıtın
+      - 📊 **Değerlendirmeler:** LLM-as-judge, programatik kurallar veya insan incelemesi ile prompt performansını değerlendirin
+      - 📈 **Log'lar ve Gözlemlenebilirlik:** Prompt'lar ve modellerle tüm etkileşimleri otomatik olarak yakalayın
+      - 🗃️ **Veri Setleri:** Toplu değerlendirmeler ve regresyon testleri için test verilerini yönetin
+      - 🔗 **Entegrasyonlar:** SDK'lar ve API'lar aracılığıyla mevcut stack ile sorunsuz entegrasyon
+      - 👥 **Takım İşbirliği:** Çapraz fonksiyonel takımlar AI geliştirme süreci boyunca işbirliği yapabilir
+  ar:
+    description: "منصة مفتوحة المصدر لهندسة المحفزات لبناء وتقييم وتحسين محفزات الذكاء الاصطناعي"
+    readme: |
+      Latitude هي منصة مفتوحة المصدر لهندسة ونشر وتقييم محفزات الذكاء الاصطناعي. تساعد الفرق على بناء واختبار وصيانة تطبيقات الذكاء الاصطناعي الموثوقة من خلال توفير نظام إدارة دورة حياة كامل للمحفزات.
+
+      منصة هندسة المحفزات مفتوحة المصدر لبناء وتقييم وتحسين محفزات الذكاء الاصطناعي بأدوات شاملة.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### الميزات
+
+      - ✨ **مدير المحفزات:** إنشاء وإصدار والتعاون في المحفزات مع محرر متقدم يدعم المتغيرات والشروط والحلقات
+      - 🎮 **ملعب تفاعلي:** اختبار المحفزات بشكل تفاعلي مع مدخلات ومعاملات وتكوينات أدوات مختلفة
+      - 🚀 **بوابة الذكاء الاصطناعي:** نشر المحفزات كنقاط نهاية API تبقى محدثة مع التغييرات المنشورة
+      - 📊 **التقييمات:** تقييم أداء المحفزات عبر LLM-as-judge أو القواعد البرمجية أو المراجعة البشرية
+      - 📈 **السجلات والمراقبة:** التقاط جميع التفاعلات مع المحفزات والنماذج تلقائياً
+      - 🗃️ **مجموعات البيانات:** إدارة بيانات الاختبار للتقييمات المجمعة واختبارات الانحدار
+      - 🔗 **التكاملات:** التكامل السلس مع المكدس الحالي عبر SDKs وAPIs
+      - 👥 **التعاون الجماعي:** يمكن للفرق متعددة الوظائف التعاون طوال عملية تطوير الذكاء الاصطناعي
+  uk:
+    description: "Платформа з відкритим кодом для інженерії промптів для створення, оцінювання та вдосконалення промптів ШІ"
+    readme: |
+      Latitude - це платформа з відкритим кодом для інженерії, розгортання та оцінювання промптів ШІ. Вона допомагає командам створювати, тестувати та підтримувати надійні додатки ШІ, надаючи повну систему управління життєвим циклом для промптів.
+
+      Платформа Інженерії Промптів з Відкритим Кодом для створення, оцінювання та вдосконалення промптів ШІ з комплексними інструментами.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Функції
+
+      - ✨ **Менеджер Промптів:** Створювати, версіонувати та співпрацювати над промптами з розширеним редактором, що підтримує змінні, умови та цикли
+      - 🎮 **Інтерактивний Майданчик:** Тестувати промпти інтерактивно з різними входами, параметрами та конфігураціями інструментів
+      - 🚀 **Шлюз ШІ:** Розгортати промпти як API-ендпоінти, які залишаються актуальними з опублікованими змінами
+      - 📊 **Оцінювання:** Оцінювати продуктивність промптів через LLM-as-judge, програматичні правила або людський огляд
+      - 📈 **Логи та Спостережуваність:** Автоматично фіксувати всі взаємодії з промптами та моделями
+      - 🗃️ **Набори Даних:** Управляти тестовими даними для пакетних оцінок та регресійного тестування
+      - 🔗 **Інтеграції:** Безперешкодно інтегруватися з існуючим стеком через SDK та API
+      - 👥 **Командна Співпраця:** Міжфункціональні команди можуть співпрацювати протягом усього процесу розробки ШІ
+  ru:
+    description: "Платформа с открытым исходным кодом для инженерии промптов для создания, оценки и улучшения промптов ИИ"
+    readme: |
+      Latitude - это платформа с открытым исходным кодом для инженерии, развертывания и оценки промптов ИИ. Она помогает командам создавать, тестировать и поддерживать надежные приложения ИИ, предоставляя полную систему управления жизненным циклом для промптов.
+
+      Платформа Инженерии Промптов с Открытым Исходным Кодом для создания, оценки и улучшения промптов ИИ с комплексными инструментами.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### Функции
+
+      - ✨ **Менеджер Промптов:** Создавать, версионировать и сотрудничать над промптами с продвинутым редактором, поддерживающим переменные, условия и циклы
+      - 🎮 **Интерактивная Площадка:** Тестировать промпты интерактивно с различными входами, параметрами и конфигурациями инструментов
+      - 🚀 **Шлюз ИИ:** Развертывать промпты как API-эндпоинты, которые остаются актуальными с опубликованными изменениями
+      - 📊 **Оценки:** Оценивать производительность промптов через LLM-as-judge, программные правила или человеческий обзор
+      - 📈 **Логи и Наблюдаемость:** Автоматически фиксировать все взаимодействия с промптами и моделями
+      - 🗃️ **Наборы Данных:** Управлять тестовыми данными для пакетных оценок и регрессионного тестирования
+      - 🔗 **Интеграции:** Безупречно интегрироваться с существующим стеком через SDK и API
+      - 👥 **Командное Сотрудничество:** Кросс-функциональные команды могут сотрудничать на протяжении всего процесса разработки ИИ
+  hi:
+    description: "AI प्रॉम्प्ट्स बनाने, मूल्यांकन करने और सुधारने के लिए ओपन-सोर्स प्रॉम्प्ट इंजीनियरिंग प्लेटफॉर्म"
+    readme: |
+      Latitude AI प्रॉम्प्ट इंजीनियरिंग, तैनाती और मूल्यांकन के लिए एक ओपन-सोर्स प्लेटफॉर्म है। यह प्रॉम्प्ट्स के लिए एक पूर्ण जीवनचक्र प्रबंधन प्रणाली प्रदान करके टीमों को विश्वसनीय AI एप्लिकेशन बनाने, परीक्षण करने और बनाए रखने में मदद करता है।
+
+      व्यापक उपकरणों के साथ AI प्रॉम्प्ट्स बनाने, मूल्यांकन करने और सुधारने के लिए ओपन-सोर्स प्रॉम्प्ट इंजीनियरिंग प्लेटफॉर्म।
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### सुविधाएं
+
+      - ✨ **प्रॉम्प्ट मैनेजर:** वेरिएबल्स, शर्तों और लूप्स का समर्थन करने वाले उन्नत एडिटर के साथ प्रॉम्प्ट्स बनाएं, संस्करण बनाएं और सहयोग करें
+      - 🎮 **इंटरैक्टिव प्लेग्राउंड:** विभिन्न इनपुट्स, पैरामीटर्स और टूल कॉन्फ़िगरेशन के साथ प्रॉम्प्ट्स का इंटरैक्टिव परीक्षण करें
+      - 🚀 **AI गेटवे:** प्रॉम्प्ट्स को API एंडपॉइंट्स के रूप में तैनात करें जो प्रकाशित परिवर्तनों के साथ अद्यतित रहते हैं
+      - 📊 **मूल्यांकन:** LLM-as-judge, प्रोग्रामेटिक नियमों या मानवीय समीक्षा के माध्यम से प्रॉम्प्ट प्रदर्शन का आकलन करें
+      - 📈 **लॉग्स और ऑब्जर्वेबिलिटी:** प्रॉम्प्ट्स और मॉडल्स के साथ सभी इंटरैक्शन को स्वचालित रूप से कैप्चर करें
+      - 🗃️ **डेटासेट्स:** बैच मूल्यांकन और रिग्रेशन टेस्टिंग के लिए टेस्ट डेटा का प्रबंधन करें
+      - 🔗 **इंटीग्रेशन:** SDK और API के माध्यम से मौजूदा स्टैक के साथ निर्बाध एकीकरण
+      - 👥 **टीम सहयोग:** क्रॉस-फ़ंक्शनल टीमें AI विकास प्रक्रिया के दौरान सहयोग कर सकती हैं
+  zh:
+    description: "用于构建、评估和优化AI提示的开源提示工程平台"
+    readme: |
+      Latitude是一个用于AI提示工程、部署和评估的开源平台。它通过为提示提供完整的生命周期管理系统，帮助团队构建、测试和维护可靠的AI应用程序。
+
+      用于构建、评估和优化AI提示的开源提示工程平台，配备全面的工具。
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### 功能特性
+
+      - ✨ **提示管理器：** 使用支持变量、条件和循环的高级编辑器创建、版本控制和协作处理提示
+      - 🎮 **交互式演练场：** 使用不同输入、参数和工具配置交互式测试提示
+      - 🚀 **AI网关：** 将提示部署为API端点，与发布的更改保持同步
+      - 📊 **评估：** 通过LLM-as-judge、程序化规则或人工审查评估提示性能
+      - 📈 **日志和可观测性：** 自动捕获与提示和模型的所有交互
+      - 🗃️ **数据集：** 管理批量评估和回归测试的测试数据
+      - 🔗 **集成：** 通过SDK和API与现有技术栈无缝集成
+      - 👥 **团队协作：** 跨功能团队可以在整个AI开发过程中进行协作
+  ko:
+    description: "AI 프롬프트를 구축, 평가 및 개선하기 위한 오픈소스 프롬프트 엔지니어링 플랫폼"
+    readme: |
+      Latitude는 AI 프롬프트 엔지니어링, 배포 및 평가를 위한 오픈소스 플랫폼입니다. 프롬프트를 위한 완전한 생명주기 관리 시스템을 제공하여 팀이 신뢰할 수 있는 AI 애플리케이션을 구축, 테스트 및 유지 관리할 수 있도록 도와줍니다.
+
+      포괄적인 도구를 갖춘 AI 프롬프트 구축, 평가 및 개선을 위한 오픈소스 프롬프트 엔지니어링 플랫폼입니다.
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### 기능
+
+      - ✨ **프롬프트 관리자:** 변수, 조건 및 루프를 지원하는 고급 편집기로 프롬프트 생성, 버전 관리 및 협업
+      - 🎮 **인터랙티브 플레이그라운드:** 다양한 입력, 매개변수 및 도구 구성으로 프롬프트를 대화형으로 테스트
+      - 🚀 **AI 게이트웨이:** 게시된 변경 사항과 동기화되는 API 엔드포인트로 프롬프트 배포
+      - 📊 **평가:** LLM-as-judge, 프로그래밍 규칙 또는 인간 검토를 통한 프롬프트 성능 평가
+      - 📈 **로그 및 관찰 가능성:** 프롬프트 및 모델과의 모든 상호 작용을 자동으로 캡처
+      - 🗃️ **데이터세트:** 배치 평가 및 회귀 테스트를 위한 테스트 데이터 관리
+      - 🔗 **통합:** SDK 및 API를 통한 기존 스택과의 원활한 통합
+      - 👥 **팀 협업:** 다기능 팀이 AI 개발 프로세스 전반에 걸쳐 협업할 수 있음
+  ja:
+    description: "AIプロンプトの構築、評価、改良のためのオープンソースプロンプトエンジニアリングプラットフォーム"
+    readme: |
+      Latitudeは、AIプロンプトエンジニアリング、デプロイメント、評価のためのオープンソースプラットフォームです。プロンプトの完全なライフサイクル管理システムを提供することで、チームが信頼性の高いAIアプリケーションを構築、テスト、維持できるよう支援します。
+
+      包括的なツールを備えたAIプロンプトの構築、評価、改良のためのオープンソースプロンプトエンジニアリングプラットフォーム。
+
+      ![Latitude Screenshot](https://framerusercontent.com/images/lLNi3FY2y8qXLjlstAbvVaENZc.png?scale-down-to=1024&width=2874&height=2042)
+
+      <hr>
+
+      ### 機能
+
+      - ✨ **プロンプトマネージャー：** 変数、条件、ループをサポートする高度なエディターでプロンプトを作成、バージョン管理、共同作業
+      - 🎮 **インタラクティブプレイグラウンド：** さまざまな入力、パラメータ、ツール設定でプロンプトをインタラクティブにテスト
+      - 🚀 **AIゲートウェイ：** 公開された変更と同期するAPIエンドポイントとしてプロンプトをデプロイ
+      - 📊 **評価：** LLM-as-judge、プログラマティックルール、または人間のレビューを通じてプロンプトのパフォーマンスを評価
+      - 📈 **ログと可観測性：** プロンプトとモデルとのすべてのインタラクションを自動的にキャプチャ
+      - 🗃️ **データセット：** バッチ評価と回帰テストのためのテストデータを管理
+      - 🔗 **統合：** SDKとAPIを通じて既存のスタックとシームレスに統合
+      - 👥 **チーム協業：** 機能横断チームがAI開発プロセス全体で協業可能
