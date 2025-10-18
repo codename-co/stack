@@ -12,7 +12,7 @@ author: The Guild
 license: MIT
 homepage: https://the-guild.dev/graphql/hive
 repository: https://github.com/graphql-hive/console
-stars: 460
+stars: 463
 tags: [graphql, api-gateway]
 alternativeTo: [apollo-server]
 readme: |
