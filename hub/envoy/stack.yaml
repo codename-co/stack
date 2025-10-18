@@ -68,3 +68,521 @@ readme: |
   - [Configuration Reference](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
   - [Example Deployments](https://github.com/envoyproxy/examples)
   - [Slack Community](https://envoyproxy.slack.com/)
+i18n:
+  ar:
+    description: خادم وكيل عالي الأداء للحافة/الوسط/الخدمة السحابية
+    readme: |
+      خادم وكيل عالي الأداء مبني بلغة C++ لنشر الخدمات المصغرة السحابية.
+
+      يعمل Envoy كطبقة بيانات عالمية لبنيات شبكات الخدمات، ويوفر ميزات متقدمة للتوجيه وموازنة التحميل والمراقبة. تم إنشاؤه في Lyft وهو الآن مشروع متخرج من CNCF تستخدمه شركات مثل Airbnb وNetflix وUber.
+
+      ![بنية Envoy](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### القدرات الرئيسية
+
+      - ⚡ **أداء عالي:** تطبيق C++ مع بصمة ذاكرة صغيرة
+      - 🔀 **مستقل عن البروتوكول:** دعم أصلي لـ HTTP/1.1 وHTTP/2 وHTTP/3 وgRPC وTCP
+      - 🎯 **توجيه ذكي:** التوجيه على أساس المسار وتقسيم الحركة ومعالجة الرؤوس
+      - 🔄 **أنماط المرونة:** إعادة المحاولة التلقائية وقواطع الدائرة وإدارة المهلات
+      - 📊 **مقاييس غنية:** إحصائيات مدمجة وتتبع موزع وتسجيل الوصول
+      - 🔌 **تكوين ديناميكي:** واجهات برمجة تطبيقات xDS للتحديثات في وقت التشغيل بدون إعادة التشغيل
+      - 🛡️ **الأمان أولاً:** إنهاء TLS وTLS المتبادل والحد من المعدل والمصادقة
+      - 🌍 **متعدد البروتوكولات:** بروتوكولات WebSocket وMongoDB وRedis وPostgres
+
+      ### نظرة عامة على التكوين
+
+      تتضمن هذه الحزمة تكوينًا ثابتًا أساسيًا. لحالة الاستخدام الخاصة بك، يجب عليك:
+
+      - تحرير `envoy.yaml` لتحديد قواعد التوجيه الخاصة بك
+      - تكوين مجموعات المنبع لخدمات الواجهة الخلفية الخاصة بك
+      - إعداد المستمعين لمنافذك وبروتوكولاتك المحددة
+      - إضافة مرشحات للمصادقة أو الحد من المعدل أو الميزات الأخرى
+
+      يوفر الإعداد الافتراضي:
+      - لوحة تحكم المسؤول على المنفذ 9901 للمراقبة وتصحيح الأخطاء
+      - مثال مستمع HTTP على المنفذ 10000
+      - تعريف مثال لخدمة المنبع
+
+      ### نقاط الوصول
+
+      - **وحدة تحكم المسؤول:** `http://envoy.stack.localhost:9901` - عرض التكوين والإحصائيات والحالة
+      - **نقطة نهاية الوكيل:** `http://envoy.stack.localhost:10000` - نقطة دخول الحركة الرئيسية
+
+      ### الموارد
+
+      - [الوثائق الرسمية](https://www.envoyproxy.io/docs)
+      - [مرجع التكوين](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [أمثلة النشر](https://github.com/envoyproxy/examples)
+      - [مجتمع Slack](https://envoyproxy.slack.com/)
+  de:
+    description: Hochleistungs-Edge/Middle/Service-Proxy für Cloud-native Umgebungen
+    readme: |
+      Ein hochleistungsfähiger C++-Proxy für Cloud-native Microservice-Deployments.
+
+      Envoy fungiert als universelle Datenebene für Service-Mesh-Architekturen und bietet erweiterte Routing-, Lastenausgleichs- und Observability-Funktionen. Erstellt bei Lyft und jetzt ein CNCF-graduiertes Projekt, das von Unternehmen wie Airbnb, Netflix und Uber verwendet wird.
+
+      ![Envoy-Architektur](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### Hauptfunktionen
+
+      - ⚡ **Hohe Leistung:** C++-Implementierung mit minimalem Speicher-Footprint
+      - 🔀 **Protokoll-agnostisch:** Native Unterstützung für HTTP/1.1, HTTP/2, HTTP/3, gRPC und TCP
+      - 🎯 **Intelligentes Routing:** Pfadbasiertes Routing, Traffic-Splitting und Header-Manipulation
+      - 🔄 **Resilienzmuster:** Automatische Wiederholungsversuche, Circuit Breaker und Timeout-Management
+      - 📊 **Umfangreiche Metriken:** Integrierte Statistiken, verteiltes Tracing und Zugriffsprotokolle
+      - 🔌 **Dynamische Konfiguration:** xDS-APIs für Laufzeit-Updates ohne Neustarts
+      - 🛡️ **Sicherheit zuerst:** TLS-Terminierung, gegenseitiges TLS, Rate Limiting und Authentifizierung
+      - 🌍 **Multi-Protokoll:** WebSocket-, MongoDB-, Redis-, Postgres-Wire-Protokolle
+
+      ### Konfigurationsübersicht
+
+      Dieser Stack enthält eine grundlegende statische Konfiguration. Für Ihren Anwendungsfall sollten Sie:
+
+      - `envoy.yaml` bearbeiten, um Ihre Routing-Regeln zu definieren
+      - Upstream-Cluster für Ihre Backend-Dienste konfigurieren
+      - Listener für Ihre spezifischen Ports und Protokolle einrichten
+      - Filter für Authentifizierung, Rate Limiting oder andere Funktionen hinzufügen
+
+      Die Standardkonfiguration bietet:
+      - Admin-Dashboard auf Port 9901 für Überwachung und Debugging
+      - Beispiel-HTTP-Listener auf Port 10000
+      - Beispiel-Upstream-Service-Definition
+
+      ### Zugriffspunkte
+
+      - **Admin-Konsole:** `http://envoy.stack.localhost:9901` - Konfiguration, Statistiken und Status anzeigen
+      - **Proxy-Endpunkt:** `http://envoy.stack.localhost:10000` - Haupteintrittspunkt für Traffic
+
+      ### Ressourcen
+
+      - [Offizielle Dokumentation](https://www.envoyproxy.io/docs)
+      - [Konfigurationsreferenz](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [Beispiel-Deployments](https://github.com/envoyproxy/examples)
+      - [Slack-Community](https://envoyproxy.slack.com/)
+  fr:
+    description: Proxy edge/middle/service haute performance cloud-native
+    readme: |
+      Un proxy C++ haute performance conçu pour les déploiements de microservices cloud-native.
+
+      Envoy agit comme un plan de données universel pour les architectures de service mesh, offrant des fonctionnalités avancées de routage, d'équilibrage de charge et d'observabilité. Créé chez Lyft et désormais un projet gradué de la CNCF utilisé par des entreprises comme Airbnb, Netflix et Uber.
+
+      ![Architecture Envoy](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### Capacités clés
+
+      - ⚡ **Haute performance :** Implémentation C++ avec une empreinte mémoire minimale
+      - 🔀 **Agnostique aux protocoles :** Support natif HTTP/1.1, HTTP/2, HTTP/3, gRPC et TCP
+      - 🎯 **Routage intelligent :** Routage par chemin, répartition du trafic et manipulation des en-têtes
+      - 🔄 **Modèles de résilience :** Nouvelles tentatives automatiques, disjoncteurs et gestion des délais d'attente
+      - 📊 **Métriques enrichies :** Statistiques intégrées, traçage distribué et journalisation des accès
+      - 🔌 **Configuration dynamique :** APIs xDS pour les mises à jour en temps réel sans redémarrage
+      - 🛡️ **Sécurité d'abord :** Terminaison TLS, TLS mutuel, limitation de débit et authentification
+      - 🌍 **Multi-protocole :** Protocoles WebSocket, MongoDB, Redis, Postgres
+
+      ### Aperçu de la configuration
+
+      Cette stack inclut une configuration statique de base. Pour votre cas d'usage, vous devriez :
+
+      - Modifier `envoy.yaml` pour définir vos règles de routage
+      - Configurer les clusters en amont pour vos services backend
+      - Paramétrer les listeners pour vos ports et protocoles spécifiques
+      - Ajouter des filtres pour l'authentification, la limitation de débit ou d'autres fonctionnalités
+
+      La configuration par défaut fournit :
+      - Tableau de bord admin sur le port 9901 pour la surveillance et le débogage
+      - Exemple de listener HTTP sur le port 10000
+      - Définition d'exemple de service en amont
+
+      ### Points d'accès
+
+      - **Console admin :** `http://envoy.stack.localhost:9901` - Voir la config, les stats et la santé
+      - **Point de terminaison proxy :** `http://envoy.stack.localhost:10000` - Point d'entrée principal du trafic
+
+      ### Ressources
+
+      - [Documentation officielle](https://www.envoyproxy.io/docs)
+      - [Référence de configuration](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [Exemples de déploiement](https://github.com/envoyproxy/examples)
+      - [Communauté Slack](https://envoyproxy.slack.com/)
+  zh:
+    description: 云原生高性能边缘/中间/服务代理
+    readme: |
+      为云原生微服务部署构建的高性能C++代理。
+
+      Envoy作为服务网格架构的通用数据平面，提供先进的路由、负载均衡和可观测性功能。由Lyft创建，现在是CNCF毕业项目，被Airbnb、Netflix和Uber等公司使用。
+
+      ![Envoy架构](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### 核心能力
+
+      - ⚡ **高性能：** C++实现，内存占用极小
+      - 🔀 **协议无关：** 原生支持HTTP/1.1、HTTP/2、HTTP/3、gRPC和TCP
+      - 🎯 **智能路由：** 基于路径的路由、流量分割和请求头操作
+      - 🔄 **弹性模式：** 自动重试、熔断器和超时管理
+      - 📊 **丰富指标：** 内置统计、分布式追踪和访问日志
+      - 🔌 **动态配置：** 通过xDS API进行运行时更新，无需重启
+      - 🛡️ **安全优先：** TLS终止、双向TLS、速率限制和身份验证
+      - 🌍 **多协议：** 支持WebSocket、MongoDB、Redis、Postgres线协议
+
+      ### 配置概述
+
+      此堆栈包含基本的静态配置。对于您的用例，您应该：
+
+      - 编辑`envoy.yaml`以定义您的路由规则
+      - 为后端服务配置上游集群
+      - 为特定端口和协议设置监听器
+      - 添加身份验证、速率限制或其他功能的过滤器
+
+      默认设置提供：
+      - 端口9901上的管理仪表板，用于监控和调试
+      - 端口10000上的示例HTTP监听器
+      - 示例上游服务定义
+
+      ### 访问点
+
+      - **管理控制台：** `http://envoy.stack.localhost:9901` - 查看配置、统计和健康状态
+      - **代理端点：** `http://envoy.stack.localhost:10000` - 主要流量入口点
+
+      ### 资源
+
+      - [官方文档](https://www.envoyproxy.io/docs)
+      - [配置参考](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [部署示例](https://github.com/envoyproxy/examples)
+      - [Slack社区](https://envoyproxy.slack.com/)
+  es:
+    description: Proxy edge/middle/service de alto rendimiento nativo en la nube
+    readme: |
+      Un proxy C++ de alto rendimiento diseñado para implementaciones de microservicios nativos en la nube.
+
+      Envoy actúa como un plano de datos universal para arquitecturas de malla de servicios, proporcionando funciones avanzadas de enrutamiento, balanceo de carga y observabilidad. Creado en Lyft y ahora un proyecto graduado de CNCF utilizado por empresas como Airbnb, Netflix y Uber.
+
+      ![Arquitectura de Envoy](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### Capacidades clave
+
+      - ⚡ **Alto rendimiento:** Implementación en C++ con huella de memoria mínima
+      - 🔀 **Agnóstico de protocolo:** Soporte nativo para HTTP/1.1, HTTP/2, HTTP/3, gRPC y TCP
+      - 🎯 **Enrutamiento inteligente:** Enrutamiento basado en rutas, división de tráfico y manipulación de encabezados
+      - 🔄 **Patrones de resiliencia:** Reintentos automáticos, circuit breakers y gestión de tiempos de espera
+      - 📊 **Métricas enriquecidas:** Estadísticas integradas, rastreo distribuido y registro de acceso
+      - 🔌 **Configuración dinámica:** APIs xDS para actualizaciones en tiempo de ejecución sin reinicios
+      - 🛡️ **Seguridad primero:** Terminación TLS, TLS mutuo, limitación de velocidad y autenticación
+      - 🌍 **Multi-protocolo:** Protocolos de cable WebSocket, MongoDB, Redis, Postgres
+
+      ### Descripción de la configuración
+
+      Este stack incluye una configuración estática básica. Para su caso de uso, debería:
+
+      - Editar `envoy.yaml` para definir sus reglas de enrutamiento
+      - Configurar clusters upstream para sus servicios backend
+      - Configurar listeners para sus puertos y protocolos específicos
+      - Agregar filtros para autenticación, limitación de velocidad u otras características
+
+      La configuración predeterminada proporciona:
+      - Panel de administración en el puerto 9901 para monitoreo y depuración
+      - Listener HTTP de ejemplo en el puerto 10000
+      - Definición de servicio upstream de ejemplo
+
+      ### Puntos de acceso
+
+      - **Consola de administración:** `http://envoy.stack.localhost:9901` - Ver configuración, estadísticas y salud
+      - **Endpoint de proxy:** `http://envoy.stack.localhost:10000` - Punto de entrada principal del tráfico
+
+      ### Recursos
+
+      - [Documentación oficial](https://www.envoyproxy.io/docs)
+      - [Referencia de configuración](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [Ejemplos de implementación](https://github.com/envoyproxy/examples)
+      - [Comunidad Slack](https://envoyproxy.slack.com/)
+  it:
+    description: Proxy edge/middle/service ad alte prestazioni cloud-native
+    readme: |
+      Un proxy C++ ad alte prestazioni realizzato per deployment di microservizi cloud-native.
+
+      Envoy funge da data plane universale per architetture service mesh, fornendo funzionalità avanzate di routing, bilanciamento del carico e osservabilità. Creato presso Lyft e ora un progetto graduato CNCF utilizzato da aziende come Airbnb, Netflix e Uber.
+
+      ![Architettura Envoy](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### Capacità chiave
+
+      - ⚡ **Alte prestazioni:** Implementazione C++ con footprint di memoria minimo
+      - 🔀 **Agnostico al protocollo:** Supporto nativo per HTTP/1.1, HTTP/2, HTTP/3, gRPC e TCP
+      - 🎯 **Routing intelligente:** Routing basato su percorso, suddivisione del traffico e manipolazione degli header
+      - 🔄 **Pattern di resilienza:** Tentativi automatici, circuit breaker e gestione dei timeout
+      - 📊 **Metriche ricche:** Statistiche integrate, tracciamento distribuito e logging degli accessi
+      - 🔌 **Configurazione dinamica:** API xDS per aggiornamenti runtime senza riavvii
+      - 🛡️ **Sicurezza prima di tutto:** Terminazione TLS, TLS mutuo, rate limiting e autenticazione
+      - 🌍 **Multi-protocollo:** Protocolli wire WebSocket, MongoDB, Redis, Postgres
+
+      ### Panoramica della configurazione
+
+      Questo stack include una configurazione statica di base. Per il tuo caso d'uso, dovresti:
+
+      - Modificare `envoy.yaml` per definire le tue regole di routing
+      - Configurare cluster upstream per i tuoi servizi backend
+      - Impostare listener per le tue porte e protocolli specifici
+      - Aggiungere filtri per autenticazione, rate limiting o altre funzionalità
+
+      La configurazione predefinita fornisce:
+      - Dashboard di amministrazione sulla porta 9901 per monitoraggio e debug
+      - Listener HTTP di esempio sulla porta 10000
+      - Definizione di servizio upstream di esempio
+
+      ### Punti di accesso
+
+      - **Console di amministrazione:** `http://envoy.stack.localhost:9901` - Visualizza config, statistiche e salute
+      - **Endpoint proxy:** `http://envoy.stack.localhost:10000` - Punto di ingresso principale del traffico
+
+      ### Risorse
+
+      - [Documentazione ufficiale](https://www.envoyproxy.io/docs)
+      - [Riferimento configurazione](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [Esempi di deployment](https://github.com/envoyproxy/examples)
+      - [Community Slack](https://envoyproxy.slack.com/)
+  ja:
+    description: クラウドネイティブな高性能エッジ/ミドル/サービスプロキシ
+    readme: |
+      クラウドネイティブなマイクロサービスデプロイメント向けに構築された高性能C++プロキシ。
+
+      Envoyはサービスメッシュアーキテクチャの汎用データプレーンとして機能し、高度なルーティング、ロードバランシング、オブザーバビリティ機能を提供します。Lyftで作成され、現在はAirbnb、Netflix、Uberなどの企業で使用されているCNCF卒業プロジェクトです。
+
+      ![Envoyアーキテクチャ](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### 主な機能
+
+      - ⚡ **高性能：** 最小限のメモリフットプリントを持つC++実装
+      - 🔀 **プロトコル非依存：** HTTP/1.1、HTTP/2、HTTP/3、gRPC、TCPのネイティブサポート
+      - 🎯 **インテリジェントルーティング：** パスベースのルーティング、トラフィック分割、ヘッダー操作
+      - 🔄 **レジリエンスパターン：** 自動リトライ、サーキットブレーカー、タイムアウト管理
+      - 📊 **豊富なメトリクス：** 組み込みの統計、分散トレーシング、アクセスログ
+      - 🔌 **動的構成：** 再起動なしでランタイム更新を行うxDS API
+      - 🛡️ **セキュリティ第一：** TLS終端、相互TLS、レート制限、認証
+      - 🌍 **マルチプロトコル：** WebSocket、MongoDB、Redis、Postgresワイヤプロトコル
+
+      ### 構成の概要
+
+      このスタックには基本的な静的構成が含まれています。ユースケースに応じて、以下を行う必要があります：
+
+      - `envoy.yaml`を編集してルーティングルールを定義
+      - バックエンドサービスのアップストリームクラスタを構成
+      - 特定のポートとプロトコルのリスナーを設定
+      - 認証、レート制限、その他の機能のフィルターを追加
+
+      デフォルト設定では以下を提供：
+      - 監視とデバッグ用のポート9901の管理ダッシュボード
+      - ポート10000のHTTPリスナーの例
+      - アップストリームサービス定義の例
+
+      ### アクセスポイント
+
+      - **管理コンソール：** `http://envoy.stack.localhost:9901` - 構成、統計、ヘルスを表示
+      - **プロキシエンドポイント：** `http://envoy.stack.localhost:10000` - メイントラフィックエントリーポイント
+
+      ### リソース
+
+      - [公式ドキュメント](https://www.envoyproxy.io/docs)
+      - [構成リファレンス](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [デプロイメント例](https://github.com/envoyproxy/examples)
+      - [Slackコミュニティ](https://envoyproxy.slack.com/)
+  ko:
+    description: 클라우드 네이티브 고성능 엣지/미들/서비스 프록시
+    readme: |
+      클라우드 네이티브 마이크로서비스 배포를 위해 구축된 고성능 C++ 프록시.
+
+      Envoy는 서비스 메시 아키텍처를 위한 범용 데이터 플레인으로 작동하며, 고급 라우팅, 로드 밸런싱 및 관찰 가능성 기능을 제공합니다. Lyft에서 만들어졌으며 현재 Airbnb, Netflix, Uber와 같은 회사에서 사용하는 CNCF 졸업 프로젝트입니다.
+
+      ![Envoy 아키텍처](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### 주요 기능
+
+      - ⚡ **고성능:** 최소한의 메모리 사용량을 가진 C++ 구현
+      - 🔀 **프로토콜 독립적:** HTTP/1.1, HTTP/2, HTTP/3, gRPC 및 TCP의 기본 지원
+      - 🎯 **지능형 라우팅:** 경로 기반 라우팅, 트래픽 분할 및 헤더 조작
+      - 🔄 **복원력 패턴:** 자동 재시도, 서킷 브레이커 및 타임아웃 관리
+      - 📊 **풍부한 메트릭:** 내장 통계, 분산 추적 및 액세스 로깅
+      - 🔌 **동적 구성:** 재시작 없이 런타임 업데이트를 위한 xDS API
+      - 🛡️ **보안 우선:** TLS 종료, 상호 TLS, 속도 제한 및 인증
+      - 🌍 **다중 프로토콜:** WebSocket, MongoDB, Redis, Postgres 와이어 프로토콜
+
+      ### 구성 개요
+
+      이 스택에는 기본 정적 구성이 포함되어 있습니다. 사용 사례에 맞게 다음을 수행해야 합니다:
+
+      - `envoy.yaml`을 편집하여 라우팅 규칙 정의
+      - 백엔드 서비스를 위한 업스트림 클러스터 구성
+      - 특정 포트 및 프로토콜에 대한 리스너 설정
+      - 인증, 속도 제한 또는 기타 기능을 위한 필터 추가
+
+      기본 설정은 다음을 제공합니다:
+      - 모니터링 및 디버깅을 위한 포트 9901의 관리 대시보드
+      - 포트 10000의 예제 HTTP 리스너
+      - 샘플 업스트림 서비스 정의
+
+      ### 액세스 포인트
+
+      - **관리 콘솔:** `http://envoy.stack.localhost:9901` - 구성, 통계 및 상태 보기
+      - **프록시 엔드포인트:** `http://envoy.stack.localhost:10000` - 주요 트래픽 진입점
+
+      ### 리소스
+
+      - [공식 문서](https://www.envoyproxy.io/docs)
+      - [구성 참조](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [배포 예제](https://github.com/envoyproxy/examples)
+      - [Slack 커뮤니티](https://envoyproxy.slack.com/)
+  ru:
+    description: Высокопроизводительный облачный прокси edge/middle/service
+    readme: |
+      Высокопроизводительный прокси на C++, созданный для развертывания облачных микросервисов.
+
+      Envoy выступает в качестве универсальной плоскости данных для архитектур service mesh, предоставляя расширенные возможности маршрутизации, балансировки нагрузки и наблюдаемости. Создан в Lyft и теперь является выпускным проектом CNCF, используемым такими компаниями, как Airbnb, Netflix и Uber.
+
+      ![Архитектура Envoy](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### Ключевые возможности
+
+      - ⚡ **Высокая производительность:** Реализация на C++ с минимальным объемом памяти
+      - 🔀 **Агностик протокола:** Нативная поддержка HTTP/1.1, HTTP/2, HTTP/3, gRPC и TCP
+      - 🎯 **Интеллектуальная маршрутизация:** Маршрутизация на основе путей, разделение трафика и манипуляция заголовками
+      - 🔄 **Паттерны отказоустойчивости:** Автоматические повторные попытки, автоматические выключатели и управление таймаутами
+      - 📊 **Богатые метрики:** Встроенная статистика, распределенная трассировка и журналирование доступа
+      - 🔌 **Динамическая конфигурация:** API xDS для обновлений во время выполнения без перезапуска
+      - 🛡️ **Безопасность прежде всего:** Терминация TLS, взаимный TLS, ограничение скорости и аутентификация
+      - 🌍 **Мультипротокольность:** Протоколы WebSocket, MongoDB, Redis, Postgres
+
+      ### Обзор конфигурации
+
+      Этот стек включает базовую статическую конфигурацию. Для вашего случая использования вам следует:
+
+      - Отредактировать `envoy.yaml` для определения правил маршрутизации
+      - Настроить upstream кластеры для ваших backend сервисов
+      - Настроить listeners для ваших конкретных портов и протоколов
+      - Добавить фильтры для аутентификации, ограничения скорости или других функций
+
+      Настройка по умолчанию предоставляет:
+      - Панель администратора на порту 9901 для мониторинга и отладки
+      - Пример HTTP listener на порту 10000
+      - Пример определения upstream сервиса
+
+      ### Точки доступа
+
+      - **Консоль администратора:** `http://envoy.stack.localhost:9901` - Просмотр конфигурации, статистики и состояния
+      - **Конечная точка прокси:** `http://envoy.stack.localhost:10000` - Основная точка входа трафика
+
+      ### Ресурсы
+
+      - [Официальная документация](https://www.envoyproxy.io/docs)
+      - [Справочник по конфигурации](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [Примеры развертывания](https://github.com/envoyproxy/examples)
+      - [Сообщество Slack](https://envoyproxy.slack.com/)
+  pt:
+    description: Proxy edge/middle/service de alto desempenho nativo da nuvem
+    readme: |
+      Um proxy C++ de alto desempenho construído para implantações de microsserviços nativos da nuvem.
+
+      Envoy atua como um plano de dados universal para arquiteturas de malha de serviços, fornecendo recursos avançados de roteamento, balanceamento de carga e observabilidade. Criado na Lyft e agora um projeto graduado da CNCF usado por empresas como Airbnb, Netflix e Uber.
+
+      ![Arquitetura Envoy](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### Capacidades principais
+
+      - ⚡ **Alto desempenho:** Implementação C++ com pegada mínima de memória
+      - 🔀 **Agnóstico de protocolo:** Suporte nativo para HTTP/1.1, HTTP/2, HTTP/3, gRPC e TCP
+      - 🎯 **Roteamento inteligente:** Roteamento baseado em caminho, divisão de tráfego e manipulação de cabeçalhos
+      - 🔄 **Padrões de resiliência:** Tentativas automáticas, disjuntores e gerenciamento de timeout
+      - 📊 **Métricas ricas:** Estatísticas integradas, rastreamento distribuído e registro de acesso
+      - 🔌 **Configuração dinâmica:** APIs xDS para atualizações em tempo de execução sem reinicializações
+      - 🛡️ **Segurança em primeiro lugar:** Terminação TLS, TLS mútuo, limitação de taxa e autenticação
+      - 🌍 **Multi-protocolo:** Protocolos de fio WebSocket, MongoDB, Redis, Postgres
+
+      ### Visão geral da configuração
+
+      Esta pilha inclui uma configuração estática básica. Para o seu caso de uso, você deve:
+
+      - Editar `envoy.yaml` para definir suas regras de roteamento
+      - Configurar clusters upstream para seus serviços de backend
+      - Configurar listeners para suas portas e protocolos específicos
+      - Adicionar filtros para autenticação, limitação de taxa ou outros recursos
+
+      A configuração padrão fornece:
+      - Painel de administração na porta 9901 para monitoramento e depuração
+      - Listener HTTP de exemplo na porta 10000
+      - Definição de serviço upstream de exemplo
+
+      ### Pontos de acesso
+
+      - **Console de administração:** `http://envoy.stack.localhost:9901` - Visualizar config, estatísticas e saúde
+      - **Endpoint do proxy:** `http://envoy.stack.localhost:10000` - Ponto de entrada principal do tráfego
+
+      ### Recursos
+
+      - [Documentação oficial](https://www.envoyproxy.io/docs)
+      - [Referência de configuração](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [Exemplos de implantação](https://github.com/envoyproxy/examples)
+      - [Comunidade Slack](https://envoyproxy.slack.com/)
+  hi:
+    description: क्लाउड-नेटिव उच्च-प्रदर्शन एज/मिडिल/सर्विस प्रॉक्सी
+    readme: |
+      क्लाउड-नेटिव माइक्रोसर्विस डिप्लॉयमेंट के लिए निर्मित एक उच्च-प्रदर्शन C++ प्रॉक्सी।
+
+      Envoy सर्विस मेश आर्किटेक्चर के लिए एक सार्वभौमिक डेटा प्लेन के रूप में कार्य करता है, जो उन्नत रूटिंग, लोड बैलेंसिंग और अवलोकनीयता सुविधाएं प्रदान करता है। Lyft में बनाया गया और अब Airbnb, Netflix और Uber जैसी कंपनियों द्वारा उपयोग किया जाने वाला CNCF स्नातक प्रोजेक्ट है।
+
+      ![Envoy आर्किटेक्चर](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+      <hr>
+
+      ### मुख्य क्षमताएं
+
+      - ⚡ **उच्च प्रदर्शन:** न्यूनतम मेमोरी फुटप्रिंट के साथ C++ कार्यान्वयन
+      - 🔀 **प्रोटोकॉल अज्ञेयवादी:** HTTP/1.1, HTTP/2, HTTP/3, gRPC और TCP के लिए मूल समर्थन
+      - 🎯 **बुद्धिमान रूटिंग:** पथ-आधारित रूटिंग, ट्रैफ़िक विभाजन और हेडर हेरफेर
+      - 🔄 **लचीलापन पैटर्न:** स्वचालित पुनः प्रयास, सर्किट ब्रेकर और टाइमआउट प्रबंधन
+      - 📊 **समृद्ध मेट्रिक्स:** अंतर्निहित आंकड़े, वितरित ट्रेसिंग और एक्सेस लॉगिंग
+      - 🔌 **गतिशील कॉन्फ़िगरेशन:** पुनरारंभ के बिना रनटाइम अपडेट के लिए xDS API
+      - 🛡️ **सुरक्षा पहले:** TLS समाप्ति, म्यूचुअल TLS, रेट लिमिटिंग और प्रमाणीकरण
+      - 🌍 **मल्टी-प्रोटोकॉल:** WebSocket, MongoDB, Redis, Postgres वायर प्रोटोकॉल
+
+      ### कॉन्फ़िगरेशन अवलोकन
+
+      इस स्टैक में एक बुनियादी स्थिर कॉन्फ़िगरेशन शामिल है। आपके उपयोग के मामले के लिए, आपको निम्न करना चाहिए:
+
+      - अपने रूटिंग नियमों को परिभाषित करने के लिए `envoy.yaml` संपादित करें
+      - अपनी बैकएंड सेवाओं के लिए अपस्ट्रीम क्लस्टर कॉन्फ़िगर करें
+      - अपने विशिष्ट पोर्ट और प्रोटोकॉल के लिए श्रोताओं को सेट करें
+      - प्रमाणीकरण, रेट लिमिटिंग या अन्य सुविधाओं के लिए फ़िल्टर जोड़ें
+
+      डिफ़ॉल्ट सेटअप प्रदान करता है:
+      - निगरानी और डिबगिंग के लिए पोर्ट 9901 पर व्यवस्थापक डैशबोर्ड
+      - पोर्ट 10000 पर उदाहरण HTTP श्रोता
+      - नमूना अपस्ट्रीम सेवा परिभाषा
+
+      ### एक्सेस पॉइंट्स
+
+      - **व्यवस्थापक कंसोल:** `http://envoy.stack.localhost:9901` - कॉन्फ़िगरेशन, आंकड़े और स्वास्थ्य देखें
+      - **प्रॉक्सी एंडपॉइंट:** `http://envoy.stack.localhost:10000` - मुख्य ट्रैफ़िक प्रवेश बिंदु
+
+      ### संसाधन
+
+      - [आधिकारिक दस्तावेज़ीकरण](https://www.envoyproxy.io/docs)
+      - [कॉन्फ़िगरेशन संदर्भ](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+      - [डिप्लॉयमेंट उदाहरण](https://github.com/envoyproxy/examples)
+      - [Slack समुदाय](https://envoyproxy.slack.com/)

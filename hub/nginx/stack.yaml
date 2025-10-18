@@ -4,8 +4,8 @@
 slug: nginx
 name: Nginx
 flavor: DockerCompose
-version: "1.27.4"
-updated_at: 2025-02-05
+version: "1.29.2"
+updated_at: 2025-10-12
 description: High-performance web server and reverse proxy
 author: F5 Networks
 license: BSD-2-Clause
