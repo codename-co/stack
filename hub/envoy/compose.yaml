@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  envoy:
+    image: envoyproxy/envoy:v${ENVOY_VERSION:-1.36.2}
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml:ro
+      - envoy_logs:/var/log/envoy
+    environment:
+      ENVOY_UID: ${ENVOY_UID:-101}
+      ENVOY_GID: ${ENVOY_GID:-101}
+    labels:
+      dash.url: http://$PROJECT.$DOMAIN:${ADMIN_PORT:-9901}
+      traefik.http.routers.envoy-admin.rule: Host(`$PROJECT.$DOMAIN`)
+      traefik.http.routers.envoy-admin.service: envoy-admin
+      traefik.http.services.envoy-admin.loadbalancer.server.port: 9901
+      traefik.http.routers.envoy-proxy.rule: Host(`proxy.$PROJECT.$DOMAIN`)
+      traefik.http.routers.envoy-proxy.service: envoy-proxy
+      traefik.http.services.envoy-proxy.loadbalancer.server.port: 10000
+
+volumes:
+  envoy_logs:

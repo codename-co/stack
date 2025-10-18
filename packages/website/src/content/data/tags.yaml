@@ -22,8 +22,12 @@ tags:
   ## tags
   - slug: knowledge-base
     name: Knowledge base
+  - slug: learning
+    name: Learning
   - slug: note-taking
     name: Note-taking
+  - slug: research
+    name: Research
   - slug: cms
     name: CMS
     title: Content Management System
@@ -103,6 +107,8 @@ tags:
     name: Reverse proxy
   - slug: http-proxy
     name: HTTP proxy
+  - slug: load-balancer
+    name: Load balancer
   - slug: design
     name: Design
   - slug: automation
@@ -289,3 +295,9 @@ tags:
     title: Web Application Firewall
   - slug: library
     name: Library
+  - slug: chat
+    name: Chat
+  - slug: search
+    name: Search
+  - slug: enterprise
+    name: Enterprise

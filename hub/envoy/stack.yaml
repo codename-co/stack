@@ -1,0 +1,70 @@
+# SPDX-License-Identifier: MIT
+# yaml-language-server: $schema=https://stack.lol/schemas/stack.config.schema.yaml
+# This is a https://stack.lol stack metadata file.
+
+slug: envoy
+name: Envoy
+icon: envoyproxy
+flavor: DockerCompose
+version: "1.36.2"
+updated_at: 2025-10-17
+description: Cloud-native high-performance edge/middle/service proxy
+author: Envoy Project Authors
+license: Apache-2.0
+homepage: https://www.envoyproxy.io
+repository: https://github.com/envoyproxy/envoy
+stars: 26900
+tags:
+  - reverse-proxy
+  - load-balancer
+  - api-gateway
+  - network
+  - observability
+alternativeTo:
+  - apigee
+  - amazonapigateway
+readme: |
+  A high-performance C++ proxy built for cloud-native microservice deployments.
+
+  Envoy acts as a universal data plane for service mesh architectures, providing advanced routing, load balancing, and observability features. Created at Lyft and now a CNCF graduated project used by companies like Airbnb, Netflix, and Uber.
+
+  ![Envoy Architecture](https://www.envoyproxy.io/theme/images/envoy-logo.svg)
+
+  <hr>
+
+  ### Key Capabilities
+
+  - ⚡ **High Performance:** C++ implementation with minimal memory footprint
+  - 🔀 **Protocol Agnostic:** Native HTTP/1.1, HTTP/2, HTTP/3, gRPC, and TCP support
+  - 🎯 **Intelligent Routing:** Path-based routing, traffic splitting, and header manipulation
+  - 🔄 **Resilience Patterns:** Automatic retries, circuit breakers, and timeout management
+  - 📊 **Rich Metrics:** Built-in stats, distributed tracing, and access logging
+  - 🔌 **Dynamic Configuration:** xDS APIs for runtime updates without restarts
+  - 🛡️ **Security First:** TLS termination, mutual TLS, rate limiting, and authentication
+  - 🌍 **Multi-Protocol:** WebSocket, MongoDB, Redis, Postgres wire protocols
+
+  ### Configuration Overview
+
+  This stack includes a basic static configuration. For your use case, you should:
+
+  - Edit `envoy.yaml` to define your routing rules
+  - Configure upstream clusters for your backend services
+  - Set up listeners for your specific ports and protocols
+  - Add filters for authentication, rate limiting, or other features
+
+  The default setup provides:
+  - Admin dashboard at port 9901 for monitoring and debugging
+  - Example HTTP listener at port 10000
+  - Sample upstream service definition
+
+  ### Access Points
+
+  - **Admin Console:** `http://envoy.stack.localhost:9901` - View config, stats, and health
+  - **Proxy Endpoint:** `http://envoy.stack.localhost:10000` - Main traffic entry point
+
+  ### Resources
+
+  - [Official Documentation](https://www.envoyproxy.io/docs)
+  - [Configuration Reference](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
+  - [Example Deployments](https://github.com/envoyproxy/examples)
+  - [Slack Community](https://envoyproxy.slack.com/)
