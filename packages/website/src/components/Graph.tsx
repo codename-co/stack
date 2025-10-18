@@ -64,6 +64,9 @@ export const Graph: React.FC<{
       backgroundColor="#ffffff00"
       extraRenderers={[new CSS3DRenderer()]}
       nodeThreeObjectExtend={true}
+      linkAutoColorBy={(node: any) => node.source.type}
+      linkCurvature={0.1}
+      linkOpacity={1}
       nodeThreeObject={(node: GraphNode) => {
         const slug = node.id.split("-").slice(-1).join("-");
         const icon = iconOf(slug) ?? iconOf(node.icon);
