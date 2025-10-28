@@ -12,7 +12,7 @@ author: Microsoft
 license: Proprietary
 homepage: https://www.minecraft.net
 repository: https://github.com/itzg/docker-minecraft-server
-stars: 12100
+stars: 12200
 tags: [game]
 readme: |
   Minecraft is a game about placing blocks and going on adventures. Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles.

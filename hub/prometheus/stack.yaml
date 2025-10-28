@@ -11,7 +11,7 @@ author: Prometheus community
 license: Apache-2.0
 homepage: https://prometheus.io
 repository: https://github.com/prometheus/prometheus
-stars: 60800
+stars: 60900
 tags: [monitoring, time-series]
 alternativeTo: [graphite]
 readme: |
