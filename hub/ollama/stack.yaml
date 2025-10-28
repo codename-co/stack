@@ -5,11 +5,11 @@ status: working
 slug: ollama
 name: Ollama
 flavor: DockerCompose
-version: "0.6.6"
-updated_at: 2025-04-17
+version: "0.12.6"
+updated_at: 2025-10-16
 description: The easiest way to get up and running with large language models
 author: Ollama
-license: BSD-3-Clause
+license: MIT
 homepage: https://ollama.com
 repository: https://github.com/ollama/ollama
 stars: 154800
