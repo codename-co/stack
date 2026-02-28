@@ -4,7 +4,7 @@ import { locales, defaultLang, languages } from "./locales";
 export type Lang = keyof typeof languages;
 
 export const langs = Object.keys(languages).map(
-  (lang) => (lang === defaultLang ? "" : lang) as Lang,
+  (lang) => (lang === defaultLang ? "" : lang) as Lang
 );
 
 export const getLangFromUrl = (url: URL) => {
@@ -18,7 +18,7 @@ export const getLangFromUrl = (url: URL) => {
 export const useTranslations = (lang: Lang = defaultLang) => {
   return function t(
     key: keyof (typeof locales)[typeof defaultLang],
-    vars?: Record<string, any>,
+    vars?: Record<string, any>
   ) {
     let tmpl = locales[lang]?.[key] ?? locales[defaultLang][key] ?? key;
     for (const v in vars) {
@@ -31,8 +31,9 @@ export const useTranslations = (lang: Lang = defaultLang) => {
 
 export const useUrl = (lang: Lang = defaultLang) => {
   // return template string
-  return function url(path: string) {
-    return `/${lang === defaultLang ? "/" : lang}${path}`.replace(/^\/+/g, "/");
+  return function url(path: string, langOverride?: Lang) {
+    const l = langOverride ?? lang;
+    return `/${l === defaultLang ? "/" : l}${path}`.replace(/^\/+/g, "/");
   };
 };
 
