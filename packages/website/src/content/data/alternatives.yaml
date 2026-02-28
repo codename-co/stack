@@ -127,6 +127,16 @@ alternatives:
   - slug: excel
     name: Excel
     description: Spreadsheet software
+  - slug: google-notebook-lm
+    name: Google Notebook LM
+    icon: google
+    description: AI-powered note-taking and research tool
+  - slug: obsidian
+    name: Obsidian
+    description: Knowledge base and note-taking app
+  - slug: roam-research
+    name: Roam Research
+    description: Note-taking tool for networked thought
   - slug: fast.com
     name: Fast.com
     description: Internet speed test tool
@@ -188,6 +198,9 @@ alternatives:
     name: Guacamole
     icon: apacheguacamole
     description: Remote desktop gateway
+  - slug: happycapy
+    name: HappyCapy
+    description: AI-powered conversational assistant
   - slug: hastebin
     name: Hastebin
     description: Text storage service
@@ -263,6 +276,9 @@ alternatives:
   - slug: make
     name: Make
     description: Automation platform
+  - slug: manus
+    name: Manus
+    description: AI-powered conversational assistant
   - slug: microsoft-office
     name: Microsoft Office
     icon: microsoft

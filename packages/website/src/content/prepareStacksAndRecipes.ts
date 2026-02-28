@@ -49,7 +49,7 @@ const stackConfigs: Record<string, Record<string, Stack>> = import.meta.glob(
   "~~/../hub/*/stack.yaml",
   {
     eager: true,
-  },
+  }
 );
 // const stackLangConfigs: Record<
 //   string,
@@ -62,7 +62,7 @@ const stackEnvs: Record<string, Record<string, string>> = import.meta.glob(
   {
     eager: true,
     query: "?raw",
-  },
+  }
 );
 // const stackBundles = import.meta.glob("~~/../hub/*/*.stack", {
 //   eager: true,
@@ -76,7 +76,7 @@ const stacksBase = await Promise.all(
     const stackMetadata = stackConfig.default;
     delete stackMetadata.$schema;
     stackMetadata.env = parseDotEnv(
-      stackEnvs[path.replace("stack.yaml", ".env")]?.default,
+      stackEnvs[path.replace("stack.yaml", ".env")]?.default
     );
     // stackMetadata.size =
     //   stackBundles[path.replace("stack.yaml", `${stackMetadata.slug}.stack`)]
@@ -92,10 +92,10 @@ const stacksBase = await Promise.all(
           60 /
           60 +
           2,
-        0.4,
+        0.5
       );
     return stackMetadata;
-  }),
+  })
 );
 
 // const stacksLang = await Promise.all(
@@ -134,7 +134,7 @@ const stacks = stacksBase.map((stack) => ({
 for (const stack of stacks) {
   writeFileSync(
     `src/content/data/stacks/${stack.slug}.json`,
-    JSON.stringify(stack, null, 2),
+    JSON.stringify(stack, null, 2)
   );
 }
 
@@ -148,14 +148,14 @@ const recipeConfigs: Record<string, Record<string, Recipe>> = import.meta.glob(
   "~~/../recipes/*/stack.yaml",
   {
     eager: true,
-  },
+  }
 );
 const recipeEnvs: Record<string, Record<string, string>> = import.meta.glob(
   "~~/../recipes/*/.env",
   {
     eager: true,
     query: "?raw",
-  },
+  }
 );
 
 const recipesBase = await Promise.all(
@@ -165,7 +165,7 @@ const recipesBase = await Promise.all(
     const recipeMetadata = recipeConfig.default;
     delete recipeMetadata.$schema;
     recipeMetadata.env = parseDotEnv(
-      recipeEnvs[path.replace("stack.yaml", ".env")]?.default,
+      recipeEnvs[path.replace("stack.yaml", ".env")]?.default
     );
     recipeMetadata.rank =
       (recipeMetadata.stars ?? 0) /
@@ -175,10 +175,10 @@ const recipesBase = await Promise.all(
           60 /
           60 +
           2,
-        0.5,
+        0.5
       );
     return recipeMetadata;
-  }),
+  })
 );
 
 const recipes = recipesBase.map((recipe) => ({
@@ -189,7 +189,7 @@ const recipes = recipesBase.map((recipe) => ({
 for (const recipe of recipes) {
   writeFileSync(
     `src/content/data/recipes/${recipe.slug}.json`,
-    JSON.stringify(recipe, null, 2),
+    JSON.stringify(recipe, null, 2)
   );
 }
 

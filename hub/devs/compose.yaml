@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: MIT
+# This is a https://stack.lol docker compose file.
+
+services:
+  devs:
+    image: codename/devs:main
+    # image: codename/devs:${DEVS_VERSION:-0.6.1}
+    labels:
+      dash.url: https://$PROJECT.$DOMAIN
+      traefik.http.routers.devs.rule: Host(`$PROJECT.$DOMAIN`)
