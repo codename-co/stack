@@ -99,7 +99,7 @@ pub async fn init(tauri: AppHandle) -> std::io::Result<()> {
             .allowed_origin_fn(|origin, _req_head| {
                 origin.to_str().map_or(false, |orig| {
                     debug!("Origin: {:?}", orig);
-                    ["https://stack.lol", "http://localhost:4321"].contains(&orig)
+                    ["https://stack.lol", "https://exodus.stack.lol", "http://localhost:4321"].contains(&orig)
                 })
             })
             // .allow_any_origin()

@@ -53,7 +53,7 @@ export const GET: APIRoute = (context) => {
   if (!slug) {
     return new Response(JSON.stringify({ error: "Missing slug" }), {
       status: 400,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
     });
   }
 
@@ -63,7 +63,7 @@ export const GET: APIRoute = (context) => {
   if (!stack) {
     return new Response(JSON.stringify({ error: "Not found" }), {
       status: 404,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
     });
   }
 
@@ -90,7 +90,7 @@ export const GET: APIRoute = (context) => {
       dotenv,
       assets,
     }),
-    { headers: { "Content-Type": "application/json" } }
+    { headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
   );
 };
 

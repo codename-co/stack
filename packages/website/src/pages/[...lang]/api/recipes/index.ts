@@ -31,7 +31,7 @@ export const GET: APIRoute = (context) => {
     JSON.stringify({
       items,
     }),
-    { headers: { "Content-Type": "application/json" } }
+    { headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
   );
 };
 
