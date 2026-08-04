@@ -48,7 +48,7 @@ services:
     env_file: .env
 
   kafka:
-    image: bitnami/kafka:3.4.1
+    image: soldevelo/kafka:3.4.1
     hostname: kafka
     volumes:
       - kafka_data:/bitnami
