@@ -12,6 +12,7 @@ mod cli;
 mod docker;
 mod init;
 // mod menu_plugin;
+mod tls;
 mod tray;
 mod types;
 mod updater;

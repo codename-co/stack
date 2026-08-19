@@ -44,9 +44,9 @@ graph LR
 
 ### API
 
-- `GET` <https://0.0.0.0:57404/health>
+- `GET` <https://127.0.0.1:57404/health>
   - Returns `OK` if the _app_ is running.
-- `POST` <https://0.0.0.0:57404/run>
+- `POST` <https://127.0.0.1:57404/run>
   - Accepts a JSON payload with the following structure: `{ "slug": "<name>" }`
   - Downloads and runs the software stack from the catalog with the given `<name>`.
 
@@ -56,9 +56,13 @@ graph LR
 
 The _app_ exposes an API that the _website_ can use to communicate with it. To ensure this communication is secure:
 
-1. [ ] The _app_ generates a self-signed certificate when initializing which is used for HTTPS communication;
+1. [x] The _app_ generates a self-signed certificate on first launch, stored
+   per-install under the app data directory and rotated 30 days before expiry.
+   It is a leaf, not a CA, so trusting it grants no authority beyond
+   `127.0.0.1:57404`. Run _Trust certificate_ from the tray menu to install it;
 2. [x] API connections are restricted to localhost (127.0.0.1) to prevent external network access;
 3. [ ] All API requests require authentication using time-limited JWT tokens;
+   **until this lands, any local process can POST to `/run`**;
 4. [ ] The _website_ and _app_ share a secret key for mutual authentication;
 
 ### User Protection

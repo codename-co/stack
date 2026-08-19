@@ -38,7 +38,7 @@
       "signingIdentity": "Developer ID Application: WAREHOUSE SAS (VUL6HVKT5X)",
       "minimumSystemVersion": "10.15"
     },
-    "resources": ["certs/*", "scripts/*.sh", "extra/*.stack"]
+    "resources": ["scripts/*.sh", "extra/*.stack"]
   },
   "plugins": {
     "updater": {

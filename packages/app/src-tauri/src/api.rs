@@ -1,10 +1,17 @@
 use crate::cli;
+use crate::tls;
 use actix_cors::Cors;
 use actix_web::{get, post, web, App, HttpResponse, HttpServer};
 use log::debug;
 use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
 use serde::Deserialize;
-use tauri::{path::BaseDirectory, AppHandle, Manager};
+use tauri::AppHandle;
+
+/// The API is only ever reached from this machine: the website talks to
+/// `https://127.1:57404`. Binding the wildcard address exposed an
+/// unauthenticated `/run` to every device on the local network, and the
+/// certificate's SANs could never cover a LAN address anyway.
+const BIND_ADDR: &str = "127.0.0.1:57404";
 
 #[get("/")]
 async fn index() -> String {
@@ -67,31 +74,29 @@ pub async fn init(tauri: AppHandle) -> std::io::Result<()> {
         tauri: tauri.clone(),
     });
 
-    // Load SSL keys
+    // Per-install TLS material, generated on first launch and rotated as it
+    // nears expiry. Nothing here ships inside the app bundle.
+    let local_tls = tls::ensure(&tauri).map_err(|e| {
+        log::error!("Failed to prepare local TLS material: {}", e);
+        std::io::Error::new(std::io::ErrorKind::Other, e)
+    })?;
+
     let mut builder = SslAcceptor::mozilla_intermediate(SslMethod::tls()).unwrap();
 
-    let key_path = tauri
-        .app_handle()
-        .path()
-        .resolve("certs/key.pem", BaseDirectory::Resource)
-        .unwrap();
     builder
-        .set_private_key_file(&key_path, SslFiletype::PEM)
+        .set_private_key_file(&local_tls.key_path, SslFiletype::PEM)
         .map_err(|e| {
             log::error!("Failed to set private key file: {}", e);
             std::io::Error::new(std::io::ErrorKind::Other, e)
         })?;
     log::debug!("Private key file set successfully");
 
-    let cert_path = tauri
-        .app_handle()
-        .path()
-        .resolve("certs/cert.pem", BaseDirectory::Resource)
-        .unwrap();
-    builder.set_certificate_chain_file(cert_path).map_err(|e| {
-        log::error!("Failed to set certificate chain file: {}", e);
-        std::io::Error::new(std::io::ErrorKind::Other, e)
-    })?;
+    builder
+        .set_certificate_chain_file(&local_tls.cert_path)
+        .map_err(|e| {
+            log::error!("Failed to set certificate chain file: {}", e);
+            std::io::Error::new(std::io::ErrorKind::Other, e)
+        })?;
     log::debug!("Certificate chain file set successfully");
 
     let http_server = HttpServer::new(move || {
@@ -113,11 +118,11 @@ pub async fn init(tauri: AppHandle) -> std::io::Result<()> {
             .service(health)
             .service(run)
     })
-    .bind_openssl("0.0.0.0:57404", builder)?
+    .bind_openssl(BIND_ADDR, builder)?
     .run();
 
-    log::info!("Server started at https://0.0.0.0:57404");
-    println!("Server started at https://0.0.0.0:57404");
+    log::info!("Server started at https://{}", BIND_ADDR);
+    println!("Server started at https://{}", BIND_ADDR);
 
     http_server.await
 }
