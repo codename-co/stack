@@ -6,6 +6,14 @@ node_modules
 /packages/website/public/releases
 /work/
 
+# The app bundles these as Tauri resources (see bundle.resources in
+# tauri.conf.json), so they must be in the repo or CI cannot build.
+# They are already shipped inside every published DMG, so tracking them
+# discloses nothing that the released app does not already hand out.
+!packages/app/src-tauri/certs/*.cer
+!packages/app/src-tauri/certs/*.pem
+!packages/app/src-tauri/extra/*.stack
+
 # Never commit signing material or credentials.
 .env
 *.p12
