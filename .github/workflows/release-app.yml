@@ -1,0 +1,99 @@
+name: Release app
+
+# Builds, signs, notarizes and publishes the macOS desktop app.
+#
+# The output is a *universal* binary (x86_64 + arm64) so it runs natively on
+# both Intel and Apple Silicon Macs.
+#
+# Trigger by pushing a tag that matches the version in tauri.conf.json:
+#   git tag app-v0.2.2 && git push origin app-v0.2.2
+# or run it manually from the Actions tab.
+#
+# Required repository secrets are documented in docs/RELEASING.md.
+
+on:
+  push:
+    tags:
+      - "app-v*"
+  workflow_dispatch:
+    inputs:
+      draft:
+        description: "Create the GitHub release as a draft"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  macos:
+    # macos-14+ runners are Apple Silicon; the universal target cross-compiles
+    # the Intel slice, so a single runner produces both architectures.
+    runs-on: macos-14
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+
+      # Caches the Rust build; first run is slow, later runs are minutes.
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: packages/app/src-tauri -> target
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Resolve version
+        id: version
+        run: echo "value=$(make version)" >> "$GITHUB_OUTPUT"
+
+      # Fails early if the tag and tauri.conf.json disagree, rather than
+      # publishing a release whose assets are named after a different version.
+      - name: Check tag matches app version
+        if: startsWith(github.ref, 'refs/tags/app-v')
+        run: |
+          tag_version="${GITHUB_REF_NAME#app-v}"
+          if [ "$tag_version" != "${{ steps.version.outputs.value }}" ]; then
+            echo "tag $GITHUB_REF_NAME does not match app version ${{ steps.version.outputs.value }}"
+            exit 1
+          fi
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          # Developer ID signing. tauri-action imports the .p12 into a
+          # temporary keychain and removes it when the job ends.
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+          # Notarization.
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          # Updater artifact signature (the minisign key, not the Apple one).
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: packages/app
+          args: --target universal-apple-darwin
+          tagName: app-v${{ steps.version.outputs.value }}
+          releaseName: Stack v${{ steps.version.outputs.value }}
+          releaseBody: |
+            Universal macOS build — runs natively on both Intel and Apple Silicon.
+          releaseDraft: ${{ inputs.draft != false }}
+          # Generates latest.json for the built-in updater.
+          includeUpdaterJson: true
+
+      # Proves the published artifact is genuinely universal. Without this a
+      # regression to an arm64-only build would ship silently, which is exactly
+      # what happened before.
+      - name: Verify universal binary
+        run: make verify-arch

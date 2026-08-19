@@ -1,4 +1,5 @@
 ---
+import { readFileSync } from "node:fs";
 import { langs, useTranslations } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
 
@@ -9,8 +10,18 @@ export const getStaticPaths = () => {
 const lang = Astro.params.lang;
 const t = useTranslations(lang);
 
-// Universal build: runs on both Apple Silicon and Intel Macs.
-const redirectUrl = "/releases/Stack_0.2.2_universal.dmg";
+// Read the version from the app's Tauri config so the download link can never
+// drift out of sync with what CI actually published.
+const { version } = JSON.parse(
+  readFileSync(
+    new URL("../../../../../app/src-tauri/tauri.conf.json", import.meta.url),
+    "utf-8"
+  )
+);
+
+// Universal build: one DMG that runs natively on both Apple Silicon and Intel.
+// Served from GitHub Releases, which is what the release workflow publishes to.
+const redirectUrl = `https://github.com/codename-co/stack/releases/download/app-v${version}/Stack_${version}_universal.dmg`;
 ---
 
 <Layout lang={lang}>

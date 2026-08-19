@@ -44,6 +44,7 @@
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDRCODE0RDRFMUFGMjBCNTgKUldSWUMvSWFUazJCUzBmcExLZEdpWFZ6dDZZNWQ3eXd4NnZoZEl4akhGWmI3eDljbEJaZjRWRkgK",
       "endpoints": [
+        "https://github.com/codename-co/stack/releases/latest/download/latest.json",
         "https://stack.lol/releases/{{target}}/{{arch}}/{{current_version}}",
         "https://stack.lol/releases/latest.json"
       ]

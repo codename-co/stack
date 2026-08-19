@@ -2,7 +2,11 @@
 *.cer
 *.pem
 *.stack
-Makefile
 node_modules
 /packages/website/public/releases
 /work/
+
+# Never commit signing material or credentials.
+.env
+*.p12
+*.key
