@@ -97,6 +97,25 @@ jobs:
           # Generates latest.json for the built-in updater.
           includeUpdaterJson: true
 
+      # Tauri notarizes and staples the .app, then wraps it in a DMG that it
+      # signs but never notarizes. Gatekeeper evaluates the DMG on open, so
+      # without this step a fresh download is rejected with
+      # "Unnotarized Developer ID" even though the app inside is fine.
+      - name: Notarize and staple the DMG
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: make notarize
+
+      - name: Replace the release DMG with the stapled one
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          dmg="packages/app/src-tauri/target/universal-apple-darwin/release/bundle/dmg/Stack_${{ steps.version.outputs.value }}_universal.dmg"
+          gh release upload "app-v${{ steps.version.outputs.value }}" "$dmg" \
+            --clobber --repo "${{ github.repository }}"
+
       # Proves the published artifact is genuinely universal. Without this a
       # regression to an arm64-only build would ship silently, which is exactly
       # what happened before.
