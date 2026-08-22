@@ -77,11 +77,11 @@ providers:
 #   stores:
 #     default:
 #       defaultCertificate:
-#         certFile: /certs/server.cer
-#         keyFile: /certs/server.key
+#         certFile: /certs/chain.pem
+#         keyFile: /certs/key.pem
 
 #   certificates:
-#     - certFile: /certs/server.cer
-#       keyFile: /certs/server.key
+#     - certFile: /certs/chain.pem
+#       keyFile: /certs/key.pem
 #       stores:
 #         - default

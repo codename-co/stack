@@ -5,15 +5,27 @@ use tauri::Manager;
 use tauri_plugin_opener::OpenerExt;
 
 pub fn trust_certificate(app: &tauri::AppHandle) -> Result<(), String> {
-    // The script trusts the per-install certificate from the app data
-    // directory. Make sure it has been generated before handing the user a
-    // Terminal window that can only fail.
+    // Two things get trusted: the loopback API's self-anchored leaf, and the
+    // anchor of the local CA that signs `*.stack.localhost`. Both are minted
+    // per install, so make sure they exist before handing the user a Terminal
+    // window that can only fail.
     let cert_path = tls::cert_dir(app)?.join("cert.pem");
     if !cert_path.exists() {
         log::error!("Local certificate not found: {:?}", cert_path);
         return Err(format!(
             "Local certificate not generated yet: {:?}",
             cert_path
+        ));
+    }
+
+    // Generates the local CA on the spot if the bootstrap stack never ran, so
+    // "Trust certificate" is never a no-op.
+    let proxy = tls::ensure_proxy(app)?;
+    if !proxy.root_path.exists() {
+        log::error!("Local trust anchor not found: {:?}", proxy.root_path);
+        return Err(format!(
+            "Local trust anchor not generated yet: {:?}",
+            proxy.root_path
         ));
     }
 

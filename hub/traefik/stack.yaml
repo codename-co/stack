@@ -5,7 +5,7 @@ slug: traefik
 name: Traefik
 icon: traefikproxy
 flavor: DockerCompose
-version: "3.4.0"
+version: "3.6"
 updated_at: 2025-05-05
 description: A reverse proxy for HTTP services
 author: Containous SAS

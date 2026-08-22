@@ -1,0 +1,5 @@
+# Minted per machine by ../scripts/gen-cert.sh, or supplied by the Stack app
+# through STACK_CERTS_DIR. Never commit key material: a published private key
+# is no key at all.
+*
+!.gitignore

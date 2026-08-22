@@ -13,6 +13,7 @@ mod docker;
 mod init;
 // mod menu_plugin;
 mod tls;
+
 mod tray;
 mod types;
 mod updater;
@@ -66,6 +67,28 @@ fn stack_start(path: &str) -> String {
 // }
 
 fn init_stacks(app: &AppHandle) {
+    // The reverse proxy in the bootstrap stack serves every `*.stack.localhost`
+    // host, so its certificate has to exist — and be mountable — before the
+    // stack comes up. `STACK_CERTS_DIR` is how the compose file finds it;
+    // `get_docker_env_vars` forwards every `STACK_*` variable to docker.
+    match tls::ensure_proxy(app) {
+        Ok(proxy) => {
+            std::env::set_var("STACK_CERTS_DIR", &proxy.dir);
+            std::env::set_var("STACK_DOMAIN", tls::PROXY_DOMAIN);
+            // Recreates the proxy container when, and only when, the leaf was
+            // rotated. See `ProxyTls::fingerprint`.
+            match proxy.fingerprint() {
+                Ok(fp) => std::env::set_var("STACK_CERT_FINGERPRINT", fp),
+                Err(e) => log::warn!("Cannot fingerprint the proxy certificate: {}", e),
+            }
+        }
+        Err(e) => log::error!(
+            "Failed to prepare proxy TLS material, stacks will be served without a trusted \
+             certificate: {}",
+            e
+        ),
+    }
+
     load_stacks(app, stack_start)
         .map_err(|e| log::error!("Failed to run initialization stacks: {:#?}", e))
         .ok();

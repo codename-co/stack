@@ -58,8 +58,8 @@ http:
 ### https://ssl-config.mozilla.org/#server=traefik&version=2.9&config=intermediate&guideline=5.6
 tls:
   certificates:
-    - certFile: /certs/server.cer
-      keyFile: /certs/server.key
+    - certFile: /certs/chain.pem
+      keyFile: /certs/key.pem
       stores:
         - default
 
@@ -78,5 +78,5 @@ tls:
   stores:
     default:
       defaultCertificate:
-        certFile: /certs/server.cer
-        keyFile: /certs/server.key
+        certFile: /certs/chain.pem
+        keyFile: /certs/key.pem
