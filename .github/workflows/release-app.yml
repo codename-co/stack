@@ -70,8 +70,20 @@ jobs:
 
           # A draft release has no git tag yet, so `releases/tags/{tag}` 404s on
           # it. Listing is the only way to find an existing one by name.
-          id=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" \
-            --jq "[.[] | select(.tag_name == \"$tag\") | .id] | first // empty")
+          existing=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" \
+            --jq "[.[] | select(.tag_name == \"$tag\")] | first // empty")
+          id=$(echo "$existing" | jq -r '.id // empty')
+
+          # A published release is immutable: its assets can no longer be
+          # deleted or replaced, so tauri-action dies with "Cannot delete asset
+          # from an immutable release" only after the whole build has run.
+          # Refuse up-front and say what to do instead.
+          if [ -n "$id" ] && [ "$(echo "$existing" | jq -r '.draft')" != "true" ]; then
+            echo "release $tag is already published and its assets are immutable."
+            echo "bump the version in tauri.conf.json and tag a new release,"
+            echo "or delete release $tag (and its tag) if it was published by mistake."
+            exit 1
+          fi
 
           if [ -z "$id" ]; then
             # Created through the API rather than `gh release create` so the id
