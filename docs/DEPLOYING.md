@@ -57,17 +57,46 @@ Astro build re-runs.
 - bump the cache key prefix in the workflow from `stacks-v1-` to `stacks-v2-`
   (also update the `restore-keys` prefix) to discard the store entirely.
 
-## One-time setup (manual)
+## One-time setup
 
-1. **Settings > Pages > Source: GitHub Actions.**
-2. **DNS for `stack.lol`** pointing at GitHub Pages:
-   - `A` records for the apex: `185.199.108.153`, `185.199.109.153`,
-     `185.199.110.153`, `185.199.111.153`
-   - `AAAA` records: `2606:50c0:8000::153`, `2606:50c0:8001::153`,
-     `2606:50c0:8002::153`, `2606:50c0:8003::153`
-   - `CNAME` for `www` -> `codename-co.github.io`
+1. **Settings > Pages > Source: GitHub Actions** — done (`build_type: workflow`,
+   custom domain `stack.lol`).
+2. **DNS on Cloudflare** — see below.
 
-   Then enable "Enforce HTTPS" once the certificate is issued.
+### Cutting `stack.lol` over on Cloudflare
+
+The zone is on Cloudflare and used to proxy the apex to the minicloud box.
+Order matters: GitHub validates the domain over HTTP to issue the Let's Encrypt
+certificate, and it cannot do that through the orange cloud — while proxied
+without a certificate, Cloudflare answers **526**.
+
+1. Replace the apex/`www` records with, both **DNS only** (grey cloud):
+
+   | Type | Name | Content |
+   | --- | --- | --- |
+   | CNAME | `@` | `codename-co.github.io` |
+   | CNAME | `www` | `codename-co.github.io` |
+
+   Cloudflare flattens the apex CNAME automatically, and GitHub accepts it. The
+   explicit alternative is four `A` records (`185.199.108-111.153`) plus the
+   matching `AAAA` (`2606:50c0:8000-8003::153`).
+
+2. **SSL/TLS > Overview > Full (strict)**. Never *Flexible*: Pages redirects
+   HTTP to HTTPS, which would loop forever.
+3. Wait for GitHub's DNS check, then for the certificate (minutes to ~1h), then
+   tick **Enforce HTTPS**.
+4. Optionally flip both records back to **Proxied** for caching and analytics.
+   Pages sends `cache-control: max-age=600`, which Cloudflare honours, so the
+   edge is at most 10 minutes stale after a deploy.
+
+Notes:
+
+- `public/_headers` is inert on Pages, which is harmless: Pages already returns
+  `access-control-allow-origin: *` on every response, the only thing that file
+  did. Anything more needs a Cloudflare Transform Rule (proxied mode only).
+- Consider adding the `_github-pages-challenge-codename-co` TXT record
+  (Settings > Pages > verified domains) so the domain cannot be claimed by
+  another repository.
 
 ## Fallback
 
