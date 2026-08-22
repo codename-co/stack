@@ -1,0 +1,134 @@
+---
+import LatestDownload from "~/components/LatestDownload.astro";
+import {
+  artifactsFor,
+  formatSize,
+  getLatestRelease,
+  platformName,
+  type Platform,
+} from "~/helpers/release";
+import { useTranslations, type Lang } from "~/i18n";
+import Layout from "~/layouts/Layout.astro";
+
+interface Props {
+  lang: Lang;
+  platform: Platform;
+}
+
+const { lang, platform } = Astro.props;
+const t = useTranslations(lang);
+
+// Resolved from the GitHub API at build time rather than from the version in
+// tauri.conf.json: that version is bumped in the commit *before* the release
+// exists, so deriving the asset URL from it hands visitors a 404 for as long as
+// the release workflow is still running. `<LatestDownload>` then re-resolves it
+// client-side, so even a stale page serves the newest build.
+const release = await getLatestRelease();
+const artifacts = artifactsFor(release, platform);
+const [primary, ...others] = artifacts;
+
+const os = platformName[platform];
+
+const steps: Record<Platform, string[]> = {
+  mac: [
+    t(
+      "Install the Stack app by double-clicking the downloaded file. Then drag it to your Applications folder."
+    ),
+    t("Run the Stack app from your Applications folder."),
+  ],
+  windows: [
+    t("Run the downloaded installer and follow the on-screen instructions."),
+    t("Launch Stack from the Start menu."),
+  ],
+  linux: [
+    t(
+      "Install the downloaded package with your package manager, or make the AppImage executable (`chmod +x`) and run it."
+    ),
+    t("Launch Stack from your applications menu."),
+  ],
+};
+
+const requirements: Record<Platform, string> = {
+  mac: t("Requires {os} {version} or later", {
+    os: "macOS",
+    version: "11 Big Sur",
+  }),
+  windows: t("Requires {os} {version} or later", {
+    os: "Windows",
+    version: "10",
+  }),
+  linux: t("Requires a 64-bit Linux distribution with WebKitGTK 4.1"),
+};
+---
+
+<Layout lang={lang} title={t("Download for {os}", { os })}>
+  <noscript slot="head">
+    <meta http-equiv="refresh" content={`1;url=${primary.url}`} />
+  </noscript>
+
+  <div class="section">
+    <div class="container">
+      <h1 set:html={t("Downloading Stack for {os}…", { os })} />
+
+      <p>
+        <a
+          href={primary.url}
+          rel="noopener"
+          data-download-primary
+          data-asset-pattern={primary.pattern}
+          class="highlight"
+        >
+          Stack <span data-release-version>{release.version}</span>
+          {` — ${os} · ${primary.label}`}
+        </a>
+        {
+          primary.size && (
+            <small class="subtle">{` · ${formatSize(primary.size)}`}</small>
+          )
+        }
+      </p>
+      <p class="subtle"><small set:html={requirements[platform]} /></p>
+
+      <h2 set:html={t("Once the download is complete")} />
+      <ol>
+        {steps[platform].map((step) => <li set:html={step} />)}
+      </ol>
+
+      {
+        others.length > 0 && (
+          <>
+            <h2 set:html={t("Other downloads for {os}", { os })} />
+            <ul>
+              {others.map((artifact) => (
+                <li>
+                  <a
+                    href={artifact.url}
+                    rel="noopener"
+                    data-asset-pattern={artifact.pattern}
+                  >
+                    {artifact.label} {artifact.ext}
+                  </a>
+                  {artifact.size && (
+                    <small class="subtle">{` · ${formatSize(
+                      artifact.size
+                    )}`}</small>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </>
+        )
+      }
+
+      <p class="subtle">
+        <small>
+          <a href={release.htmlUrl} rel="noopener">
+            {t("All downloads and release notes on GitHub")}
+          </a>
+        </small>
+      </p>
+    </div>
+  </div>
+
+  <LatestDownload autoStart />
+</Layout>

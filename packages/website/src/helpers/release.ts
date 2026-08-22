@@ -15,34 +15,129 @@ const configuredVersion = (): string => {
   return version as string;
 };
 
-const REPO = "codename-co/stack";
+export const REPO = "codename-co/stack";
+
+/** The GitHub release page for whatever is newest, resolved by GitHub itself. */
+export const LATEST_RELEASE_URL = `https://github.com/${REPO}/releases/latest`;
+
+export type Platform = "mac" | "windows" | "linux";
+
+export type ArtifactId =
+  | "dmg"
+  | "exe"
+  | "msi"
+  | "appimage"
+  | "deb"
+  | "rpm";
+
+export type Artifact = {
+  id: ArtifactId;
+  platform: Platform;
+  /** Human label, e.g. `Universal (Apple Silicon & Intel)`. */
+  label: string;
+  /** File extension shown next to the label, e.g. `.dmg`. */
+  ext: string;
+  /** Direct download URL, or the release page when unresolved. */
+  url: string;
+  /** Asset file name, when resolved. */
+  name?: string;
+  /** Asset size in bytes, when resolved. */
+  size?: number;
+  /**
+   * Regex (as a string) matching the asset name inside *any* release. The
+   * download pages hand it to the browser so a cached/stale page can
+   * re-resolve the newest asset at click time — see `LatestDownload.astro`.
+   */
+  pattern: string;
+};
 
 export type Release = {
-  /** Version without the `app-v` prefix, e.g. `0.2.4`. */
+  /** Version without the `app-v` prefix, e.g. `0.2.5`. */
   version: string;
-  /** Release tag, e.g. `app-v0.2.4`. */
+  /** Release tag, e.g. `app-v0.2.5`. */
   tag: string;
-  /** Universal macOS installer. Guaranteed to exist when `resolved` is true. */
-  dmgUrl: string;
   /** The GitHub release page. */
   htmlUrl: string;
   /** False when the GitHub API could not be reached and we fell back. */
   resolved: boolean;
+  /** Every artifact we advertise, resolved or falling back to the release page. */
+  artifacts: Artifact[];
 };
+
+/**
+ * What we advertise, per platform, in display order. The first entry of a
+ * platform is its recommended download.
+ *
+ * The patterns deliberately anchor on `$` so that the detached minisign
+ * signatures (`…deb.sig`) and the updater tarball never leak into the UI.
+ */
+const SPECS: Omit<Artifact, "url">[] = [
+  {
+    id: "dmg",
+    platform: "mac",
+    label: "Universal (Apple Silicon & Intel)",
+    ext: ".dmg",
+    pattern: String.raw`_universal\.dmg$`,
+  },
+  {
+    id: "exe",
+    platform: "windows",
+    label: "Installer (64-bit)",
+    ext: ".exe",
+    pattern: String.raw`_x64-setup\.exe$`,
+  },
+  {
+    id: "msi",
+    platform: "windows",
+    label: "MSI package (64-bit)",
+    ext: ".msi",
+    pattern: String.raw`_x64_[A-Za-z-]+\.msi$`,
+  },
+  {
+    id: "appimage",
+    platform: "linux",
+    label: "AppImage (x86_64)",
+    ext: ".AppImage",
+    pattern: String.raw`_amd64\.AppImage$`,
+  },
+  {
+    id: "deb",
+    platform: "linux",
+    label: "Debian / Ubuntu (x86_64)",
+    ext: ".deb",
+    pattern: String.raw`_amd64\.deb$`,
+  },
+  {
+    id: "rpm",
+    platform: "linux",
+    label: "Fedora / RHEL (x86_64)",
+    ext: ".rpm",
+    pattern: String.raw`\.x86_64\.rpm$`,
+  },
+];
+
+export const platformName: Record<Platform, string> = {
+  mac: "macOS",
+  windows: "Windows",
+  linux: "Linux",
+};
+
+/** Artifacts for one platform, recommended one first. */
+export const artifactsFor = (release: Release, platform: Platform) =>
+  release.artifacts.filter((a) => a.platform === platform);
 
 let cached: Promise<Release> | undefined;
 
 const fallback = (): Release => {
   const version = configuredVersion();
-  const tag = `app-v${version}`;
   return {
     version,
-    tag,
-    // `releases/latest/download/...` resolves at click time on GitHub's side,
-    // so even a stale build points at something that exists.
-    dmgUrl: `https://github.com/${REPO}/releases/latest`,
-    htmlUrl: `https://github.com/${REPO}/releases/latest`,
+    tag: `app-v${version}`,
+    htmlUrl: LATEST_RELEASE_URL,
     resolved: false,
+    // The release page always exists and always shows the newest assets, so a
+    // failed API call degrades to "one extra click", never to a 404.
+    artifacts: SPECS.map((spec) => ({ ...spec, url: LATEST_RELEASE_URL })),
   };
 };
 
@@ -73,20 +168,39 @@ export const getLatestRelease = (): Promise<Release> => {
       const data = (await res.json()) as {
         tag_name: string;
         html_url: string;
-        assets: { name: string; browser_download_url: string }[];
+        assets: { name: string; browser_download_url: string; size: number }[];
       };
 
       const tag = data.tag_name;
       const version = tag.replace(/^app-v/, "");
-      const dmg = data.assets.find((a) => a.name.endsWith(".dmg"));
-      if (!dmg) throw new Error(`no .dmg asset on ${tag}`);
+
+      const artifacts = SPECS.map((spec) => {
+        const asset = data.assets.find((a) =>
+          new RegExp(spec.pattern).test(a.name)
+        );
+        return asset
+          ? {
+              ...spec,
+              url: asset.browser_download_url,
+              name: asset.name,
+              size: asset.size,
+            }
+          : // A platform can be missing from a given release (a build failed,
+            // or the target was added later): point at the release page rather
+            // than dropping the platform silently.
+            { ...spec, url: data.html_url };
+      });
+
+      if (!artifacts.some((a) => a.name)) {
+        throw new Error(`no known asset on ${tag}`);
+      }
 
       return {
         version,
         tag,
-        dmgUrl: dmg.browser_download_url,
         htmlUrl: data.html_url,
         resolved: true,
+        artifacts,
       };
     } catch (error) {
       // A network hiccup must not break `npm run build`, so degrade to the
@@ -102,3 +216,7 @@ export const getLatestRelease = (): Promise<Release> => {
 
   return cached;
 };
+
+/** `11.4 MB`, or an empty string when the size is unknown. */
+export const formatSize = (bytes?: number) =>
+  bytes ? `${(bytes / 1024 / 1024).toFixed(1)} MB` : "";

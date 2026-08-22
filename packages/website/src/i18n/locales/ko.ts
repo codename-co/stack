@@ -19,6 +19,20 @@ export const ko: I18n = {
   "popular software": "인기 있는 소프트웨어",
   "Remix your own.": "",
   "Available for macOS": "macOS용으로 사용 가능",
+  "Available for macOS, Windows and Linux":
+    "macOS, Windows, Linux용으로 사용 가능",
+  "Requires a 64-bit Linux distribution with WebKitGTK 4.1":
+    "WebKitGTK 4.1이 포함된 64비트 Linux 배포판이 필요합니다",
+  "Run the downloaded installer and follow the on-screen instructions.":
+    "다운로드한 설치 프로그램을 실행하고 화면의 안내를 따르세요.",
+  "Launch Stack from the Start menu.": "시작 메뉴에서 Stack을 실행하세요.",
+  "Install the downloaded package with your package manager, or make the AppImage executable (`chmod +x`) and run it.":
+    "다운로드한 패키지를 패키지 관리자로 설치하거나, AppImage에 실행 권한을 부여한 뒤 (`chmod +x`) 실행하세요.",
+  "Launch Stack from your applications menu.":
+    "애플리케이션 메뉴에서 Stack을 실행하세요.",
+  "Other downloads for {os}": "{os}용 기타 다운로드",
+  "All downloads and release notes on GitHub":
+    "GitHub의 모든 다운로드 및 릴리스 노트",
   "★ {starCount} cumulative stars": "★ {starCount} 누적 별",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "{count}개 이상의 선별된 오픈 소스 소프트웨어 패키지에 액세스하여 한 번의 클릭으로 설치할 수 있습니다.",

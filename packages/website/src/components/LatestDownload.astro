@@ -1,0 +1,63 @@
+---
+import { REPO } from "~/helpers/release";
+
+/**
+ * Keeps download links pointing at the *newest* release, even on a page that
+ * was built (and cached, and served by a CDN) weeks ago.
+ *
+ * Build-time resolution already guarantees the links are valid; this only
+ * closes the window between a new release and the next site deploy. Assets are
+ * matched by the same regex the build used (`data-asset-pattern`), so no
+ * version number is ever hard-coded on either side.
+ *
+ * If anything fails — offline, GitHub rate limit, unknown asset — the
+ * server-rendered href is kept as-is.
+ */
+interface Props {
+  /** Navigate to the recommended asset once the newest URL is known. */
+  autoStart?: boolean;
+}
+
+const { autoStart = false } = Astro.props;
+---
+
+<script is:inline define:vars={{ REPO, autoStart }}>
+  (() => {
+    let started = false;
+    const start = () => {
+      if (started || !autoStart) return;
+      const primary = document.querySelector("a[data-download-primary]");
+      if (!primary) return;
+      started = true;
+      window.location.href = primary.href;
+    };
+
+    // Never let a slow/blocked API call hold the download hostage: the
+    // build-time URL is already correct, it may just not be the newest one.
+    const safety = setTimeout(start, 2000);
+
+    fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {
+      headers: { accept: "application/vnd.github+json" },
+    })
+      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
+      .then((data) => {
+        const version = String(data.tag_name ?? "").replace(/^app-v/, "");
+
+        for (const link of document.querySelectorAll("a[data-asset-pattern]")) {
+          const re = new RegExp(link.dataset.assetPattern);
+          const asset = (data.assets ?? []).find((a) => re.test(a.name));
+          if (asset) link.href = asset.browser_download_url;
+        }
+
+        if (version) {
+          for (const el of document.querySelectorAll("[data-release-version]"))
+            el.textContent = version;
+        }
+      })
+      .catch(() => {})
+      .finally(() => {
+        clearTimeout(safety);
+        start();
+      });
+  })();
+</script>

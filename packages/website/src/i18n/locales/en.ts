@@ -16,6 +16,7 @@ export const en = [
   "popular software",
   "Remix your own.",
   "Available for macOS",
+  "Available for macOS, Windows and Linux",
   "★ {starCount} cumulative stars",
   "Access {count}+ curated open source software packages, ready to install with one click.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).",
@@ -50,12 +51,19 @@ export const en = [
   "Give your desktop *superpowers*.<br />Make it run any open source quality software in a snap.",
   "Download for {os}",
   "Requires {os} {version} or later",
+  "Requires a 64-bit Linux distribution with WebKitGTK 4.1",
 
   /** Page /download/<os>} */
   "Downloading Stack for {os}…",
   "Once the download is complete",
   "Install the Stack app by double-clicking the downloaded file. Then drag it to your Applications folder.",
   "Run the Stack app from your Applications folder.",
+  "Run the downloaded installer and follow the on-screen instructions.",
+  "Launch Stack from the Start menu.",
+  "Install the downloaded package with your package manager, or make the AppImage executable (`chmod +x`) and run it.",
+  "Launch Stack from your applications menu.",
+  "Other downloads for {os}",
+  "All downloads and release notes on GitHub",
 
   /** Page /<stack> */
   "Start it now",

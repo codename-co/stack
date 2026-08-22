@@ -20,6 +20,20 @@ export const ja: I18n = {
   "popular software": "人気のあるソフトウェア",
   "Remix your own.": "",
   "Available for macOS": "macOS用",
+  "Available for macOS, Windows and Linux": "macOS、Windows、Linux に対応",
+  "Requires a 64-bit Linux distribution with WebKitGTK 4.1":
+    "WebKitGTK 4.1 を備えた 64 ビットの Linux ディストリビューションが必要です",
+  "Run the downloaded installer and follow the on-screen instructions.":
+    "ダウンロードしたインストーラーを実行し、画面の指示に従ってください。",
+  "Launch Stack from the Start menu.":
+    "スタートメニューから Stack を起動します。",
+  "Install the downloaded package with your package manager, or make the AppImage executable (`chmod +x`) and run it.":
+    "ダウンロードしたパッケージをパッケージマネージャーでインストールするか、AppImage に実行権限を付与して (`chmod +x`) 実行してください。",
+  "Launch Stack from your applications menu.":
+    "アプリケーションメニューから Stack を起動します。",
+  "Other downloads for {os}": "{os} 向けのその他のダウンロード",
+  "All downloads and release notes on GitHub":
+    "GitHub のすべてのダウンロードとリリースノート",
   "★ {starCount} cumulative stars": "★ {starCount} 累積スター",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "{count}以上のキュレーションされたオープンソースソフトウェアパッケージにアクセスし、ワンクリックでインストールできます。",

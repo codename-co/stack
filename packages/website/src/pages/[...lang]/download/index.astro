@@ -13,6 +13,46 @@ const t = useTranslations(lang);
 const url = useUrl(lang);
 
 const title = t("Download Stack");
+
+// The CTA is rendered for macOS and re-pointed client-side to whatever the
+// visitor is actually running: the page is static, so the detection cannot
+// happen at build time, and macOS is the most common visitor by far.
+const platforms = [
+  {
+    id: "mac",
+    name: "macOS",
+    logo: "apple",
+    href: url("/download/mac"),
+    requirement: t("Requires {os} {version} or later", {
+      os: "macOS",
+      version: "11 Big Sur",
+    }),
+  },
+  {
+    id: "linux",
+    name: "Linux",
+    logo: "linux",
+    href: url("/download/linux"),
+    requirement: t("Requires a 64-bit Linux distribution with WebKitGTK 4.1"),
+  },
+  {
+    id: "windows",
+    name: "Windows",
+    logo: "microsoft",
+    href: url("/download/windows"),
+    requirement: t("Requires {os} {version} or later", {
+      os: "Windows",
+      version: "10",
+    }),
+  },
+] as const;
+
+const detection = platforms.map(({ id, name, href, requirement }) => ({
+  id,
+  label: t("Download for {os}", { os: name }),
+  href,
+  requirement,
+}));
 ---
 
 <Layout lang={lang} title={title} leftTransition="fade">
@@ -63,46 +103,66 @@ const title = t("Download Stack");
         )}
       />
       <a
-        href={url("/download/mac")}
+        href={platforms[0].href}
         class="inline-flex highlight hover:animate-highlight"
+        data-download-cta
       >
         <Download set:html={t("Download for {os}", { os: "macOS" })} />
       </a>
       <p class="subtle my-3" style="max-width: 24em">
-        <small
-          set:html={t("Requires {os} {version} or later", {
-            os: "macOS",
-            version: "11 Big Sur",
-          })}
-        />
+        <small data-download-requirement set:html={platforms[0].requirement} />
       </p>
       <br />
       <div style="columns: 3; max-width: 15em">
-        <a
-          href="/download/mac"
-          class="flex cursor-pointer flex-col items-center rounded-lg px-6 py-2 hover:bg-neutral-100 hover:dark:bg-neutral-700"
-          style="flex-direction: column;"
-        >
-          <Logo slug="apple" style={{ color: "inherit" }} />
-          <span class="text-sm">macOS</span>
-        </a>
-        <a
-          aria-disabled="true"
-          class="flex cursor-pointer flex-col items-center rounded-lg px-6 py-2"
-          style="flex-direction: column;"
-        >
-          <Logo slug="linux" style={{ color: "inherit" }} />
-          <span class="text-sm">Linux</span>
-        </a>
-        <a
-          aria-disabled="true"
-          class="flex cursor-pointer flex-col items-center rounded-lg px-6 py-2"
-          style="flex-direction: column;"
-        >
-          <Logo slug="microsoft" style={{ color: "inherit" }} />
-          <span class="text-sm">Windows</span>
-        </a>
+        {
+          platforms.map(({ id, name, logo, href }) => (
+            <a
+              href={href}
+              data-platform-tile={id}
+              class="flex cursor-pointer flex-col items-center rounded-lg px-6 py-2 hover:bg-neutral-100 hover:dark:bg-neutral-700"
+              style="flex-direction: column;"
+            >
+              <Logo slug={logo} style={{ color: "inherit" }} />
+              <span class="text-sm">{name}</span>
+            </a>
+          ))
+        }
       </div>
+
+      <script is:inline define:vars={{ detection }}>
+        (() => {
+          const ua = navigator.userAgent;
+          const id = /Windows|Win64|Win32/i.test(ua)
+            ? "windows"
+            : // iPadOS reports as a Mac; both should be offered the DMG rather
+              // than the Linux packages, so Linux is matched last and narrowly.
+              /Mac|iPhone|iPad|iPod/i.test(ua)
+              ? "mac"
+              : /Linux|X11|CrOS/i.test(ua)
+                ? "linux"
+                : null;
+
+          const platform = detection.find((p) => p.id === id);
+          if (!platform) return;
+
+          const cta = document.querySelector("[data-download-cta]");
+          if (cta) {
+            cta.href = platform.href;
+            const label = cta.querySelector("span");
+            if (label) label.textContent = platform.label;
+          }
+
+          const requirement = document.querySelector(
+            "[data-download-requirement]"
+          );
+          if (requirement) requirement.innerHTML = platform.requirement;
+
+          const tile = document.querySelector(
+            `[data-platform-tile="${platform.id}"]`
+          );
+          if (tile) tile.classList.add("bg-neutral-100", "dark:bg-neutral-700");
+        })();
+      </script>
     </div>
   </div>
 </Layout>

@@ -20,6 +20,20 @@ export const uk: I18n = {
   "popular software": "популярне програмне забезпечення",
   "Remix your own.": "",
   "Available for macOS": "Доступно для macOS",
+  "Available for macOS, Windows and Linux":
+    "Доступно для macOS, Windows і Linux",
+  "Requires a 64-bit Linux distribution with WebKitGTK 4.1":
+    "Потрібен 64-бітний дистрибутив Linux із WebKitGTK 4.1",
+  "Run the downloaded installer and follow the on-screen instructions.":
+    "Запустіть завантажений інсталятор і дотримуйтесь інструкцій на екрані.",
+  "Launch Stack from the Start menu.": "Запустіть Stack із меню «Пуск».",
+  "Install the downloaded package with your package manager, or make the AppImage executable (`chmod +x`) and run it.":
+    "Встановіть завантажений пакунок за допомогою менеджера пакунків або зробіть AppImage виконуваним (`chmod +x`) і запустіть його.",
+  "Launch Stack from your applications menu.":
+    "Запустіть Stack із меню програм.",
+  "Other downloads for {os}": "Інші завантаження для {os}",
+  "All downloads and release notes on GitHub":
+    "Усі завантаження та примітки до випусків на GitHub",
   "★ {starCount} cumulative stars": "★ {starCount} кумулятивні зірки",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "Отримайте доступ до {count}+ відібраних пакетів програмного забезпечення з відкритим вихідним кодом, готових до встановлення одним кліком.",

@@ -19,6 +19,8 @@ export const fr: I18n = {
   "and other": "et autres",
   "popular software": "logiciels populaires",
   "Remix your own.": "",
+  "Available for macOS, Windows and Linux":
+    "Disponible pour macOS, Windows et Linux",
   "Available for macOS": "Disponible sur macOS",
   "★ {starCount} cumulative stars": "★ {starCount} étoiles cumulées",
   "Access {count}+ curated open source software packages, ready to install with one click.":
@@ -66,6 +68,8 @@ export const fr: I18n = {
     "Donnez à votre ordinateur *des superpouvoirs*.<br />Faites-lui démarrer de nombreux logiciels open source de qualité en un clin d'œil.",
   "Download for {os}": "Télécharger pour {os}",
   "Requires {os} {version} or later": "Requiert {os} {version} ou ultérieur",
+  "Requires a 64-bit Linux distribution with WebKitGTK 4.1":
+    "Requiert une distribution Linux 64 bits avec WebKitGTK 4.1",
 
   /** Page /download/<os>} */
   "Downloading Stack for {os}…": "Téléchargement de Stack pour {os}…",
@@ -74,6 +78,17 @@ export const fr: I18n = {
     "Installez l'application Stack en double-cliquant sur le fichier téléchargé. Ensuite, faites-le glisser dans votre dossier Applications.",
   "Run the Stack app from your Applications folder.":
     "Exécutez l'application Stack depuis votre dossier Applications.",
+  "Run the downloaded installer and follow the on-screen instructions.":
+    "Lancez l'installateur téléchargé et suivez les instructions à l'écran.",
+  "Launch Stack from the Start menu.":
+    "Démarrez Stack depuis le menu Démarrer.",
+  "Install the downloaded package with your package manager, or make the AppImage executable (`chmod +x`) and run it.":
+    "Installez le paquet téléchargé avec votre gestionnaire de paquets, ou rendez l'AppImage exécutable (`chmod +x`) et lancez-la.",
+  "Launch Stack from your applications menu.":
+    "Démarrez Stack depuis votre menu d'applications.",
+  "Other downloads for {os}": "Autres téléchargements pour {os}",
+  "All downloads and release notes on GitHub":
+    "Tous les téléchargements et notes de version sur GitHub",
 
   /** Page /<stack> */
   "Start it now": "Démarrer",

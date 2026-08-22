@@ -10,6 +10,12 @@ import Layout from "~/layouts/Layout.astro";
 // has no rewrite rules, so instead of a dead end we recognise those URLs
 // client-side and send the visitor to the current release.
 const release = await getLatestRelease();
+
+// Old links carry the file extension of what they wanted, which is enough to
+// send the visitor to the equivalent artifact of the current release.
+const byExtension = Object.fromEntries(
+  release.artifacts.map((a) => [a.id, a.url])
+);
 ---
 
 <Layout title="Not found">
@@ -29,10 +35,10 @@ const release = await getLatestRelease();
       </p>
 
       <p>
-        <a href={release.dmgUrl} rel="noopener">
+        <a href="/download" rel="noopener">
           {
             release.resolved
-              ? `Download Stack ${release.version} for macOS`
+              ? `Download Stack ${release.version}`
               : "Download the latest Stack release"
           }
         </a>
@@ -41,15 +47,21 @@ const release = await getLatestRelease();
   </div>
 </Layout>
 
-<script is:inline define:vars={{ dmgUrl: release.dmgUrl, htmlUrl: release.htmlUrl }}>
+<script is:inline define:vars={{ byExtension, htmlUrl: release.htmlUrl }}>
   // A stale download link is a visitor who wants a binary, not an apology.
   if (location.pathname.startsWith("/releases/")) {
     document.getElementById("generic")?.setAttribute("hidden", "");
     document.getElementById("release")?.removeAttribute("hidden");
-    // `.dmg`/`.tar.gz` means "give me the file"; anything else under
-    // /releases/ (an updater manifest probe, a directory listing) is better
-    // served by the release page itself.
-    const wantsBinary = /\.(dmg|tar\.gz|zip)$/.test(location.pathname);
-    setTimeout(() => location.replace(wantsBinary ? dmgUrl : htmlUrl), 1500);
+    // A known installer extension means "give me the file"; anything else
+    // under /releases/ (an updater manifest probe, a directory listing) is
+    // better served by the release page itself.
+    const ext = /\.(dmg|exe|msi|AppImage|deb|rpm)$/i.exec(location.pathname);
+    const target =
+      (ext && byExtension[ext[1].toLowerCase()]) ||
+      // `.tar.gz`/`.zip` are the macOS updater bundles: the DMG is what a
+      // human clicking such a link actually wants.
+      (/\.(tar\.gz|zip)$/.test(location.pathname) && byExtension.dmg) ||
+      htmlUrl;
+    setTimeout(() => location.replace(target), 1500);
   }
 </script>

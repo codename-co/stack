@@ -20,6 +20,20 @@ export const es: I18n = {
   "popular software": "software popular",
   "Remix your own.": "",
   "Available for macOS": "Disponible para macOS",
+  "Available for macOS, Windows and Linux":
+    "Disponible para macOS, Windows y Linux",
+  "Requires a 64-bit Linux distribution with WebKitGTK 4.1":
+    "Requiere una distribución Linux de 64 bits con WebKitGTK 4.1",
+  "Run the downloaded installer and follow the on-screen instructions.":
+    "Ejecute el instalador descargado y siga las instrucciones en pantalla.",
+  "Launch Stack from the Start menu.": "Inicie Stack desde el menú Inicio.",
+  "Install the downloaded package with your package manager, or make the AppImage executable (`chmod +x`) and run it.":
+    "Instale el paquete descargado con su gestor de paquetes, o haga que la AppImage sea ejecutable (`chmod +x`) y ejecútela.",
+  "Launch Stack from your applications menu.":
+    "Inicie Stack desde su menú de aplicaciones.",
+  "Other downloads for {os}": "Otras descargas para {os}",
+  "All downloads and release notes on GitHub":
+    "Todas las descargas y notas de versión en GitHub",
   "★ {starCount} cumulative stars": "★ {starCount} estrellas acumuladas",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "Acceda a {count}+ paquetes de software de código abierto seleccionados, listos para instalar con un solo clic.",

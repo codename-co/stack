@@ -19,6 +19,19 @@ export const ar: I18n = {
   "popular software": "برمجيات شهيرة",
   "Remix your own.": "",
   "Available for macOS": "متاح لنظام التشغيل macOS",
+  "Available for macOS, Windows and Linux":
+    "متاح لأنظمة macOS و Windows و Linux",
+  "Requires a 64-bit Linux distribution with WebKitGTK 4.1":
+    "يتطلب توزيعة Linux بمعمارية 64 بت مع WebKitGTK 4.1",
+  "Run the downloaded installer and follow the on-screen instructions.":
+    "شغّل ملف التثبيت الذي تم تنزيله واتبع التعليمات الظاهرة على الشاشة.",
+  "Launch Stack from the Start menu.": "شغّل Stack من قائمة ابدأ.",
+  "Install the downloaded package with your package manager, or make the AppImage executable (`chmod +x`) and run it.":
+    "ثبّت الحزمة التي تم تنزيلها باستخدام مدير الحزم لديك، أو اجعل ملف AppImage قابلاً للتنفيذ (`chmod +x`) ثم شغّله.",
+  "Launch Stack from your applications menu.": "شغّل Stack من قائمة التطبيقات.",
+  "Other downloads for {os}": "تنزيلات أخرى لـ {os}",
+  "All downloads and release notes on GitHub":
+    "جميع التنزيلات وملاحظات الإصدار على GitHub",
   "★ {starCount} cumulative stars": "★ {starCount} نجوم تراكمية",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "الوصول إلى أكثر من {count} حزمة برمجيات مفتوحة المصدر مرتبة، جاهزة للتثبيت بنقرة واحدة.",

@@ -19,6 +19,17 @@ export const zh: I18n = {
   "popular software": "热门软件",
   "Remix your own.": "",
   "Available for macOS": "适用于 macOS",
+  "Available for macOS, Windows and Linux": "适用于 macOS、Windows 和 Linux",
+  "Requires a 64-bit Linux distribution with WebKitGTK 4.1":
+    "需要带有 WebKitGTK 4.1 的 64 位 Linux 发行版",
+  "Run the downloaded installer and follow the on-screen instructions.":
+    "运行下载的安装程序并按照屏幕上的说明操作。",
+  "Launch Stack from the Start menu.": "从「开始」菜单启动 Stack。",
+  "Install the downloaded package with your package manager, or make the AppImage executable (`chmod +x`) and run it.":
+    "使用包管理器安装下载的软件包，或为 AppImage 添加可执行权限（`chmod +x`）后运行。",
+  "Launch Stack from your applications menu.": "从应用程序菜单启动 Stack。",
+  "Other downloads for {os}": "{os} 的其他下载",
+  "All downloads and release notes on GitHub": "GitHub 上的所有下载和发行说明",
   "★ {starCount} cumulative stars": "★ {starCount} 累积星星",
   "Access {count}+ curated open source software packages, ready to install with one click.":
     "访问 {count}+ 精选的开源软件包，一键安装。",

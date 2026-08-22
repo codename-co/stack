@@ -32,7 +32,7 @@ Stack consists of three core components:
 ## Features
 
 - [x] 📦 **Software bundles**: Download and run software stacks with `.stack` files
-- [x] 👨‍💻 **Desktop app**:  macOS
+- [x] 👨‍💻 **Desktop app**: [macOS](https://stack.lol/download/mac) (`.dmg`), [Windows](https://stack.lol/download/windows) (`.exe`, `.msi`), [Linux](https://stack.lol/download/linux) (`.AppImage`, `.deb`, `.rpm`)
 - [x] 🚀 **One-click installation**: Install software with a single click
 - [x] 🔍 **Curated collection**: Access carefully selected free applications (and their alternatives)
   - [x] 🐳 **Docker compose**: Run powerful multi-container applications
@@ -42,7 +42,6 @@ Stack consists of three core components:
 - [x] 🥧 **Recipes**: Create custom application stacks by mixing and matching components
 - [ ] 🔒 **Security-focused**: Open-source software vetted against our [security checklist](./ARCHITECTURE.md#security)
 - [ ] 🛣 **Roadmap**:
-- Cross-platform support (Linux, Windows)
 - Self-contained packaging (bundled dependencies)
 - Offline installation support
 - Automatic updates
