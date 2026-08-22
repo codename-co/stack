@@ -5,13 +5,13 @@ slug: prometheus
 name: Prometheus
 flavor: DockerCompose
 version: "3.3.0"
-updated_at: 2025-04-15
+updated_at: 2025-04-18
 description: Monitoring system and time series database
 author: Prometheus community
 license: Apache-2.0
 homepage: https://prometheus.io
 repository: https://github.com/prometheus/prometheus
-stars: 60900
+stars: 65800
 tags: [monitoring, time-series]
 alternativeTo: [graphite]
 readme: |

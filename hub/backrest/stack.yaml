@@ -10,8 +10,9 @@ updated_at: 2025-05-06
 description: Web UI and orchestrator for restic backup
 author: Gareth George
 license: GPL-3.0
+homepage: https://garethgeorge.github.io/backrest/
 repository: https://github.com/garethgeorge/backrest
-stars: 5400
+stars: 7190
 tags: [backup]
 alternativeTo: []
 readme: |

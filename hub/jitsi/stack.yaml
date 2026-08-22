@@ -5,13 +5,13 @@ slug: jitsi
 name: Jitsi Meet
 flavor: DockerCompose
 version: stable
-updated_at: 2025-02-28
+updated_at: 2026-06-08
 description: Secure, Simple and Scalable Video Conferences
 author: 8x8, Inc
 license: Apache-2.0
 homepage: https://jitsi.org/jitsi-meet
 repository: https://github.com/jitsi/jitsi-meet
-stars: 27400
+stars: 29800
 tags: [video]
 alternativeTo: [zoom, google-meet]
 readme: |

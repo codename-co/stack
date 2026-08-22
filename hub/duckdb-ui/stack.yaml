@@ -7,13 +7,13 @@ name: DuckDB UI
 icon: duckdb
 flavor: DockerCompose
 version: latest
-updated_at: 2025-03-11
+updated_at: 2026-07-31
 description: Analytical database with a web-based user interface
 author: DuckDB Foundation
 license: MIT
 homepage: https://duckdb.org/
 repository: https://github.com/duckdb/duckdb-ui
-stars: 374
+stars: 460
 tags: [database, analytics]
 alternativeTo: []
 readme: |

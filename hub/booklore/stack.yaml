@@ -10,8 +10,9 @@ updated_at: 2025-05-17
 description: Hosting, manage, and explore books
 author: Aditya Chandel
 license: GPL-3.0
-repository: https://github.com/adityachandelgit/BookLore
-stars: 5400
+homepage: https://booklore.org
+repository: https://github.com/booklore-app/booklore
+stars: 880
 tags: [ebook]
 alternativeTo: []
 readme: |

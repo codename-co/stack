@@ -6,12 +6,12 @@ name: Glance
 icon: Ⓖ
 flavor: DockerCompose
 version: "0.7.5"
-updated_at: 2025-03-12
+updated_at: 2025-03-15
 description: Self-hosted dashboard
 author: Svilen Markov
 license: AGPL-3.0
 repository: https://github.com/glanceapp/glance
-stars: 28900
+stars: 36500
 tags: [dashboard]
 alternativeTo: []
 readme: |

@@ -6,13 +6,13 @@ slug: mermaid
 name: Mermaid Live Editor
 flavor: DockerCompose
 version: latest
-updated_at: 2024-11-18
+updated_at: 2026-08-22
 description: Edit, preview and share mermaid charts/diagrams
 author: Mermaid community
 license: MIT
 homepage: https://mermaid.live/
 repository: https://github.com/mermaid-js/mermaid-live-editor
-stars: 5600
+stars: 6770
 tags:
   - diagram
 alternativeTo:

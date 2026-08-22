@@ -5,13 +5,13 @@ slug: vert
 name: Vert
 flavor: DockerCompose
 version: "main"
-updated_at: 2025-04-17
+updated_at: 2026-08-10
 description: File converter (images, audio, video, docs)
 author: VERT-sh
 license: AGPL-3.0
 homepage: https://vert.sh
 repository: https://github.com/VERT-sh/VERT
-stars: 8400
+stars: 15400
 tags: [conversion]
 alternativeTo: [cloudconvert]
 readme: |

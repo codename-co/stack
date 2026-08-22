@@ -11,7 +11,7 @@ author: Red Hat
 license: Apache-2.0
 homepage: https://quay.io
 repository: https://github.com/quay/quay
-stars: 2600
+stars: 2820
 tags: [container, registry, security]
 alternativeTo: [dockerhub, jfrog-artifactory]
 readme: |

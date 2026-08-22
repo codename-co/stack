@@ -3,7 +3,7 @@
 
 services:
   lldap:
-    image: lldap/lldap:v${LLDAP_VERSION:-0.6}
+    image: lldap/lldap:v${LLDAP_VERSION:-0.6.3}
     # ports:
     #   # For LDAP, not recommended to expose, see Usage section.
     #   - "3890:3890"

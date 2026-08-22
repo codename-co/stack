@@ -12,7 +12,7 @@ author: Lago
 license: AGPL-3.0
 homepage: https://www.getlago.com
 repository: https://github.com/getlago/lago
-stars: 8700
+stars: 10400
 tags: [payment]
 alternativeTo: [stripe, chargebee, recurly]
 readme: |

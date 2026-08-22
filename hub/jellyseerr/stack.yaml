@@ -11,8 +11,8 @@ description: Media request and discovery manager
 author: Jellyseerr
 license: MIT
 homepage: https://docs.jellyseerr.dev
-repository: https://github.com/fallenbagel/jellyseerr
-stars: 6800
+repository: https://github.com/seerr-team/seerr
+stars: 12300
 tags: [media-server]
 alternativeTo: []
 readme: |

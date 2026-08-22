@@ -6,13 +6,13 @@ name: JSON Crack
 icon: json
 flavor: DockerCompose
 version: "latest"
-updated_at: 2025-01-24
+updated_at: 2026-02-05
 description: Transforms various data formats into interactive graphs
 author: JSON Crack
 license: Copyright
 homepage: https://jsoncrack.com
 repository: https://github.com/AykutSarac/jsoncrack.com
-stars: 42200
+stars: 44300
 tags: [data]
 alternativeTo: []
 readme: |

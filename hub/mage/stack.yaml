@@ -6,13 +6,13 @@ name: Mage
 icon: 🧙
 flavor: DockerCompose
 version: "0.9.75"
-updated_at: 2024-11-28
+updated_at: 2024-12-06
 description: Data pipelines for integrating and transforming data
 author: Mage Technologies, Inc.
 license: Apache-2.0
 homepage: https://www.mage.ai
 repository: https://github.com/mage-ai/mage-ai
-stars: 8500
+stars: 8810
 tags: [data, data-pipeline, etl]
 alternativeTo: [airflow]
 readme: |

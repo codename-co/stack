@@ -11,8 +11,9 @@ updated_at: 2012-07-15
 description: WebGL maze game
 author: Rye Terrell
 license: Unlicense
+homepage: https://wwwtyro.github.io/Astray
 repository: https://github.com/wwwtyro/Astray
-stars: 585
+stars: 600
 tags: [game]
 alternativeTo: []
 readme: >

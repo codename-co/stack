@@ -6,12 +6,12 @@ name: Huginn
 icon: 🦅
 flavor: DockerCompose
 version: latest
-updated_at: 2025-01-04
+updated_at: 2026-08-22
 description: Create agents that monitor and act on your behalf
 author: Huggin
 license: MIT
 repository: https://github.com/huginn/huginn
-stars: 47700
+stars: 49800
 tags:
   - automation
   - monitoring

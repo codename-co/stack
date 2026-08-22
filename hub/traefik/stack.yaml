@@ -6,13 +6,13 @@ name: Traefik
 icon: traefikproxy
 flavor: DockerCompose
 version: "3.6"
-updated_at: 2025-05-05
+updated_at: 2026-08-18
 description: A reverse proxy for HTTP services
 author: Containous SAS
 license: MIT
 homepage: https://traefik.io
 repository: https://github.com/traefik/traefik
-stars: 57300
+stars: 64500
 tags:
   - api-gateway
   - reverse-proxy

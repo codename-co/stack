@@ -6,13 +6,13 @@ name: Litlyx
 icon: Ⓛ
 flavor: DockerCompose
 version: "latest"
-updated_at: 2025-03-11
+updated_at: 2025-12-03
 description: Powerful analytics solution
 author: Litlyx Srl
 license: Apache-2.0
 homepage: https://litlyx.com
 repository: https://github.com/Litlyx/litlyx
-stars: 1600
+stars: 1740
 tags: [analytics]
 alternativeTo: [google-analytics]
 readme: |

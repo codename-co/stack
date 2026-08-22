@@ -5,13 +5,13 @@ slug: lldap
 name: LLDAP
 icon: Ⓛ
 flavor: DockerCompose
-version: "0.6"
-updated_at: 2024-11-22
+version: "0.6.3"
+updated_at: 2026-04-30
 description: Light LDAP implementation
 author: LLDAP
 license: GPL-3.0
 repository: https://github.com/lldap/lldap
-stars: 5600
+stars: 6460
 tags: [ldap]
 alternativeTo: []
 readme: |

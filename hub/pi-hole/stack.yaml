@@ -6,13 +6,13 @@ name: Pi-hole
 icon: pihole
 flavor: DockerCompose
 version: "latest"
-updated_at: 2025-02-22
+updated_at: 2026-07-07
 description: A black hole for Internet advertisements
 author: Pi-hole LLC
 license: EUPL-1.2
 homepage: https://pi-hole.net
 repository: https://github.com/pi-hole/pi-hole
-stars: 53900
+stars: 60500
 tags: [dns, network]
 alternativeTo: []
 readme: |

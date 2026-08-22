@@ -7,13 +7,13 @@ name: BunkerWeb
 icon: 🛡️
 flavor: DockerCompose
 version: "1.6.2"
-updated_at: 2025-07-04
+updated_at: 2025-07-08
 description: Web Application Firewall (WAF)
 author: Bunkerity SAS
 license: AGPL-3.0
 homepage: https://www.bunkerweb.io
 repository: https://github.com/bunkerity/bunkerweb
-stars: 9200
+stars: 10800
 tags: [waf, security]
 alternativeTo: []
 readme: |
