@@ -68,7 +68,7 @@ packitall:
 	@find recipes/.dist -type d -depth 1 -exec sh -c 'cd {} && tar --exclude="*.stack" -czf "../../../packages/website/public/downloads/recipes/$$(basename {}).stack" .' \;
 
 packitall-ci:             ## Build every .stack bundle incrementally (used by CI)
-	@./packages/scripts/pack-stacks.sh
+	@bash ./packages/scripts/pack-stacks.sh
 
 
 minicloud-ssh:             ## SSH into the minicloud server

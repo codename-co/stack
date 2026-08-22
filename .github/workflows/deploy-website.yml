@@ -68,8 +68,10 @@ jobs:
           restore-keys: |
             stacks-v1-${{ runner.os }}-
 
+      # Invoked through `bash` on purpose: the repo has core.fileMode=false on
+      # some clones, so the executable bit is not guaranteed to survive a commit.
       - name: Pack stacks
-        run: ./packages/scripts/pack-stacks.sh
+        run: bash ./packages/scripts/pack-stacks.sh
 
       - name: Build website
         run: cd packages/website && npm run build
