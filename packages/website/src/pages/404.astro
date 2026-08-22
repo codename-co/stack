@@ -1,0 +1,54 @@
+---
+import { getLatestRelease } from "~/helpers/release";
+import Layout from "~/layouts/Layout.astro";
+
+// GitHub Pages serves this file (with a 404 status) for any unknown path.
+//
+// It matters most for `/releases/...`: the site used to host the DMGs itself,
+// so links like `/releases/Stack_0.2.1_aarch64.dmg` are still in the wild — in
+// old blog posts, in chat history, in the release notes of old builds. Pages
+// has no rewrite rules, so instead of a dead end we recognise those URLs
+// client-side and send the visitor to the current release.
+const release = await getLatestRelease();
+---
+
+<Layout title="Not found">
+  <div class="section">
+    <div class="container">
+      <h1>Page not found</h1>
+
+      <p id="generic">
+        The page you asked for does not exist. Try the
+        <a href="/">home page</a> or <a href="/hub/">the hub</a>.
+      </p>
+
+      <p id="release" hidden>
+        Downloads have moved to GitHub Releases. Taking you to the latest
+        version…
+      </p>
+
+      <p>
+        <a href={release.dmgUrl} rel="noopener">
+          {
+            release.resolved
+              ? `Download Stack ${release.version} for macOS`
+              : "Download the latest Stack release"
+          }
+        </a>
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<script is:inline define:vars={{ dmgUrl: release.dmgUrl, htmlUrl: release.htmlUrl }}>
+  // A stale download link is a visitor who wants a binary, not an apology.
+  if (location.pathname.startsWith("/releases/")) {
+    document.getElementById("generic")?.setAttribute("hidden", "");
+    document.getElementById("release")?.removeAttribute("hidden");
+    // `.dmg`/`.tar.gz` means "give me the file"; anything else under
+    // /releases/ (an updater manifest probe, a directory listing) is better
+    // served by the release page itself.
+    const wantsBinary = /\.(dmg|tar\.gz|zip)$/.test(location.pathname);
+    setTimeout(() => location.replace(wantsBinary ? dmgUrl : htmlUrl), 1500);
+  }
+</script>

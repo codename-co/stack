@@ -73,7 +73,12 @@ jobs:
       - name: Pack stacks
         run: bash ./packages/scripts/pack-stacks.sh
 
+      # GITHUB_TOKEN lifts the anonymous 60 req/h limit on the two calls the
+      # build makes to resolve the latest release (download link + the updater
+      # manifest mirrored at /releases/latest.json).
       - name: Build website
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: cd packages/website && npm run build
 
       - uses: actions/configure-pages@v5

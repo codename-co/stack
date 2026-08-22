@@ -1,5 +1,5 @@
 ---
-import { readFileSync } from "node:fs";
+import { getLatestRelease } from "~/helpers/release";
 import { langs, useTranslations } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
 
@@ -10,18 +10,13 @@ export const getStaticPaths = () => {
 const lang = Astro.params.lang;
 const t = useTranslations(lang);
 
-// Read the version from the app's Tauri config so the download link can never
-// drift out of sync with what CI actually published.
-const { version } = JSON.parse(
-  readFileSync(
-    new URL("../../../../../app/src-tauri/tauri.conf.json", import.meta.url),
-    "utf-8"
-  )
-);
-
+// Resolved from the GitHub API at build time rather than from the version in
+// tauri.conf.json: that version is bumped in the commit *before* the release
+// exists, so deriving the asset URL from it hands visitors a 404 for as long as
+// the release workflow is still running.
 // Universal build: one DMG that runs natively on both Apple Silicon and Intel.
-// Served from GitHub Releases, which is what the release workflow publishes to.
-const redirectUrl = `https://github.com/codename-co/stack/releases/download/app-v${version}/Stack_${version}_universal.dmg`;
+const release = await getLatestRelease();
+const redirectUrl = release.dmgUrl;
 ---
 
 <Layout lang={lang}>
@@ -40,6 +35,16 @@ const redirectUrl = `https://github.com/codename-co/stack/releases/download/app-
         />
         <li set:html={t("Run the Stack app from your Applications folder.")} />
       </ol>
+
+      <p>
+        <a href={redirectUrl} rel="noopener">
+          {
+            release.resolved
+              ? `Stack ${release.version} — macOS (universal)`
+              : "Download from GitHub Releases"
+          }
+        </a>
+      </p>
     </div>
   </div>
 </Layout>
