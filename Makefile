@@ -67,6 +67,9 @@ packitall:
 	@./packages/scripts/bundle-recipe.ts
 	@find recipes/.dist -type d -depth 1 -exec sh -c 'cd {} && tar --exclude="*.stack" -czf "../../../packages/website/public/downloads/recipes/$$(basename {}).stack" .' \;
 
+packitall-ci:             ## Build every .stack bundle incrementally (used by CI)
+	@./packages/scripts/pack-stacks.sh
+
 
 minicloud-ssh:             ## SSH into the minicloud server
 	@ssh -t minicloud "cd /apps/stack ; bash --login"
@@ -81,6 +84,7 @@ minicloud-sync:            ## Sync files with the minicloud server
 website-build:
 	@cd packages/website && npm run build
 
+# Legacy/manual fallback: CI deploys via .github/workflows/deploy-website.yml.
 deploy: website-build minicloud-sync minicloud-start
 
 

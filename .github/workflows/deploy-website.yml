@@ -1,0 +1,88 @@
+name: Deploy website
+
+# Builds stack.lol and publishes it to GitHub Pages.
+#
+# This replaces `make deploy` (rsync to the private minicloud box), which could
+# only run from a laptop with SSH access. The Pages deployment is reproducible
+# and needs no credentials beyond the workflow's own OIDC token.
+#
+# The scheduled run exists because the site embeds content that ages (release
+# metadata, generated listings) even when nothing is pushed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "hub/**"
+      - "recipes/**"
+      - "packages/website/**"
+      - "packages/scripts/**"
+      - ".github/workflows/deploy-website.yml"
+  schedule:
+    # Off-peak, and off the hour to avoid the scheduler's busiest minute.
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time, and never cancel one in flight: a half-published
+# Pages deployment would leave the live site inconsistent.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # fetch-depth 1 is enough: pack-stacks.sh identifies content by git *tree*
+      # hash, which a shallow clone carries for the checked-out commit.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The key changes whenever any hub/recipe content changes, so each such
+      # commit writes a new immutable cache entry instead of mutating one.
+      # restore-keys then pulls the newest previous store, and because bundles
+      # are content-addressed only the apps that actually changed get re-tarred.
+      # On the daily scheduled run the key hits exactly and packing is a no-op.
+      - uses: actions/cache@v4
+        with:
+          path: .cache/stacks
+          key: stacks-v1-${{ runner.os }}-${{ hashFiles('hub/**', 'recipes/**', 'packages/scripts/bundle-recipe.ts', 'packages/scripts/pack-stacks.sh') }}
+          restore-keys: |
+            stacks-v1-${{ runner.os }}-
+
+      - name: Pack stacks
+        run: ./packages/scripts/pack-stacks.sh
+
+      - name: Build website
+        run: cd packages/website && npm run build
+
+      - uses: actions/configure-pages@v5
+
+      # dist is ~500MB, dominated by the .stack bundles — under the 1GB Pages
+      # artifact limit. Note that `packages/website/public/releases` is
+      # deliberately absent (and gitignored): the download page redirects to
+      # GitHub Releases, so the DMGs are never part of this artifact.
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: packages/website/dist
+
+      - uses: actions/deploy-pages@v4
+        id: deployment

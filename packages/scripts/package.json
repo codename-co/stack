@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.05",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2"
   }
 }

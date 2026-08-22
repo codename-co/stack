@@ -3,6 +3,10 @@
 *.pem
 *.stack
 node_modules
+
+# Content-addressed store of built .stack bundles (see packages/scripts/pack-stacks.sh).
+# On CI this is an actions/cache entry, never a committed artifact.
+/.cache/
 /packages/website/public/releases
 /work/
 
