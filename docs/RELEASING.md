@@ -1,11 +1,21 @@
-# Releasing the macOS app
+# Releasing the desktop app
 
-The app ships as a **universal binary** (`x86_64` + `arm64`), so a single DMG
+Every release ships **macOS, Windows and Linux** artifacts from a single
+workflow run:
+
+| Platform | Artifacts | Notes |
+| --- | --- | --- |
+| macOS | `.dmg`, `.app.tar.gz` (+ `.sig`) | universal — signed, notarized, stapled |
+| Windows | `.exe` (NSIS), `.msi` (+ `.sig`) | unsigned; SmartScreen warns until code signing is added |
+| Linux | `.deb`, `.rpm`, `.AppImage` (+ `.sig`) | x86_64, built on Ubuntu 22.04 |
+
+The macOS build is a **universal binary** (`x86_64` + `arm64`), so a single DMG
 runs natively on both Intel and Apple Silicon Macs. Anything that produces an
 `aarch64`-only artifact is a regression — `make verify-arch` exists to catch it.
 
-There are two paths: **CI** (preferred) and **local** (fallback). Both run the
-same commands, because the Makefile reads all credentials from the environment.
+There are two paths: **CI** (preferred) and **local** (fallback). Local builds
+only ever produce macOS artifacts; Windows and Linux come from CI, since Tauri
+does not cross-compile them.
 
 ---
 
@@ -20,10 +30,20 @@ same commands, because the Makefile reads all credentials from the environment.
    git push origin app-v$(make version)
    ```
 
-3. `.github/workflows/release-app.yml` builds, signs, notarizes, verifies both
-   architectures, and publishes a **draft** GitHub Release with the DMG, the
-   updater tarball, its signature, and `latest.json`.
+3. `.github/workflows/release-app.yml` creates a **draft** GitHub Release, then
+   builds each platform in turn and uploads into it: macOS (signed, notarized,
+   both architectures verified), Windows and Linux, plus the updater artifacts,
+   their signatures, and `latest.json`.
 4. Review the draft release and publish it.
+
+The platform builds run one at a time (`max-parallel: 1`) because each one
+rewrites `latest.json` by merging itself into the existing file; in parallel the
+last upload would win and silently drop a platform from the updater manifest.
+
+Only macOS is signed. Windows installers are unsigned, so SmartScreen shows a
+"unknown publisher" prompt on first run; Linux packages are unsigned as usual
+for that platform. Neither blocks the auto-updater, which verifies the minisign
+signature instead.
 
 The workflow refuses to run if the tag and `tauri.conf.json` disagree, so a
 mismatched release can't be published by accident.
@@ -207,7 +227,8 @@ in-app updater and the website point at:
 
 - `packages/website/src/pages/[...lang]/download/mac.astro` reads the version
   from `tauri.conf.json` and redirects to the matching release asset. There is
-  no version string to update by hand.
+  no version string to update by hand. Windows and Linux downloads are not yet
+  surfaced on the website; the assets exist on the GitHub Release.
 - The updater in `tauri.conf.json` checks
   `https://github.com/codename-co/stack/releases/latest/download/latest.json`
   first, then falls back to the legacy `stack.lol` endpoints so that clients
@@ -221,6 +242,7 @@ minicloud. `make publish` remains for the legacy `stack.lol` paths.
 ## Checklist for a good release
 
 - [ ] version bumped in `tauri.conf.json` **and** `Cargo.toml`
+- [ ] all three platform jobs are green and their artifacts are on the release
 - [ ] `make verify-arch` prints `ok: universal binary`
 - [ ] notarization succeeded and the DMG is stapled (`make notarize` runs `spctl`)
 - [ ] `latest.json` is attached to the GitHub Release

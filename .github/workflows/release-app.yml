@@ -1,9 +1,10 @@
 name: Release app
 
-# Builds, signs, notarizes and publishes the macOS desktop app.
+# Builds, signs and publishes the desktop app for macOS, Windows and Linux.
 #
-# The output is a *universal* binary (x86_64 + arm64) so it runs natively on
-# both Intel and Apple Silicon Macs.
+# macOS output is a *universal* binary (x86_64 + arm64) so it runs natively on
+# both Intel and Apple Silicon Macs. Windows produces an NSIS installer and an
+# MSI; Linux produces a .deb, an .rpm and an AppImage (all x86_64).
 #
 # Trigger by pushing a tag that matches the version in tauri.conf.json:
 #   git tag app-v0.2.2 && git push origin app-v0.2.2
@@ -26,30 +27,14 @@ permissions:
   contents: write
 
 jobs:
-  macos:
-    # macos-14+ runners are Apple Silicon; the universal target cross-compiles
-    # the Intel slice, so a single runner produces both architectures.
-    runs-on: macos-14
-
+  # Resolved once, on a single runner, so every platform job agrees on the
+  # version and no runner needs `make` to be present.
+  version:
+    runs-on: ubuntu-22.04
+    outputs:
+      value: ${{ steps.version.outputs.value }}
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: aarch64-apple-darwin,x86_64-apple-darwin
-
-      # Caches the Rust build; first run is slow, later runs are minutes.
-      - uses: swatinem/rust-cache@v2
-        with:
-          workspaces: packages/app/src-tauri -> target
-
-      - name: Install dependencies
-        run: npm ci
 
       - name: Resolve version
         id: version
@@ -66,10 +51,107 @@ jobs:
             exit 1
           fi
 
+  # Created up-front so the three platform jobs upload into the *same* release
+  # instead of racing to create it (which yields duplicate draft releases).
+  create-release:
+    needs: version
+    runs-on: ubuntu-22.04
+    outputs:
+      id: ${{ steps.create.outputs.id }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create or reuse the draft release
+        id: create
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="app-v${{ needs.version.outputs.value }}"
+          if ! gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$tag" \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "Stack v${{ needs.version.outputs.value }}" \
+              --draft \
+              --notes "Universal macOS build (Intel + Apple Silicon), Windows installers and Linux packages."
+          fi
+          id=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$tag" --jq .id)
+          echo "id=$id" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: [version, create-release]
+    strategy:
+      # One platform failing must not throw away the artifacts of the others.
+      fail-fast: false
+      # Serialized on purpose: each job rewrites `latest.json` on the release by
+      # merging its own platform into the existing file. Run in parallel, two
+      # jobs read the same version of that file and the last upload wins,
+      # silently dropping a platform from the updater manifest.
+      max-parallel: 1
+      matrix:
+        include:
+          # macos-14+ runners are Apple Silicon; the universal target
+          # cross-compiles the Intel slice, so a single runner produces both
+          # architectures.
+          - platform: macos
+            runner: macos-14
+            rust-targets: aarch64-apple-darwin,x86_64-apple-darwin
+            args: --target universal-apple-darwin
+          - platform: windows
+            runner: windows-latest
+            rust-targets: x86_64-pc-windows-msvc
+            args: ""
+          # Oldest supported runner: glibc is forward-compatible only, so
+          # building on 22.04 keeps the artifacts usable on 22.04 and newer.
+          - platform: linux
+            runner: ubuntu-22.04
+            rust-targets: x86_64-unknown-linux-gnu
+            args: ""
+
+    runs-on: ${{ matrix.runner }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.rust-targets }}
+
+      # Caches the Rust build; first run is slow, later runs are minutes.
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: packages/app/src-tauri -> target
+          key: ${{ matrix.platform }}
+
+      # Tauri links against the system WebKit and GTK on Linux; the runner
+      # image does not ship the -dev packages.
+      - name: Install Linux build dependencies
+        if: matrix.platform == 'linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            libxdo-dev \
+            libssl-dev \
+            patchelf \
+            build-essential \
+            file \
+            wget
+
+      - name: Install dependencies
+        run: npm ci
+
       - uses: tauri-apps/tauri-action@v0
         env:
           # Developer ID signing. tauri-action imports the .p12 into a
-          # temporary keychain and removes it when the job ends.
+          # temporary keychain and removes it when the job ends. Empty on the
+          # non-macOS runners, where Tauri simply skips signing.
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
@@ -83,18 +165,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           projectPath: packages/app
-          args: --target universal-apple-darwin
-          tagName: app-v${{ steps.version.outputs.value }}
-          releaseName: Stack v${{ steps.version.outputs.value }}
-          releaseBody: |
-            Universal macOS build — runs natively on both Intel and Apple Silicon.
-          # Always a draft, except when explicitly dispatched with draft=false.
-          # Note: on a tag push `inputs.draft` is null, and GitHub casts null and
-          # false to the same value, so a naive `inputs.draft != false` yields
-          # false and publishes immediately - which then makes the release
-          # immutable and blocks asset upload.
-          releaseDraft: ${{ !(github.event_name == 'workflow_dispatch' && inputs.draft == false) }}
-          # Generates latest.json for the built-in updater.
+          args: ${{ matrix.args }}
+          # Uploading into the pre-created release keeps all platforms in one
+          # place and merges each platform's entry into latest.json.
+          releaseId: ${{ needs.create-release.outputs.id }}
+          # Generates/updates latest.json for the built-in updater.
           includeUpdaterJson: true
 
       # Tauri notarizes and staples the .app, then wraps it in a DMG that it
@@ -102,6 +177,7 @@ jobs:
       # without this step a fresh download is rejected with
       # "Unnotarized Developer ID" even though the app inside is fine.
       - name: Notarize and staple the DMG
+        if: matrix.platform == 'macos'
         env:
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
@@ -109,15 +185,32 @@ jobs:
         run: make notarize
 
       - name: Replace the release DMG with the stapled one
+        if: matrix.platform == 'macos'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          dmg="packages/app/src-tauri/target/universal-apple-darwin/release/bundle/dmg/Stack_${{ steps.version.outputs.value }}_universal.dmg"
-          gh release upload "app-v${{ steps.version.outputs.value }}" "$dmg" \
+          dmg="packages/app/src-tauri/target/universal-apple-darwin/release/bundle/dmg/Stack_${{ needs.version.outputs.value }}_universal.dmg"
+          gh release upload "app-v${{ needs.version.outputs.value }}" "$dmg" \
             --clobber --repo "${{ github.repository }}"
 
       # Proves the published artifact is genuinely universal. Without this a
       # regression to an arm64-only build would ship silently, which is exactly
       # what happened before.
       - name: Verify universal binary
+        if: matrix.platform == 'macos'
         run: make verify-arch
+
+  # The release is created as a draft so no half-populated release is ever
+  # visible; it is only published when explicitly dispatched with draft=false
+  # and every platform built successfully.
+  publish:
+    needs: [version, build]
+    if: github.event_name == 'workflow_dispatch' && inputs.draft == false
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Undraft the release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release edit "app-v${{ needs.version.outputs.value }}" \
+            --draft=false --repo "$GITHUB_REPOSITORY"
