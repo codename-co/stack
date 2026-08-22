@@ -54,6 +54,20 @@ function gh(args: string[], input?: string): string {
   }).trim();
 }
 
+/**
+ * `gh issue list --label X` and `--label X` on create both fail outright when
+ * the label does not exist, which would break the very first run on a fresh
+ * repository. Creating it is idempotent enough: an "already exists" error is
+ * the success case.
+ */
+function ensureLabel(name: string, color: string, description: string): void {
+  try {
+    gh(["label", "create", name, "--color", color, "--description", description]);
+  } catch {
+    // Already there.
+  }
+}
+
 const issueTitle = (d: Drift) => `⬆️ Upgrade ${d.slug} to ${d.latest}`;
 
 function workOrder(d: Drift): string {
@@ -107,6 +121,8 @@ to the app's entry point.
 function main() {
   const report = JSON.parse(readFileSync(REPORT, "utf-8"));
   const drifted: Drift[] = report.drifted ?? [];
+
+  ensureLabel(LABEL, "0E8A16", "A hub app is behind its upstream release");
 
   // Existing open issues, so a re-run updates rather than duplicates.
   const open: { number: number; title: string }[] = JSON.parse(

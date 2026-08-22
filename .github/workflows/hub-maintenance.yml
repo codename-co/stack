@@ -97,6 +97,11 @@ jobs:
 
           body=$(printf 'Mechanical refresh of the descriptive fields (stars, homepage, repository, license, updated_at) from the upstream APIs.\n\nVersions are **not** touched here — those go through the upgrade task, which runs the non-regression suite first.\n\n```\n%s\n```\n' "$(cat work/metadata-sync.txt)")
 
+          # `--label` fails outright on a label that does not exist, which would
+          # break the first run on a fresh repository.
+          gh label create maintenance --color 0366d6 \
+            --description "Automated catalogue upkeep" 2>/dev/null || true
+
           if gh pr view "$BRANCH" --json number >/dev/null 2>&1; then
             gh pr edit "$BRANCH" --body "$body"
           else
