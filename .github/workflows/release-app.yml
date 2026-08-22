@@ -67,14 +67,32 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           tag="app-v${{ needs.version.outputs.value }}"
-          if ! gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+
+          # A draft release has no git tag yet, so `releases/tags/{tag}` 404s on
+          # it. Listing is the only way to find one by name; hence the --jq
+          # match instead of a direct lookup.
+          find_id() {
+            gh api "repos/$GITHUB_REPOSITORY/releases" --paginate \
+              --jq ".[] | select(.tag_name == \"$tag\") | .id" | head -n1
+          }
+
+          id=$(find_id)
+          if [ -z "$id" ]; then
+            # --target pins the release to the exact commit being built, so the
+            # tag is created there when the release is published.
             gh release create "$tag" \
               --repo "$GITHUB_REPOSITORY" \
+              --target "$GITHUB_SHA" \
               --title "Stack v${{ needs.version.outputs.value }}" \
               --draft \
               --notes "Universal macOS build (Intel + Apple Silicon), Windows installers and Linux packages."
+            id=$(find_id)
           fi
-          id=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$tag" --jq .id)
+
+          if [ -z "$id" ]; then
+            echo "could not resolve a release id for $tag"
+            exit 1
+          fi
           echo "id=$id" >> "$GITHUB_OUTPUT"
 
   build:
