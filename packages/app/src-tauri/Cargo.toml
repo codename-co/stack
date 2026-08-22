@@ -1,6 +1,6 @@
 [package]
 name = "stack"
-version = "0.2.3"
+version = "0.2.4"
 description = "Local deployment tool"
 authors = ["Codename"]
 edition = "2021"
