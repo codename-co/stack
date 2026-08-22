@@ -69,30 +69,32 @@ jobs:
           tag="app-v${{ needs.version.outputs.value }}"
 
           # A draft release has no git tag yet, so `releases/tags/{tag}` 404s on
-          # it. Listing is the only way to find one by name; hence the --jq
-          # match instead of a direct lookup.
-          find_id() {
-            gh api "repos/$GITHUB_REPOSITORY/releases" --paginate \
-              --jq ".[] | select(.tag_name == \"$tag\") | .id" | head -n1
-          }
+          # it. Listing is the only way to find an existing one by name.
+          id=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" \
+            --jq "[.[] | select(.tag_name == \"$tag\") | .id] | first // empty")
 
-          id=$(find_id)
           if [ -z "$id" ]; then
-            # --target pins the release to the exact commit being built, so the
-            # tag is created there when the release is published.
-            gh release create "$tag" \
-              --repo "$GITHUB_REPOSITORY" \
-              --target "$GITHUB_SHA" \
-              --title "Stack v${{ needs.version.outputs.value }}" \
-              --draft \
-              --notes "Universal macOS build (Intel + Apple Silicon), Windows installers and Linux packages."
-            id=$(find_id)
+            # Created through the API rather than `gh release create` so the id
+            # comes from the write response itself. Listing straight after a
+            # create is eventually consistent and can return an empty set,
+            # which previously failed the job on a release that did exist.
+            #
+            # target_commitish pins the release to the exact commit being
+            # built, so the tag is created there when the release is published.
+            id=$(gh api -X POST "repos/$GITHUB_REPOSITORY/releases" \
+              -f tag_name="$tag" \
+              -f target_commitish="$GITHUB_SHA" \
+              -f name="Stack v${{ needs.version.outputs.value }}" \
+              -F draft=true \
+              -f body="Universal macOS build (Intel + Apple Silicon), Windows installers and Linux packages." \
+              --jq .id)
           fi
 
           if [ -z "$id" ]; then
             echo "could not resolve a release id for $tag"
             exit 1
           fi
+          echo "release $tag -> id $id"
           echo "id=$id" >> "$GITHUB_OUTPUT"
 
   build:
