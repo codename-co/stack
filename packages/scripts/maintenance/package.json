@@ -1,0 +1,13 @@
+{
+  "name": "stack-hub-maintenance",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Keeps hub/*/stack.yaml in sync with upstream (metadata) and reports version drift",
+  "//": "type=module is scoped to this folder: the sibling scripts still run under ts-node's CommonJS default. These files run on plain node >=22 with native TypeScript stripping, no build step and no dependency beyond `yaml`.",
+  "type": "module",
+  "scripts": {
+    "sync": "node sync-metadata.ts",
+    "check": "node sync-metadata.ts --check",
+    "versions": "node check-versions.ts"
+  }
+}

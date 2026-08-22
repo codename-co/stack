@@ -1,0 +1,89 @@
+# SPDX-License-Identifier: MIT
+#
+# Fields where the curated value is intentionally not what upstream reports.
+#
+# The forge describes a *repository*; a hub entry describes a *piece of
+# software*. When those disagree — a packaging repo whose license covers only
+# the Dockerfile, a homepage field pointing at a docs site — the curated value
+# wins, and the disagreement is recorded here so sync-metadata.ts stops
+# proposing it.
+#
+# Each entry is pinned to the upstream value that was rejected: if upstream
+# later publishes something different, the suggestion comes back for review.
+#
+# Managed by: node packages/scripts/maintenance/sync-metadata.ts --reject <slug>:<field> --reason "..."
+
+bookstack:
+  homepage:
+    reason: "upstream homepage is the source repository, not the product site"
+    upstream: "https://codeberg.org/bookstack/bookstack"
+
+chromium:
+  homepage:
+    reason: "upstream homepage is the source browser, not the project site"
+    upstream: "https://chromium.googlesource.com/chromium/src/"
+
+elk:
+  homepage:
+    reason: "upstream homepage is a product listing page; the curated root is more stable"
+    upstream: "https://www.elastic.co/products/elasticsearch"
+
+factorio:
+  homepage:
+    reason: "GitHub homepage points at the Docker Hub page, not the product"
+    upstream: "https://hub.docker.com/r/factoriotools/factorio/"
+  license:
+    reason: "the repository packages the game in Docker (MIT); Factorio itself is proprietary"
+
+gitlab:
+  homepage:
+    reason: "upstream homepage is the support page, not the product site"
+    upstream: "https://about.gitlab.com/getting-help/"
+
+jupyter-notebook:
+  homepage:
+    reason: "upstream homepage is the docs site, not jupyter.org"
+    upstream: "https://jupyter-notebook.readthedocs.io/"
+
+kong:
+  homepage:
+    reason: "upstream homepage is the install page, not the product site"
+    upstream: "https://konghq.com/install/"
+
+krita:
+  homepage:
+    reason: "upstream homepage is the KDE git repository, not krita.org"
+    upstream: "https://invent.kde.org/graphics/krita"
+
+libreoffice:
+  license:
+    reason: "the GitHub mirror ships a GPL-3.0 COPYING; LibreOffice itself is MPL-2.0"
+    upstream: "GPL-3.0"
+
+litellm:
+  homepage:
+    reason: "upstream homepage is the docs site, not the product site"
+    upstream: "https://docs.litellm.ai/docs/"
+
+mealie:
+  homepage:
+    reason: "upstream homepage is the docs site, not mealie.io"
+    upstream: "https://docs.mealie.io"
+
+minecraft:
+  homepage:
+    reason: "upstream homepage documents the Docker wrapper, not the game"
+    upstream: "https://docker-minecraft-server.readthedocs.io/"
+  license:
+    reason: "the repository is itzg's Docker wrapper (Apache-2.0); Minecraft itself is proprietary"
+    upstream: "Apache-2.0"
+
+vault:
+  homepage:
+    reason: "upstream homepage is the docs portal, not the product site"
+    upstream: "https://developer.hashicorp.com/vault"
+
+wordpress:
+  homepage:
+    reason: "wordpress-develop's homepage field is the contributor handbook, not the product site"
+    upstream: "https://make.wordpress.org/core/handbook/contribute/git/github-pull-requests-for-code-review/"

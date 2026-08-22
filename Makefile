@@ -71,6 +71,27 @@ packitall-ci:             ## Build every .stack bundle incrementally (used by CI
 	@bash ./packages/scripts/pack-stacks.sh
 
 
+# ---------------------------------------------------------------------------
+# Hub maintenance
+#
+# Two halves, deliberately separate (see docs/MAINTENANCE.md):
+#   hub-sync     descriptive metadata — safe, mechanical, runs daily in CI
+#   hub-versions version drift — detection only; a bump must pass hub-test first
+# ---------------------------------------------------------------------------
+
+hub-sync:                 ## Refresh hub metadata (stars, license, homepage, repository, updated_at)
+	@node packages/scripts/maintenance/sync-metadata.ts $(if $(APP),--only $(APP),)
+
+hub-check:                ## Report metadata drift without writing (exits 1 when stale)
+	@node packages/scripts/maintenance/sync-metadata.ts --check $(if $(APP),--only $(APP),)
+
+hub-versions:             ## List hub apps behind upstream (never edits anything)
+	@node packages/scripts/maintenance/check-versions.ts $(if $(APP),--only $(APP),) --json work/version-drift.json
+
+hub-test:                 ## Non-regression test for one app: make hub-test APP=gitea
+	@test -n "$(APP)" || { echo "usage: make hub-test APP=<slug>"; exit 1; }
+	@./packages/scripts/maintenance/test-stack.sh $(APP)
+
 minicloud-ssh:             ## SSH into the minicloud server
 	@ssh -t minicloud "cd /apps/stack ; bash --login"
 
