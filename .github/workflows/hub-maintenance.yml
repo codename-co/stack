@@ -66,6 +66,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # work/ is gitignored, so it does not exist in a fresh checkout. `tee`
+          # opens its output file before the script runs (and before the script
+          # mkdir's the directory itself): without this it errors, still passes
+          # stdout through, and exits 1 — failing the step under `pipefail` with
+          # a log that otherwise looks like a clean run.
+          mkdir -p work
           node packages/scripts/maintenance/sync-metadata.ts \
             ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
             --json work/metadata-sync.json | tee work/metadata-sync.txt
@@ -130,6 +136,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # See the metadata job: `tee` cannot create work/ for itself.
+          mkdir -p work
           node packages/scripts/maintenance/check-versions.ts \
             ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
             --json work/version-drift.json --markdown | tee work/version-drift.md
