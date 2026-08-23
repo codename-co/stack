@@ -6,13 +6,13 @@ name: LiteLLM
 icon: 🤖
 flavor: DockerCompose
 version: "1.98.0"
-updated_at: 2025-08-06
+updated_at: 2026-08-23
 description: Proxy Server to call 100+ LLMs in the OpenAI format
 author: Berrie AI, Inc
 license: MIT
 homepage: https://www.litellm.ai
 repository: https://github.com/BerriAI/litellm
-stars: 57000
+stars: 57100
 tags:
   - ai
   - llm
