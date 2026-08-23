@@ -3,7 +3,7 @@
 
 services:
   litellm:
-    image: ghcr.io/berriai/litellm:main-v${LITELLM_VERSION:-1.56.4}
+    image: ghcr.io/berriai/litellm:v${LITELLM_VERSION:-1.98.0}
     # ports:
     #   - "4000:4000"
     environment:
@@ -11,13 +11,16 @@ services:
       STORE_MODEL_IN_DB: "True" # allows adding models to proxy via UI
     env_file:
       - .env # Load local .env file
+    depends_on:
+      litellm-db:
+        condition: service_healthy
     labels:
       dash.url: https://$PROJECT.$DOMAIN
       traefik.http.routers.litellm.rule: Host(`$PROJECT.$DOMAIN`)
       traefik.http.services.litellm.loadbalancer.server.port: 4000
 
   litellm-db:
-    image: postgres
+    image: postgres:16
     restart: always
     environment:
       POSTGRES_DB: litellm
