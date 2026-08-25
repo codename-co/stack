@@ -22,9 +22,9 @@
     "astro": "^5.4.2",
     "flag-icons": "^7.2.3",
     "marked": "^15.0.3",
+    "performative-ui": "^0.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-force-graph": "^1.47.3",
     "simple-icons": "^15.0.0",
     "tailwindcss": "^3.4.15",
     "timeago.js": "^4.0.2",
@@ -34,7 +34,6 @@
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.1.1",
     "@types/node": "^22.10.5",
-    "@types/three": "^0.174.0",
     "tslib": "^2.8.1",
     "vite-plugin-env-parse": "^1.0.15"
   },

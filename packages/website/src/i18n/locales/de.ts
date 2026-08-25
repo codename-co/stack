@@ -39,8 +39,6 @@ export const de: I18n = {
     "Zugriff auf {count}+ kuratierte Open-Source-Softwarepakete, bereit zur Installation mit einem Klick.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "Kostenlose, sichere und datenschutzorientierte Alternativen zu [beliebten Apps]({url}).",
-  "Then install software in one-click ↓":
-    "Dann Software in einem Klick installieren ↓",
   "Search software": "Software suchen",
   "a smart alternative to {apps}": "eine intelligente alternative zu {apps}",
   "Staff picks": "Mitarbeiterauswahl",
@@ -91,8 +89,19 @@ export const de: I18n = {
   /** Page /<stack> */
   "Start it now": "Jetzt starten",
   "Download the stack file": "Die stack herunterladen",
+  "Runs locally, in one click.": "Läuft lokal, mit einem Klick.",
+  "Ready to run *{name}*?": "Bereit, *{name}* zu starten?",
+  Version: "Version",
+  Stars: "Sterne",
+  License: "Lizenz",
+  Author: "Autor",
+  Links: "Links",
+  Homepage: "Website",
+  "Source code": "Quellcode",
   "About *{name}*": "Über *{name}*",
   "Environment variables": "Umgebungsvariablen",
+  "{count} variables you can tune before starting.":
+    "{count} Variablen, die Sie vor dem Start anpassen können.",
   "No environment variables defined.": "Keine Umgebungsvariablen definiert.",
   "View environment variables": "Umgebungsvariablen anzeigen",
   "An alternative to": "Eine Alternative zu",
@@ -114,6 +123,8 @@ export const de: I18n = {
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*Rezept*: {name}",
   "Recipe ingredients": "Rezeptzutaten",
+  "{count} services, wired together and started as one.":
+    "{count} Dienste, miteinander verbunden und gemeinsam gestartet.",
   "Last update": "Letztes Update",
   "Related recipes": "Ähnliche Rezepte",
 

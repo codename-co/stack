@@ -27,8 +27,6 @@ export const fr: I18n = {
     "Accédez à une sélection de plus de {count} solutions open source prêtes à installer en 1 clic.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "Des alternatives aux [logiciels populaires]({url}). Qualitatives, gratuites, sécurisées et respectueuses de la vie privée.",
-  "Then install software in one-click ↓":
-    "Puis installez des logiciels en un clic ↓",
   "Search software": "Rechercher des logiciels",
   "a smart alternative to {apps}": "une alternative à {apps}",
   "Staff picks": "Sélection de lʼéquipe",
@@ -93,13 +91,24 @@ export const fr: I18n = {
   /** Page /<stack> */
   "Start it now": "Démarrer",
   "Download the stack file": "Télécharger le fichier stack",
+  "Runs locally, in one click.": "S'exécute en local, en un clic.",
+  "Ready to run *{name}*?": "Prêt à lancer *{name}*&nbsp;?",
+  Version: "Version",
+  Stars: "Étoiles",
+  License: "Licence",
+  Author: "Auteur",
+  Links: "Liens",
+  Homepage: "Site web",
+  "Source code": "Code source",
   "About *{name}*": "À propos de *{name}*",
   "Environment variables": "Variables d'environnement",
+  "{count} variables you can tune before starting.":
+    "{count} variables que vous pouvez ajuster avant le démarrage.",
   "No environment variables defined.":
     "Aucune variable d'environnement définie.",
   "View environment variables": "Voir les variables d'environnement",
   "An alternative to": "Une alternative à",
-  Related: "Autres alternatives",
+  Related: "Alternatives",
 
   /** Page /<stack>.stack */
   "{name} {version} is starting…": "{name} {version} démarre…",
@@ -117,6 +126,8 @@ export const fr: I18n = {
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*Recette*&nbsp;: {name}",
   "Recipe ingredients": "Ingrédients de la recette",
+  "{count} services, wired together and started as one.":
+    "{count} services, reliés entre eux et démarrés d'un seul coup.",
   "Last update": "Dernière mise à jour",
   "Related recipes": "Recettes similaires",
 

@@ -4,15 +4,17 @@ type CardsProps = {
   children?: React.ReactNode;
 };
 
+/**
+ * The list wrapper for <Card>. GlassCard carries its own padding and halo, so
+ * this only has to provide the gutter — and enough vertical padding for the
+ * hover lift not to clip against the row above.
+ */
 const Cards: React.FC<CardsProps> = ({ className, children, id }) => {
   return (
     <ol
       id={id}
-      className={`relative flex-wrap light gap-6 pt-4 pb-10 px-8 -mx-8 ${
-        className ?? ""
-      }`}
+      className={`relative flex-wrap light gap-6 pt-4 pb-10 ${className ?? ""}`}
     >
-      {/* <ol className="light flex flex-nowrap overflow-x-auto gap-6 pt-4 pb-10 px-8 -mx-8"> */}
       {children}
     </ol>
   );

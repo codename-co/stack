@@ -1,0 +1,44 @@
+---
+import { EyebrowPill } from "performative-ui";
+
+/**
+ * The section header used across the site: eyebrow pill, then the headline.
+ * `title` arrives as translated inline HTML, so `*emphasis*` in a locale file
+ * lands on the brand gradient without the page knowing about it.
+ */
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  align?: "start" | "center";
+  /** Show the pulsing status dot inside the eyebrow. */
+  live?: boolean;
+  class?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  subtitle,
+  align = "start",
+  live = false,
+  class: className,
+} = Astro.props;
+
+const centered = align === "center";
+---
+
+<div
+  class:list={[
+    // `items-*` matters: EyebrowPill is inline-flex and would otherwise be
+    // stretched to the full column width by the flex container.
+    "flex flex-col gap-2 mb-10",
+    centered ? "items-center text-center max-w-[720px] mx-auto" : "items-start",
+    className,
+  ]}
+>
+  {eyebrow && <EyebrowPill icon={live ? undefined : false}><span set:html={eyebrow} /></EyebrowPill>}
+  {title && <h2 class="mt-3 mb-0" set:html={title} />}
+  {subtitle && <p class="subtle text-lg leading-relaxed" set:html={subtitle} />}
+  <slot />
+</div>

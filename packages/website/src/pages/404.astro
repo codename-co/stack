@@ -1,4 +1,6 @@
 ---
+import { Aurora, GradientText, WibblingSpinner } from "performative-ui";
+import PuiButton from "~/components/PuiButton.astro";
 import { getLatestRelease } from "~/helpers/release";
 import Layout from "~/layouts/Layout.astro";
 
@@ -19,30 +21,43 @@ const byExtension = Object.fromEntries(
 ---
 
 <Layout title="Not found">
-  <div class="section">
-    <div class="container">
-      <h1>Page not found</h1>
+  <div class="section relative">
+    <div class="container relative py-16 text-center">
+      <Aurora
+        className="pointer-events-none"
+        blobs={[{ color: "rgba(236,72,153,0.35)", x: 50, y: 30, size: 60 }]}
+      />
+      <div class="relative z-10 flex flex-col items-center gap-6">
+        <h1 class="m-0">
+          <GradientText>404</GradientText>
+        </h1>
 
-      <p id="generic">
-        The page you asked for does not exist. Try the
-        <a href="/">home page</a>, <a href="/recipes">the recipes</a> or
-        <a href="/download">the download page</a>.
-      </p>
+        <p id="generic" class="subtle text-lg">
+          The page you asked for does not exist. Try the
+          <a href="/">home page</a>, <a href="/recipes">the recipes</a> or
+          <a href="/download">the download page</a>.
+        </p>
 
-      <p id="release" hidden>
-        Downloads have moved to GitHub Releases. Taking you to the latest
-        version…
-      </p>
+        <p id="release" hidden class="subtle text-lg">
+          <WibblingSpinner client:load /> Downloads have moved to GitHub Releases.
+          Taking you to the latest version…
+        </p>
 
-      <p>
-        <a href="/download" rel="noopener">
+        <PuiButton
+          href="/download"
+          rel="noopener"
+          variant="glow"
+          size="lg"
+          sparkle
+          glyph="download"
+        >
           {
             release.resolved
               ? `Download Stack ${release.version}`
               : "Download the latest Stack release"
           }
-        </a>
-      </p>
+        </PuiButton>
+      </div>
     </div>
   </div>
 </Layout>

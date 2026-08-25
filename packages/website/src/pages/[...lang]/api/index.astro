@@ -1,4 +1,7 @@
 ---
+import { Aurora, GlassCard } from "performative-ui";
+import SectionHeading from "~/components/SectionHeading.astro";
+import Tag from "~/components/Tag.astro";
 import { langs, languages, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
 
@@ -24,82 +27,88 @@ const description = t(
   mainClass="left-only"
 >
   <div slot="left" class="section h-full">
-    <div class="container">
-      <h1 set:html={t("Start exploring stacks programmatically.")} />
-      <p
-        class="subtle"
-        set:html={t(
-          "We got you covered with every stacks and recipes, over API."
-        )}
+    <div class="container relative">
+      <Aurora
+        className="pointer-events-none"
+        blobs={[
+          { color: "rgba(6,182,212,0.30)", x: 25, y: 25, size: 55 },
+          { color: "rgba(124,58,237,0.26)", x: 70, y: 60, size: 45 },
+        ]}
       />
+      <div class="relative z-10">
+        <h1 set:html={t("Start exploring stacks programmatically.")} />
+        <p
+          class="subtle text-lg leading-relaxed"
+          set:html={t(
+            "We got you covered with every stacks and recipes, over API."
+          )}
+        />
+      </div>
     </div>
   </div>
 
   <div class="section">
     <div class="container">
-      <div
-        class="box bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-200"
-        style="overflow-x: hidden"
-      >
-        <h2>{t("API specification")}</h2>
-
-        <ul>
-          <li>
-            <a href="/api/stack.openapi.yaml">/api/stack.openapi.yaml</a>
-          </li>
-        </ul>
+      <SectionHeading title={t("API specification")} />
+      <div class="pui-grid">
+        <GlassCard breathing glowOnHover>
+          <GlassCard.Icon>📐</GlassCard.Icon>
+          <GlassCard.Title>OpenAPI</GlassCard.Title>
+          <GlassCard.Body>{t("API specification")}</GlassCard.Body>
+          <GlassCard.Link
+            href="/api/stack.openapi.yaml"
+            className="stretched-link font-mono"
+          >
+            /api/stack.openapi.yaml
+          </GlassCard.Link>
+        </GlassCard>
       </div>
 
-      <div
-        class="box bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-200"
-        style="overflow-x: hidden"
-      >
-        <h2>{t("API endpoints")}</h2>
+      <SectionHeading class="mt-16" title={t("API endpoints")} />
+      <div class="pui-grid">
+        {
+          [
+            { path: "/api/recipes", href: url("/api/recipes"), icon: "🧪" },
+            { path: "/api/stacks", href: url("/api/stacks"), icon: "📦" },
+            {
+              path: "/api/stack/:slug",
+              href: url("/api/stack/activepieces"),
+              icon: "🔎",
+            },
+          ].map(({ path, href, icon }) => (
+            <GlassCard breathing glowOnHover>
+              <GlassCard.Icon>{icon}</GlassCard.Icon>
+              <GlassCard.Title className="font-mono !text-base">
+                {path}
+              </GlassCard.Title>
+              <GlassCard.Link href={href} className="stretched-link">
+                GET
+              </GlassCard.Link>
+            </GlassCard>
+          ))
+        }
+      </div>
 
-        <ul>
-          <li>
-            <a href={url("/api/recipes")}>/api/recipes</a>
-          </li>
-          <li>
-            <a href={url("/api/stacks")}>/api/stacks</a>
-          </li>
-          <li>
-            <a href={url("/api/stack/activepieces")}>/api/stack/:slug</a>
-          </li>
-        </ul>
+      <SectionHeading class="mt-16" title={t("Localized endpoints")} />
+      <div class="pui-grid">
+        {
+          Object.entries(languages).map(([langCode, langName]) => {
+            const localized = (path: string) =>
+              url(`/api${path}`, langCode as keyof typeof languages);
 
-        <br />
-        <h2>{t("Localized endpoints")}</h2>
-
-        <div class="sm:columns-2 md:columns-4">
-          {
-            Object.entries(languages)
-              .map(
-                ([langCode, langName]) =>
-                  [
-                    langCode,
-                    langName,
-                    (path: string) =>
-                      url(`/api${path}`, langCode as keyof typeof languages),
-                  ] as const
-              )
-              .map(([, langName, url]) => (
-                <ol>
-                  <li>{langName}</li>
-                  <li>
-                    <ul>
-                      <li>
-                        <a href={url("/recipes")}>{url("/recipes")}</a>
-                      </li>
-                      <li>
-                        <a href={url("/stacks")}>{url("/stacks")}</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ol>
-              ))
-          }
-        </div>
+            return (
+              <GlassCard breathing>
+                <GlassCard.Title className="!text-base">
+                  {langName} <Tag>{langCode}</Tag>
+                </GlassCard.Title>
+                <div class="flex flex-col gap-1 font-mono text-sm">
+                  <a href={localized("/recipes")}>{localized("/recipes")}</a>
+                  <a href={localized("/stacks")}>{localized("/stacks")}</a>
+                </div>
+              </GlassCard>
+            );
+          })
+        }
       </div>
     </div>
   </div>

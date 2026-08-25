@@ -55,3 +55,16 @@ register("ru", ru);
 register("zh", zh_CN);
 
 export const timeago = timeagojs;
+
+/**
+ * The version to show inside a sentence.
+ *
+ * Most recipes — and a fair few stacks — pin `"latest"`, which is a sensible
+ * tag and a terrible noun: "Système d'Information Géographique latest est
+ * démarré." Drop it there and let `tidy` close the gap.
+ */
+export const inlineVersion = (version?: string) =>
+  version && version !== "latest" ? version : "";
+
+/** Collapse the whitespace an empty interpolation leaves behind. */
+export const tidy = (html: string) => html.replace(/\s{2,}/g, " ").trim();

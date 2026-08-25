@@ -1,0 +1,68 @@
+---
+import { Aurora } from "performative-ui";
+import Logo from "~/components/Logo";
+import { useTranslations, useUrl, type Lang } from "~/i18n";
+
+/**
+ * The recurring left-rail pitch. It used to be copy-pasted between the home
+ * page and the download page; the two had already drifted apart by one
+ * paragraph, which is exactly the bug this component exists to prevent.
+ */
+interface Props {
+  lang: Lang;
+  /** Show the drifting gradient behind the headline. */
+  aurora?: boolean;
+}
+
+const { lang, aurora = false } = Astro.props;
+
+const t = useTranslations(lang);
+const url = useUrl(lang);
+
+const showcase = ["notion", "chatgpt", "figma"] as const;
+---
+
+<div class="relative">
+  {
+    aurora && (
+      <Aurora
+        className="pointer-events-none"
+        blobs={[
+          { color: "rgba(124,58,237,0.40)", x: 15, y: 20, size: 55 },
+          { color: "rgba(236,72,153,0.28)", x: 70, y: 10, size: 45 },
+          { color: "rgba(6,182,212,0.24)", x: 40, y: 70, size: 50 },
+        ]}
+      />
+    )
+  }
+
+  <div class="relative z-10">
+    <h1 set:html={t("The *best free software* made&nbsp;*accessible*.")} />
+    <p class="subtle mb-8 text-lg leading-relaxed mx-auto" style="max-width: 26em">
+      {t("Spin up local alternatives to")}
+      {
+        showcase.map((slug, i) => (
+          <>
+            {i > 0 && ", "}
+            <a
+              href={url(`/alternativesto/${slug}`)}
+              aria-label={`Alternatives to ${slug}`}
+              style="white-space: nowrap"
+            >
+              <Logo slug={slug} />
+              {slug === "chatgpt"
+                ? "ChatGPT"
+                : slug.charAt(0).toUpperCase() + slug.slice(1)}
+            </a>
+          </>
+        ))
+      }
+      {t("and other")}
+      <a
+        href={url("/alternativesto")}
+        aria-label="Alternatives to popular software">{t("popular software")}</a
+      >. {t("Remix your own.")}
+    </p>
+    <slot />
+  </div>
+</div>

@@ -1,19 +1,19 @@
 ---
 import { getCollection } from "astro:content";
-import Download from "~/components/download-base.html";
-import Logo from "~/components/Logo";
-import Tag from "~/components/tag.html";
+import { Aurora, CommunityBadge } from "performative-ui";
+import { AlternativesMarquee } from "~/components/AlternativesMarquee";
+import { StackSearch } from "~/components/StackSearch";
+import { StarCounter } from "~/components/StarCounter";
+import PuiButton from "~/components/PuiButton.astro";
+import SectionHeading from "~/components/SectionHeading.astro";
 import { getStacks } from "~/content/collections/stacks";
-import { langs, textDirection, useTranslations, useUrl } from "~/i18n";
+import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
-import { formatStars, getAlternativeMetadata, timeago } from "~/helpers";
-import { iconOf } from "~helpers/icon";
-import { WallOfTags } from "~components/WallOfTags";
+import { formatStars, getAlternativeMetadata } from "~/helpers";
 import Card from "~components/Card";
 import Cards from "~components/Cards";
+import Logo from "~/components/Logo";
 import { getRecipes } from "~content/collections/recipes";
-// import { Graph } from "~/components/Graph";
-// import { graphData } from "~/helpers";
 
 export const getStaticPaths = () => {
   return langs.map((lang) => ({ params: { lang } }));
@@ -26,227 +26,90 @@ const url = useUrl(lang);
 const stacks = getStacks(lang);
 const recipes = getRecipes(lang);
 const promoted = await getCollection("promoted");
-const staffPick = promoted
-  .map(({ data }) => stacks.find((stack) => stack.data.slug === data.slug))
-  .filter(Boolean)
-  .map((stack) => [
-    stack?.data,
-    getAlternativeMetadata(stack?.data.alternativeTo?.[0] ?? ""),
-  ])
-  .reduce((acc, [stack, alternative]) => {
-    // only keep unique alternatives
-    if (!acc.find(([_, alt]) => alt.slug === alternative?.slug)) {
-      acc.push([stack, alternative]);
-    }
-    return acc;
-  }, [] as any[])
-  .slice(0, 10);
+const staffPickSlugs = new Set(
+  promoted.map(({ data }) => data.slug)
+);
 
 const alternatives = await getCollection("alternatives");
-
-const tags = await getCollection("tags");
 
 const totalStars = stacks.reduce(
   (acc, stack) => acc + (stack.data.stars ?? 0),
   0
 );
 
+const roundedCount = Math.floor(stacks.length / 10) * 10;
+
+// Split the translated sentence around its number so the count can animate
+// without inventing a second, counter-shaped translation key.
+const [starsBefore, starsAfter] = t("★ {starCount} cumulative stars", {
+  starCount: "\u0000",
+}).split("\u0000");
+
+// The marquee doubles as social proof: these are the products people are
+// leaving, ranked by how much community weight their replacements carry.
+const saasStars = new Map<string, number>();
+for (const { data } of stacks) {
+  for (const alt of data.alternativeTo ?? []) {
+    saasStars.set(alt, (saasStars.get(alt) ?? 0) + (data.stars ?? 0));
+  }
+}
+const marqueeItems = [...saasStars.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 24)
+  .map(([slug]) => ({
+    slug,
+    name: getAlternativeMetadata(slug)?.name ?? slug,
+    url: url(`/alternativesto/${slug}`),
+  }));
+
 const title = t("The best of free software, accessible");
 const description = t(
   "Access {count}+ curated open source software packages, ready to install with one click.",
-  { count: Math.floor(stacks.length / 10) * 10 }
+  { count: roundedCount }
 );
 ---
 
-<Layout
-  lang={lang}
-  title={title}
-  description={description}
-  mainClass="left-only"
->
-  <div slot="left" class="section h-full">
+<Layout lang={lang} title={title} description={description}>
+  <div class="section relative">
+    <AlternativesMarquee items={marqueeItems} />
+    <Aurora
+      className="pointer-events-none"
+      blobs={[
+        { color: "rgba(124,58,237,0.40)", x: 15, y: 20, size: 55 },
+        { color: "rgba(236,72,153,0.28)", x: 70, y: 10, size: 45 },
+        { color: "rgba(6,182,212,0.24)", x: 40, y: 70, size: 50 },
+      ]}
+    />
     <div class="container">
-      <h1 set:html={t("The *best free software* made&nbsp;*accessible*.")} />
-      <p class="subtle mb-8" style="max-width: 24em">
-        {t("Spin up local alternatives to")}
-        <a
-          href={url("/alternativesto/notion")}
-          aria-label="Alternatives to Notion"
-          style="white-space: nowrap"
-        >
-          <Logo slug="notion" />
-          Notion</a
-        >, <a
-          href={url("/alternativesto/chatgpt")}
-          aria-label="Alternatives to ChatGPT"
-          style="white-space: nowrap"
-        >
-          <Logo slug="chatgpt" />
-          ChatGPT</a
-        >, <a
-          href={url("/alternativesto/figma")}
-          aria-label="Alternatives to Figma"
-          style="white-space: nowrap"
-        >
-          <Logo slug="figma" />
-          Figma</a
-        >
-        {t("and other")}
-        <a
-          href={url("/alternativesto")}
-          aria-label="Alternatives to popular software"
-          >{t("popular software")}</a
-        >. {t("Remix your own.")}
-      </p>
-      <div class="sticky top-8">
-        <a href={url("/download")} aria-label={t("Download Stack")}>
-          <Download>{t("Download")}</Download>
-        </a>
-        <p class="subtle my-3">
-          <small>{t("Available for macOS, Windows and Linux")}</small>
-        </p>
-      </div>
-    </div>
-  </div>
+      <div class="relative overflow-hidden">
+        <div class="relative z-10">
+          <SectionHeading
+            align="center"
+            eyebrow={t("Recognize these *popular software*?")}
+            title={t("You'll love their *open source counterparts*")}
+          />
+          <p class="suptitle text-center mt-0">
+            <span set:html={starsBefore} /><StarCounter
+              client:visible
+              target={totalStars}
+              lang={lang}
+            /><span set:html={starsAfter} />
+          </p>
 
-  <div slot="right" class="section h-full">
-    <div class="container">
-      <!-- <Graph client:only="react" data={graphData()} width={336} height={720} /> -->
-
-      <!-- <p class="my-12" set:html={t("Browse *by category*")} /> -->
-      <!-- <ol
-        class="light columns-2 lg:columns-3 2xl:columns-1 text-sm 2xl:mt-[670px]"
-      >
-        {
-          tags
-            .map(({ data }) => [
-              data,
-              stacks
-                .map(({ data }) => data)
-                .filter(({ tags }) => tags?.includes(data.slug)) ?? [],
-            ])
-            .filter(([, stacks]) => Array.isArray(stacks) && stacks.length > 0)
-            .sort(([, a], [, b]) => (b as any[]).length - (a as any[]).length)
-            .map(([tag, stacks]: any[]) => (
-              <li class="mb-1 ">
-                <a href={url(`/?q=%23${tag.slug}`)} class="opacity-80">
-                  {tag.title ? `${tag.title} (${tag.name})` : tag.name}
-                  {stacks.length > 1 && <Tag>{stacks.length}</Tag>}
-                </a>
-              </li>
-            ))
-        }
-      </ol> -->
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="container">
-      <div class="box" style="overflow-x: hidden">
-        <span
-          class="suptitle"
-          set:html={t("★ {starCount} cumulative stars", {
-            starCount: formatStars(totalStars, lang),
-          })}
-        />
-
-        <h2
-          set:html={t(
-            "Access {count}+ curated open source software packages, ready to install with one click.",
-            { count: Math.floor(stacks.length / 10) * 10 }
-          )}
-        />
-
-        <p
-          set:html={t(
-            "Free, secure, and privacy-focused alternatives to [popular apps]({url}).",
-            { url: url("/alternativesto") }
-          )}
-        />
-        <br />
-
-        <WallOfTags
-          rtl={textDirection(lang) === "rtl"}
-          items={stacks.map((alt) => ({
-            ...alt.data,
-            url: url(`/${alt.data.slug}`),
-          }))}
-        />
-      </div>
-
-      <!-- <div
-        class="hidden lg:block lg:-mx-24 2xl:mx-0 mt-12 p-6 bg-slate-100 border border-slate-200 rounded-3xl overflow-x-hidden"
-      >
-        <div class="grid gap-4 grid-flow-col">
-          {
-            promoted
-              .map(({ data }) =>
-                stacks.find((stack) => stack.data.slug === data.slug)
-              )
-              .filter(Boolean)
-              .map((stack) => [
-                stack?.data,
-                getAlternativeMetadata(stack?.data.alternativeTo?.[0] ?? ""),
-              ])
-              .reduce((acc, [stack, alternative]) => {
-                // only keep unique alternatives
-                if (!acc.find(([_, alt]) => alt.slug === alternative?.slug)) {
-                  acc.push([stack, alternative]);
-                }
-                return acc;
-              }, [] as any[])
-              .slice(0, 10)
-              .map(([data, alternative]) => (
-                <div class="content-evenly [writing-mode:vertical-lr] [text-orientation:upright]">
-                  <a
-                    href={url(`/alternativesto/${alternative.slug}`)}
-                    aria-label={`Alternatives to ${alternative.name}`}
-                    data-title-disabled={alternative.name}
-                    class="whitespace-nowrap [writing-mode:horizontal-tb] text-center [font-size:2.8em]"
-                  >
-                    <Logo slug={alternative.slug} />
-                    <p style="font-size: 0.4em">{alternative.name}</p>
-                  </a>
-                  <span
-                    aria-disabled="true"
-                    class="subtle select-none"
-                    style="font-size: 1.4em"
-                  >
-                    ↓
-                  </span>
-                  <a
-                    href={url(`/${data.slug}`)}
-                    aria-label={data.name}
-                    data-title-disabled={data.name}
-                    class="whitespace-nowrap [writing-mode:horizontal-tb] text-center [font-size:2.8em]"
-                  >
-                    <Logo slug={data.slug} />
-                    <p
-                      style="font-size: 0.4em"
-                      transition:name={`title-${data.name}`}
-                    >
-                      {data.name}
-                    </p>
-                  </a>
-                </div>
-              ))
-          }
-        </div>
-      </div> -->
-
-      <div
-        class="box bg-slate-50 text-slate-500 dark:bg-slate-900 dark:text-slate-200"
-      >
-        <div class="columns items-center">
-          <div class="column">
-            <a href={url("/download")} aria-label={t("Download Stack")}>
-              <Download>{t("Download Stack")}</Download>
-            </a>
-          </div>
-          <div class="column text-end">
-            <a href="#search">
-              {t("Then install software in one-click ↓")}
-            </a>
+          <div class="flex flex-col items-center gap-3 my-8">
+            <PuiButton
+              href={url("/download")}
+              aria-label={t("Download Stack")}
+              variant="glow"
+              size="lg"
+              glyph="download"
+              sparkle
+            >
+              {t("Download")}
+            </PuiButton>
+            <p class="subtle m-0">
+              <small>{t("Available for macOS, Windows and Linux")}</small>
+            </p>
           </div>
         </div>
       </div>
@@ -254,57 +117,14 @@ const description = t(
   </div>
 
   <div class="section relative">
-    <div class="container is-fluid">
-      <span class="suptitle">{t("Staff picks")}</span>
-      <h2 set:html={t("Youʼll enjoy these")} />
-      <Cards className="flex flex-nowrap overflow-x-auto scrollbar-subtle">
-        {
-          staffPick.map(([data, alternative]) => {
-            const icon = iconOf(data.slug) ?? iconOf(data.icon);
-
-            return (
-              <li class="pt-2">
-                <Card
-                  lang={lang}
-                  slug={data.slug}
-                  name={data.name}
-                  description={data.description}
-                  url={url(`/${data.slug}`)}
-                  {...(icon && { icon: data.icon })}
-                />
-              </li>
-            );
-          })
-        }
-      </Cards>
-    </div>
-
     <div class="container">
-      <span class="suptitle">{t("Come get some")}</span>
-      <h2 set:html={t("All the stacks")} />
-      <div
-        class="sticky top-8 h-13 z-20 outline outline-[2em] outline-white dark:bg-slate-900 dark:text-slate-200 dark:outline-slate-950"
-      >
-        <input
-          id="search"
-          type="search"
-          list="autocomplete"
+      <div id="catalog" class="sticky top-8 z-20">
+        <StackSearch
+          client:load
+          targetId="stacks"
           placeholder={t("Search software")}
-          class="w-full p-2 bg-white dark:!bg-slate-900 dark:focus:!bg-slate-950"
         />
       </div>
-      <datalist id="autocomplete">
-        {
-          [
-            ...alternatives.map(({ data }) => data.name),
-            ...stacks.map(({ data }) => data.name),
-            ...recipes.map(({ data }) => data.name),
-          ]
-            .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
-            .map((name) => <option value={name} />)
-        }
-      </datalist>
-      <br />
       <br />
       <Cards
         id="stacks"
@@ -327,9 +147,11 @@ const description = t(
               }) => (
                 <li
                   class="inline-flex pt-2"
-                  data-search={`${_tags?.map((tag) => `#${tag}`).join(",")},${alternativeTo
-                    ?.map((slug) => getAlternativeMetadata(slug)?.name)
-                    .join(",")}`}
+                  data-search={(function() {
+                    const searchTags = _tags?.map((tag) => `#${tag}`).join(",") || "";
+                    const searchAlts = alternativeTo?.map((slug) => getAlternativeMetadata(slug)?.name).join(",") || "";
+                    return searchTags + "," + searchAlts;
+                  })()}
                 >
                   <Card
                     lang={lang}
@@ -344,37 +166,22 @@ const description = t(
                     icon={icon}
                     stars={stars}
                     updated_at={updated_at}
-                  >
-                    {(alternativeTo?.length ?? 0) > 0 && (
-                      <span
-                        class="absolute end-0 top-6 pr-4 pl-36 block gap-2 opacity-0 z-10 text-sm select-none pointer-events-none transition-opacity "
-                        tabindex="-1"
-                        set:html={t("a smart alternative to {apps}", {
-                          apps: alternativeTo
-                            ?.map((slug) => [slug, Logo({ slug }) as any])
-                            .map(
-                              ([slug, { props }]) =>
-                                (props.dangerouslySetInnerHTML.__html
-                                  ? `<span>${props.dangerouslySetInnerHTML.__html}</span> `
-                                  : "") +
-                                alternatives.find(
-                                  ({ data }) => data.slug === slug
-                                )?.data.name
-                            )
-                            .join(", "),
-                        })}
-                      />
-                      // <a
-                      //   class="absolute right-0 top-5 grid gap-3 grid-flow-col opacity-0"
-                      //   href={url(`/${slug}.stack`)}
-                      // >
-                      //   A smart alternative to
-                      //   {alternativeTo?.map((slug) => (
-                      //     <Logo slug={slug} />
-                      //   ))}
-                      // </a>
-                    )}
-                  </Card>
+                    breathing={false}
+                    mentionHtml={
+                      (alternativeTo?.length ?? 0) > 0
+                        ? `<span class="text-[10px] leading-none px-1 py-0.5">${t("a smart alternative to {apps}", {
+                            apps: alternativeTo
+                              ?.map((slug) => [slug, Logo({ slug }) as any])
+                              .map(
+                                ([slug, { props }]) =>
+                                  (props?.dangerouslySetInnerHTML?.__html || "") +
+                                  alternatives.find(({ data }) => data.slug === slug)?.data.name
+                              )
+                              .join(", "),
+                          })}</span>`
+                        : null
+                    }}
+                  />
                 </li>
               )
             )
@@ -383,39 +190,38 @@ const description = t(
     </div>
   </div>
 
-  <script is:inline>
-    const applySearch = () => {
-      const q = new URL(location).searchParams.get("q");
-      const handleSearch = (e, q) => {
-        console.debug("search", q);
-        stacks
-          .querySelectorAll("li")
-          .forEach(
-            (li) =>
-              (li.hidden =
-                !li.dataset.search.toLowerCase().includes(q.toLowerCase()) &&
-                !li.textContent.toLowerCase().includes(q.toLowerCase()))
-          );
-        // scroll to the input
-        if (!e) {
-          document.getElementById("search").scrollIntoView({
-            behavior: "instant",
-            block: "start",
-          });
-        }
-      };
-      if (q) {
-        search.value = q;
-        handleSearch(undefined, q);
-      }
-      globalThis.search?.addEventListener("input", (e) => {
-        handleSearch(e, search.value);
-      });
-    };
-
-    applySearch();
-    document.addEventListener("astro:after-swap", applySearch);
-  </script>
+  <div class="section relative overflow-hidden mb-0">
+    <div class="container">
+      <div
+        class="relative text-center flex flex-col items-center gap-8 py-20 rounded-pui-xl overflow-hidden"
+      >
+        <Aurora
+          blobs={[{ color: "rgba(124,58,237,0.55)", x: 50, y: 90, size: 60 }]}
+        />
+        <h2
+          class="relative z-10 m-0"
+          set:html={t("The *best free software* made&nbsp;*accessible*.")}
+        />
+        <div class="relative z-10 flex flex-wrap gap-4 justify-center">
+          <PuiButton
+            href={url("/download")}
+            variant="glow"
+            size="lg"
+            sparkle
+            glyph="download"
+          >
+            {t("Download Stack")}
+          </PuiButton>
+          <CommunityBadge
+            href="https://github.com/codename-co/stack"
+            title="GitHub"
+            subtitle={`★ ${formatStars(totalStars, lang)}`}
+            iconNode={Logo({ slug: "github" })}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 
   <style>
     @media (width >= 40rem) {

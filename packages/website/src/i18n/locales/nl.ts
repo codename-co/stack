@@ -25,8 +25,6 @@ export const nl: Partial<I18n> = {
     "Toegang tot {count}+ samengestelde open source softwarepakketten, klaar om met één klik te installeren.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "Gratis, veilige en privacygerichte alternatieven voor [populaire apps]({url}).",
-  "Then install software in one-click ↓":
-    "Installeer vervolgens software in één klik ↓",
   "Search software": "Zoek software",
   "a smart alternative to {apps}": "een slim alternatief voor {apps}",
   "Staff picks": "Keuze van het personeel",

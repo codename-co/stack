@@ -1,7 +1,17 @@
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useState } from "react";
+import { StatusDot, StickyBanner } from "performative-ui";
 import { isApiAccessible } from "~/helpers/stackApi";
 import { useTranslations, type Lang } from "~/i18n";
 
+/**
+ * "The desktop app is reachable" indicator.
+ *
+ * Was a hand-built fixed bar with its own `@keyframes gradientShift` and a
+ * hazard-stripe background. StickyBanner is the library's announcement bar and
+ * StatusDot is its live indicator, so the only thing left to own is the
+ * slide-in/out transform — the banner is absent, not just invisible, when the
+ * app is not running.
+ */
 export const Debug: React.FC<{ children?: any; lang: Lang }> = ({
   children,
   lang,
@@ -10,62 +20,40 @@ export const Debug: React.FC<{ children?: any; lang: Lang }> = ({
 
   const t = useTranslations(lang);
 
-  const check = async () => {
-    const connected = await isApiAccessible();
-    console.log("API is accessible:", connected);
-    setConnected(connected);
-
-    globalThis.document.body.setAttribute(
-      "data-connected",
-      connected.toString(),
-    );
-  };
-
   useEffect(() => {
-    check();
-    setInterval(check, 2000);
-  }, []);
+    const check = async () => {
+      const reachable = await isApiAccessible();
+      setConnected(reachable);
+      // Several pages hide or reveal CTAs off this attribute.
+      document.body.setAttribute("data-connected", reachable.toString());
+    };
 
-  const debugStyle: CSSProperties = {
-    transform: `translateY(${connected ? "0" : "-100%"})`,
-    transition: "all 0.3s ease-in-out",
-    background:
-      "repeating-linear-gradient(45deg, #333, #333 10px, #555 10px, #555 20px)",
-    backgroundSize: "160% 100%",
-    animation: "gradientShift 20s linear infinite",
-  };
+    check();
+    const timer = setInterval(check, 2000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <>
-      <style>
-        {`
-          @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-          }
-        `}
-      </style>
       {children}
       <div
         id="debug"
-        style={debugStyle}
-        className="fixed top-0 left-0 right-0 w-full z-50 user-select-none text-white max-w-96 mx-auto my-0 px-6 py-1 text-sm font-semibold rounded-bl-lg rounded-br-lg"
+        className="fixed top-0 inset-x-0 z-50 select-none"
+        style={{
+          transform: `translateY(${connected ? "0" : "-100%"})`,
+          transition: "transform 0.3s var(--pui-ease)",
+        }}
       >
-        <span>
-          ▶{" "}
-          <span
-            dangerouslySetInnerHTML={{ __html: t("Service is running…") }}
-          />
-        </span>
-        <nav className="float-end">
-          <a
-            className="!text-white"
-            href="https://stack.localhost"
-            data-title="Dashboard"
-          >
-            dash
-          </a>
-        </nav>
+        <StickyBanner hideSparkle>
+          {/* StickyBanner wraps its children in one span, so the dot and the
+              label need their own row. */}
+          <span className="inline-flex items-center gap-2">
+            <StatusDot />
+            <span
+              dangerouslySetInnerHTML={{ __html: t("Service is running…") }}
+            />
+          </span>
+        </StickyBanner>
       </div>
     </>
   );

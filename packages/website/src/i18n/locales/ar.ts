@@ -37,8 +37,6 @@ export const ar: I18n = {
     "الوصول إلى أكثر من {count} حزمة برمجيات مفتوحة المصدر مرتبة، جاهزة للتثبيت بنقرة واحدة.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "بدائل مجانية وآمنة ومركزة على الخصوصية لـ [التطبيقات الشهيرة]({url}).",
-  "Then install software in one-click ↓":
-    "ثم قم بتثبيت البرمجيات بنقرة واحدة ↓",
   "Search software": "البحث عن برامج",
   "a smart alternative to {apps}": "بديل ذكي لـ {apps}",
   "Staff picks": "اختيارات الموظفين",
@@ -88,8 +86,19 @@ export const ar: I18n = {
   /** Page /<stack> */
   "Start it now": "ابدأ الآن",
   "Download the stack file": "تحميل ملف الكومة",
+  "Runs locally, in one click.": "يعمل محليًا، بنقرة واحدة.",
+  "Ready to run *{name}*?": "جاهز لتشغيل *{name}*؟",
+  Version: "الإصدار",
+  Stars: "النجوم",
+  License: "الرخصة",
+  Author: "المؤلف",
+  Links: "الروابط",
+  Homepage: "الموقع الرسمي",
+  "Source code": "الشيفرة المصدرية",
   "About *{name}*": "حول *{name}*",
   "Environment variables": "متغيرات البيئة",
+  "{count} variables you can tune before starting.":
+    "{count} متغيرات يمكنك ضبطها قبل التشغيل.",
   "No environment variables defined.": "لم يتم تعريف متغيرات بيئية.",
   "View environment variables": "عرض متغيرات البيئة",
   "An alternative to": "بديل لـ",
@@ -111,6 +120,8 @@ export const ar: I18n = {
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*وصفة*: {name}",
   "Recipe ingredients": "مكونات الوصفة",
+  "{count} services, wired together and started as one.":
+    "{count} خدمات، مترابطة وتعمل ككل واحد.",
   "Last update": "آخر تحديث",
   "Related recipes": "وصفات ذات صلة",
 

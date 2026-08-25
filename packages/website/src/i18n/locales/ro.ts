@@ -25,8 +25,6 @@ export const ro: Partial<I18n> = {
     "Acceseaza {count}+ pachete de software open source, gata de instalat cu un singur clic.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "Alternative gratuite, sigure si concentrate pe confidentialitate pentru [aplicatii populare]({url}).",
-  "Then install software in one-click ↓":
-    "Apoi instaleaza software-ul cu un singur clic ↓",
   "Search software": "Cauta software",
   "Staff picks": "Alegerile echipei",
   "Youʼll enjoy these": "O sa te bucuri de acestea",

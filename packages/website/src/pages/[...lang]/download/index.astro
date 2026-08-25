@@ -1,6 +1,9 @@
 ---
-import Download from "~/components/download.html";
+import { GlassCard } from "performative-ui";
 import Logo from "~/components/Logo";
+import Pitch from "~/components/Pitch.astro";
+import PuiButton from "~/components/PuiButton.astro";
+import SectionHeading from "~/components/SectionHeading.astro";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
 
@@ -58,73 +61,58 @@ const detection = platforms.map(({ id, name, href, requirement }) => ({
 <Layout lang={lang} title={title} leftTransition="fade">
   <div slot="left" class="section h-full">
     <div class="container">
-      <h1 set:html={t("The *best free software* made&nbsp;*accessible*.")} />
-      <p class="subtle mb-8" style="max-width: 24em">
-        {t("Spin up local alternatives to")}
-        <a
-          href={url("/alternativesto/notion")}
-          aria-label="Alternatives to Notion"
-          style="white-space: nowrap"
-        >
-          <Logo slug="notion" />
-          Notion</a
-        >, <a
-          href={url("/alternativesto/chatgpt")}
-          aria-label="Alternatives to ChatGPT"
-          style="white-space: nowrap"
-        >
-          <Logo slug="chatgpt" />
-          ChatGPT</a
-        >, <a
-          href={url("/alternativesto/figma")}
-          aria-label="Alternatives to Figma"
-          style="white-space: nowrap"
-        >
-          <Logo slug="figma" />
-          Figma</a
-        >
-        {t("and other")}
-        <a
-          href={url("/alternativesto")}
-          aria-label="Alternatives to popular software"
-          >{t("popular software")}</a
-        >. {t("Remix your own.")}
-      </p>
+      <Pitch lang={lang} aurora />
     </div>
   </div>
 
   <div class="section">
     <div class="container">
-      <h2 set:html={t("Download Stack")} />
-      <p
-        class="subtle mb-8"
-        set:html={t(
+      <SectionHeading
+        title={t("Download Stack")}
+        subtitle={t(
           "Give your desktop *superpowers*.<br />Make it run any open source quality software in a snap."
         )}
       />
-      <a
+
+      <PuiButton
         href={platforms[0].href}
-        class="inline-flex highlight hover:animate-highlight"
+        variant="glow"
+        size="lg"
+        sparkle
+        glyph="download"
         data-download-cta
       >
-        <Download set:html={t("Download for {os}", { os: "macOS" })} />
-      </a>
+        <span
+          data-download-label
+          set:html={t("Download for {os}", { os: "macOS" })}
+        />
+      </PuiButton>
+
       <p class="subtle my-3" style="max-width: 24em">
         <small data-download-requirement set:html={platforms[0].requirement} />
       </p>
       <br />
-      <div style="columns: 3; max-width: 15em">
+
+      <div class="pui-grid">
         {
-          platforms.map(({ id, name, logo, href }) => (
-            <a
-              href={href}
+          platforms.map(({ id, name, logo, href, requirement }) => (
+            <GlassCard
+              breathing
+              glowOnHover
+              className="h-full"
               data-platform-tile={id}
-              class="flex cursor-pointer flex-col items-center rounded-lg px-6 py-2 hover:bg-neutral-100 hover:dark:bg-neutral-700"
-              style="flex-direction: column;"
             >
-              <Logo slug={logo} style={{ color: "inherit" }} />
-              <span class="text-sm">{name}</span>
-            </a>
+              <GlassCard.Icon>
+                <Logo slug={logo} style={{ color: "inherit" }} />
+              </GlassCard.Icon>
+              <GlassCard.Title>{name}</GlassCard.Title>
+              <GlassCard.Body>
+                <Fragment set:html={requirement} />
+              </GlassCard.Body>
+              <GlassCard.Link href={href} className="stretched-link">
+                <span set:html={t("Download for {os}", { os: name })} /> ↓
+              </GlassCard.Link>
+            </GlassCard>
           ))
         }
       </div>
@@ -148,8 +136,8 @@ const detection = platforms.map(({ id, name, href, requirement }) => ({
           const cta = document.querySelector("[data-download-cta]");
           if (cta) {
             cta.href = platform.href;
-            const label = cta.querySelector("span");
-            if (label) label.textContent = platform.label;
+            const label = cta.querySelector("[data-download-label]");
+            if (label) label.innerHTML = platform.label;
           }
 
           const requirement = document.querySelector(
@@ -160,7 +148,10 @@ const detection = platforms.map(({ id, name, href, requirement }) => ({
           const tile = document.querySelector(
             `[data-platform-tile="${platform.id}"]`
           );
-          if (tile) tile.classList.add("bg-neutral-100", "dark:bg-neutral-700");
+          if (tile) {
+            tile.style.borderColor = "var(--pui-grad-from)";
+            tile.style.boxShadow = "var(--pui-glow)";
+          }
         })();
       </script>
     </div>

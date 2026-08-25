@@ -1,5 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { BigBack } from "performative-ui";
+import "performative-ui/styles.css";
 import { Debug } from "~/components/Debug";
 import Navbar from "~/components/Navbar.astro";
 import {
@@ -9,8 +11,6 @@ import {
   useTranslations,
   useUrl,
 } from "~/i18n";
-import Logo from "~components/Logo";
-import { DarkModeSwitcher } from "~components/DarkModeSwitcher";
 
 const {
   lang = "en",
@@ -22,6 +22,27 @@ const {
 
 const t = useTranslations(lang);
 const url = useUrl(lang);
+
+// The footer wordmark is the only place the brand is allowed to shout.
+const footerColumns = [
+  {
+    heading: t("Stack"),
+    links: [
+      { label: t("Stacks"), href: url("/") },
+      { label: t("Catalog"), href: url("/alternativesto") },
+      { label: t("Recipes"), href: url("/recipes") },
+      { label: t("Download"), href: url("/download") },
+    ],
+  },
+  {
+    heading: "stack.lol",
+    links: [
+      { label: "GitHub", href: "https://github.com/codename-co/stack" },
+      { label: "RSS", href: url("/rss") },
+      { label: "API", href: url("/api") },
+    ],
+  },
+];
 ---
 
 <html lang={lang} dir={textDirection(lang)}>
@@ -57,23 +78,53 @@ const url = useUrl(lang);
       ))
     }
     <slot name="head" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
+    />
+    <script is:inline>
+      // Resolve the theme before first paint: performative-ui reads
+      // `data-theme` on <html>, Tailwind reads `.dark`. Keep them in lockstep,
+      // or the page flashes one palette while the components render the other.
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const dark =
+          saved === "dark" ||
+          ((!saved || saved === "system") &&
+            matchMedia("(prefers-color-scheme: dark)").matches);
+        const root = document.documentElement;
+        root.classList.toggle("dark", dark);
+        root.setAttribute("data-theme", dark ? "dark" : "light");
+      })();
+    </script>
     <style is:global>
       @tailwind base;
       @tailwind components;
       @tailwind utilities;
 
       :root {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
-        /* font-size: 14px;
-  line-height: 24px; */
+        font-family: var(--pui-font-sans);
         font-weight: 400;
 
         scrollbar-gutter: stable;
         scroll-behavior: smooth;
 
         --main-max-width: 115.2rem;
+      }
+
+      @keyframes pui-grad-shift {
+        to {
+          background-position: 200% 50%;
+        }
+      }
+
+      /* performative-ui renders its own anchors (footer, cards, pricing CTAs);
+         the global `a[href]` rule must not repaint them. */
+      [class^="pui-"] a[href],
+      [class*=" pui-"] a[href] {
+        color: inherit;
       }
 
       a {
@@ -93,8 +144,9 @@ const url = useUrl(lang);
         margin: 2em auto 0;
         font-size: 1rem;
         line-height: 1rem;
-        background: #666;
-        color: #fff;
+        background: var(--pui-bg-soft);
+        border: 1px solid var(--pui-border);
+        color: var(--pui-fg);
         padding: 0.25em 0.5em;
         border-radius: 0.5em;
         z-index: 20;
@@ -103,12 +155,13 @@ const url = useUrl(lang);
       }
 
       a[aria-disabled="true"] {
-        color: #777;
+        color: var(--pui-fg-mute);
         cursor: not-allowed;
       }
 
       summary {
         cursor: pointer;
+        color: var(--pui-fg-dim);
       }
 
       @media screen {
@@ -150,25 +203,11 @@ const url = useUrl(lang);
           margin: 0 -0.5em 0 0;
         }
       }
-      /* The layout goes multi-column as soon as width reaches 96rem wide */
+      /* Single-column storytelling: everything stacks vertically. Wide
+         viewports just get more breathing room. */
       @media (min-width: 96rem) {
         [role="main"] {
           max-width: var(--main-max-width);
-          display: grid;
-          grid-template-columns: 21em 1fr 21em;
-          grid-template-areas:
-            "navbar navbar navbar"
-            "left content right"
-            "left footer right";
-          grid-gap: 0 2em;
-          &.left-only {
-            grid-template-columns: 21em 1fr;
-            grid-template-areas:
-              "navbar navbar"
-              "left content"
-              "left footer";
-            grid-gap: 0 2em;
-          }
         }
         .expand-beyond-main {
           margin: 0 calc(57.6rem - 50vw);
@@ -187,10 +226,10 @@ const url = useUrl(lang);
         break-inside: avoid;
       }
 
-      svg[role="img"] {
-        /* float: right;
-  width: 1.5em;
-  height: 1.5em; */
+      /* Sizes the simple-icons glyphs used throughout the catalog. Scoped away
+         from performative-ui's own SVGs (the BigBack wordmark also carries
+         role="img") — they size themselves. */
+      svg[role="img"]:not([class^="pui-"]) {
         display: inline-flex;
         width: 1em;
         height: 1em;
@@ -215,23 +254,6 @@ const url = useUrl(lang);
         font-size: 120%;
       }
 
-      /* @media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #161a22;
-  }
-
-  * {
-    color: #fafafa;
-    fill: #fafafa;
-    border-color: #77777777 !important;
-  }
-
-  p {
-    color: #bbb;
-  }
-} */
-
       body[data-connected="true"] .unless-connected {
         display: none;
       }
@@ -243,22 +265,6 @@ const url = useUrl(lang);
       body:not([data-connected="true"]) .highlight-if-connected::before {
         padding: 0;
         inset: 0;
-      }
-
-      input[type="checkbox"]:not(:checked) + [role="menu"] {
-        display: none;
-      }
-
-      [role="main"].left-only {
-        .container {
-          @media (min-width: 1536px), (min-width: 1636px), (min-width: 1736px) {
-            max-width: calc(100vw - 28em);
-          }
-
-          @media (min-width: 115.2rem) {
-            max-width: calc(100vw - 28em - (100vw - 115.2rem));
-          }
-        }
       }
     </style>
   </head>
@@ -282,75 +288,34 @@ const url = useUrl(lang);
         <slot />
       </div>
       <slot name="right" />
-      <!-- <center class="section">
-        <img
-          src="/128x128.png"
-          alt=""
-          style="opacity: 20%; user-select: none; pointer-events: none;"
-        />
-      </center> -->
-      <footer id="footer" class="section">
+      <footer id="footer" class="section mt-0">
         <div class="container">
-          <div class="columns">
-            <div class="column flex flex-col">
-              <a href={url("/")}>
-                <h3 class="flex mt-0">
-                  <img
-                    src="/128x128.png"
-                    alt=""
-                    width="32"
-                    height="32"
-                    class="mr-2"
-                  />
-                  <span
-                    class="font-semibold text-xl tracking-tight text-black dark:text-white"
-                  >
-                    Stack
-                  </span>
-                </h3>
-              </a>
-              <small class="subtle">
-                © {new Date().getFullYear()} Codename
-              </small>
-            </div>
-            <nav class="column flex flex-col gap-2">
-              <h4>{t("Stack")}</h4>
-              <a href={url("/")}>{t("Stacks")}</a>
-              <a href={url("/alternativesto")}>{t("Catalog")}</a>
-              <a href={url("/recipes")}>{t("Recipes")}</a>
-            </nav>
-            <nav class="column flex flex-col gap-2">
-              <h4>Stack.lol</h4>
-              <a
-                href="https://github.com/codename-co/stack"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="GitHub"
-              >
-                <Logo slug="github" /> GitHub
-              </a>
-              <a href={url("/rss")} rel="noopener noreferrer">
-                <Logo slug="rss" /> RSS feed
-              </a>
-              <a href={url("/api")}>
-                <Logo slug="json" /> API
-              </a>
-              <div>
-                <DarkModeSwitcher client:only="react">
-                  Dark mode
-                </DarkModeSwitcher>
-              </div>
-            </nav>
-          </div>
+          <BigBack
+            company="stack . lol"
+            columns={footerColumns}
+            copyright={`© ${new Date().getFullYear()} Codename`}
+            social={[
+              { label: t("Download"), href: url("/download") },
+              { label: "GitHub", href: "https://github.com/codename-co/stack" },
+            ]}
+          />
+          <style is:inline>
+            .pui-bigback__wordmark {
+              opacity: .25;
+            }
+          </style>
         </div>
       </footer>
     </main>
 
     <script is:inline>
-      // Preserve dark mode on page transitions
+      // Preserve the resolved theme across view transitions — both halves of
+      // it, since `.dark` drives Tailwind and `data-theme` drives pui.
       document.addEventListener("astro:before-swap", (event) => {
-        event.newDocument.getRootNode().children[0].className =
-          globalThis.document.getRootNode().children[0].className;
+        const from = document.documentElement;
+        const to = event.newDocument.documentElement;
+        to.className = from.className;
+        to.setAttribute("data-theme", from.getAttribute("data-theme") ?? "dark");
       });
     </script>
 

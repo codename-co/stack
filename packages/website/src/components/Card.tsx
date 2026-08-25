@@ -1,3 +1,4 @@
+import { GlassCard, Sparkle } from "performative-ui";
 import { formatStars, timeago } from "~helpers";
 import { logoFromIcon } from "./Logo";
 
@@ -13,9 +14,19 @@ type CardProps = {
   updated_at?: Date;
   className?: string;
   style?: React.CSSProperties;
+  breathing?: boolean;
+  mentionHtml?: string;
   children?: React.ReactNode;
 };
 
+/**
+ * A catalog entry, rendered as a GlassCard.
+ *
+ * The one thing the library cannot know is the software's own brand color, so
+ * the icon tile — and only the icon tile — is tinted from the simple-icons hex.
+ * Everything else (chrome, halo, hover lift) is left to performative-ui, which
+ * keeps 250+ cards on the same surface treatment as the rest of the page.
+ */
 const Card: React.FC<CardProps> = ({
   className,
   children,
@@ -29,90 +40,93 @@ const Card: React.FC<CardProps> = ({
   style,
   updated_at,
   url,
+  breathing,
+  mentionHtml,
 }) => {
-  const logo = logoFromIcon({
-    slug,
-    icon,
-  });
+  // `logoFromIcon` yields the icon record, an empty string, or null depending
+  // on which of the three lookups hit. Normalise once, here.
+  const resolved = logoFromIcon({ slug, icon });
+  const logo = resolved && typeof resolved === "object" ? resolved : null;
 
   return (
     <div
-      className={`relative w-full min-w-56 md:min-w-72 lg:min-w-96 hover:scale-105 transition-transform ${
-        className ?? ""
-      }`}
+      // `small` cards live in dense grids (the related rail, the alternatives
+      // list). The catalog's min-widths are what forced those into one
+      // full-width card per row.
+      className={`relative w-full ${
+        small ? "min-w-0" : "min-w-56 md:min-w-72 lg:min-w-96"
+      } ${className ?? ""}`}
       style={style}
     >
-      <div>
-        {children}
+      {children}
+      <GlassCard
+        breathing={breathing}
+        glowOnHover
+        className={`h-full ${small ? "!p-4" : ""}`}
+        style={
+          {
+            // Bleed the brand color into the card's own halo.
+            ...(logo?.hex &&
+              logo.hex !== "currentColor" && {
+                "--pui-grad-from": logo.hex,
+              }),
+          } as React.CSSProperties
+        }
+      >
         <a
           href={url}
-          className={`flex flex-col relative rounded-3xl ${
-            small ? (logo ? "pt-10" : "pt-4") : "pt-20"
-          } pb-4 px-8 gap-4 shadow-md`}
         >
-          <div className="overflow-hidden absolute w-full h-full top-0 left-0 -z-50 rounded-3xl">
-            {/* subtle gradient effect */}
-            <div
-              className="absolute w-full h-full"
-              style={{
-                background:
-                  "repeating-linear-gradient(3deg, transparent 70%, #3331)",
-              }}
-            />
-            {/* background */}
-            {logo && (
-              <span
-                className={`absolute object-cover pointer-events-none w-[200%] h-[200%] max-w-[200%] blur-[100px] saturate-150 dark:saturate-0`}
-                style={{ background: `${logo.hex}33` }}
-              />
-            )}
-          </div>
-          {/* Icon */}
-          {logo && (
+          {mentionHtml && (
             <span
-              className={`icon ${
-                small ? "small" : ""
-              } border dark:border-white ${small ? "w-12 h-12" : "w-24 h-24"} ${
-                small ? "p-2" : "p-4"
-              } pointer-events-none absolute -top-4 text-center rounded-2xl object-cover shadow-xl bg-white/30 dark:!text-white`}
-              style={{
-                color: `${logo.hex}99`,
-                borderColor: `${logo.hex}33`,
-              }}
-              title={`Icon of ${name}`}
-              dangerouslySetInnerHTML={{ __html: logo.svg }}
+              className="absolute -end-4 -top-8 py-0.5 ms-16"
+              dangerouslySetInnerHTML={{ __html: mentionHtml }}
             />
           )}
-          <div className="mt-3">
-            <span className="block text-xl font-medium line-clamp-1 mb-1">
-              {name}
-            </span>
-            <span className="block h-11 line-clamp-2">{description}</span>
-            {(stars || updated_at) && (
-              <p className="flex gap-3 subtle">
-                {stars && (
-                  <span className="text-sm">
-                    ★&nbsp;{formatStars(stars, lang)}
-                  </span>
-                )}
-                {updated_at && (
-                  <span className="text-sm">
-                    <time
-                      dateTime={updated_at.toISOString()}
-                      title={new Intl.DateTimeFormat(lang, {
-                        dateStyle: "full",
-                        timeStyle: undefined,
-                      }).format(updated_at)}
-                    >
-                      {timeago(updated_at, lang)}
-                    </time>
-                  </span>
-                )}
-              </p>
-            )}
-          </div>
+
+          {logo ? (
+            <GlassCard.Icon>
+              {/* No `.icon` class here on purpose: the tile is 38px and the
+                  global `svg[role=img]` rule already sizes the glyph to 1em. */}
+              <span
+                className="inline-flex"
+                title={`Icon of ${name}`}
+                style={{ color: logo.hex }}
+                dangerouslySetInnerHTML={{ __html: logo.svg }}
+              />
+            </GlassCard.Icon>
+          ) : (
+            <GlassCard.Icon>
+              <Sparkle />
+            </GlassCard.Icon>
+          )}
+
+          <GlassCard.Title className="line-clamp-1">{name}</GlassCard.Title>
+          <GlassCard.Body className="line-clamp-2 min-h-11">
+            {description}
+          </GlassCard.Body>
+
+          {(stars || updated_at) && (
+            <p className="flex gap-3 subtle m-0">
+              {stars && (
+                <span className="text-sm">★&nbsp;{formatStars(stars, lang)}</span>
+              )}
+              {updated_at && (
+                <span className="text-sm">
+                  <time
+                    dateTime={updated_at.toISOString()}
+                    title={new Intl.DateTimeFormat(lang, {
+                      dateStyle: "full",
+                      timeStyle: undefined,
+                    }).format(updated_at)}
+                  >
+                    {timeago(updated_at, lang)}
+                  </time>
+                </span>
+              )}
+            </p>
+          )}
         </a>
-      </div>
+      </GlassCard>
     </div>
   );
 };

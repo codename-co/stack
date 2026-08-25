@@ -1,14 +1,15 @@
 ---
-import { getCollection } from "astro:content";
 import { marked } from "marked";
-import DownloadBase from "~/components/download-base.html";
+import { Aurora, GlassCard } from "performative-ui";
 import Logo from "~/components/Logo";
-import Tag from "~/components/tag.html";
+import SectionHeading from "~/components/SectionHeading.astro";
+import StackActions from "~/components/StackActions.astro";
+import StackHero from "~/components/StackHero.astro";
 import { getRecipes } from "~/content/collections/recipes";
 import { getStacks } from "~/content/collections/stacks";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
-import { formatStars, getAlternativeMetadata, timeago } from "~/helpers";
+import { brandGlowOf, brandOf, formatStars, hasLogoOf } from "~/helpers";
 import Cards from "~components/Cards";
 import Card from "~components/Card";
 
@@ -43,22 +44,12 @@ if (!recipe) {
   return new Response("Not found", { status: 404 });
 }
 
-const tags = await getCollection("tags");
-
 const {
   name,
   description,
-  // version,
   icon,
   updated_at,
-  tags: _tags,
   readme,
-  env,
-  homepage,
-  repository,
-  stars,
-  license,
-  author,
   alternativeTo,
   dependencies,
 } = recipe;
@@ -75,8 +66,6 @@ const associatedStacks =
     ...(!custom && stacks.find((stack) => stack.data.slug === name)?.data),
   })) ?? [];
 
-// const command = `stack run ${slug}`;
-
 const similar = Array.from(
   new Set(
     [
@@ -88,20 +77,22 @@ const similar = Array.from(
             candidate.data.alternativeTo?.includes(slug)
           )
       ),
-      // ...recipes.filter(
-      //   (candidate) =>
-      //     candidate.data.slug !== slug &&
-      //     // ensure both tags and candidate.tags have an intersection
-      //     (tags || []).some((tag) => candidate.data.tags?.includes(tag.id))
-      // ),
     ].map((entry) => entry.data.slug)
   )
 )
-  .slice(0, 5)
+  .slice(0, 6)
   .map((slug) => recipes.find((recipe) => recipe.data.slug === slug)?.data);
+
+// Only needed for the closing CTA's halo; the hero derives its own.
+const brandGlow = brandGlowOf(slug, icon);
 ---
 
-<Layout lang={lang} title={`${name} recipe`} description={description}>
+<Layout
+  lang={lang}
+  title={`${name} recipe`}
+  description={description}
+  leftTransition="fade"
+>
   <script
     slot="head"
     type="application/ld+json"
@@ -111,261 +102,131 @@ const similar = Array.from(
       "@type": "SoftwareApplication",
       name,
       url: new URL(Astro.url.pathname, Astro.site),
-      // softwareVersion: version,
       headline: name,
       description,
-      // about: description,
-      // screenshot: "[image-url]",
       image: {
         "@type": "ImageObject",
         url: readme?.match(/!\[.*\]\((.*)\)/)?.[1],
       },
       applicationCategory: "BrowserApplication",
-      // applicationSubCategory: "Product Comparison",
       inLanguage: lang,
       operatingSystem: "Web Browser",
       browserRequirements: "Requires Stack Desktop",
       dateModified: new Date(updated_at ?? "").toISOString(),
-      // aggregateRating: {
-      //   "@type": "AggregateRating",
-      //   ratingValue: 4.7,
-      //   ratingCount: stars,
-      // },
-      // downloadUrl: new URL(url(`/downloads/${slug}.stack`), Astro.site),
     })}
   />
 
-  <div slot="left" class="section h-full">
-    <div class="container">
-      <div
-        class="sticky top-12 flex flex-col lg:flex-row 2xl:flex-col justify-between items-start"
-      >
-        <span
-          class="absolute right-0 opacity-10 pointer-events-none user-select-none mt-1 2xl:top-4 2xl:left-0"
-          style={{
-            zoom: 16,
-            zIndex: -1,
-          }}
-        >
-          <Logo slug={slug} icon={icon} />
-        </span>
+  <div slot="left">
+    <StackHero lang={lang} stack={recipe} eyebrow={t("Recipe")}>
+      <StackActions
+        lang={lang}
+        runHref={url(`/recipes/${slug}.stack`)}
+        fileHref={`/downloads/recipes/${slug}.stack`}
+      />
+      <p
+        class="subtle text-xs !mt-3 !mb-0"
+        set:html={t("Runs locally, in one click.")}
+      />
+    </StackHero>
+  </div>
 
-        <div>
-          <h1
-            transition:name={`title-${name}`}
-            set:html={`${t("*Recipe*: {name}", { name })}`}
+  {
+    associatedStacks.length > 0 && (
+      <div class="section">
+        <div class="container">
+          <SectionHeading
+            title={t("Recipe ingredients")}
+            subtitle={t(
+              "{count} services, wired together and started as one.",
+              { count: associatedStacks.length }
+            )}
           />
-          <p>{description}</p>
-          {
-            stars && (
-              <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>
-            )
-          }
-          {
-            _tags
-              ?.map((tag) => {
-                const t = tags.find(({ data }) => data.slug === tag)?.data;
-                if (!t) return null;
+          {/*
+            Was a `<table>` with `border-spacing-4` where the name cell held an
+            `<h4>`, a star count and a licence, and the role sat in an
+            unlabelled second column. A recipe's ingredients are a set of
+            things, not a data table — and the role is the interesting part, so
+            it gets the body text rather than a bare cell.
+          */}
+          <ul class="stack-ingredients">
+            {associatedStacks.map((dep: any) => {
+              const inner = (
+                <>
+                  <span
+                    class="stack-ingredients__icon"
+                    style={{ "--brand": brandOf(dep.slug, dep.icon) }}
+                    aria-hidden="true"
+                  >
+                    {hasLogoOf(dep.slug, dep.icon) ? (
+                      <Logo slug={dep.slug} icon={dep.icon} />
+                    ) : (
+                      <span class="stack-ingredients__monogram">
+                        {(dep.name ?? "?").slice(0, 1).toUpperCase()}
+                      </span>
+                    )}
+                  </span>
+                  <span class="min-w-0">
+                    <span class="stack-ingredients__name">
+                      {dep.name}
+                      {dep.stars && (
+                        <small class="subtle font-normal ms-2">
+                          ★&nbsp;{formatStars(dep.stars, lang)}
+                        </small>
+                      )}
+                    </span>
+                    {dep.role && (
+                      <span class="stack-ingredients__role">{dep.role}</span>
+                    )}
+                  </span>
+                </>
+              );
 
-                return (
-                  <a href={url(`/?q=%23${tag}`)}>
-                    <Tag>
-                      <abbr title={t.title}>{t.name}</abbr>
-                    </Tag>
-                  </a>
-                );
-              })
-              .filter(Boolean)
-          }
-          {
-            (homepage || repository) && (
-              <p class="text-sm">
-                {homepage && <a href={homepage}>Homepage</a>}
-                {homepage && repository && " · "}
-                {repository && (
-                  <a href={`${repository}?ref=stack.lol`}>Source code</a>
-                )}
-              </p>
-            )
-          }
-          <span class="text-sm">
-            {author && <span>Author: {author}</span>}
-            {
-              license && (
-                <span>
-                  {author && " · "}License: {license}
-                </span>
-              )
-            }
-          </span>
-          <p class="text-sm subtle">
-            <!-- Version: {version} -->
-            {t("Last update")}
-            {
-              updated_at && (
-                <time
-                  datetime={updated_at.toISOString()}
-                  title={new Intl.DateTimeFormat(lang, {
-                    dateStyle: "full",
-                    timeStyle: undefined,
-                  }).format(updated_at)}
-                >
-                  {timeago(updated_at, lang)}
-                </time>
-              )
-            }
-          </p>
-        </div>
-
-        <div class="pt-4 flex flex-row gap-4">
-          <a
-            href={url(`/recipes/${slug}.stack`)}
-            rel="nofollow"
-            class="inline-flex highlight highlight-if-connected"
-          >
-            <DownloadBase>
-              <svg
-                class="fill-current w-4 h-4 m-1 inline"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 17 17"
-              >
-                <path d="M2 1l14 7-14 7z"></path>
-              </svg>
-              <span set:html={t("Start it now")} />
-              <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
-            </DownloadBase>
-          </a>
-          <a
-            href={`/downloads/recipes/${slug}.stack`}
-            rel="nofollow"
-            data-title={t("Download the stack file")}
-          >
-            <DownloadBase>
-              <svg
-                class="fill-current w-4 h-4 m-1 inline"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 17 17"
-              >
-                <path d="M12 8V2H8v6H2l8 8 8-8"></path>
-              </svg>
-              <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
-            </DownloadBase>
-          </a>
+              return (
+                <li>
+                  {/* Custom ingredients are declared inline by the recipe and
+                      have no catalog page to link to. */}
+                  {dep.custom ? (
+                    <span class="stack-ingredients__item">{inner}</span>
+                  ) : (
+                    <a class="stack-ingredients__item" href={url(`/${dep.slug}`)}>
+                      {inner}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
+    )
+  }
 
   <div class="section">
     <div class="container">
-      <h2 set:html={t("About *{name}*", { name })} />
-
-      <h3 set:html={t("Recipe ingredients")} />
-      <table class="border-separate border-spacing-4 -mx-4">
+      <SectionHeading title={t("About *{name}*", { name })} />
+      <GlassCard glowOnHover={false} className="content stack-readme">
         {
-          associatedStacks?.map(
-            ({ custom, name, slug, stars, license, role }) => (
-              <tr class="mb-4 gap-4 border-spacing-4">
-                <td class="flex items-center gap-4 w-full  border-spacing-4">
-                  <h4>
-                    {custom ? (
-                      <>
-                        <Logo slug={slug} />
-                        <span class="subtle">&nbsp;{name}</span>
-                      </>
-                    ) : (
-                      <a href={url(`/${slug}`)}>
-                        <Logo slug={slug} />
-                        &nbsp;{name}
-                      </a>
-                    )}
-                    {stars && (
-                      <span class="subtle text-sm">
-                        ★&nbsp;{formatStars(stars)}
-                      </span>
-                    )}
-                    {license && <small class="subtle">({license})</small>}
-                  </h4>
-                </td>
-
-                <td>{role}</td>
-              </tr>
-            )
+          readme ? (
+            <Fragment set:html={marked.parse(readme)} />
+          ) : (
+            <p class="subtle">{t("No description provided.")}</p>
           )
         }
-      </table>
-
-      {
-        readme ? (
-          <div class="content" set:html={marked.parse(readme)} />
-        ) : (
-          <p class="subtle">{t("No description provided.")}</p>
-        )
-      }
-      <hr class="hr" />
-
-      <h3 set:html={t("Environment variables")} />
-      {
-        Object.entries(env ?? {}).length === 0 ? (
-          <p class="subtle" set:html={t("No environment variables defined.")} />
-        ) : (
-          <details>
-            <summary
-              class="subtle"
-              set:html={t("View environment variables")}
-            />
-            <dl class="max-h-96 overflow-y-auto">
-              {Object.entries(env ?? {}).map(([key, value]) => (
-                <>
-                  <dt>{key}</dt>
-                  <dd>
-                    <span style="user-select: none; -webkit-user-select: none;">
-                      &nbsp;
-                    </span>
-                    {value}
-                  </dd>
-                </>
-              ))}
-            </dl>
-          </details>
-        )
-      }
+      </GlassCard>
     </div>
   </div>
 
-  <div slot="right" class="section">
-    <div class="container">
-      {
-        Boolean(alternativeTo?.length) && (
-          <>
-            <h2 set:html={t("An alternative to")} />
-            <Cards>
-              {alternativeTo?.map((slug) => (
-                <li class="mb-4">
-                  <Card
-                    small
-                    lang={lang}
-                    slug={slug}
-                    name={getAlternativeMetadata(slug)?.name}
-                    description={getAlternativeMetadata(slug)?.description}
-                    url={url(`/alternativesto/${slug}`)}
-                  />
-                </li>
-              ))}
-            </Cards>
-          </>
-        )
-      }
-
-      {
-        similar && similar.length > 0 && (
-          <>
-            <h2 set:html={t("Related recipes")} />
-            <Cards>
+  <div slot="right">
+    {
+      similar.length > 0 && (
+        <div class="section">
+          <div class="container">
+            <SectionHeading title={t("Related recipes")} />
+            <Cards className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
               {similar
                 .map((e) => e as any)
-                .map(({ slug, name, description, tags, stars, icon }) => (
-                  <li class="pt-2 mb-8">
+                .map(({ slug, name, description, stars, icon }) => (
+                  <li class="inline-flex pt-2">
                     <Card
                       small
                       lang={lang}
@@ -379,9 +240,113 @@ const similar = Array.from(
                   </li>
                 ))}
             </Cards>
-          </>
-        )
-      }
+          </div>
+        </div>
+      )
+    }
+
+    {/* A reader who made it past the README has finished evaluating; give them
+        the action again rather than the footer. */}
+    <div class="section relative overflow-hidden mb-0">
+      <div class="container">
+        <div
+          class="relative flex flex-col items-center gap-6 text-center py-16 rounded-pui-xl overflow-hidden"
+        >
+          <Aurora blobs={[{ color: brandGlow, x: 50, y: 90, size: 60 }]} />
+          <h2
+            class="relative z-10 m-0"
+            set:html={t("Ready to run *{name}*?", { name })}
+          />
+          <div class="relative z-10">
+            <StackActions
+              lang={lang}
+              runHref={url(`/recipes/${slug}.stack`)}
+              fileHref={`/downloads/recipes/${slug}.stack`}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <style>
+    .stack-ingredients {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+      gap: 0.75rem;
+      padding: 0;
+      list-style: none;
+    }
+    .stack-ingredients__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      height: 100%;
+      padding: 1rem;
+      border: 1px solid var(--pui-border);
+      border-radius: var(--pui-radius-lg);
+      background: var(--pui-glass-soft);
+      color: inherit;
+      transition:
+        border-color 0.15s var(--pui-ease),
+        background-color 0.15s var(--pui-ease);
+    }
+    a.stack-ingredients__item:hover {
+      border-color: var(--pui-border-bright, var(--pui-border));
+      background: var(--pui-overlay);
+    }
+    .stack-ingredients__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      width: 2.25rem;
+      height: 2.25rem;
+      font-size: 1.125rem;
+      border-radius: var(--pui-radius);
+      border: 1px solid var(--pui-border);
+      background: var(--pui-bg-elev);
+      color: var(--brand);
+    }
+    .stack-ingredients__monogram {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      line-height: 1;
+    }
+    .stack-ingredients__name {
+      display: block;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    /* The role is why the ingredient is in the recipe — the one thing worth
+       reading in the whole row. */
+    .stack-ingredients__role {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      line-height: 1.45;
+      color: var(--pui-fg-mute);
+    }
+
+    /* READMEs are written for a repository page, where the first thing is
+       usually a full-bleed screenshot. Unconstrained, it pushed the actual
+       feature list a full viewport below the fold.
+
+       The global `.content img` rule forces `width: 100%`, which is what made
+       capping the height letterbox the image instead of shrinking it, so the
+       width goes back to intrinsic here. */
+    .stack-readme :global(img) {
+      width: auto;
+      max-width: 100%;
+      max-height: 22rem;
+      height: auto;
+      border: 1px solid var(--pui-border);
+    }
+    /* Prose measure. The card is as wide as the page; running text should not
+       be. Tables, images and code keep the full width. */
+    .stack-readme :global(p),
+    .stack-readme :global(li) {
+      max-width: 72ch;
+    }
+  </style>
 </Layout>

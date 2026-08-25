@@ -25,8 +25,6 @@ export const pt: Partial<I18n> = {
     "Acesse {count}+ pacotes de software de código aberto curados, prontos para instalar com um clique.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "Alternativas gratuitas, seguras e focadas em privacidade para [aplicativos populares]({url}).",
-  "Then install software in one-click ↓":
-    "Em seguida, instale o software em um clique ↓",
   "Search software": "Pesquisar software",
   "Staff picks": "Escolhas da equipe",
   "Youʼll enjoy these": "Você vai gostar destes",

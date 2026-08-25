@@ -1,0 +1,360 @@
+---
+import { getCollection } from "astro:content";
+import { Aurora, EyebrowPill, GlassCard, StatusDot } from "performative-ui";
+import Logo from "~/components/Logo";
+import Tag from "~/components/Tag.astro";
+import {
+  brandGlowOf,
+  brandOf,
+  hasLogoOf,
+  formatStars,
+  getAlternativeMetadata,
+  timeago,
+} from "~/helpers";
+import { useTranslations, useUrl, type Lang } from "~/i18n";
+
+/**
+ * The header shared by `/<slug>` and `/<slug>.stack`.
+ *
+ * Shared on purpose, and not by copy: the two pages sit either side of the
+ * single most important navigation on the site — "run this thing" — and the
+ * view transition between them only morphs elements whose markup, position
+ * and `transition:name` all line up. Rendering the header from one source is
+ * the only way to keep that true as either page changes.
+ *
+ * The panel slot is what differs: an action pair on the catalog page, a run
+ * status on the runner page. The panel itself is one named element, so it
+ * morphs as a unit while its contents cross-fade.
+ */
+interface Props {
+  lang: Lang;
+  stack: Record<string, any>;
+  /**
+   * Version, stars, licence, author and links. Worth reading while you decide
+   * whether to run something; noise once you have, which is why the runner
+   * page turns it off.
+   */
+  spec?: boolean;
+  /**
+   * The "an alternative to" chips. Same reasoning as `spec`: they answer "is
+   * this the thing I want?", which is a question the runner page is past.
+   */
+  alternatives?: boolean;
+  /** Small pill above the title. Recipes use it to say they are recipes. */
+  eyebrow?: string;
+}
+
+const {
+  lang,
+  stack,
+  spec = true,
+  alternatives: showAlternatives = true,
+  eyebrow,
+} = Astro.props;
+
+const t = useTranslations(lang);
+const url = useUrl(lang);
+
+const {
+  slug,
+  icon,
+  name,
+  description,
+  version,
+  updated_at,
+  tags: _tags,
+  homepage,
+  repository,
+  stars,
+  license,
+  author,
+  alternativeTo,
+} = stack;
+
+const tags = await getCollection("tags");
+
+// Plenty of stacks ship no icon at all. An empty 4.5rem tile reads as a failed
+// image, so those fall back to a monogram.
+const hasLogo = hasLogoOf(slug, icon);
+const brand = brandOf(slug, icon);
+const brandGlow = brandGlowOf(slug, icon);
+
+const resolvedTags = (_tags ?? [])
+  .map((tag: string) => tags.find(({ data }) => data.slug === tag)?.data)
+  .filter(Boolean);
+
+const alternatives = showAlternatives
+  ? (alternativeTo ?? []).map((slug: string) => getAlternativeMetadata(slug))
+  : [];
+---
+
+{/*
+  The hero answers, in one screen, the three questions that bring anyone to
+  this page: what is it, what does it replace, and how do I run it. The
+  identity column carries the first two; the panel on the right carries the
+  third, along with every fact that used to be strung together into four lines
+  of undifferentiated grey micro-copy.
+*/}
+<div class="section relative">
+  <Aurora
+    className="pointer-events-none"
+    blobs={[{ color: brandGlow, x: 18, y: 25, size: 55 }]}
+  />
+  <div class="container relative">
+    <div
+      class="grid gap-10 items-start lg:grid-cols-[minmax(0,1fr)_23rem] lg:gap-16"
+    >
+      <div>
+        <div class="flex items-start gap-5">
+          <span
+            class="stack-hero__icon shrink-0"
+            style={{ "--brand": brand }}
+            transition:name={`stack-icon-${slug}`}
+            aria-hidden="true"
+          >
+            {
+              hasLogo ? (
+                <Logo slug={slug} icon={icon} />
+              ) : (
+                <span class="stack-hero__monogram">{name.slice(0, 1)}</span>
+              )
+            }
+          </span>
+
+          <div class="min-w-0">
+            {eyebrow && (
+              <EyebrowPill className="mb-3" icon={false}>
+                <span set:html={eyebrow} />
+              </EyebrowPill>
+            )}
+            <h1 class="!mt-0 !mb-3 break-words" transition:name={`title-${name}`}>
+              {name}
+            </h1>
+            <p
+              class="subtle !mt-0 text-lg lg:text-xl leading-relaxed"
+              transition:name={`stack-desc-${slug}`}
+            >
+              {description}
+            </p>
+          </div>
+        </div>
+
+        {
+          alternatives.length > 0 && (
+            <div class="mt-8">
+              <p class="suptitle m-0 mb-3" set:html={t("An alternative to")} />
+              <ul class="flex flex-wrap gap-2 !p-0 list-none">
+                {alternatives.map((alt: any) => (
+                  <li>
+                    <a
+                      href={url(`/alternativesto/${alt.slug}`)}
+                      title={alt.description}
+                    >
+                      <Tag class="!px-2.5 !py-1 !text-sm">
+                        <Logo slug={alt.slug} />
+                        {alt.name}
+                      </Tag>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+
+        {
+          resolvedTags.length > 0 && (
+            <ul class="flex flex-wrap gap-2 !p-0 mt-4 list-none">
+              {resolvedTags.map((tag: any) => (
+                <li>
+                  <a href={url(`/?q=%23${tag.slug}`)} title={tag.title}>
+                    {/* The `#` is not decoration: it is the catalog's own
+                        search syntax, and it keeps tags from reading as more
+                        "alternative to" chips. */}
+                    <Tag class="stack-tag">#{tag.name}</Tag>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+
+      {/* Sticky, so the panel stays within reach of a long README — or of a
+          long log stream on the runner page. */}
+      <div class="lg:sticky lg:top-24 w-full">
+        <GlassCard
+          glowOnHover={false}
+          className="w-full"
+          style={{ "--pui-grad-from": brand }}
+          transition:name={`stack-panel-${slug}`}
+        >
+          <slot />
+
+          {
+            spec && (
+              <dl class="stack-spec">
+                {
+                  version && (
+                    <div>
+                      <dt set:html={t("Version")} />
+                      <dd>
+                        <StatusDot className="mr-1.5" />
+                        {version}
+                        {updated_at && (
+                          <time
+                            class="subtle ms-2"
+                            datetime={updated_at.toISOString()}
+                            title={new Intl.DateTimeFormat(lang, {
+                              dateStyle: "full",
+                              timeStyle: undefined,
+                            }).format(updated_at)}
+                          >
+                            {timeago(updated_at, lang)}
+                          </time>
+                        )}
+                      </dd>
+                    </div>
+                  )
+                }
+                {
+                  stars && (
+                    <div>
+                      <dt set:html={t("Stars")} />
+                      <dd>★&nbsp;{formatStars(stars, lang)}</dd>
+                    </div>
+                  )
+                }
+                {
+                  license && (
+                    <div>
+                      <dt set:html={t("License")} />
+                      <dd>{license}</dd>
+                    </div>
+                  )
+                }
+                {
+                  author && (
+                    <div>
+                      <dt set:html={t("Author")} />
+                      <dd class="truncate" title={author}>
+                        {author}
+                      </dd>
+                    </div>
+                  )
+                }
+                {
+                  (homepage || repository) && (
+                    <div>
+                      <dt set:html={t("Links")} />
+                      <dd class="flex flex-wrap gap-x-3 gap-y-1">
+                        {homepage && <a href={homepage} set:html={t("Homepage")} />}
+                        {repository && (
+                          <a
+                            href={`${repository}?ref=stack.lol`}
+                            set:html={t("Source code")}
+                          />
+                        )}
+                      </dd>
+                    </div>
+                  )
+                }
+              </dl>
+            )
+          }
+        </GlassCard>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* The brand-tinted icon tile. Replaces the `zoom: 16` watermark that used to
+     sit behind the title at 10% opacity — same intent (show the mark large),
+     but at a size that shares the baseline grid with the headline instead of
+     overlapping it. */
+  .stack-hero__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2.25rem;
+    border-radius: var(--pui-radius-lg);
+    border: 1px solid var(--pui-border);
+    background: var(--pui-glass-soft);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--pui-shadow-card);
+    color: var(--brand);
+  }
+  .stack-hero__monogram {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  /* Tags are navigation, not status: quieter than the "alternative to" chips
+     they sit under, and monospaced to match the `#tag` search syntax they drop
+     into. */
+  .stack-tag {
+    font-family: var(--pui-font-mono);
+    opacity: 0.75;
+  }
+
+  /* The spec list. The global `dt`/`dd` rules are built for the wide,
+     two-column environment dump — an 18em floated term in mono — which is the
+     wrong shape inside a 23rem panel, so this overrides all of it. */
+  .stack-spec {
+    margin: 1.25rem 0 0;
+    border-top: 1px solid var(--pui-border);
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .stack-spec > div {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .stack-spec dt {
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    font-family: var(--pui-font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--pui-fg-mute);
+    white-space: nowrap;
+  }
+  .stack-spec dd {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    font-family: var(--pui-font-sans);
+    font-size: 0.875rem;
+    color: var(--pui-fg-dim);
+    overflow: visible;
+    white-space: normal;
+  }
+  .stack-spec dd.truncate {
+    white-space: nowrap;
+  }
+  /* The two outbound links are the only interactive text in the panel; at the
+     shared `--pui-fg-dim` they were indistinguishable from the values above
+     them. */
+  .stack-spec a {
+    color: var(--pui-fg);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--pui-border-bright, var(--pui-border));
+  }
+  .stack-spec a:hover {
+    text-decoration-color: currentColor;
+  }
+</style>

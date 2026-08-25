@@ -35,7 +35,6 @@ export const zh: I18n = {
     "访问 {count}+ 精选的开源软件包，一键安装。",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "免费、安全、关注隐私的替代方案 [流行应用]({url})。",
-  "Then install software in one-click ↓": "然后在一键安装软件 ↓",
   "Search software": "搜索软件",
   "a smart alternative to {apps}": "对 {apps} 的智能替代方案",
   "Staff picks": "员工精选",
@@ -83,8 +82,19 @@ export const zh: I18n = {
   /** Page /<stack> */
   "Start it now": "现在开始",
   "Download the stack file": "下载堆栈文件",
+  "Runs locally, in one click.": "本地运行，一键启动。",
+  "Ready to run *{name}*?": "准备好运行 *{name}* 了吗？",
+  Version: "版本",
+  Stars: "星标",
+  License: "许可证",
+  Author: "作者",
+  Links: "链接",
+  Homepage: "官网",
+  "Source code": "源代码",
   "About *{name}*": "关于 *{name}*",
   "Environment variables": "环境变量",
+  "{count} variables you can tune before starting.":
+    "启动前可调整的 {count} 个变量。",
   "No environment variables defined.": "未定义环境变量。",
   "View environment variables": "查看环境变量",
   "An alternative to": "一个替代方案",
@@ -106,6 +116,8 @@ export const zh: I18n = {
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*食谱*：{name}",
   "Recipe ingredients": "食谱成分",
+  "{count} services, wired together and started as one.":
+    "{count} 项服务，互相连接并作为一个整体启动。",
   "Last update": "最后更新",
   "Related recipes": "相关食谱",
 

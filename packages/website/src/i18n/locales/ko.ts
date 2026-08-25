@@ -38,8 +38,6 @@ export const ko: I18n = {
     "{count}개 이상의 선별된 오픈 소스 소프트웨어 패키지에 액세스하여 한 번의 클릭으로 설치할 수 있습니다.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "[인기 있는]({url}) 앱에 대한 무료, 안전하고 개인 정보 보호에 중점을 둔 대안.",
-  "Then install software in one-click ↓":
-    "그런 다음 소프트웨어를 한 번의 클릭으로 설치 ↓",
   "Search software": "소프트웨어 검색",
   "a smart alternative to {apps}": "{apps}에 대한 스마트한 대안",
   "Staff picks": "스태프 추천",
@@ -90,8 +88,19 @@ export const ko: I18n = {
   /** Page /<stack> */
   "Start it now": "지금 시작",
   "Download the stack file": "스택 파일 다운로드",
+  "Runs locally, in one click.": "클릭 한 번으로 로컬에서 실행됩니다.",
+  "Ready to run *{name}*?": "*{name}*을(를) 실행할 준비가 되셨나요?",
+  Version: "버전",
+  Stars: "스타",
+  License: "라이선스",
+  Author: "제작자",
+  Links: "링크",
+  Homepage: "웹사이트",
+  "Source code": "소스 코드",
   "About *{name}*": "*{name}* 에 대해",
   "Environment variables": "환경 변수",
+  "{count} variables you can tune before starting.":
+    "시작하기 전에 조정할 수 있는 {count}개의 변수입니다.",
   "No environment variables defined.": "정의된 환경 변수가 없습니다.",
   "View environment variables": "환경 변수 보기",
   "An alternative to": "대체제",
@@ -113,6 +122,8 @@ export const ko: I18n = {
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*레시피*: {name}",
   "Recipe ingredients": "레시피 재료",
+  "{count} services, wired together and started as one.":
+    "서로 연결되어 한 번에 시작되는 {count}개의 서비스입니다.",
   "Last update": "마지막 업데이트",
   "Related recipes": "관련 레시피",
 

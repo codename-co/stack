@@ -25,8 +25,6 @@ export const hi: Partial<I18n> = {
     "{count}+ चयनित ओपन सोर्स सॉफ्टवेयर पैकेजों तक पहुंचें, जो एक क्लिक में इंस्टॉल करने के लिए तैयार हैं।",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "[लोकप्रिय एप्लिकेशनों]({url}) के लिए मुफ्त, सुरक्षित और गोपनीयता-केंद्रित विकल्प।",
-  "Then install software in one-click ↓":
-    "फिर सॉफ्टवेयर एक क्लिक में इंस्टॉल करें ↓",
   "Search software": "सॉफ्टवेयर खोजें",
   "a smart alternative to {apps}": "{apps} के लिए एक स्मार्ट विकल्प",
   "Staff picks": "कर्मचारी चुनाव",

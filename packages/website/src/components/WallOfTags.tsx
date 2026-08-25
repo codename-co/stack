@@ -1,104 +1,57 @@
-import { textDirection } from "~i18n";
-import Logo from "./Logo";
+import { SlippyWords } from "performative-ui";
 
+/**
+ * `svg` is the icon markup, resolved by the page. This component hydrates
+ * (SlippyWords is scroll-coupled), so it cannot import `Logo` — that reads
+ * `astro:content`, which does not exist in the browser bundle.
+ */
+type Item = { slug: string; name: string; url: string; svg?: string };
+
+/**
+ * The wall of catalog entries.
+ *
+ * Has been three different components: hand-rolled `@keyframes` rows, then
+ * LogoMarquee rows, and now SlippyWords — the scroll-driven bands the library
+ * ships for exactly this "kinetic typography" strip. Motion is coupled to
+ * scroll position rather than running on a timer, so the wall moves only when
+ * the reader moves, and alternating rows still travel opposite ways because
+ * that is SlippyWords' default.
+ */
 export const WallOfTags: React.FC<{
-  items: { slug: string; name: string; url: string }[];
+  items: Item[];
   rowCount?: number;
   rtl?: boolean;
 }> = ({ items, rowCount = 3, rtl = false }) => {
+  const rows = items
+    // Weird sorting to make the list look more random
+    .sort((a, b) => a.name.split("").reverse().join("").localeCompare(b.name))
+    .reduce((acc, item, i) => {
+      const row = i % rowCount;
+      (acc[row] ??= []).push(item);
+      return acc;
+    }, [] as Item[][]);
+
   return (
-    <>
-      <style>{styles}</style>
-      <span className="wall-of-tags whitespace-nowrap [writing-mode:horizontal-tb]">
-        {/* Rest of your component code remains the same */}
-        {items
-          // Weird sorting to make the list look more random
-          .sort((a, b) =>
-            a.name.split("").reverse().join("").localeCompare(b.name)
-          )
-          .reduce((acc, stack, i) => {
-            const row = i % rowCount;
-            if (!acc[row]) {
-              acc[row] = [];
-            }
-            acc[row].push(stack);
-            return acc;
-          }, [] as (typeof items)[])
-          .map((stacks, i) => (
-            <span
-              key={i}
-              className={`animate-scroll ${rtl && "animate-scroll-rtl"} ${
-                i % 2 === 0 ? "animate-scroll-reverse" : ""
-              }`}
-            >
-              {stacks.map(({ slug, name, url }) => (
-                <a
-                  key={slug}
-                  href={url}
-                  aria-label={name}
-                  className="inline-flex align-top"
-                >
-                  <span className="tag inline-flex items-center gap-2 rounded-3xl bg-gray-50 mx-2 px-4 py-2 text-lg font-medium text-gray-600 ring-1 ring-inset ring-gray-500/20 align-bottom">
-                    <Logo slug={slug} />
-                    <span>{name}</span>
-                  </span>
-                </a>
-              ))}
-            </span>
-          ))}
-      </span>
-    </>
+    <SlippyWords
+      fade
+      gap={12}
+      intensity={140}
+      startDirection={rtl ? "right" : "left"}
+      rows={rows.map((row) =>
+        row.map(({ slug, name, url, svg }) => ({
+          key: slug,
+          label: (
+            <a href={url} aria-label={name}>
+              <span className="inline-flex items-center gap-2">
+                {svg && (
+                  <span dangerouslySetInnerHTML={{ __html: svg }} />
+                )}
+                <span>{name}</span>
+              </span>
+            </a>
+          ),
+        }))
+      )}
+    />
   );
 };
-
-const speed = 300; // seconds
-
-const styles = /* CSS */ `
-  .animate-scroll {
-    animation: scroll ${speed}s linear alternate infinite;
-    transition: opacity 0.15s;
-  }
-  .animate-scroll-rtl {
-    animation-name: scroll-rtl;
-  }
-  .animate-scroll-reverse {
-    animation-direction: alternate-reverse;
-  }
-  .wall-of-tags {
-    display: grid;
-    gap: 1rem;
-    max-width: 0;
-  }
-  .wall-of-tags:hover .animate-scroll {
-    animation-play-state: paused;
-    opacity: 0.4;
-  }
-  .wall-of-tags:hover .animate-scroll:hover .tag:not(:hover) {
-    opacity: 0.6;
-  }
-  .wall-of-tags:hover .animate-scroll:hover {
-    opacity: 1;
-  }
-  .tag {
-    transition: scale 0.15s;
-  }
-  .tag:hover {
-    scale: 1.1;
-  }
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  @keyframes scroll-rtl {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(50%);
-    }
-  }
-`;

@@ -1,0 +1,109 @@
+---
+import { WibblingSpinner } from "performative-ui";
+import PuiButton from "~/components/PuiButton.astro";
+import { inlineVersion, tidy } from "~/helpers";
+import { useTranslations, type Lang } from "~/i18n";
+
+/**
+ * The hero panel on the runner pages: what the app is doing, and the two
+ * things you can do about it. Sits in `<StackHero>`'s slot, where the catalog
+ * page puts its run/download pair, so the two morph into each other.
+ */
+interface Props {
+  lang: Lang;
+  name: string;
+  version: string;
+  /** Where the started app answers. */
+  webUrl: string;
+  /** The detail page this runner was launched from. */
+  backHref: string;
+}
+
+const { lang, name, version, webUrl, backHref } = Astro.props;
+
+const t = useTranslations(lang);
+
+const v = inlineVersion(version);
+const startingLabel = tidy(
+  t("{name} {version} is starting…", { name, version: v })
+);
+---
+
+<p id="status" class="flex items-start gap-2.5 !mt-0 !mb-4 font-medium">
+  {/* Glyph only. The spinner's default verb pool ("Infusing…",
+      "Orchestrating…") is a second, competing progress verb right next to
+      "…is starting…" — charming in isolation, noise in a pair. */}
+  <span id="status-spinner" class="inline-flex shrink-0"
+    ><WibblingSpinner client:load verbs={[""]} ellipsis="" /></span
+  >
+  <span
+    id="status-text"
+    set:html={startingLabel}
+  />
+</p>
+
+<div class="flex flex-row gap-3 items-center">
+  {/* There is nothing to open until the app answers, so this starts inert.
+      `aria-disabled` alone only recolours the label — the glow variant paints
+      straight over it — hence the class. */}
+  <PuiButton
+    id="fullscreen"
+    href={webUrl}
+    rel="nofollow"
+    variant="glow"
+    size="md"
+    class="is-pending"
+    aria-disabled="true"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 48 48"
+      class="inline-block w-4 h-4 me-1.5 align-middle fill-none stroke-current"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M33 6H42V15"></path>
+      <path d="M42 33V42H33"></path>
+      <path d="M15 42H6V33"></path>
+      <path d="M6 15V6H15"></path>
+    </svg>
+    <span set:html={t("Access it in fullscreen")} />
+  </PuiButton>
+
+  <PuiButton
+    href={backHref}
+    variant="ghost"
+    size="md"
+    data-title={t("Back")}
+    aria-label={t("Back")}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      class="inline-block w-4 h-4 align-middle fill-none stroke-current"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M15 18L9 12L15 6"></path>
+    </svg>
+  </PuiButton>
+</div>
+
+<style>
+  #status {
+    font-size: 0.9375rem;
+  }
+
+  .is-pending {
+    opacity: 0.45;
+    filter: saturate(0.4);
+    pointer-events: none;
+    transition:
+      opacity 0.3s var(--pui-ease),
+      filter 0.3s var(--pui-ease);
+  }
+</style>

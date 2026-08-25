@@ -39,8 +39,6 @@ export const uk: I18n = {
     "Отримайте доступ до {count}+ відібраних пакетів програмного забезпечення з відкритим вихідним кодом, готових до встановлення одним кліком.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "Безкоштовні, безпечні та спрямовані на конфіденційність альтернативи для [популярних додатків]({url}).",
-  "Then install software in one-click ↓":
-    "Потім встановіть програмне забезпечення в один клік ↓",
   "Search software": "Пошук програмного забезпечення",
   "a smart alternative to {apps}": "розумна альтернатива для {apps}",
   "Staff picks": "Вибір редакції",
@@ -92,8 +90,19 @@ export const uk: I18n = {
   /** Page /<stack> */
   "Start it now": "Запустіть його зараз",
   "Download the stack file": "Завантажити файл стеку",
+  "Runs locally, in one click.": "Працює локально, в один клік.",
+  "Ready to run *{name}*?": "Готові запустити *{name}*?",
+  Version: "Версія",
+  Stars: "Зірки",
+  License: "Ліцензія",
+  Author: "Автор",
+  Links: "Посилання",
+  Homepage: "Вебсайт",
+  "Source code": "Вихідний код",
   "About *{name}*": "Про *{name}*",
   "Environment variables": "Змінні середовища",
+  "{count} variables you can tune before starting.":
+    "{count} змінних, які можна налаштувати перед запуском.",
   "No environment variables defined.": "Змінні середовища не визначені.",
   "View environment variables": "Переглянути змінні середовища",
   "An alternative to": "Альтернатива для",
@@ -115,6 +124,8 @@ export const uk: I18n = {
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*Рецепт*: {name}",
   "Recipe ingredients": "Інгредієнти рецепту",
+  "{count} services, wired together and started as one.":
+    "{count} сервісів, з'єднаних разом і запущених як один.",
   "Last update": "Останнє оновлення",
   "Related recipes": "Пов'язані рецепти",
 

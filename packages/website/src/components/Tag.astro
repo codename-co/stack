@@ -1,0 +1,25 @@
+---
+import { EyebrowPill } from "performative-ui";
+
+/**
+ * A catalog tag. Replaces the hand-rolled `tag.html` pill: EyebrowPill is the
+ * library's pill primitive, so tags now track the theme tokens instead of a
+ * frozen `bg-gray-50 / ring-gray-500` pair that only existed in light mode.
+ */
+interface Props {
+  /** Render the pulsing dot (off by default — a tag is not a status). */
+  live?: boolean;
+  class?: string;
+}
+
+const { live = false, class: className } = Astro.props;
+---
+
+<EyebrowPill
+  icon={live ? undefined : false}
+  className={`align-middle !px-2 !py-0.5 !text-xs ${className ?? ""}`}
+>
+  {/* EyebrowPill collapses all children into a single span, so a tag holding
+      both a logo and a label has to lay itself out. */}
+  <span class="inline-flex items-center gap-1.5"><slot /></span>
+</EyebrowPill>

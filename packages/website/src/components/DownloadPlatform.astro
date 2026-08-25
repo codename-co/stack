@@ -1,5 +1,8 @@
 ---
+import { Aurora, GlassCard, WibblingSpinner } from "performative-ui";
 import LatestDownload from "~/components/LatestDownload.astro";
+import PuiButton from "~/components/PuiButton.astro";
+import SectionHeading from "~/components/SectionHeading.astro";
 import {
   artifactsFor,
   formatSize,
@@ -67,37 +70,66 @@ const requirements: Record<Platform, string> = {
   </noscript>
 
   <div class="section">
-    <div class="container">
-      <h1 set:html={t("Downloading Stack for {os}…", { os })} />
+    <div class="container relative">
+      <Aurora
+        className="pointer-events-none"
+        blobs={[{ color: "rgba(124,58,237,0.35)", x: 30, y: 20, size: 55 }]}
+      />
 
-      <p>
-        <a
-          href={primary.url}
-          rel="noopener"
-          data-download-primary
-          data-asset-pattern={primary.pattern}
-          class="highlight"
-        >
-          Stack <span data-release-version>{release.version}</span>
-          {` — ${os} · ${primary.label}`}
-        </a>
+      <div class="relative z-10">
+        <h1 class="flex items-center gap-3">
+          <WibblingSpinner client:load />
+          <span set:html={t("Downloading Stack for {os}…", { os })} />
+        </h1>
+
+        <p class="my-6">
+          <PuiButton
+            href={primary.url}
+            rel="noopener"
+            variant="glow"
+            size="lg"
+            sparkle
+            glyph="download"
+            data-download-primary
+            data-asset-pattern={primary.pattern}
+          >
+            Stack <span data-release-version>{release.version}</span>
+            {` — ${os} · ${primary.label}`}
+          </PuiButton>
+          {
+            primary.size && (
+              <small class="subtle">{` · ${formatSize(primary.size)}`}</small>
+            )
+          }
+        </p>
+        <p class="subtle"><small set:html={requirements[platform]} /></p>
+      </div>
+
+      <SectionHeading
+        class="mt-16"
+        eyebrow={os}
+        title={t("Once the download is complete")}
+      />
+      <div class="pui-grid">
         {
-          primary.size && (
-            <small class="subtle">{` · ${formatSize(primary.size)}`}</small>
-          )
+          steps[platform].map((step, i) => (
+            <GlassCard breathing glowOnHover>
+              <GlassCard.Icon>{i + 1}</GlassCard.Icon>
+              <GlassCard.Body>
+                <Fragment set:html={step} />
+              </GlassCard.Body>
+            </GlassCard>
+          ))
         }
-      </p>
-      <p class="subtle"><small set:html={requirements[platform]} /></p>
-
-      <h2 set:html={t("Once the download is complete")} />
-      <ol>
-        {steps[platform].map((step) => <li set:html={step} />)}
-      </ol>
+      </div>
 
       {
         others.length > 0 && (
           <>
-            <h2 set:html={t("Other downloads for {os}", { os })} />
+            <SectionHeading
+              class="mt-16"
+              title={t("Other downloads for {os}", { os })}
+            />
             <ul>
               {others.map((artifact) => (
                 <li>

@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import { marked } from "marked";
-import Button from "~/components/download-base.html";
-import Tag from "~/components/tag.html";
+import { GlassCard } from "performative-ui";
+import PuiButton from "~/components/PuiButton.astro";
+import Tag from "~/components/Tag.astro";
 import Logo from "~/components/Logo";
 import { getStacks } from "~/content/collections/stacks";
 import { langs, useTranslations, useUrl } from "~/i18n";
@@ -116,17 +117,8 @@ const title = `${alternative.name} vs ${stacks
                 license,
                 readme,
               }) => (
-                <li class="mb-32">
-                  {/* <div class="float-right mr-6 if-connected">
-                <a href={`/${slug}.stack`}>
-                  <Button>
-                    Install
-                    {size && (
-                      <small class="font-normal">({formatSize(size)})</small>
-                    )}
-                  </Button>
-                </a>
-              </div> */}
+                <li class="mb-16">
+                  <GlassCard breathing glowOnHover>
                   <h2
                     transition:name={`title-${name}`}
                     set:html={t("So is {logo} *[{name}]({url})*", {
@@ -139,9 +131,7 @@ const title = `${alternative.name} vs ${stacks
                   />
                   <p>{description}</p>
                   {stars && (
-                    <span class="subtle text-sm">
-                      ★&nbsp;{formatStars(stars)}
-                    </span>
+                    <Tag class="mr-2">★&nbsp;{formatStars(stars)}</Tag>
                   )}
                   {_tags?.map((_tag) => {
                     const tag = tags.find(
@@ -156,7 +146,7 @@ const title = `${alternative.name} vs ${stacks
                       </a>
                     );
                   })}
-                  <span class="text-sm">
+                  <span class="text-sm subtle">
                     {license && <span>License: {license}</span>}
                   </span>
                   {readme ? (
@@ -171,12 +161,15 @@ const title = `${alternative.name} vs ${stacks
                     <p class="subtle">{t("No description provided.")}</p>
                   )}
                   <p class="mt-12">
-                    <a href={url(`/${slug}`)}>
-                      <Button
-                        set:html={t("Read more about {name}", { name })}
-                      />
-                    </a>
+                    <PuiButton
+                      href={url(`/${slug}`)}
+                      variant="shimmer"
+                      size="md"
+                    >
+                      <span set:html={t("Read more about {name}", { name })} />
+                    </PuiButton>
                   </p>
+                  </GlassCard>
                 </li>
               )
             )

@@ -1,6 +1,45 @@
 ---
-import { Graph } from "~/components/Graph";
-import { graphData } from "~/helpers";
+import { Constellation } from "~/components/Constellation";
+import { logoFromIcon } from "~/components/Logo";
+import SectionHeading from "~/components/SectionHeading.astro";
+import { getStacks } from "~/content/collections/stacks";
+import { useTranslations, useUrl } from "~/i18n";
+import Layout from "~/layouts/Layout.astro";
+
+const lang = "en";
+const t = useTranslations(lang);
+const url = useUrl(lang);
+
+const stacks = getStacks(lang);
 ---
 
-<Graph client:only="react" data={graphData()} />
+<Layout lang={lang} title={t("All the stacks")}>
+  <div class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow={t("Catalog")}
+        title={t("All the stacks")}
+        subtitle={t(
+          "Access {count}+ curated open source software packages, ready to install with one click.",
+          { count: Math.floor(stacks.length / 10) * 10 }
+        )}
+        align="center"
+      />
+
+      <Constellation
+        client:only="react"
+        items={stacks.map(({ data }) => {
+          // Resolved here, not in the island: see Constellation's note.
+          const logo = logoFromIcon({ slug: data.slug, icon: data.icon });
+
+          return {
+            slug: data.slug,
+            name: data.name,
+            url: url(`/${data.slug}`),
+            ...(logo && typeof logo === "object" && { svg: logo.svg }),
+          };
+        })}
+      />
+    </div>
+  </div>
+</Layout>

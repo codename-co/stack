@@ -25,8 +25,6 @@ export const tr: Partial<I18n> = {
     "{count}+ hazırlanmış açık kaynak yazılım paketlerine erişin, tek tıklamayla yüklemeye hazır.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "[popüler uygulamalar]({url}) için ücretsiz, güvenli ve gizlilik odaklı alternatifler.",
-  "Then install software in one-click ↓":
-    "Sonra yazılımı tek tıklamayla yükleyin ↓",
   "Search software": "Yazılım ara",
   "Staff picks": "Personel seçimleri",
   "Youʼll enjoy these": "Bunlardan keyif alacaksınız",

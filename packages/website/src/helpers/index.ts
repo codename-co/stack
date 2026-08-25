@@ -7,10 +7,10 @@ export const flavorIcon = {
   StaticWebsite: "html",
 };
 
+export * from "./brand";
 export * from "./config";
 export * from "./dotenv";
 export * from "./format";
-export * from "./graph";
 export * from "./icon";
 export * from "./repo";
 export * from "./stackApi";

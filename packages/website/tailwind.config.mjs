@@ -1,10 +1,50 @@
 const darkMode = ".dark &"; // "@media (prefers-color-scheme: dark)";
 
+/**
+ * The palette is no longer owned by Tailwind: every color below resolves to a
+ * `--pui-*` custom property shipped by `performative-ui/styles.css`. Light and
+ * dark are switched by `data-theme` on <html> (see Layout.astro), so these
+ * rules need no `dark:` variant of their own — the variables change instead.
+ */
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      colors: {
+        pui: {
+          bg: "var(--pui-bg)",
+          elev: "var(--pui-bg-elev)",
+          soft: "var(--pui-bg-soft)",
+          border: "var(--pui-border)",
+          fg: "var(--pui-fg)",
+          dim: "var(--pui-fg-dim)",
+          mute: "var(--pui-fg-mute)",
+          from: "var(--pui-grad-from)",
+          mid: "var(--pui-grad-mid)",
+          to: "var(--pui-grad-to)",
+        },
+      },
+      fontFamily: {
+        sans: "var(--pui-font-sans)",
+        mono: "var(--pui-font-mono)",
+        serif: "var(--pui-font-serif)",
+      },
+      borderRadius: {
+        pui: "var(--pui-radius)",
+        "pui-lg": "var(--pui-radius-lg)",
+        "pui-xl": "var(--pui-radius-xl)",
+      },
+      boxShadow: {
+        pui: "var(--pui-shadow-card)",
+        "pui-deep": "var(--pui-shadow-deep)",
+        glow: "var(--pui-glow)",
+        "glow-strong": "var(--pui-glow-strong)",
+      },
+      backgroundImage: {
+        pui: "var(--pui-grad)",
+      },
       keyframes: {
         highlightMove: {
           "0%": {
@@ -25,82 +65,69 @@ export default {
     function ({ addComponents, theme }) {
       addComponents({
         ":root": {
-          backgroundColor: theme("colors.white"),
-          "&.dark": {
-            backgroundColor: theme("colors.slate.950"),
+          backgroundColor: "var(--pui-bg)",
+          colorScheme: "dark",
+          "&[data-theme=light]": {
+            colorScheme: "light",
           },
         },
         body: {
-          // fontSize: theme("fontSize.xl"),
-          // lineHeight: theme("lineHeight.6"),
           overflowX: "hidden",
           backgroundColor: "inherit",
-          [darkMode]: {
-            backgroundColor: "inherit",
-            color: theme("colors.gray.100"),
-          },
+          color: "var(--pui-fg)",
+          fontFamily: "var(--pui-font-sans)",
         },
         "[hidden]": {
           display: "none !important",
         },
         "a[href]": {
-          color: theme("colors.slate.500"),
+          color: "var(--pui-fg-dim)",
           textDecoration: "none",
+          transition: "color .15s var(--pui-ease)",
           "&:hover": {
-            color: theme("colors.slate.700"),
-          },
-          [darkMode]: {
-            color: theme("colors.slate.300"),
-            "&:hover": {
-              color: theme("colors.slate.200"),
-            },
+            color: "var(--pui-fg)",
           },
         },
         img: {
-          borderRadius: theme("borderRadius.md"),
+          borderRadius: "var(--pui-radius)",
         },
         video: {
-          borderRadius: theme("borderRadius.md"),
+          borderRadius: "var(--pui-radius)",
         },
         "div:not(.class) > h1": {
           marginTop: 0,
         },
         h1: {
-          fontSize: theme("fontSize.3xl"),
-          "@screen sm": {
-            fontSize: theme("fontSize.28px"),
-          },
+          fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
+          fontWeight: theme("fontWeight.extrabold"),
+          letterSpacing: "-0.02em",
+          lineHeight: 1.1,
           marginTop: theme("spacing.10"),
           marginBottom: theme("spacing.8"),
         },
         h2: {
-          fontWeight: theme("fontWeight.semibold"),
-          fontSize: theme("fontSize.2xl"),
-          "@screen sm": {
-            fontSize: theme("fontSize.24px"),
-          },
+          fontWeight: theme("fontWeight.bold"),
+          fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
+          letterSpacing: "-0.015em",
+          lineHeight: 1.15,
           marginTop: theme("spacing.8"),
           marginBottom: theme("spacing.6"),
         },
-        "h1, h2": {
+        // `*emphasis*` in translated strings is where the brand gradient lives.
+        "h1, h2, h3": {
           em: {
-            background: "linear-gradient(0deg, #fce04199 50%, transparent 50%)",
-            borderRadius: "0.1em",
-            padding: "0 3px",
-            margin: "0 -3px",
+            background: "var(--pui-grad)",
+            backgroundSize: "200% 100%",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
             fontStyle: "normal",
-            [darkMode]: {
-              background:
-                "linear-gradient(0deg, #fce04155 50%, transparent 50%)",
-            },
+            // animation: "pui-grad-shift 8s linear infinite",
           },
         },
         h3: {
           fontWeight: theme("fontWeight.semibold"),
           fontSize: theme("fontSize.xl"),
-          "@screen sm": {
-            fontSize: theme("fontSize.20px"),
-          },
           marginTop: theme("spacing.6"),
           marginBottom: theme("spacing.4"),
         },
@@ -114,9 +141,7 @@ export default {
         hr: {
           marginTop: theme("spacing.6"),
           marginBottom: theme("spacing.6"),
-          [darkMode]: {
-            borderColor: theme("colors.slate.700"),
-          },
+          borderColor: "var(--pui-border)",
         },
         dt: {
           fontSize: theme("fontSize.sm"),
@@ -126,13 +151,13 @@ export default {
           width: "18em",
           margin: "0 0.5em 0.5em 0",
           padding: "2px 6px",
-          borderRadius: theme("borderRadius.sm"),
+          borderRadius: "var(--pui-radius-sm)",
           overflow: "hidden",
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
-          backgroundColor: theme("colors.slate.200"),
-          color: theme("colors.slate.600"),
-          fontFamily: theme("fontFamily.mono"),
+          backgroundColor: "var(--pui-overlay-strong)",
+          color: "var(--pui-fg-dim)",
+          fontFamily: "var(--pui-font-mono)",
         },
         dd: {
           fontSize: theme("fontSize.sm"),
@@ -143,8 +168,8 @@ export default {
           overflow: "hidden",
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
-          color: theme("colors.slate.600"),
-          fontFamily: theme("fontFamily.mono"),
+          color: "var(--pui-fg-mute)",
+          fontFamily: "var(--pui-font-mono)",
         },
         ul: {
           listStyleType: "disc",
@@ -155,81 +180,52 @@ export default {
           paddingLeft: theme("spacing.12"),
         },
         ".subtle": {
-          color: theme("colors.gray.400"),
-          [darkMode]: {
-            color: theme("colors.gray.400"),
-          },
+          color: "var(--pui-fg-mute)",
         },
         "input[type=text], input[type=search]": {
           borderWidth: theme("borderWidth.DEFAULT"),
-          borderColor: theme("colors.gray.300"),
-          borderRadius: theme("borderRadius.md"),
+          borderColor: "var(--pui-border)",
+          borderRadius: "var(--pui-radius-lg)",
           padding: theme("spacing.3"),
-          backgroundColor: theme("colors.white"),
+          color: "var(--pui-fg)",
+          backgroundColor: "var(--pui-glass)",
+          backdropFilter: "blur(12px)",
           marginTop: 1,
           marginBottom: 1,
+          transition: "border-color .15s var(--pui-ease), box-shadow .2s",
+          "&::placeholder": {
+            color: "var(--pui-fg-mute)",
+          },
           "&:hover": {
-            borderColor: theme("colors.slate.400"),
-            backgroundColor: theme("colors.gray.100"),
+            borderColor: "var(--pui-border-bright)",
           },
           "&:focus": {
             outline: "none",
-            borderColor: theme("colors.slate.500"),
+            borderColor: "var(--pui-grad-from)",
             borderWidth: theme("borderWidth.2"),
-            backgroundColor: theme("colors.white"),
+            boxShadow: "var(--pui-glow)",
             marginTop: 0,
             marginBottom: 0,
           },
         },
-        "svg[role=img]": {
+        // Same exclusion as the sizing rule in Layout.astro: forcing
+        // `currentColor` would flatten the gradient fill on pui's wordmark.
+        "svg[role=img]:not([class^=pui-])": {
           fill: "currentColor",
           marginBottom: "2px",
         },
         article: {
-          padding: "1em 2em 1em",
-          marginLeft: "-2em",
-          marginRight: "-2em",
-          borderRadius: theme("borderRadius.md"),
-          borderWidth: theme("borderWidth.DEFAULT"),
-          borderColor: "transparent",
-        },
-        "li a article": {
-          [darkMode]: {
-            borderBottomColor: theme("colors.slate.700"),
-          },
+          // padding: "1em 2em 1em",
+          // marginLeft: "-2em",
+          // marginRight: "-2em",
+          // borderRadius: "var(--pui-radius)",
+          // borderWidth: theme("borderWidth.DEFAULT"),
+          // borderColor: "transparent",
         },
         "li a:hover article": {
-          backgroundColor: theme("colors.slate.200"),
-          [darkMode]: {
-            backgroundColor: theme("colors.slate.800"),
-          },
+          backgroundColor: "var(--pui-overlay)",
         },
 
-        // article {
-        //   padding: 1em 2em 1em;
-        //   margin-left: -2em;
-        //   margin-right: -2em;
-        //   /* padding: 0 1em;
-        //   border: 1.2px solid #ddd;
-        //   border-radius: 0.25em; */
-        // }
-
-        // li a:hover article {
-        //   background-color: #f0f0f0;
-        // }
-        // @media (prefers-color-scheme: dark) {
-        //   li a:hover article {
-        //     background-color: #33333366;
-        //   }
-        // }
-
-        ".tag": {
-          [darkMode]: {
-            backgroundColor: theme("colors.slate.800") + "!important",
-            color: theme("colors.slate.300") + "!important",
-            boxShadow: `0 0 3px 0 ${theme("colors.slate.700")} inset`,
-          },
-        },
         ".section": {
           marginTop: "80px",
           marginBottom: "80px",
@@ -260,10 +256,9 @@ export default {
           content: "''",
           position: "absolute",
           inset: "-5px",
-          // borderRadius: "inherit",
           borderRadius: theme("borderRadius.xl"),
           padding: "5px",
-          background: "linear-gradient(45deg, #12c2e9, #c471ed, #f64f59)",
+          background: "var(--pui-grad)",
           backgroundSize: "200% 200%",
           WebkitMask:
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
@@ -276,27 +271,25 @@ export default {
           animation: "highlightMove .4s ease forwards",
         },
         ".suptitle": {
-          color: theme("colors.gray.400"),
+          color: "var(--pui-fg-mute)",
           fontSize: theme("fontSize.sm"),
           textTransform: "uppercase",
+          letterSpacing: "0.08em",
         },
         ".suptitle + h2": {
           marginTop: 0,
         },
+        // The generic content panel, aligned on GlassCard's chrome so a `.box`
+        // and a <GlassCard> can sit side by side without a seam.
         ".box": {
-          // bg-slate-100 border border-slate-200 rounded-3xl
           padding: theme("spacing.8"),
-          borderRadius: theme("borderRadius.3xl"),
-          backgroundColor: theme("colors.slate.200"),
+          borderRadius: "var(--pui-radius-xl)",
+          backgroundColor: "var(--pui-glass-soft)",
+          backdropFilter: "blur(14px)",
           borderWidth: theme("borderWidth.DEFAULT"),
-          borderColor: theme("colors.slate.200"),
+          borderColor: "var(--pui-border)",
           position: "relative",
-          boxShadow: `0 0 3px 0 ${theme("colors.slate.300")} inset`,
-          [darkMode]: {
-            backgroundColor: theme("colors.slate.800"),
-            borderColor: theme("colors.slate.800"),
-            boxShadow: `0 0 3px 0 ${theme("colors.slate.700")} inset`,
-          },
+          boxShadow: "var(--pui-shadow-card)",
         },
         ".box + .box": {
           marginTop: 32,
@@ -328,6 +321,21 @@ export default {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(0, 1fr))",
           gap: theme("spacing.8"),
+        },
+        // Makes a link cover its nearest positioned ancestor, so a whole card
+        // can be clickable without nesting an <a> inside another <a> — which
+        // the HTML parser un-nests, wrecking any grid the cards sit in.
+        ".stretched-link::after": {
+          content: "''",
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+        },
+        // Section grid used by the revamped pages.
+        ".pui-grid": {
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+          gap: theme("spacing.6"),
         },
       });
     },

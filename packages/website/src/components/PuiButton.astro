@@ -1,0 +1,64 @@
+---
+import { Button } from "performative-ui";
+import type { ButtonSize, ButtonVariant } from "performative-ui";
+
+/**
+ * The single call-to-action of the site. Every previous flavour
+ * (`download.html`, `download-base.html`, `button.html`) collapses into this
+ * one, so a variant change is a prop and not a new file.
+ */
+interface Props {
+  href?: string;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  sparkle?: boolean;
+  block?: boolean;
+  /** Glyph rendered before the label: "download", "play", or none. */
+  glyph?: "download" | "play";
+  class?: string;
+  rel?: string;
+  "data-title"?: string;
+  [key: string]: unknown;
+}
+
+const {
+  href,
+  variant = "glow",
+  size = "lg",
+  sparkle = false,
+  block = false,
+  glyph,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const paths = {
+  download: "M12 8V2H8v6H2l8 8 8-8",
+  play: "M2 1l14 7-14 7z",
+} as const;
+---
+
+<Button
+  as={href ? "a" : "button"}
+  href={href}
+  variant={variant}
+  size={size}
+  sparkle={sparkle}
+  block={block}
+  className={className}
+  {...rest}
+>
+  {
+    glyph && (
+      <svg
+        class="fill-current w-4 h-4 inline align-middle me-2"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 17 17"
+        aria-hidden="true"
+      >
+        <path d={paths[glyph]} />
+      </svg>
+    )
+  }
+  <slot />
+</Button>

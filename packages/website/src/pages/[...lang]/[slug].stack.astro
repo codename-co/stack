@@ -1,13 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-import DownloadBase from "~/components/download-base.html";
-import Logo from "~/components/Logo";
-import Tag from "~/components/tag.html";
+import RunStatus from "~/components/RunStatus.astro";
+import StackHero from "~/components/StackHero.astro";
+import StackRunner from "~/components/StackRunner.astro";
 import { getStacks } from "~/content/collections/stacks";
-import { formatStars, timeago } from "~/helpers";
-import { langs, useTranslations, useUrl } from "~/i18n";
+import { langs, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
-import EnvironmentVars from "~components/EnvironmentVars";
 
 export const getStaticPaths = () => {
   return langs
@@ -31,353 +28,45 @@ if (!stack) {
   return new Response("Not found", { status: 404 });
 }
 
-const t = useTranslations(lang);
 const url = useUrl(lang);
 
 const webUrl = `https://${slug}.stack.localhost`;
 
-// Astro.response.status = 301;
-// Astro.response.headers.set("Location", `stack://${slug}`);
-
-// const redirectUrl = `stack://${slug}`;
-// TODO:
+// TODO: hand off to the desktop app over `stack://` once the scheme is
+// registered on every platform. Until then, an unconnected visitor gets the
+// file.
 const redirectUrl = `/downloads/${slug}.stack`;
 
-const tags = await getCollection("tags");
-
-const {
-  name,
-  description,
-  version,
-  updated_at,
-  tags: _tags,
-  homepage,
-  repository,
-  stars,
-  license,
-  author,
-  env,
-} = stack;
-
-console.log(name, description, version, redirectUrl);
+const { name, version, env } = stack;
 ---
 
-<!-- <meta http-equiv="refresh" id="redirecter" content={`1;url=${redirectUrl}`} /> -->
-<Layout lang={lang} leftTransition="fade" mainClass="left-only">
-  <div slot="left" class="hidden 2xl:block section h-full">
-    <div class="container">
-      <div
-        class="sticky top-12 flex flex-col lg:flex-row 2xl:flex-col justify-between items-start"
-      >
-        <div>
-          <!-- <div
-      class="hidden float-right md:flex md:flex-grow language-none w-full flex-1 items-center justify-between rounded-lg border border-neutral-200 font-mono font-medium text-neutral-600 focus:border-neutral-200 focus:ring-0 focus:ring-transparent md:max-w-xs"
-    >
-      <input
-        name="command"
-        class="py-1.5 px-3 w-full border-0 border-r border-slate-200 bg-transparent text-[13px] focus:border-slate-200 focus:outline-none focus:ring-0 focus:ring-transparent truncate"
-        value={command}
-        readonly
+<Layout lang={lang} leftTransition="fade">
+  {/*
+    Same header as `/<slug>`, from the same component, so the navigation
+    between the two morphs instead of repainting. It used to be `hidden
+    2xl:block` here — below 1536px the page you arrived from simply vanished,
+    which is the least smooth thing a transition can do.
+  */}
+  <div slot="left">
+    {/* No spec list and no "alternative to" chips here: both answer "is this
+        the thing I want, and should I run it?". You already decided. */}
+    <StackHero lang={lang} stack={stack} spec={false} alternatives={false}>
+      <RunStatus
+        lang={lang}
+        name={name}
+        version={version}
+        webUrl={webUrl}
+        backHref={url(`/${slug}`)}
       />
-      <button
-        class="cursor-pointer px-2 text-slate-500 hover:text-black focus:outline-none"
-        onclick="copyToClipboard(this)"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          class="h-5 w-5"
-          stroke-width="1.5"
-          stroke="currentColor"
-          fill="none"
-        >
-          <path
-            d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <script>
-      // implement copyToClipboard
-      globalThis.copyToClipboard = (button) => {
-        const input = button.previousElementSibling;
-        input.select();
-        document.execCommand("copy");
-        button.querySelector("svg").classList.add("text-green-500");
-        setTimeout(() => {
-          button.querySelector("svg").classList.remove("text-green-500");
-        }, 1000);
-      };
-    </script> -->
-
-          <!-- <a href={`stack://${slug}`}> -->
-
-          <h1 transition:name={`title-${name}`}>
-            <Logo slug={slug} />&nbsp;{name}
-          </h1>
-          <p>{description}</p>
-          {
-            stars && (
-              <span class="subtle text-sm">★&nbsp;{formatStars(stars)}</span>
-            )
-          }
-          {
-            _tags
-              ?.map((tag) => {
-                const t = tags.find(({ data }) => data.slug === tag)?.data;
-                if (!t) return null;
-
-                return (
-                  <a href={url(`/?q=%23${tag}`)}>
-                    <Tag>
-                      <abbr title={t.title}>{t.name}</abbr>
-                    </Tag>
-                  </a>
-                );
-              })
-              .filter(Boolean)
-          }
-          {
-            (homepage || repository) && (
-              <p class="text-sm">
-                {homepage && <a href={homepage}>Homepage</a>}
-                {homepage && repository && " · "}
-                {repository && (
-                  <a href={`${repository}?ref=stack.lol`}>Source code</a>
-                )}
-              </p>
-            )
-          }
-          <span class="text-sm">
-            {author && <span>Author: {author}</span>}
-            {
-              license && (
-                <span>
-                  {author && " · "}License: {license}
-                </span>
-              )
-            }
-          </span>
-          <p class="text-sm">
-            Version: {version}
-            {
-              updated_at && (
-                <span class="text-sm subtle">
-                  ·
-                  <time
-                    datetime={updated_at.toISOString()}
-                    title={new Intl.DateTimeFormat(lang, {
-                      dateStyle: "full",
-                      timeStyle: undefined,
-                    }).format(updated_at)}
-                  >
-                    {timeago(updated_at, lang)}
-                  </time>
-                </span>
-              )
-            }
-          </p>
-        </div>
-
-        <div class="pt-4 flex flex-row gap-3">
-          <a href={url(`/${slug}`)} rel="nofollow">
-            <DownloadBase>
-              <svg
-                class="fill-current w-4 h-4 m-1 inline"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="4 4 16 16"
-              >
-                <!-- left chevron -->
-                <path d="M11 16L6 11L11 6"></path>
-              </svg>
-              <span set:html={t("Back")} />
-              <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
-            </DownloadBase>
-          </a>
-          <a
-            href={`/downloads/${slug}.stack`}
-            rel="nofollow"
-            data-title={t("Download the stack file")}
-          >
-            <DownloadBase>
-              <svg
-                class="fill-current w-4 h-4 m-1 inline"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 17 17"
-              >
-                <path d="M12 8V2H8v6H2l8 8 8-8"></path>
-              </svg>
-              <!-- {size && <small class="font-normal">({formatSize(size)})</small>} -->
-            </DownloadBase>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="container">
-      <div class="relative highlight highlight-if-connected">
-        <span
-          class="absolute -z-10 -top-10 right-0 p-2 text-sm text-neutral-500"
-        >
-          <a href={webUrl}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 48 48"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="inline-block w-4 h-4 mr-1 align-middle"
-            >
-              <path d="M33 6H42V15"></path>
-              <path d="M42 33V42H33"></path>
-              <path d="M15 42H6V33"></path>
-              <path d="M6 15V6H15"></path>
-            </svg>
-            {t("Access it in fullscreen")}
-          </a>
-        </span>
-        <iframe
-          id="render"
-          class="!section w-full h-0 transition-all rounded-lg"
-          style="margin:0 !important"
-          allow="fullscreen"></iframe>
-      </div>
-      <div id="info">
-        <h2
-          id="status"
-          set:html={t("{name} {version} is starting…", { name, version })}
-        />
-        <EnvironmentVars lang={lang} env={env} />
-        <details open>
-          <summary>{t("Execution logs")}</summary>
-          <pre id="logs"></pre>
-        </details>
-      </div>
-    </div>
+    </StackHero>
   </div>
 
-  <script
-    type="module"
-    is:inline
-    define:vars={{
-      title: t("{name} {version} is live.", { name, version }),
-      slug,
-      name,
-      url: webUrl,
-      redirectUrl,
-    }}
-  >
-    console.log(name, slug, url, redirectUrl);
-
-    const STACK_API_ORIGIN = "https://127.1:57404";
-
-    const fetcher = async (endpoint, init) => {
-      const response = await fetch(`${STACK_API_ORIGIN}${endpoint}`, init);
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-      return response.text();
-    };
-
-    const streamableFetcher = async (endpoint, init, onEvent, onComplete) => {
-      const response = await fetch(`${STACK_API_ORIGIN}${endpoint}`, init);
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-      const stream = response.body;
-      // Get the reader from the stream
-      const reader = stream.getReader();
-      // Define a function to read each chunk
-      const readChunk = () => {
-        // Read a chunk from the reader
-        reader
-          .read()
-          .then(({ value, done }) => {
-            // Check if the stream is done
-            if (done) {
-              // Log a message
-              onComplete();
-              // Return from the function
-              return;
-            }
-            // Convert the chunk value to a string
-            const chunkString = new TextDecoder().decode(value);
-            // Log the chunk string
-            onEvent(chunkString);
-            // Read the next chunk
-            readChunk();
-          })
-          .catch((error) => {
-            // Log the error
-            console.error(error);
-          });
-      };
-      // Start reading the first chunk
-      readChunk();
-    };
-
-    export const isApiAccessible = async () => {
-      return (await fetcher("/health")) === "OK";
-    };
-
-    export const runStack = async (slug, onEvent, onComplete) => {
-      return streamableFetcher(
-        `/run`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ slug }),
-        },
-        onEvent,
-        onComplete
-      );
-    };
-
-    isApiAccessible()
-      .catch(() => {
-        console.log(`Redirecting to ${redirectUrl}`);
-      })
-      .then(async (isAccessible) => {
-        console.log(
-          isAccessible ? "API is accessible" : "API is not accessible"
-        );
-
-        if (!isAccessible) {
-          console.log(`Redirecting to ${redirectUrl}`);
-          window.location.href = redirectUrl;
-          return;
-        }
-
-        const stackFullUrl = new URL(
-          window.location.origin + redirectUrl
-        ).toString();
-        console.log(stackFullUrl);
-
-        const response = await runStack(
-          stackFullUrl,
-          (chunk) => {
-            const logs = document.querySelector("#logs");
-            logs.textContent += chunk;
-          },
-          () => {
-            document.querySelector("details").open = false;
-          }
-        );
-        console.log({ response });
-
-        console.log("Stack is running");
-
-        const render = document.querySelector("#render");
-        const status = document.querySelector("#status");
-        render.src = url;
-        render.onload = () => {
-          render.style.height = "60vh";
-          render.style.margin = "unset";
-          render.contentWindow.focus();
-        };
-        status.innerHTML = title;
-      });
-  </script>
+  <StackRunner
+    lang={lang}
+    name={name}
+    version={version}
+    webUrl={webUrl}
+    redirectUrl={redirectUrl}
+    env={env}
+  />
 </Layout>

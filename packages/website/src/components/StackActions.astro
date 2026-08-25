@@ -1,0 +1,45 @@
+---
+import PuiButton from "./PuiButton.astro";
+import { useTranslations, type Lang } from "~/i18n";
+
+/**
+ * The run/download pair that sits on every stack and recipe page. Four pages
+ * each carried their own copy of these two buttons; the only thing that ever
+ * differed between them was the pair of hrefs.
+ */
+interface Props {
+  lang: Lang;
+  /** Deep link that hands the stack to the desktop app. */
+  runHref: string;
+  /** The raw `.stack` file, for people who'd rather keep it. */
+  fileHref: string;
+  class?: string;
+}
+
+const { lang, runHref, fileHref, class: className } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class:list={["flex flex-row gap-3 items-center", className]}>
+  <PuiButton
+    href={runHref}
+    rel="nofollow"
+    variant="glow"
+    size="md"
+    sparkle
+    glyph="play"
+    class="highlight-if-connected"
+  >
+    <span set:html={t("Start it now")} />
+  </PuiButton>
+
+  <PuiButton
+    href={fileHref}
+    rel="nofollow"
+    variant="ghost"
+    size="md"
+    glyph="download"
+    data-title={t("Download the stack file")}
+    aria-label={t("Download the stack file")}
+  />
+</div>

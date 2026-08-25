@@ -1,8 +1,11 @@
 ---
 import { getCollection } from "astro:content";
+import { Aurora, GlassCard } from "performative-ui";
 import Logo from "~/components/Logo";
-import Tag from "~/components/tag.html";
+import SectionHeading from "~/components/SectionHeading.astro";
+import Tag from "~/components/Tag.astro";
 import { WallOfTags } from "~/components/WallOfTags";
+import { logoFromIcon } from "~/components/Logo";
 import { getStacks } from "~/content/collections/stacks";
 import { langs, useTranslations, useUrl } from "~/i18n";
 import Layout from "~/layouts/Layout.astro";
@@ -28,42 +31,62 @@ const title = t("Alternatives to popular software");
 
 <Layout lang={lang} title={title}>
   <div slot="left" class="section">
-    <div class="container">
-      <h1 set:html={t("The open source ecosystem is *awe-inspiring*.")} />
-      <p
-        class="subtle"
-        set:html={t(
-          "The community has created numerous high-quality, open source alternatives to popular software. Discover our curated list of amazing alternatives below."
-        )}
+    <div class="container relative">
+      <Aurora
+        className="pointer-events-none"
+        blobs={[
+          { color: "rgba(124,58,237,0.35)", x: 20, y: 25, size: 55 },
+          { color: "rgba(6,182,212,0.22)", x: 65, y: 60, size: 45 },
+        ]}
       />
+      <div class="relative z-10">
+        <h1 set:html={t("The open source ecosystem is *awe-inspiring*.")} />
+        <p
+          class="subtle text-lg leading-relaxed"
+          set:html={t(
+            "The community has created numerous high-quality, open source alternatives to popular software. Discover our curated list of amazing alternatives below."
+          )}
+        />
+      </div>
     </div>
   </div>
 
   <div class="section">
     <div class="container">
       <div class="box" style="overflow-x: hidden">
-        <h2 class="my-12" set:html={t("Recognize these *popular software*?")} />
+        <SectionHeading title={t("Recognize these *popular software*?")} />
 
         <WallOfTags
-          items={alternatives.map((alt) => ({
-            ...alt.data,
-            url: url(`/alternativesto/${alt.data.slug}`),
-          }))}
+          client:visible
+          items={alternatives.map(({ data }) => {
+            const logo = logoFromIcon({ slug: data.slug, icon: data.icon });
+            return {
+              slug: data.slug,
+              name: data.name,
+              url: url(`/alternativesto/${data.slug}`),
+              ...(logo && typeof logo === "object" && { svg: logo.svg }),
+            };
+          })}
         />
       </div>
 
       <div class="box" style="overflow-x: hidden">
-        <h2
-          class="my-12"
-          set:html={t("You'll love their *open source counterparts*")}
+        <SectionHeading
+          title={t("You'll love their *open source counterparts*")}
         />
 
         <WallOfTags
+          client:visible
           rowCount={5}
-          items={stacks.map((alt) => ({
-            ...alt.data,
-            url: url(`/${alt.data.slug}`),
-          }))}
+          items={stacks.map(({ data }) => {
+            const logo = logoFromIcon({ slug: data.slug, icon: data.icon });
+            return {
+              slug: data.slug,
+              name: data.name,
+              url: url(`/${data.slug}`),
+              ...(logo && typeof logo === "object" && { svg: logo.svg }),
+            };
+          })}
         />
       </div>
     </div>
@@ -71,9 +94,9 @@ const title = t("Alternatives to popular software");
 
   <div class="section">
     <div class="container">
-      <h2
-        class="my-12"
-        set:html={t("Kinda *popular software* and their open counterparts")}
+      <SectionHeading
+        eyebrow={t("Catalog")}
+        title={t("Kinda *popular software* and their open counterparts")}
       />
       <div class="sm:columns-2 md:columns-3">
         {
@@ -88,7 +111,7 @@ const title = t("Alternatives to popular software");
                     &nbsp;{name}
                   </a>
                 </div>
-                <div class="mb-4 ml-2 border-l-2 pl-4 border-dotted border-gray-300 rtl:ml-0 rtl:mr-2 rtl:pl-0 rtl:pr-4 rtl:border-l-0 rtl:border-r-2">
+                <div class="mb-4 ml-2 border-l-2 pl-4 border-dotted border-pui-border rtl:ml-0 rtl:mr-2 rtl:pl-0 rtl:pr-4 rtl:border-l-0 rtl:border-r-2">
                   {stacks
                     .map(({ data }) => data)
                     .filter(({ alternativeTo }) =>
@@ -115,7 +138,7 @@ const title = t("Alternatives to popular software");
 
   <div class="section">
     <div class="container">
-      <h2 class="my-12" set:html={t("Browse *by category*")} />
+      <SectionHeading title={t("Browse *by category*")} />
       <ol class="light sm:columns-2 md:columns-2 lg:columns-3">
         {
           tags.map(({ data: { slug, name, title } }) => (

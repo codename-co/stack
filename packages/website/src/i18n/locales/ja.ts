@@ -39,8 +39,6 @@ export const ja: I18n = {
     "{count}以上のキュレーションされたオープンソースソフトウェアパッケージにアクセスし、ワンクリックでインストールできます。",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "[人気のアプリ]({url})の無料で安全でプライバシーに配慮した代替。",
-  "Then install software in one-click ↓":
-    "次に、ソフトウェアをワンクリックでインストール ↓",
   "Search software": "ソフトウェアを検索",
   "a smart alternative to {apps}": "{apps}のスマートな代替",
   "Staff picks": "スタッフおすすめ",
@@ -92,8 +90,19 @@ export const ja: I18n = {
   /** Page /<stack> */
   "Start it now": "今すぐ開始",
   "Download the stack file": "スタックファイルをダウンロード",
+  "Runs locally, in one click.": "ローカルで、ワンクリックで動作します。",
+  "Ready to run *{name}*?": "*{name}* を実行する準備はできましたか？",
+  Version: "バージョン",
+  Stars: "スター",
+  License: "ライセンス",
+  Author: "作者",
+  Links: "リンク",
+  Homepage: "ウェブサイト",
+  "Source code": "ソースコード",
   "About *{name}*": "*{name}* について",
   "Environment variables": "環境変数",
+  "{count} variables you can tune before starting.":
+    "起動前に調整できる {count} 個の変数。",
   "No environment variables defined.": "環境変数が定義されていません。",
   "View environment variables": "環境変数を表示",
   "An alternative to": "代替",
@@ -115,6 +124,8 @@ export const ja: I18n = {
   /** Page /recipes/<recipe> */
   "*Recipe*: {name}": "*レシピ*：{name}",
   "Recipe ingredients": "レシピの材料",
+  "{count} services, wired together and started as one.":
+    "{count} 個のサービスが連携し、まとめて起動します。",
   "Last update": "最終更新",
   "Related recipes": "関連レシピ",
 

@@ -1,0 +1,304 @@
+---
+import { MockIDE, WibblingSpinner } from "performative-ui";
+import EnvironmentVars from "~/components/EnvironmentVars";
+import { inlineVersion, tidy } from "~/helpers";
+import { useTranslations, type Lang } from "~/i18n";
+
+/**
+ * The stage on `/<slug>.stack` and `/recipes/<slug>.stack`: browser chrome
+ * around the running app, with the log stream and the environment beside it.
+ *
+ * Both runner pages carried their own copy of this — including the whole
+ * streaming client — and had already drifted apart (one passed its variables
+ * through `define:vars`, the other through five hidden `<input>`s, and one had
+ * `allow="full\`screen"`). One copy, one script.
+ */
+interface Props {
+  lang: Lang;
+  name: string;
+  version: string;
+  /** Where the started app answers. */
+  webUrl: string;
+  /** The `.stack` file, and the fallback for a visitor with no desktop app. */
+  redirectUrl: string;
+  env?: Record<string, any>;
+}
+
+const { lang, name, version, webUrl, redirectUrl, env } = Astro.props;
+
+const t = useTranslations(lang);
+
+const v = inlineVersion(version);
+const startingLabel = tidy(
+  t("{name} {version} is starting…", { name, version: v })
+);
+
+const hasEnv = Object.keys(env ?? {}).length > 0;
+---
+
+<div class="section">
+  <div class="container">
+    {/*
+      The stage keeps its full height from the first paint. The iframe used to
+      be `h-0` and jump to 60vh on load, which threw the whole page — and the
+      footer — down the screen at the exact moment the user was starting to
+      read the logs.
+    */}
+    <div id="stage" class="stack-stage" data-state="starting">
+      <div class="stack-stage__bar">
+        <span class="stack-stage__dot" aria-hidden="true"></span>
+        <span class="stack-stage__url">{webUrl}</span>
+      </div>
+
+      <div class="stack-stage__body">
+        <div
+          id="stage-placeholder"
+          class="stack-stage__placeholder flex-col gap-3"
+        >
+          <WibblingSpinner client:load />
+          <p
+            class="subtle m-0 text-sm"
+            set:html={startingLabel}
+          />
+        </div>
+        <iframe
+          id="render"
+          class="stack-stage__frame"
+          title={name}
+          allow="fullscreen"></iframe>
+      </div>
+    </div>
+
+    {/*
+      Logs and environment are the same kind of thing — a monospace reference
+      panel you consult, not content you read — so they sit together in one
+      strip attached to the stage. They used to be two full-width `.section`s
+      with 110px of margin each, which pushed the footer most of a viewport
+      down and made the environment look like a headline feature of the page.
+    */}
+    <div class="stack-details">
+      <section>
+        <h2 class="stack-details__title" set:html={t("Execution logs")} />
+        <MockIDE>
+          <MockIDE.Chrome filename={t("Execution logs")} thinking={false} />
+          {/* Real streamed output, so not MockIDE.Body (which types its
+              content one timeout per character) — just the body element the
+              library styles. */}
+          <pre id="logs" class="pui-ide__body stack-details__pane"></pre>
+        </MockIDE>
+      </section>
+
+      {
+        hasEnv && (
+          <section>
+            <h2
+              class="stack-details__title"
+              set:html={t("Environment variables")}
+            />
+            <EnvironmentVars lang={lang} env={env} />
+          </section>
+        )
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  /* The stage: browser chrome around the running app. Reserving the height up
+     front is the whole point — see the comment on #stage. */
+  .stack-stage {
+    border: 1px solid var(--pui-border);
+    border-radius: var(--pui-radius-xl);
+    background: var(--pui-glass-soft);
+    box-shadow: var(--pui-shadow-card);
+    overflow: hidden;
+  }
+  .stack-stage__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.625rem 0.875rem;
+    border-bottom: 1px solid var(--pui-border);
+    background: var(--pui-overlay);
+  }
+  .stack-stage__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    flex: none;
+    background: var(--pui-fg-mute);
+    transition: background-color 0.3s var(--pui-ease);
+  }
+  .stack-stage[data-state="live"] .stack-stage__dot {
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgb(34 197 94 / 0.2);
+  }
+  .stack-stage__url {
+    font-family: var(--pui-font-mono);
+    font-size: 0.75rem;
+    color: var(--pui-fg-mute);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .stack-stage__body {
+    position: relative;
+    height: 60vh;
+    min-height: 22rem;
+  }
+  .stack-stage__placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s var(--pui-ease);
+  }
+  .stack-stage__frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.4s var(--pui-ease);
+  }
+  /* Cross-fade rather than swap: the app's first paint is rarely pretty. */
+  .stack-stage[data-state="live"] .stack-stage__frame {
+    opacity: 1;
+  }
+  .stack-stage[data-state="live"] .stack-stage__placeholder {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .stack-details {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 64rem) {
+    .stack-details:has(> section + section) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .stack-details__title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--pui-fg-mute);
+    margin: 0 0 0.75rem;
+  }
+  /* Equal, bounded panes: the two columns must not drift out of alignment as
+     the log stream grows. */
+  .stack-details__pane {
+    height: 18rem;
+    overflow-y: auto;
+  }
+  .stack-details :global(.pui-ide__body) {
+    height: 18rem;
+    max-height: none;
+    overflow-y: auto;
+  }
+</style>
+
+<script
+  is:inline
+  define:vars={{
+    liveTitle: tidy(t("{name} {version} is live.", { name, version: v })),
+    webUrl,
+    redirectUrl,
+  }}
+>
+  const STACK_API_ORIGIN = "https://127.1:57404";
+
+  const fetcher = async (endpoint, init) => {
+    const response = await fetch(`${STACK_API_ORIGIN}${endpoint}`, init);
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.text();
+  };
+
+  const streamableFetcher = async (endpoint, init, onEvent, onComplete) => {
+    const response = await fetch(`${STACK_API_ORIGIN}${endpoint}`, init);
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    const reader = response.body.getReader();
+    const readChunk = () => {
+      reader
+        .read()
+        .then(({ value, done }) => {
+          if (done) {
+            onComplete();
+            return;
+          }
+          onEvent(new TextDecoder().decode(value));
+          readChunk();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+    readChunk();
+  };
+
+  const isApiAccessible = async () => (await fetcher("/health")) === "OK";
+
+  const runStack = async (stackUrl, onEvent, onComplete) =>
+    streamableFetcher(
+      `/run`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slug: stackUrl }),
+      },
+      onEvent,
+      onComplete
+    );
+
+  isApiAccessible()
+    .catch(() => false)
+    .then(async (isAccessible) => {
+      // No desktop app listening: hand the visitor the file instead.
+      if (!isAccessible) {
+        window.location.href = redirectUrl;
+        return;
+      }
+
+      const stackFullUrl = new URL(
+        window.location.origin + redirectUrl
+      ).toString();
+
+      const logs = document.querySelector("#logs");
+      await runStack(
+        stackFullUrl,
+        (chunk) => {
+          logs.textContent += chunk;
+          // Follow the tail; a log you have to scroll is a log nobody reads.
+          logs.scrollTop = logs.scrollHeight;
+        },
+        () => {}
+      );
+
+      const stage = document.querySelector("#stage");
+      const render = document.querySelector("#render");
+      render.src = webUrl;
+      render.onload = () => {
+        // One flag drives the dot, the placeholder fade and the frame fade, so
+        // they can never disagree.
+        stage.dataset.state = "live";
+        render.contentWindow.focus();
+      };
+
+      document.querySelector("#status-text").innerHTML = liveTitle;
+      // Swap the "working" spinner for the "live" dot.
+      document.querySelector("#status-spinner").innerHTML =
+        '<span class="pui-dot pui-dot--pulse"></span>';
+
+      const fullscreen = document.querySelector("#fullscreen");
+      fullscreen.removeAttribute("aria-disabled");
+      fullscreen.classList.remove("is-pending");
+    });
+</script>

@@ -25,8 +25,6 @@ export const ru: Partial<I18n> = {
     "Доступ к {count}+ отобранным пакетам программ с открытым исходным кодом, готовым к установке в один клик.",
   "Free, secure, and privacy-focused alternatives to [popular apps]({url}).":
     "Бесплатные, безопасные и ориентированные на конфиденциальность альтернативы для [популярных приложений]({url}).",
-  "Then install software in one-click ↓":
-    "Затем установите программу в один клик ↓",
   "Search software": "Поиск программ",
   "Staff picks": "Выбор сотрудников",
   "Youʼll enjoy these": "Вам понравятся",
