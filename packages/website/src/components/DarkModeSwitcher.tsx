@@ -21,7 +21,7 @@ const systemPrefersDark = () =>
 
 const SunIcon = () => (
   <svg
-    class="stroke-current w-4 h-4 inline align-middle"
+    className="stroke-current w-4 h-4 inline align-middle"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"
@@ -36,7 +36,7 @@ const SunIcon = () => (
 
 const MoonIcon = () => (
   <svg
-    class="stroke-current w-4 h-4 inline align-middle"
+    className="stroke-current w-4 h-4 inline align-middle"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"
