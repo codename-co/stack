@@ -6,13 +6,13 @@ name: GraphQL Hive
 icon: ☸️
 flavor: DockerCompose
 version: main
-updated_at: 2026-08-22
+updated_at: 2026-09-05
 description: Open-source GraphQL management platform
 author: The Guild
 license: MIT
 homepage: https://the-guild.dev/graphql/hive
 repository: https://github.com/graphql-hive/console
-stars: 490
+stars: 480
 tags: [graphql, api-gateway]
 alternativeTo: [apollo-server]
 readme: |

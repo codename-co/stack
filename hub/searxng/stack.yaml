@@ -5,13 +5,13 @@ slug: searxng
 name: SearXNG
 flavor: DockerCompose
 version: "latest"
-updated_at: 2026-08-22
+updated_at: 2026-09-04
 description: Free internet metasearch engine
 author: SearXNG team
 license: AGPL-3.0
 homepage: https://docs.searxng.org
 repository: https://github.com/searxng/searxng
-stars: 35900
+stars: 36500
 tags: [search-engine]
 alternativeTo: [google, duckduckgo]
 readme: |

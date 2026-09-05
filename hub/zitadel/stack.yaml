@@ -6,13 +6,13 @@ name: Zitadel
 icon: 🔐
 flavor: DockerCompose
 version: latest
-updated_at: 2026-08-21
+updated_at: 2026-09-04
 description: Identity and Access Management
 author: Zitadel Inc
 license: Apache-2.0
 homepage: https://zitadel.com
 repository: https://github.com/zitadel/zitadel
-stars: 14800
+stars: 14900
 tags: [security, identity-management, access-management]
 alternativeTo: [auth0]
 readme: |

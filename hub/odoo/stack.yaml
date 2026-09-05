@@ -5,13 +5,13 @@ slug: odoo
 name: Odoo
 flavor: DockerCompose
 version: "18.0"
-updated_at: 2026-08-21
+updated_at: 2026-09-04
 description: Open Source Apps To Grow Your Business
 author: Odoo S.A.
 license: LGPLv3
 homepage: https://www.odoo.com
 repository: https://github.com/odoo/odoo
-stars: 53900
+stars: 54200
 tags: [erp, crm, accounting]
 alternativeTo: [sap, salesforce]
 readme: |

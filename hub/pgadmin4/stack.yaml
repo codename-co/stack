@@ -12,7 +12,7 @@ author: pgAdmin Development Team
 license: PostgreSQL
 homepage: https://www.pgadmin.org
 repository: https://github.com/pgadmin-org/pgadmin4
-stars: 3750
+stars: 3780
 tags:
   - database
 alternativeTo:

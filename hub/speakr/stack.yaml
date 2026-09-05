@@ -6,12 +6,12 @@ name: Speakr
 icon: 🗣
 flavor: DockerCompose
 version: "latest"
-updated_at: 2026-08-07
+updated_at: 2026-09-01
 description: Transcribe audio recordings
 author: Murtaza Nasir
 license: AGPL-3.0
 repository: https://github.com/murtaza-nasir/speakr
-stars: 3670
+stars: 3700
 tags: []
 alternativeTo: []
 readme: |

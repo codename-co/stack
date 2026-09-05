@@ -6,13 +6,13 @@ name: Chromium
 icon: googlechrome
 flavor: DockerCompose
 version: latest
-updated_at: 2026-08-19
+updated_at: 2026-09-02
 description: Open-source web browser
 author: The Chromium Project
 license: BSD-3-Clause
 homepage: https://www.chromium.org/Home/
 repository: https://github.com/chromium/chromium
-stars: 24600
+stars: 24700
 tags:
   - browser
 readme: >
