@@ -13,7 +13,7 @@ author: Envoy Project Authors
 license: Apache-2.0
 homepage: https://www.envoyproxy.io
 repository: https://github.com/envoyproxy/envoy
-stars: 28800
+stars: 28900
 tags:
   - reverse-proxy
   - load-balancer
