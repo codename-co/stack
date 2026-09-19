@@ -7,13 +7,13 @@ name: Rybbit
 icon: Ⓡ
 flavor: DockerCompose
 version: "latest"
-updated_at: 2026-08-20
+updated_at: 2026-09-18
 description: Intuitive analytics
 author: Rybbit
 license: AGPL-3.0
 homepage: https://www.rybbit.io
 repository: https://github.com/rybbit-io/rybbit
-stars: 12900
+stars: 13000
 tags: [analytics]
 alternativeTo: [google-analytics]
 readme: |
