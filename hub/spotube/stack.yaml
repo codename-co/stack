@@ -11,8 +11,8 @@ description: Open source Spotify client that doesn't require Premium
 author: Spotube
 license: BSD-4-Clause
 homepage: https://spotube.krtirtho.dev
-repository: https://github.com/KRTirtho/spotube
-stars: 48600
+repository: https://github.com/team-spotube/spotube
+stars: 49400
 tags:
   - music
 alternativeTo:

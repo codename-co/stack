@@ -5,7 +5,7 @@ slug: minio
 name: MinIO
 flavor: DockerCompose
 version: "latest"
-updated_at: 2025-09-07
+updated_at: 2026-04-24
 description: High-performance, S3 compatible object store
 author: MinIO, Inc
 license: AGPL-3.0
