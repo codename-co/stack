@@ -7,7 +7,7 @@ name: APITable
 icon: Ⓐ
 flavor: DockerCompose
 version: "latest"
-updated_at: 2025-10-30
+updated_at: 2026-09-06
 description: Low-code platform for building collaborative apps
 author: APITable Ltd.
 license: AGPL-3.0
